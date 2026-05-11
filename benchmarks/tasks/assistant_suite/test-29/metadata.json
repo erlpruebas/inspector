@@ -1,0 +1,26 @@
+{
+  "id": "test-29",
+  "title": "Informe mensual combinado operaciones-finanzas",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv",
+    "assistant_synthetic/gastos_2026_01.csv",
+    "assistant_synthetic/gastos_2026_02.csv",
+    "assistant_synthetic/gastos_2026_03.csv",
+    "assistant_synthetic/gastos_2026_04.csv",
+    "assistant_synthetic/gastos_2026_05.csv"
+  ],
+  "skills": [
+    "multi_file_analysis",
+    "executive_report",
+    "risk_synthesis"
+  ],
+  "difficulty": 5,
+  "expected_keys": [
+    "gastos",
+    "tareas pendientes",
+    "clientes prioritarios",
+    "riesgos"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260511_162047_305850",
+  "jobs": [
+    {
+      "engine": "lmstudio:qwen3.5-0.8b:2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [],
+  "deferred": [],
+  "failed": [
+    {
+      "job": "lmstudio:qwen3.5-0.8b:2::test-01",
+      "at": "2026-05-11T14:22:48.384421+00:00",
+      "returncode": 1
+    }
+  ]
+}

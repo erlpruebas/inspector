@@ -1,0 +1,14 @@
+{
+  "engine": "gemini",
+  "task_id": "test-01",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.\nYOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nError when talking to Gemini API Full report available at: C:\\Users\\user\\AppData\\Local\\Temp\\gemini-client-error-Turn.run-sendMessageStream-2026-05-11T14-07-38-682Z.json ModelNotFoundError: This model models/gemini-2.0-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\n    at classifyGoogleError (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:269893:12)\n    at retryWithBackoff (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:270562:31)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async GeminiChat.makeApiCallAndProcessStream (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293199:28)\n    at async GeminiChat.streamWithRetries (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293037:29)\n    at async Turn.run (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293564:24)\n    at async GeminiClient.processTurn (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:306115:22)\n    at async GeminiClient.sendMessageStream (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:306227:14)\n    at async file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/gemini-U6FSFXFH.js:10811:26\n    at async main (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/gemini-U6FSFXFH.js:15885:5) {\n  code: 404\n}\nAn unexpected critical error occurred:[object Object]\n",
+  "output_files": [],
+  "elapsed_seconds": 5.191449799982365,
+  "timed_out": false,
+  "usage": {},
+  "copied_outputs": [],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260511_160734_230579\\work\\gemini\\test-01"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "test-28",
+  "title": "Investigacion web y propuesta CRM para BravoSoft",
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "web_search",
+    "email_drafting",
+    "business_analysis"
+  ],
+  "difficulty": 5,
+  "expected_keys": [
+    "BravoSoft",
+    "CRM",
+    "Paula Ferrer",
+    "fuentes"
+  ]
+}

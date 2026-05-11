@@ -1,0 +1,20 @@
+[
+  {
+    "engine": "command",
+    "task_id": "resumen_ejecutivo",
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "python: can't open file 'D:\\\\inspector\\\\benchmarks\\\\results\\\\20260511_152126\\\\work\\\\command\\\\resumen_ejecutivo\\\\inspectorbenchmarksengineslocal_echo.py': [Errno 2] No such file or directory\n",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_152126\\work\\command\\resumen_ejecutivo\\acta_reunion.txt"
+    ],
+    "elapsed_seconds": 0.056011200009379536,
+    "timed_out": false,
+    "usage": {},
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_152126\\command_resumen_ejecutivo_acta_reunion.txt"
+    ],
+    "task_prompt": "Lee el archivo acta_reunion.txt y genera un resumen en 3 puntos clave y una lista de tareas pendientes. Guarda la respuesta principal en resultado.md.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_152126\\work\\command\\resumen_ejecutivo"
+  }
+]

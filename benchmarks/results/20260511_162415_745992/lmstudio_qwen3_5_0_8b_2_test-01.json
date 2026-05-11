@@ -1,0 +1,33 @@
+{
+  "engine": "lmstudio_qwen3_5_0_8b_2",
+  "task_id": "test-01",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"lmstudio\", \"model\": \"qwen3.5-0.8b:2\", \"elapsed_seconds\": 25.881, \"usage\": {\"prompt_tokens\": 5752, \"completion_tokens\": 64, \"total_tokens\": 5816, \"completion_tokens_details\": {\"reasoning_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260511_162415_745992\\work\\lmstudio_qwen3_5_0_8b_2\\test-01\\resultado.md"
+  ],
+  "elapsed_seconds": 26.20666089997394,
+  "timed_out": false,
+  "usage": {
+    "provider": "lmstudio",
+    "model": "qwen3.5-0.8b:2",
+    "elapsed_seconds": 25.881,
+    "usage": {
+      "prompt_tokens": 5752,
+      "completion_tokens": 64,
+      "total_tokens": 5816,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    }
+  },
+  "model": "qwen3.5-0.8b:2",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260511_162415_745992\\lmstudio_qwen3_5_0_8b_2_test-01_resultado.md"
+  ],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260511_162415_745992\\work\\lmstudio_qwen3_5_0_8b_2\\test-01"
+}

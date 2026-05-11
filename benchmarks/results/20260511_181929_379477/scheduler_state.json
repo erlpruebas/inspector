@@ -1,0 +1,21 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260511_181929_379477",
+  "jobs": [
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-21",
+      "at": "2026-05-11T16:19:46.882864+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [],
+  "running": null
+}

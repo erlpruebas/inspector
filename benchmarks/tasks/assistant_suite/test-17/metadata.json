@@ -1,0 +1,22 @@
+{
+  "id": "test-17",
+  "title": "Resumen financiero de gastos enero-mayo",
+  "required_files": [
+    "assistant_synthetic/gastos_2026_01.csv",
+    "assistant_synthetic/gastos_2026_02.csv",
+    "assistant_synthetic/gastos_2026_03.csv",
+    "assistant_synthetic/gastos_2026_04.csv",
+    "assistant_synthetic/gastos_2026_05.csv"
+  ],
+  "skills": [
+    "expense_audit",
+    "aggregation"
+  ],
+  "difficulty": 3,
+  "expected_keys": [
+    "total mensual",
+    "discrepancias",
+    "sin_recibo",
+    "revisar_proveedor"
+  ]
+}

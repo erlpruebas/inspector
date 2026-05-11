@@ -1,0 +1,23 @@
+{
+  "id": "test-30",
+  "title": "Investigacion profunda y plan ejecutivo de IA ofimatica",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "web_search",
+    "local_data_crosscheck",
+    "executive_report",
+    "strategy"
+  ],
+  "difficulty": 5,
+  "expected_keys": [
+    "OpenRouter",
+    "Gemini",
+    "ofimatica",
+    "coste",
+    "recomendacion ejecutiva"
+  ]
+}

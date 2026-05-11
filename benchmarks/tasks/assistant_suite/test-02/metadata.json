@@ -1,0 +1,18 @@
+{
+  "id": "test-02",
+  "title": "Crear lista de contactos prioritarios de Madrid",
+  "required_files": [
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "data_filtering",
+    "contacts"
+  ],
+  "difficulty": 1,
+  "expected_keys": [
+    "Madrid",
+    "prioridad alta",
+    "Ana Lopez",
+    "Sergio Campos"
+  ]
+}

@@ -1,0 +1,166 @@
+[
+  {
+    "id": "resumen_ejecutivo",
+    "level": "L1",
+    "category": "resumen",
+    "prompt": "Lee el archivo acta_reunion.txt y genera un resumen en 3 puntos clave y una lista de tareas pendientes. Guarda la respuesta principal en resultado.md.",
+    "required_files": ["acta_reunion.txt"],
+    "expected_outputs": ["resultado.md"],
+    "rubric": {"correctness": 4, "completeness": 3, "format": 2, "traceability": 1}
+  },
+  {
+    "id": "conversion_ventas",
+    "level": "L2",
+    "category": "datos",
+    "prompt": "Toma los datos sueltos de ventas_mayo.log y genera un archivo ventas.csv bien estructurado con columnas: Fecha, Producto, Cantidad, Precio.",
+    "required_files": ["ventas_mayo.log"],
+    "expected_outputs": ["ventas.csv"],
+    "rubric": {"correctness": 5, "format": 3, "completeness": 2}
+  },
+  {
+    "id": "comparacion_presupuestos",
+    "level": "L3",
+    "category": "multiarchivo",
+    "prompt": "Compara presupuesto_A.pdf con presupuesto_B.pdf y dime cual es mas economico en la partida de Hardware. Guarda el analisis en resultado.md.",
+    "required_files": ["presupuesto_A.pdf", "presupuesto_B.pdf"],
+    "expected_outputs": ["resultado.md"],
+    "rubric": {"correctness": 5, "traceability": 2, "format": 2, "completeness": 1}
+  },
+  {
+    "id": "agenda_ics",
+    "level": "L4",
+    "category": "calendario",
+    "prompt": "Analiza emails_pendientes.txt y genera un archivo calendario.ics para las tres citas que se mencionan.",
+    "required_files": ["emails_pendientes.txt"],
+    "expected_outputs": ["calendario.ics"],
+    "rubric": {"correctness": 4, "format": 4, "completeness": 2}
+  },
+  {
+    "id": "busqueda_reporte_apple",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "Busca en la web el valor actual de la accion de Apple y comparalo con el valor de hace 6 meses. Genera un informe en Word llamado informe_apple.docx con fuentes y fecha de consulta.",
+    "required_files": [],
+    "expected_outputs": ["informe_apple.docx"],
+    "requires_network": true,
+    "rubric": {"correctness": 4, "sources": 3, "format": 2, "recency": 1}
+  },
+  {
+    "id": "limpieza_clientes",
+    "level": "L2",
+    "category": "datos",
+    "prompt": "Limpia clientes_sucios.csv: normaliza emails a minusculas, elimina duplicados por email y guarda clientes_limpios.csv con columnas Nombre, Email, Telefono, Ciudad.",
+    "required_files": ["clientes_sucios.csv"],
+    "expected_outputs": ["clientes_limpios.csv"],
+    "rubric": {"correctness": 5, "format": 3, "edge_cases": 2}
+  },
+  {
+    "id": "tickets_soporte_prioridades",
+    "level": "L3",
+    "category": "clasificacion",
+    "prompt": "Lee tickets_soporte.json y crea resultado.md con una tabla de tickets ordenados por prioridad, causa probable y siguiente accion recomendada.",
+    "required_files": ["tickets_soporte.json"],
+    "expected_outputs": ["resultado.md"],
+    "rubric": {"correctness": 4, "reasoning": 3, "format": 2, "completeness": 1}
+  },
+  {
+    "id": "html_a_ficha_producto",
+    "level": "L3",
+    "category": "extraccion",
+    "prompt": "Extrae de producto.html el nombre, precio, disponibilidad, SKU y especificaciones. Guarda producto.json con claves name, price_eur, availability, sku y specs.",
+    "required_files": ["producto.html"],
+    "expected_outputs": ["producto.json"],
+    "rubric": {"correctness": 5, "format": 3, "completeness": 2}
+  },
+  {
+    "id": "inventario_reorden",
+    "level": "L3",
+    "category": "analisis",
+    "prompt": "Analiza inventario.csv y genera pedido_reposicion.csv con los productos cuyo stock_actual sea menor que stock_minimo. Incluye cantidad_a_pedir para llegar a stock_objetivo.",
+    "required_files": ["inventario.csv"],
+    "expected_outputs": ["pedido_reposicion.csv"],
+    "rubric": {"correctness": 6, "format": 2, "completeness": 2}
+  },
+  {
+    "id": "facturas_conciliacion",
+    "level": "L4",
+    "category": "multiarchivo",
+    "prompt": "Cruza facturas.csv con pagos_banco.csv. Genera conciliacion.md indicando facturas pagadas, pendientes y pagos sin factura clara.",
+    "required_files": ["facturas.csv", "pagos_banco.csv"],
+    "expected_outputs": ["conciliacion.md"],
+    "rubric": {"correctness": 5, "traceability": 2, "format": 2, "edge_cases": 1}
+  },
+  {
+    "id": "redaccion_email_cliente",
+    "level": "L2",
+    "category": "redaccion",
+    "prompt": "Usa contexto_cliente.txt para redactar un email profesional de seguimiento. Debe ser claro, amable, breve y guardar email_cliente.md.",
+    "required_files": ["contexto_cliente.txt"],
+    "expected_outputs": ["email_cliente.md"],
+    "rubric": {"tone": 3, "correctness": 3, "completeness": 2, "format": 2}
+  },
+  {
+    "id": "plan_proyecto_dependencias",
+    "level": "L4",
+    "category": "planificacion",
+    "prompt": "Convierte requisitos_proyecto.md en un plan de proyecto con fases, dependencias, riesgos y entregables. Guarda plan_proyecto.md.",
+    "required_files": ["requisitos_proyecto.md"],
+    "expected_outputs": ["plan_proyecto.md"],
+    "rubric": {"completeness": 4, "reasoning": 3, "format": 2, "risk_awareness": 1}
+  },
+  {
+    "id": "debug_python_tests",
+    "level": "L6",
+    "category": "codigo",
+    "prompt": "El mini-proyecto contiene tests que fallan. Corrige el codigo sin cambiar los tests y ejecuta la suite. Guarda un resumen en resultado.md.",
+    "required_files": ["mini_project/calculator.py", "mini_project/test_calculator.py"],
+    "expected_outputs": ["mini_project/calculator.py", "resultado.md"],
+    "rubric": {"tests": 5, "minimality": 2, "correctness": 2, "explanation": 1}
+  },
+  {
+    "id": "refactor_csv_parser",
+    "level": "L6",
+    "category": "codigo",
+    "prompt": "Refactoriza parser_project/parser.py para usar csv.DictReader, mantener el comportamiento esperado por test_parser.py y guardar resultado.md con los cambios.",
+    "required_files": ["parser_project/parser.py", "parser_project/test_parser.py", "parser_project/sample.csv"],
+    "expected_outputs": ["parser_project/parser.py", "resultado.md"],
+    "rubric": {"tests": 4, "maintainability": 3, "minimality": 2, "explanation": 1}
+  },
+  {
+    "id": "analisis_logs_incidente",
+    "level": "L4",
+    "category": "debugging",
+    "prompt": "Analiza app_errors.log y access.log para identificar la ventana temporal del incidente, causa probable y mitigacion. Guarda incidente.md.",
+    "required_files": ["app_errors.log", "access.log"],
+    "expected_outputs": ["incidente.md"],
+    "rubric": {"correctness": 4, "traceability": 3, "reasoning": 2, "format": 1}
+  },
+  {
+    "id": "presupuesto_markdown_a_csv",
+    "level": "L3",
+    "category": "datos",
+    "prompt": "Convierte presupuesto_markdown.md en presupuesto_normalizado.csv con columnas Categoria, Concepto, Unidades, PrecioUnitario, Total.",
+    "required_files": ["presupuesto_markdown.md"],
+    "expected_outputs": ["presupuesto_normalizado.csv"],
+    "rubric": {"correctness": 5, "format": 3, "completeness": 2}
+  },
+  {
+    "id": "informe_competidores",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "Investiga rapidamente tres competidores de software de gestion de tareas para pymes y genera competidores.md con tabla comparativa, fuentes y fecha de consulta.",
+    "required_files": [],
+    "expected_outputs": ["competidores.md"],
+    "requires_network": true,
+    "rubric": {"sources": 3, "correctness": 3, "comparison": 2, "format": 2}
+  },
+  {
+    "id": "datos_rotos_resiliencia",
+    "level": "L8",
+    "category": "robustez",
+    "prompt": "Normaliza datos_rotos.txt en datos_rotos_limpios.csv. Si un campo no se puede recuperar, usa valor vacio y documenta las reglas aplicadas en resultado.md.",
+    "required_files": ["datos_rotos.txt"],
+    "expected_outputs": ["datos_rotos_limpios.csv", "resultado.md"],
+    "rubric": {"robustness": 4, "correctness": 3, "format": 2, "explanation": 1}
+  }
+]

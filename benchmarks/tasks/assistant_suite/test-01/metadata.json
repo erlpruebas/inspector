@@ -1,0 +1,19 @@
+{
+  "id": "test-01",
+  "title": "Recordar cita de Clinica Centro",
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "agenda",
+    "data_extraction"
+  ],
+  "difficulty": 1,
+  "expected_keys": [
+    "Noelia Castro",
+    "Clinica Centro",
+    "14 de mayo",
+    "11:30"
+  ]
+}

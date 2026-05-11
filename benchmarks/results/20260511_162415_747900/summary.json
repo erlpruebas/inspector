@@ -1,0 +1,37 @@
+[
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.534, \"usage\": {\"queue_time\": 0.0189526, \"prompt_tokens\": 5102, \"prompt_time\": 0.308179269, \"completion_tokens\": 48, \"completion_time\": 0.058179135, \"total_tokens\": 5150, \"total_time\": 0.366358404}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_162415_747900\\work\\groq_llama_3_1_8b_instant\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 0.845313600031659,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 0.534,
+      "usage": {
+        "queue_time": 0.0189526,
+        "prompt_tokens": 5102,
+        "prompt_time": 0.308179269,
+        "completion_tokens": 48,
+        "completion_time": 0.058179135,
+        "total_tokens": 5150,
+        "total_time": 0.366358404
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_162415_747900\\groq_llama_3_1_8b_instant_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_162415_747900\\work\\groq_llama_3_1_8b_instant\\test-01"
+  }
+]

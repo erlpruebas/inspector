@@ -1,0 +1,19 @@
+{
+  "id": "test-16",
+  "title": "Preparar briefing de seguridad para Innotek",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "briefing",
+    "synthesis"
+  ],
+  "difficulty": 3,
+  "expected_keys": [
+    "Sergio Campos",
+    "Innotek",
+    "riesgos de seguridad",
+    "auditoria"
+  ]
+}

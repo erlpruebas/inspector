@@ -1,0 +1,19 @@
+{
+  "id": "test-06",
+  "title": "Preparar agenda de viaje a Barcelona",
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "skills": [
+    "agenda",
+    "synthesis"
+  ],
+  "difficulty": 2,
+  "expected_keys": [
+    "Xavier Puig",
+    "Barna Health",
+    "18 de mayo",
+    "10:00"
+  ]
+}

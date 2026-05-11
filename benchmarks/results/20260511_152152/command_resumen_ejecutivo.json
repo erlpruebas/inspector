@@ -1,0 +1,18 @@
+{
+  "engine": "command",
+  "task_id": "resumen_ejecutivo",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260511_152152\\work\\command\\resumen_ejecutivo\\resultado.md"
+  ],
+  "elapsed_seconds": 0.0930238000000827,
+  "timed_out": false,
+  "usage": {},
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260511_152152\\command_resumen_ejecutivo_resultado.md"
+  ],
+  "task_prompt": "Lee el archivo acta_reunion.txt y genera un resumen en 3 puntos clave y una lista de tareas pendientes. Guarda la respuesta principal en resultado.md.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260511_152152\\work\\command\\resumen_ejecutivo"
+}

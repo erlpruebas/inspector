@@ -1,0 +1,19 @@
+{
+  "id": "test-22",
+  "title": "Comparar Apple y Microsoft seis meses",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "skills": [
+    "web_search",
+    "financial_analysis",
+    "synthesis"
+  ],
+  "difficulty": 4,
+  "expected_keys": [
+    "Apple",
+    "Microsoft",
+    "seis meses",
+    "fecha de consulta"
+  ]
+}

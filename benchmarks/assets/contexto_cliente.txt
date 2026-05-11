@@ -1,0 +1,5 @@
+Cliente: Delta SL
+Situacion: pidio una propuesta el lunes y aun no ha respondido.
+Objetivo: confirmar si desea una demo esta semana.
+Tono: profesional, cercano, sin presionar.
+Restriccion: maximo 140 palabras.

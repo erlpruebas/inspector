@@ -1,0 +1,14 @@
+[
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  }
+]

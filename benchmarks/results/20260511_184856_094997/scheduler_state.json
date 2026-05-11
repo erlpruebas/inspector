@@ -1,0 +1,21 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260511_184856_094997",
+  "jobs": [
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "codex:gpt-5.4-mini::test-01",
+      "at": "2026-05-11T16:49:16.700672+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [],
+  "running": null
+}

@@ -1,0 +1,19 @@
+{
+  "id": "test-19",
+  "title": "Plan de seguimiento de implantacion",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md"
+  ],
+  "skills": [
+    "planning",
+    "timeline"
+  ],
+  "difficulty": 3,
+  "expected_keys": [
+    "Laura Marin",
+    "formacion",
+    "dia 22",
+    "hitos"
+  ]
+}

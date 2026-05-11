@@ -1,0 +1,18 @@
+{
+  "id": "test-11",
+  "title": "Priorizar clientes de alta prioridad",
+  "required_files": [
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "data_filtering",
+    "prioritization"
+  ],
+  "difficulty": 2,
+  "expected_keys": [
+    "alta",
+    "cliente",
+    "Nova Iberia",
+    "Clinica Centro"
+  ]
+}

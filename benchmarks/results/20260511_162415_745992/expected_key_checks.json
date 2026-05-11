@@ -1,0 +1,16 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "lmstudio_qwen3_5_0_8b_2",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "14 de mayo"
+    ],
+    "passed": false
+  }
+]

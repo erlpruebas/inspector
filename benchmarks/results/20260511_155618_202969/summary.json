@@ -1,0 +1,36 @@
+[
+  {
+    "engine": "gemini_api",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 9.35, \"usage\": {\"promptTokenCount\": 2967, \"candidatesTokenCount\": 75, \"totalTokenCount\": 3042, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 2967}], \"serviceTier\": \"standard\"}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_155618_202969\\work\\gemini_api\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 9.619112699991092,
+    "timed_out": false,
+    "usage": {
+      "provider": "gemini_api",
+      "model": "gemini-2.5-flash-lite",
+      "elapsed_seconds": 9.35,
+      "usage": {
+        "promptTokenCount": 2967,
+        "candidatesTokenCount": 75,
+        "totalTokenCount": 3042,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2967
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_155618_202969\\gemini_api_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_155618_202969\\work\\gemini_api\\test-01"
+  }
+]

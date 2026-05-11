@@ -1,0 +1,21 @@
+{
+  "id": "test-25",
+  "title": "Informe ejecutivo de cuentas prioritarias",
+  "required_files": [
+    "assistant_synthetic/contactos_50.csv",
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "skills": [
+    "synthesis",
+    "contacts",
+    "executive_report"
+  ],
+  "difficulty": 4,
+  "expected_keys": [
+    "clientes alta",
+    "riesgos",
+    "siguientes acciones",
+    "Madrid"
+  ]
+}

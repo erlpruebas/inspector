@@ -1,0 +1,26 @@
+# Inspector 0.1 - Dependencias
+# Instalar con: pip install -r requirements.txt
+
+# Carga de variables de entorno
+python-dotenv>=1.0.0
+
+# Captura de pantalla
+Pillow>=10.0.0
+
+# Automatización de teclado/ratón para enviar órdenes a Cowork
+pyautogui>=0.9.54
+
+# Mejora de verificación SSL en Windows (opcional pero recomendado)
+truststore>=0.10.4
+
+# Google Gemini (agente de escritorio con funciones propias)
+google-genai>=1.73.0
+
+# UI Automation de Windows para anclar el foco en el compositor de Codex
+pywinauto>=0.6.9
+
+# Voz Telegram: TTS/STT local fallback
+numpy>=2.3.0,<3
+soundfile>=0.13.1
+kokoro-onnx>=0.5.0
+piper-tts>=1.4.1

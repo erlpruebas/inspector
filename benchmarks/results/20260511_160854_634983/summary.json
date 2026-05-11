@@ -1,0 +1,20 @@
+[
+  {
+    "engine": "gemini",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "Task completed. I have created the `resultado.md` file with the details of the Clinica Centro appointment. I am ready for your next instruction.\n",
+    "stderr": "Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.\nYOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nError executing tool read_file: File not found.\nError executing tool read_file: File not found.\n",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_160854_634983\\work\\gemini\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 110.0786827999982,
+    "timed_out": false,
+    "usage": {},
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_160854_634983\\gemini_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_160854_634983\\work\\gemini\\test-01"
+  }
+]

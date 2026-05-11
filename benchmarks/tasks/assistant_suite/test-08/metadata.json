@@ -1,0 +1,19 @@
+{
+  "id": "test-08",
+  "title": "Resumen semanal de tareas pendientes",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md"
+  ],
+  "skills": [
+    "summarization",
+    "prioritization"
+  ],
+  "difficulty": 2,
+  "expected_keys": [
+    "IberLegal",
+    "Clinica Centro",
+    "Delta Equipos",
+    "SSL"
+  ]
+}

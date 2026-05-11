@@ -1,0 +1,6 @@
+sku,producto,stock_actual,stock_minimo,stock_objetivo
+P-001,Portatil 14,6,8,15
+P-002,Monitor 27,14,10,20
+P-003,Dock USB-C,3,7,12
+P-004,Teclado mecanico,9,9,18
+P-005,Webcam HD,1,5,10

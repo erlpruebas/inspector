@@ -1,0 +1,19 @@
+{
+  "id": "test-12",
+  "title": "Preparar minuta de contrato IberLegal",
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "skills": [
+    "email_analysis",
+    "risk_extraction"
+  ],
+  "difficulty": 2,
+  "expected_keys": [
+    "clausula 8",
+    "responsabilidad",
+    "renovacion automatica",
+    "12 de mayo"
+  ]
+}

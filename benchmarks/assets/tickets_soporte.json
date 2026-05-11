@@ -1,0 +1,6 @@
+[
+  {"id": "T-1001", "cliente": "Norte SA", "mensaje": "No podemos facturar desde las 9:05. Error 500 al guardar factura.", "impacto": "alto"},
+  {"id": "T-1002", "cliente": "Delta SL", "mensaje": "La pantalla de informes tarda mucho pero termina cargando.", "impacto": "medio"},
+  {"id": "T-1003", "cliente": "Soluciones Mar", "mensaje": "Usuario nuevo no recibe email de invitacion.", "impacto": "bajo"},
+  {"id": "T-1004", "cliente": "Clinica Centro", "mensaje": "No aparece el historico de pagos de ningun paciente.", "impacto": "alto"}
+]

@@ -1,0 +1,18 @@
+{
+  "id": "test-03",
+  "title": "Extraer tareas de notas de voz",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "skills": [
+    "task_extraction",
+    "summarization"
+  ],
+  "difficulty": 1,
+  "expected_keys": [
+    "llamar",
+    "enviar",
+    "agendar",
+    "reservar"
+  ]
+}

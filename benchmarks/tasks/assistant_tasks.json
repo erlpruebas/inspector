@@ -1,0 +1,921 @@
+[
+  {
+    "id": "test-01",
+    "level": "L1",
+    "category": "assistant_digital",
+    "prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "agenda",
+      "data_extraction"
+    ],
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-02",
+    "level": "L1",
+    "category": "assistant_digital",
+    "prompt": "# Crear lista de contactos prioritarios de Madrid\n\nUsa `benchmarks/assets/assistant_synthetic/contactos_50.csv` para generar una lista de contactos ubicados en Madrid con prioridad alta. Incluye nombre, empresa, rol y email.",
+    "required_files": [
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "data_filtering",
+      "contacts"
+    ],
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-03",
+    "level": "L1",
+    "category": "assistant_digital",
+    "prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "task_extraction",
+      "summarization"
+    ],
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-04",
+    "level": "L1",
+    "category": "assistant_digital",
+    "prompt": "# Redactar email de seguimiento a BravoSoft\n\nCon `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`, redacta un email breve y amable a Paula Ferrer para seguimiento de la propuesta CRM.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "email_drafting",
+      "tone_control"
+    ],
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-05",
+    "level": "L1",
+    "category": "assistant_digital",
+    "prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "required_files": [
+      "assistant_synthetic/gastos_2026_02.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "expense_audit",
+      "data_extraction"
+    ],
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-06",
+    "level": "L2",
+    "category": "assistant_digital",
+    "prompt": "# Preparar agenda de viaje a Barcelona\n\nCruza `emails_hilos.md` y `notas_voz.jsonl` para preparar una agenda de viaje a Barcelona relacionada con Barna Health. Incluye motivo, fecha, hora y contacto.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/notas_voz.jsonl"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "agenda",
+      "synthesis"
+    ],
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-07",
+    "level": "L2",
+    "category": "assistant_digital",
+    "prompt": "# Conciliar preferencias de informe de Nova Iberia\n\nExtrae la preferencia de formato de informes de Nova Iberia usando `emails_hilos.md` y confirma el contacto correcto en `contactos_50.csv`.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "preference_extraction",
+      "reporting"
+    ],
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-08",
+    "level": "L2",
+    "category": "assistant_digital",
+    "prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/emails_hilos.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "summarization",
+      "prioritization"
+    ],
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-09",
+    "level": "L2",
+    "category": "assistant_digital",
+    "prompt": "# Auditar duplicados de marzo\n\nAnaliza `gastos_2026_03.csv` y detecta cargos duplicados. Calcula el impacto economico y la accion recomendada.",
+    "required_files": [
+      "assistant_synthetic/gastos_2026_03.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "expense_audit",
+      "duplicate_detection"
+    ],
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-10",
+    "level": "L2",
+    "category": "assistant_digital",
+    "prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "required_files": [
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "data_filtering",
+      "csv_generation"
+    ],
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-11",
+    "level": "L2",
+    "category": "assistant_digital",
+    "prompt": "# Priorizar clientes de alta prioridad\n\nLista los clientes con prioridad alta en `contactos_50.csv`. Agrupa por ciudad y recomienda tres acciones comerciales.",
+    "required_files": [
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "data_filtering",
+      "prioritization"
+    ],
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-12",
+    "level": "L2",
+    "category": "assistant_digital",
+    "prompt": "# Preparar minuta de contrato IberLegal\n\nPrepara una minuta de revision del contrato de IberLegal usando `emails_hilos.md` y `notas_voz.jsonl`. Incluye fecha limite y puntos de riesgo.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/notas_voz.jsonl"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "email_analysis",
+      "risk_extraction"
+    ],
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-13",
+    "level": "L3",
+    "category": "assistant_digital",
+    "prompt": "# Informe de discrepancias de gastos Q1\n\nAudita los gastos de enero, febrero y marzo en los CSV correspondientes. Resume discrepancias, duplicados y partidas limpias.",
+    "required_files": [
+      "assistant_synthetic/gastos_2026_01.csv",
+      "assistant_synthetic/gastos_2026_02.csv",
+      "assistant_synthetic/gastos_2026_03.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "expense_audit",
+      "multi_file_analysis"
+    ],
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-14",
+    "level": "L3",
+    "category": "assistant_digital",
+    "prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/emails_hilos.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calendar_generation",
+      "data_extraction"
+    ],
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-15",
+    "level": "L3",
+    "category": "assistant_digital",
+    "prompt": "# Cruzar notas de voz con contactos\n\nCruza notas de voz con contactos para identificar personas mencionadas y sus empresas. Devuelve una tabla con tarea, persona, empresa y email.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "entity_resolution",
+      "contacts"
+    ],
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-16",
+    "level": "L3",
+    "category": "assistant_digital",
+    "prompt": "# Preparar briefing de seguridad para Innotek\n\nPrepara un briefing para Sergio Campos de Innotek sobre riesgos de seguridad y auditoria usando los recursos locales disponibles.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "briefing",
+      "synthesis"
+    ],
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-17",
+    "level": "L3",
+    "category": "assistant_digital",
+    "prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "required_files": [
+      "assistant_synthetic/gastos_2026_01.csv",
+      "assistant_synthetic/gastos_2026_02.csv",
+      "assistant_synthetic/gastos_2026_03.csv",
+      "assistant_synthetic/gastos_2026_04.csv",
+      "assistant_synthetic/gastos_2026_05.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "expense_audit",
+      "aggregation"
+    ],
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-18",
+    "level": "L3",
+    "category": "assistant_digital",
+    "prompt": "# Segmentar prospectos para campana\n\nSegmenta los contactos tipo prospecto para una campana. Incluye empresa, ciudad, responsable sugerido y motivo de prioridad.",
+    "required_files": [
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "contacts",
+      "segmentation"
+    ],
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-19",
+    "level": "L3",
+    "category": "assistant_digital",
+    "prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/emails_hilos.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "planning",
+      "timeline"
+    ],
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-20",
+    "level": "L3",
+    "category": "assistant_digital",
+    "prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "synthesis",
+      "client_context"
+    ],
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-21",
+    "level": "L4",
+    "category": "assistant_digital",
+    "prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "web_search",
+      "comparison",
+      "reporting"
+    ],
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-22",
+    "level": "L4",
+    "category": "assistant_digital",
+    "prompt": "# Comparar Apple y Microsoft seis meses\n\nUsa busqueda web para comparar el rendimiento de Apple y Microsoft en los ultimos seis meses. Cruza el resultado con la nota de voz que lo solicita.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "web_search",
+      "financial_analysis",
+      "synthesis"
+    ],
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-23",
+    "level": "L4",
+    "category": "assistant_digital",
+    "prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "web_search",
+      "technical_report",
+      "client_context"
+    ],
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-24",
+    "level": "L4",
+    "category": "assistant_digital",
+    "prompt": "# Validar descuento Delta Equipos con mercado\n\nValida si el descuento del 4% ofrecido por Delta Equipos para monitores 27 parece competitivo frente a referencias web actuales.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/notas_voz.jsonl"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "web_search",
+      "local_data_crosscheck"
+    ],
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-25",
+    "level": "L4",
+    "category": "assistant_digital",
+    "prompt": "# Informe ejecutivo de cuentas prioritarias\n\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.",
+    "required_files": [
+      "assistant_synthetic/contactos_50.csv",
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/notas_voz.jsonl"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "synthesis",
+      "contacts",
+      "executive_report"
+    ],
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-26",
+    "level": "L4",
+    "category": "assistant_digital",
+    "prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "required_files": [
+      "assistant_synthetic/gastos_2026_01.csv",
+      "assistant_synthetic/gastos_2026_02.csv",
+      "assistant_synthetic/gastos_2026_03.csv",
+      "assistant_synthetic/gastos_2026_04.csv",
+      "assistant_synthetic/gastos_2026_05.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "expense_audit",
+      "multi_file_analysis",
+      "recommendations"
+    ],
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-27",
+    "level": "L4",
+    "category": "assistant_digital",
+    "prompt": "# Preparar tablero de acciones por responsable\n\nCrea un tablero de acciones por responsable combinando notas de voz, correos y contactos. Incluye prioridad y fecha limite cuando exista.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/contactos_50.csv",
+      "assistant_synthetic/emails_hilos.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "task_extraction",
+      "entity_resolution",
+      "planning"
+    ],
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-28",
+    "level": "L5",
+    "category": "assistant_digital",
+    "prompt": "# Investigacion web y propuesta CRM para BravoSoft\n\nInvestiga opciones actuales de CRM para pymes y redacta una propuesta de seguimiento para BravoSoft usando el contexto local de Paula Ferrer.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "web_search",
+      "email_drafting",
+      "business_analysis"
+    ],
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-29",
+    "level": "L5",
+    "category": "assistant_digital",
+    "prompt": "# Informe mensual combinado operaciones-finanzas\n\nElabora un informe mensual combinado de operaciones y finanzas cruzando contactos, emails, notas y gastos. Debe separar hechos locales, riesgos e inferencias.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/contactos_50.csv",
+      "assistant_synthetic/gastos_2026_01.csv",
+      "assistant_synthetic/gastos_2026_02.csv",
+      "assistant_synthetic/gastos_2026_03.csv",
+      "assistant_synthetic/gastos_2026_04.csv",
+      "assistant_synthetic/gastos_2026_05.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "multi_file_analysis",
+      "executive_report",
+      "risk_synthesis"
+    ],
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-30",
+    "level": "L5",
+    "category": "assistant_digital",
+    "prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "required_files": [
+      "assistant_synthetic/notas_voz.jsonl",
+      "assistant_synthetic/emails_hilos.md",
+      "assistant_synthetic/contactos_50.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "web_search",
+      "local_data_crosscheck",
+      "executive_report",
+      "strategy"
+    ],
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  }
+]

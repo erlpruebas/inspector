@@ -1,0 +1,18 @@
+{
+  "engine": "opencode",
+  "task_id": "test-01",
+  "returncode": 0,
+  "stdout": "¿Te gustaría que te ayude a recordar una cita para la Clínica Centro? Por favor, proporciona más detalles como la fecha, la hora y cualquier otra información que consideres relevante.\n",
+  "stderr": "\n> build · openai/gpt-4o-mini\n\n",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260511_160734_274227\\work\\opencode\\test-01\\resultado.md"
+  ],
+  "elapsed_seconds": 9.259269200032577,
+  "timed_out": false,
+  "usage": {},
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260511_160734_274227\\opencode_test-01_resultado.md"
+  ],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260511_160734_274227\\work\\opencode\\test-01"
+}

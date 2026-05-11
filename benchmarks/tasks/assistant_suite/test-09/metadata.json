@@ -1,0 +1,18 @@
+{
+  "id": "test-09",
+  "title": "Auditar duplicados de marzo",
+  "required_files": [
+    "assistant_synthetic/gastos_2026_03.csv"
+  ],
+  "skills": [
+    "expense_audit",
+    "duplicate_detection"
+  ],
+  "difficulty": 2,
+  "expected_keys": [
+    "Hotel Barcelona",
+    "duplicado",
+    "420.00",
+    "210.00"
+  ]
+}

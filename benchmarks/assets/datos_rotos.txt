@@ -1,0 +1,4 @@
+nombre: Ana Lopez | email ana@example.com | telefono=600111222
+Luis Martin; luis@example.com; Valencia
+Marta Ruiz | telefono=600555666 | ciudad Sevilla
+email=jorge@example.com | nombre=Jorge Soler | ciudad=Bilbao | telefono roto

@@ -1,0 +1,19 @@
+{
+  "id": "test-15",
+  "title": "Cruzar notas de voz con contactos",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "entity_resolution",
+    "contacts"
+  ],
+  "difficulty": 3,
+  "expected_keys": [
+    "Noelia Castro",
+    "Luis Martin",
+    "Tomas Vega",
+    "Laura Marin"
+  ]
+}

@@ -1,0 +1,135 @@
+¡Claro! Aquí tienes el script en Python para procesar el archivo `ventas_mayo.log` y generar el archivo `ventas.csv` bien estructurado.
+
+**Explicación del proceso:**
+
+1.  **Lectura del archivo de log:** El script leerá línea por línea el archivo `ventas_mayo.log`.
+2.  **Extracción de datos:** Para cada línea, intentará identificar y extraer la fecha, el nombre del producto, la cantidad y el precio. Dado que los formatos son variados, se utilizarán expresiones regulares y lógica condicional para manejar las diferentes estructuras.
+3.  **Normalización de fechas:** Las fechas se convertirán a un formato consistente (YYYY-MM-DD).
+4.  **Limpieza de datos:** Se eliminarán caracteres innecesarios como "producto=", "uds=", "precio unidad", "cantidad:", "total_unitario:", "unidades", "EUR", etc.
+5.  **Escritura en CSV:** Los datos extraídos y normalizados se escribirán en un archivo `ventas.csv` con las columnas especificadas: `Fecha`, `Producto`, `Cantidad`, `Precio`.
+
+**Código Python:**
+
+```python
+import re
+import csv
+from datetime import datetime
+
+def parse_log_line(line):
+    """
+    Intenta parsear una línea del archivo de log y extraer los datos de venta.
+    Retorna una tupla (fecha, producto, cantidad, precio) o None si no se puede parsear.
+    """
+    # Patrones para diferentes formatos de fecha
+    date_patterns = [
+        r'(\d{4}/\d{2}/\d{2})',  # 2026/05/01
+        r'(\d{2}-\d{2}-\d{4})',  # 02-05-2026
+        r'(Mayo\s+\d{1,2}\s+\d{4})', # Mayo 03 2026
+        r'(\d{4}-\d{2}-\d{2})',  # 2026-05-04
+        r'(\d{2}/\d{2}/\d{4})'   # 05/05/2026
+    ]
+
+    # Patrones para extraer producto, cantidad y precio
+    # Este es un patrón más general que intenta capturar diferentes estructuras
+    # Se enfoca en identificar números para cantidad y precio, y el texto restante como producto.
+    # Se ajustará según sea necesario para cada caso.
+
+    # Intentar un parseo más genérico primero
+    match = re.search(r'(.*?)\s*\|\s*producto=(.*?)\s*\|\s*uds=(\d+)\s*\|\s*precio unidad\s*(\d+\.\d+)', line)
+    if match:
+        date_str, product, quantity, price = match.groups()
+        try:
+            # Intentar normalizar la fecha
+            date_obj = datetime.strptime(date_str, '%Y/%m/%d')
+            return date_obj.strftime('%Y-%m-%d'), product.strip(), int(quantity), float(price)
+        except ValueError:
+            pass # Si la fecha no coincide, intentamos otro patrón
+
+    match = re.search(r'(\d{2}-\d{2}-\d{4})\s*producto:\s*(.*?)\s*cantidad:\s*(\d+)\s*total_unitario:\s*(\d+\.\d+)', line)
+    if match:
+        date_str, product, quantity, price = match.groups()
+        try:
+            date_obj = datetime.strptime(date_str, '%d-%m-%Y')
+            return date_obj.strftime('%Y-%m-%d'), product.strip(), int(quantity), float(price)
+        except ValueError:
+            pass
+
+    match = re.search(r'(Mayo\s+\d{1,2}\s+\d{4})\s*-\s*(.*?)\s*-\s*(\d+)\s*unidades\s*-\s*EUR\s*(\d+\.\d+)', line)
+    if match:
+        date_str, product, quantity, price = match.groups()
+        try:
+            date_obj = datetime.strptime(date_str, '%B %d %Y')
+            return date_obj.strftime('%Y-%m-%d'), product.strip(), int(quantity), float(price)
+        except ValueError:
+            pass
+
+    match = re.search(r'(\d{4}-\d{2}-\d{2});\s*(.*?);\s*cantidad\s*(\d+);\s*precio\s*(\d+\.\d+)', line)
+    if match:
+        date_str, product, quantity, price = match.groups()
+        try:
+            date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+            return date_obj.strftime('%Y-%m-%d'), product.strip(), int(quantity), float(price)
+        except ValueError:
+            pass
+
+    match = re.search(r'(\d{2}/\d{2}/\d{4}),\s*(.*?),\s*(\d+),\s*(\d+\.\d+)', line)
+    if match:
+        date_str, product, quantity, price = match.groups()
+        try:
+            date_obj = datetime.strptime(date_str, '%d/%m/%Y')
+            return date_obj.strftime('%Y-%m-%d'), product.strip(), int(quantity), float(price)
+        except ValueError:
+            pass
+
+    # Si ninguno de los patrones anteriores funcionó, intentamos un enfoque más general
+    # Esto es más propenso a errores si el formato cambia drásticamente.
+    # Intentamos encontrar una fecha, luego un número para cantidad, y otro número para precio.
+    # El texto entre ellos se considera producto.
+
+    # Buscar una fecha primero
+    date_match = None
+    for pattern in date_patterns:
+        date_match = re.search(pattern, line)
+        if date_match:
+            date_str = date_match.group(1)
+            try:
+                # Intentar parsear la fecha encontrada
+                if '/' in date_str:
+                    if len(date_str.split('/')[0]) == 4: # YYYY/MM/DD
+                        date_obj = datetime.strptime(date_str, '%Y/%m/%d')
+                    else: # DD/MM/YYYY
+                        date_obj = datetime.strptime(date_str, '%d/%m/%Y')
+                elif '-' in date_str:
+                    if len(date_str.split('-')[0]) == 4: # YYYY-MM-DD
+                        date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+                    else: # DD-MM-YYYY
+                        date_obj = datetime.strptime(date_str, '%d-%m-%Y')
+                elif 'Mayo' in date_str:
+                    date_obj = datetime.strptime(date_str, '%B %d %Y')
+                else:
+                    continue # No es un formato de fecha reconocido por este método
+
+                normalized_date = date_obj.strftime('%Y-%m-%d')
+                remaining_line = line.replace(date_match.group(0), '').strip()
+
+                # Ahora buscamos cantidad y precio en la línea restante
+                # Intentamos encontrar dos números separados por algún delimitador
+                # Este es el punto más delicado y puede requerir ajustes.
+                # Buscamos un número (cantidad) y luego otro número (precio)
+                # Consideramos que la cantidad suele ser un entero y el precio un flotante.
+
+                # Patrón para cantidad y precio (puede ser flexible)
+                # Buscamos un número entero, seguido de algo, seguido de un número flotante.
+                # Los delimitadores pueden ser comas, puntos, espacios, etc.
+                quantity_price_match = re.search(r'(\d+)\s*[,.\s-]*(\d+\.\d+)', remaining_line)
+
+                if quantity_price_match:
+                    quantity_str, price_str = quantity_price_match.groups()
+                    # Extraer el producto: todo lo que no sea la fecha, cantidad o precio
+                    # Esto es una heurística y puede fallar si el producto tiene números.
+                    product_candidate = re.sub(r'\d+', '', remaining_line) # Elimina todos los números
+                    product_candidate = re.sub(r'[,\.;\-\s]+', ' ', product_candidate).strip() # Limpia delimitadores
+                    product_candidate = re.sub(r'\s+', ' ', product_candidate).strip() # Elimina espacios extra
+
+                    # Intentar refinar el producto eliminando palabras clave comunes
+                    product_candidate = re.sub(r'(producto|cantidad|uds|precio|unidad|total|unidades|eur)', '', product_candidate, flags=re.IGNORE

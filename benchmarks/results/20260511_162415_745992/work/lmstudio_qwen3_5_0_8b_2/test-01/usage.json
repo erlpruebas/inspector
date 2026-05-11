@@ -1,0 +1,13 @@
+{
+  "provider": "lmstudio",
+  "model": "qwen3.5-0.8b:2",
+  "elapsed_seconds": 25.881,
+  "usage": {
+    "prompt_tokens": 5752,
+    "completion_tokens": 64,
+    "total_tokens": 5816,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  }
+}

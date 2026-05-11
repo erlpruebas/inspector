@@ -1,0 +1,25 @@
+# Local environments
+.venv/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment and secrets
+.env
+.env.*
+!/.env.example
+
+# Logs and runtime noise
+*.log
+*.err
+logs/
+telegram_codex_orchestrator/runtime/
+telegram_codex_orchestrator/memory/*.json
+
+# Generated media and local caches
+tts_samples/*.wav
+tts_samples/*.mp3
+*.sqlite3

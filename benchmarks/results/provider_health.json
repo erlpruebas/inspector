@@ -1,0 +1,105 @@
+{
+  "commands": {
+    "codex": {
+      "status": "found",
+      "path": "c:\\Users\\user\\.vscode\\extensions\\openai.chatgpt-26.5506.31421-win32-x64\\bin\\windows-x86_64\\codex.EXE",
+      "version": "codex-cli 0.130.0-alpha.5"
+    },
+    "gemini": {
+      "status": "found",
+      "path": "C:\\Users\\user\\AppData\\Roaming\\npm\\gemini.cmd",
+      "version": "0.41.2"
+    },
+    "opencode": {
+      "status": "found",
+      "path": "C:\\Users\\user\\AppData\\Roaming\\npm\\opencode.cmd",
+      "version": "1.14.48"
+    },
+    "groq": {
+      "status": "missing",
+      "path": ""
+    },
+    "openrouter": {
+      "status": "missing",
+      "path": ""
+    }
+  },
+  "keys": {
+    "OPENAI_API_KEY": false,
+    "GROQ_API_KEY": true,
+    "OPENROUTER_API_KEY": true,
+    "GOOGLE_API_KEY": false,
+    "GEMINI_API_KEY": true,
+    "ORCH_GOOGLE_API_KEY": false
+  },
+  "api": {
+    "groq": {
+      "status": "ok",
+      "model": "llama-3.1-8b-instant",
+      "usage": {
+        "queue_time": 0.018535916,
+        "prompt_tokens": 39,
+        "prompt_time": 0.002088648,
+        "completion_tokens": 2,
+        "completion_time": 0.004154776,
+        "total_tokens": 41,
+        "total_time": 0.006243424
+      }
+    },
+    "openrouter": {
+      "status": "ok",
+      "model": "deepseek/deepseek-v3.2",
+      "usage": {
+        "prompt_tokens": 14,
+        "completion_tokens": 2,
+        "total_tokens": 16,
+        "cost": 4.4e-06,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 4.4e-06,
+          "upstream_inference_prompt_cost": 3.64e-06,
+          "upstream_inference_completions_cost": 7.6e-07
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "gemini_api": {
+      "status": "ok",
+      "model": "gemini-2.5-flash-lite",
+      "usage": {
+        "promptTokenCount": 5,
+        "candidatesTokenCount": 1,
+        "totalTokenCount": 6,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 5
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    "lmstudio": {
+      "status": "ok",
+      "model": "qwen3.5-0.8b:2",
+      "usage": {
+        "prompt_tokens": 16,
+        "completion_tokens": 2,
+        "total_tokens": 18,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "test-14",
+  "title": "Crear calendario ICS de cuatro compromisos",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md"
+  ],
+  "skills": [
+    "calendar_generation",
+    "data_extraction"
+  ],
+  "difficulty": 3,
+  "expected_keys": [
+    "Clinica Centro",
+    "Barna Health",
+    "sala",
+    "viernes 09:30"
+  ]
+}

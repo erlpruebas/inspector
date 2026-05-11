@@ -1,0 +1,152 @@
+[
+  {
+    "id": "test-01",
+    "title": "Recordar cita de Clinica Centro",
+    "difficulty": 1
+  },
+  {
+    "id": "test-02",
+    "title": "Crear lista de contactos prioritarios de Madrid",
+    "difficulty": 1
+  },
+  {
+    "id": "test-03",
+    "title": "Extraer tareas de notas de voz",
+    "difficulty": 1
+  },
+  {
+    "id": "test-04",
+    "title": "Redactar email de seguimiento a BravoSoft",
+    "difficulty": 1
+  },
+  {
+    "id": "test-05",
+    "title": "Detectar gasto discrepante de febrero",
+    "difficulty": 1
+  },
+  {
+    "id": "test-06",
+    "title": "Preparar agenda de viaje a Barcelona",
+    "difficulty": 2
+  },
+  {
+    "id": "test-07",
+    "title": "Conciliar preferencias de informe de Nova Iberia",
+    "difficulty": 2
+  },
+  {
+    "id": "test-08",
+    "title": "Resumen semanal de tareas pendientes",
+    "difficulty": 2
+  },
+  {
+    "id": "test-09",
+    "title": "Auditar duplicados de marzo",
+    "difficulty": 2
+  },
+  {
+    "id": "test-10",
+    "title": "Crear CSV de proveedores",
+    "difficulty": 2
+  },
+  {
+    "id": "test-11",
+    "title": "Priorizar clientes de alta prioridad",
+    "difficulty": 2
+  },
+  {
+    "id": "test-12",
+    "title": "Preparar minuta de contrato IberLegal",
+    "difficulty": 2
+  },
+  {
+    "id": "test-13",
+    "title": "Informe de discrepancias de gastos Q1",
+    "difficulty": 3
+  },
+  {
+    "id": "test-14",
+    "title": "Crear calendario ICS de cuatro compromisos",
+    "difficulty": 3
+  },
+  {
+    "id": "test-15",
+    "title": "Cruzar notas de voz con contactos",
+    "difficulty": 3
+  },
+  {
+    "id": "test-16",
+    "title": "Preparar briefing de seguridad para Innotek",
+    "difficulty": 3
+  },
+  {
+    "id": "test-17",
+    "title": "Resumen financiero de gastos enero-mayo",
+    "difficulty": 3
+  },
+  {
+    "id": "test-18",
+    "title": "Segmentar prospectos para campana",
+    "difficulty": 3
+  },
+  {
+    "id": "test-19",
+    "title": "Plan de seguimiento de implantacion",
+    "difficulty": 3
+  },
+  {
+    "id": "test-20",
+    "title": "Informe de incidencias de Clinica Centro",
+    "difficulty": 3
+  },
+  {
+    "id": "test-21",
+    "title": "Buscar alternativa a herramienta de encuestas",
+    "difficulty": 4
+  },
+  {
+    "id": "test-22",
+    "title": "Comparar Apple y Microsoft seis meses",
+    "difficulty": 4
+  },
+  {
+    "id": "test-23",
+    "title": "Investigar proveedor de SSO para Barna Health",
+    "difficulty": 4
+  },
+  {
+    "id": "test-24",
+    "title": "Validar descuento Delta Equipos con mercado",
+    "difficulty": 4
+  },
+  {
+    "id": "test-25",
+    "title": "Informe ejecutivo de cuentas prioritarias",
+    "difficulty": 4
+  },
+  {
+    "id": "test-26",
+    "title": "Auditoria completa de gastos con recomendaciones",
+    "difficulty": 4
+  },
+  {
+    "id": "test-27",
+    "title": "Preparar tablero de acciones por responsable",
+    "difficulty": 4
+  },
+  {
+    "id": "test-28",
+    "title": "Investigacion web y propuesta CRM para BravoSoft",
+    "difficulty": 5
+  },
+  {
+    "id": "test-29",
+    "title": "Informe mensual combinado operaciones-finanzas",
+    "difficulty": 5
+  },
+  {
+    "id": "test-30",
+    "title": "Investigacion profunda y plan ejecutivo de IA ofimatica",
+    "difficulty": 5
+  }
+]

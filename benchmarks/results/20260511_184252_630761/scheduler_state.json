@@ -1,0 +1,46 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260511_184252_630761",
+  "jobs": [
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "lmstudio:qwen3.5-0.8b:2",
+      "task_id": "test-01",
+      "next_run_at": 1778517959.134556,
+      "attempts": 1,
+      "done": false
+    }
+  ],
+  "completed": [
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-11T16:42:57.231780+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-01",
+      "at": "2026-05-11T16:42:58.260745+00:00"
+    }
+  ],
+  "deferred": [
+    {
+      "job": "lmstudio:qwen3.5-0.8b:2::test-01",
+      "at": "2026-05-11T16:44:59.134723+00:00",
+      "next_run_at": "2026-05-11T16:45:59.134556+00:00",
+      "reason": "timed out"
+    }
+  ],
+  "failed": [],
+  "running": null
+}

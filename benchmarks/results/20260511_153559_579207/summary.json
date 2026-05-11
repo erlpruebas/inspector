@@ -1,0 +1,81 @@
+[
+  {
+    "engine": "openrouter",
+    "task_id": "conversion_ventas",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-4o-mini\", \"elapsed_seconds\": 3.623, \"usage\": {\"prompt_tokens\": 254, \"completion_tokens\": 94, \"total_tokens\": 348, \"cost\": 9.45e-05, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 9.45e-05, \"upstream_inference_prompt_cost\": 3.81e-05, \"upstream_inference_completions_cost\": 5.64e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_153559_579207\\work\\openrouter\\conversion_ventas\\ventas.csv"
+    ],
+    "elapsed_seconds": 3.86870990000898,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "openai/gpt-4o-mini",
+      "elapsed_seconds": 3.623,
+      "usage": {
+        "prompt_tokens": 254,
+        "completion_tokens": 94,
+        "total_tokens": 348,
+        "cost": 9.45e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.45e-05,
+          "upstream_inference_prompt_cost": 3.81e-05,
+          "upstream_inference_completions_cost": 5.64e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_153559_579207\\openrouter_conversion_ventas_ventas.csv"
+    ],
+    "task_prompt": "Toma los datos sueltos de ventas_mayo.log y genera un archivo ventas.csv bien estructurado con columnas: Fecha, Producto, Cantidad, Precio.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_153559_579207\\work\\openrouter\\conversion_ventas"
+  },
+  {
+    "engine": "gemini_api",
+    "task_id": "conversion_ventas",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 2.591, \"usage\": {\"promptTokenCount\": 249, \"candidatesTokenCount\": 129, \"totalTokenCount\": 378, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 249}], \"serviceTier\": \"standard\"}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_153559_579207\\work\\gemini_api\\conversion_ventas\\ventas.csv"
+    ],
+    "elapsed_seconds": 2.9282918000244536,
+    "timed_out": false,
+    "usage": {
+      "provider": "gemini_api",
+      "model": "gemini-2.5-flash-lite",
+      "elapsed_seconds": 2.591,
+      "usage": {
+        "promptTokenCount": 249,
+        "candidatesTokenCount": 129,
+        "totalTokenCount": 378,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 249
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_153559_579207\\gemini_api_conversion_ventas_ventas.csv"
+    ],
+    "task_prompt": "Toma los datos sueltos de ventas_mayo.log y genera un archivo ventas.csv bien estructurado con columnas: Fecha, Producto, Cantidad, Precio.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_153559_579207\\work\\gemini_api\\conversion_ventas"
+  }
+]

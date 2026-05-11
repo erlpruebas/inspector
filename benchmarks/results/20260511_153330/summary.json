@@ -1,0 +1,36 @@
+[
+  {
+    "engine": "gemini_api",
+    "task_id": "resumen_ejecutivo",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 1.528, \"usage\": {\"promptTokenCount\": 226, \"candidatesTokenCount\": 242, \"totalTokenCount\": 468, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 226}], \"serviceTier\": \"standard\"}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_153330\\work\\gemini_api\\resumen_ejecutivo\\resultado.md"
+    ],
+    "elapsed_seconds": 1.7399735000217333,
+    "timed_out": false,
+    "usage": {
+      "provider": "gemini_api",
+      "model": "gemini-2.5-flash-lite",
+      "elapsed_seconds": 1.528,
+      "usage": {
+        "promptTokenCount": 226,
+        "candidatesTokenCount": 242,
+        "totalTokenCount": 468,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 226
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_153330\\gemini_api_resumen_ejecutivo_resultado.md"
+    ],
+    "task_prompt": "Lee el archivo acta_reunion.txt y genera un resumen en 3 puntos clave y una lista de tareas pendientes. Guarda la respuesta principal en resultado.md.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_153330\\work\\gemini_api\\resumen_ejecutivo"
+  }
+]

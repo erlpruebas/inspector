@@ -1,0 +1,20 @@
+{
+  "id": "test-20",
+  "title": "Informe de incidencias de Clinica Centro",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "synthesis",
+    "client_context"
+  ],
+  "difficulty": 3,
+  "expected_keys": [
+    "Clinica Centro",
+    "Noelia Castro",
+    "modulo de pagos",
+    "facturacion"
+  ]
+}

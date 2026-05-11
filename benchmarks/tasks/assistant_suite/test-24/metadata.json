@@ -1,0 +1,19 @@
+{
+  "id": "test-24",
+  "title": "Validar descuento Delta Equipos con mercado",
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "skills": [
+    "web_search",
+    "local_data_crosscheck"
+  ],
+  "difficulty": 4,
+  "expected_keys": [
+    "Delta Equipos",
+    "monitores 27",
+    "4%",
+    "comparativa"
+  ]
+}

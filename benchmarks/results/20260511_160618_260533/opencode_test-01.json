@@ -1,0 +1,14 @@
+{
+  "engine": "opencode",
+  "task_id": "test-01",
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "\u001b[0m\n> build · google/gemini-3-pro-preview\n\u001b[0m\n\u001b[91m\u001b[1mError: \u001b[0mNo endpoints found for google/gemini-3-pro-preview.\n",
+  "output_files": [],
+  "elapsed_seconds": 5.755796599958558,
+  "timed_out": false,
+  "usage": {},
+  "copied_outputs": [],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260511_160618_260533\\work\\opencode\\test-01"
+}

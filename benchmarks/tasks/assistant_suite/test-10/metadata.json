@@ -1,0 +1,18 @@
+{
+  "id": "test-10",
+  "title": "Crear CSV de proveedores",
+  "required_files": [
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "data_filtering",
+    "csv_generation"
+  ],
+  "difficulty": 2,
+  "expected_keys": [
+    "proveedor",
+    "IberLegal",
+    "Tecnoria",
+    "SerConta"
+  ]
+}

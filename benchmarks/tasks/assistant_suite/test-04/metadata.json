@@ -1,0 +1,19 @@
+{
+  "id": "test-04",
+  "title": "Redactar email de seguimiento a BravoSoft",
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "email_drafting",
+    "tone_control"
+  ],
+  "difficulty": 1,
+  "expected_keys": [
+    "Paula Ferrer",
+    "BravoSoft",
+    "correo corto",
+    "propuesta CRM"
+  ]
+}

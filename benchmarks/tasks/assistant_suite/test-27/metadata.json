@@ -1,0 +1,21 @@
+{
+  "id": "test-27",
+  "title": "Preparar tablero de acciones por responsable",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/contactos_50.csv",
+    "assistant_synthetic/emails_hilos.md"
+  ],
+  "skills": [
+    "task_extraction",
+    "entity_resolution",
+    "planning"
+  ],
+  "difficulty": 4,
+  "expected_keys": [
+    "responsable",
+    "fecha limite",
+    "cliente",
+    "prioridad"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "test-05",
+  "title": "Detectar gasto discrepante de febrero",
+  "required_files": [
+    "assistant_synthetic/gastos_2026_02.csv"
+  ],
+  "skills": [
+    "expense_audit",
+    "data_extraction"
+  ],
+  "difficulty": 1,
+  "expected_keys": [
+    "Licencia PDF",
+    "19.90",
+    "29.90",
+    "importe_discrepante"
+  ]
+}

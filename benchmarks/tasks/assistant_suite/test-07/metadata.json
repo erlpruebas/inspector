@@ -1,0 +1,19 @@
+{
+  "id": "test-07",
+  "title": "Conciliar preferencias de informe de Nova Iberia",
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "preference_extraction",
+    "reporting"
+  ],
+  "difficulty": 2,
+  "expected_keys": [
+    "Ana Lopez",
+    "PDF",
+    "resumen ejecutivo",
+    "anexos"
+  ]
+}

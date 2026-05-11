@@ -1,0 +1,49 @@
+{
+  "engine": "openrouter",
+  "task_id": "conversion_ventas",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-4o-mini\", \"elapsed_seconds\": 2.649, \"usage\": {\"prompt_tokens\": 206, \"completion_tokens\": 153, \"total_tokens\": 359, \"cost\": 0.0001227, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0001227, \"upstream_inference_prompt_cost\": 3.09e-05, \"upstream_inference_completions_cost\": 9.18e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260511_153406_039559\\work\\openrouter\\conversion_ventas\\resultado.md",
+    "D:\\inspector\\benchmarks\\results\\20260511_153406_039559\\work\\openrouter\\conversion_ventas\\usage.json",
+    "D:\\inspector\\benchmarks\\results\\20260511_153406_039559\\work\\openrouter\\conversion_ventas\\ventas_mayo.log"
+  ],
+  "elapsed_seconds": 2.875197199988179,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "openai/gpt-4o-mini",
+    "elapsed_seconds": 2.649,
+    "usage": {
+      "prompt_tokens": 206,
+      "completion_tokens": 153,
+      "total_tokens": 359,
+      "cost": 0.0001227,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0001227,
+        "upstream_inference_prompt_cost": 3.09e-05,
+        "upstream_inference_completions_cost": 9.18e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260511_153406_039559\\openrouter_conversion_ventas_resultado.md",
+    "D:\\inspector\\benchmarks\\results\\20260511_153406_039559\\openrouter_conversion_ventas_usage.json",
+    "D:\\inspector\\benchmarks\\results\\20260511_153406_039559\\openrouter_conversion_ventas_ventas_mayo.log"
+  ],
+  "task_prompt": "Toma los datos sueltos de ventas_mayo.log y genera un archivo ventas.csv bien estructurado con columnas: Fecha, Producto, Cantidad, Precio.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260511_153406_039559\\work\\openrouter\\conversion_ventas"
+}

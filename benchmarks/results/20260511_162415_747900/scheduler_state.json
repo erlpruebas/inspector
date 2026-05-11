@@ -1,0 +1,20 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260511_162415_747900",
+  "jobs": [
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "groq:llama-3.1-8b-instant::test-01",
+      "at": "2026-05-11T14:24:16.647284+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": []
+}

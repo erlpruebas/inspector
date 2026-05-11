@@ -1,0 +1,19 @@
+{
+  "id": "test-21",
+  "title": "Buscar alternativa a herramienta de encuestas",
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "skills": [
+    "web_search",
+    "comparison",
+    "reporting"
+  ],
+  "difficulty": 4,
+  "expected_keys": [
+    "GreenBox",
+    "encuestas",
+    "precio",
+    "fuentes"
+  ]
+}

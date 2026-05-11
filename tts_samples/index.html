@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inspector - Opciones TTS y STT</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f4ef;
+      --ink: #1e252b;
+      --muted: #5d6873;
+      --line: #d8d2c5;
+      --panel: #fffdf8;
+      --ok: #176b4d;
+      --warn: #8a5a00;
+      --bad: #9c2f2f;
+      --info: #285d87;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Segoe UI, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    header {
+      padding: 32px 28px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfaf6;
+    }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px 28px 48px; }
+    h1 { margin: 0 0 8px; font-size: 30px; line-height: 1.15; }
+    h2 { margin: 30px 0 12px; font-size: 21px; }
+    h3 { margin: 0 0 8px; font-size: 17px; }
+    p { margin: 6px 0; line-height: 1.48; }
+    code { background: #ebe5d8; padding: 2px 5px; border-radius: 4px; }
+    .lead { color: var(--muted); max-width: 880px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 14px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+    .wide { grid-column: 1 / -1; }
+    audio { display: block; width: 100%; margin: 10px 0 8px; }
+    .meta { color: var(--muted); font-size: 13px; }
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 3px 8px;
+      margin: 0 5px 8px 0;
+      background: #ece7dc;
+    }
+    .ok { color: var(--ok); background: #e6f3ed; }
+    .warn { color: var(--warn); background: #fff3d7; }
+    .bad { color: var(--bad); background: #fde6e6; }
+    .info { color: var(--info); background: #e4f0f8; }
+    ul { margin: 8px 0 0 20px; padding: 0; }
+    li { margin: 5px 0; }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); }
+    th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { background: #eee8dc; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Inspector - pruebas de voz</h1>
+  <p class="lead">
+    Página reconstruida desde <code>D:\inspector</code>, <code>D:\credenciales</code>,
+    <code>D:\telegram-assistant-minimo</code> y <code>G:\Otros ordenadores\Main\D\boca-oreja</code>.
+    No muestra claves: solo estado de disponibilidad, comentario y reproductores.
+  </p>
+</header>
+
+<main>
+  <h2>Resumen De Credenciales</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Google / Gemini</h3>
+      <span class="pill ok">2 claves válidas</span>
+      <p>Las claves encontradas en <code>D:\credenciales</code> responden correctamente. Con ellas se generaron las muestras nuevas de Gemini TTS.</p>
+    </article>
+    <article class="card">
+      <h3>ElevenLabs</h3>
+      <span class="pill bad">2 claves con 401</span>
+      <p>Hay claves detectadas, pero la API las rechaza. La muestra incluida es histórica, copiada del laboratorio donde ya estaba generada.</p>
+    </article>
+    <article class="card">
+      <h3>Groq</h3>
+      <span class="pill warn">clave con 403</span>
+      <p>Hay una clave con formato Groq, pero no autoriza la llamada actual. STT/TTS Groq queda comentado como opción, no probado ahora.</p>
+    </article>
+  </div>
+
+  <h2>TTS - Texto A Voz</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Google Gemini 2.5 Flash Preview TTS</h3>
+      <span class="pill ok">generado ahora</span>
+      <span class="pill info">voz Kore</span>
+      <audio controls src="gemini_25_flash_preview_tts.wav"></audio>
+      <p>Opción cloud más equilibrada del proyecto: buena calidad, español correcto y coste bajo. Es la primera que usaría para respuestas de Telegram.</p>
+      <p class="meta">Archivo: <code>gemini_25_flash_preview_tts.wav</code></p>
+    </article>
+
+    <article class="card">
+      <h3>Google Gemini 2.5 Pro Preview TTS</h3>
+      <span class="pill ok">generado ahora</span>
+      <span class="pill info">voz Puck</span>
+      <audio controls src="gemini_25_pro_preview_tts.wav"></audio>
+      <p>Más caro y, según tabla actual, sin free tier estándar. Lo reservaría para piezas donde importe más la naturalidad que el coste.</p>
+      <p class="meta">Archivo: <code>gemini_25_pro_preview_tts.wav</code></p>
+    </article>
+
+    <article class="card">
+      <h3>Google Gemini 3.1 Flash TTS Preview</h3>
+      <span class="pill ok">generado ahora</span>
+      <span class="pill info">voz Zephyr</span>
+      <audio controls src="gemini_31_flash_tts_preview.wav"></audio>
+      <p>Modelo preview reciente. Interesante para comparar, aunque al ser preview puede cambiar de límites, precio o disponibilidad.</p>
+      <p class="meta">Archivo: <code>gemini_31_flash_tts_preview.wav</code></p>
+    </article>
+
+    <article class="card">
+      <h3>Edge TTS</h3>
+      <span class="pill ok">muestra del laboratorio</span>
+      <span class="pill info">es-ES-ElviraNeural</span>
+      <audio controls src="edge_tts_es_ES_ElviraNeural.mp3"></audio>
+      <p>Muy útil para pruebas rápidas: no pide clave y tiene voces españolas decentes. No lo trataría como API contractual de producción.</p>
+      <p class="meta">Archivo: <code>edge_tts_es_ES_ElviraNeural.mp3</code></p>
+    </article>
+
+    <article class="card">
+      <h3>ElevenLabs</h3>
+      <span class="pill warn">muestra histórica</span>
+      <span class="pill bad">clave actual inválida</span>
+      <audio controls src="elevenlabs_sample_existing.mp3"></audio>
+      <p>Probablemente la mejor calidad comercial del conjunto, pero ahora mismo las claves de <code>D:\credenciales</code> devuelven 401.</p>
+      <p class="meta">Archivo: <code>elevenlabs_sample_existing.mp3</code></p>
+    </article>
+
+    <article class="card">
+      <h3>Piper Local</h3>
+      <span class="pill ok">muestra del laboratorio</span>
+      <span class="pill info">es_ES-davefx-medium</span>
+      <audio controls src="piper_es_ES_davefx_medium.wav"></audio>
+      <p>Local, privado y sin coste por petición. Calidad más mecánica que Gemini/ElevenLabs, pero ideal como fallback robusto.</p>
+      <p class="meta">Archivo: <code>piper_es_ES_davefx_medium.wav</code></p>
+    </article>
+
+    <article class="card">
+      <h3>Kokoro Local</h3>
+      <span class="pill ok">muestra del laboratorio</span>
+      <span class="pill info">ef_dora</span>
+      <audio controls src="kokoro_ef_dora.wav"></audio>
+      <p>Local y gratuito. Puede sonar más natural que Piper si el modelo y voces están bien instalados, aunque exige tener sus assets ONNX.</p>
+      <p class="meta">Archivo: <code>kokoro_ef_dora.wav</code></p>
+    </article>
+
+    <article class="card">
+      <h3>Windows SAPI</h3>
+      <span class="pill ok">generado ahora</span>
+      <span class="pill info">Microsoft Helena Desktop</span>
+      <audio controls src="windows_sapi_Microsoft_Helena_Desktop.wav"></audio>
+      <p>Fallback local inmediato de Windows. Calidad clásica, pero no depende de internet ni de claves.</p>
+      <p class="meta">Archivo: <code>windows_sapi_Microsoft_Helena_Desktop.wav</code></p>
+    </article>
+
+    <article class="card">
+      <h3>Groq TTS</h3>
+      <span class="pill warn">integrado en código</span>
+      <span class="pill bad">no generado</span>
+      <p>El proyecto lo tiene preparado, pero su TTS oficial se centra en inglés y árabe. La clave actual respondió 403, así que no hay audio nuevo.</p>
+      <p class="meta">Modelo en código: <code>canopylabs/orpheus-v1-english</code>, voz <code>troy</code>.</p>
+    </article>
+  </div>
+
+  <h2>STT - Voz A Texto</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Groq STT</h3>
+      <span class="pill warn">integrado</span>
+      <span class="pill bad">clave 403 ahora</span>
+      <p>En <code>boca-oreja</code> es el STT principal: <code>whisper-large-v3-turbo</code> primero y <code>whisper-large-v3</code> como alternativa. Es rápido y multilenguaje.</p>
+    </article>
+    <article class="card">
+      <h3>Whisper Local</h3>
+      <span class="pill ok">fallback local</span>
+      <p>Usa <code>faster-whisper</code> con modelos como <code>small</code>, <code>medium</code> o <code>large-v3</code>. No consume API, pero tira de CPU/GPU local.</p>
+    </article>
+  </div>
+
+  <h2>Coste Y Cuotas</h2>
+  <table>
+    <thead>
+      <tr><th>Opción</th><th>Gratis / límite</th><th>Pago aproximado</th><th>Comentario práctico</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gemini 2.5 Flash TTS</td>
+        <td>Free tier disponible; límites reales visibles en AI Studio.</td>
+        <td>$0.50 / 1M tokens input, $10 / 1M tokens audio.</td>
+        <td>Mi candidata principal para el asistente.</td>
+      </tr>
+      <tr>
+        <td>Gemini 2.5 Pro TTS</td>
+        <td>Sin free tier estándar en la tabla consultada.</td>
+        <td>$1 / 1M input, $20 / 1M audio.</td>
+        <td>Más cara; usar solo si gana claramente en voz.</td>
+      </tr>
+      <tr>
+        <td>Gemini 3.1 Flash TTS Preview</td>
+        <td>Free tier disponible; preview con límites variables.</td>
+        <td>$1 / 1M input, $20 / 1M audio.</td>
+        <td>Buena para experimentar, menos estable por ser preview.</td>
+      </tr>
+      <tr>
+        <td>ElevenLabs</td>
+        <td>Plan gratis: 10k créditos/mes. API incluida incluso en free.</td>
+        <td>Depende de plan/modelo; V2 Multilingual suele ser 1 crédito/caracter, Flash/Turbo V2.5 baja a 0.5-1 crédito/caracter.</td>
+        <td>Excelente calidad, pero hay que renovar la clave.</td>
+      </tr>
+      <tr>
+        <td>Groq TTS</td>
+        <td>Cuenta gratuita para probar, con límites del plan.</td>
+        <td>Orpheus English $22 / 1M caracteres; Arabic $40 / 1M caracteres.</td>
+        <td>No es buena ruta para español hoy.</td>
+      </tr>
+      <tr>
+        <td>Groq STT</td>
+        <td>Cuenta gratuita con límites; archivos hasta 25 MB en free tier según docs.</td>
+        <td>Whisper Turbo $0.04/h transcrita; Whisper Large v3 $0.111/h.</td>
+        <td>Muy buena ruta si la clave queda operativa.</td>
+      </tr>
+      <tr>
+        <td>Edge TTS</td>
+        <td>Sin clave ni coste directo en <code>edge-tts</code>.</td>
+        <td>No hay tarifa API formal para este wrapper.</td>
+        <td>Útil para pruebas y uso personal, cuidado en producción.</td>
+      </tr>
+      <tr>
+        <td>Piper / Kokoro / Windows SAPI / Whisper local</td>
+        <td>Ilimitado en API: corre en tu máquina.</td>
+        <td>Coste local de CPU/GPU y almacenamiento.</td>
+        <td>La ruta privada y robusta para fallback.</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>

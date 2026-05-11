@@ -1,0 +1,20 @@
+{
+  "id": "test-23",
+  "title": "Investigar proveedor de SSO para Barna Health",
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "skills": [
+    "web_search",
+    "technical_report",
+    "client_context"
+  ],
+  "difficulty": 4,
+  "expected_keys": [
+    "Barna Health",
+    "SSO",
+    "Xavier Puig",
+    "fuentes"
+  ]
+}

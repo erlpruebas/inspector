@@ -1,0 +1,21 @@
+[
+  {
+    "engine": "opencode_groq_llama_3_1_8b_instant",
+    "task_id": "test-01",
+    "returncode": 1,
+    "stdout": "{\"type\":\"error\",\"timestamp\":1778526916846,\"sessionID\":\"ses_1e788f3acffet4XVtDcwzx5fOk\",\"error\":{\"name\":\"ContextOverflowError\",\"data\":{\"message\":\"Request too large for model `llama-3.1-8b-instant` in organization `org_01kkkqs7apf21aaqjgzy953669` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 49025, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"responseBody\":\"{\\\"error\\\":{\\\"message\\\":\\\"Request too large for model `llama-3.1-8b-instant` in organization `org_01kkkqs7apf21aaqjgzy953669` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 49025, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\\\",\\\"type\\\":\\\"tokens\\\",\\\"code\\\":\\\"rate_limit_exceeded\\\"}}\\n\"}}}\n{\"type\":\"error\",\"timestamp\":1778526917466,\"sessionID\":\"ses_1e788f3acffet4XVtDcwzx5fOk\",\"error\":{\"name\":\"ContextOverflowError\",\"data\":{\"message\":\"Request too large for model `llama-3.1-8b-instant` in organization `org_01kkkqs7apf21aaqjgzy953669` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 32771, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"responseBody\":\"{\\\"error\\\":{\\\"message\\\":\\\"Request too large for model `llama-3.1-8b-instant` in organization `org_01kkkqs7apf21aaqjgzy953669` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 32771, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\\\",\\\"type\\\":\\\"tokens\\\",\\\"code\\\":\\\"rate_limit_exceeded\\\"}}\\n\"}}}\n",
+    "stderr": "OpenCode finished without creating expected output.",
+    "output_files": [],
+    "elapsed_seconds": 4.374141599982977,
+    "timed_out": false,
+    "usage": {},
+    "model": "groq/llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:groq/llama-3.1-8b-instant",
+    "copied_outputs": [],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_211513_464172\\work\\opencode_groq_llama_3_1_8b_instant\\test-01"
+  }
+]

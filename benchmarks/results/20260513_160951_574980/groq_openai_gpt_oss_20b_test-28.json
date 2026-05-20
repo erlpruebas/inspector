@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-28",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 1.987, \"usage\": {\"queue_time\": 0.017016681, \"prompt_tokens\": 4120, \"prompt_time\": 0.232866316, \"completion_tokens\": 1600, \"completion_time\": 1.611095793, \"total_tokens\": 5720, \"total_time\": 1.843962109, \"completion_tokens_details\": {\"reasoning_tokens\": 403}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-28\\resultado.md"
+  ],
+  "elapsed_seconds": 2.1809114000061527,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 1.987,
+    "usage": {
+      "queue_time": 0.017016681,
+      "prompt_tokens": 4120,
+      "prompt_time": 0.232866316,
+      "completion_tokens": 1600,
+      "completion_time": 1.611095793,
+      "total_tokens": 5720,
+      "total_time": 1.843962109,
+      "completion_tokens_details": {
+        "reasoning_tokens": 403
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-28_resultado.md"
+  ],
+  "task_prompt": "# Investigacion web y propuesta CRM para BravoSoft\n\nInvestiga opciones actuales de CRM para pymes y redacta una propuesta de seguimiento para BravoSoft usando el contexto local de Paula Ferrer.",
+  "execution_prompt": "# Investigacion web y propuesta CRM para BravoSoft\n\nInvestiga opciones actuales de CRM para pymes y redacta una propuesta de seguimiento para BravoSoft usando el contexto local de Paula Ferrer.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-28"
+}

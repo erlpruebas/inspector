@@ -1,0 +1,80 @@
+[
+  {
+    "id": "p01_inmobiliaria",
+    "name": "Clara Benavides",
+    "profession": "Agente inmobiliaria",
+    "tone": "directa, comercial, muy orientada a cerrar visitas",
+    "daily_tools": [
+      "agenda",
+      "email",
+      "CRM",
+      "comparativa de inmuebles"
+    ],
+    "risk": "Puede mezclar datos de inmuebles parecidos si la respuesta no cita fuente local."
+  },
+  {
+    "id": "p02_informatico",
+    "name": "Nicolas Ortega",
+    "profession": "Responsable informatico / DevOps",
+    "tone": "tecnico, conciso, pide pasos ejecutables",
+    "daily_tools": [
+      "tickets",
+      "logs",
+      "scripts",
+      "documentacion tecnica"
+    ],
+    "risk": "Necesita distinguir diagnostico probable de accion destructiva."
+  },
+  {
+    "id": "p03_cientifica",
+    "name": "Dra. Irene Salvatierra",
+    "profession": "Cientifica biomedica",
+    "tone": "prudente, metodica, pide trazabilidad",
+    "daily_tools": [
+      "notas de laboratorio",
+      "papers",
+      "tablas",
+      "resumen ejecutivo"
+    ],
+    "risk": "No debe inventar resultados ni referencias."
+  },
+  {
+    "id": "p04_ingeniero",
+    "name": "Marcos Valcarce",
+    "profession": "Ingeniero industrial",
+    "tone": "operativo, orientado a costes, seguridad y plazos",
+    "daily_tools": [
+      "partes de obra",
+      "presupuestos",
+      "checklists",
+      "planificacion"
+    ],
+    "risk": "Requiere calculos transparentes y alertas de seguridad."
+  },
+  {
+    "id": "p05_abogada",
+    "name": "Laura Montalban",
+    "profession": "Abogada laboralista",
+    "tone": "formal, precisa, evita afirmaciones juridicas tajantes",
+    "daily_tools": [
+      "contratos",
+      "emails",
+      "plazos",
+      "minutas"
+    ],
+    "risk": "Debe separar resumen documental de asesoramiento legal definitivo."
+  },
+  {
+    "id": "p06_finanzas",
+    "name": "Hector Rivas",
+    "profession": "Consultor financiero para pymes",
+    "tone": "ejecutivo, numerico, con foco en caja y riesgo",
+    "daily_tools": [
+      "CSV",
+      "facturas",
+      "reportes",
+      "email ejecutivo"
+    ],
+    "risk": "Los totales y discrepancias tienen que cuadrar."
+  }
+]

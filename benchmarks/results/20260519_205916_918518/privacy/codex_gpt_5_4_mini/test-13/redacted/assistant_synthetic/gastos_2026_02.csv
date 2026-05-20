@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+PHONE_0091,Cena cliente,comidas,96.2,96.2,ok
+PHONE_0090,PERSON_0075,viajes,62.0,62.0,ok
+PHONE_0089,Licencia PDF,software,19.9,29.9,importe_discrepante

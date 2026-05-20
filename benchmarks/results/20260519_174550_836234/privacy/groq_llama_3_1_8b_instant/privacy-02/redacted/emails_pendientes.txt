@@ -1,0 +1,8 @@
+De: PERSON_0005: PERSON_0004 producto
+Podemos reunirnos el DATE_0003 a las 10:30 para ver la demo?
+
+De: PERSON_0003: Revision contrato
+Reserva el DATE_0002 a las 16:00 para revisar el contrato con legal.
+
+De: PERSON_0002: Seguimiento cliente
+Nos vemos el DATE_0001 a las 09:15 para preparar la llamada con el cliente.

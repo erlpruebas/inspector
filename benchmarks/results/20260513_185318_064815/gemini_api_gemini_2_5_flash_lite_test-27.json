@@ -1,0 +1,39 @@
+{
+  "engine": "gemini_api_gemini_2_5_flash_lite",
+  "task_id": "test-27",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 4.696, \"usage\": {\"promptTokenCount\": 4230, \"candidatesTokenCount\": 1201, \"totalTokenCount\": 5431, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 4230}], \"serviceTier\": \"standard\"}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\gemini_api_gemini_2_5_flash_lite\\test-27\\resultado.md"
+  ],
+  "elapsed_seconds": 4.999921799986623,
+  "timed_out": false,
+  "usage": {
+    "provider": "gemini_api",
+    "model": "gemini-2.5-flash-lite",
+    "elapsed_seconds": 4.696,
+    "usage": {
+      "promptTokenCount": 4230,
+      "candidatesTokenCount": 1201,
+      "totalTokenCount": 5431,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 4230
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\gemini_api_gemini_2_5_flash_lite_test-27_resultado.md"
+  ],
+  "task_prompt": "# Preparar tablero de acciones por responsable\n\nCrea un tablero de acciones por responsable combinando notas de voz, correos y contactos. Incluye prioridad y fecha limite cuando exista.",
+  "execution_prompt": "# Preparar tablero de acciones por responsable\n\nCrea un tablero de acciones por responsable combinando notas de voz, correos y contactos. Incluye prioridad y fecha limite cuando exista.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/contactos_50.csv`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\gemini_api_gemini_2_5_flash_lite\\test-27"
+}

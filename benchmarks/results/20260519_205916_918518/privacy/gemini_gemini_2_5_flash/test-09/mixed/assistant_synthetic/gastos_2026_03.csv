@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+2026-03-04 [PHONE_0093],Hotel Barcelona [PERSON_0076],viajes,210.0,210.0,posible_duplicado
+2026-03-04 [PHONE_0093],Hotel Barcelona [PERSON_0076],viajes,210.0,210.0,posible_duplicado
+2026-03-19 [PHONE_0092],Comida equipo,comidas,134.7,134.7,ok

@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-24",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 0.917, \"usage\": {\"queue_time\": 0.015894891, \"prompt_tokens\": 3053, \"prompt_time\": 0.18570961, \"completion_tokens\": 572, \"completion_time\": 0.589980946, \"total_tokens\": 3625, \"total_time\": 0.775690556, \"completion_tokens_details\": {\"reasoning_tokens\": 416}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-24\\resultado.md"
+  ],
+  "elapsed_seconds": 1.113342099939473,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 0.917,
+    "usage": {
+      "queue_time": 0.015894891,
+      "prompt_tokens": 3053,
+      "prompt_time": 0.18570961,
+      "completion_tokens": 572,
+      "completion_time": 0.589980946,
+      "total_tokens": 3625,
+      "total_time": 0.775690556,
+      "completion_tokens_details": {
+        "reasoning_tokens": 416
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-24_resultado.md"
+  ],
+  "task_prompt": "# Validar descuento Delta Equipos con mercado\n\nValida si el descuento del 4% ofrecido por Delta Equipos para monitores 27 parece competitivo frente a referencias web actuales.",
+  "execution_prompt": "# Validar descuento Delta Equipos con mercado\n\nValida si el descuento del 4% ofrecido por Delta Equipos para monitores 27 parece competitivo frente a referencias web actuales.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-24"
+}

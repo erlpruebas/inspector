@@ -1,0 +1,14 @@
+[
+  {
+    "group": "chrome_nano_direct",
+    "engines": [
+      "chrome-nano:gemini-nano"
+    ]
+  },
+  {
+    "group": "chrome_nano_opencode",
+    "engines": [
+      "opencode:geminiNanoLocal/gemini-nano"
+    ]
+  }
+]

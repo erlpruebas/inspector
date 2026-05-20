@@ -1,0 +1,39 @@
+{
+  "engine": "gemini_api_gemini_2_5_flash_lite",
+  "task_id": "test-13",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 2.432, \"usage\": {\"promptTokenCount\": 723, \"candidatesTokenCount\": 648, \"totalTokenCount\": 1371, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 723}], \"serviceTier\": \"standard\"}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\gemini_api_gemini_2_5_flash_lite\\test-13\\resultado.md"
+  ],
+  "elapsed_seconds": 2.724197700037621,
+  "timed_out": false,
+  "usage": {
+    "provider": "gemini_api",
+    "model": "gemini-2.5-flash-lite",
+    "elapsed_seconds": 2.432,
+    "usage": {
+      "promptTokenCount": 723,
+      "candidatesTokenCount": 648,
+      "totalTokenCount": 1371,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 723
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\gemini_api_gemini_2_5_flash_lite_test-13_resultado.md"
+  ],
+  "task_prompt": "# Informe de discrepancias de gastos Q1\n\nAudita los gastos de enero, febrero y marzo en los CSV correspondientes. Resume discrepancias, duplicados y partidas limpias.",
+  "execution_prompt": "# Informe de discrepancias de gastos Q1\n\nAudita los gastos de enero, febrero y marzo en los CSV correspondientes. Resume discrepancias, duplicados y partidas limpias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\gemini_api_gemini_2_5_flash_lite\\test-13"
+}

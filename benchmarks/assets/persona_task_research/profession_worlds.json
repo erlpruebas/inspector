@@ -1,0 +1,242 @@
+{
+  "professions": [
+    {
+      "id": "inmobiliaria",
+      "person": "Clara Benavides",
+      "profession": "Agente inmobiliaria",
+      "world": {
+        "clients": [
+          "pareja joven",
+          "inversor de alquiler",
+          "propietario impaciente",
+          "comprador extranjero"
+        ],
+        "projects": [
+          "visitas semanales",
+          "captacion de viviendas",
+          "negociacion de ofertas",
+          "seguimiento postvisita"
+        ],
+        "documents": [
+          "fichas de inmuebles",
+          "notas de visita",
+          "emails de propietarios",
+          "comparativas de precio"
+        ]
+      }
+    },
+    {
+      "id": "informatico",
+      "person": "Nicolas Ortega",
+      "profession": "Responsable informatico / DevOps",
+      "world": {
+        "clients": [
+          "equipo comercial",
+          "soporte interno",
+          "proveedor SSO",
+          "direccion"
+        ],
+        "projects": [
+          "incidencias de login",
+          "rotacion de claves",
+          "limpieza de logs",
+          "monitorizacion"
+        ],
+        "documents": [
+          "access.log",
+          "tickets",
+          "runbooks",
+          "postmortems"
+        ]
+      }
+    },
+    {
+      "id": "cientifica",
+      "person": "Dra. Irene Salvatierra",
+      "profession": "Cientifica biomedica",
+      "world": {
+        "clients": [
+          "comite etico",
+          "equipo de estadistica",
+          "direccion del laboratorio",
+          "colaboradores externos"
+        ],
+        "projects": [
+          "ensayo piloto",
+          "revision de resultados",
+          "abstract de congreso",
+          "control de muestras"
+        ],
+        "documents": [
+          "notas de laboratorio",
+          "tablas de marcadores",
+          "borradores de abstract",
+          "protocolos"
+        ]
+      }
+    },
+    {
+      "id": "ingeniero",
+      "person": "Marcos Valcarce",
+      "profession": "Ingeniero industrial",
+      "world": {
+        "clients": [
+          "proveedor de valvulas",
+          "jefe de obra",
+          "direccion",
+          "equipo de seguridad"
+        ],
+        "projects": [
+          "seguimiento de hitos",
+          "riesgos de obra",
+          "control de costes",
+          "inspecciones"
+        ],
+        "documents": [
+          "partes de obra",
+          "presupuestos",
+          "checklists de seguridad",
+          "cronograma"
+        ]
+      }
+    },
+    {
+      "id": "abogada",
+      "person": "Laura Montalban",
+      "profession": "Abogada laboralista",
+      "world": {
+        "clients": [
+          "trabajador despedido",
+          "empresa cliente",
+          "mediador",
+          "asesoria externa"
+        ],
+        "projects": [
+          "despido disciplinario",
+          "revision contractual",
+          "mediacion",
+          "plazos procesales"
+        ],
+        "documents": [
+          "contratos",
+          "emails de cliente",
+          "cartas de despido",
+          "minutas"
+        ]
+      }
+    },
+    {
+      "id": "finanzas",
+      "person": "Hector Rivas",
+      "profession": "Consultor financiero para pymes",
+      "world": {
+        "clients": [
+          "gerente pyme",
+          "responsable contable",
+          "cliente moroso",
+          "banco"
+        ],
+        "projects": [
+          "prevision de caja",
+          "cobros pendientes",
+          "auditoria de gastos",
+          "informe mensual"
+        ],
+        "documents": [
+          "facturas",
+          "cobros",
+          "gastos",
+          "reportes de caja"
+        ]
+      }
+    }
+  ],
+  "dimensions": {
+    "context_scope": {
+      "description": "Cantidad y dispersion del contexto necesario.",
+      "values": [
+        "none",
+        "small",
+        "medium",
+        "large",
+        "cross_project"
+      ]
+    },
+    "data_mode": {
+      "description": "Tipo de informacion dominante.",
+      "values": [
+        "conversation",
+        "documents",
+        "tables",
+        "logs",
+        "mixed",
+        "web_fresh"
+      ]
+    },
+    "tool_need": {
+      "description": "Capacidad externa necesaria para resolver bien.",
+      "values": [
+        "none",
+        "read_files",
+        "create_file",
+        "code_execution",
+        "web_search",
+        "calendar",
+        "multi_tool"
+      ]
+    },
+    "risk": {
+      "description": "Coste potencial de una respuesta mala.",
+      "values": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "output_form": {
+      "description": "Forma final que el usuario espera.",
+      "values": [
+        "short_reply",
+        "email",
+        "table",
+        "checklist",
+        "plan",
+        "report",
+        "script",
+        "calendar",
+        "data_file"
+      ]
+    },
+    "reasoning_shape": {
+      "description": "Tipo de procesamiento mental principal.",
+      "values": [
+        "retrieve",
+        "extract",
+        "compare",
+        "calculate",
+        "synthesize",
+        "diagnose",
+        "decide",
+        "draft"
+      ]
+    },
+    "freshness": {
+      "description": "Necesidad de informacion actual.",
+      "values": [
+        "static_local",
+        "recent_local",
+        "current_web"
+      ]
+    },
+    "error_tolerance": {
+      "description": "Cuanto error puede aceptar el flujo antes de escalar.",
+      "values": [
+        "high",
+        "medium",
+        "low",
+        "near_zero"
+      ]
+    }
+  }
+}

@@ -14,8 +14,17 @@ def main() -> int:
     args = parser.parse_args()
 
     run_dir = Path(args.run_dir)
+    checks = build_checks(run_dir, Path(args.tasks_file))
+
+    output = Path(args.output) if args.output else run_dir / "expected_key_checks.json"
+    output.write_text(json.dumps(checks, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(output)
+    return 0
+
+
+def build_checks(run_dir: Path, tasks_file: Path) -> list[dict[str, Any]]:
     summary = json.loads((run_dir / "summary.json").read_text(encoding="utf-8"))
-    tasks = {item["id"]: item for item in json.loads(Path(args.tasks_file).read_text(encoding="utf-8"))}
+    tasks = {item["id"]: item for item in json.loads(tasks_file.read_text(encoding="utf-8"))}
     checks = []
     for row in summary:
         task = tasks.get(str(row.get("task_id")), {})
@@ -33,11 +42,7 @@ def main() -> int:
                 "passed": not missing,
             }
         )
-
-    output = Path(args.output) if args.output else run_dir / "expected_key_checks.json"
-    output.write_text(json.dumps(checks, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(output)
-    return 0
+    return checks
 
 
 def normalize(value: Any) -> str:

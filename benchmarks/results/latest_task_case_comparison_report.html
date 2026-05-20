@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Informe comparativo por tareas - Codex vs Gemini</title>
+<style>
+:root{--ink:#172033;--muted:#667085;--bg:#f6f7f9;--panel:#fff;--line:#d9dee8;--blue:#174ea6;--amber:#b86e00}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Segoe UI,Inter,Arial,sans-serif;line-height:1.45}
+.hero{padding:42px 54px;background:#13233a;color:white}.hero h1{margin:0;font-size:34px}.hero p{max-width:1050px;color:#dbe7f5;font-size:17px}
+main{max-width:1500px;margin:0 auto;padding:28px 34px 70px}.panel,.case{background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 22px rgba(20,30,50,.05);padding:22px;margin:18px 0}
+.grid{display:grid;gap:16px}.cards{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}.card{border:1px solid var(--line);border-radius:8px;padding:16px;background:white}.card b{display:block;font-size:22px;margin-top:6px}.muted{color:var(--muted)}.pill{display:inline-block;border:1px solid var(--line);background:#f8fafc;border-radius:999px;padding:4px 9px;font-size:12px;color:#344054}
+table{width:100%;border-collapse:collapse;background:white;border:1px solid var(--line);font-size:13px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#eef2f7}
+.case-title{display:grid;grid-template-columns:1fr minmax(280px,520px);gap:20px;align-items:start}.case h2{margin:8px 0 0;font-size:23px}.expected,.case-conclusion{border:1px solid #e7edf5;background:#fbfdff;border-radius:8px;padding:11px;margin:12px 0}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}.answer{border:1px solid var(--line);border-radius:8px;background:#fff;padding:12px}.answer.fail{border-color:#f3b3ad;background:#fffafa}.answer-head{display:flex;justify-content:space-between;gap:8px;color:#344054;font-size:12px}.answer-head b{font-size:14px;color:var(--ink)}pre{white-space:pre-wrap;word-break:break-word;background:#f8fafc;border:1px solid #e6edf7;border-radius:6px;padding:10px;max-height:260px;overflow:auto;font-size:12px;font-family:Consolas,monospace}.callout{border-left:5px solid var(--blue);background:#f7fbff;padding:14px;border-radius:8px}.warn{border-left-color:var(--amber);background:#fff8eb}a{color:#174ea6}@media(max-width:900px){.hero{padding:30px 20px}main{padding:18px}.case-title{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <h1>Comparativa por tareas: Codex vs Gemini</h1>
+  <p>Informe narrativo construido con salidas reales del laboratorio. No mira solo medias: entra en tareas concretas y compara como responde cada familia de modelos cuando tiene que leer archivos, extraer datos, calcular, sintetizar o usar contexto web preparado.</p>
+</section>
+<main>
+<section class="panel"><h2>Conclusion ejecutiva</h2><div class="grid cards">
+<div class="card"><span class="pill">Trabajo serio con archivos</span><b>Codex 5.4 mini</b><p class="muted">Mejor base operativa: estable, buen uso de filesystem y suficiente calidad sin gastar siempre 5.5.</p></div>
+<div class="card"><span class="pill">Escalado</span><b>Codex 5.5</b><p class="muted">Mas prudente y consistente cuando hay riesgo, pero no conviene como motor masivo por coste/cuota.</p></div>
+<div class="card"><span class="pill">Fallback Google</span><b>Gemini Flash</b><p class="muted">Puede cubrir una parte grande del trabajo. En la practica es el candidato Google mas equilibrado.</p></div>
+<div class="card"><span class="pill">Router / volumen</span><b>Flash-Lite</b><p class="muted">Muy util para clasificar, extraer y validar barato. No lo pondria solo en tareas complejas.</p></div>
+<div class="card"><span class="pill">Cuidado</span><b>Gemini Pro</b><p class="muted">La calidad teorica puede ser alta, pero aqui ha chocado con 429/RESOURCE_EXHAUSTED. No es fiable como default con la cuota actual.</p></div>
+<div class="card"><span class="pill">Local privado</span><b>Mini Nano</b><p class="muted">Valioso para anonimizar y microtareas locales; no reemplaza hoy a Codex/Gemini CLI como agente.</p></div>
+</div></section>
+<section class="panel"><h2>Metricas observadas en las tareas seleccionadas</h2><table><thead><tr><th>Modelo</th><th>Muestras</th><th>Nota media heuristica</th><th>Exito tecnico</th><th>Tiempo medio</th><th>Lectura coste/uso</th></tr></thead><tbody><tr><td>Codex 5.4 mini</td><td>10</td><td>8.25</td><td>100%</td><td>41.2s</td><td>estandar Codex</td></tr><tr><td>Codex 5.5</td><td>10</td><td>7.85</td><td>100%</td><td>44.7s</td><td>premium, usar con freno</td></tr><tr><td>Gemini API Flash-Lite</td><td>10</td><td>7.50</td><td>100%</td><td>4.8s</td><td>barato, no agente</td></tr><tr><td>Gemini CLI Flash-Lite</td><td>10</td><td>6.35</td><td>80%</td><td>91.2s</td><td>muy barato / alto volumen</td></tr><tr><td>OpenCode + Gemini Flash</td><td>10</td><td>6.15</td><td>80%</td><td>28.3s</td><td>agente CLI alternativo</td></tr><tr><td>Gemini CLI Flash</td><td>10</td><td>5.30</td><td>70%</td><td>65.6s</td><td>Google Pro: buen coste/uso</td></tr><tr><td>Groq Llama 8B</td><td>10</td><td>5.15</td><td>80%</td><td>1.0s</td><td>ultrarrapido/router</td></tr><tr><td>OpenRouter DeepSeek V3.2</td><td>10</td><td>3.90</td><td>50%</td><td>12.1s</td><td>barato con credito</td></tr><tr><td>Gemini CLI Pro</td><td>10</td><td>1.60</td><td>20%</td><td>165.5s</td><td>limitado por cuota 429</td></tr></tbody></table><p class="muted">Las notas son heuristicas por claves esperadas. Son utiles para comparar cobertura, pero el informe usa tambien lectura cualitativa de las respuestas.</p></section>
+<section class="panel"><h2>Contexto externo y comunidad</h2><div class="callout">Gemini CLI documenta seleccion de modelo con <code>--model</code> y <code>/model</code>, y cuotas diarias para Google AI Pro. En nuestra prueba eso encaja con lo observado: Flash/Flash-Lite aguantan mejor, mientras Pro tropieza con cuota. Fuentes: <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/model.md">Gemini CLI model selection</a>, <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/resources/quota-and-pricing.md">Gemini CLI quotas</a>, <a href="https://ai.google.dev/gemini-api/docs/pricing">Gemini API pricing</a>, <a href="https://help.openai.com/en/articles/20001106-codex-rate-card">Codex rate card</a>.</div><div class="callout warn" style="margin-top:10px">En comunidad aparecen quejas recurrentes de limites reales de Gemini Pro por debajo de lo que uno espera en cargas largas. Nuestro 429 en Gemini Pro es coherente con esa senal, asi que no lo trataria como pilar operativo hasta medirlo tras reset o con cuenta/tier distinto.</div></section>
+<section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-01 · L1</span><h2>Recordar cita de Clinica Centro</h2></div>
+    <p>Busca una cita concreta cruzando correo y contacto. Sirve para ver si el modelo localiza datos exactos o se va a otra reunion parecida.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> Noelia Castro, Clinica Centro, 14 de mayo, 11:30</div>
+  <div class="case-conclusion">Mejor senal: Groq Llama 8B (10.0/10). Lectura: Codex tiende a crear salida mas verificable; Gemini Flash/Flash-Lite cubre mucho trabajo de bajo coste cuando no se agota cuota; Gemini Pro ahora mismo queda penalizado por 429 en la cuenta actual.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>10.0/10 · 14s · 20260520_165939_023816</span></div>
+  <pre>Voy a leer los dos archivos locales y cruzar únicamente los datos que aparezcan ahí para no completar huecos por inferencia.
+
+Nota breve:
+
+Noelia Castro, de Clinica Centro, tiene una demo del modulo de pagos el jueves 14 de mayo de 2026 a las 11:30. Objetivo: revisar una demo centrada en conciliacion y estado de pagos, con alguien de administracion.</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>10.0/10 · 11s · 20260520_165939_023816</span></div>
+  <pre>Voy a revisar los dos archivos locales para extraer solo los datos de la cita de Clinica Centro y luego te devuelvo una nota breve sin añadir nada que no esté en las fuentes.
+
+Nota breve:
+
+- Persona: Noelia Castro
+- Empresa: Clinica Centro
+- Fecha: 14 de mayo de 2026
+- Hora: 11:30
+- Objetivo: demo del módulo de pagos; piden que asista alguien de administración.</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>0.0/10 · 222s · 20260520_165939_023816</span></div>
+  <pre>Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Ripgrep is not available. Falling back to GrepTool.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>10.0/10 · 28s · 20260520_165939_023816</span></div>
+  <pre>Cita Clinica Centro:
+Persona: Noelia Castro
+Empresa: Clinica Centro
+Fecha: 14 de mayo de 2026
+Hora: 11:30
+Objetivo: Demo modulo de pagos (centrada en conciliacion y estado de pagos)</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>10.0/10 · 337s · 20260520_165939_023816</span></div>
+  <pre>Cita de Clinica Centro:
+
+*   **Persona:** Noelia Castro
+*   **Empresa:** Clinica Centro
+*   **Fecha:** Jueves 14 de mayo de 2026
+*   **Hora:** 11:30
+*   **Objetivo:** Demo modulo de pagos, centrada en conciliacion y estado de pagos.</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>10.0/10 · 17s · 20260520_165939_023816</span></div>
+  <pre>Cita Clinica Centro:
+Persona: Noelia Castro
+Empresa: Clinica Centro
+Fecha: 14 de mayo de 2026
+Hora: 11:30
+Objetivo: Demo modulo de pagos (conciliacion y estado de pagos)</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>10.0/10 · 7s · 20260513_185318_064815</span></div>
+  <pre>Persona: Noelia Castro
+Empresa: Clinica Centro
+Fecha: 2026-05-14
+Hora: 11:30
+Objetivo: Demo modulo de pagos (conciliacion y estado de pagos)</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>10.0/10 · 1s · 20260512_173317_490752</span></div>
+  <pre># Recordar cita de Clinica Centro
+
+Revisa la cita de Clinica Centro en el hilo de correos E-001: Clinica Centro - demo pagos.
+
+## Hilo E-001: Clinica Centro - demo pagos
+
+De: Noelia Castro &lt;noelia.castro@clinicacentro.es&gt;
+Para: equipo@inspector.local
+Fecha: 2026-05-06 09:12
+Asunto: Demo modulo de pagos
+
+Podemos ver la demo el jueves 14 de mayo a las 11:30? Necesito que venga alguien de administracion.
+
+De: equipo@inspector.local
+Para: Noelia Castro &lt;noelia.castro@clinicacentro.es&gt;
+Fecha: 2026-05-06 10:04
+
+Confirmo...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>9.0/10 · 5s · 20260512_173317_490752</span></div>
+  <pre>Noelia Castro, Clinica Centro, 14 de mayo de 2026, 11:30, Demo del módulo de pagos</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-03 · L1</span><h2>Extraer tareas de notas de voz</h2></div>
+    <p>Extrae tareas desde notas de voz sinteticas. Mide tabla, cobertura y disciplina para no convertir todo en prosa.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> llamar, enviar, agendar, reservar</div>
+  <div class="case-conclusion">Mejor senal: Gemini API Flash-Lite (10.0/10). Lectura: Codex tiende a crear salida mas verificable; Gemini Flash/Flash-Lite cubre mucho trabajo de bajo coste cuando no se agota cuota; Gemini Pro ahora mismo queda penalizado por 429 en la cuenta actual.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>10.0/10 · 30s · 20260520_165939_023816</span></div>
+  <pre>Voy a leer el JSONL local y revisar la estructura de las notas antes de extraer las tareas pendientes.
+
+Fechas inferidas usando el `timestamp` de cada nota como contexto.
+
+| id nota | accion | entidad relacionada | posible fecha limite |
+|---|---|---|---|
+| VN-001 | Llamar para confirmar demo del modulo de pagos | Noelia, Clinica Centro | antes del jueves 2026-05-07 |
+| VN-002 | Enviar CSV actualizado de monitores con descuento del 4% | Luis, Delta Equipos | no indicada |
+| VN-003 | Comprar billete para Barcelona s...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>10.0/10 · 31s · 20260520_165939_023816</span></div>
+  <pre>Voy a leer el JSONL local para identificar las notas de voz que contienen tareas pendientes y luego resumirlas en una tabla con `id de nota`, `acción`, `entidad relacionada` y `posible fecha límite`.
+
+Ya tengo las primeras notas; ahora verifico si el archivo tiene más entradas para no omitir tareas pendientes y luego agrupo solo las que impliquen una acción clara.
+
+Voy a normalizar las fechas relativas cuando sea posible. Para eso compruebo el día de la semana de las notas que usan “martes”, “viernes” o “antes del...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>0.0/10 · 204s · 20260520_165939_023816</span></div>
+  <pre>Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Ripgrep is not available. Falling back to GrepTool.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>0.0/10 · 420s · 20260520_165939_023816</span></div>
+  <pre>| id de nota | accion | entidad relacionada | posible fecha limite |
+|---|---|---|---|
+| VN-001 | Llamar a Noelia | Noelia (Clinica) | 2026-05-22 |
+| VN-002 | Enviar monitores a Luis | Luis (Delta) | |
+| VN-003 | Comprar billete para Barcelona | Xavier (Barna) | 2026-05-18 |
+| VN-004 | Preparar minuta para Sergio Campos | Sergio Campos | |
+| VN-005 | Pedir facturas de abril a Elena Vidal | Elena Vidal | |
+| VN-006 | Revisar contrato de IberLegal | IberLegal (contacto: David) | 2026-05-12 |
+| VN-007 | Agendar seguim...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>10.0/10 · 125s · 20260520_165939_023816</span></div>
+  <pre>&#x27;&#x27;&#x27;
+| id de nota | accion                                              | entidad relacionada                     |
+|------------|-----------------------------------------------------|----------------------------------------|
+| VN-001     | Llamar                                              | Noelia de Clinica Centro               |
+| VN-002     | Enviar CSV actualizado                              | Luis de Delta Equipos                  |
+| VN-003     | Comprar billete                                     | Barcel...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>10.0/10 · 26s · 20260520_165939_023816</span></div>
+  <pre>| id de nota | accion | entidad relacionada | posible fecha limite |
+|---|---|---|---|
+| VN-001 | Llamar | Noelia, Clinica Centro | antes del jueves |
+| VN-002 | Enviar | Luis, Delta Equipos, CSV actualizado de monitores | - |
+| VN-003 | Comprar billete | Barcelona, Xavier, Barna Health | el día 18 |
+| VN-004 | Preparar minuta | Sergio Campos | - |
+| VN-005 | Pedir facturas | Elena Vidal | - |
+| VN-006 | Crear tarea, Revisar contrato | IberLegal, David | antes del 12 |
+| VN-007 | Agendar seguimiento | Marta Ruiz |...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>10.0/10 · 5s · 20260513_185318_064815</span></div>
+  <pre>| id de nota | accion                                                              | entidad relacionada | posible fecha limite |
+|------------|---------------------------------------------------------------------|---------------------|----------------------|
+| VN-001     | Llamar a Noelia                                                     | Clinica Centro      | jueves               |
+| VN-002     | Enviar a Luis el CSV actualizado de monitores                       | Delta Equipos       |                      |...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>6.0/10 · 1s · 20260512_173317_490752</span></div>
+  <pre>Id de nota | Acción | Entidad relacionada | Fecha límite
+-----------|--------|--------------------|-------------
+VN-001     | Llamar | Clinica Centro     | 2026-05-12
+VN-002     | Enviar | Luis de Delta Equipos | Sin fecha límite
+VN-003     | Comprar | Xavier             | 2026-05-18
+VN-004     | Preparar | Sergio Campos      | Sin fecha límite
+VN-005     | Pedir   | Elena Vidal        | Sin fecha límite
+VN-006     | Crear   | David              | 2026-05-12
+VN-007     | Agendar | Marta Ruiz         | 2026-05-12
+VN...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>7.0/10 · 33s · 20260512_173317_490752</span></div>
+  <pre>| id     | accion                                 | entidad relacionada          | posible fecha limite |
+|--------|----------------------------------------|------------------------------|----------------------|
+| VN-001 | Llamar para confirmar demo             | Noelia de Clinica Centro     | jueves               |
+| VN-002 | Enviar CSV actualizado                 | Luis de Delta Equipos        |                      |
+| VN-003 | Comprar billete                        | Xavier                       | 18...</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-05 · L1</span><h2>Detectar gasto discrepante de febrero</h2></div>
+    <p>Auditoria simple de gasto. Buen detector de si un modelo puede resolver barato sin agente caro.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> Licencia PDF, 19.90, 29.90, importe_discrepante</div>
+  <div class="case-conclusion">Mejor senal: Codex 5.5 (7.5/10). Lectura: Codex tiende a crear salida mas verificable; Gemini Flash/Flash-Lite cubre mucho trabajo de bajo coste cuando no se agota cuota; Gemini Pro ahora mismo queda penalizado por 429 en la cuenta actual.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>7.5/10 · 16s · 20260520_165939_023816</span></div>
+  <pre>Voy a leer el CSV local y revisar los importes por concepto para encontrar el valor que no encaja con el patrón esperado.
+
+Concepto: `Licencia PDF`
+
+Importe declarado: `19.90`  
+Importe esperado: `29.90`  
+Discrepancia: faltan `10.00`
+
+Recomendación: corregir el importe declarado a `29.90` o adjuntar justificación si el cargo real fue de `19.90`.</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>2.5/10 · 11s · 20260520_165939_023816</span></div>
+  <pre>Voy a revisar el CSV de febrero y comparar los importes para localizar la fila discrepante y devolver el concepto, el importe declarado, el esperado y la recomendación.
+
+La discrepancia está en:
+
+- Concepto: `Licencia PDF`
+- Importe declarado: `19.9`
+- Importe esperado: `29.9`
+- Recomendación: corregir el importe declarado a `29.9` y revisar el justificante o la captura de datos de ese gasto.</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>0.0/10 · 202s · 20260520_165939_023816</span></div>
+  <pre>Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Ripgrep is not available. Falling back to GrepTool.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>2.5/10 · 13s · 20260520_165939_023816</span></div>
+  <pre>Concepto: Licencia PDF
+Importe declarado: 19.9
+Importe esperado: 29.9
+Recomendacion: Reconciliar el importe declarado con el importe esperado. Posiblemente se ingresó un valor incorrecto o hay una diferencia en el costo real de la licencia.</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>2.5/10 · 48s · 20260520_165939_023816</span></div>
+  <pre># Discrepancia de Gasto - Febrero 2026
+
+Se ha detectado la siguiente discrepancia en los gastos de febrero:
+
+- **Concepto:** Licencia PDF
+- **Importe Declarado:** 19.9
+- **Importe Esperado:** 29.9
+
+**Recomendación:** Se recomienda ajustar el importe declarado a 29.9 para que coincida con el importe esperado.</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>2.5/10 · 19s · 20260520_165939_023816</span></div>
+  <pre># Gasto discrepante de febrero
+
+Se ha identificado una discrepancia en el gasto de febrero:
+
+- **Concepto**: Licencia PDF
+- **Importe declarado**: 19.9
+- **Importe esperado**: 29.9
+- **Recomendación**: El importe declarado es menor que el importe esperado. Se recomienda investigar si se trata de un error de entrada de datos o si el costo fue realmente menor de lo previsto.</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>2.5/10 · 3s · 20260513_185318_064815</span></div>
+  <pre>concepto,importe_declarado,importe_esperado,recomendacion
+Licencia PDF,19.9,29.9,Revisar el importe declarado para la licencia PDF, ya que es inferior al importe esperado.</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>2.5/10 · 1s · 20260513_185318_064815</span></div>
+  <pre># Detectar gasto discrepante de febrero
+
+## Resultados de la auditoría
+
+| Concepto | Importe declarado | Importe esperado | Recomendación |
+| --- | --- | --- | --- |
+| Licencia PDF | 19.9 | 29.9 | Revisar el importe declarado |
+
+La discrepancia se encuentra en el gasto de &quot;Licencia PDF&quot; con un importe declarado de 19.9 y un importe esperado de 29.9. Se recomienda revisar el importe declarado para asegurarse de que sea correcto.</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>0.0/10 · 1s · 20260513_185318_064815</span></div>
+  <pre>Traceback (most recent call last):
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 119, in post_json
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py&quot;, line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py...</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-08 · L2</span><h2>Resumen semanal de tareas pendientes</h2></div>
+    <p>Resumen semanal multiarchivo. Aqui se ve si agrupa compromisos con cliente y fecha sin perder prioridades.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> IberLegal, Clinica Centro, Delta Equipos, SSL</div>
+  <div class="case-conclusion">Mejor senal: Groq Llama 8B (10.0/10). Lectura: Codex tiende a crear salida mas verificable; Gemini Flash/Flash-Lite cubre mucho trabajo de bajo coste cuando no se agota cuota; Gemini Pro ahora mismo queda penalizado por 429 en la cuenta actual.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>10.0/10 · 27s · 20260520_165939_023816</span></div>
+  <pre>Voy a leer primero las notas y los hilos para extraer compromisos, fechas, clientes y bloqueos. Después lo convertiré en un resumen semanal priorizado, sin modificar archivos salvo que vea que necesitas un artefacto explícito.
+
+**Resumen semanal de tareas pendientes, revisado al 20 de mayo de 2026**
+
+**Prioridad alta: compromisos vencidos con cliente**
+
+1. **IberLegal, David Navarro**
+   Revisar contrato de soporte y responder comentarios sobre cláusula 8 de responsabilidad y renovación automática.  
+   Fecha compr...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>10.0/10 · 59s · 20260520_165939_023816</span></div>
+  <pre>Voy a leer `assistant_synthetic/notas_voz.jsonl` y `assistant_synthetic/emails_hilos.md`, extraer compromisos con fecha o cliente concreto y luego te devuelvo un resumen semanal priorizado.
+
+Ya tengo los primeros registros y hay varios compromisos con fecha concreta. Voy a confirmar si el JSONL tiene más líneas y luego cruzo ambas fuentes para ordenar por urgencia y por cliente.
+
+Voy a resolver un par de fechas relativas para no dejar ambigüedades: el “martes a las cuatro”, el “día 22” y el “antes del 28”. Así el r...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>0.0/10 · 231s · 20260520_165939_023816</span></div>
+  <pre>Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Ripgrep is not available. Falling back to GrepTool.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>7.5/10 · 45s · 20260520_165939_023816</span></div>
+  <pre># Resumen Semanal de Tareas Pendientes
+
+Fecha de Generación: 2026-05-20
+
+## Próximas Tareas (Prioridad Alta)
+
+### Con Fecha Límite o Cliente Específico
+
+*   **2026-05-22 (Viernes):**
+    *   **Laura Marin (VN-011):** Enviar agenda de implantación; incluir hito de formación el día 22.
+    *   **Interno (VN-020):** Reservar sala para reunión interna del viernes a las 9:30.
+*   **2026-05-28:**
+    *   **Cobalto (VN-013):** Poner recordatorio para renovar certificado SSL antes del 28.
+
+## Tareas Pendientes (Prioridad M...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>10.0/10 · 90s · 20260520_165939_023816</span></div>
+  <pre># Resumen Semanal de Tareas Pendientes
+
+## Prioridades con Fechas y Clientes Específicos:
+
+*   **Clinica Centro:**
+    *   Llamar a Noelia para confirmar demo del módulo de pagos (antes del jueves).
+    *   Demo del módulo de pagos: Jueves, 14 de mayo a las 11:30.
+    *   Preparar informe mensual de incidencias (incluir Clinica Centro).
+*   **Delta Equipos:**
+    *   Enviar CSV actualizado de monitores con descuento del 4%.
+    *   Cerrar trato antes del 13 de mayo para aplicar descuento del 4% en monitores.
+*   **...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>10.0/10 · 26s · 20260520_165939_023816</span></div>
+  <pre># Resumen Semanal de Tareas Pendientes
+
+## Prioridad Alta (Compromisos con Fecha/Cliente)
+
+*   **Clinica Centro:**
+    *   Confirmar demo del modulo de pagos con Noelia para el jueves 14 de mayo a las 11:30 (VN-001, E-001).
+    *   Preparar demo centrada en conciliación y estado de pagos para Clinica Centro (E-001).
+    *   Preparar informe mensual de incidencias: incluir Clinica Centro (VN-019).
+*   **IberLegal:**
+    *   Revisar contrato y enviar comentarios a David Navarro antes del 12 de mayo. Preocupan cláusul...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>10.0/10 · 3s · 20260513_185318_064815</span></div>
+  <pre># Resumen Semanal de Tareas Pendientes
+
+## Tareas con Fecha o Cliente Concreto:
+
+*   **Clinica Centro:**
+    *   Confirmar demo del módulo de pagos antes del jueves (VN-001).
+    *   Preparar informe mensual de incidencias, incluyendo Clinica Centro (VN-019).
+    *   Demo del módulo de pagos el jueves 14 de mayo a las 11:30 (E-001).
+*   **Delta Equipos:**
+    *   Enviar CSV actualizado de monitores a Luis Martin, incluyendo descuento del 4% (VN-002).
+    *   Oferta de monitores con 4% de descuento si se cierra ante...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>10.0/10 · 1s · 20260512_173317_490752</span></div>
+  <pre># Resumen semanal de tareas pendientes
+
+## Tareas pendientes con fecha
+
+* Recordar llamar a Noelia de Clinica Centro antes del jueves para confirmar demo del modulo de pagos (VN-001)
+* Enviar a Luis de Delta Equipos el CSV actualizado de monitores; falta incluir descuento del 4 por ciento (VN-002)
+* Comprar billete para Barcelona el dia 18 si Xavier confirma la reunion de Barna Health (VN-003)
+* Preparar minuta para Sergio Campos con riesgos de seguridad y coste de auditoria (VN-004)
+* Pedir a Elena Vidal las factu...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>9.0/10 · 22s · 20260512_173317_490752</span></div>
+  <pre># Resumen semanal de tareas pendientes
+
+## Tareas con fecha límite o compromiso con cliente
+
+### **Fecha límite: 12 de mayo**
+- **Revisar contrato de IberLegal** (David Navarro). Comentarios sobre cláusula 8 y renovación automática. (VN-006, E-003)
+
+### **Fecha límite: 13 de mayo**
+- **Enviar CSV a Luis Martín (Delta Equipos)** con descuento del 4% en monitores 27 para cerrar antes del 13. (VN-002, E-002)
+
+### **Fecha límite: 14 de mayo**
+- **Demo módulo de pagos para Clínica Centro** con Noelia Castro. Jueves 14 d...</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-09 · L2</span><h2>Auditar duplicados de marzo</h2></div>
+    <p>Duplicados de marzo. Prueba pequena de calculo y trazabilidad: concepto, duplicado e impacto economico.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> Hotel Barcelona, duplicado, 420.00, 210.00</div>
+  <div class="case-conclusion">Mejor senal: Groq Llama 8B (5.0/10). Lectura: Codex tiende a crear salida mas verificable; Gemini Flash/Flash-Lite cubre mucho trabajo de bajo coste cuando no se agota cuota; Gemini Pro ahora mismo queda penalizado por 429 en la cuenta actual.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>5.0/10 · 21s · 20260520_165939_023816</span></div>
+  <pre>Voy a revisar la estructura del CSV y después agruparé los cargos por campos relevantes para separar duplicados claros de posibles recurrencias legítimas.
+
+El archivo tiene tres movimientos. La única agrupación repetida exacta aparece en `Hotel Barcelona` el 4 de marzo, con dos cargos idénticos de 210,00.
+
+Detecté un duplicado claro en `assistant_synthetic/gastos_2026_03.csv`:
+
+| Fecha | Concepto | Categoría | Importe | Ocurrencias | Impacto |
+|---|---|---:|---:|---:|---:|
+| 2026-03-04 | Hotel Barcelona | viajes |...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>5.0/10 · 30s · 20260520_165939_023816</span></div>
+  <pre>Voy a revisar el CSV de marzo, identificar posibles cargos duplicados y cuantificar el impacto económico antes de resumirte la acción recomendada.
+
+Ya localicé el archivo. Ahora voy a leer su estructura y buscar repetidos por fecha, importe y concepto para separar duplicados exactos de casos ambiguos.
+
+El archivo es muy pequeño y ya veo un par de líneas idénticas. Voy a confirmar el total declarado y cuánto baja si se elimina el cargo repetido para darte una cifra cerrada.
+
+La primera pasada confirmó que hay dos re...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>0.0/10 · 202s · 20260520_165939_023816</span></div>
+  <pre>Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Ripgrep is not available. Falling back to GrepTool.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>5.0/10 · 47s · 20260520_165939_023816</span></div>
+  <pre># Auditoría de Duplicados - Marzo 2026
+
+## Análisis de `gastos_2026_03.csv`
+
+Se ha detectado el siguiente cargo duplicado en el archivo `gastos_2026_03.csv`:
+
+*   **Detalle del cargo duplicado:**
+    *   **Fecha:** 2026-03-04
+    *   **Concepto:** Hotel Barcelona
+    *   **Categoría:** viajes
+    *   **Importe Declarado:** 210.0
+
+Este cargo aparece dos veces en el registro.
+
+## Impacto Económico
+
+El impacto económico del cargo duplicado es de **210.0**. Esto representa el monto sobrecargado debido al registro dupli...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>5.0/10 · 167s · 20260520_165939_023816</span></div>
+  <pre>## Auditoría de Duplicados - Marzo 2026
+
+**Archivo auditado:** assistant_synthetic/gastos_2026_03.csv
+
+**Hallazgos:**
+
+Se detectó un cargo duplicado:
+
+*   **Fecha:** 2026-03-04
+*   **Concepto:** Hotel Barcelona
+*   **Categoría:** viajes
+*   **Importe:** 210.0
+
+Este cargo aparece dos veces en el registro.
+
+**Impacto Económico:**
+
+El importe total del cargo duplicado es de **210.0**.
+
+**Acción Recomendada:**
+
+Se recomienda investigar este cargo duplicado. Si se confirma que es un error, se debe proceder a eliminar un...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>5.0/10 · 15s · 20260520_165939_023816</span></div>
+  <pre># Auditoría de Duplicados - Marzo 2026
+
+## Análisis de `gastos_2026_03.csv`
+
+Se han detectado los siguientes cargos duplicados:
+
+- **Fecha:** 2026-03-04
+- **Concepto:** Hotel Barcelona
+- **Categoría:** viajes
+- **Importe Declarado:** 210.0
+- **Importe Esperado:** 210.0
+- **Estado:** posible_duplicado
+
+Ambas entradas son idénticas y están marcadas como `posible_duplicado`.
+
+## Impacto Económico
+
+El impacto económico de este cargo duplicado es de **210.0**.
+
+## Acción Recomendada
+
+Se recomienda contactar al departame...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>5.0/10 · 7s · 20260513_185318_064815</span></div>
+  <pre># Auditoría de Duplicados de Marzo
+
+Tras analizar el archivo `assistant_synthetic/gastos_2026_03.csv`, se han detectado los siguientes cargos duplicados:
+
+**Cargo Duplicado:**
+
+*   **Fecha:** 2026-03-04
+*   **Concepto:** Hotel Barcelona
+*   **Categoría:** viajes
+*   **Importe:** 210.0
+
+**Impacto Económico:**
+
+El cargo duplicado representa un importe de 210.0 que ha sido registrado dos veces.
+
+**Acción Recomendada:**
+
+Se recomienda revisar y eliminar una de las entradas duplicadas correspondientes al &quot;Hotel Barcelon...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>5.0/10 · 1s · 20260513_185318_064815</span></div>
+  <pre># Auditar duplicados de marzo
+
+## Resumen
+
+Se encontraron 2 cargos duplicados en el archivo `gastos_2026_03.csv`.
+
+## Duplicados encontrados
+
+| fecha | concepto | categoria | importe_declarado | importe_esperado | estado |
+| --- | --- | --- | --- | --- | --- |
+| 2026-03-04 | Hotel Barcelona | viajes | 210.0 | 210.0 | posible_duplicado |
+| 2026-03-04 | Hotel Barcelona | viajes | 210.0 | 210.0 | posible_duplicado |
+
+## Impacto económico
+
+El impacto económico de estos duplicados es de 420.0 euros.
+
+## Acción recomenda...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>0.0/10 · 0s · 20260513_185318_064815</span></div>
+  <pre>Traceback (most recent call last):
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 119, in post_json
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py&quot;, line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py...</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-13 · L3</span><h2>Informe de discrepancias de gastos Q1</h2></div>
+    <p>Auditoria Q1 multiarchivo. Sube la complejidad: reconciliar meses, duplicados, discrepancias y partidas limpias.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> Licencia PDF, Hotel Barcelona, duplicado, febrero</div>
+  <div class="case-conclusion">Mejor senal: Groq Llama 8B (10.0/10). Lectura: Codex tiende a crear salida mas verificable; Gemini Flash/Flash-Lite cubre mucho trabajo de bajo coste cuando no se agota cuota; Gemini Pro ahora mismo queda penalizado por 429 en la cuenta actual.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>10.0/10 · 77s · 20260520_165939_023816</span></div>
+  <pre>Usaré la skill de Spreadsheets porque el trabajo es auditar CSV locales y resumir discrepancias/duplicados con trazabilidad. Primero voy a revisar la estructura de los archivos y luego haré el cruce de datos.
+
+Ya tengo la guía suficiente; no hace falta crear un libro Excel porque el pedido es un informe textual. Voy a inspeccionar encabezados, conteos y posibles claves repetidas en los tres CSV.
+
+La estructura es uniforme: fecha, concepto, categoría, declarado, esperado y estado. Ahora calcularé diferencias de impo...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>10.0/10 · 56s · 20260520_165939_023816</span></div>
+  <pre>Voy a revisar los tres CSV de enero, febrero y marzo, identificar duplicados y anomalías, y luego te devuelvo un resumen por mes con partidas limpias. Primero localizo la estructura de los archivos y compruebo columnas, tipos y posibles inconsistencias.
+
+Ya tengo la guía de análisis del módulo de hojas de cálculo. Ahora voy a leer la estructura de los CSV y detectar reglas de duplicidad o incoherencia antes de resumir mes a mes.
+
+Ya confirmé que las columnas son homogéneas y que febrero y marzo contienen señales cl...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>0.0/10 · 231s · 20260520_165939_023816</span></div>
+  <pre>Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Ripgrep is not available. Falling back to GrepTool.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>10.0/10 · 30s · 20260520_165939_023816</span></div>
+  <pre># Informe de Auditoría de Gastos Q1 2026
+
+## Resumen General
+
+Se ha realizado una auditoría de los gastos de enero, febrero y marzo de 2026. A continuación, se detallan las discrepancias, duplicados y partidas limpias encontradas.
+
+---
+
+## Discrepancias Encontradas
+
+Las siguientes partidas presentan una diferencia entre el importe declarado y el importe esperado:
+
+*   **Fecha:** 2026-02-22, **Concepto:** Licencia PDF, **Categoría:** software, **Importe Declarado:** 19.9, **Importe Esperado:** 29.9, **Estado:** impo...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>10.0/10 · 38s · 20260520_165939_023816</span></div>
+  <pre>**Resumen de Discrepancias de Gastos - Q1 2026**
+
+Este informe audita los gastos de enero, febrero y marzo de 2026.
+
+**1. Partidas con Discrepancias:**
+   - **Febrero:** Se encontró una partida con discrepancia en el importe:
+     - Concepto: `Licencia PDF`
+     - Categoría: `software`
+     - Importe Declarado: `19.9`
+     - Importe Esperado: `29.9`
+     - Estado: `importe_discrepante`
+
+**2. Partidas Duplicadas:**
+   - **Marzo:** Se identificaron dos entradas para el mismo concepto y importe en la misma fecha, marc...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>10.0/10 · 24s · 20260520_165939_023816</span></div>
+  <pre># Informe de Discrepancias de Gastos Q1
+
+## Resumen de Auditoría de Gastos (Enero - Marzo 2026)
+
+### Discrepancias Encontradas:
+*   **Febrero:** Licencia PDF - Importe declarado (19.9) difiere del importe esperado (29.9).
+
+### Gastos Duplicados:
+*   **Marzo:** Hotel Barcelona (2026-03-04, viajes, 210.0) - Aparece dos veces.
+
+### Partidas Limpias (sin discrepancias ni duplicados):
+*   **Enero:**
+    *   Hotel Madrid (2026-01-08, viajes, 180.0)
+    *   Taxi aeropuerto (2026-01-09, viajes, 38.5)
+    *   Software encue...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>10.0/10 · 3s · 20260513_185318_064815</span></div>
+  <pre># Informe de discrepancias de gastos Q1
+
+Este informe detalla las discrepancias, duplicados y partidas limpias encontradas en los registros de gastos de enero, febrero y marzo de 2026.
+
+## Resumen General
+
+Se han analizado los archivos `gastos_2026_01.csv`, `gastos_2026_02.csv` y `gastos_2026_03.csv`.
+
+## Discrepancias de Importe
+
+Se ha identificado una discrepancia en el importe declarado y el importe esperado en el mes de febrero:
+
+*   **Concepto:** Licencia PDF
+*   **Fecha:** 2026-02-22
+*   **Categoría:** softwa...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>10.0/10 · 1s · 20260513_185318_064815</span></div>
+  <pre># Informe de discrepancias de gastos Q1
+
+## Resumen de gastos
+
+| Mes | Total gastos declarados | Total gastos esperados | Duplicados | Discrepantes | Partidas limpias |
+| --- | --- | --- | --- | --- | --- |
+| Enero | 267.5 | 267.5 | 0 | 0 | 3 |
+| Febrero | 167.9 | 167.9 | 0 | 1 | 2 |
+| Marzo | 444.7 | 444.7 | 1 | 0 | 2 |
+
+## Detalle de gastos
+
+### Enero
+
+| Fecha | Concepto | Categoria | Importe declarado | Importe esperado | Estado |
+| --- | --- | --- | --- | --- | --- |
+| 2026-01-08 | Hotel Madrid | viajes | 180.0...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>0.0/10 · 0s · 20260513_185318_064815</span></div>
+  <pre>Traceback (most recent call last):
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 119, in post_json
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py&quot;, line 189, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\urllib\request.py...</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-15 · L3</span><h2>Cruzar notas de voz con contactos</h2></div>
+    <p>Cruzar notas con contactos. Es una tarea muy representativa del asistente real: resolver personas, empresas y emails.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> Noelia Castro, Luis Martin, Tomas Vega, Laura Marin</div>
+  <div class="case-conclusion">Mejor senal: Gemini API Flash-Lite (10.0/10). Lectura: Codex tiende a crear salida mas verificable; Gemini Flash/Flash-Lite cubre mucho trabajo de bajo coste cuando no se agota cuota; Gemini Pro ahora mismo queda penalizado por 429 en la cuenta actual.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>10.0/10 · 50s · 20260520_165939_023816</span></div>
+  <pre>Voy a leer las notas y el CSV de contactos para ver el formato exacto y cruzar menciones con nombres/empresas/emails de forma determinista.
+
+Ya veo que las notas son transcripciones JSONL y los contactos tienen nombre, empresa y email. Ahora leeré todos los registros y haré el cruce por nombre completo, nombre de pila y empresa mencionada.
+
+El cruce principal está claro: algunas notas mencionan nombre completo, otras solo nombre de pila junto a empresa, y unas pocas solo empresa. Incluiré los emparejamientos que ti...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>10.0/10 · 56s · 20260520_165939_023816</span></div>
+  <pre>Voy a cruzar el JSONL de notas con el CSV de contactos, extraer las menciones de personas y empresas, y devolver una tabla con la tarea, la persona, la empresa y el email. Primero reviso la estructura de ambos archivos para decidir el criterio de emparejamiento.
+
+Estoy leyendo la estructura de ambas fuentes para ver qué campos traen y cómo identificar las menciones de forma fiable. Luego hago el cruce por nombre y, si hace falta, por empresa.
+
+Ya tengo la estructura: las notas son texto libre con ID y timestamp, y...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>0.0/10 · 231s · 20260520_165939_023816</span></div>
+  <pre>Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+YOLO mode is enabled. All tool calls will be automatically approved.
+Ripgrep is not available. Falling back to GrepTool.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>0.0/10 · 2s · 20260512_173317_490752</span></div>
+  <pre>Cannot use both a positional prompt and the --prompt (-p) flag together
+Usage: gemini [options] [command]
+
+Gemini CLI - Defaults to interactive mode. Use -p/--prompt for non-interactive (headless) mode.
+
+Commands:
+  gemini mcp                   Manage MCP servers
+  gemini extensions &lt;command&gt;  Manage Gemini CLI extensions.  [aliases: extension]
+  gemini skills &lt;command&gt;      Manage agent skills.  [aliases: skill]
+  gemini hooks &lt;command&gt;       Manage Gemini CLI hooks.  [aliases: hook]
+  gemini gemma...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>0.0/10 · 2s · 20260512_173317_490752</span></div>
+  <pre>Cannot use both a positional prompt and the --prompt (-p) flag together
+Usage: gemini [options] [command]
+
+Gemini CLI - Defaults to interactive mode. Use -p/--prompt for non-interactive (headless) mode.
+
+Commands:
+  gemini mcp                   Manage MCP servers
+  gemini extensions &lt;command&gt;  Manage Gemini CLI extensions.  [aliases: extension]
+  gemini skills &lt;command&gt;      Manage agent skills.  [aliases: skill]
+  gemini hooks &lt;command&gt;       Manage Gemini CLI hooks.  [aliases: hook]
+  gemini gemma...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>7.0/10 · 22s · 20260512_173317_490752</span></div>
+  <pre>| tarea | persona | empresa | email |
+|---|---|---|---|
+| VN-001 | Noelia Castro | Clinica Centro | noelia.castro@clinicacentro.es |
+| VN-002 | Luis Martin | Delta Equipos | luis.martin@deltaequipos.es |
+| VN-003 | Xavier Puig | Barna Health | xavier.puig@barnahealth.es |
+| VN-004 | Sergio Campos | Innotek | sergio.campos@innotek.es |
+| VN-005 | Elena Vidal | Atlantic Data | elena.vidal@atlanticdata.es |
+| VN-006 | David Navarro | IberLegal | david.navarro@iberlegal.es |
+| VN-007 | Marta Ruiz | Clinica Sol | marta....</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>10.0/10 · 3s · 20260513_185318_064815</span></div>
+  <pre>| Tarea | Persona | Empresa | Email |
+|---|---|---|---|
+| Confirmar demo del modulo de pagos | Noelia Castro | Clinica Centro | noelia.castro@clinicacentro.es |
+| Enviar CSV actualizado de monitores | Luis Martin | Delta Equipos | luis.martin@deltaequipos.es |
+| Confirmar reunion | Xavier Puig | Barna Health | xavier.puig@barnahealth.es |
+| Preparar minuta con riesgos de seguridad y coste de auditoria | Sergio Campos | Innotek | sergio.campos@innotek.es |
+| Solicitar facturas de abril | Elena Vidal | Atlantic Data...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>7.0/10 · 1s · 20260512_173317_490752</span></div>
+  <pre># Resultado de la unión de notas de voz con contactos
+
+| Tarea | Persona | Empresa | Email |
+| --- | --- | --- | --- |
+| Recordar llamar a Noelia de Clinica Centro antes del jueves para confirmar demo del modulo de pagos. | Noelia Castro | Clinica Centro | noelia.castro@clinicacentro.es |
+| Enviar a Luis de Delta Equipos el CSV actualizado de monitores; falta incluir descuento del 4 por ciento. | Luis Martin | Delta Equipos | luis.martin@deltaequipos.es |
+| Comprar billete para Barcelona el dia 18 si Xavier confirm...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>7.0/10 · 17s · 20260512_173317_490752</span></div>
+  <pre>| Tarea | Persona | Empresa | Email |
+|-------|---------|---------|-------|
+| VN-001 | Noelia Castro | Clinica Centro | noelia.castro@clinicacentro.es |
+| VN-002 | Luis Martin | Delta Equipos | luis.martin@deltaequipos.es |
+| VN-003 | Xavier Puig | Barna Health | xavier.puig@barnahealth.es |
+| VN-004 | Sergio Campos | Innotek | sergio.campos@innotek.es |
+| VN-005 | Elena Vidal | Atlantic Data | elena.vidal@atlanticdata.es |
+| VN-006 | David Navarro | IberLegal | david.navarro@iberlegal.es |
+| VN-007 | Marta Ruiz |...</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-19 · L3</span><h2>Plan de seguimiento de implantacion</h2></div>
+    <p>Plan de implantacion y formacion. Buena tarea para comparar planificacion, hitos y dependencias.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> Laura Marin, formacion, dia 22, hitos</div>
+  <div class="case-conclusion">Mejor senal: Gemini CLI Flash (9.0/10). Lectura: En tareas de planificacion o web, Gemini CLI y OpenCode con Gemini Flash son alternativas razonables, pero Codex conserva mejor trazabilidad y control de archivo.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>5.0/10 · 54s · 20260513_130231_288791</span></div>
+  <pre>Voy a revisar las notas y los hilos de email para extraer todas las menciones a implantación y formación, y convertirlas en un plan trazable con responsables y dependencias.
+
+He localizado una referencia explícita a agenda de implantación y formación en `VN-011`, más dos dependencias operativas relacionadas en los correos: demo de pagos de Clínica Centro el 14 de mayo e integración SSO de Barna Health el 18 de mayo. Voy a dejarlo como un plan de seguimiento en Markdown, con trazabilidad a las fuentes.
+
+Ya he creado...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>7.0/10 · 36s · 20260513_130231_288791</span></div>
+  <pre>Voy a revisar los dos archivos locales para ubicar todas las referencias a “implantación” y “formación” y convertirlas en un plan de seguimiento con hitos, responsables y dependencias. Después aplicaré los cambios directamente en los archivos del directorio de trabajo.
+
+Ya localicé una referencia directa a implantación y formación en la nota `VN-011`, además del hilo de correo relacionado. Voy a consolidarlas en un plan operativo, dejando hitos, responsable y dependencias explícitos en los archivos ya preparados....</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>7.0/10 · 39s · 20260513_130231_288791</span></div>
+  <pre># Plan de Seguimiento de Implantación y Formación
+
+## Hito 1: Preparación y Agendamiento
+
+| Hito | Fecha Límite | Responsable | Cliente | Notas | Dependencias |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Confirmar agenda de implantación | 2026-05-21 | Equipo | Laura Marin | Enviar agenda detallada | |
+| Sesión de formación | 2026-05-22 | Equipo | Laura Marin | Hito de formación | Confirmación de agenda |
+
+## Hito 2: Demos y Reuniones Técnicas
+
+| Hito | Fecha | Responsable | Cliente | Notas | Dependencias |
+| :--...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>9.0/10 · 29s · 20260513_130231_288791</span></div>
+  <pre># Plan de Seguimiento de Implantación y Formación
+
+Este documento detalla un plan de seguimiento con hitos clave, responsables y dependencias, basado en las referencias de &quot;implantación&quot; y &quot;formación&quot; encontradas en los registros de voz y correos electrónicos.
+
+## Hitos de Implantación y Formación
+
+### 1. Envío de Agenda de Implantación
+*   **Hito:** Enviar la agenda detallada de implantación a Laura Marin.
+*   **Descripción:** Preparar y comunicar el cronograma y los pasos a seguir para la implantación del proyect...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>8.0/10 · 22s · 20260513_130231_288791</span></div>
+  <pre># Plan de Seguimiento de Implantación y Formación
+
+Este plan detalla los hitos clave, responsables y dependencias relacionados con la implantación y formación, extraídos de las comunicaciones recientes.
+
+## Hitos Clave
+
+### Hito 1: Demo Módulo de Pagos - Clinica Centro
+*   **Descripción:** Demostración del módulo de pagos, enfocada en conciliación y estado de pagos.
+*   **Responsable(s):** Noelia Castro (Clinica Centro), equipo@inspector.local.
+*   **Dependencias:** Confirmación de asistencia de administración de C...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>0.0/10 · 8s · 20260513_130231_288791</span></div>
+  <pre>{&quot;type&quot;:&quot;step_start&quot;,&quot;timestamp&quot;:1778671129829,&quot;sessionID&quot;:&quot;ses_1def076c0ffes9UDuEGlxREkfx&quot;,&quot;part&quot;:{&quot;id&quot;:&quot;prt_e210f94e20016Y7wFmRUUjxjd4&quot;,&quot;messageID&quot;:&quot;msg_e210f8acc001y1LIAEZm4HcjVX&quot;,&quot;sessionID&quot;:&quot;ses_1def076c0ffes9UDuEGlxREkfx&quot;,&quot;snapshot&quot;:&quot;3f3c475b3e2ae552c120765945c25f33a7542855&quot;,&quot;type&quot;:&quot;step-start&quot;}}
+{&quot;type&quot;:&quot;step_finish&quot;,&quot;timestamp&quot;:1778671131604,&quot;sessionID&quot;:&quot;ses_1def076c0ffes9UDuEGlxREkfx&quot;,&quot;part&quot;:{&quot;id&quot;:&quot;prt_e210f9bce001GC6bNRB0y3UX4D&quot;,&quot;reason&quot;:&quot;error&quot;,&quot;snapshot&quot;:&quot;3f3c475b3e2ae552c120765945c25f33a7542855&quot;,&quot;messa...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>5.0/10 · 7s · 20260513_185318_064815</span></div>
+  <pre># Plan de Seguimiento de Implantación
+
+## Hito 1: Preparación y Configuración Inicial
+
+*   **Descripción:** Configuración inicial de la plataforma y preparación de los entornos para la implantación.
+*   **Fecha Límite:** 2026-05-12
+*   **Responsable:** Equipo Técnico
+*   **Dependencias:** Ninguna
+
+## Hito 2: Demo Módulo de Pagos - Clínica Centro
+
+*   **Descripción:** Realización de la demo del módulo de pagos para Clínica Centro.
+*   **Fecha Límite:** 2026-05-14
+*   **Responsable:** Equipo de Ventas, Noelia Castro...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>0.0/10 · 0s · 20260513_130231_288791</span></div>
+  <pre>Traceback (most recent call last):
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 238, in &lt;module&gt;
+    raise SystemExit(main())
+                     ~~~~^^
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 64, in main
+    raw_prompt = read_prompt(args.prompt, args.prompt_file)
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 100, in read_prompt
+    return Path(prompt_file).read_text(encoding=&quot;utf-8&quot;)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\us...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>0.0/10 · 0s · 20260513_130231_288791</span></div>
+  <pre>Traceback (most recent call last):
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 238, in &lt;module&gt;
+    raise SystemExit(main())
+                     ~~~~^^
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 64, in main
+    raw_prompt = read_prompt(args.prompt, args.prompt_file)
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 100, in read_prompt
+    return Path(prompt_file).read_text(encoding=&quot;utf-8&quot;)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\us...</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-24 · L4</span><h2>Validar descuento Delta Equipos con mercado</h2></div>
+    <p>Validar descuento con mercado. Mide uso del contexto web preparado y si distingue dato local de comparativa externa.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> Delta Equipos, monitores 27, 4%, comparativa</div>
+  <div class="case-conclusion">Mejor senal: Codex 5.4 mini (9.0/10). Lectura: En tareas de planificacion o web, Gemini CLI y OpenCode con Gemini Flash son alternativas razonables, pero Codex conserva mejor trazabilidad y control de archivo.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>9.0/10 · 68s · 20260512_173317_490752</span></div>
+  <pre>Voy a revisar primero el contexto web preparado y los archivos locales para identificar exactamente qué oferta de Delta Equipos hay que comparar y contra qué referencias.
+
+El 4% de Delta Equipos **no parece competitivo por sí solo** para monitores de 27&quot;.
+
+En los datos locales, la oferta es: Luis Martín de Delta Equipos ofrece cerrar antes del **13 de mayo de 2026** con un **4% de descuento** sobre monitores de 27&quot;; además hay una nota previa para incluir ese descuento en el CSV. No aparece el precio base, así que...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>9.0/10 · 43s · 20260512_173317_490752</span></div>
+  <pre>Voy a leer `web_context.md` y los dos archivos locales para extraer el precio y el contexto del descuento antes de contrastarlo con referencias web actuales.
+
+**Conclusión**
+No parece un descuento competitivo por sí solo. Un **4%** sobre monitores de 27&quot; queda claramente por debajo de las promociones vigentes que vi en tiendas españolas actuales, donde aparecen descuentos de **9% a 36%** en modelos comparables.
+
+**Qué encontré**
+- [PcComponentes - Samsung S27D302GAU 27&quot;](https://www.pccomponentes.com/monitor-samsun...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>0.0/10 · 0s · 20260512_173317_490752</span></div>
+  <pre>ValueError: No closing quotation</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>0.0/10 · 0s · 20260512_173317_490752</span></div>
+  <pre>ValueError: No closing quotation</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>0.0/10 · 0s · 20260512_173317_490752</span></div>
+  <pre>ValueError: No closing quotation</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>7.0/10 · 20s · 20260512_173317_490752</span></div>
+  <pre># Validación de descuento Delta Equipos para monitores 27&quot;
+
+**Oferta de Delta Equipos:**
+Se ha confirmado una oferta de un 4% de descuento sobre monitores de 27 pulgadas de Delta Equipos, aplicable si se cierra antes del 13 de mayo de 2026. Esta información proviene del &quot;Hilo E-002: Delta Equipos - descuento monitores&quot; en `emails_hilos.md` (fecha: 2026-05-05 12:40) y se corrobora en la nota de voz &quot;VN-002&quot; de `notas_voz.jsonl`.
+
+**Análisis de Competitividad frente a referencias web:**
+No es posible validar directam...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>5.0/10 · 4s · 20260513_185318_064815</span></div>
+  <pre>El descuento del 4% ofrecido por Delta Equipos para monitores de 27 pulgadas parece ser una oferta estándar y no necesariamente una &quot;ganga&quot; o una oferta excepcionalmente competitiva sin un análisis de precios más profundo.
+
+**Análisis:**
+
+*   **Información de Delta Equipos:** El correo electrónico de Luis Martin de Delta Equipos (Hilo E-002) indica claramente la oferta de un 4% de descuento si se cierra la operación antes del día 13. No se proporciona información sobre el precio original ni sobre el modelo específi...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>1.0/10 · 3s · 20260512_173317_490752</span></div>
+  <pre>1 0 obj &gt;/Type /Catalog /Pages 2 0 R &gt;&gt; endobj 2 0 obj &gt;/Type /Pages /Kids [ 3 0 R ] /Count 1 &gt;&gt; endobj 3 0 obj &gt;/Type /Page /Parent 2 0 R /Resources 4 0 R /Contents 5 0 R &gt;&gt; endobj 4 0 obj &gt;/ProcSet[/PDF/Text/ImageB/ImageC/ImageI] &gt;&gt;/Annots[ 19 0 R 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 41 0 R 42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R 52 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 63 0 R 64 0 R 65 0...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>7.0/10 · 41s · 20260512_173317_490752</span></div>
+  <pre># Validación del descuento ofrecido por Delta Equipos para monitores 27&quot;
+
+**Fecha de análisis:** 12 de mayo de 2026
+
+**Descuento ofrecido:** 4% sobre monitores 27, válido hasta el 13 de mayo de 2026 (fuente: correo electrónico de Luis Martín, Delta Equipos, 5 de mayo de 2026).
+
+**Contexto de mercado consultado:** Verificador de Ofertas - Histórico de precios de ecommerce (https://www.verificadordeofertas.com/). Esta plataforma monitoriza más de 30 millones de productos en más de 500 webs en España, proporcionando d...</pre>
+</article></div>
+</section><section class="case">
+  <div class="case-title">
+    <div><span class="pill">test-25 · L4</span><h2>Informe ejecutivo de cuentas prioritarias</h2></div>
+    <p>Informe ejecutivo de cuentas prioritarias. Resume el tipo de trabajo que seguramente querremos en uso diario.</p>
+  </div>
+  <div class="expected"><b>Claves esperadas:</b> clientes alta, riesgos, siguientes acciones, Madrid</div>
+  <div class="case-conclusion">Mejor senal: Gemini CLI Flash (9.0/10). Lectura: En tareas de planificacion o web, Gemini CLI y OpenCode con Gemini Flash son alternativas razonables, pero Codex conserva mejor trazabilidad y control de archivo.</div>
+  <div class="answers"><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.5</b><span>2.0/10 · 91s · 20260513_130231_288791</span></div>
+  <pre>Voy a revisar los tres archivos locales para entender la estructura y cruzar señales de contactos, correos y notas antes de redactar el informe.
+
+Ya veo que los datos son sintéticos y que las prioridades vienen en el CSV, mientras correos y notas añaden fechas límite y señales operativas. Ahora voy a extraer todas las cuentas prioritarias y mapear menciones cruzadas por empresa/contacto.
+
+Las señales críticas están concentradas en cuentas de prioridad alta y en algunos proveedores/prospectos con vencimientos. Voy a...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Codex 5.4 mini</b><span>9.0/10 · 80s · 20260513_130231_288791</span></div>
+  <pre>Voy a leer los tres archivos locales para cruzar contactos, hilos de correo y notas, y luego sintetizaré el informe con riesgos y siguientes acciones.
+
+Ya tengo el formato de los tres archivos. Ahora voy a cruzar prioridades altas con menciones en correos y notas para detectar cuentas con señales de riesgo y acciones concretas.
+
+Estoy refinando el cruce porque parte de los nombres no aparecen literalmente en los hilos. Voy a identificar las señales por empresa y contexto para evitar falsos negativos.
+
+Ya tengo las...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Pro</b><span>9.0/10 · 93s · 20260513_130231_288791</span></div>
+  <pre># Informe Ejecutivo de Cuentas Prioritarias (13 de mayo de 2026)
+
+## 1. Clientes
+
+### Ana Lopez (Nova Iberia)
+- **Rol**: Directora Operaciones
+- **Situacion**: Cliente prioritario que ha solicitado un formato especifico para los informes (resumen ejecutivo en PDF). Es crucial cumplir con este requisito para mantener una buena relacion.
+- **Riesgos**: Incumplir con el formato de reporte solicitado puede danar la relacion comercial.
+- **Siguientes pasos**:
+    - [ ] **Accion**: Adaptar todos los futuros informes al f...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash</b><span>9.0/10 · 43s · 20260513_130231_288791</span></div>
+  <pre># Informe Ejecutivo de Cuentas Prioritarias - 13 de mayo de 2026
+
+## Resumen Ejecutivo
+
+Este informe detalla el estado actual de las cuentas con prioridad &quot;alta&quot;, identificando comunicaciones clave, riesgos potenciales y las acciones inmediatas necesarias para avanzar en cada relación.
+
+---
+
+## Cuentas Prioritarias
+
+### Clinica Centro (Contacto: Noelia Castro - noelia.castro@clinicacentro.es)
+*   **Estado:** Demo del módulo de pagos programada para el jueves 14 de mayo a las 11:30. Se requiere asistencia de adminis...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini CLI Flash-Lite</b><span>8.0/10 · 83s · 20260513_130231_288791</span></div>
+  <pre># Informe Ejecutivo de Cuentas Prioritarias
+
+**Fecha de Generación:** 2026-05-13
+
+Este informe consolida información clave de contactos de alta prioridad, correos electrónicos y notas de voz para identificar riesgos y definir las próximas acciones.
+
+---
+
+## 1. Clínica Sol
+
+*   **Contactos:**
+    *   Marta Ruiz (Administración)
+    *   Noelia Castro (Administración)
+*   **Resumen:** Se programó una demo del módulo de pagos para el 14 de mayo a las 11:30, con enfoque en administración. Se debe incluir a Clínica Sol e...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>OpenCode + Gemini Flash</b><span>0.0/10 · 106s · 20260513_130231_288791</span></div>
+  <pre>{&quot;type&quot;:&quot;step_start&quot;,&quot;timestamp&quot;:1778671540353,&quot;sessionID&quot;:&quot;ses_1deea5cebffeJ5ntd71ZmLahtl&quot;,&quot;part&quot;:{&quot;id&quot;:&quot;prt_e2115d87d001fnYQ85tFSjCnZ1&quot;,&quot;messageID&quot;:&quot;msg_e2115a4d3001sscGMbm2m0hXsl&quot;,&quot;sessionID&quot;:&quot;ses_1deea5cebffeJ5ntd71ZmLahtl&quot;,&quot;snapshot&quot;:&quot;0eb39a34d3b54b84568d85a78cc2c7d7ca223aee&quot;,&quot;type&quot;:&quot;step-start&quot;}}
+{&quot;type&quot;:&quot;tool_use&quot;,&quot;timestamp&quot;:1778671541125,&quot;sessionID&quot;:&quot;ses_1deea5cebffeJ5ntd71ZmLahtl&quot;,&quot;part&quot;:{&quot;type&quot;:&quot;tool&quot;,&quot;tool&quot;:&quot;read&quot;,&quot;callID&quot;:&quot;q806SgWuaAjDetpC&quot;,&quot;state&quot;:{&quot;status&quot;:&quot;completed&quot;,&quot;input&quot;:{&quot;filePath&quot;:&quot;D:\\inspect...</pre>
+</article><article class="answer ok">
+  <div class="answer-head"><b>Gemini API Flash-Lite</b><span>7.5/10 · 7s · 20260513_185318_064815</span></div>
+  <pre># Informe Ejecutivo de Cuentas Prioritarias
+
+Este informe consolida información clave de nuestras cuentas prioritarias, incluyendo detalles de contacto, comunicaciones recientes, notas relevantes, riesgos identificados y las siguientes acciones a tomar.
+
+## Cuentas de Alta Prioridad
+
+### 1. Nova Iberia
+*   **Contacto Principal:** Ana Lopez (Directora Operaciones)
+    *   Email: ana.lopez@novaiberia.es
+    *   Teléfono: +34 600 100 001
+    *   Ciudad: Madrid
+*   **Comunicación Reciente:**
+    *   **Asunto:** Formato...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>Groq Llama 8B</b><span>0.0/10 · 0s · 20260513_130231_288791</span></div>
+  <pre>Traceback (most recent call last):
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 238, in &lt;module&gt;
+    raise SystemExit(main())
+                     ~~~~^^
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 64, in main
+    raw_prompt = read_prompt(args.prompt, args.prompt_file)
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 100, in read_prompt
+    return Path(prompt_file).read_text(encoding=&quot;utf-8&quot;)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\us...</pre>
+</article><article class="answer fail">
+  <div class="answer-head"><b>OpenRouter DeepSeek V3.2</b><span>0.0/10 · 0s · 20260513_130231_288791</span></div>
+  <pre>Traceback (most recent call last):
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 238, in &lt;module&gt;
+    raise SystemExit(main())
+                     ~~~~^^
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 64, in main
+    raw_prompt = read_prompt(args.prompt, args.prompt_file)
+  File &quot;D:\inspector\benchmarks\engines\api_wrapper.py&quot;, line 100, in read_prompt
+    return Path(prompt_file).read_text(encoding=&quot;utf-8&quot;)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File &quot;C:\Users\us...</pre>
+</article></div>
+</section>
+<section class="panel"><h2>Regla operativa propuesta</h2><ol><li><b>Privacidad:</b> anonimizar localmente con reglas + Mini Nano cuando haya PII.</li><li><b>Entrada barata:</b> Groq o Gemini Flash-Lite para clasificar, validar claves y decidir ruta.</li><li><b>Trabajo normal:</b> Codex 5.4 mini si toca filesystem, multiarchivo, scripts o salida persistente.</li><li><b>Fallback Google:</b> Gemini CLI Flash para tareas ofimaticas, resumenes, tablas y parte del trabajo con archivos.</li><li><b>Escalado:</b> Codex 5.5 cuando falten claves, haya riesgo alto o la respuesta barata no pase.</li><li><b>No recomendado como default ahora:</b> Gemini Pro por cuota 429, Mini Nano como agente completo y OpenCode+Mini Nano por latencia.</li></ol></section>
+</main></body></html>

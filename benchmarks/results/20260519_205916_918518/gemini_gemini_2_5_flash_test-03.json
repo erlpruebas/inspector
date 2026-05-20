@@ -1,0 +1,41 @@
+{
+  "engine": "gemini_gemini_2_5_flash",
+  "task_id": "test-03",
+  "returncode": 0,
+  "stdout": "I have extracted the tasks from `notas_voz.jsonl` and saved them in `resultado.md` as a Markdown table.\n\n```\n| id de nota | accion | entidad relacionada | posible fecha limite |\n|---|---|---|---|\n| VN-001 | Recordar llamar | Noelia, ORG_0005, PERSON_0009 | antes del jueves |\n| VN-002 | Enviar | PERSON_0074 | |\n| VN-003 | Comprar billete | Barcelona, Xavier, Barna Health | el dia 18 |\n| VN-004 | Preparar minuta | PERSON_0060 | |\n| VN-005 | Pedir | PERSON_0073 | |\n| VN-006 | Crear tarea para revisar contrato | IberLegal, David | antes del 12 |\n| VN-007 | Agendar seguimiento | PERSON_0064 | el martes a las cuatro |\n| VN-008 | No olvidar | PERSON_0069 | |\n| VN-009 | Buscar alternativa | GreenBox | |\n| VN-010 | Llamar | PERSON_0072 | |\n| VN-011 | Enviar agenda de implantacion | PERSON_0033 | el dia 22 |\n| VN-012 | Revisar gastos | | |\n| VN-013 | Poner recordatorio para renovar certificado SSL | Cobalto | antes del 28 |\n| VN-014 | Preparar comparativa | OpenRouter, Gemini | |\n| VN-015 | Enviar email amable | PERSON_0059, BravoSoft | |\n| VN-016 | | ORG_0008 | |\n| VN-017 | Crear lista de contactos prioritarios | Madrid | |\n| VN-018 | Investigar | Apple, Microsoft | ultimos seis meses |\n| VN-019 | Preparar informe mensual de incidencias | ORG_0007 | |\n| VN-020 | Recordar reservar sala | | del viernes a las nueve y media |\n```\n",
+  "stderr": "Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.\nYOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nC:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\@google\\gemini-cli\\node_modules\\@lydell\\node-pty\\conpty_console_list_agent.js:11\nvar consoleProcessList = getConsoleProcessList(shellPid);\n                         ^\n\nError: AttachConsole failed\n    at Object.<anonymous> (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\@google\\gemini-cli\\node_modules\\@lydell\\node-pty\\conpty_console_list_agent.js:11:26)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n    at Module.load (node:internal/modules/cjs/loader:1553:32)\n    at Module._load (node:internal/modules/cjs/loader:1355:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n\nNode.js v24.15.0\nC:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\@google\\gemini-cli\\node_modules\\@lydell\\node-pty\\conpty_console_list_agent.js:11\nvar consoleProcessList = getConsoleProcessList(shellPid);\n                         ^\n\nError: AttachConsole failed\n    at Object.<anonymous> (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\@google\\gemini-cli\\node_modules\\@lydell\\node-pty\\conpty_console_list_agent.js:11:26)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n    at Module.load (node:internal/modules/cjs/loader:1553:32)\n    at Module._load (node:internal/modules/cjs/loader:1355:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n\nNode.js v24.15.0\nC:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\@google\\gemini-cli\\node_modules\\@lydell\\node-pty\\conpty_console_list_agent.js:11\nvar consoleProcessList = getConsoleProcessList(shellPid);\n                         ^\n\nError: AttachConsole failed\n    at Object.<anonymous> (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\@google\\gemini-cli\\node_modules\\@lydell\\node-pty\\conpty_console_list_agent.js:11:26)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n    at Module.load (node:internal/modules/cjs/loader:1553:32)\n    at Module._load (node:internal/modules/cjs/loader:1355:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n\nNode.js v24.15.0\nC:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\@google\\gemini-cli\\node_modules\\@lydell\\node-pty\\conpty_console_list_agent.js:11\nvar consoleProcessList = getConsoleProcessList(shellPid);\n                         ^\n\nError: AttachConsole failed\n    at Object.<anonymous> (C:\\Users\\user\\AppData\\Roaming\\npm\\node_modules\\@google\\gemini-cli\\node_modules\\@lydell\\node-pty\\conpty_console_list_agent.js:11:26)\n    at Module._compile (node:internal/modules/cjs/loader:1830:14)\n    at Object..js (node:internal/modules/cjs/loader:1961:10)\n    at Module.load (node:internal/modules/cjs/loader:1553:32)\n    at Module._load (node:internal/modules/cjs/loader:1355:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47\n\nNode.js v24.15.0\nError executing tool run_code: Tool \"run_code\" not found. Did you mean one of: \"read_file\", \"replace\", \"glob\"?\n",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\gemini_gemini_2_5_flash\\test-03\\resultado.md"
+  ],
+  "elapsed_seconds": 359.03424670000095,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-2.5-flash",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini:gemini-2.5-flash",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\gemini_gemini_2_5_flash_test-03_resultado.md"
+  ],
+  "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+  "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\gemini_gemini_2_5_flash\\test-03",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\gemini_gemini_2_5_flash\\test-03",
+    "mode": "redacted",
+    "files_processed": 1,
+    "files_skipped": 0,
+    "entities_found": 32,
+    "verification_passed": false,
+    "residual_findings": [
+      {
+        "start": 80,
+        "end": 89,
+        "text": "Noelia de",
+        "entity_type": "PERSON",
+        "source": "heuristic"
+      }
+    ],
+    "reviewer_used": false
+  }
+}

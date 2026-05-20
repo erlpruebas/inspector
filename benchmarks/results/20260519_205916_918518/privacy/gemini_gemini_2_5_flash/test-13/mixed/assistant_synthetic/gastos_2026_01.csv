@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+2026-01-08 [PHONE_0096],Hotel Madrid [PERSON_0077],viajes,180.0,180.0,ok
+2026-01-09 [PHONE_0095],Taxi aeropuerto,viajes,38.5,38.5,ok
+2026-01-15 [PHONE_0094],Software encuestas,software,49.0,49.0,ok

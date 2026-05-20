@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-22",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 1.418, \"usage\": {\"queue_time\": 0.016912741, \"prompt_tokens\": 2967, \"prompt_time\": 0.159206806, \"completion_tokens\": 1087, \"completion_time\": 1.103224701, \"total_tokens\": 4054, \"total_time\": 1.262431507, \"completion_tokens_details\": {\"reasoning_tokens\": 925}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-22\\resultado.md"
+  ],
+  "elapsed_seconds": 1.632234099903144,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 1.418,
+    "usage": {
+      "queue_time": 0.016912741,
+      "prompt_tokens": 2967,
+      "prompt_time": 0.159206806,
+      "completion_tokens": 1087,
+      "completion_time": 1.103224701,
+      "total_tokens": 4054,
+      "total_time": 1.262431507,
+      "completion_tokens_details": {
+        "reasoning_tokens": 925
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-22_resultado.md"
+  ],
+  "task_prompt": "# Comparar Apple y Microsoft seis meses\n\nUsa busqueda web para comparar el rendimiento de Apple y Microsoft en los ultimos seis meses. Cruza el resultado con la nota de voz que lo solicita.",
+  "execution_prompt": "# Comparar Apple y Microsoft seis meses\n\nUsa busqueda web para comparar el rendimiento de Apple y Microsoft en los ultimos seis meses. Cruza el resultado con la nota de voz que lo solicita.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-22"
+}

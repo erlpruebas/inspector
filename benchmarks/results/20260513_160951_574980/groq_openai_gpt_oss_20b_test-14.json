@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-14",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 1.528, \"usage\": {\"queue_time\": 0.015543295, \"prompt_tokens\": 1740, \"prompt_time\": 0.091914265, \"completion_tokens\": 1273, \"completion_time\": 1.289765578, \"total_tokens\": 3013, \"total_time\": 1.3816798430000001, \"completion_tokens_details\": {\"reasoning_tokens\": 947}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-14\\resultado.md"
+  ],
+  "elapsed_seconds": 1.7092611000407487,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 1.528,
+    "usage": {
+      "queue_time": 0.015543295,
+      "prompt_tokens": 1740,
+      "prompt_time": 0.091914265,
+      "completion_tokens": 1273,
+      "completion_time": 1.289765578,
+      "total_tokens": 3013,
+      "total_time": 1.3816798430000001,
+      "completion_tokens_details": {
+        "reasoning_tokens": 947
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-14_resultado.md"
+  ],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-14"
+}

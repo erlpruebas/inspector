@@ -1,0 +1,19 @@
+[
+  {
+    "task_id": "daily-01",
+    "engine": "command_local_echo",
+    "expected_keys": [
+      "Piso Olivo",
+      "305000",
+      "3 dormitorios",
+      "Colegio Albor"
+    ],
+    "missing_keys": [
+      "Piso Olivo",
+      "305000",
+      "3 dormitorios",
+      "Colegio Albor"
+    ],
+    "passed": false
+  }
+]

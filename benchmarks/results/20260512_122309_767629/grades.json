@@ -1,0 +1,25 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los archivos de referencia y la presenta en un formato claro y conciso, sin inventar datos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos",
+      "Formato claro y organizado",
+      "Cumplimiento de todos los requisitos de la tarea"
+    ],
+    "issues": []
+  }
+]

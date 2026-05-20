@@ -1,0 +1,182 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_pro",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  }
+]

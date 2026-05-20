@@ -20,11 +20,13 @@ class CommandEngine:
         timeout_seconds: int = 1800,
         model: str = "",
         inject_workspace: bool = True,
+        stdin_prompt: bool = False,
     ) -> None:
         self.name = name
         self.model = model
         self.command_template = command_template
         self.inject_workspace = inject_workspace
+        self.stdin_prompt = stdin_prompt
         self.timeout_seconds = int(os.getenv(f"BENCH_{name.upper()}_TIMEOUT_SECONDS", str(timeout_seconds)))
 
     def run(self, task_id: str, prompt: str, workdir: Path, expected_outputs: list[str]) -> EngineResult:
@@ -34,7 +36,8 @@ class CommandEngine:
         prompt_file.write_text(prompt, encoding="utf-8")
         rendered = self.command_template.format(
             prompt=_quote_arg(prompt),
-            prompt_file=_quote_arg(str(prompt_file)),
+            prompt_file=_quote_arg(prompt_file.read_text(encoding="utf-8")),
+            prompt_path=_quote_arg(str(prompt_file)),
             task_id=_quote_arg(task_id),
             workdir=_quote_arg(str(workdir)),
             output=_quote_arg(expected_outputs[0] if expected_outputs else "resultado.md"),
@@ -45,6 +48,7 @@ class CommandEngine:
             process = subprocess.run(
                 command,
                 cwd=str(workdir),
+                input=prompt if self.stdin_prompt else None,
                 text=True,
                 encoding="utf-8",
                 errors="replace",
@@ -136,7 +140,7 @@ def workspace_file_context(workdir: Path) -> str:
     parts: list[str] = []
     skip_names = {"resultado.md", "usage.json", "_benchmark_prompt.md"}
     for path in sorted(workdir.rglob("*")):
-        if not path.is_file() or path.name in skip_names:
+        if not path.is_file() or path.name in skip_names or "privacy" in path.parts:
             continue
         if path.stat().st_size > 80_000:
             parts.append(f"### {path.relative_to(workdir)}\n[archivo omitido por tamano: {path.stat().st_size} bytes]")

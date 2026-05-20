@@ -1,0 +1,59 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\n2026-03-04,Hotel Barcelona,viajes,210.0,210.0,posible_duplicado\n2026-03-04,Hotel Barcelona,viajes,210.0,210.0,posible_duplicado\n2026-03-19,Comida equipo,comidas,134.7,134.7,ok\n",
+  "mixed_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\n2026-03-04 [PHONE_0093],Hotel Barcelona [PERSON_0076],viajes,210.0,210.0,posible_duplicado\n2026-03-04 [PHONE_0093],Hotel Barcelona [PERSON_0076],viajes,210.0,210.0,posible_duplicado\n2026-03-19 [PHONE_0092],Comida equipo,comidas,134.7,134.7,ok\n",
+  "redacted_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\nPHONE_0093,PERSON_0076,viajes,210.0,210.0,posible_duplicado\nPHONE_0093,PERSON_0076,viajes,210.0,210.0,posible_duplicado\nPHONE_0092,Comida equipo,comidas,134.7,134.7,ok\n",
+  "entities": [
+    {
+      "start": 67,
+      "end": 77,
+      "text": "2026-03-04",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0093"
+    },
+    {
+      "start": 78,
+      "end": 93,
+      "text": "Hotel Barcelona",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0076"
+    },
+    {
+      "start": 131,
+      "end": 141,
+      "text": "2026-03-04",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0093"
+    },
+    {
+      "start": 142,
+      "end": 157,
+      "text": "Hotel Barcelona",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0076"
+    },
+    {
+      "start": 195,
+      "end": 205,
+      "text": "2026-03-19",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0092"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "entity_count": 0
+  }
+}

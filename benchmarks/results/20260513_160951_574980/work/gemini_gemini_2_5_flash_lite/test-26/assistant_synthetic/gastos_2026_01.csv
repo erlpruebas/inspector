@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+2026-01-08,Hotel Madrid,viajes,180.0,180.0,ok
+2026-01-09,Taxi aeropuerto,viajes,38.5,38.5,ok
+2026-01-15,Software encuestas,software,49.0,49.0,ok

@@ -1,0 +1,3590 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-02",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-04",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "correo corto"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-06",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-07",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-08",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-09",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-10",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-11",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-12",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-13",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-14",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-15",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-16",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-17",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-18",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-19",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-20",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-21",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-22",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "fecha de consulta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-24",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "comparativa"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-25",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-27",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "cliente"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-28",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-29",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "tareas pendientes",
+      "clientes prioritarios"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "codex_gpt_5_4_mini",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "coste"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-02",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Sergio Campos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-04",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-06",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-07",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-08",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-09",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-10",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-11",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-12",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-13",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-14",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-15",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-16",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "riesgos de seguridad"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-18",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-19",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-20",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-21",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-22",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "fecha de consulta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-24",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "comparativa"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-25",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "Madrid"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-27",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "cliente"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-28",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-29",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "tareas pendientes",
+      "clientes prioritarios"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "codex_gpt_5_5",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-02",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "prioridad alta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-04",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-06",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-07",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-08",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-09",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-10",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-11",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-12",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-13",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-15",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-16",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-17",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-18",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-19",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-20",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-21",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-22",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-23",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-24",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "comparativa"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-25",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-27",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "cliente"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-28",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-29",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "tareas pendientes",
+      "clientes prioritarios"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-02",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "reservar"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-04",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "correo corto"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-06",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-07",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-09",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-11",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-12",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-13",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-15",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-16",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-18",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-19",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "facturacion"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-22",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "fecha de consulta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Xavier Puig"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-24",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "comparativa"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-25",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "siguientes acciones"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-27",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-28",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-29",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-02",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "reservar"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-04",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-06",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [
+      "18 de mayo"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-07",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-09",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-11",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-12",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [
+      "clausula 8"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-13",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "febrero"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-15",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-16",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos",
+      "riesgos de seguridad"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-18",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [
+      "prospecto"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-19",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-22",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "fecha de consulta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-24",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-25",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-27",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-28",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-29",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "tareas pendientes",
+      "clientes prioritarios"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "recomendacion ejecutiva"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-06",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-07",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-09",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-10",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-11",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-12",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-13",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-15",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-16",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-18",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-22",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-24",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-27",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-28",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-29",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-06",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-07",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-09",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-10",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-11",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-12",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-13",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-15",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-16",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-18",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-22",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-24",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-27",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-28",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-29",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-06",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-07",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-09",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-10",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-11",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-12",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-13",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-15",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-16",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-18",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-22",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-24",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-27",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-28",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-29",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "passed": false
+  }
+]

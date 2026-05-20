@@ -1,0 +1,21 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260512_181734_060735",
+  "jobs": [
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "gemini:gemini-2.5-flash::test-03",
+      "at": "2026-05-12T16:18:17.855201+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [],
+  "running": null
+}

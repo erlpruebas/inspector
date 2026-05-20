@@ -50,7 +50,11 @@ def load_tasks(path: Path = TASKS_FILE) -> list[BenchmarkTask]:
 
 
 def prepare_workdir(task: BenchmarkTask, engine_name: str, run_id: str, clean: bool = True) -> Path:
-    workdir = RESULTS_DIR / run_id / "work" / engine_name / task.id
+    return prepare_workdir_in_root(RESULTS_DIR / run_id, task, engine_name, clean=clean)
+
+
+def prepare_workdir_in_root(root: Path, task: BenchmarkTask, engine_name: str, clean: bool = True) -> Path:
+    workdir = root / "work" / engine_name / task.id
     if clean and workdir.exists():
         shutil.rmtree(workdir)
     workdir.mkdir(parents=True, exist_ok=True)

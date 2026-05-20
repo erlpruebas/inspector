@@ -1,0 +1,19 @@
+[
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "passed": false
+  }
+]

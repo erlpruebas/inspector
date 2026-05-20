@@ -1,0 +1,24 @@
+[
+  {
+    "task_id": "daily-01",
+    "engine": "command_local_echo",
+    "engine_spec": "command:local_echo",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Piso Olivo",
+      "305000",
+      "3 dormitorios",
+      "Colegio Albor"
+    ],
+    "missing_keys": [
+      "Piso Olivo",
+      "305000",
+      "3 dormitorios",
+      "Colegio Albor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=2.",
+    "judge_model": ""
+  }
+]

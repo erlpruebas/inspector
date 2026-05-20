@@ -1,0 +1,23 @@
+{
+  "engine": "gemini_gemini_2_5_flash_lite",
+  "task_id": "test-14",
+  "returncode": 0,
+  "stdout": "The ICS file `resultado.md` has been created with the following content:\n\n```ics\nBEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Gemini CLI//EN\nCALSCALE:GREGORIAN\nBEGIN:VTIMEZONE\nTZID:Europe/Madrid\nBEGIN:STANDARD\nDTSTART:19700101T000000\nTZOFFSETFROM:-0100\nTZOFFSETTO:-0100\nTZNAME:CET\nEND:STANDARD\nBEGIN:DAYLIGHT\nDTSTART:19700101T000000\nTZOFFSETFROM:+0100\nTZOFFSETTO:+0200\nTZNAME:CEST\nEND:DAYLIGHT\nEND:VTIMEZONE\nBEGIN:VEVENT\nUID:EVENT-CLINICA-DEMO-20260513\nDTSTAMP:20260513T160951Z\nDTSTART;TZID=Europe/Madrid:20260514T113000\nDTEND;TZID=Europe/Madrid:20260514T123000\nSUMMARY:Demo Modulo Pagos - Clinica Centro\nDESCRIPTION:Demo de pagos y conciliación. Asistirá alguien de administración.\\r\nFuente: emails_hilos.md.\\r\nFalta especificar hora exacta de fin si la demo dura más de 1h.\\r\nLOCATION:\nEND:VEVENT\nBEGIN:VEVENT\nUID:EVENT-BARNA-REUNION-20260513\nDTSTAMP:20260513T160951Z\nDTSTART;TZID=Europe/Madrid:20260518T100000\nDTEND;TZID=Europe/Madrid:20260518T110000\nSUMMARY:Reunion Tecnica - Barna Health\nDESCRIPTION:Revisión de integración con SSO en Barcelona.\\r\nFuente: emails_hilos.md.\\r\nFalta especificar hora exacta de fin.\\r\nLOCATION:Barcelona\nEND:VEVENT\nBEGIN:VEVENT\nUID:TASK-NOELIA-CALL-20260513\nDTSTAMP:20260513T160951Z\nDTSTART;TZID=Europe/Madrid:20260513T090000\nDTEND;TZID=Europe/Madrid:20260513T091500\nSUMMARY:Llamar a Noelia (Clinica Centro) para confirmar demo\nDESCRIPTION:Confirmar demo modulo de pagos.\\r\nFuente: notas_voz.jsonl.\\r\nHora de llamada asumida a las 09:00.\\r\nFalta especificar hora exacta de fin.\\r\nLOCATION:\nEND:VEVENT\nBEGIN:VEVENT\nUID:TASK-IBERLEGAL-REVIEW-20260513\nDTSTAMP:20260513T160951Z\nDTSTART;TZID=Europe/Madrid:20260513T140000\nDTEND;TZID=Europe/Madrid:20260513T150000\nSUMMARY:Revisar Contrato IberLegal\nDESCRIPTION:Revisar contrato de soporte.\\r\nComentarios necesarios antes del 12 de mayo (fecha límite pasada).\\r\nFuente: emails_hilos.md, notas_voz.jsonl.\\r\nHora de revisión asumida a las 14:00.\\r\nFalta especificar hora exacta de fin.\\r\nLOCATION:\nEND:VEVENT\nEND:VCALENDAR\n```\n",
+  "stderr": "YOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\n",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\gemini_gemini_2_5_flash_lite\\test-14\\resultado.md"
+  ],
+  "elapsed_seconds": 98.21692299994174,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini:gemini-2.5-flash-lite",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\gemini_gemini_2_5_flash_lite_test-14_resultado.md"
+  ],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\gemini_gemini_2_5_flash_lite\\test-14"
+}

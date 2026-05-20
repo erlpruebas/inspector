@@ -1,0 +1,343 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrajo correctamente la información solicitada de los archivos, incluyendo todos los campos clave esperados. El objetivo también fue inferido correctamente del contexto.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos.",
+      "Cumplimiento de todos los campos clave.",
+      "Formato claro y conciso."
+    ],
+    "issues": [
+      "Se añadió el año '2026' que no estaba explícitamente en las claves esperadas, aunque es una inferencia razonable si se asume que la fecha se refiere al futuro cercano."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos y la presenta en un formato claro. El objetivo está bien inferido del contexto.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos clave (persona, empresa, fecha, hora).",
+      "Formato de nota conciso y legible.",
+      "Inferencia lógica del objetivo de la reunión."
+    ],
+    "issues": [
+      "El año de la cita (2026) no estaba explícitamente en las claves esperadas, aunque es una inferencia razonable si estuviera en los archivos."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos proporcionados y la presenta de forma clara. El único punto menor es la adición del año '2026' que no estaba explícitamente en las claves esperadas, aunque es una inferencia razonable para una cita.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de la información clave (persona, empresa, fecha, hora).",
+      "Formato claro y organizado de la nota.",
+      "Cumplimiento del objetivo de la tarea."
+    ],
+    "issues": [
+      "Inclusión del año '2026' que no estaba en las claves esperadas."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los archivos de referencia y la presenta en el formato esperado, sin inventar datos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos",
+      "Formato correcto",
+      "Cumplimiento de todas las claves esperadas",
+      "Inclusión del objetivo de la cita"
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos proporcionados y la presenta de forma clara. Cumple con todos los requisitos de la tarea.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos.",
+      "Formato claro y conciso.",
+      "Cumplimiento de todas las claves esperadas."
+    ],
+    "issues": [
+      "Se añade el año '2026' que no estaba explícitamente en las claves esperadas, aunque es una inferencia razonable."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro"
+    ],
+    "heuristic_score": 7.5,
+    "score": 8.0,
+    "comment": "La respuesta extrae la información clave de la cita de manera correcta y concisa. Sin embargo, no se menciona explícitamente el nombre de la persona (Noelia Castro) que se esperaba como parte de las claves.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extrae la fecha y hora de la cita correctamente.",
+      "Identifica la empresa (Clinica Centro) y el objetivo de la cita.",
+      "Formato claro y conciso."
+    ],
+    "issues": [
+      "Falta el nombre de la persona (Noelia Castro) en la información extraída."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los archivos proporcionados y la presenta en un formato claro y conciso, sin inventar datos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos",
+      "Formato claro y conciso",
+      "Cumplimiento de todas las claves esperadas"
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos, incluyendo persona, empresa, fecha y hora. El objetivo también es inferido correctamente. Se añade información adicional que no se solicitó explícitamente pero que es relevante y no inventada.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos clave.",
+      "Formato claro y organizado.",
+      "Inferencia correcta del objetivo.",
+      "No inventa datos."
+    ],
+    "issues": [
+      "Incluye información adicional no solicitada explícitamente en la tarea."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v4-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos de referencia y la presenta de forma clara. Se añade información adicional (Rol, Objetivo) que no estaba explícitamente en las claves esperadas pero que es coherente con el contexto de una cita.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos clave.",
+      "Formato claro y organizado.",
+      "Información adicional relevante proporcionada."
+    ],
+    "issues": [
+      "Se incluye el año '2026' que no estaba en las claves esperadas, aunque no se considera invención de datos ya que se infiere del contexto de una cita futura."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los archivos de referencia y la presenta en el formato esperado, sin inventar datos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos",
+      "Formato claro y conciso",
+      "Cumplimiento de todas las claves esperadas"
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los documentos proporcionados y la presenta en un formato claro y conciso, sin inventar datos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos",
+      "Formato claro y organizado",
+      "Cumplimiento de todas las claves esperadas",
+      "No inventa información"
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos de referencia y la presenta de forma clara y organizada. Cumple con todos los requisitos de la tarea.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos.",
+      "Formato claro y legible.",
+      "Cumplimiento de todas las claves esperadas."
+    ],
+    "issues": [
+      "Se añade el año '2026' que no estaba explícitamente en las claves esperadas, aunque es una inferencia razonable."
+    ]
+  }
+]

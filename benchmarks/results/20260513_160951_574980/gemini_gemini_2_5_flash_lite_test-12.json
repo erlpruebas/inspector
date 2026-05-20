@@ -1,0 +1,19 @@
+{
+  "engine": "gemini_gemini_2_5_flash_lite",
+  "task_id": "test-12",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "RangeError: Failed to allocate memory\n    at TextDecoder.decode (node:internal/encoding:494:28)\n    at stringify (node:internal/modules/helpers:418:18)\n    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:86:12)\n    at #translate (node:internal/modules/esm/loader:451:20)\n    at afterLoad (node:internal/modules/esm/loader:507:29)\n    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:512:12)\n    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:555:36)\n    at afterResolve (node:internal/modules/esm/loader:603:52)\n    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:609:12)\n    at ModuleJob.syncLink (node:internal/modules/esm/module_job:162:33)\n",
+  "output_files": [],
+  "elapsed_seconds": 2.37858820008114,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini:gemini-2.5-flash-lite",
+  "copied_outputs": [],
+  "task_prompt": "# Preparar minuta de contrato IberLegal\n\nPrepara una minuta de revision del contrato de IberLegal usando `emails_hilos.md` y `notas_voz.jsonl`. Incluye fecha limite y puntos de riesgo.",
+  "execution_prompt": "# Preparar minuta de contrato IberLegal\n\nPrepara una minuta de revision del contrato de IberLegal usando `emails_hilos.md` y `notas_voz.jsonl`. Incluye fecha limite y puntos de riesgo.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\gemini_gemini_2_5_flash_lite\\test-12"
+}

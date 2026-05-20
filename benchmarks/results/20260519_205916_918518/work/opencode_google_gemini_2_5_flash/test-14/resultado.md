@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:20260520T205916Z-001@opencode.com
+DTSTAMP:20260520T205916Z
+DTSTART:20260514T113000
+DTEND:20260514T123000
+SUMMARY:Demo modulo de pagos
+DESCRIPTION:Confirmar con Noelia de ORG_0005 la asistencia de alguien de administración. Falta la ubicación.
+END:VEVENT
+BEGIN:VEVENT
+UID:20260520T205916Z-002@opencode.com
+DTSTAMP:20260520T205916Z
+DTSTART:20260518T100000
+DTEND:20260518T110000
+SUMMARY:Reunión técnica Barna Health
+DESCRIPTION:Revisar integración con SSO.
+LOCATION:Barcelona
+END:VEVENT
+BEGIN:VEVENT
+UID:20260520T205916Z-003@opencode.com
+DTSTAMP:20260520T205916Z
+DTSTART:20260512T090000
+DTEND:20260512T100000
+SUMMARY:Revisar contrato soporte IberLegal
+DESCRIPTION:David pidió respuesta antes del 12 de mayo. Preocupan la clausula 8 de responsabilidad y la renovación automática. Falta hora exacta de inicio y fin, y la ubicación.
+END:VEVENT
+BEGIN:VEVENT
+UID:20260520T205916Z-004@opencode.com
+DTSTAMP:20260520T205916Z
+DTSTART:20260526T160000
+DTEND:20260526T170000
+SUMMARY:Seguimiento administración con PERSON_0064
+DESCRIPTION:Tema de administración. Falta fecha exacta (solo 'martes'). Falta la ubicación.
+END:VEVENT
+END:VCALENDAR

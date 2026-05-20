@@ -1,0 +1,24 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "vikingnano_gemini_nano_local",
+    "engine_spec": "vikingnano:gemini-nano-local",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  }
+]

@@ -29,6 +29,13 @@ PROVIDER_DEFAULTS = {
         "model_env": "BENCH_OPENROUTER_MODEL",
         "model": "deepseek/deepseek-v3.2",
     },
+    "vikingnano": {
+        "url": "https://viking-occasion-married-dimensional.trycloudflare.com/v1/chat/completions",
+        "key_env": "BENCH_VIKING_NANO_API_KEY",
+        "model_env": "BENCH_VIKING_NANO_MODEL",
+        "model": "gemini-nano-local",
+        "default_key": "local",
+    },
     "lmstudio": {
         "url": "http://127.0.0.1:1234/v1/chat/completions",
         "key_env": "LMSTUDIO_API_KEY",
@@ -55,7 +62,9 @@ def main() -> int:
     load_env_files()
     defaults = PROVIDER_DEFAULTS[args.provider]
     api_key = os.getenv(defaults["key_env"], "").strip()
-    if args.provider != "lmstudio" and not api_key:
+    if not api_key and defaults.get("default_key"):
+        api_key = str(defaults["default_key"]).strip()
+    if args.provider not in {"lmstudio", "vikingnano"} and not api_key:
         raise SystemExit(f"Missing API key env var: {defaults['key_env']}")
 
     model = args.model.strip() or os.getenv(defaults["model_env"], defaults["model"]).strip()
@@ -171,7 +180,7 @@ def workspace_file_context(prompt: str = "", compact: bool = False) -> str:
     skip_names = {"resultado.md", "usage.json", "_benchmark_prompt.md"}
     terms = prompt_terms(prompt)
     for path in sorted(Path.cwd().rglob("*")):
-        if not path.is_file() or path.name in skip_names:
+        if not path.is_file() or path.name in skip_names or "privacy" in path.parts:
             continue
         if path.stat().st_size > 80_000:
             parts.append(f"### {path.relative_to(Path.cwd())}\n[archivo omitido por tamano: {path.stat().st_size} bytes]")

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estrategia de simulacion diaria por personas</title>
+<style>
+body{margin:0;background:#f6f7fb;color:#172033;font-family:Segoe UI,Arial,sans-serif;line-height:1.45}
+.hero{background:#18344f;color:white;padding:42px 54px}.hero h1{margin:0;font-size:34px}.hero p{max-width:980px;color:#d9e7f2}
+.wrap{max-width:1240px;margin:auto;padding:26px 34px 58px}.panel{background:white;border:1px solid #e5e7eb;border-radius:8px;padding:22px;margin:18px 0;box-shadow:0 8px 24px rgba(16,24,40,.05)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}th{background:#f2f4f7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}.card{border:1px solid #e5e7eb;border-radius:8px;padding:16px;background:#fff}
+.flow div{border-left:5px solid #2557a7;padding:12px;background:#f8fafc;border-radius:6px;margin:10px 0}code{background:#eef2f7;padding:2px 5px;border-radius:4px}
+</style></head><body>
+<section class="hero"><h1>Benchmark de uso diario sintético</h1>
+<p>Suite nueva para simular peticiones reales de Telegram hechas por seis perfiles profesionales. El objetivo no es solo medir si un modelo resuelve un ejercicio, sino si sostiene una jornada de trabajo: tono, contexto, acciones, coste, fallos y escalado.</p></section>
+<main class="wrap">
+<section class="panel"><h2>Perfiles creados</h2><table><thead><tr><th>Persona</th><th>Profesion</th><th>Tono</th><th>Herramientas diarias</th><th>Riesgo evaluado</th></tr></thead><tbody><tr><td>Clara Benavides</td><td>Agente inmobiliaria</td><td>directa, comercial, muy orientada a cerrar visitas</td><td>agenda, email, CRM, comparativa de inmuebles</td><td>Puede mezclar datos de inmuebles parecidos si la respuesta no cita fuente local.</td></tr>
+<tr><td>Nicolas Ortega</td><td>Responsable informatico / DevOps</td><td>tecnico, conciso, pide pasos ejecutables</td><td>tickets, logs, scripts, documentacion tecnica</td><td>Necesita distinguir diagnostico probable de accion destructiva.</td></tr>
+<tr><td>Dra. Irene Salvatierra</td><td>Cientifica biomedica</td><td>prudente, metodica, pide trazabilidad</td><td>notas de laboratorio, papers, tablas, resumen ejecutivo</td><td>No debe inventar resultados ni referencias.</td></tr>
+<tr><td>Marcos Valcarce</td><td>Ingeniero industrial</td><td>operativo, orientado a costes, seguridad y plazos</td><td>partes de obra, presupuestos, checklists, planificacion</td><td>Requiere calculos transparentes y alertas de seguridad.</td></tr>
+<tr><td>Laura Montalban</td><td>Abogada laboralista</td><td>formal, precisa, evita afirmaciones juridicas tajantes</td><td>contratos, emails, plazos, minutas</td><td>Debe separar resumen documental de asesoramiento legal definitivo.</td></tr>
+<tr><td>Hector Rivas</td><td>Consultor financiero para pymes</td><td>ejecutivo, numerico, con foco en caja y riesgo</td><td>CSV, facturas, reportes, email ejecutivo</td><td>Los totales y discrepancias tienen que cuadrar.</td></tr></tbody></table></section>
+<section class="panel"><h2>Diseno experimental recomendado</h2><div class="flow">
+<div><b>Fase 1: baseline barato.</b> Correr 36 mensajes con <code>codex:gpt-5.4-mini</code> para obtener referencia estable.</div>
+<div><b>Fase 2: canarios multi-modelo.</b> Correr 6 mensajes representativos con Codex 5.5, Gemini Flash-Lite, Groq Llama y DeepSeek cuando OpenRouter tenga credito.</div>
+<div><b>Fase 3: router.</b> Usar un modelo barato para clasificar intencion, dificultad, riesgo, necesidad de herramientas y motor sugerido.</div>
+<div><b>Fase 4: produccion simulada.</b> Ejecutar por rondas diarias y comparar coste por tarea aprobada, no solo nota media.</div>
+</div></section>
+<section class="panel"><h2>Decision: uno o varios modelos</h2>
+<p>Para aprender rapido, empieza con un modelo unico estable: <b>Codex 5.4 mini</b>. Para optimizar arquitectura, no corras todo con todos desde el primer dia: usa canarios por profesion y escala solo donde haya incertidumbre. La meta final es un sistema en cascada: router barato, trabajador estandar, validador, escalado premium.</p>
+<table><thead><tr><th>Tipo de mensaje</th><th>Primera opcion</th><th>Escalado</th></tr></thead><tbody>
+<tr><td>Respuesta breve, extraccion simple</td><td>Gemini Flash-Lite o Groq Llama</td><td>Codex 5.4 mini</td></tr>
+<tr><td>Archivos, planificacion, tono profesional</td><td>Codex 5.4 mini</td><td>Codex 5.5</td></tr>
+<tr><td>Calculos o informe con riesgos</td><td>Codex 5.4 mini</td><td>Codex 5.5 / Gemini Pro</td></tr>
+<tr><td>Contexto largo barato</td><td>DeepSeek V4 Flash pendiente de credito</td><td>Gemini Flash/Pro</td></tr>
+</tbody></table></section>
+<section class="panel"><h2>Archivos generados</h2>
+<ul><li><code>benchmarks/assets/persona_daily_simulation/personas.json</code></li><li><code>benchmarks/assets/persona_daily_simulation/telegram_messages.jsonl</code></li><li><code>benchmarks/assets/persona_daily_simulation/knowledge_base.md</code></li><li><code>benchmarks/tasks/persona_daily_tasks.json</code></li></ul>
+</section></main></body></html>

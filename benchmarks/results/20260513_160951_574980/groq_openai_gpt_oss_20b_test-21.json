@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-21",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 1.647, \"usage\": {\"queue_time\": 0.017249572, \"prompt_tokens\": 2860, \"prompt_time\": 0.178179685, \"completion_tokens\": 1273, \"completion_time\": 1.294152161, \"total_tokens\": 4133, \"total_time\": 1.4723318459999999, \"completion_tokens_details\": {\"reasoning_tokens\": 456}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-21\\resultado.md"
+  ],
+  "elapsed_seconds": 1.910415600053966,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 1.647,
+    "usage": {
+      "queue_time": 0.017249572,
+      "prompt_tokens": 2860,
+      "prompt_time": 0.178179685,
+      "completion_tokens": 1273,
+      "completion_time": 1.294152161,
+      "total_tokens": 4133,
+      "total_time": 1.4723318459999999,
+      "completion_tokens_details": {
+        "reasoning_tokens": 456
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-21_resultado.md"
+  ],
+  "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+  "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-21"
+}

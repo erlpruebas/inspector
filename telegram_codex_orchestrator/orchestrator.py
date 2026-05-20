@@ -48,6 +48,12 @@ from voice_state import VoiceStateStore
 
 
 RESTART_EXIT_CODE = 75
+VOICE_LONG_TEXT_CHARS = 900
+VOICE_SUMMARY_MAX_CHARS = 650
+
+
+AFFIRMATIVE_CONFIRMATIONS = {"si", "sí", "ok", "vale", "adelante", "confirma", "confirmo", "ejecuta", "dale"}
+NEGATIVE_CONFIRMATIONS = {"no", "cancela", "cancelar", "para", "espera", "deten", "detén"}
 
 
 class Orchestrator:
@@ -68,6 +74,7 @@ class Orchestrator:
         self.offset: int | None = None
         self._busy = threading.Lock()
         self._current_task: dict[str, str] | None = None
+        self._pending_codex_confirmation: dict[str, Any] | None = None
         self._stop = threading.Event()
         self._code_fingerprint = self._fingerprint_code()
         self._next_code_check = 0.0
@@ -157,6 +164,9 @@ class Orchestrator:
             self.memory.write("restart_requested", text, source, thread=active_thread)
             raise SystemExit(RESTART_EXIT_CODE)
 
+        if self._handle_codex_confirmation_reply(chat_id, text, source):
+            return
+
         voice_response = self._handle_voice_command(text)
         if voice_response is not None:
             self._reply(chat_id, voice_response, thread="voz")
@@ -190,7 +200,7 @@ class Orchestrator:
             self._reply(chat_id, f"He borrado {count} tarea(s) pendiente(s).")
             return
         if intent.action == ACTION_RUN_NEXT_PENDING:
-            self._start_next_pending(chat_id)
+            self._request_next_pending_confirmation(chat_id, source)
             return
         if intent.action == ACTION_CANCEL_CURRENT_TASK:
             self._cancel_current_task(chat_id, source)
@@ -272,7 +282,10 @@ class Orchestrator:
 
         thread_record = self.threads.choose_for_codex(instruction, str(intent.args.get("thread_name", "")).strip() or None)
         self.threads.set_active(thread_record.name)
+        self._request_codex_confirmation(chat_id, instruction, source, thread_record, None)
+        return
 
+    def _start_confirmed_codex(self, chat_id: int, instruction: str, source: str, thread_record: ThreadRecord, pending_task: PendingTask | None) -> None:
         if not self._busy.acquire(blocking=False):
             task = self.pending.add(chat_id, instruction, thread_record.name, source)
             self.memory.write("codex_queued_busy", f"id={task.id}\n{instruction}", source, thread=thread_record.name)
@@ -285,10 +298,117 @@ class Orchestrator:
 
         worker = threading.Thread(
             target=self._run_codex_and_reply,
-            args=(chat_id, instruction, source, thread_record, None),
+            args=(chat_id, instruction, source, thread_record, pending_task),
             daemon=True,
         )
         worker.start()
+
+    def _request_codex_confirmation(
+        self,
+        chat_id: int,
+        instruction: str,
+        source: str,
+        thread_record: ThreadRecord,
+        pending_task: PendingTask | None,
+    ) -> None:
+        command_line = self.codex.preview_command(instruction, thread_id=thread_record.codex_thread_id)
+        self._pending_codex_confirmation = {
+            "mode": "codex",
+            "chat_id": chat_id,
+            "instruction": instruction,
+            "source": source,
+            "thread_name": thread_record.name,
+            "pending_task": pending_task,
+            "command_line": command_line,
+        }
+        self.memory.write("codex_confirmation_requested", command_line, source, thread=thread_record.name)
+        self._reply(chat_id, self._codex_confirmation_text(instruction, thread_record, command_line), thread=thread_record.name)
+
+    def _request_next_pending_confirmation(self, chat_id: int, source: str) -> None:
+        if self._busy.locked():
+            self._reply(chat_id, "Codex sigue ocupado. La tarea pendiente se mantiene en cola.")
+            return
+        tasks = self.pending.list()
+        task = tasks[0] if tasks else None
+        if task is None:
+            self._reply(chat_id, "No hay tareas pendientes.")
+            return
+        thread_record = self.threads.get(task.thread_name)
+        command_line = self.codex.preview_command(task.instruction, thread_id=thread_record.codex_thread_id)
+        self._pending_codex_confirmation = {
+            "mode": "next_pending",
+            "chat_id": task.chat_id,
+            "requested_by_chat_id": chat_id,
+            "task_id": task.id,
+            "source": task.source,
+            "thread_name": thread_record.name,
+            "command_line": command_line,
+        }
+        self.memory.write("pending_confirmation_requested", f"id={task.id}\n{command_line}", source, thread=thread_record.name)
+        self._reply(chat_id, self._codex_confirmation_text(task.instruction, thread_record, command_line, pending_id=task.id), thread=thread_record.name)
+
+    def _handle_codex_confirmation_reply(self, chat_id: int, text: str, source: str) -> bool:
+        pending = self._pending_codex_confirmation
+        if not pending or int(pending.get("requested_by_chat_id") or pending.get("chat_id") or 0) != chat_id:
+            return False
+        decision = self._confirmation_decision(text)
+        if decision == "":
+            if text.strip().startswith("/"):
+                return False
+            self._reply(chat_id, "Tengo una ejecucion de Codex pendiente de confirmar. Responde `si` para lanzarla o `no` para cancelarla.")
+            return True
+        self._pending_codex_confirmation = None
+        if decision == "no":
+            self.memory.write("codex_confirmation_cancelled", str(pending.get("command_line", "")), source, thread=str(pending.get("thread_name", "")))
+            self._reply(chat_id, "Cancelado. No he enviado nada a Codex CLI.", thread=str(pending.get("thread_name", "")))
+            return True
+
+        if pending.get("mode") == "next_pending":
+            task = self.pending.pop_next()
+            if task is None or task.id != pending.get("task_id"):
+                if task is not None:
+                    self.pending.add(task.chat_id, task.instruction, task.thread_name, task.source)
+                self._reply(chat_id, "La cola de pendientes cambio antes de confirmar. Pideme de nuevo `sigue con lo pendiente`.")
+                return True
+            thread_record = self.threads.get(task.thread_name)
+            self.memory.write("pending_started", f"id={task.id}\n{task.instruction}", task.source, thread=thread_record.name)
+            self._start_confirmed_codex(task.chat_id, task.instruction, task.source, thread_record, task)
+            return True
+
+        thread_record = self.threads.get(str(pending.get("thread_name", "")))
+        self._start_confirmed_codex(
+            int(pending["chat_id"]),
+            str(pending["instruction"]),
+            str(pending["source"]),
+            thread_record,
+            pending.get("pending_task") if isinstance(pending.get("pending_task"), PendingTask) else None,
+        )
+        return True
+
+    def _codex_confirmation_text(self, instruction: str, thread_record: ThreadRecord, command_line: str, pending_id: str = "") -> str:
+        conversation = thread_record.codex_thread_id or "conversacion nueva"
+        pending_line = f"Pendiente: {pending_id}\n" if pending_id else ""
+        return (
+            "Antes de mandar nada a Codex CLI necesito confirmacion.\n\n"
+            f"{pending_line}"
+            f"Que voy a hacer: {instruction}\n"
+            f"Hilo del orquestador: {thread_record.name}\n"
+            f"Conversacion Codex: {conversation}\n"
+            f"Modelo: {self.settings.codex_model}\n"
+            f"Linea de comando:\n{command_line}\n\n"
+            "Responde `si` para ejecutar o `no` para cancelar."
+        )
+
+    @staticmethod
+    def _confirmation_decision(text: str) -> str:
+        normalized = text.strip().lower()
+        normalized = re.sub(r"[^\wáéíóúüñ]+", " ", normalized, flags=re.IGNORECASE).strip()
+        first = normalized.split(maxsplit=1)[0] if normalized else ""
+        if normalized in AFFIRMATIVE_CONFIRMATIONS or first in AFFIRMATIVE_CONFIRMATIONS:
+            return "yes"
+        if normalized in NEGATIVE_CONFIRMATIONS or first in NEGATIVE_CONFIRMATIONS:
+            return "no"
+        return ""
 
     def _drain_pending_updates(self) -> None:
         if not self.settings.drain_pending_on_start:
@@ -510,7 +630,12 @@ class Orchestrator:
     def _reply(self, chat_id: int, text: str, thread: str | None = None) -> None:
         self.memory.write("telegram_out", text, "orchestrator", thread=thread or self.threads.active_name())
         self.telegram.send_message(chat_id, text)
-        self._reply_with_voice(chat_id, text, thread)
+        voice_text = self._voice_text_for_reply(text)
+        if voice_text != (text or "").strip():
+            summary_message = "Resumen para voz:\n" + voice_text
+            self.memory.write("telegram_voice_summary", summary_message, "orchestrator", thread=thread or self.threads.active_name())
+            self.telegram.send_message(chat_id, summary_message)
+        self._reply_with_voice(chat_id, voice_text, thread)
 
     def _reply_with_voice(self, chat_id: int, text: str, thread: str | None = None) -> None:
         if not self.voice_state.voz:
@@ -532,6 +657,49 @@ class Orchestrator:
         except Exception as exc:
             self.memory.write("telegram_voice_error", f"{exc}\n{traceback.format_exc()}", "orchestrator", thread=thread or self.threads.active_name())
             self.telegram.send_message(chat_id, f"No pude generar audio de voz: {exc}")
+
+    def _voice_text_for_reply(self, text: str) -> str:
+        clean_text = (text or "").strip()
+        if not clean_text or not self.voice_state.voz:
+            return clean_text
+        if not self._is_long_voice_text(clean_text):
+            return clean_text
+        return self._summarize_for_voice(clean_text)
+
+    @staticmethod
+    def _is_long_voice_text(text: str) -> bool:
+        paragraphs = [part.strip() for part in re.split(r"\n\s*\n+", text) if part.strip()]
+        letter_count = sum(1 for char in text if char.isalpha())
+        return len(paragraphs) > 2 or letter_count > VOICE_LONG_TEXT_CHARS
+
+    @staticmethod
+    def _summarize_for_voice(text: str) -> str:
+        clean = re.sub(r"`{1,3}", "", text)
+        clean = re.sub(r"https?://\S+", "", clean)
+        clean = re.sub(r"\s+", " ", clean).strip()
+        if len(clean) <= VOICE_SUMMARY_MAX_CHARS:
+            return clean
+
+        sentences = re.split(r"(?<=[.!?])\s+", clean)
+        selected: list[str] = []
+        total = 0
+        for sentence in sentences:
+            sentence = sentence.strip(" -")
+            if not sentence:
+                continue
+            next_total = total + len(sentence) + (1 if selected else 0)
+            if selected and next_total > VOICE_SUMMARY_MAX_CHARS:
+                break
+            selected.append(sentence)
+            total = next_total
+            if len(selected) >= 3:
+                break
+        summary = " ".join(selected).strip()
+        if not summary:
+            summary = clean[:VOICE_SUMMARY_MAX_CHARS].rsplit(" ", 1)[0].strip()
+        if len(summary) > VOICE_SUMMARY_MAX_CHARS:
+            summary = summary[:VOICE_SUMMARY_MAX_CHARS].rsplit(" ", 1)[0].strip()
+        return summary + ("..." if summary and not summary.endswith((".", "!", "?")) else "")
 
     def _reload(self, chat_id: int) -> None:
         self._refresh_runtime_config()
@@ -693,6 +861,7 @@ class Orchestrator:
                 f"threads: {self.settings.threads_file}",
                 f"pending_file: {self.settings.pending_tasks_file}",
                 f"codex: {' '.join(self.settings.codex_command)}",
+                f"codex_model: {self.settings.codex_model}",
                 f"sandbox: {self.settings.codex_sandbox}",
                 f"approval: {self.settings.codex_approval}",
                 f"timeout: {self.settings.codex_timeout_seconds}s",
@@ -716,7 +885,7 @@ class Orchestrator:
         return "\n".join(
             [
                 "Comandos:",
-                "C <instruccion>   Ejecuta Codex CLI",
+                "C <instruccion>   Pide confirmacion y ejecuta Codex CLI",
                 "-c <instruccion>  Alias compatible",
                 "/c <instruccion>  Alias compatible",
                 "/status          Estado",

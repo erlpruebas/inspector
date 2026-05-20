@@ -19,33 +19,53 @@ def create_engine(name: str) -> Engine:
     normalized = spec.provider
     if normalized == "codex":
         return CodexEngine(model=spec.model, name=spec.label)
-    if normalized in {"groq", "openrouter", "lmstudio"}:
+    if normalized in {"groq", "openrouter", "lmstudio", "vikingnano"}:
         script = ROOT / "engines" / "api_wrapper.py"
         provider = normalized
         model_part = f"--model {_quote(spec.model)} " if spec.model else ""
         base_url = os.getenv("BENCH_LMSTUDIO_BASE_URL", "http://127.0.0.1:1234/v1/chat/completions")
         base_part = f"--base-url {_quote(base_url)} " if normalized == "lmstudio" else ""
+        if normalized == "vikingnano":
+            base_url = os.getenv(
+                "BENCH_VIKING_NANO_BASE_URL",
+                "https://viking-occasion-married-dimensional.trycloudflare.com/v1/chat/completions",
+            )
+            base_part = f"--base-url {_quote(base_url)} "
         max_tokens = os.getenv("BENCH_LMSTUDIO_MAX_TOKENS", "256") if normalized == "lmstudio" else "2048"
+        if normalized == "vikingnano":
+            max_tokens = os.getenv("BENCH_VIKING_NANO_MAX_TOKENS", "2048")
+        if normalized == "openrouter":
+            max_tokens = os.getenv("BENCH_OPENROUTER_MAX_TOKENS", "384")
         api_timeout = os.getenv("BENCH_LMSTUDIO_API_TIMEOUT", "300") if normalized == "lmstudio" else "120"
+        if normalized == "vikingnano":
+            api_timeout = os.getenv("BENCH_VIKING_NANO_API_TIMEOUT", "600")
         context_mode = os.getenv("BENCH_LMSTUDIO_CONTEXT_MODE", "compact") if normalized == "lmstudio" else "full"
+        command_timeout = int(os.getenv("BENCH_VIKING_NANO_COMMAND_TIMEOUT_SECONDS", "600")) if normalized == "vikingnano" else 1800
         command = (
             f'"{sys.executable}" "{script}" '
-            f"--provider {provider} {model_part}{base_part}--prompt-file {{prompt_file}} --output {{output}} "
+            f"--provider {provider} {model_part}{base_part}--prompt-file {{prompt_path}} --output {{output}} "
             f"--max-tokens {max_tokens} --timeout {api_timeout} --context-mode {context_mode}"
         )
-        return CommandEngine(spec.label, command, model=spec.model, inject_workspace=False)
+        return CommandEngine(spec.label, command, model=spec.model, inject_workspace=False, timeout_seconds=command_timeout)
     if normalized in {"gemini_api", "gemini-api"}:
         script = ROOT / "engines" / "gemini_api_wrapper.py"
         model = spec.model or os.getenv("BENCH_GEMINI_API_MODEL", "gemini-2.5-flash-lite")
-        command = f'"{sys.executable}" "{script}" --model {_quote(model)} --prompt-file {{prompt_file}} --output {{output}}'
+        command = f'"{sys.executable}" "{script}" --model {_quote(model)} --prompt-file {{prompt_path}} --output {{output}}'
         return CommandEngine(spec.label, command, model=model, inject_workspace=False)
+    if normalized in {"chrome-nano", "chrome_nano"}:
+        script = ROOT / "engines" / "chrome_nano_cli.py"
+        model = spec.model or os.getenv("BENCH_CHROME_NANO_MODEL", "gemini-nano")
+        timeout = os.getenv("BENCH_CHROME_NANO_TIMEOUT_SECONDS", "180")
+        command = f'"{sys.executable}" "{script}" --model {_quote(model)} --prompt-file {{prompt_path}} --output {{output}} --timeout {timeout}'
+        return CommandEngine(spec.label, command, model=model, inject_workspace=True)
     if normalized == "gemini":
         model = spec.model or os.getenv("BENCH_GEMINI_CLI_MODEL", "gemini-2.5-flash-lite")
         template = os.getenv(
             "BENCH_GEMINI_COMMAND_TEMPLATE",
-            f"{_node_cli('gemini')} --skip-trust --approval-mode yolo --model {_quote(model)} -p {{prompt}}",
+            f"{_node_cli('gemini')} --skip-trust --approval-mode yolo --model {_quote(model)} -p \"\"",
         )
-        return CommandEngine(spec.label, template, model=model)
+        timeout = int(os.getenv("BENCH_GEMINI_CLI_TIMEOUT_SECONDS", "420"))
+        return CommandEngine(spec.label, template, model=model, timeout_seconds=timeout, stdin_prompt=True)
     if normalized == "opencode":
         model = spec.model or os.getenv("BENCH_OPENCODE_MODEL", "openrouter/deepseek/deepseek-v3.2")
         agent = os.getenv("BENCH_OPENCODE_AGENT", "build")

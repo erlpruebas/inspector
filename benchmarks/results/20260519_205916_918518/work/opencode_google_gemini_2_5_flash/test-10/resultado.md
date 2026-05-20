@@ -1,0 +1,9 @@
+Nombre,Empresa,Rol,Email,Ciudad,Prioridad
+PERSON_0066,PERSON_0065,Compras,EMAIL_0054,Valencia,media
+PERSON_0058,IberLegal,Legal,EMAIL_0048,Madrid,media
+PERSON_0051,Tecnoria,IT,EMAIL_0042,Valladolid,media
+PERSON_0041,Ferrovia,Compras,EMAIL_0034,Oviedo,media
+PERSON_0037,Cobalto,Seguridad,EMAIL_0030,Madrid,alta
+PERSON_0030,PixelArte,Diseno,EMAIL_0023,Malaga,baja
+PERSON_0023,SerConta,Contabilidad,EMAIL_0017,Toledo,media
+PERSON_0014,Alboran,Legal,EMAIL_0008,Malaga,media

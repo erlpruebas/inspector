@@ -1,0 +1,735 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "importe_discrepante"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Timeout durante la ejecución.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: IberLegal",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  }
+]

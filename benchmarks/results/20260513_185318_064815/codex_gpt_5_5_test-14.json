@@ -1,0 +1,23 @@
+{
+  "engine": "codex_gpt_5_5",
+  "task_id": "test-14",
+  "returncode": 0,
+  "stdout": "Voy a leer las dos fuentes locales y cruzar los datos para extraer solo compromisos con fecha/hora claras. Después generaré el contenido ICS directamente, marcando en la descripción cualquier dato incompleto.\n\nContenido ICS:\n\n```ics\nBEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Inspector//Compromisos sinteticos//ES\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:clinica-centro-demo-pagos-20260514T113000@inspector.local\nDTSTAMP:20260513T120000Z\nDTSTART;TZID=Europe/Madrid:20260514T113000\nDTEND;TZID=Europe/Madrid:20260514T123000\nSUMMARY:Demo modulo de pagos - Clinica Centro\nDESCRIPTION:Con Noelia Castro. Demo centrada en conciliacion y estado de pagos. Debe asistir alguien de administracion. Fuente: VN-001 y E-001. Falta duracion exacta; se asigna 1 hora.\nLOCATION:No especificado\nEND:VEVENT\nBEGIN:VEVENT\nUID:barna-health-reunion-tecnica-20260518T100000@inspector.local\nDTSTAMP:20260513T120000Z\nDTSTART;TZID=Europe/Madrid:20260518T100000\nDTEND;TZID=Europe/Madrid:20260518T110000\nSUMMARY:Reunion tecnica presencial - Barna Health\nDESCRIPTION:Con Xavier Puig. Revisar integracion con SSO. Fuente: VN-003 y E-004. Falta duracion exacta; se asigna 1 hora.\nLOCATION:Barcelona\nEND:VEVENT\nBEGIN:VEVENT\nUID:marta-ruiz-seguimiento-administracion-20260512T160000@inspector.local\nDTSTAMP:20260513T120000Z\nDTSTART;TZID=Europe/Madrid:20260512T160000\nDTEND;TZID=Europe/Madrid:20260512T170000\nSUMMARY:Seguimiento con Marta Ruiz - administracion\nDESCRIPTION:Seguimiento por tema de administracion. Fuente: VN-007. Falta fecha explicita; se interpreta \"el martes a las cuatro\" como martes 12 de mayo de 2026. Falta lugar y duracion exacta; se asigna 1 hora.\nLOCATION:No especificado\nEND:VEVENT\nBEGIN:VEVENT\nUID:reunion-interna-sala-20260515T093000@inspector.local\nDTSTAMP:20260513T120000Z\nDTSTART;TZID=Europe/Madrid:20260515T093000\nDTEND;TZID=Europe/Madrid:20260515T103000\nSUMMARY:Reunion interna\nDESCRIPTION:Reservar sala para reunion interna. Fuente: VN-020. Falta sala concreta, asistentes, asunto y duracion exacta; se asigna 1 hora.\nLOCATION:Sala por reservar\nEND:VEVENT\nEND:VCALENDAR\n```",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\codex_gpt_5_5\\test-14\\resultado.md"
+  ],
+  "elapsed_seconds": 33.42426799994428,
+  "timed_out": false,
+  "usage": {},
+  "model": "gpt-5.5",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "codex:gpt-5.5",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\codex_gpt_5_5_test-14_resultado.md"
+  ],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\codex_gpt_5_5\\test-14"
+}

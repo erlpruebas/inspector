@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-05",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.357, \"usage\": {\"queue_time\": 0.018256929, \"prompt_tokens\": 341, \"prompt_time\": 0.022084993, \"completion_tokens\": 128, \"completion_time\": 0.166072234, \"total_tokens\": 469, \"total_time\": 0.188157227}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\work\\groq_llama_3_1_8b_instant\\test-05\\resultado.md"
+  ],
+  "elapsed_seconds": 0.6079322999576107,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 0.357,
+    "usage": {
+      "queue_time": 0.018256929,
+      "prompt_tokens": 341,
+      "prompt_time": 0.022084993,
+      "completion_tokens": 128,
+      "completion_time": 0.166072234,
+      "total_tokens": 469,
+      "total_time": 0.188157227
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\groq_llama_3_1_8b_instant_test-05_resultado.md"
+  ],
+  "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+  "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\work\\groq_llama_3_1_8b_instant\\test-05"
+}

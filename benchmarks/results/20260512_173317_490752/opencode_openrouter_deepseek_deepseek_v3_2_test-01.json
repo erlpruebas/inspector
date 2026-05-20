@@ -1,0 +1,19 @@
+{
+  "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+  "task_id": "test-01",
+  "returncode": 1,
+  "stdout": "{\"type\":\"error\",\"timestamp\":1778600327449,\"sessionID\":\"ses_1e328cbd9ffeSnQIZykGkP5pEd\",\"error\":{\"name\":\"APIError\",\"data\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 32000 tokens, but can only afford 5153. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"statusCode\":402,\"isRetryable\":false,\"responseHeaders\":{\"access-control-allow-origin\":\"*\",\"access-control-expose-headers\":\"X-Generation-Id,cf-ray\",\"cf-ray\":\"9faa832b8d774f18-MAD\",\"connection\":\"keep-alive\",\"content-type\":\"application/json\",\"date\":\"Tue, 12 May 2026 15:38:47 GMT\",\"permissions-policy\":\"payment=(self \\\"https://checkout.stripe.com\\\" \\\"https://connect-js.stripe.com\\\" \\\"https://js.stripe.com\\\" \\\"https://*.js.stripe.com\\\" \\\"https://hooks.stripe.com\\\")\",\"referrer-policy\":\"no-referrer, strict-origin-when-cross-origin\",\"server\":\"cloudflare\",\"transfer-encoding\":\"chunked\",\"x-content-type-options\":\"nosniff\"},\"responseBody\":\"{\\\"error\\\":{\\\"message\\\":\\\"This request requires more credits, or fewer max_tokens. You requested up to 32000 tokens, but can only afford 5153. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\\\",\\\"code\\\":402,\\\"metadata\\\":{\\\"provider_name\\\":null}},\\\"user_id\\\":\\\"user_39kmbBz5se6cCcG2oBweWgOyvQH\\\"}\",\"metadata\":{\"url\":\"https://openrouter.ai/api/v1/chat/completions\"}}}}\n",
+  "stderr": "OpenCode finished without creating expected output.",
+  "output_files": [],
+  "elapsed_seconds": 4.22643900004914,
+  "timed_out": false,
+  "usage": {},
+  "model": "openrouter/deepseek/deepseek-v3.2",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+  "copied_outputs": [],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-01"
+}

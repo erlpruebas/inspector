@@ -1,0 +1,21 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260514_182347_382445",
+  "jobs": [
+    {
+      "engine": "command:local_echo",
+      "task_id": "daily-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "command:local_echo::daily-01",
+      "at": "2026-05-14T16:23:47.512975+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [],
+  "running": null
+}

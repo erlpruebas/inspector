@@ -1,0 +1,11 @@
+De: Ana
+Asunto [PERSON_0005]: Demo de [PERSON_0004] producto
+Podemos reunirnos el 14 de mayo de 2026 [DATE_0003] a las 10:30 para ver la demo?
+
+De: Javier
+Asunto [PERSON_0003]: Revision contrato
+Reserva el 15 de mayo de 2026 [DATE_0002] a las 16:00 para revisar el contrato con legal.
+
+De: Lucia
+Asunto [PERSON_0002]: Seguimiento cliente
+Nos vemos el 18 de mayo de 2026 [DATE_0001] a las 09:15 para preparar la llamada con el cliente.

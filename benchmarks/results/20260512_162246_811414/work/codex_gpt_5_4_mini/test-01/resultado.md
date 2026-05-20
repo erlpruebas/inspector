@@ -1,0 +1,9 @@
+Voy a localizar la referencia de “Clinica Centro” en los hilos de correo y cruzarla con `contactos_50.csv` para sacar solo la nota mínima con persona, empresa, fecha, hora y objetivo, sin completar huecos con suposiciones.
+
+Nota breve:
+
+- Persona: Noelia Castro
+- Empresa: Clinica Centro
+- Fecha: 14 de mayo de 2026
+- Hora: 11:30
+- Objetivo: demo del módulo de pagos, centrada en conciliación y estado de pagos

@@ -1,0 +1,3 @@
+- Fecha: DATE_0003, Hora: 10:30, Motivo: Demo de producto
+- Fecha: DATE_0002, Hora: 16:00, Motivo: Revisión de contrato
+- Fecha: DATE_0001, Hora: 09:15, Motivo: Preparación de llamada con cliente

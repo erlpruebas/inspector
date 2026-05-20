@@ -1,0 +1,3 @@
+- Se detectaron múltiples duplicados en los registros, especialmente en las columnas de identificadores de persona, email y teléfono, donde las mismas referencias aparecen repetidas.
+- Existen direcciones de email que contienen espacios en blanco alrededor de los datos y están escritas completamente en mayúsculas, lo que requiere normalización.
+- Hay celdas vacías en la columna de teléfono y una entrada de ciudad ("Bilbao") colocada incorrectamente al final de una fila, lo que indica problemas de formato y datos faltantes.

@@ -1,0 +1,19 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-29",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 119, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 189, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 495, in open\n    response = meth(req, response)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 604, in http_response\n    response = self.parent.error(\n        'http', request, response, code, msg, hdrs)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 533, in error\n    return self._call_chain(*args)\n           ~~~~~~~~~~~~~~~~^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 466, in _call_chain\n    result = func(*args)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 613, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 238, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 81, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 123, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kkkqs7apf21aaqjgzy953669` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197790, Requested 6192. Please try again in 28m40.224s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n\n",
+  "output_files": [],
+  "elapsed_seconds": 0.3834812000859529,
+  "timed_out": false,
+  "usage": {},
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [],
+  "task_prompt": "# Informe mensual combinado operaciones-finanzas\n\nElabora un informe mensual combinado de operaciones y finanzas cruzando contactos, emails, notas y gastos. Debe separar hechos locales, riesgos e inferencias.",
+  "execution_prompt": "# Informe mensual combinado operaciones-finanzas\n\nElabora un informe mensual combinado de operaciones y finanzas cruzando contactos, emails, notas y gastos. Debe separar hechos locales, riesgos e inferencias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\groq_openai_gpt_oss_20b\\test-29"
+}

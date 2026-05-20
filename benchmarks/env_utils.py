@@ -42,6 +42,7 @@ def key_status() -> dict[str, bool]:
         "OPENAI_API_KEY": bool(os.getenv("OPENAI_API_KEY", "").strip()),
         "GROQ_API_KEY": bool(os.getenv("GROQ_API_KEY", "").strip()),
         "OPENROUTER_API_KEY": bool(os.getenv("OPENROUTER_API_KEY", "").strip()),
+        "BENCH_VIKING_NANO_API_KEY": bool(os.getenv("BENCH_VIKING_NANO_API_KEY", "").strip() or "local"),
         "GOOGLE_API_KEY": bool(os.getenv("GOOGLE_API_KEY", "").strip()),
         "GEMINI_API_KEY": bool(os.getenv("GEMINI_API_KEY", "").strip()),
         "ORCH_GOOGLE_API_KEY": bool(os.getenv("ORCH_GOOGLE_API_KEY", "").strip()),

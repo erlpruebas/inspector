@@ -1,0 +1,24 @@
+[
+  {
+    "engine": "opencode_gemininanolocal_gemini_nano",
+    "task_id": "test-01",
+    "returncode": 124,
+    "stdout": "",
+    "stderr": "",
+    "output_files": [],
+    "elapsed_seconds": 1800.1314757,
+    "timed_out": true,
+    "usage": {},
+    "model": "geminiNanoLocal/gemini-nano",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:geminiNanoLocal/gemini-nano",
+    "copied_outputs": [],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260519_210547_864019\\work\\opencode_gemininanolocal_gemini_nano\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  }
+]

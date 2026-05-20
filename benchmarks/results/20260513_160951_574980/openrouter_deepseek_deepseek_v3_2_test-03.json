@@ -1,0 +1,50 @@
+{
+  "engine": "openrouter_deepseek_deepseek_v3_2",
+  "task_id": "test-03",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 13.125, \"usage\": {\"prompt_tokens\": 1217, \"completion_tokens\": 348, \"total_tokens\": 1565, \"cost\": 0.000272664, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 730, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.000272664, \"upstream_inference_prompt_cost\": 0.00014112, \"upstream_inference_completions_cost\": 0.000131544}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\openrouter_deepseek_deepseek_v3_2\\test-03\\resultado.md"
+  ],
+  "elapsed_seconds": 13.372915499960072,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v3.2",
+    "elapsed_seconds": 13.125,
+    "usage": {
+      "prompt_tokens": 1217,
+      "completion_tokens": 348,
+      "total_tokens": 1565,
+      "cost": 0.000272664,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 730,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000272664,
+        "upstream_inference_prompt_cost": 0.00014112,
+        "upstream_inference_completions_cost": 0.000131544
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "deepseek/deepseek-v3.2",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\openrouter_deepseek_deepseek_v3_2_test-03_resultado.md"
+  ],
+  "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+  "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\openrouter_deepseek_deepseek_v3_2\\test-03"
+}

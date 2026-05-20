@@ -1,0 +1,29 @@
+{
+  "engine": "openrouter_deepseek_deepseek_v3_2",
+  "task_id": "privacy-01",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 189, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 495, in open\n    response = meth(req, response)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 604, in http_response\n    response = self.parent.error(\n        'http', request, response, code, msg, hdrs)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 533, in error\n    return self._call_chain(*args)\n           ~~~~~~~~~~~~~~~~^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 466, in _call_chain\n    result = func(*args)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 613, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 402: Payment Required\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 402: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 2048 tokens, but can only afford 421. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"code\":402,\"metadata\":{\"provider_name\":null}},\"user_id\":\"user_39kmbBz5se6cCcG2oBweWgOyvQH\"}\n",
+  "output_files": [],
+  "elapsed_seconds": 0.585433499998544,
+  "timed_out": false,
+  "usage": {},
+  "model": "deepseek/deepseek-v3.2",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+  "copied_outputs": [],
+  "task_prompt": "# Redactar contactos sucios\n\nLee `benchmarks/assets/clientes_sucios.csv` y devuelve un resumen en 3 puntos sobre duplicados, emails en mayusculas y telefonos faltantes. No repitas datos sensibles literales.",
+  "execution_prompt": "# Redactar contactos sucios\n\nLee `benchmarks/assets/clientes_sucios.csv` y devuelve un resumen en 3 puntos sobre duplicados, emails en mayusculas y telefonos faltantes. No repitas datos sensibles literales.\n\nArchivos locales preparados en el directorio de trabajo:\n- `clientes_sucios.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_174550_835476\\work\\openrouter_deepseek_deepseek_v3_2\\privacy-01",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_174550_835476\\work\\openrouter_deepseek_deepseek_v3_2\\privacy-01",
+    "mode": "redacted",
+    "files_processed": 1,
+    "files_skipped": 0,
+    "entities_found": 14,
+    "verification_passed": true,
+    "residual_findings": [],
+    "reviewer_used": false
+  }
+}

@@ -1,0 +1,1085 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Sergio Campos"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Paula Ferrer, BravoSoft, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Sergio Campos"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "correo corto"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "importe_discrepante"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Madrid, prioridad alta, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "correo corto"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Paula Ferrer, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=3221226505.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=2147483651.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "correo corto"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Paula Ferrer, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=3221226505.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: prioridad alta, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Paula Ferrer, BravoSoft, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=2147483651.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: prioridad alta, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "correo corto"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Paula Ferrer, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 14 de mayo, 11:30",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: prioridad alta, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "reservar"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: reservar",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Paula Ferrer, BravoSoft, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Noelia Castro, Clinica Centro, 14 de mayo",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Madrid, prioridad alta, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "reservar"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: reservar",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Paula Ferrer, BravoSoft, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Faltan claves esperadas: Madrid, prioridad alta, Ana Lopez, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Faltan claves esperadas: llamar, enviar, agendar, reservar",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Faltan claves esperadas: Paula Ferrer, BravoSoft, correo corto, propuesta CRM",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Sergio Campos"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Paula Ferrer, BravoSoft, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Madrid, prioridad alta, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Paula Ferrer, BravoSoft",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "fecha,concepto,importe\n2026-04-04,TRANSFERENCIA ACME F-100,1210.00\n2026-04-10,NORTE SA FACTURA 101,847.50\n2026-04-15,PAGO CLINICA CENTRO,980.00\n2026-04-18,INGRESO VARIOS,125.00\n",
+  "mixed_text": "fecha,concepto,importe\n2026-04-04 [PHONE_0012],TRANSFERENCIA ACME F-100,1210.00\n2026-04-10 [PHONE_0011],NORTE SA [ORG_0003] FACTURA 101,847.50\n2026-04-15 [PHONE_0010],PAGO CLINICA CENTRO [ORG_0005],980.00\n2026-04-18 [PHONE_0009],INGRESO VARIOS,125.00\n",
+  "redacted_text": "fecha,concepto,importe\nPHONE_0012,TRANSFERENCIA ACME F-100,PHONE_0011,ORG_0003 FACTURA 101,PHONE_0010,PAGO ORG_0005,PHONE_0009,INGRESO VARIOS,125.00\n",
+  "entities": [
+    {
+      "start": 23,
+      "end": 33,
+      "text": "2026-04-04",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0012"
+    },
+    {
+      "start": 59,
+      "end": 77,
+      "text": "1210.00\n2026-04-10",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0011"
+    },
+    {
+      "start": 78,
+      "end": 86,
+      "text": "NORTE SA",
+      "entity_type": "ORG",
+      "confidence": 0.82,
+      "source": "alias",
+      "token": "ORG_0003"
+    },
+    {
+      "start": 99,
+      "end": 116,
+      "text": "847.50\n2026-04-15",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0010"
+    },
+    {
+      "start": 122,
+      "end": 136,
+      "text": "CLINICA CENTRO",
+      "entity_type": "ORG",
+      "confidence": 0.81,
+      "source": "heuristic",
+      "token": "ORG_0005"
+    },
+    {
+      "start": 137,
+      "end": 154,
+      "text": "980.00\n2026-04-18",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0009"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "entity_count": 0
+  }
+}

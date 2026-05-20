@@ -1,0 +1,607 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260520_165939_023816",
+  "jobs": [
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-01",
+      "next_run_at": 1779296626.082166,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-03",
+      "next_run_at": 1779297272.0773988,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-03",
+      "next_run_at": 1779297692.1284285,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-05",
+      "next_run_at": 1779298071.3943877,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-08",
+      "next_run_at": 1779298469.0152683,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-09",
+      "next_run_at": 1779298882.7776847,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-13",
+      "next_run_at": 1779299475.2066066,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-15",
+      "next_run_at": 1779299904.3587172,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    }
+  ],
+  "completed": [
+    {
+      "job": "codex:gpt-5.5::test-01",
+      "at": "2026-05-20T14:59:53.105512+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-01",
+      "at": "2026-05-20T15:00:04.384957+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-01",
+      "at": "2026-05-20T15:04:13.705422+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-01",
+      "at": "2026-05-20T15:09:50.377516+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-01",
+      "at": "2026-05-20T15:10:07.441298+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-03",
+      "at": "2026-05-20T15:10:37.337842+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-03",
+      "at": "2026-05-20T15:11:07.872225+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-03",
+      "at": "2026-05-20T15:23:36.883376+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-03",
+      "at": "2026-05-20T15:24:02.638977+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-05",
+      "at": "2026-05-20T15:24:18.668413+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-05",
+      "at": "2026-05-20T15:24:29.451105+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-05",
+      "at": "2026-05-20T15:28:04.767282+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-05",
+      "at": "2026-05-20T15:28:53.058419+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-05",
+      "at": "2026-05-20T15:29:11.894499+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-08",
+      "at": "2026-05-20T15:29:38.851425+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-08",
+      "at": "2026-05-20T15:30:37.970518+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-08",
+      "at": "2026-05-20T15:35:14.306789+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-08",
+      "at": "2026-05-20T15:36:44.748479+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-08",
+      "at": "2026-05-20T15:37:10.364032+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-09",
+      "at": "2026-05-20T15:37:31.173029+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-09",
+      "at": "2026-05-20T15:38:00.797713+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-09",
+      "at": "2026-05-20T15:42:09.514787+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-09",
+      "at": "2026-05-20T15:44:56.616081+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-09",
+      "at": "2026-05-20T15:45:11.560645+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-13",
+      "at": "2026-05-20T15:46:28.339883+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-13",
+      "at": "2026-05-20T15:47:24.091836+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-13",
+      "at": "2026-05-20T15:51:45.092228+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-13",
+      "at": "2026-05-20T15:52:23.463559+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-13",
+      "at": "2026-05-20T15:52:47.582721+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-15",
+      "at": "2026-05-20T15:53:37.298102+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-15",
+      "at": "2026-05-20T15:54:33.622146+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-15",
+      "at": "2026-05-20T16:03:41.417221+00:00"
+    }
+  ],
+  "deferred": [
+    {
+      "job": "gemini:gemini-2.5-pro::test-01",
+      "at": "2026-05-20T15:03:46.082178+00:00",
+      "next_run_at": "2026-05-20T17:03:46.082166+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-03",
+      "at": "2026-05-20T15:14:32.077731+00:00",
+      "next_run_at": "2026-05-20T17:14:32.077399+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-03",
+      "at": "2026-05-20T15:21:32.128505+00:00",
+      "next_run_at": "2026-05-20T17:21:32.128428+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-05",
+      "at": "2026-05-20T15:27:51.394396+00:00",
+      "next_run_at": "2026-05-20T17:27:51.394388+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-08",
+      "at": "2026-05-20T15:34:29.015275+00:00",
+      "next_run_at": "2026-05-20T17:34:29.015268+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-09",
+      "at": "2026-05-20T15:41:22.777696+00:00",
+      "next_run_at": "2026-05-20T17:41:22.777685+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-13",
+      "at": "2026-05-20T15:51:15.206623+00:00",
+      "next_run_at": "2026-05-20T17:51:15.206607+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-15",
+      "at": "2026-05-20T15:58:24.358727+00:00",
+      "next_run_at": "2026-05-20T17:58:24.358717+00:00",
+      "reason": "429"
+    }
+  ],
+  "failed": [],
+  "running": null
+}

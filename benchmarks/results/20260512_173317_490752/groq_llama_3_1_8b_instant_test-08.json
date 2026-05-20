@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-08",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.104, \"usage\": {\"queue_time\": 0.101884235, \"prompt_tokens\": 1809, \"prompt_time\": 0.153500223, \"completion_tokens\": 620, \"completion_time\": 0.675854874, \"total_tokens\": 2429, \"total_time\": 0.829355097}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\groq_llama_3_1_8b_instant\\test-08\\resultado.md"
+  ],
+  "elapsed_seconds": 1.3574202000163496,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 1.104,
+    "usage": {
+      "queue_time": 0.101884235,
+      "prompt_tokens": 1809,
+      "prompt_time": 0.153500223,
+      "completion_tokens": 620,
+      "completion_time": 0.675854874,
+      "total_tokens": 2429,
+      "total_time": 0.829355097
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\groq_llama_3_1_8b_instant_test-08_resultado.md"
+  ],
+  "task_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+  "execution_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\groq_llama_3_1_8b_instant\\test-08"
+}

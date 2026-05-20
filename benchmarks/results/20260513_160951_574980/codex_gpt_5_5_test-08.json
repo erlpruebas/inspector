@@ -1,0 +1,23 @@
+{
+  "engine": "codex_gpt_5_5",
+  "task_id": "test-08",
+  "returncode": 0,
+  "stdout": "Voy a leer las notas y los hilos de correo para extraer compromisos, fechas, clientes y posibles dependencias. Después lo agrupo por prioridad semanal.\n\n**Resumen semanal de tareas pendientes al 13 de mayo de 2026**\n\n**Prioridad alta: vencidas o con fecha inmediata**\n\n| Prioridad | Fecha límite / evento | Cliente / contacto | Tarea pendiente |\n|---|---:|---|---|\n| Alta | 12 mayo | IberLegal / David Navarro | Revisar contrato de soporte y enviar comentarios sobre cláusula 8 de responsabilidad y renovación automática. Está vencido. |\n| Alta | 13 mayo | Delta Equipos / Luis Martín | Enviar CSV actualizado de monitores incluyendo descuento del 4%. La oferta dependía de cerrar antes del día 13, por lo que conviene actuar hoy o confirmar si aún aplica. |\n| Alta | 14 mayo, 11:30 | Clínica Centro / Noelia Castro | Preparar y realizar demo del módulo de pagos, centrada en conciliación y estado de pagos. Debe asistir alguien de administración. |\n| Alta | 15 mayo, 09:30 | Interno | Reservar sala para reunión interna del viernes. |\n| Alta | 18 mayo, 10:00 | Barna Health / Xavier Puig | Comprar billete a Barcelona y preparar reunión técnica presencial sobre integración SSO. Xavier ya confirmó la reunión. |\n\n**Seguimientos con cliente concreto**\n\n| Prioridad | Cliente / contacto | Tarea |\n|---|---|---|\n| Media-alta | BravoSoft / Paula Ferrer | Enviar correo corto y amable de seguimiento por la propuesta CRM pendiente. |\n| Media-alta | Zenit Food / Tomás | Llamar por pedido de licencias y confirmar dirección fiscal. |\n| Media | Sergio Campos | Preparar minuta con riesgos de seguridad y coste de auditoría. |\n| Media | Laura Marín | Enviar agenda de implantación incluyendo hito de formación del 22 de mayo. |\n| Media | Nova Iberia / Ana López | Aplicar preferencia permanente: informes en PDF, una página de resumen ejecutivo y anexos separados. |\n| Media | GreenBox | Buscar alternativa barata a herramienta de encuestas. |\n| Media | Clínica Centro | Preparar informe mensual de incidencias incluyendo Clínica Centro y facturación. |\n\n**Administración y finanzas**\n\n| Prioridad | Fecha / referencia | Tarea |\n|---|---|---|\n| Media | Abril | Pedir a Elena Vidal las facturas de abril que no aparecen en el banco. |\n| Media | Marzo | Revisar gastos de marzo por dos cargos duplicados de hotel. |\n| Media | Norte SA | Cruzar pagos con facturas; posible factura faltante de 847,50. |\n| Baja-media | Madrid | Crear lista de contactos prioritarios de Madrid con nivel alta. |\n\n**Próximos vencimientos**\n\n| Fecha | Cliente / asunto | Acción |\n|---:|---|---|\n| 22 mayo | Laura Marín / implantación | Incluir hito de formación en la agenda. |\n| Antes del 28 mayo | Cobalto | Renovar certificado SSL. |\n\n**Menor urgencia / sin cliente operativo claro**\n\n- Preparar comparativa OpenRouter vs Gemini para tareas de ofimática.\n- Investigar si Apple ha subido más que Microsoft en los últimos seis meses.",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\codex_gpt_5_5\\test-08\\resultado.md"
+  ],
+  "elapsed_seconds": 34.000552400015295,
+  "timed_out": false,
+  "usage": {},
+  "model": "gpt-5.5",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "codex:gpt-5.5",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\codex_gpt_5_5_test-08_resultado.md"
+  ],
+  "task_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+  "execution_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\codex_gpt_5_5\\test-08"
+}

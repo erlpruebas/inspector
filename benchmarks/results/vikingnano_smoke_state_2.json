@@ -1,0 +1,23 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260519_161546_102113",
+  "jobs": [
+    {
+      "engine": "vikingnano:gemini-nano-local",
+      "task_id": "test-01",
+      "next_run_at": 1779207471.5996778,
+      "attempts": 1,
+      "done": false
+    }
+  ],
+  "completed": [],
+  "deferred": [
+    {
+      "job": "vikingnano:gemini-nano-local::test-01",
+      "at": "2026-05-19T14:17:51.599688+00:00",
+      "next_run_at": "2026-05-19T16:17:51.599678+00:00",
+      "reason": "overloaded"
+    }
+  ],
+  "failed": [],
+  "running": null
+}

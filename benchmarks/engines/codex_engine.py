@@ -3,11 +3,14 @@ from __future__ import annotations
 import json
 import os
 import shlex
+import shutil
 import subprocess
 import time
 from pathlib import Path
 
 from .base_engine import EngineResult
+
+DEFAULT_CODEX_MODEL = "gpt-5.5"
 
 
 class CodexEngine:
@@ -22,10 +25,10 @@ class CodexEngine:
     ) -> None:
         self.name = name
         command_text = os.getenv("BENCH_CODEX_COMMAND", os.getenv("ORCH_CODEX_COMMAND", "codex"))
-        self.command = command or shlex.split(command_text, posix=False)
+        self.command = command or _resolve_command(shlex.split(command_text, posix=False))
         self.sandbox = os.getenv("BENCH_CODEX_SANDBOX", os.getenv("ORCH_CODEX_SANDBOX", sandbox)).strip()
         self.approval = os.getenv("BENCH_CODEX_APPROVAL", os.getenv("ORCH_CODEX_APPROVAL", approval)).strip()
-        self.model = model.strip() or os.getenv("BENCH_CODEX_MODEL", os.getenv("ORCH_CODEX_MODEL", "")).strip()
+        self.model = model.strip() or DEFAULT_CODEX_MODEL
         self.timeout_seconds = int(os.getenv("BENCH_CODEX_TIMEOUT_SECONDS", str(timeout_seconds)))
 
     def run(self, task_id: str, prompt: str, workdir: Path, expected_outputs: list[str]) -> EngineResult:
@@ -60,6 +63,19 @@ class CodexEngine:
             stderr = _clean(exc.stderr)
             returncode = 124
             timed_out = True
+        except OSError as exc:
+            return EngineResult(
+                engine=self.name,
+                task_id=task_id,
+                returncode=127,
+                stdout="",
+                stderr=f"{type(exc).__name__}: {exc}",
+                output_files=[],
+                elapsed_seconds=time.monotonic() - started,
+                timed_out=False,
+                model=self.model,
+                error_type="command_not_found",
+            )
 
         clean_stdout = _codex_text_from_stdout(stdout) or stdout
         _ensure_expected_output(workdir, expected_outputs, clean_stdout)
@@ -78,6 +94,35 @@ class CodexEngine:
             timed_out=timed_out,
             model=self.model,
         )
+
+
+def _resolve_command(command: list[str]) -> list[str]:
+    if not command:
+        return ["codex"]
+    executable = command[0]
+    if Path(executable).exists() or shutil.which(executable):
+        return command
+    if executable.lower() == "codex":
+        found = _find_codex()
+        if found:
+            return [found, *command[1:]]
+    return command
+
+
+def _find_codex() -> str:
+    candidates: list[Path] = []
+    appdata = os.getenv("USERPROFILE", "")
+    if appdata:
+        candidates.extend(Path(appdata).glob(".vscode/extensions/openai.chatgpt-*/bin/windows-x86_64/codex.exe"))
+        candidates.extend(Path(appdata).glob(".vscode-insiders/extensions/openai.chatgpt-*/bin/windows-x86_64/codex.exe"))
+    for name in ("codex.cmd", "codex.exe", "codex"):
+        resolved = shutil.which(name)
+        if resolved:
+            return resolved
+    existing = [path for path in candidates if path.exists()]
+    if existing:
+        return str(max(existing, key=lambda path: path.stat().st_mtime))
+    return ""
 
 
 def _clean(value: str | bytes | None) -> str:

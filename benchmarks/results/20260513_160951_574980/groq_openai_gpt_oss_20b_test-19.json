@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-19",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 2.317, \"usage\": {\"queue_time\": 0.016517647, \"prompt_tokens\": 1721, \"prompt_time\": 0.104941077, \"completion_tokens\": 2048, \"completion_time\": 2.067700976, \"total_tokens\": 3769, \"total_time\": 2.172642053, \"completion_tokens_details\": {\"reasoning_tokens\": 2046}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-19\\resultado.md"
+  ],
+  "elapsed_seconds": 2.5449331999989226,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 2.317,
+    "usage": {
+      "queue_time": 0.016517647,
+      "prompt_tokens": 1721,
+      "prompt_time": 0.104941077,
+      "completion_tokens": 2048,
+      "completion_time": 2.067700976,
+      "total_tokens": 3769,
+      "total_time": 2.172642053,
+      "completion_tokens_details": {
+        "reasoning_tokens": 2046
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-19_resultado.md"
+  ],
+  "task_prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.",
+  "execution_prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-19"
+}

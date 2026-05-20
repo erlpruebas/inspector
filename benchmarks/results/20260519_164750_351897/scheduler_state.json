@@ -1,0 +1,49 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260519_164750_351897",
+  "jobs": [
+    {
+      "engine": "vikingnano:gemini-nano-local",
+      "task_id": "test-01",
+      "next_run_at": 1779209395.8149834,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "vikingnano:gemini-nano-local",
+      "task_id": "test-02",
+      "next_run_at": 1779209521.3460197,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "vikingnano:gemini-nano-local",
+      "task_id": "test-05",
+      "next_run_at": 1779209646.8341784,
+      "attempts": 1,
+      "done": false
+    }
+  ],
+  "completed": [],
+  "deferred": [
+    {
+      "job": "vikingnano:gemini-nano-local::test-01",
+      "at": "2026-05-19T14:49:55.814996+00:00",
+      "next_run_at": "2026-05-19T16:49:55.814983+00:00",
+      "reason": "524"
+    },
+    {
+      "job": "vikingnano:gemini-nano-local::test-02",
+      "at": "2026-05-19T14:52:01.346027+00:00",
+      "next_run_at": "2026-05-19T16:52:01.346020+00:00",
+      "reason": "524"
+    },
+    {
+      "job": "vikingnano:gemini-nano-local::test-05",
+      "at": "2026-05-19T14:54:06.834184+00:00",
+      "next_run_at": "2026-05-19T16:54:06.834178+00:00",
+      "reason": "524"
+    }
+  ],
+  "failed": [],
+  "running": null
+}

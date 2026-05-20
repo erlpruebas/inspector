@@ -1,0 +1,620 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260513_151640_705408",
+  "jobs": [
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini_api:gemini-2.5-flash-lite",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini_api:gemini-2.5-flash-lite",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini_api:gemini-2.5-flash-lite",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini_api:gemini-2.5-flash-lite",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini_api:gemini-2.5-flash-lite",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "codex:gpt-5.5::test-01",
+      "at": "2026-05-13T13:17:00.582005+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-01",
+      "at": "2026-05-13T13:17:16.233227+00:00"
+    },
+    {
+      "job": "gemini_api:gemini-2.5-flash-lite::test-01",
+      "at": "2026-05-13T13:17:47.369173+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-01",
+      "at": "2026-05-13T13:17:56.196764+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-13T13:18:02.460648+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-01",
+      "at": "2026-05-13T13:18:29.059301+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-01",
+      "at": "2026-05-13T13:18:31.688044+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-01",
+      "at": "2026-05-13T13:18:34.581618+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-02",
+      "at": "2026-05-13T13:18:58.460353+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-02",
+      "at": "2026-05-13T13:19:36.108750+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-02",
+      "at": "2026-05-13T13:20:08.268362+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-02",
+      "at": "2026-05-13T13:20:41.235367+00:00"
+    },
+    {
+      "job": "gemini_api:gemini-2.5-flash-lite::test-02",
+      "at": "2026-05-13T13:22:07.842289+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-02",
+      "at": "2026-05-13T13:22:18.804767+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-02",
+      "at": "2026-05-13T13:22:41.323101+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-02",
+      "at": "2026-05-13T13:23:41.285711+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-02",
+      "at": "2026-05-13T13:23:44.296288+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-02",
+      "at": "2026-05-13T13:23:48.893874+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-03",
+      "at": "2026-05-13T13:24:27.306766+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-03",
+      "at": "2026-05-13T13:25:18.095271+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-03",
+      "at": "2026-05-13T13:26:04.738378+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-03",
+      "at": "2026-05-13T13:26:38.618423+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-03",
+      "at": "2026-05-13T13:28:21.904134+00:00"
+    },
+    {
+      "job": "gemini_api:gemini-2.5-flash-lite::test-03",
+      "at": "2026-05-13T13:28:33.025710+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-03",
+      "at": "2026-05-13T13:30:03.559895+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-03",
+      "at": "2026-05-13T13:30:28.616536+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-03",
+      "at": "2026-05-13T13:31:44.529990+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-03",
+      "at": "2026-05-13T13:31:47.893388+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-03",
+      "at": "2026-05-13T13:31:52.474714+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-04",
+      "at": "2026-05-13T13:32:13.493894+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-04",
+      "at": "2026-05-13T13:32:31.549754+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-04",
+      "at": "2026-05-13T13:33:16.031857+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-04",
+      "at": "2026-05-13T13:33:43.328680+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-04",
+      "at": "2026-05-13T13:35:16.365546+00:00"
+    },
+    {
+      "job": "gemini_api:gemini-2.5-flash-lite::test-04",
+      "at": "2026-05-13T13:35:37.563532+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-04",
+      "at": "2026-05-13T13:35:43.431010+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-04",
+      "at": "2026-05-13T13:35:52.893862+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-04",
+      "at": "2026-05-13T13:36:44.767768+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-04",
+      "at": "2026-05-13T13:36:47.578467+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-04",
+      "at": "2026-05-13T13:36:51.232649+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-05",
+      "at": "2026-05-13T13:37:11.872226+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-05",
+      "at": "2026-05-13T13:37:29.292170+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-05",
+      "at": "2026-05-13T13:38:01.592413+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-05",
+      "at": "2026-05-13T13:38:30.081042+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-05",
+      "at": "2026-05-13T13:39:22.929987+00:00"
+    },
+    {
+      "job": "gemini_api:gemini-2.5-flash-lite::test-05",
+      "at": "2026-05-13T13:39:35.889688+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-05",
+      "at": "2026-05-13T13:39:43.035167+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-05",
+      "at": "2026-05-13T13:39:47.927050+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-05",
+      "at": "2026-05-13T13:40:24.908684+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-05",
+      "at": "2026-05-13T13:40:27.555425+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-05",
+      "at": "2026-05-13T13:40:30.231836+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [
+    {
+      "job": "gemini:gemini-2.5-pro::test-01",
+      "at": "2026-05-13T13:17:23.484942+00:00",
+      "returncode": 2147483651
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-01",
+      "at": "2026-05-13T13:17:30.597531+00:00",
+      "returncode": 3221226505
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-01",
+      "at": "2026-05-13T13:17:40.477635+00:00",
+      "returncode": 3221226505
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-02",
+      "at": "2026-05-13T13:21:34.422183+00:00",
+      "returncode": 2147483651
+    }
+  ],
+  "running": null
+}

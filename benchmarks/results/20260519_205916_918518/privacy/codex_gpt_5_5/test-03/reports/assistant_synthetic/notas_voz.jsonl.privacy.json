@@ -1,0 +1,310 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "{\"id\": \"VN-001\", \"timestamp\": \"2026-05-03 08:12\", \"transcript\": \"Recordar llamar a Noelia de Clinica Centro antes del jueves para confirmar demo del modulo de pagos.\"}\n{\"id\": \"VN-002\", \"timestamp\": \"2026-05-03 09:40\", \"transcript\": \"Enviar a Luis de Delta Equipos el CSV actualizado de monitores; falta incluir descuento del 4 por ciento.\"}\n{\"id\": \"VN-003\", \"timestamp\": \"2026-05-03 11:18\", \"transcript\": \"Comprar billete para Barcelona el dia 18 si Xavier confirma la reunion de Barna Health.\"}\n{\"id\": \"VN-004\", \"timestamp\": \"2026-05-04 07:55\", \"transcript\": \"Preparar minuta para Sergio Campos con riesgos de seguridad y coste de auditoria.\"}\n{\"id\": \"VN-005\", \"timestamp\": \"2026-05-04 12:03\", \"transcript\": \"Pedir a Elena Vidal las facturas de abril que no aparecen en el banco.\"}\n{\"id\": \"VN-006\", \"timestamp\": \"2026-05-05 10:34\", \"transcript\": \"Crear tarea para revisar contrato de IberLegal; David pidio respuesta antes del 12.\"}\n{\"id\": \"VN-007\", \"timestamp\": \"2026-05-05 17:10\", \"transcript\": \"Agendar seguimiento con Marta Ruiz el martes a las cuatro por el tema de administracion.\"}\n{\"id\": \"VN-008\", \"timestamp\": \"2026-05-06 08:05\", \"transcript\": \"No olvidar que Ana Lopez prefiere recibir informes en PDF y resumen ejecutivo corto.\"}\n{\"id\": \"VN-009\", \"timestamp\": \"2026-05-06 14:29\", \"transcript\": \"Buscar alternativa barata a herramienta de encuestas para GreenBox.\"}\n{\"id\": \"VN-010\", \"timestamp\": \"2026-05-07 09:00\", \"transcript\": \"Llamar a Tomas de Zenit Food por pedido de licencias y confirmar direccion fiscal.\"}\n{\"id\": \"VN-011\", \"timestamp\": \"2026-05-07 15:12\", \"transcript\": \"Enviar agenda de implantacion a Laura Marin; incluir hito de formacion el dia 22.\"}\n{\"id\": \"VN-012\", \"timestamp\": \"2026-05-08 08:43\", \"transcript\": \"Revisar gastos de marzo porque hay dos cargos duplicados de hotel.\"}\n{\"id\": \"VN-013\", \"timestamp\": \"2026-05-08 13:20\", \"transcript\": \"Poner recordatorio para renovar certificado SSL de Cobalto antes del 28.\"}\n{\"id\": \"VN-014\", \"timestamp\": \"2026-05-09 10:02\", \"transcript\": \"Preparar comparativa OpenRouter contra Gemini para tareas de ofimatica.\"}\n{\"id\": \"VN-015\", \"timestamp\": \"2026-05-09 16:44\", \"transcript\": \"Enviar email amable a Paula Ferrer, no ha contestado la propuesta de BravoSoft.\"}\n{\"id\": \"VN-016\", \"timestamp\": \"2026-05-10 09:16\", \"transcript\": \"Cruzar pagos de Norte SA con facturas, creo que falta una de 847 con cincuenta.\"}\n{\"id\": \"VN-017\", \"timestamp\": \"2026-05-10 11:52\", \"transcript\": \"Crear lista de contactos prioritarios de Madrid con nivel alta.\"}\n{\"id\": \"VN-018\", \"timestamp\": \"2026-05-10 19:30\", \"transcript\": \"Investigar si Apple ha subido mas que Microsoft en los ultimos seis meses.\"}\n{\"id\": \"VN-019\", \"timestamp\": \"2026-05-11 08:25\", \"transcript\": \"Preparar informe mensual de incidencias: incluir Clinica Centro y facturacion.\"}\n{\"id\": \"VN-020\", \"timestamp\": \"2026-05-11 10:00\", \"transcript\": \"Recordar reservar sala para reunion interna del viernes a las nueve y media.\"}\n",
+  "mixed_text": "{\"id\": \"VN-001\", \"timestamp\": \"2026-05-03 08 [PHONE_0088]:12\", \"transcript\": \"Recordar llamar a Noelia de Clinica Centro [ORG_0005] antes del jueves para confirmar demo de [PERSON_0009]l modulo de pagos.\"}\n{\"id\": \"VN-002\", \"timestamp\": \"2026-05-03 09 [PHONE_0087]:40\", \"transcript\": \"Enviar a Luis de Delta Equipos [PERSON_0074] el CSV actualizado de monitores; falta incluir descuento del 4 por ciento.\"}\n{\"id\": \"VN-003\", \"timestamp\": \"2026-05-03 11 [PHONE_0086]:18\", \"transcript\": \"Comprar billete para Barcelona el dia 18 si Xavier confirma la reunion de Barna Health.\"}\n{\"id\": \"VN-004\", \"timestamp\": \"2026-05-04 07 [PHONE_0085]:55\", \"transcript\": \"Preparar minuta para Sergio Campos [PERSON_0060] con riesgos de seguridad y coste de auditoria.\"}\n{\"id\": \"VN-005\", \"timestamp\": \"2026-05-04 12 [PHONE_0084]:03\", \"transcript\": \"Pedir a Elena Vidal las [PERSON_0073] facturas de abril que no aparecen en el banco.\"}\n{\"id\": \"VN-006\", \"timestamp\": \"2026-05-05 10 [PHONE_0083]:34\", \"transcript\": \"Crear tarea para revisar contrato de IberLegal; David pidio respuesta antes del 12.\"}\n{\"id\": \"VN-007\", \"timestamp\": \"2026-05-05 17 [PHONE_0082]:10\", \"transcript\": \"Agendar seguimiento con Marta Ruiz [PERSON_0064] el martes a las cuatro por el tema de administracion.\"}\n{\"id\": \"VN-008\", \"timestamp\": \"2026-05-06 08 [PHONE_0081]:05\", \"transcript\": \"No olvidar que Ana Lopez [PERSON_0069] prefiere recibir informes en PDF y resumen ejecutivo corto.\"}\n{\"id\": \"VN-009\", \"timestamp\": \"2026-05-06 14 [PHONE_0080]:29\", \"transcript\": \"Buscar alternativa barata a herramienta de encuestas para GreenBox.\"}\n{\"id\": \"VN-010\", \"timestamp\": \"2026-05-07 09 [PHONE_0079]:00\", \"transcript\": \"Llamar a Tomas de Zenit Food [PERSON_0072] por pedido de licencias y confirmar direccion fiscal.\"}\n{\"id\": \"VN-011\", \"timestamp\": \"2026-05-07 15 [PHONE_0078]:12\", \"transcript\": \"Enviar agenda de implantacion a Laura Marin [PERSON_0033]; incluir hito de formacion el dia 22.\"}\n{\"id\": \"VN-012\", \"timestamp\": \"2026-05-08 08 [PHONE_0064]:43\", \"transcript\": \"Revisar gastos de marzo porque hay dos cargos duplicados de hotel.\"}\n{\"id\": \"VN-013\", \"timestamp\": \"2026-05-08 13 [PHONE_0077]:20\", \"transcript\": \"Poner recordatorio para renovar certificado SSL de Cobalto antes del 28.\"}\n{\"id\": \"VN-014\", \"timestamp\": \"2026-05-09 10 [PHONE_0076]:02\", \"transcript\": \"Preparar comparativa OpenRouter contra Gemini para tareas de ofimatica.\"}\n{\"id\": \"VN-015\", \"timestamp\": \"2026-05-09 16 [PHONE_0075]:44\", \"transcript\": \"Enviar email amable a Paula Ferrer [PERSON_0059], no ha contestado la propuesta de BravoSoft.\"}\n{\"id\": \"VN-016\", \"timestamp\": \"2026-05-10 09 [PHONE_0074]:16\", \"transcript\": \"Cruzar pagos de Norte SA [ORG_0008] con facturas, creo que falta una de 847 con cincuenta.\"}\n{\"id\": \"VN-017\", \"timestamp\": \"2026-05-10 11 [PHONE_0073]:52\", \"transcript\": \"Crear lista de contactos prioritarios de Madrid con nivel alta.\"}\n{\"id\": \"VN-018\", \"timestamp\": \"2026-05-10 19 [PHONE_0072]:30\", \"transcript\": \"Investigar si Apple ha subido mas que Microsoft en los ultimos seis meses.\"}\n{\"id\": \"VN-019\", \"timestamp\": \"2026-05-11 08 [PHONE_0071]:25\", \"transcript\": \"Preparar informe mensual de incidencias: incluir Clinica Centro y [ORG_0007] facturacion.\"}\n{\"id\": \"VN-020\", \"timestamp\": \"2026-05-11 10 [PHONE_0070]:00\", \"transcript\": \"Recordar reservar sala para reunion interna del viernes a las nueve y media.\"}\n",
+  "redacted_text": "{\"id\": \"VN-001\", \"timestamp\": \"PHONE_0088:12\", \"transcript\": \"Recordar llamar a Noelia de ORG_0005 antes del jueves para confirmar PERSON_0009l modulo de pagos.\"}\n{\"id\": \"VN-002\", \"timestamp\": \"PHONE_0087:40\", \"transcript\": \"Enviar a PERSON_0074 el CSV actualizado de monitores; falta incluir descuento del 4 por ciento.\"}\n{\"id\": \"VN-003\", \"timestamp\": \"PHONE_0086:18\", \"transcript\": \"Comprar billete para Barcelona el dia 18 si Xavier confirma la reunion de Barna Health.\"}\n{\"id\": \"VN-004\", \"timestamp\": \"PHONE_0085:55\", \"transcript\": \"Preparar minuta para PERSON_0060 con riesgos de seguridad y coste de auditoria.\"}\n{\"id\": \"VN-005\", \"timestamp\": \"PHONE_0084:03\", \"transcript\": \"Pedir a PERSON_0073 facturas de abril que no aparecen en el banco.\"}\n{\"id\": \"VN-006\", \"timestamp\": \"PHONE_0083:34\", \"transcript\": \"Crear tarea para revisar contrato de IberLegal; David pidio respuesta antes del 12.\"}\n{\"id\": \"VN-007\", \"timestamp\": \"PHONE_0082:10\", \"transcript\": \"Agendar seguimiento con PERSON_0064 el martes a las cuatro por el tema de administracion.\"}\n{\"id\": \"VN-008\", \"timestamp\": \"PHONE_0081:05\", \"transcript\": \"No olvidar que PERSON_0069 prefiere recibir informes en PDF y resumen ejecutivo corto.\"}\n{\"id\": \"VN-009\", \"timestamp\": \"PHONE_0080:29\", \"transcript\": \"Buscar alternativa barata a herramienta de encuestas para GreenBox.\"}\n{\"id\": \"VN-010\", \"timestamp\": \"PHONE_0079:00\", \"transcript\": \"Llamar a PERSON_0072 por pedido de licencias y confirmar direccion fiscal.\"}\n{\"id\": \"VN-011\", \"timestamp\": \"PHONE_0078:12\", \"transcript\": \"Enviar agenda de implantacion a PERSON_0033; incluir hito de formacion el dia 22.\"}\n{\"id\": \"VN-012\", \"timestamp\": \"PHONE_0064:43\", \"transcript\": \"Revisar gastos de marzo porque hay dos cargos duplicados de hotel.\"}\n{\"id\": \"VN-013\", \"timestamp\": \"PHONE_0077:20\", \"transcript\": \"Poner recordatorio para renovar certificado SSL de Cobalto antes del 28.\"}\n{\"id\": \"VN-014\", \"timestamp\": \"PHONE_0076:02\", \"transcript\": \"Preparar comparativa OpenRouter contra Gemini para tareas de ofimatica.\"}\n{\"id\": \"VN-015\", \"timestamp\": \"PHONE_0075:44\", \"transcript\": \"Enviar email amable a PERSON_0059, no ha contestado la propuesta de BravoSoft.\"}\n{\"id\": \"VN-016\", \"timestamp\": \"PHONE_0074:16\", \"transcript\": \"ORG_0008 con facturas, creo que falta una de 847 con cincuenta.\"}\n{\"id\": \"VN-017\", \"timestamp\": \"PHONE_0073:52\", \"transcript\": \"Crear lista de contactos prioritarios de Madrid con nivel alta.\"}\n{\"id\": \"VN-018\", \"timestamp\": \"PHONE_0072:30\", \"transcript\": \"Investigar si Apple ha subido mas que Microsoft en los ultimos seis meses.\"}\n{\"id\": \"VN-019\", \"timestamp\": \"PHONE_0071:25\", \"transcript\": \"Preparar informe mensual de incidencias: incluir ORG_0007 facturacion.\"}\n{\"id\": \"VN-020\", \"timestamp\": \"PHONE_0070:00\", \"transcript\": \"Recordar reservar sala para reunion interna del viernes a las nueve y media.\"}\n",
+  "entities": [
+    {
+      "start": 31,
+      "end": 44,
+      "text": "2026-05-03 08",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0088"
+    },
+    {
+      "start": 93,
+      "end": 107,
+      "text": "Clinica Centro",
+      "entity_type": "ORG",
+      "confidence": 0.81,
+      "source": "alias",
+      "token": "ORG_0005"
+    },
+    {
+      "start": 140,
+      "end": 147,
+      "text": "demo de",
+      "entity_type": "PERSON",
+      "confidence": 0.8,
+      "source": "alias",
+      "token": "PERSON_0009"
+    },
+    {
+      "start": 199,
+      "end": 212,
+      "text": "2026-05-03 09",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0087"
+    },
+    {
+      "start": 242,
+      "end": 263,
+      "text": "Luis de Delta Equipos",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0074"
+    },
+    {
+      "start": 372,
+      "end": 385,
+      "text": "2026-05-03 11",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0086"
+    },
+    {
+      "start": 527,
+      "end": 540,
+      "text": "2026-05-04 07",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0085"
+    },
+    {
+      "start": 582,
+      "end": 595,
+      "text": "Sergio Campos",
+      "entity_type": "PERSON",
+      "confidence": 0.8,
+      "source": "alias",
+      "token": "PERSON_0060"
+    },
+    {
+      "start": 676,
+      "end": 689,
+      "text": "2026-05-04 12",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0084"
+    },
+    {
+      "start": 718,
+      "end": 733,
+      "text": "Elena Vidal las",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0073"
+    },
+    {
+      "start": 814,
+      "end": 827,
+      "text": "2026-05-05 10",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0083"
+    },
+    {
+      "start": 965,
+      "end": 978,
+      "text": "2026-05-05 17",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0082"
+    },
+    {
+      "start": 1023,
+      "end": 1033,
+      "text": "Marta Ruiz",
+      "entity_type": "PERSON",
+      "confidence": 0.8,
+      "source": "alias",
+      "token": "PERSON_0064"
+    },
+    {
+      "start": 1121,
+      "end": 1134,
+      "text": "2026-05-06 08",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0081"
+    },
+    {
+      "start": 1170,
+      "end": 1179,
+      "text": "Ana Lopez",
+      "entity_type": "PERSON",
+      "confidence": 0.8,
+      "source": "alias",
+      "token": "PERSON_0069"
+    },
+    {
+      "start": 1273,
+      "end": 1286,
+      "text": "2026-05-06 14",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0080"
+    },
+    {
+      "start": 1408,
+      "end": 1421,
+      "text": "2026-05-07 09",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0079"
+    },
+    {
+      "start": 1451,
+      "end": 1470,
+      "text": "Tomas de Zenit Food",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0072"
+    },
+    {
+      "start": 1558,
+      "end": 1571,
+      "text": "2026-05-07 15",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0078"
+    },
+    {
+      "start": 1624,
+      "end": 1635,
+      "text": "Laura Marin",
+      "entity_type": "PERSON",
+      "confidence": 0.8,
+      "source": "alias",
+      "token": "PERSON_0033"
+    },
+    {
+      "start": 1707,
+      "end": 1720,
+      "text": "2026-05-08 08",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0064"
+    },
+    {
+      "start": 1841,
+      "end": 1854,
+      "text": "2026-05-08 13",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0077"
+    },
+    {
+      "start": 1981,
+      "end": 1994,
+      "text": "2026-05-09 10",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0076"
+    },
+    {
+      "start": 2120,
+      "end": 2133,
+      "text": "2026-05-09 16",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0075"
+    },
+    {
+      "start": 2176,
+      "end": 2188,
+      "text": "Paula Ferrer",
+      "entity_type": "PERSON",
+      "confidence": 0.8,
+      "source": "alias",
+      "token": "PERSON_0059"
+    },
+    {
+      "start": 2267,
+      "end": 2280,
+      "text": "2026-05-10 09",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0074"
+    },
+    {
+      "start": 2301,
+      "end": 2325,
+      "text": "Cruzar pagos de Norte SA",
+      "entity_type": "ORG",
+      "confidence": 0.82,
+      "source": "heuristic",
+      "token": "ORG_0008"
+    },
+    {
+      "start": 2414,
+      "end": 2427,
+      "text": "2026-05-10 11",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0073"
+    },
+    {
+      "start": 2545,
+      "end": 2558,
+      "text": "2026-05-10 19",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0072"
+    },
+    {
+      "start": 2687,
+      "end": 2700,
+      "text": "2026-05-11 08",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0071"
+    },
+    {
+      "start": 2770,
+      "end": 2786,
+      "text": "Clinica Centro y",
+      "entity_type": "ORG",
+      "confidence": 0.81,
+      "source": "heuristic",
+      "token": "ORG_0007"
+    },
+    {
+      "start": 2833,
+      "end": 2846,
+      "text": "2026-05-11 10",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0070"
+    }
+  ],
+  "verification": {
+    "passed": false,
+    "findings": [
+      {
+        "start": 80,
+        "end": 89,
+        "text": "Noelia de",
+        "entity_type": "PERSON",
+        "source": "heuristic"
+      }
+    ],
+    "entity_count": 1
+  }
+}

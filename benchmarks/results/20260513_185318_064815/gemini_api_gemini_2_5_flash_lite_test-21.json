@@ -1,0 +1,39 @@
+{
+  "engine": "gemini_api_gemini_2_5_flash_lite",
+  "task_id": "test-21",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 9.394, \"usage\": {\"promptTokenCount\": 3176, \"candidatesTokenCount\": 837, \"totalTokenCount\": 4013, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 3176}], \"serviceTier\": \"standard\"}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\gemini_api_gemini_2_5_flash_lite\\test-21\\resultado.md"
+  ],
+  "elapsed_seconds": 9.604171100072563,
+  "timed_out": false,
+  "usage": {
+    "provider": "gemini_api",
+    "model": "gemini-2.5-flash-lite",
+    "elapsed_seconds": 9.394,
+    "usage": {
+      "promptTokenCount": 3176,
+      "candidatesTokenCount": 837,
+      "totalTokenCount": 4013,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 3176
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\gemini_api_gemini_2_5_flash_lite_test-21_resultado.md"
+  ],
+  "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+  "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\gemini_api_gemini_2_5_flash_lite\\test-21"
+}

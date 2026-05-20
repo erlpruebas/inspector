@@ -1,0 +1,39 @@
+{
+  "engine": "gemini_api_gemini_2_5_flash_lite",
+  "task_id": "test-17",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 3.602, \"usage\": {\"promptTokenCount\": 1069, \"candidatesTokenCount\": 288, \"totalTokenCount\": 1357, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 1069}], \"serviceTier\": \"standard\"}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\gemini_api_gemini_2_5_flash_lite\\test-17\\resultado.md"
+  ],
+  "elapsed_seconds": 3.8590790999587625,
+  "timed_out": false,
+  "usage": {
+    "provider": "gemini_api",
+    "model": "gemini-2.5-flash-lite",
+    "elapsed_seconds": 3.602,
+    "usage": {
+      "promptTokenCount": 1069,
+      "candidatesTokenCount": 288,
+      "totalTokenCount": 1357,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1069
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\gemini_api_gemini_2_5_flash_lite_test-17_resultado.md"
+  ],
+  "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+  "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\gemini_api_gemini_2_5_flash_lite\\test-17"
+}

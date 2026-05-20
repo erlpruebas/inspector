@@ -1,0 +1,23 @@
+{
+  "engine": "codex_gpt_5_5",
+  "task_id": "test-08",
+  "returncode": 0,
+  "stdout": "Voy a leer las dos fuentes locales y extraer compromisos accionables, dando más peso a fechas explícitas y clientes nombrados. Luego te devuelvo un resumen semanal priorizado en español.\n\n**Resumen Semanal**\n\nPrioridad alta, con fecha o cliente concreto:\n\n| Fecha límite / cita | Cliente / persona | Tarea pendiente | Prioridad |\n|---|---|---|---|\n| **12 mayo 2026** | IberLegal / David Navarro | Enviar comentarios del contrato de soporte, especialmente cláusula 8 de responsabilidad y renovación automática. | Vencida |\n| **13 mayo 2026** | Delta Equipos / Luis Martín | Enviar CSV actualizado de monitores incluyendo el descuento del 4%. El descuento dependía de cerrar antes del día 13. | Hoy / urgente |\n| **Antes del 14 mayo 2026** | Clínica Centro / Noelia Castro | Llamar para confirmar demo del módulo de pagos. Preparar demo centrada en conciliación y estado de pagos. | Alta |\n| **14 mayo 2026, 11:30** | Clínica Centro | Demo del módulo de pagos; debe asistir alguien de administración. | Alta |\n| **Viernes 15 mayo 2026, 09:30** | Interna | Reservar sala para reunión interna. | Alta |\n| **18 mayo 2026, 10:00** | Barna Health / Xavier Puig | Reunión presencial en Barcelona sobre integración SSO. Comprar billete para Barcelona. | Alta |\n| **22 mayo 2026** | Laura Marín | Enviar agenda de implantación incluyendo hito de formación del día 22. | Media-alta |\n| **Antes del 28 mayo 2026** | Cobalto | Renovar certificado SSL. | Media-alta |\n\nOtros compromisos con cliente o contacto:\n\n- **BravoSoft / Paula Ferrer**: enviar correo corto y amable de seguimiento por la propuesta CRM, ya que quedó pendiente respuesta “la semana que viene”.\n- **Nova Iberia / Ana López**: aplicar preferencia de formato en futuros informes: PDF, una página de resumen ejecutivo y anexos separados.\n- **Zenit Food / Tomás**: llamar por pedido de licencias y confirmar dirección fiscal.\n- **Clínica Centro**: preparar informe mensual de incidencias incluyendo Clínica Centro y facturación.\n- **Norte SA**: cruzar pagos con facturas; revisar posible factura pendiente de **847,50**.\n- **Sergio Campos**: preparar minuta con riesgos de seguridad y coste de auditoría.\n- **Elena Vidal**: pedir facturas de abril que no aparecen en el banco.\n- **Marta Ruiz**: agendar seguimiento el martes a las 16:00 por administración; falta concretar fecha exacta.\n- **GreenBox**: buscar alternativa barata a herramienta de encuestas.\n\nTareas internas o sin cliente concreto:\n\n- Revisar gastos de marzo por dos cargos duplicados de hotel.\n- Crear lista de contactos prioritarios de Madrid con nivel alta.\n- Preparar comparativa OpenRouter vs Gemini para tareas de ofimática.\n- Investigar rendimiento Apple vs Microsoft en los últimos seis meses.",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\codex_gpt_5_5\\test-08\\resultado.md"
+  ],
+  "elapsed_seconds": 25.360441100085154,
+  "timed_out": false,
+  "usage": {},
+  "model": "gpt-5.5",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "codex:gpt-5.5",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\codex_gpt_5_5_test-08_resultado.md"
+  ],
+  "task_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+  "execution_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\codex_gpt_5_5\\test-08"
+}

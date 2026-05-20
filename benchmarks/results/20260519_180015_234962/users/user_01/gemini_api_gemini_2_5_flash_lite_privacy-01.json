@@ -1,0 +1,53 @@
+{
+  "engine": "gemini_api_gemini_2_5_flash_lite",
+  "task_id": "privacy-01",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 7.278, \"usage\": {\"promptTokenCount\": 366, \"candidatesTokenCount\": 93, \"totalTokenCount\": 459, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 366}], \"serviceTier\": \"standard\"}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\work\\gemini_api_gemini_2_5_flash_lite\\privacy-01\\resultado.md"
+  ],
+  "elapsed_seconds": 7.604089899999963,
+  "timed_out": false,
+  "usage": {
+    "provider": "gemini_api",
+    "model": "gemini-2.5-flash-lite",
+    "elapsed_seconds": 7.278,
+    "usage": {
+      "promptTokenCount": 366,
+      "candidatesTokenCount": 93,
+      "totalTokenCount": 459,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 366
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini_api_gemini_2_5_flash_lite",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\outputs\\user_01\\gemini_api_gemini_2_5_flash_lite_privacy-01_resultado.md"
+  ],
+  "task_prompt": "# Redactar contactos sucios\n\nLee `benchmarks/assets/clientes_sucios.csv` y devuelve un resumen en 3 puntos sobre duplicados, emails en mayusculas y telefonos faltantes. No repitas datos sensibles literales.",
+  "execution_prompt": "# Redactar contactos sucios\n\nLee `benchmarks/assets/clientes_sucios.csv` y devuelve un resumen en 3 puntos sobre duplicados, emails en mayusculas y telefonos faltantes. No repitas datos sensibles literales.\n\nArchivos locales preparados en el directorio de trabajo:\n- `clientes_sucios.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\work\\gemini_api_gemini_2_5_flash_lite\\privacy-01",
+  "user": "user_01",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\work\\gemini_api_gemini_2_5_flash_lite\\privacy-01",
+    "mode": "redacted",
+    "files_processed": 1,
+    "files_skipped": 0,
+    "entities_found": 14,
+    "verification_passed": true,
+    "residual_findings": [],
+    "reviewer_used": false
+  },
+  "attempts": 1,
+  "transient_error": "",
+  "elapsed_wall_seconds": 7.629
+}

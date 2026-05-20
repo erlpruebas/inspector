@@ -1,0 +1,10 @@
+{
+  "root": "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\gemini_api_gemini_2_5_flash_lite\\privacy-02",
+  "mode": "redacted",
+  "files_processed": 1,
+  "files_skipped": 0,
+  "entities_found": 7,
+  "verification_passed": true,
+  "residual_findings": [],
+  "reviewer_used": false
+}

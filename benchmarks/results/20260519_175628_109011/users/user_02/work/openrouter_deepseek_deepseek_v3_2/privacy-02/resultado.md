@@ -1,0 +1,3 @@
+- 2025-01-15, 09:15, preparar la llamada con el cliente
+- 2025-01-16, 16:00, revisar el contrato con legal
+- 2025-01-17, 10:30, ver la demo

@@ -1,0 +1,1263 @@
+[
+  {
+    "id": "daily-01",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p01_inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "source_message_id": "msg-001",
+    "prompt": "# Telegram diario msg-001: Agente inmobiliaria\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Clara Benavides (Agente inmobiliaria)\n- Tono esperado: directa, comercial, muy orientada a cerrar visitas\n- Timestamp: 2026-05-18 08:12\n- Mensaje de Telegram: \"Busca en mis inmuebles cual puedo ensenar hoy a una pareja con presupuesto 310k, 3 dormitorios y colegio cerca. Mandame un resumen para WhatsApp.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "data_filtering",
+      "client_response"
+    ],
+    "expected_keys": [
+      "Piso Olivo",
+      "305000",
+      "3 dormitorios",
+      "Colegio Albor"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-02",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p01_inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "source_message_id": "msg-002",
+    "prompt": "# Telegram diario msg-002: Agente inmobiliaria\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Clara Benavides (Agente inmobiliaria)\n- Tono esperado: directa, comercial, muy orientada a cerrar visitas\n- Timestamp: 2026-05-18 11:40\n- Mensaje de Telegram: \"El cliente de ayer pregunta si el atico de Ronda Norte acepta rebaja. Mira notas y prepara respuesta prudente, sin prometer nada.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "synthesis",
+      "tone_control"
+    ],
+    "expected_keys": [
+      "Atico Ronda Norte",
+      "385000",
+      "margen 2%",
+      "no prometer"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-03",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p01_inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "source_message_id": "msg-003",
+    "prompt": "# Telegram diario msg-003: Agente inmobiliaria\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Clara Benavides (Agente inmobiliaria)\n- Tono esperado: directa, comercial, muy orientada a cerrar visitas\n- Timestamp: 2026-05-19 09:05\n- Mensaje de Telegram: \"Tengo 4 visitas el jueves. Ordenamelas por zona y dame ruta logica empezando en la oficina.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "planning",
+      "agenda"
+    ],
+    "expected_keys": [
+      "jueves",
+      "Centro",
+      "Ronda Norte",
+      "Vallecas",
+      "ruta"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-04",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p01_inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "source_message_id": "msg-004",
+    "prompt": "# Telegram diario msg-004: Agente inmobiliaria\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Clara Benavides (Agente inmobiliaria)\n- Tono esperado: directa, comercial, muy orientada a cerrar visitas\n- Timestamp: 2026-05-19 16:22\n- Mensaje de Telegram: \"Redacta email a propietario de Local Sur explicando por que no conviene subir el precio ahora.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "email_drafting",
+      "market_reasoning"
+    ],
+    "expected_keys": [
+      "Local Sur",
+      "precio",
+      "demanda baja",
+      "email"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-05",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p01_inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "source_message_id": "msg-005",
+    "prompt": "# Telegram diario msg-005: Agente inmobiliaria\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Clara Benavides (Agente inmobiliaria)\n- Tono esperado: directa, comercial, muy orientada a cerrar visitas\n- Timestamp: 2026-05-20 10:15\n- Mensaje de Telegram: \"Compara mis tres mejores opciones para inversor: rentabilidad, reforma y riesgo de vacancia.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "comparison",
+      "financial_reasoning"
+    ],
+    "expected_keys": [
+      "rentabilidad",
+      "reforma",
+      "vacancia",
+      "recomendacion"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-06",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p01_inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "source_message_id": "msg-006",
+    "prompt": "# Telegram diario msg-006: Agente inmobiliaria\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Clara Benavides (Agente inmobiliaria)\n- Tono esperado: directa, comercial, muy orientada a cerrar visitas\n- Timestamp: 2026-05-20 18:45\n- Mensaje de Telegram: \"Genera un informe semanal de oportunidades y avisos urgentes para manana.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "executive_report",
+      "prioritization"
+    ],
+    "expected_keys": [
+      "oportunidades",
+      "avisos",
+      "visitas",
+      "propietarios"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-07",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p02_informatico",
+    "profession": "Responsable informatico / DevOps",
+    "source_message_id": "msg-007",
+    "prompt": "# Telegram diario msg-007: Responsable informatico / DevOps\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Nicolas Ortega (Responsable informatico / DevOps)\n- Tono esperado: tecnico, conciso, pide pasos ejecutables\n- Timestamp: 2026-05-18 07:55\n- Mensaje de Telegram: \"Mira los logs sinteticos y dime por que puede estar fallando el login de clientes desde las 7:30.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "log_analysis",
+      "incident_triage"
+    ],
+    "expected_keys": [
+      "login",
+      "07:31",
+      "timeout OAuth",
+      "clientes"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-08",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p02_informatico",
+    "profession": "Responsable informatico / DevOps",
+    "source_message_id": "msg-008",
+    "prompt": "# Telegram diario msg-008: Responsable informatico / DevOps\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Nicolas Ortega (Responsable informatico / DevOps)\n- Tono esperado: tecnico, conciso, pide pasos ejecutables\n- Timestamp: 2026-05-18 12:05\n- Mensaje de Telegram: \"Prepara un mensaje para soporte explicando la incidencia sin asustar al equipo comercial.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "communication",
+      "tone_control"
+    ],
+    "expected_keys": [
+      "incidencia",
+      "OAuth",
+      "sin perdida de datos",
+      "equipo comercial"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-09",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p02_informatico",
+    "profession": "Responsable informatico / DevOps",
+    "source_message_id": "msg-009",
+    "prompt": "# Telegram diario msg-009: Responsable informatico / DevOps\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Nicolas Ortega (Responsable informatico / DevOps)\n- Tono esperado: tecnico, conciso, pide pasos ejecutables\n- Timestamp: 2026-05-19 08:30\n- Mensaje de Telegram: \"Haz checklist para rotar la clave API del proveedor SSO sin romper produccion.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "technical_planning",
+      "risk_control"
+    ],
+    "expected_keys": [
+      "backup",
+      "staging",
+      "rollback",
+      "ventana"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-10",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p02_informatico",
+    "profession": "Responsable informatico / DevOps",
+    "source_message_id": "msg-010",
+    "prompt": "# Telegram diario msg-010: Responsable informatico / DevOps\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Nicolas Ortega (Responsable informatico / DevOps)\n- Tono esperado: tecnico, conciso, pide pasos ejecutables\n- Timestamp: 2026-05-19 15:00\n- Mensaje de Telegram: \"Convierte los tickets pendientes en una tabla por prioridad y responsable.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "data_extraction",
+      "table_generation"
+    ],
+    "expected_keys": [
+      "TCK-104",
+      "alta",
+      "Marta",
+      "responsable"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-11",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p02_informatico",
+    "profession": "Responsable informatico / DevOps",
+    "source_message_id": "msg-011",
+    "prompt": "# Telegram diario msg-011: Responsable informatico / DevOps\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Nicolas Ortega (Responsable informatico / DevOps)\n- Tono esperado: tecnico, conciso, pide pasos ejecutables\n- Timestamp: 2026-05-20 09:20\n- Mensaje de Telegram: \"Escribe un pequeno script o pseudocodigo para detectar errores 5xx por minuto en access.log.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "code_generation",
+      "log_analysis"
+    ],
+    "expected_keys": [
+      "5xx",
+      "por minuto",
+      "access.log",
+      "script"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-12",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p02_informatico",
+    "profession": "Responsable informatico / DevOps",
+    "source_message_id": "msg-012",
+    "prompt": "# Telegram diario msg-012: Responsable informatico / DevOps\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Nicolas Ortega (Responsable informatico / DevOps)\n- Tono esperado: tecnico, conciso, pide pasos ejecutables\n- Timestamp: 2026-05-20 17:40\n- Mensaje de Telegram: \"Informe postmortem corto: causa, impacto, mitigacion y acciones preventivas.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "incident_report",
+      "synthesis"
+    ],
+    "expected_keys": [
+      "causa",
+      "impacto",
+      "mitigacion",
+      "acciones preventivas"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-13",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p03_cientifica",
+    "profession": "Cientifica biomedica",
+    "source_message_id": "msg-013",
+    "prompt": "# Telegram diario msg-013: Cientifica biomedica\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Dra. Irene Salvatierra (Cientifica biomedica)\n- Tono esperado: prudente, metodica, pide trazabilidad\n- Timestamp: 2026-05-18 08:40\n- Mensaje de Telegram: \"Resume las notas de laboratorio de la semana y separa observaciones de hipotesis.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "summarization",
+      "scientific_caution"
+    ],
+    "expected_keys": [
+      "observaciones",
+      "hipotesis",
+      "muestra B17",
+      "control"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-14",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p03_cientifica",
+    "profession": "Cientifica biomedica",
+    "source_message_id": "msg-014",
+    "prompt": "# Telegram diario msg-014: Cientifica biomedica\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Dra. Irene Salvatierra (Cientifica biomedica)\n- Tono esperado: prudente, metodica, pide trazabilidad\n- Timestamp: 2026-05-18 13:10\n- Mensaje de Telegram: \"Prepara email al comite pidiendo ampliar muestra, con tono prudente.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "email_drafting",
+      "tone_control"
+    ],
+    "expected_keys": [
+      "comite",
+      "ampliar muestra",
+      "prudente",
+      "B17"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-15",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p03_cientifica",
+    "profession": "Cientifica biomedica",
+    "source_message_id": "msg-015",
+    "prompt": "# Telegram diario msg-015: Cientifica biomedica\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Dra. Irene Salvatierra (Cientifica biomedica)\n- Tono esperado: prudente, metodica, pide trazabilidad\n- Timestamp: 2026-05-19 10:35\n- Mensaje de Telegram: \"Ordena resultados por marcador y senala anomalias sin concluir causalidad.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "data_analysis",
+      "scientific_caution"
+    ],
+    "expected_keys": [
+      "IL-6",
+      "CRP",
+      "anomalia",
+      "sin causalidad"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-16",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p03_cientifica",
+    "profession": "Cientifica biomedica",
+    "source_message_id": "msg-016",
+    "prompt": "# Telegram diario msg-016: Cientifica biomedica\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Dra. Irene Salvatierra (Cientifica biomedica)\n- Tono esperado: prudente, metodica, pide trazabilidad\n- Timestamp: 2026-05-19 18:05\n- Mensaje de Telegram: \"Haz una lista de preguntas para discutir con estadistica antes de enviar abstract.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "planning",
+      "research_methods"
+    ],
+    "expected_keys": [
+      "potencia",
+      "sesgo",
+      "outliers",
+      "abstract"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-17",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p03_cientifica",
+    "profession": "Cientifica biomedica",
+    "source_message_id": "msg-017",
+    "prompt": "# Telegram diario msg-017: Cientifica biomedica\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Dra. Irene Salvatierra (Cientifica biomedica)\n- Tono esperado: prudente, metodica, pide trazabilidad\n- Timestamp: 2026-05-20 09:00\n- Mensaje de Telegram: \"Cruza notas y tabla de resultados para preparar resumen ejecutivo de 1 pagina.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "multi_file_analysis",
+      "executive_report"
+    ],
+    "expected_keys": [
+      "muestra B17",
+      "marcadores",
+      "limitaciones",
+      "siguiente paso"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-18",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p03_cientifica",
+    "profession": "Cientifica biomedica",
+    "source_message_id": "msg-018",
+    "prompt": "# Telegram diario msg-018: Cientifica biomedica\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Dra. Irene Salvatierra (Cientifica biomedica)\n- Tono esperado: prudente, metodica, pide trazabilidad\n- Timestamp: 2026-05-20 16:55\n- Mensaje de Telegram: \"Necesito un briefing para direccion: que sabemos, que no sabemos y decision recomendada.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decision_brief",
+      "synthesis"
+    ],
+    "expected_keys": [
+      "sabemos",
+      "no sabemos",
+      "decision",
+      "riesgo"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-19",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p04_ingeniero",
+    "profession": "Ingeniero industrial",
+    "source_message_id": "msg-019",
+    "prompt": "# Telegram diario msg-019: Ingeniero industrial\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Marcos Valcarce (Ingeniero industrial)\n- Tono esperado: operativo, orientado a costes, seguridad y plazos\n- Timestamp: 2026-05-18 07:30\n- Mensaje de Telegram: \"Revisa el parte de obra y dime que dos riesgos debo mirar hoy primero.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "risk_detection",
+      "prioritization"
+    ],
+    "expected_keys": [
+      "vibracion",
+      "suministro",
+      "seguridad",
+      "prioridad"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-20",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p04_ingeniero",
+    "profession": "Ingeniero industrial",
+    "source_message_id": "msg-020",
+    "prompt": "# Telegram diario msg-020: Ingeniero industrial\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Marcos Valcarce (Ingeniero industrial)\n- Tono esperado: operativo, orientado a costes, seguridad y plazos\n- Timestamp: 2026-05-18 12:30\n- Mensaje de Telegram: \"Redacta aviso para el proveedor por retraso de valvulas sin romper la relacion.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "email_drafting",
+      "operations"
+    ],
+    "expected_keys": [
+      "valvulas",
+      "retraso",
+      "proveedor",
+      "tono firme"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-21",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p04_ingeniero",
+    "profession": "Ingeniero industrial",
+    "source_message_id": "msg-021",
+    "prompt": "# Telegram diario msg-021: Ingeniero industrial\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Marcos Valcarce (Ingeniero industrial)\n- Tono esperado: operativo, orientado a costes, seguridad y plazos\n- Timestamp: 2026-05-19 08:15\n- Mensaje de Telegram: \"Calcula desviacion de coste entre presupuesto y real de los ultimos hitos.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "cost_analysis",
+      "calculation"
+    ],
+    "expected_keys": [
+      "Hito 2",
+      "desviacion",
+      "coste real",
+      "presupuesto"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-22",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p04_ingeniero",
+    "profession": "Ingeniero industrial",
+    "source_message_id": "msg-022",
+    "prompt": "# Telegram diario msg-022: Ingeniero industrial\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Marcos Valcarce (Ingeniero industrial)\n- Tono esperado: operativo, orientado a costes, seguridad y plazos\n- Timestamp: 2026-05-19 14:45\n- Mensaje de Telegram: \"Prepara checklist de seguridad para la visita de inspeccion del miercoles.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "safety"
+    ],
+    "expected_keys": [
+      "EPI",
+      "bloqueo",
+      "senalizacion",
+      "miercoles"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-23",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p04_ingeniero",
+    "profession": "Ingeniero industrial",
+    "source_message_id": "msg-023",
+    "prompt": "# Telegram diario msg-023: Ingeniero industrial\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Marcos Valcarce (Ingeniero industrial)\n- Tono esperado: operativo, orientado a costes, seguridad y plazos\n- Timestamp: 2026-05-20 11:10\n- Mensaje de Telegram: \"Dame plan de recuperacion si las valvulas llegan 3 dias tarde.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "contingency_planning",
+      "operations"
+    ],
+    "expected_keys": [
+      "3 dias",
+      "plan B",
+      "hitos",
+      "impacto"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-24",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p04_ingeniero",
+    "profession": "Ingeniero industrial",
+    "source_message_id": "msg-024",
+    "prompt": "# Telegram diario msg-024: Ingeniero industrial\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Marcos Valcarce (Ingeniero industrial)\n- Tono esperado: operativo, orientado a costes, seguridad y plazos\n- Timestamp: 2026-05-20 19:05\n- Mensaje de Telegram: \"Haz informe para direccion con estado, desviaciones y decisiones pendientes.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "executive_report",
+      "project_control"
+    ],
+    "expected_keys": [
+      "estado",
+      "desviaciones",
+      "decisiones pendientes",
+      "direccion"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-25",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p05_abogada",
+    "profession": "Abogada laboralista",
+    "source_message_id": "msg-025",
+    "prompt": "# Telegram diario msg-025: Abogada laboralista\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Laura Montalban (Abogada laboralista)\n- Tono esperado: formal, precisa, evita afirmaciones juridicas tajantes\n- Timestamp: 2026-05-18 09:10\n- Mensaje de Telegram: \"Resume este hilo del despido disciplinario y dime que documentos faltan.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "legal_summary",
+      "document_check"
+    ],
+    "expected_keys": [
+      "despido disciplinario",
+      "carta",
+      "pruebas",
+      "documentos faltan"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-26",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p05_abogada",
+    "profession": "Abogada laboralista",
+    "source_message_id": "msg-026",
+    "prompt": "# Telegram diario msg-026: Abogada laboralista\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Laura Montalban (Abogada laboralista)\n- Tono esperado: formal, precisa, evita afirmaciones juridicas tajantes\n- Timestamp: 2026-05-18 13:35\n- Mensaje de Telegram: \"Prepara respuesta al cliente: formal, sin prometer resultado judicial.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "email_drafting",
+      "legal_caution"
+    ],
+    "expected_keys": [
+      "formal",
+      "sin prometer",
+      "plazos",
+      "documentacion"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-27",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p05_abogada",
+    "profession": "Abogada laboralista",
+    "source_message_id": "msg-027",
+    "prompt": "# Telegram diario msg-027: Abogada laboralista\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Laura Montalban (Abogada laboralista)\n- Tono esperado: formal, precisa, evita afirmaciones juridicas tajantes\n- Timestamp: 2026-05-19 10:00\n- Mensaje de Telegram: \"Extrae plazos y riesgos de los contratos pendientes.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "contract_review",
+      "risk_extraction"
+    ],
+    "expected_keys": [
+      "plazos",
+      "riesgos",
+      "renovacion",
+      "periodo prueba"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-28",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p05_abogada",
+    "profession": "Abogada laboralista",
+    "source_message_id": "msg-028",
+    "prompt": "# Telegram diario msg-028: Abogada laboralista\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Laura Montalban (Abogada laboralista)\n- Tono esperado: formal, precisa, evita afirmaciones juridicas tajantes\n- Timestamp: 2026-05-19 17:25\n- Mensaje de Telegram: \"Haz minuta de reunion para mediacion laboral con puntos no negociables.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "meeting_brief",
+      "legal_summary"
+    ],
+    "expected_keys": [
+      "mediacion",
+      "no negociables",
+      "indemnizacion",
+      "confidencialidad"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-29",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p05_abogada",
+    "profession": "Abogada laboralista",
+    "source_message_id": "msg-029",
+    "prompt": "# Telegram diario msg-029: Abogada laboralista\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Laura Montalban (Abogada laboralista)\n- Tono esperado: formal, precisa, evita afirmaciones juridicas tajantes\n- Timestamp: 2026-05-20 08:50\n- Mensaje de Telegram: \"Compara dos borradores de clausula y senala cual es menos arriesgado.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "comparison",
+      "legal_risk"
+    ],
+    "expected_keys": [
+      "clausula A",
+      "clausula B",
+      "menos arriesgado",
+      "motivo"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-30",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p05_abogada",
+    "profession": "Abogada laboralista",
+    "source_message_id": "msg-030",
+    "prompt": "# Telegram diario msg-030: Abogada laboralista\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Laura Montalban (Abogada laboralista)\n- Tono esperado: formal, precisa, evita afirmaciones juridicas tajantes\n- Timestamp: 2026-05-20 18:15\n- Mensaje de Telegram: \"Informe semanal de expedientes: urgencias, bloqueos y siguiente accion.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "executive_report",
+      "prioritization"
+    ],
+    "expected_keys": [
+      "urgencias",
+      "bloqueos",
+      "siguiente accion",
+      "expedientes"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-31",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p06_finanzas",
+    "profession": "Consultor financiero para pymes",
+    "source_message_id": "msg-031",
+    "prompt": "# Telegram diario msg-031: Consultor financiero para pymes\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Hector Rivas (Consultor financiero para pymes)\n- Tono esperado: ejecutivo, numerico, con foco en caja y riesgo\n- Timestamp: 2026-05-18 08:25\n- Mensaje de Telegram: \"Mira facturas y cobros: dime que cliente esta generando tension de caja.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "financial_analysis",
+      "data_extraction"
+    ],
+    "expected_keys": [
+      "tension de caja",
+      "Norte SA",
+      "847.50",
+      "vencido"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-32",
+    "level": "L2",
+    "category": "persona_daily_telegram",
+    "persona_id": "p06_finanzas",
+    "profession": "Consultor financiero para pymes",
+    "source_message_id": "msg-032",
+    "prompt": "# Telegram diario msg-032: Consultor financiero para pymes\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Hector Rivas (Consultor financiero para pymes)\n- Tono esperado: ejecutivo, numerico, con foco en caja y riesgo\n- Timestamp: 2026-05-18 12:20\n- Mensaje de Telegram: \"Redacta email amable reclamando factura vencida sin sonar agresivo.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "email_drafting",
+      "collections"
+    ],
+    "expected_keys": [
+      "factura vencida",
+      "Norte SA",
+      "amable",
+      "fecha"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-33",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p06_finanzas",
+    "profession": "Consultor financiero para pymes",
+    "source_message_id": "msg-033",
+    "prompt": "# Telegram diario msg-033: Consultor financiero para pymes\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Hector Rivas (Consultor financiero para pymes)\n- Tono esperado: ejecutivo, numerico, con foco en caja y riesgo\n- Timestamp: 2026-05-19 09:15\n- Mensaje de Telegram: \"Agrupa gastos por categoria y marca anomalias.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "aggregation",
+      "expense_audit"
+    ],
+    "expected_keys": [
+      "software",
+      "viajes",
+      "anomalias",
+      "duplicado"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-34",
+    "level": "L3",
+    "category": "persona_daily_telegram",
+    "persona_id": "p06_finanzas",
+    "profession": "Consultor financiero para pymes",
+    "source_message_id": "msg-034",
+    "prompt": "# Telegram diario msg-034: Consultor financiero para pymes\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Hector Rivas (Consultor financiero para pymes)\n- Tono esperado: ejecutivo, numerico, con foco en caja y riesgo\n- Timestamp: 2026-05-19 16:00\n- Mensaje de Telegram: \"Haz prevision de caja sencilla para 14 dias con supuestos claros.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "forecasting",
+      "financial_reasoning"
+    ],
+    "expected_keys": [
+      "14 dias",
+      "supuestos",
+      "cobros",
+      "pagos"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-35",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p06_finanzas",
+    "profession": "Consultor financiero para pymes",
+    "source_message_id": "msg-035",
+    "prompt": "# Telegram diario msg-035: Consultor financiero para pymes\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Hector Rivas (Consultor financiero para pymes)\n- Tono esperado: ejecutivo, numerico, con foco en caja y riesgo\n- Timestamp: 2026-05-20 10:40\n- Mensaje de Telegram: \"Crea un resumen para direccion con tres medidas para mejorar caja este mes.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "executive_report",
+      "recommendations"
+    ],
+    "expected_keys": [
+      "mejorar caja",
+      "tres medidas",
+      "direccion",
+      "prioridad"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "daily-36",
+    "level": "L4",
+    "category": "persona_daily_telegram",
+    "persona_id": "p06_finanzas",
+    "profession": "Consultor financiero para pymes",
+    "source_message_id": "msg-036",
+    "prompt": "# Telegram diario msg-036: Consultor financiero para pymes\n\nActua como asistente operativo dentro del sistema. Procesa solo el mensaje indicado y usa los archivos locales vinculados.\n\n- Persona: Hector Rivas (Consultor financiero para pymes)\n- Tono esperado: ejecutivo, numerico, con foco en caja y riesgo\n- Timestamp: 2026-05-20 17:35\n- Mensaje de Telegram: \"Cruza facturas, cobros y gastos para detectar riesgos financieros y acciones.\"\n\nInstrucciones:\n1. Identifica la intencion real del usuario.\n2. Consulta `persona_daily_simulation/personas.json`, `persona_daily_simulation/telegram_messages.jsonl` y `persona_daily_simulation/knowledge_base.md`.\n3. Devuelve una respuesta lista para enviar por Telegram o un entregable breve si la tarea lo pide.\n4. No inventes datos. Si hay incertidumbre, dilo y propone el siguiente paso.\n",
+    "required_files": [
+      "persona_daily_simulation/personas.json",
+      "persona_daily_simulation/telegram_messages.jsonl",
+      "persona_daily_simulation/knowledge_base.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "multi_file_analysis",
+      "financial_risk"
+    ],
+    "expected_keys": [
+      "facturas",
+      "cobros",
+      "gastos",
+      "riesgos financieros"
+    ],
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_tone": 2,
+      "actionability": 1
+    }
+  }
+]

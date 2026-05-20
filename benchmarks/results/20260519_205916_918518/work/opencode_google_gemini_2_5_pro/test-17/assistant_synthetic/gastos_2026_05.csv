@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+PHONE_0101,PERSON_0078,viajes,155.0,155.0,ok
+PHONE_0100,Suscripcion IA,software,120.0,120.0,revisar_proveedor
+PHONE_0099,Cafe reunion,comidas,18.4,18.4,ok

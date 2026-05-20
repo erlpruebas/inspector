@@ -1,0 +1,24 @@
+[
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  }
+]

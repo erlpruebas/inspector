@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-03",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 2.26, \"usage\": {\"queue_time\": 0.022494185, \"prompt_tokens\": 1187, \"prompt_time\": 0.113615187, \"completion_tokens\": 1934, \"completion_time\": 1.975507227, \"total_tokens\": 3121, \"total_time\": 2.089122414, \"completion_tokens_details\": {\"reasoning_tokens\": 1480}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\groq_openai_gpt_oss_20b\\test-03\\resultado.md"
+  ],
+  "elapsed_seconds": 2.454680900031235,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 2.26,
+    "usage": {
+      "queue_time": 0.022494185,
+      "prompt_tokens": 1187,
+      "prompt_time": 0.113615187,
+      "completion_tokens": 1934,
+      "completion_time": 1.975507227,
+      "total_tokens": 3121,
+      "total_time": 2.089122414,
+      "completion_tokens_details": {
+        "reasoning_tokens": 1480
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\groq_openai_gpt_oss_20b_test-03_resultado.md"
+  ],
+  "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+  "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\groq_openai_gpt_oss_20b\\test-03"
+}

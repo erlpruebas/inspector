@@ -1,0 +1,29 @@
+{
+  "engine": "opencode_gemininanolocal_gemini_nano",
+  "task_id": "test-09",
+  "returncode": 124,
+  "stdout": "",
+  "stderr": "",
+  "output_files": [],
+  "elapsed_seconds": 1800.0713886000012,
+  "timed_out": true,
+  "usage": {},
+  "model": "geminiNanoLocal/gemini-nano",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:geminiNanoLocal/gemini-nano",
+  "copied_outputs": [],
+  "task_prompt": "# Auditar duplicados de marzo\n\nAnaliza `gastos_2026_03.csv` y detecta cargos duplicados. Calcula el impacto economico y la accion recomendada.",
+  "execution_prompt": "# Auditar duplicados de marzo\n\nAnaliza `gastos_2026_03.csv` y detecta cargos duplicados. Calcula el impacto economico y la accion recomendada.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_03.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-09",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-09",
+    "mode": "redacted",
+    "files_processed": 1,
+    "files_skipped": 0,
+    "entities_found": 5,
+    "verification_passed": true,
+    "residual_findings": [],
+    "reviewer_used": false
+  }
+}

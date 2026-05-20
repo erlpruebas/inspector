@@ -1,0 +1,50 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\n2026-02-03,Cena cliente,comidas,96.2,96.2,ok\n2026-02-14,Tren Valencia,viajes,62.0,62.0,ok\n2026-02-22,Licencia PDF,software,19.9,29.9,importe_discrepante\n",
+  "mixed_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\n2026-02-03 [PHONE_0091],Cena cliente,comidas,96.2,96.2,ok\n2026-02-14 [PHONE_0090],Tren Valencia [PERSON_0075],viajes,62.0,62.0,ok\n2026-02-22 [PHONE_0089],Licencia PDF,software,19.9,29.9,importe_discrepante\n",
+  "redacted_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\nPHONE_0091,Cena cliente,comidas,96.2,96.2,ok\nPHONE_0090,PERSON_0075,viajes,62.0,62.0,ok\nPHONE_0089,Licencia PDF,software,19.9,29.9,importe_discrepante\n",
+  "entities": [
+    {
+      "start": 67,
+      "end": 77,
+      "text": "2026-02-03",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0091"
+    },
+    {
+      "start": 112,
+      "end": 122,
+      "text": "2026-02-14",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0090"
+    },
+    {
+      "start": 123,
+      "end": 136,
+      "text": "Tren Valencia",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0075"
+    },
+    {
+      "start": 157,
+      "end": 167,
+      "text": "2026-02-22",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0089"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "entity_count": 0
+  }
+}

@@ -1,0 +1,1 @@
+No se encontró información sobre la cita de Clinica Centro (persona, empresa, fecha, hora, objetivo) en los archivos proporcionados (`emails_hilos.md` y `contactos_50.csv`).

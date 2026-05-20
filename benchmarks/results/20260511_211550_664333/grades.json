@@ -1,0 +1,27 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v4-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos proporcionados y la presenta de forma clara y organizada. Cumple con todos los requisitos de la tarea.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos clave.",
+      "Formato claro y legible.",
+      "Cumplimiento de todos los campos solicitados."
+    ],
+    "issues": [
+      "Se añade el año '2026' que no estaba explícitamente en las claves esperadas, aunque es una inferencia razonable si se asume que la fecha es futura."
+    ]
+  }
+]

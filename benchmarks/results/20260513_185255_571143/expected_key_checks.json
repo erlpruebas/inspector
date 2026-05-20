@@ -1,0 +1,16 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro"
+    ],
+    "passed": false
+  }
+]

@@ -1,0 +1,167 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260511_211808_629144",
+  "jobs": [
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "codex:gpt-5.5::test-01",
+      "at": "2026-05-11T19:18:23.602150+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-01",
+      "at": "2026-05-11T19:18:33.960453+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-01",
+      "at": "2026-05-11T19:19:06.594089+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-01",
+      "at": "2026-05-11T19:19:32.076994+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-01",
+      "at": "2026-05-11T19:20:54.605978+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-01",
+      "at": "2026-05-11T19:20:57.918701+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-11T19:21:01.828101+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-01",
+      "at": "2026-05-11T19:21:32.985801+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-01",
+      "at": "2026-05-11T19:21:33.552227+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-01",
+      "at": "2026-05-11T19:21:34.414197+00:00"
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-01",
+      "at": "2026-05-11T19:22:01.875318+00:00"
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-11T19:22:42.518105+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v3.2-speciale::test-01",
+      "at": "2026-05-11T19:22:46.000552+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-01",
+      "at": "2026-05-11T19:22:49.606319+00:00",
+      "returncode": 1
+    }
+  ],
+  "running": null
+}

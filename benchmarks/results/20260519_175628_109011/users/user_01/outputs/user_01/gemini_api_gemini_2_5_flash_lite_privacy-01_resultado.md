@@ -1,0 +1,3 @@
+- Se identificaron múltiples entradas duplicadas, lo que sugiere la necesidad de un proceso de deduplicación.
+- Una cantidad significativa de direcciones de correo electrónico estaban escritas completamente en mayúsculas, lo que podría afectar la consistencia y la búsqueda.
+- Se observó la ausencia de información de contacto telefónico en varios registros, lo que limita la capacidad de comunicación directa.

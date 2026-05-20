@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "geminiNanoLocal": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Gemini Nano Local",
+      "options": {
+        "baseURL": "https://band-showers-specification-becomes.trycloudflare.com/v1",
+        "apiKey": "local"
+      },
+      "models": {
+        "gemini-nano": {
+          "name": "Gemini Nano"
+        }
+      }
+    }
+  },
+  "model": "geminiNanoLocal/gemini-nano"
+}

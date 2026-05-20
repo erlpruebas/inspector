@@ -1,0 +1,38 @@
+# Extraer tareas de notas de voz
+
+Lee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.
+
+Archivos locales preparados en el directorio de trabajo:
+- `assistant_synthetic/notas_voz.jsonl`
+
+Usa esas rutas relativas cuando necesites leer datos locales.
+
+Archivo de salida esperado: resultado.md.
+Devuelve el contenido final o crea ese archivo en el directorio de trabajo.
+
+Archivos disponibles en el directorio de trabajo:
+
+### assistant_synthetic\notas_voz.jsonl
+```text
+{"id": "VN-001", "timestamp": "PHONE_0088:12", "transcript": "Recordar llamar a Noelia de ORG_0005 antes del jueves para confirmar PERSON_0009l modulo de pagos."}
+{"id": "VN-002", "timestamp": "PHONE_0087:40", "transcript": "Enviar a PERSON_0074 el CSV actualizado de monitores; falta incluir descuento del 4 por ciento."}
+{"id": "VN-003", "timestamp": "PHONE_0086:18", "transcript": "Comprar billete para Barcelona el dia 18 si Xavier confirma la reunion de Barna Health."}
+{"id": "VN-004", "timestamp": "PHONE_0085:55", "transcript": "Preparar minuta para PERSON_0060 con riesgos de seguridad y coste de auditoria."}
+{"id": "VN-005", "timestamp": "PHONE_0084:03", "transcript": "Pedir a PERSON_0073 facturas de abril que no aparecen en el banco."}
+{"id": "VN-006", "timestamp": "PHONE_0083:34", "transcript": "Crear tarea para revisar contrato de IberLegal; David pidio respuesta antes del 12."}
+{"id": "VN-007", "timestamp": "PHONE_0082:10", "transcript": "Agendar seguimiento con PERSON_0064 el martes a las cuatro por el tema de administracion."}
+{"id": "VN-008", "timestamp": "PHONE_0081:05", "transcript": "No olvidar que PERSON_0069 prefiere recibir informes en PDF y resumen ejecutivo corto."}
+{"id": "VN-009", "timestamp": "PHONE_0080:29", "transcript": "Buscar alternativa barata a herramienta de encuestas para GreenBox."}
+{"id": "VN-010", "timestamp": "PHONE_0079:00", "transcript": "Llamar a PERSON_0072 por pedido de licencias y confirmar direccion fiscal."}
+{"id": "VN-011", "timestamp": "PHONE_0078:12", "transcript": "Enviar agenda de implantacion a PERSON_0033; incluir hito de formacion el dia 22."}
+{"id": "VN-012", "timestamp": "PHONE_0064:43", "transcript": "Revisar gastos de marzo porque hay dos cargos duplicados de hotel."}
+{"id": "VN-013", "timestamp": "PHONE_0077:20", "transcript": "Poner recordatorio para renovar certificado SSL de Cobalto antes del 28."}
+{"id": "VN-014", "timestamp": "PHONE_0076:02", "transcript": "Preparar comparativa OpenRouter contra Gemini para tareas de ofimatica."}
+{"id": "VN-015", "timestamp": "PHONE_0075:44", "transcript": "Enviar email amable a PERSON_0059, no ha contestado la propuesta de BravoSoft."}
+{"id": "VN-016", "timestamp": "PHONE_0074:16", "transcript": "ORG_0008 con facturas, creo que falta una de 847 con cincuenta."}
+{"id": "VN-017", "timestamp": "PHONE_0073:52", "transcript": "Crear lista de contactos prioritarios de Madrid con nivel alta."}
+{"id": "VN-018", "timestamp": "PHONE_0072:30", "transcript": "Investigar si Apple ha subido mas que Microsoft en los ultimos seis meses."}
+{"id": "VN-019", "timestamp": "PHONE_0071:25", "transcript": "Preparar informe mensual de incidencias: incluir ORG_0007 facturacion."}
+{"id": "VN-020", "timestamp": "PHONE_0070:00", "transcript": "Recordar reservar sala para reunion interna del viernes a las nueve y media."}
+
+```

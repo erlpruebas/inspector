@@ -1,0 +1,43 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260513_151519_706450",
+  "jobs": [
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini_api:gemini-2.5-flash-lite",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "groq:llama-3.1-8b-instant::test-01",
+      "at": "2026-05-13T13:15:20.469116+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-13T13:15:23.313321+00:00"
+    },
+    {
+      "job": "gemini_api:gemini-2.5-flash-lite::test-01",
+      "at": "2026-05-13T13:15:30.375338+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [],
+  "running": null
+}

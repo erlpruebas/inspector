@@ -1,0 +1,46 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "privacy-02",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.307, \"usage\": {\"queue_time\": 0.018665051, \"prompt_tokens\": 329, \"prompt_time\": 0.028420265, \"completion_tokens\": 52, \"completion_time\": 0.077054417, \"total_tokens\": 381, \"total_time\": 0.105474682}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260519_174550_836234\\work\\groq_llama_3_1_8b_instant\\privacy-02\\resultado.md"
+  ],
+  "elapsed_seconds": 0.6527523999993718,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 0.307,
+    "usage": {
+      "queue_time": 0.018665051,
+      "prompt_tokens": 329,
+      "prompt_time": 0.028420265,
+      "completion_tokens": 52,
+      "completion_time": 0.077054417,
+      "total_tokens": 381,
+      "total_time": 0.105474682
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260519_174550_836234\\groq_llama_3_1_8b_instant_privacy-02_resultado.md"
+  ],
+  "task_prompt": "# Normalizar emails pendientes\n\nUsa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.",
+  "execution_prompt": "# Normalizar emails pendientes\n\nUsa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.\n\nArchivos locales preparados en el directorio de trabajo:\n- `emails_pendientes.txt`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_174550_836234\\work\\groq_llama_3_1_8b_instant\\privacy-02",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_174550_836234\\work\\groq_llama_3_1_8b_instant\\privacy-02",
+    "mode": "redacted",
+    "files_processed": 1,
+    "files_skipped": 0,
+    "entities_found": 7,
+    "verification_passed": true,
+    "residual_findings": [],
+    "reviewer_used": false
+  }
+}

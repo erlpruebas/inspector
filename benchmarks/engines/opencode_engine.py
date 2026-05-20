@@ -30,6 +30,7 @@ class OpenCodeEngine:
         self.dangerously_skip_permissions = _truthy(
             os.getenv("BENCH_OPENCODE_DANGEROUSLY_SKIP_PERMISSIONS", "true")
         )
+        self.pure = _truthy(os.getenv("BENCH_OPENCODE_PURE", "true"))
 
     def run(self, task_id: str, prompt: str, workdir: Path, expected_outputs: list[str]) -> EngineResult:
         output_name = expected_outputs[0] if expected_outputs else "resultado.md"
@@ -43,6 +44,8 @@ class OpenCodeEngine:
         prompt_file.write_text(prompt, encoding="utf-8")
 
         command = [*self.command, "run"]
+        if self.pure:
+            command.append("--pure")
         if self.model:
             command.extend(["--model", self.model])
         if self.agent:
@@ -52,13 +55,17 @@ class OpenCodeEngine:
         if self.dangerously_skip_permissions:
             command.append("--dangerously-skip-permissions")
         command.extend(["--format", "json"])
-        command.append(prompt)
+        command.append("Ejecuta la tarea adjunta en _benchmark_prompt.md y crea el archivo de salida esperado.")
 
         started = time.monotonic()
         try:
+            env = os.environ.copy()
+            if env.get("GEMINI_API_KEY") and not env.get("GOOGLE_GENERATIVE_AI_API_KEY"):
+                env["GOOGLE_GENERATIVE_AI_API_KEY"] = env["GEMINI_API_KEY"]
             process = subprocess.run(
                 command,
                 cwd=str(workdir),
+                env=env,
                 text=True,
                 encoding="utf-8",
                 errors="replace",

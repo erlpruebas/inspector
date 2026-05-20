@@ -81,6 +81,13 @@ def live_api_tests() -> dict[str, dict[str, Any]]:
     else:
         tests["openrouter"] = {"status": "skipped", "reason": "missing key"}
 
+    tests["vikingnano"] = openai_compatible_chat(
+        os.getenv("BENCH_VIKING_NANO_BASE_URL", "https://viking-occasion-married-dimensional.trycloudflare.com/v1/chat/completions"),
+        os.getenv("BENCH_VIKING_NANO_API_KEY", "local"),
+        os.getenv("BENCH_VIKING_NANO_MODEL", "gemini-nano-local"),
+        extra_headers={"HTTP-Referer": "http://localhost/ai-arena", "X-Title": "AI Arena Benchmark"},
+    )
+
     gkey = google_api_key()
     if gkey:
         tests["gemini_api"] = gemini_chat(gkey, os.getenv("BENCH_GEMINI_API_MODEL", "gemini-2.5-flash-lite"))

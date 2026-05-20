@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-03",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.691, \"usage\": {\"queue_time\": 0.019358306, \"prompt_tokens\": 1216, \"prompt_time\": 0.077256361, \"completion_tokens\": 407, \"completion_time\": 0.461275555, \"total_tokens\": 1623, \"total_time\": 0.538531916}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\groq_llama_3_1_8b_instant\\test-03\\resultado.md"
+  ],
+  "elapsed_seconds": 0.8985106999753043,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 0.691,
+    "usage": {
+      "queue_time": 0.019358306,
+      "prompt_tokens": 1216,
+      "prompt_time": 0.077256361,
+      "completion_tokens": 407,
+      "completion_time": 0.461275555,
+      "total_tokens": 1623,
+      "total_time": 0.538531916
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\groq_llama_3_1_8b_instant_test-03_resultado.md"
+  ],
+  "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+  "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\groq_llama_3_1_8b_instant\\test-03"
+}

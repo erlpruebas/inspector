@@ -1,0 +1,23 @@
+{
+  "engine": "codex_gpt_5_5",
+  "task_id": "test-14",
+  "returncode": 0,
+  "stdout": "Voy a leer los dos archivos fuente y extraer fechas, horas, participantes y lugares. Luego generaré el contenido ICS con descripciones que marquen cualquier dato faltante.\n\n```ics\nBEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//inspector.local//Compromisos voz y correo//ES\nCALSCALE:GREGORIAN\nMETHOD:PUBLISH\nBEGIN:VEVENT\nUID:demo-pagos-clinica-centro-20260514T113000@inspector.local\nDTSTAMP:20260513T140000Z\nDTSTART;TZID=Europe/Madrid:20260514T113000\nDTEND;TZID=Europe/Madrid:20260514T123000\nSUMMARY:Demo modulo de pagos - Clinica Centro\nATTENDEE;CN=Noelia Castro:mailto:noelia.castro@clinicacentro.es\nDESCRIPTION:Demo centrada en conciliacion y estado de pagos. Falta duracion exacta; se ha usado 1 hora por defecto. Falta lugar/enlace. Noelia pide que asista alguien de administracion.\nEND:VEVENT\nBEGIN:VEVENT\nUID:seguimiento-marta-ruiz-20260512T160000@inspector.local\nDTSTAMP:20260513T140000Z\nDTSTART;TZID=Europe/Madrid:20260512T160000\nDTEND;TZID=Europe/Madrid:20260512T170000\nSUMMARY:Seguimiento con Marta Ruiz - administracion\nDESCRIPTION:Compromiso extraido de nota de voz VN-007. Falta confirmar fecha exacta; se interpreta \"el martes\" como 12 de mayo de 2026 por estar registrado el 5 de mayo. Falta duracion exacta; se ha usado 1 hora por defecto. Falta lugar/enlace y email de Marta Ruiz.\nEND:VEVENT\nBEGIN:VEVENT\nUID:reunion-interna-sala-20260515T093000@inspector.local\nDTSTAMP:20260513T140000Z\nDTSTART;TZID=Europe/Madrid:20260515T093000\nDTEND;TZID=Europe/Madrid:20260515T103000\nSUMMARY:Reunion interna\nDESCRIPTION:Recordatorio de reservar sala para reunion interna del viernes a las nueve y media. Falta sala concreta, asistentes, asunto y duracion exacta; se ha usado 1 hora por defecto.\nEND:VEVENT\nBEGIN:VEVENT\nUID:barna-health-barcelona-20260518T100000@inspector.local\nDTSTAMP:20260513T140000Z\nDTSTART;TZID=Europe/Madrid:20260518T100000\nDTEND;TZID=Europe/Madrid:20260518T110000\nSUMMARY:Reunion tecnica presencial - Barna Health\nLOCATION:Barcelona\nATTENDEE;CN=Xavier Puig:mailto:xavier.puig@barnahealth.es\nDESCRIPTION:Reunion presencial confirmada por Xavier Puig para revisar integracion con SSO. Falta direccion exacta en Barcelona y duracion exacta; se ha usado 1 hora por defecto. Nota relacionada: comprar billete para Barcelona el dia 18.\nEND:VEVENT\nEND:VCALENDAR\n```",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\codex_gpt_5_5\\test-14\\resultado.md"
+  ],
+  "elapsed_seconds": 42.623541799956,
+  "timed_out": false,
+  "usage": {},
+  "model": "gpt-5.5",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "codex:gpt-5.5",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\codex_gpt_5_5_test-14_resultado.md"
+  ],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\codex_gpt_5_5\\test-14"
+}

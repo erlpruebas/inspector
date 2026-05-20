@@ -1,0 +1,19 @@
+{
+  "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+  "task_id": "test-25",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 238, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 64, in main\n    raw_prompt = read_prompt(args.prompt, args.prompt_file)\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 100, in read_prompt\n    return Path(prompt_file).read_text(encoding=\"utf-8\")\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\_local.py\", line 546, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\_abc.py\", line 632, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\_local.py\", line 537, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 22] Invalid argument: '# Informe ejecutivo de cuentas prioritarias\\n\\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.\\n\\nArchivos locales preparados en el directorio de trabajo:\\n- `assistant_synthetic\\\\contactos_50.csv`\\n- `assistant_synthetic\\\\emails_hilos.md`\\n- `assistant_synthetic\\\\notas_voz.jsonl`\\n\\nUsa esas rutas relativas cuando necesites leer datos locales.'\n",
+  "output_files": [],
+  "elapsed_seconds": 0.2108284000423737,
+  "timed_out": false,
+  "usage": {},
+  "model": "deepseek/deepseek-v3.2-speciale",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+  "copied_outputs": [],
+  "task_prompt": "# Informe ejecutivo de cuentas prioritarias\n\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.",
+  "execution_prompt": "# Informe ejecutivo de cuentas prioritarias\n\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_130231_288791\\work\\openrouter_deepseek_deepseek_v3_2_speciale\\test-25"
+}

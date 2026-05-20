@@ -1,0 +1,2950 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518",
+  "jobs": [
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-01",
+      "next_run_at": 1779219137.8896165,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-02",
+      "next_run_at": 1779219409.8421605,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-02",
+      "next_run_at": 1779221210.005418,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-02",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-02",
+      "next_run_at": 1779221253.7215238,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-03",
+      "next_run_at": 1779221760.154878,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-03",
+      "next_run_at": 1779223560.5099068,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-04",
+      "next_run_at": 1779223736.460923,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-04",
+      "next_run_at": 1779225536.7337916,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-04",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-05",
+      "next_run_at": 1779225643.9905515,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-05",
+      "next_run_at": 1779227444.0843635,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-06",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-06",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-06",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-06",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-06",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-06",
+      "next_run_at": 1779227592.973755,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-06",
+      "next_run_at": 1779229393.1353447,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-06",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-06",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-07",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-07",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-07",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-07",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-07",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-07",
+      "next_run_at": 1779229555.413035,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-07",
+      "next_run_at": 1779231355.685896,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-07",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-07",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-08",
+      "next_run_at": 1779231614.1963758,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-08",
+      "next_run_at": 1779233414.3644016,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-09",
+      "next_run_at": 1779233619.525242,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-09",
+      "next_run_at": 1779235419.628663,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-09",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-10",
+      "next_run_at": 1779235747.7601862,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-10",
+      "next_run_at": 1779237547.9463224,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-11",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-11",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-11",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-11",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-11",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-11",
+      "next_run_at": 1779238081.5726213,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-11",
+      "next_run_at": 1779239881.756551,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-11",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-11",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-12",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-12",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-12",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-12",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-12",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-12",
+      "next_run_at": 1779240045.7110274,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-12",
+      "next_run_at": 1779241845.9047272,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-12",
+      "next_run_at": 1779243646.102311,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-12",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-13",
+      "next_run_at": 1779244009.7948468,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-13",
+      "next_run_at": 1779244065.8193858,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-13",
+      "next_run_at": 1779245865.9684021,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-13",
+      "next_run_at": 1779247666.1302598,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-13",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-14",
+      "next_run_at": 1779248031.7250087,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-14",
+      "next_run_at": 1779248097.4390209,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-14",
+      "next_run_at": 1779249897.589828,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-14",
+      "next_run_at": 1779251697.791936,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-15",
+      "next_run_at": 1779252083.5606291,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-15",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-15",
+      "next_run_at": 1779252483.10511,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-15",
+      "next_run_at": 1779254283.3435712,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-15",
+      "next_run_at": 1779256083.5719543,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-15",
+      "next_run_at": 1779256099.1334302,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-16",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-16",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-16",
+      "next_run_at": 1779256443.372416,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-16",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-16",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-16",
+      "next_run_at": 1779256537.9088614,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-16",
+      "next_run_at": 1779258338.149405,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-16",
+      "next_run_at": 1779260138.3711324,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-16",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-17",
+      "next_run_at": 1779260499.8836539,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-17",
+      "next_run_at": 1779261035.7703104,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-17",
+      "next_run_at": 1779261038.2062008,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-17",
+      "next_run_at": 1779262838.3718865,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-17",
+      "next_run_at": 1779264638.5950856,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-18",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-18",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-18",
+      "next_run_at": 1779264959.2514043,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-18",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-18",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-18",
+      "next_run_at": 1779265041.3162854,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-18",
+      "next_run_at": 1779266841.5065148,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-18",
+      "next_run_at": 1779268641.6632764,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-18",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-19",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-19",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-19",
+      "next_run_at": 1779268989.9099584,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-19",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-19",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-19",
+      "next_run_at": 1779269077.7465181,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-19",
+      "next_run_at": 1779270877.9294121,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-19",
+      "next_run_at": 1779272678.169246,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-19",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-20",
+      "next_run_at": 1779273088.898269,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-20",
+      "next_run_at": 1779273255.6405296,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-20",
+      "next_run_at": 1779275055.9498675,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-20",
+      "next_run_at": 1779276856.1736767,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-21",
+      "next_run_at": 1779277349.5957909,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-21",
+      "next_run_at": 1779277463.6005168,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-21",
+      "next_run_at": 1779279268.4798086,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-21",
+      "next_run_at": 1779281073.6976116,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-22",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-22",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-22",
+      "next_run_at": 1779281423.9395604,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-22",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-22",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-22",
+      "next_run_at": 1779281536.411661,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-22",
+      "next_run_at": 1779283340.2623694,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-22",
+      "next_run_at": 1779285143.9673624,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-22",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-23",
+      "next_run_at": 1779285581.4680197,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-23",
+      "next_run_at": 1779285666.7120714,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-23",
+      "next_run_at": 1779287468.9490223,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-23",
+      "next_run_at": 1779289271.5109756,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-24",
+      "next_run_at": 1779289667.1957352,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-24",
+      "next_run_at": 1779289746.810472,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-24",
+      "next_run_at": 1779291549.0729368,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-24",
+      "next_run_at": 1779293351.7892957,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-24",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-25",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-25",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-25",
+      "next_run_at": 1779293765.2589421,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-25",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-25",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-25",
+      "next_run_at": 1779294001.439237,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-25",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-25",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-25",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-27",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-28",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-29",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-pro",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash-lite",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "chrome-nano:gemini-nano",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-pro",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    }
+  ],
+  "completed": [
+    {
+      "job": "codex:gpt-5.5::test-01",
+      "at": "2026-05-19T18:59:51.134760+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-01",
+      "at": "2026-05-19T19:00:31.179117+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-01",
+      "at": "2026-05-19T19:01:18.221528+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-01",
+      "at": "2026-05-19T19:01:32.652284+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-01",
+      "at": "2026-05-19T19:01:57.063740+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-01",
+      "at": "2026-05-19T19:03:09.429574+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-01",
+      "at": "2026-05-19T19:03:29.054765+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-02",
+      "at": "2026-05-19T19:03:51.224414+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-02",
+      "at": "2026-05-19T19:04:28.630826+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-02",
+      "at": "2026-05-19T19:04:48.673267+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-02",
+      "at": "2026-05-19T19:06:33.151695+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-02",
+      "at": "2026-05-19T19:06:47.316396+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-02",
+      "at": "2026-05-19T19:37:14.158998+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-03",
+      "at": "2026-05-19T19:37:59.495214+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-03",
+      "at": "2026-05-19T19:38:41.725453+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-03",
+      "at": "2026-05-19T19:39:01.497608+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-03",
+      "at": "2026-05-19T19:45:00.606335+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-03",
+      "at": "2026-05-19T19:45:57.511816+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-03",
+      "at": "2026-05-19T20:16:31.827757+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-03",
+      "at": "2026-05-19T20:16:50.846524+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-04",
+      "at": "2026-05-19T20:17:09.502881+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-04",
+      "at": "2026-05-19T20:17:25.773520+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-04",
+      "at": "2026-05-19T20:17:51.961488+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-04",
+      "at": "2026-05-19T20:18:03.412589+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-04",
+      "at": "2026-05-19T20:18:54.092664+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-04",
+      "at": "2026-05-19T20:49:23.110682+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-04",
+      "at": "2026-05-19T20:49:35.809370+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-05",
+      "at": "2026-05-19T20:49:52.339613+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-05",
+      "at": "2026-05-19T20:50:06.918286+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-05",
+      "at": "2026-05-19T20:50:22.865739+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-05",
+      "at": "2026-05-19T20:50:31.700914+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-05",
+      "at": "2026-05-19T20:50:41.229090+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-05",
+      "at": "2026-05-19T21:21:07.050490+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-05",
+      "at": "2026-05-19T21:21:22.912619+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-06",
+      "at": "2026-05-19T21:21:56.848015+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-06",
+      "at": "2026-05-19T21:22:16.588121+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-06",
+      "at": "2026-05-19T21:22:47.626984+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-06",
+      "at": "2026-05-19T21:23:00.533960+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-06",
+      "at": "2026-05-19T21:23:09.800710+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-06",
+      "at": "2026-05-19T21:53:29.449623+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-06",
+      "at": "2026-05-19T21:53:43.490345+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-07",
+      "at": "2026-05-19T21:53:59.596506+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-07",
+      "at": "2026-05-19T21:54:23.593134+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-07",
+      "at": "2026-05-19T21:54:57.915604+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-07",
+      "at": "2026-05-19T21:55:27.117197+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-07",
+      "at": "2026-05-19T21:55:51.480701+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-07",
+      "at": "2026-05-19T22:26:19.824969+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-07",
+      "at": "2026-05-19T22:26:38.596925+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-08",
+      "at": "2026-05-19T22:27:03.858392+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-08",
+      "at": "2026-05-19T22:27:30.927889+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-08",
+      "at": "2026-05-19T22:28:20.799381+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-08",
+      "at": "2026-05-19T22:28:44.080992+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-08",
+      "at": "2026-05-19T22:30:11.620482+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-08",
+      "at": "2026-05-19T23:00:24.818629+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-08",
+      "at": "2026-05-19T23:00:50.696060+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-09",
+      "at": "2026-05-19T23:01:41.395158+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-09",
+      "at": "2026-05-19T23:02:08.702751+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-09",
+      "at": "2026-05-19T23:02:26.110796+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-09",
+      "at": "2026-05-19T23:02:55.784234+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-09",
+      "at": "2026-05-19T23:03:28.374270+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-09",
+      "at": "2026-05-19T23:34:08.623064+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-09",
+      "at": "2026-05-19T23:34:22.505011+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-10",
+      "at": "2026-05-19T23:35:02.030600+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-10",
+      "at": "2026-05-19T23:35:39.097216+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-10",
+      "at": "2026-05-19T23:35:55.650763+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-10",
+      "at": "2026-05-19T23:38:19.017343+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-10",
+      "at": "2026-05-19T23:39:03.920270+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-10",
+      "at": "2026-05-20T00:09:29.843912+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-10",
+      "at": "2026-05-20T00:09:43.106620+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-11",
+      "at": "2026-05-20T00:10:08.596472+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-11",
+      "at": "2026-05-20T00:10:49.412372+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-11",
+      "at": "2026-05-20T00:11:42.303336+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-11",
+      "at": "2026-05-20T00:12:28.708379+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-11",
+      "at": "2026-05-20T00:17:58.537698+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-11",
+      "at": "2026-05-20T00:48:21.492287+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-12",
+      "at": "2026-05-20T00:49:01.082150+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-12",
+      "at": "2026-05-20T00:49:32.008655+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-12",
+      "at": "2026-05-20T00:50:02.376527+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-12",
+      "at": "2026-05-20T00:50:23.061871+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-12",
+      "at": "2026-05-20T00:50:42.941454+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-12",
+      "at": "2026-05-20T01:50:58.520584+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-13",
+      "at": "2026-05-20T01:52:19.591968+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-13",
+      "at": "2026-05-20T01:52:52.050395+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-13",
+      "at": "2026-05-20T01:57:19.575943+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-13",
+      "at": "2026-05-20T01:57:42.856453+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-13",
+      "at": "2026-05-20T02:58:07.043657+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-14",
+      "at": "2026-05-20T02:58:40.823171+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-14",
+      "at": "2026-05-20T02:59:49.204027+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-14",
+      "at": "2026-05-20T03:04:26.037603+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-14",
+      "at": "2026-05-20T03:04:54.737023+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-14",
+      "at": "2026-05-20T04:05:24.708155+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-15",
+      "at": "2026-05-20T04:06:24.898059+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-15",
+      "at": "2026-05-20T04:07:30.136924+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-15",
+      "at": "2026-05-20T04:14:25.541624+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-15",
+      "at": "2026-05-20T04:17:59.705931+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-16",
+      "at": "2026-05-20T05:19:20.890655+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-16",
+      "at": "2026-05-20T05:20:08.045935+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-16",
+      "at": "2026-05-20T05:24:37.311704+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-16",
+      "at": "2026-05-20T05:25:27.116581+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-16",
+      "at": "2026-05-20T06:25:57.538008+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-17",
+      "at": "2026-05-20T06:27:19.586913+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-17",
+      "at": "2026-05-20T06:28:01.816455+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-17",
+      "at": "2026-05-20T06:33:35.622885+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-18",
+      "at": "2026-05-20T07:41:54.985020+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-18",
+      "at": "2026-05-20T07:42:22.772509+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-18",
+      "at": "2026-05-20T07:46:44.027193+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-18",
+      "at": "2026-05-20T07:47:18.298435+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-18",
+      "at": "2026-05-20T08:47:37.705362+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-19",
+      "at": "2026-05-20T08:48:22.593248+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-19",
+      "at": "2026-05-20T08:49:29.463052+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-19",
+      "at": "2026-05-20T08:53:42.474208+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-19",
+      "at": "2026-05-20T08:54:35.035391+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-19",
+      "at": "2026-05-20T09:54:56.503620+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-20",
+      "at": "2026-05-20T09:56:20.567116+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-20",
+      "at": "2026-05-20T09:57:36.306159+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-20",
+      "at": "2026-05-20T10:02:11.805854+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-20",
+      "at": "2026-05-20T10:04:04.924644+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-20",
+      "at": "2026-05-20T11:04:45.094078+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-21",
+      "at": "2026-05-20T11:06:42.621371+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-21",
+      "at": "2026-05-20T11:08:26.761931+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-21",
+      "at": "2026-05-20T11:13:04.241412+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-21",
+      "at": "2026-05-20T11:14:16.080089+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-21",
+      "at": "2026-05-20T12:14:55.833873+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-22",
+      "at": "2026-05-20T12:16:01.223935+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-22",
+      "at": "2026-05-20T12:16:47.336183+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-22",
+      "at": "2026-05-20T12:21:17.600622+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-22",
+      "at": "2026-05-20T12:22:09.951293+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-22",
+      "at": "2026-05-20T13:22:43.959503+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-23",
+      "at": "2026-05-20T13:24:01.827261+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-23",
+      "at": "2026-05-20T13:26:09.675990+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-23",
+      "at": "2026-05-20T13:30:23.241001+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-23",
+      "at": "2026-05-20T13:30:54.736871+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-23",
+      "at": "2026-05-20T14:31:40.245735+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-24",
+      "at": "2026-05-20T14:32:48.881835+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-24",
+      "at": "2026-05-20T14:33:46.198745+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-24",
+      "at": "2026-05-20T14:38:07.732041+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-24",
+      "at": "2026-05-20T14:39:01.403572+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-24",
+      "at": "2026-05-20T15:39:31.206551+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-25",
+      "at": "2026-05-20T15:41:02.291433+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-25",
+      "at": "2026-05-20T15:42:42.061927+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-25",
+      "at": "2026-05-20T15:47:07.814140+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-25",
+      "at": "2026-05-20T15:49:58.280290+00:00"
+    }
+  ],
+  "deferred": [
+    {
+      "job": "chrome-nano:gemini-nano::test-01",
+      "at": "2026-05-19T19:02:17.889626+00:00",
+      "next_run_at": "2026-05-19T19:32:17.889616+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-02",
+      "at": "2026-05-19T19:06:49.842184+00:00",
+      "next_run_at": "2026-05-19T19:36:49.842160+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-02",
+      "at": "2026-05-19T19:36:50.005499+00:00",
+      "next_run_at": "2026-05-19T20:06:50.005418+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-02",
+      "at": "2026-05-19T19:37:33.721534+00:00",
+      "next_run_at": "2026-05-19T20:07:33.721524+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-03",
+      "at": "2026-05-19T19:46:00.154883+00:00",
+      "next_run_at": "2026-05-19T20:16:00.154878+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-03",
+      "at": "2026-05-19T20:16:00.509973+00:00",
+      "next_run_at": "2026-05-19T20:46:00.509907+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-04",
+      "at": "2026-05-19T20:18:56.460928+00:00",
+      "next_run_at": "2026-05-19T20:48:56.460923+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-04",
+      "at": "2026-05-19T20:48:56.733802+00:00",
+      "next_run_at": "2026-05-19T21:18:56.733792+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-05",
+      "at": "2026-05-19T20:50:43.990557+00:00",
+      "next_run_at": "2026-05-19T21:20:43.990551+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-05",
+      "at": "2026-05-19T21:20:44.084374+00:00",
+      "next_run_at": "2026-05-19T21:50:44.084363+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-06",
+      "at": "2026-05-19T21:23:12.973761+00:00",
+      "next_run_at": "2026-05-19T21:53:12.973755+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-06",
+      "at": "2026-05-19T21:53:13.135355+00:00",
+      "next_run_at": "2026-05-19T22:23:13.135345+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-07",
+      "at": "2026-05-19T21:55:55.413050+00:00",
+      "next_run_at": "2026-05-19T22:25:55.413035+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-07",
+      "at": "2026-05-19T22:25:55.685909+00:00",
+      "next_run_at": "2026-05-19T22:55:55.685896+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-08",
+      "at": "2026-05-19T22:30:14.196382+00:00",
+      "next_run_at": "2026-05-19T23:00:14.196376+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-08",
+      "at": "2026-05-19T23:00:14.364409+00:00",
+      "next_run_at": "2026-05-19T23:30:14.364402+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-09",
+      "at": "2026-05-19T23:03:39.525249+00:00",
+      "next_run_at": "2026-05-19T23:33:39.525242+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-09",
+      "at": "2026-05-19T23:33:39.628671+00:00",
+      "next_run_at": "2026-05-20T00:03:39.628663+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-10",
+      "at": "2026-05-19T23:39:07.760189+00:00",
+      "next_run_at": "2026-05-20T00:09:07.760186+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-10",
+      "at": "2026-05-20T00:09:07.946333+00:00",
+      "next_run_at": "2026-05-20T00:39:07.946322+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-11",
+      "at": "2026-05-20T00:18:01.572627+00:00",
+      "next_run_at": "2026-05-20T00:48:01.572621+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-11",
+      "at": "2026-05-20T00:48:01.756560+00:00",
+      "next_run_at": "2026-05-20T01:18:01.756551+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-12",
+      "at": "2026-05-20T00:50:45.711035+00:00",
+      "next_run_at": "2026-05-20T01:20:45.711027+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-12",
+      "at": "2026-05-20T01:20:45.904743+00:00",
+      "next_run_at": "2026-05-20T01:50:45.904727+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-12",
+      "at": "2026-05-20T01:50:46.102331+00:00",
+      "next_run_at": "2026-05-20T02:20:46.102311+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-13",
+      "at": "2026-05-20T01:56:49.794852+00:00",
+      "next_run_at": "2026-05-20T02:26:49.794847+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-13",
+      "at": "2026-05-20T01:57:45.819392+00:00",
+      "next_run_at": "2026-05-20T02:27:45.819386+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-13",
+      "at": "2026-05-20T02:27:45.968412+00:00",
+      "next_run_at": "2026-05-20T02:57:45.968402+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-13",
+      "at": "2026-05-20T02:57:46.130268+00:00",
+      "next_run_at": "2026-05-20T03:27:46.130260+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-14",
+      "at": "2026-05-20T03:03:51.725014+00:00",
+      "next_run_at": "2026-05-20T03:33:51.725009+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-14",
+      "at": "2026-05-20T03:04:57.439026+00:00",
+      "next_run_at": "2026-05-20T03:34:57.439021+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-14",
+      "at": "2026-05-20T03:34:57.589849+00:00",
+      "next_run_at": "2026-05-20T04:04:57.589828+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-14",
+      "at": "2026-05-20T04:04:57.791944+00:00",
+      "next_run_at": "2026-05-20T04:34:57.791936+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-15",
+      "at": "2026-05-20T04:11:23.560636+00:00",
+      "next_run_at": "2026-05-20T04:41:23.560629+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-15",
+      "at": "2026-05-20T04:18:03.105117+00:00",
+      "next_run_at": "2026-05-20T04:48:03.105110+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-15",
+      "at": "2026-05-20T04:48:03.343582+00:00",
+      "next_run_at": "2026-05-20T05:18:03.343571+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-15",
+      "at": "2026-05-20T05:18:03.571971+00:00",
+      "next_run_at": "2026-05-20T05:48:03.571954+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-15",
+      "at": "2026-05-20T05:18:19.133439+00:00",
+      "next_run_at": "2026-05-20T05:48:19.133430+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-16",
+      "at": "2026-05-20T05:24:03.372421+00:00",
+      "next_run_at": "2026-05-20T05:54:03.372416+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-16",
+      "at": "2026-05-20T05:25:37.908868+00:00",
+      "next_run_at": "2026-05-20T05:55:37.908861+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-16",
+      "at": "2026-05-20T05:55:38.149413+00:00",
+      "next_run_at": "2026-05-20T06:25:38.149405+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-16",
+      "at": "2026-05-20T06:25:38.371140+00:00",
+      "next_run_at": "2026-05-20T06:55:38.371132+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-17",
+      "at": "2026-05-20T06:31:39.883658+00:00",
+      "next_run_at": "2026-05-20T07:01:39.883654+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash-lite::test-17",
+      "at": "2026-05-20T06:40:35.770330+00:00",
+      "next_run_at": "2026-05-20T07:10:35.770310+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-17",
+      "at": "2026-05-20T06:40:38.206208+00:00",
+      "next_run_at": "2026-05-20T07:10:38.206201+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-17",
+      "at": "2026-05-20T07:10:38.371896+00:00",
+      "next_run_at": "2026-05-20T07:40:38.371886+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-17",
+      "at": "2026-05-20T07:40:38.595094+00:00",
+      "next_run_at": "2026-05-20T08:10:38.595086+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-18",
+      "at": "2026-05-20T07:45:59.251409+00:00",
+      "next_run_at": "2026-05-20T08:15:59.251404+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-18",
+      "at": "2026-05-20T07:47:21.316291+00:00",
+      "next_run_at": "2026-05-20T08:17:21.316285+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-18",
+      "at": "2026-05-20T08:17:21.506521+00:00",
+      "next_run_at": "2026-05-20T08:47:21.506515+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-18",
+      "at": "2026-05-20T08:47:21.663285+00:00",
+      "next_run_at": "2026-05-20T09:17:21.663276+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-19",
+      "at": "2026-05-20T08:53:09.909967+00:00",
+      "next_run_at": "2026-05-20T09:23:09.909958+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-19",
+      "at": "2026-05-20T08:54:37.746525+00:00",
+      "next_run_at": "2026-05-20T09:24:37.746518+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-19",
+      "at": "2026-05-20T09:24:37.929422+00:00",
+      "next_run_at": "2026-05-20T09:54:37.929412+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-19",
+      "at": "2026-05-20T09:54:38.169728+00:00",
+      "next_run_at": "2026-05-20T10:24:38.169246+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-20",
+      "at": "2026-05-20T10:01:28.898275+00:00",
+      "next_run_at": "2026-05-20T10:31:28.898269+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-20",
+      "at": "2026-05-20T10:04:15.640537+00:00",
+      "next_run_at": "2026-05-20T10:34:15.640530+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-20",
+      "at": "2026-05-20T10:34:15.950013+00:00",
+      "next_run_at": "2026-05-20T11:04:15.949867+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-20",
+      "at": "2026-05-20T11:04:16.173687+00:00",
+      "next_run_at": "2026-05-20T11:34:16.173677+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-21",
+      "at": "2026-05-20T11:12:29.595798+00:00",
+      "next_run_at": "2026-05-20T11:42:29.595791+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-21",
+      "at": "2026-05-20T11:14:23.600524+00:00",
+      "next_run_at": "2026-05-20T11:44:23.600517+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-21",
+      "at": "2026-05-20T11:44:28.479819+00:00",
+      "next_run_at": "2026-05-20T12:14:28.479809+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-21",
+      "at": "2026-05-20T12:14:33.697618+00:00",
+      "next_run_at": "2026-05-20T12:44:33.697612+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-22",
+      "at": "2026-05-20T12:20:23.939566+00:00",
+      "next_run_at": "2026-05-20T12:50:23.939560+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-22",
+      "at": "2026-05-20T12:22:16.411665+00:00",
+      "next_run_at": "2026-05-20T12:52:16.411661+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-22",
+      "at": "2026-05-20T12:52:20.262431+00:00",
+      "next_run_at": "2026-05-20T13:22:20.262369+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-22",
+      "at": "2026-05-20T13:22:23.967374+00:00",
+      "next_run_at": "2026-05-20T13:52:23.967362+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-23",
+      "at": "2026-05-20T13:29:41.468025+00:00",
+      "next_run_at": "2026-05-20T13:59:41.468020+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-23",
+      "at": "2026-05-20T13:31:06.712078+00:00",
+      "next_run_at": "2026-05-20T14:01:06.712071+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-23",
+      "at": "2026-05-20T14:01:08.949032+00:00",
+      "next_run_at": "2026-05-20T14:31:08.949022+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-23",
+      "at": "2026-05-20T14:31:11.511450+00:00",
+      "next_run_at": "2026-05-20T15:01:11.510976+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-24",
+      "at": "2026-05-20T14:37:47.195741+00:00",
+      "next_run_at": "2026-05-20T15:07:47.195735+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-24",
+      "at": "2026-05-20T14:39:06.810477+00:00",
+      "next_run_at": "2026-05-20T15:09:06.810472+00:00",
+      "reason": "unavailable"
+    },
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-24",
+      "at": "2026-05-20T15:09:09.073058+00:00",
+      "next_run_at": "2026-05-20T15:39:09.072937+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-pro::test-24",
+      "at": "2026-05-20T15:39:11.789378+00:00",
+      "next_run_at": "2026-05-20T16:09:11.789296+00:00",
+      "reason": "timeout"
+    },
+    {
+      "job": "gemini:gemini-2.5-pro::test-25",
+      "at": "2026-05-20T15:46:05.258950+00:00",
+      "next_run_at": "2026-05-20T16:16:05.258942+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "chrome-nano:gemini-nano::test-25",
+      "at": "2026-05-20T15:50:01.439242+00:00",
+      "next_run_at": "2026-05-20T16:20:01.439237+00:00",
+      "reason": "unavailable"
+    }
+  ],
+  "failed": [
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-01",
+      "at": "2026-05-19T19:02:25.502001+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-11",
+      "at": "2026-05-20T00:48:38.718964+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-17",
+      "at": "2026-05-20T07:41:20.921564+00:00",
+      "returncode": 1
+    }
+  ],
+  "running": {
+    "job": "opencode:geminiNanoLocal/gemini-nano::test-25",
+    "at": "2026-05-20T15:50:01.441409+00:00"
+  }
+}

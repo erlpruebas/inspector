@@ -1,0 +1,5162 @@
+[
+  {
+    "id": "intent-001",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 001: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Seleccionar inmueble para comprador con presupuesto 310000 EUR, 3 dormitorios y colegio cercano.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "Piso Olivo",
+      "305000",
+      "3 dormitorios",
+      "Colegio Albor"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "compare",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-002",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 002: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Ordenar ruta de visitas desde Calle Mayor 18 incluyendo direcciones concretas y hora sugerida.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "plan",
+      "read_files"
+    ],
+    "expected_keys": [
+      "Calle Mayor 18",
+      "Calle Olivo 14",
+      "Ronda Norte 22",
+      "ruta"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-003",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 003: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar respuesta prudente para oferta baja sobre Atico Ronda Norte sin prometer aceptacion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "Atico Ronda Norte",
+      "2%",
+      "377000",
+      "prudente"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-004",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 004: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Redactar email a propietario de Local Sur explicando por que no conviene subir precio.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "read_files"
+    ],
+    "expected_keys": [
+      "Local Sur",
+      "210000",
+      "tres semanas",
+      "visitas"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-005",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 005: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Comparar Casa Vallecas y Piso Olivo para inversor tolerante a reforma.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "Casa Vallecas",
+      "Piso Olivo",
+      "18000",
+      "reforma"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "compare",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-006",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 006: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear lista de objeciones de compradores y respuestas comerciales no agresivas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "synthesize",
+      "table"
+    ],
+    "expected_keys": [
+      "objeciones",
+      "compradores",
+      "respuestas",
+      "tono"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-007",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 007: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar resumen semanal de oportunidades calientes y propietarios a llamar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "oportunidades",
+      "propietarios",
+      "llamar",
+      "semana"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-008",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 008: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Generar mensaje de WhatsApp para confirmar visita con datos de inmueble y condiciones.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "WhatsApp",
+      "visita",
+      "inmueble",
+      "confirmar"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-009",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 009: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear tabla de inmuebles con precio, direccion, perfil de cliente y siguiente accion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "precio",
+      "direccion",
+      "cliente",
+      "siguiente accion"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-010",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 010: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Detectar que datos faltan antes de contestar a comprador extranjero.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "extract",
+      "read_files"
+    ],
+    "expected_keys": [
+      "comprador extranjero",
+      "datos faltan",
+      "email",
+      "claridad"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-011",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 011: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar comparativa para negociar rebaja sin danar relacion con propietario.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "rebaja",
+      "propietario",
+      "comparativa",
+      "negociar"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-012",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 012: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear agenda diaria de llamadas a propietarios y compradores por prioridad.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "plan",
+      "read_files"
+    ],
+    "expected_keys": [
+      "agenda",
+      "llamadas",
+      "prioridad",
+      "propietarios"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-013",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 013: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Convertir notas de visita en CRM: interes, objeciones, presupuesto y proxima accion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CRM",
+      "interes",
+      "objeciones",
+      "proxima accion"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "create_file",
+      "risk": "medium",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-014",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 014: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Redactar email a comprador que descarta inmueble por colegio, proponiendo alternativa.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "read_files"
+    ],
+    "expected_keys": [
+      "colegio",
+      "alternativa",
+      "comprador",
+      "email"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-015",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 015: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar informe de precios de zona usando datos locales y fuente web actual.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "precios",
+      "zona",
+      "fuente",
+      "web"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-016",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 016: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Priorizar captaciones de inmuebles segun demanda, precio y urgencia del propietario.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "captaciones",
+      "demanda",
+      "precio",
+      "urgencia"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-017",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 017: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear guion de llamada para propietario susceptible que quiere subir precio.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "draft",
+      "read_files"
+    ],
+    "expected_keys": [
+      "guion",
+      "propietario",
+      "subir precio",
+      "susceptible"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-018",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 018: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Calcular impacto de rebaja del 2% en Atico Ronda Norte.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "2%",
+      "Atico Ronda Norte",
+      "385000",
+      "impacto"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-019",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 019: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar briefing de 1 pagina para reunion comercial semanal.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "briefing",
+      "comercial",
+      "semana",
+      "acciones"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-020",
+    "category": "persona_intention",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Intencion sintetizada 020: Agente inmobiliaria\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear archivo CSV de seguimiento de visitas con inmueble, cliente, estado y siguiente accion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CSV",
+      "visitas",
+      "estado",
+      "siguiente accion"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "create_file",
+      "risk": "medium",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-021",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 021: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Diagnosticar si fallo de login viene de AuthNova o portal-clientes usando logs.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "login",
+      "AuthNova",
+      "portal-clientes",
+      "logs"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "short_reply",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-022",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 022: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Redactar aviso a comercial sobre incidencia sin generar alarma.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "comercial",
+      "incidencia",
+      "sin perdida de datos",
+      "aviso"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-023",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 023: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear runbook para rotar clave API SSO con staging, rollback y validacion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "runbook",
+      "staging",
+      "rollback",
+      "validacion"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-024",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 024: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Convertir tickets TCK-104, TCK-107 y TCK-111 en tabla por prioridad y responsable.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "TCK-104",
+      "TCK-107",
+      "TCK-111",
+      "responsable"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-025",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 025: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Generar script para contar errores 5xx por minuto en access.log.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "code_execution",
+      "script"
+    ],
+    "expected_keys": [
+      "script",
+      "5xx",
+      "access.log",
+      "minuto"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "code_execution",
+      "risk": "medium",
+      "output_form": "script",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-026",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 026: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar postmortem con causa probable, impacto, mitigacion y prevencion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "postmortem",
+      "causa",
+      "impacto",
+      "mitigacion"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-027",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 027: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear checklist previo a despliegue con pruebas de login, rollback y monitorizacion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "despliegue",
+      "login",
+      "rollback",
+      "monitorizacion"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-028",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 028: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Resumir logs para direccion en lenguaje no tecnico.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "logs",
+      "direccion",
+      "no tecnico",
+      "resumen"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-029",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 029: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Extraer de una nota larga todas las acciones tecnicas y dependencias.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "acciones",
+      "dependencias",
+      "tecnicas",
+      "nota"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-030",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 030: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar respuesta al proveedor SSO pidiendo RCA y tiempos de resolucion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "read_files"
+    ],
+    "expected_keys": [
+      "proveedor SSO",
+      "RCA",
+      "tiempos",
+      "resolucion"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-031",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 031: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Clasificar incidencia como aplicacion, proveedor, red o usuario con evidencia.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "aplicacion",
+      "proveedor",
+      "red",
+      "evidencia"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-032",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 032: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear plan de guardia para incidencias fuera de horario.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "plan",
+      "read_files"
+    ],
+    "expected_keys": [
+      "guardia",
+      "incidencias",
+      "horario",
+      "plan"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-033",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 033: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Detectar tareas automatizables en soporte interno.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "automatizables",
+      "soporte",
+      "interno",
+      "tareas"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-034",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 034: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar documentacion breve para renovar certificado staging.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "extract",
+      "read_files"
+    ],
+    "expected_keys": [
+      "certificado",
+      "staging",
+      "renovar",
+      "documentacion"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-035",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 035: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Buscar alternativas de monitorizacion y comparar coste, cobertura y riesgo.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "monitorizacion",
+      "coste",
+      "cobertura",
+      "riesgo"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-036",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 036: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Generar CSV de tickets con prioridad, responsable, fecha objetivo y bloqueo.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CSV",
+      "tickets",
+      "prioridad",
+      "bloqueo"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "create_file",
+      "risk": "medium",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-037",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 037: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Redactar mensaje de seguimiento tras recuperar servicio.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "seguimiento",
+      "servicio",
+      "recuperar",
+      "mensaje"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-038",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 038: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Calcular duracion estimada de degradacion entre primer y ultimo error.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "duracion",
+      "degradacion",
+      "primer error",
+      "ultimo error"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-039",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 039: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear matriz de riesgos de seguridad para cambios SSO.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "riesgos",
+      "seguridad",
+      "SSO",
+      "matriz"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-040",
+    "category": "persona_intention",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Intencion sintetizada 040: Responsable informatico / DevOps\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar informe semanal de incidencias y deuda tecnica.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "informe semanal",
+      "incidencias",
+      "deuda tecnica",
+      "acciones"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-041",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 041: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Extraer de una nota larga los hechos importantes sobre B17.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "B17",
+      "hechos",
+      "muestra",
+      "causalidad"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-042",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 042: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Redactar respuesta profesional relacionada con comite sin prometer mas de lo que se sabe.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "read_files"
+    ],
+    "expected_keys": [
+      "comite",
+      "respuesta",
+      "prudente",
+      "causalidad"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-043",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 043: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar plan de accion con prioridades, responsables y dudas abiertas sobre B17.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "plan",
+      "read_files"
+    ],
+    "expected_keys": [
+      "B17",
+      "prioridades",
+      "responsables",
+      "dudas"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-044",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 044: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear informe para direccion con contexto, riesgos y decision recomendada.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "direccion",
+      "riesgos",
+      "decision",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-045",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 045: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Convertir informacion dispersa en tabla estructurada de seguimiento.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "tabla",
+      "seguimiento",
+      "muestra",
+      "causalidad"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-046",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 046: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Detectar inconsistencias o datos faltantes antes de contestar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "diagnose",
+      "read_files"
+    ],
+    "expected_keys": [
+      "inconsistencias",
+      "datos faltantes",
+      "contestar",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-047",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 047: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Calcular impacto numerico a partir de datos de la nota y documentos.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "calcular",
+      "impacto",
+      "datos",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-048",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 048: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar checklist operativo para no olvidar pasos criticos.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "checklist",
+      "pasos criticos",
+      "muestra",
+      "causalidad"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-049",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 049: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Resumir para un destinatario no tecnico manteniendo cautelas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "short_reply",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "resumir",
+      "no tecnico",
+      "cautelas",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-050",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 050: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Generar archivo CSV con campos clave extraidos de la informacion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CSV",
+      "campos clave",
+      "extraidos",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "create_file",
+      "risk": "medium",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-051",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 051: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar preguntas de aclaracion para desbloquear la tarea.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "preguntas",
+      "aclaracion",
+      "desbloquear",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-052",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 052: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Comparar dos opciones y recomendar una con cautelas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "comparar",
+      "recomendar",
+      "cautelas",
+      "causalidad"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-053",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 053: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear mensaje corto de seguimiento para confirmar datos pendientes.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "mensaje",
+      "seguimiento",
+      "datos pendientes",
+      "comite"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-054",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 054: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Ordenar cronologicamente eventos mencionados en una nota larga.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "cronologia",
+      "eventos",
+      "nota",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-055",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 055: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Buscar informacion actual externa y cruzarla con datos locales.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "informacion actual",
+      "fuente",
+      "datos locales",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-056",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 056: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar resumen semanal de bloqueos y siguientes acciones.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "resumen semanal",
+      "bloqueos",
+      "acciones",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-057",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 057: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Separar hechos, opiniones, hipotesis y decisiones pendientes.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "hechos",
+      "opiniones",
+      "hipotesis",
+      "decisiones"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-058",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 058: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear guion de llamada para obtener informacion que falta.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "draft",
+      "read_files"
+    ],
+    "expected_keys": [
+      "guion",
+      "llamada",
+      "informacion que falta",
+      "comite"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-059",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 059: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Evaluar riesgo de actuar con informacion incompleta.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "riesgo",
+      "informacion incompleta",
+      "actuar",
+      "causalidad"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-060",
+    "category": "persona_intention",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Intencion sintetizada 060: Cientifica biomedica\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Transformar una nota larga en entregable listo para copiar y pegar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "entregable",
+      "copiar",
+      "pegar",
+      "B17"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-061",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 061: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Extraer de una nota larga los hechos importantes sobre Planta Norte.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "Planta Norte",
+      "hechos",
+      "seguridad",
+      "hitos"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-062",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 062: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Redactar respuesta profesional relacionada con Norteval sin prometer mas de lo que se sabe.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "read_files"
+    ],
+    "expected_keys": [
+      "Norteval",
+      "respuesta",
+      "prudente",
+      "hitos"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-063",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 063: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar plan de accion con prioridades, responsables y dudas abiertas sobre Planta Norte.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "plan",
+      "read_files"
+    ],
+    "expected_keys": [
+      "Planta Norte",
+      "prioridades",
+      "responsables",
+      "dudas"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-064",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 064: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear informe para direccion con contexto, riesgos y decision recomendada.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "direccion",
+      "riesgos",
+      "decision",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-065",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 065: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Convertir informacion dispersa en tabla estructurada de seguimiento.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "tabla",
+      "seguimiento",
+      "seguridad",
+      "hitos"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-066",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 066: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Detectar inconsistencias o datos faltantes antes de contestar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "diagnose",
+      "read_files"
+    ],
+    "expected_keys": [
+      "inconsistencias",
+      "datos faltantes",
+      "contestar",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-067",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 067: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Calcular impacto numerico a partir de datos de la nota y documentos.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "calcular",
+      "impacto",
+      "datos",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-068",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 068: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar checklist operativo para no olvidar pasos criticos.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "checklist",
+      "pasos criticos",
+      "seguridad",
+      "hitos"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-069",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 069: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Resumir para un destinatario no tecnico manteniendo cautelas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "short_reply",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "resumir",
+      "no tecnico",
+      "cautelas",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-070",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 070: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Generar archivo CSV con campos clave extraidos de la informacion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CSV",
+      "campos clave",
+      "extraidos",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "create_file",
+      "risk": "medium",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-071",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 071: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar preguntas de aclaracion para desbloquear la tarea.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "preguntas",
+      "aclaracion",
+      "desbloquear",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-072",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 072: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Comparar dos opciones y recomendar una con cautelas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "comparar",
+      "recomendar",
+      "cautelas",
+      "hitos"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-073",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 073: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear mensaje corto de seguimiento para confirmar datos pendientes.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "mensaje",
+      "seguimiento",
+      "datos pendientes",
+      "Norteval"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-074",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 074: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Ordenar cronologicamente eventos mencionados en una nota larga.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "cronologia",
+      "eventos",
+      "nota",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-075",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 075: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Buscar informacion actual externa y cruzarla con datos locales.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "informacion actual",
+      "fuente",
+      "datos locales",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-076",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 076: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar resumen semanal de bloqueos y siguientes acciones.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "resumen semanal",
+      "bloqueos",
+      "acciones",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-077",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 077: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Separar hechos, opiniones, hipotesis y decisiones pendientes.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "hechos",
+      "opiniones",
+      "hipotesis",
+      "decisiones"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-078",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 078: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear guion de llamada para obtener informacion que falta.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "draft",
+      "read_files"
+    ],
+    "expected_keys": [
+      "guion",
+      "llamada",
+      "informacion que falta",
+      "Norteval"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-079",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 079: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Evaluar riesgo de actuar con informacion incompleta.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "riesgo",
+      "informacion incompleta",
+      "actuar",
+      "hitos"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-080",
+    "category": "persona_intention",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Intencion sintetizada 080: Ingeniero industrial\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Transformar una nota larga en entregable listo para copiar y pegar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "entregable",
+      "copiar",
+      "pegar",
+      "Planta Norte"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-081",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 081: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Extraer de una nota larga los hechos importantes sobre DES-24.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "DES-24",
+      "hechos",
+      "plazos",
+      "riesgo"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-082",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 082: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Redactar respuesta profesional relacionada con cliente sin prometer mas de lo que se sabe.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "read_files"
+    ],
+    "expected_keys": [
+      "cliente",
+      "respuesta",
+      "prudente",
+      "riesgo"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-083",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 083: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar plan de accion con prioridades, responsables y dudas abiertas sobre DES-24.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "plan",
+      "read_files"
+    ],
+    "expected_keys": [
+      "DES-24",
+      "prioridades",
+      "responsables",
+      "dudas"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-084",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 084: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear informe para direccion con contexto, riesgos y decision recomendada.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "direccion",
+      "riesgos",
+      "decision",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-085",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 085: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Convertir informacion dispersa en tabla estructurada de seguimiento.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "tabla",
+      "seguimiento",
+      "plazos",
+      "riesgo"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-086",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 086: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Detectar inconsistencias o datos faltantes antes de contestar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "diagnose",
+      "read_files"
+    ],
+    "expected_keys": [
+      "inconsistencias",
+      "datos faltantes",
+      "contestar",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-087",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 087: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Calcular impacto numerico a partir de datos de la nota y documentos.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "calcular",
+      "impacto",
+      "datos",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-088",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 088: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar checklist operativo para no olvidar pasos criticos.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "checklist",
+      "pasos criticos",
+      "plazos",
+      "riesgo"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-089",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 089: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Resumir para un destinatario no tecnico manteniendo cautelas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "short_reply",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "resumir",
+      "no tecnico",
+      "cautelas",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-090",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 090: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Generar archivo CSV con campos clave extraidos de la informacion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CSV",
+      "campos clave",
+      "extraidos",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "create_file",
+      "risk": "medium",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-091",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 091: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar preguntas de aclaracion para desbloquear la tarea.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "preguntas",
+      "aclaracion",
+      "desbloquear",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-092",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 092: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Comparar dos opciones y recomendar una con cautelas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "comparar",
+      "recomendar",
+      "cautelas",
+      "riesgo"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-093",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 093: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear mensaje corto de seguimiento para confirmar datos pendientes.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "mensaje",
+      "seguimiento",
+      "datos pendientes",
+      "cliente"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-094",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 094: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Ordenar cronologicamente eventos mencionados en una nota larga.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "cronologia",
+      "eventos",
+      "nota",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-095",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 095: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Buscar informacion actual externa y cruzarla con datos locales.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "informacion actual",
+      "fuente",
+      "datos locales",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-096",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 096: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar resumen semanal de bloqueos y siguientes acciones.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "resumen semanal",
+      "bloqueos",
+      "acciones",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-097",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 097: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Separar hechos, opiniones, hipotesis y decisiones pendientes.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "hechos",
+      "opiniones",
+      "hipotesis",
+      "decisiones"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-098",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 098: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear guion de llamada para obtener informacion que falta.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "draft",
+      "read_files"
+    ],
+    "expected_keys": [
+      "guion",
+      "llamada",
+      "informacion que falta",
+      "cliente"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-099",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 099: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Evaluar riesgo de actuar con informacion incompleta.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "riesgo",
+      "informacion incompleta",
+      "actuar",
+      "riesgo"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-100",
+    "category": "persona_intention",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Intencion sintetizada 100: Abogada laboralista\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Transformar una nota larga en entregable listo para copiar y pegar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "entregable",
+      "copiar",
+      "pegar",
+      "DES-24"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-101",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 101: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Extraer de una nota larga los hechos importantes sobre Norte SA.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "Norte SA",
+      "hechos",
+      "facturas",
+      "riesgo financiero"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-102",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 102: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Redactar respuesta profesional relacionada con caja sin prometer mas de lo que se sabe.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "read_files"
+    ],
+    "expected_keys": [
+      "caja",
+      "respuesta",
+      "prudente",
+      "riesgo financiero"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-103",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 103: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar plan de accion con prioridades, responsables y dudas abiertas sobre Norte SA.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "plan",
+      "read_files"
+    ],
+    "expected_keys": [
+      "Norte SA",
+      "prioridades",
+      "responsables",
+      "dudas"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-104",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 104: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear informe para direccion con contexto, riesgos y decision recomendada.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "direccion",
+      "riesgos",
+      "decision",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-105",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 105: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Convertir informacion dispersa en tabla estructurada de seguimiento.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "tabla",
+      "seguimiento",
+      "facturas",
+      "riesgo financiero"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-106",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 106: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Detectar inconsistencias o datos faltantes antes de contestar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "diagnose",
+      "read_files"
+    ],
+    "expected_keys": [
+      "inconsistencias",
+      "datos faltantes",
+      "contestar",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-107",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 107: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Calcular impacto numerico a partir de datos de la nota y documentos.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "calcular",
+      "impacto",
+      "datos",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-108",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 108: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar checklist operativo para no olvidar pasos criticos.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "checklist",
+      "pasos criticos",
+      "facturas",
+      "riesgo financiero"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-109",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 109: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Resumir para un destinatario no tecnico manteniendo cautelas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "short_reply",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "resumir",
+      "no tecnico",
+      "cautelas",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-110",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 110: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Generar archivo CSV con campos clave extraidos de la informacion.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CSV",
+      "campos clave",
+      "extraidos",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "create_file",
+      "risk": "medium",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-111",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 111: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar preguntas de aclaracion para desbloquear la tarea.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "preguntas",
+      "aclaracion",
+      "desbloquear",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-112",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 112: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Comparar dos opciones y recomendar una con cautelas.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "comparar",
+      "recomendar",
+      "cautelas",
+      "riesgo financiero"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-113",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 113: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear mensaje corto de seguimiento para confirmar datos pendientes.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "mensaje",
+      "seguimiento",
+      "datos pendientes",
+      "caja"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-114",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 114: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Ordenar cronologicamente eventos mencionados en una nota larga.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "cronologia",
+      "eventos",
+      "nota",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-115",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 115: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Buscar informacion actual externa y cruzarla con datos locales.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "informacion actual",
+      "fuente",
+      "datos locales",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-116",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 116: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Preparar resumen semanal de bloqueos y siguientes acciones.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "resumen semanal",
+      "bloqueos",
+      "acciones",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-117",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 117: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Separar hechos, opiniones, hipotesis y decisiones pendientes.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "hechos",
+      "opiniones",
+      "hipotesis",
+      "decisiones"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-118",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 118: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Crear guion de llamada para obtener informacion que falta.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "draft",
+      "read_files"
+    ],
+    "expected_keys": [
+      "guion",
+      "llamada",
+      "informacion que falta",
+      "caja"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-119",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 119: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Evaluar riesgo de actuar con informacion incompleta.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "riesgo",
+      "informacion incompleta",
+      "actuar",
+      "riesgo financiero"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  },
+  {
+    "id": "intent-120",
+    "category": "persona_intention",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Intencion sintetizada 120: Consultor financiero para pymes\n\nEsta tarea representa la intencion operativa que deberia extraerse de una nota de voz larga real. No se proporciona una nota falsa; se proporciona la tarea ya sintetizada para evaluar si el modelo puede resolverla con datos concretos.\n\nIntencion: Transformar una nota larga en entregable listo para copiar y pegar.\n\nUsa los archivos locales de contexto profesional. Responde con un entregable directamente utilizable, no con una explicacion generica.",
+    "required_files": [
+      "persona_intention_catalog/profession_context.json",
+      "persona_intention_catalog/dimension_schema.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "entregable",
+      "copiar",
+      "pegar",
+      "Norte SA"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_resolution": 3,
+      "concrete_data_use": 3,
+      "expected_keys": 2,
+      "professional_fit": 1,
+      "usable_output": 1
+    }
+  }
+]

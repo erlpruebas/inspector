@@ -1,0 +1,23 @@
+[
+  {
+    "group": "opencode_openrouter",
+    "engines": [
+      "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "opencode:openrouter/deepseek/deepseek-v3.2",
+      "opencode:openrouter/deepseek/deepseek-v3.2-speciale"
+    ]
+  },
+  {
+    "group": "opencode_groq_experimental",
+    "engines": [
+      "opencode:groq/llama-3.1-8b-instant",
+      "opencode:groq/openai/gpt-oss-20b"
+    ]
+  },
+  {
+    "group": "opencode_google",
+    "engines": [
+      "opencode:google/gemini-2.5-flash"
+    ]
+  }
+]

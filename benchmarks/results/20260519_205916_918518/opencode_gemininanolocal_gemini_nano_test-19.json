@@ -1,0 +1,37 @@
+{
+  "engine": "opencode_gemininanolocal_gemini_nano",
+  "task_id": "test-19",
+  "returncode": 124,
+  "stdout": "",
+  "stderr": "",
+  "output_files": [],
+  "elapsed_seconds": 1800.0923542000091,
+  "timed_out": true,
+  "usage": {},
+  "model": "geminiNanoLocal/gemini-nano",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:geminiNanoLocal/gemini-nano",
+  "copied_outputs": [],
+  "task_prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.",
+  "execution_prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-19",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-19",
+    "mode": "redacted",
+    "files_processed": 2,
+    "files_skipped": 0,
+    "entities_found": 60,
+    "verification_passed": false,
+    "residual_findings": [
+      {
+        "start": 80,
+        "end": 89,
+        "text": "Noelia de",
+        "entity_type": "PERSON",
+        "source": "heuristic"
+      }
+    ],
+    "reviewer_used": false
+  }
+}

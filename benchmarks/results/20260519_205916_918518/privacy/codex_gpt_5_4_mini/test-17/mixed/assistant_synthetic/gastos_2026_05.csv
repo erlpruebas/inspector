@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+2026-05-01 [PHONE_0101],Vuelo Barcelona [PERSON_0078],viajes,155.0,155.0,ok
+2026-05-03 [PHONE_0100],Suscripcion IA,software,120.0,120.0,revisar_proveedor
+2026-05-05 [PHONE_0099],Cafe reunion,comidas,18.4,18.4,ok

@@ -1,0 +1,50 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "privacy-01",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.429, \"usage\": {\"queue_time\": 0.04605054, \"prompt_tokens\": 313, \"prompt_time\": 0.02762463, \"completion_tokens\": 78, \"completion_time\": 0.194194532, \"total_tokens\": 391, \"total_time\": 0.221819162}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\work\\groq_llama_3_1_8b_instant\\privacy-01\\resultado.md"
+  ],
+  "elapsed_seconds": 0.7566482999991422,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 0.429,
+    "usage": {
+      "queue_time": 0.04605054,
+      "prompt_tokens": 313,
+      "prompt_time": 0.02762463,
+      "completion_tokens": 78,
+      "completion_time": 0.194194532,
+      "total_tokens": 391,
+      "total_time": 0.221819162
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq_llama_3_1_8b_instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\outputs\\user_01\\groq_llama_3_1_8b_instant_privacy-01_resultado.md"
+  ],
+  "task_prompt": "# Redactar contactos sucios\n\nLee `benchmarks/assets/clientes_sucios.csv` y devuelve un resumen en 3 puntos sobre duplicados, emails en mayusculas y telefonos faltantes. No repitas datos sensibles literales.",
+  "execution_prompt": "# Redactar contactos sucios\n\nLee `benchmarks/assets/clientes_sucios.csv` y devuelve un resumen en 3 puntos sobre duplicados, emails en mayusculas y telefonos faltantes. No repitas datos sensibles literales.\n\nArchivos locales preparados en el directorio de trabajo:\n- `clientes_sucios.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\work\\groq_llama_3_1_8b_instant\\privacy-01",
+  "user": "user_01",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\work\\groq_llama_3_1_8b_instant\\privacy-01",
+    "mode": "redacted",
+    "files_processed": 1,
+    "files_skipped": 0,
+    "entities_found": 14,
+    "verification_passed": true,
+    "residual_findings": [],
+    "reviewer_used": false
+  },
+  "attempts": 1,
+  "transient_error": "",
+  "elapsed_wall_seconds": 0.786
+}

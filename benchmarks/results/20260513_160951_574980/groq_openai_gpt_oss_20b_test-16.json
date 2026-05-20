@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-16",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 2.392, \"usage\": {\"queue_time\": 0.01589972, \"prompt_tokens\": 2967, \"prompt_time\": 0.158609756, \"completion_tokens\": 2048, \"completion_time\": 2.071787578, \"total_tokens\": 5015, \"total_time\": 2.230397334, \"completion_tokens_details\": {\"reasoning_tokens\": 1993}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-16\\resultado.md"
+  ],
+  "elapsed_seconds": 2.5895824000472203,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 2.392,
+    "usage": {
+      "queue_time": 0.01589972,
+      "prompt_tokens": 2967,
+      "prompt_time": 0.158609756,
+      "completion_tokens": 2048,
+      "completion_time": 2.071787578,
+      "total_tokens": 5015,
+      "total_time": 2.230397334,
+      "completion_tokens_details": {
+        "reasoning_tokens": 1993
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-16_resultado.md"
+  ],
+  "task_prompt": "# Preparar briefing de seguridad para Innotek\n\nPrepara un briefing para Sergio Campos de Innotek sobre riesgos de seguridad y auditoria usando los recursos locales disponibles.",
+  "execution_prompt": "# Preparar briefing de seguridad para Innotek\n\nPrepara un briefing para Sergio Campos de Innotek sobre riesgos de seguridad y auditoria usando los recursos locales disponibles.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-16"
+}

@@ -1,0 +1,41 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\n2026-04-02,Dominio anual,software,14.99,14.99,ok\n2026-04-11,Taxi cliente,viajes,28.3,28.3,sin_recibo\n2026-04-25,Material oficina,oficina,73.4,73.4,ok\n",
+  "mixed_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\n2026-04-02 [PHONE_0008],Dominio anual,software,14.99,14.99,ok\n2026-04-11 [PHONE_0098],Taxi cliente,viajes,28.3,28.3,sin_recibo\n2026-04-25 [PHONE_0097],Material oficina,oficina,73.4,73.4,ok\n",
+  "redacted_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\nPHONE_0008,Dominio anual,software,14.99,14.99,ok\nPHONE_0098,Taxi cliente,viajes,28.3,28.3,sin_recibo\nPHONE_0097,Material oficina,oficina,73.4,73.4,ok\n",
+  "entities": [
+    {
+      "start": 67,
+      "end": 77,
+      "text": "2026-04-02",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0008"
+    },
+    {
+      "start": 116,
+      "end": 126,
+      "text": "2026-04-11",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0098"
+    },
+    {
+      "start": 168,
+      "end": 178,
+      "text": "2026-04-25",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0097"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "entity_count": 0
+  }
+}

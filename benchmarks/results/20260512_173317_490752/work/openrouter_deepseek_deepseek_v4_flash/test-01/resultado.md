@@ -1,0 +1,7 @@
+# Cita con Clinica Centro
+
+- **Persona:** Noelia Castro (Administración)
+- **Empresa:** Clinica Centro
+- **Fecha:** jueves 14 de mayo de 2026
+- **Hora:** 11:30
+- **Objetivo:** Demo del módulo de pagos (conciliación y estado de pagos)

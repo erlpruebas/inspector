@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-19",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.704, \"usage\": {\"queue_time\": 0.075592545, \"prompt_tokens\": 1793, \"prompt_time\": 0.152555292, \"completion_tokens\": 872, \"completion_time\": 1.338121313, \"total_tokens\": 2665, \"total_time\": 1.490676605}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_llama_3_1_8b_instant\\test-19\\resultado.md"
+  ],
+  "elapsed_seconds": 1.9089880000101402,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 1.704,
+    "usage": {
+      "queue_time": 0.075592545,
+      "prompt_tokens": 1793,
+      "prompt_time": 0.152555292,
+      "completion_tokens": 872,
+      "completion_time": 1.338121313,
+      "total_tokens": 2665,
+      "total_time": 1.490676605
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_llama_3_1_8b_instant_test-19_resultado.md"
+  ],
+  "task_prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.",
+  "execution_prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_llama_3_1_8b_instant\\test-19"
+}

@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+PHONE_0093,PERSON_0076,viajes,210.0,210.0,posible_duplicado
+PHONE_0093,PERSON_0076,viajes,210.0,210.0,posible_duplicado
+PHONE_0092,Comida equipo,comidas,134.7,134.7,ok

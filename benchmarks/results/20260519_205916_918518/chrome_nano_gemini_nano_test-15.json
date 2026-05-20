@@ -1,0 +1,41 @@
+{
+  "engine": "chrome_nano_gemini_nano",
+  "task_id": "test-15",
+  "returncode": 1,
+  "stdout": "{\"provider\": \"chrome-nano\", \"model\": \"gemini-nano\", \"error\": \"Chrome Gemini Nano is not available: unavailable. Enable Chrome Built-in AI flags and wait for the model download if needed.\"}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-15\\resultado.md"
+  ],
+  "elapsed_seconds": 3.2242667000027723,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-nano",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "chrome-nano:gemini-nano",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\chrome_nano_gemini_nano_test-15_resultado.md"
+  ],
+  "task_prompt": "# Cruzar notas de voz con contactos\n\nCruza notas de voz con contactos para identificar personas mencionadas y sus empresas. Devuelve una tabla con tarea, persona, empresa y email.",
+  "execution_prompt": "# Cruzar notas de voz con contactos\n\nCruza notas de voz con contactos para identificar personas mencionadas y sus empresas. Devuelve una tabla con tarea, persona, empresa y email.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-15",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-15",
+    "mode": "redacted",
+    "files_processed": 2,
+    "files_skipped": 0,
+    "entities_found": 193,
+    "verification_passed": false,
+    "residual_findings": [
+      {
+        "start": 80,
+        "end": 89,
+        "text": "Noelia de",
+        "entity_type": "PERSON",
+        "source": "heuristic"
+      }
+    ],
+    "reviewer_used": false
+  }
+}

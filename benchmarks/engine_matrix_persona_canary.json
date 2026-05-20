@@ -1,0 +1,27 @@
+[
+  {
+    "group": "baseline_agent",
+    "engines": [
+      "codex:gpt-5.4-mini"
+    ]
+  },
+  {
+    "group": "premium_escalation",
+    "engines": [
+      "codex:gpt-5.5"
+    ]
+  },
+  {
+    "group": "cheap_router_workers",
+    "engines": [
+      "gemini_api:gemini-2.5-flash-lite",
+      "groq:llama-3.1-8b-instant"
+    ]
+  },
+  {
+    "group": "pending_credit_validation",
+    "engines": [
+      "openrouter:deepseek/deepseek-v4-flash"
+    ]
+  }
+]

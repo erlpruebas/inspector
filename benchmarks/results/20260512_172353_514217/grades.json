@@ -1,0 +1,19 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "engine": "gemini_gemini_2_5_flash_lite",
+  "task_id": "test-11",
+  "returncode": 3221226505,
+  "stdout": "",
+  "stderr": "YOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nNo input provided via stdin. Input can be provided by piping data into gemini or using the --prompt option.\nAssertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\\win\\async.c, line 76\n",
+  "output_files": [],
+  "elapsed_seconds": 6.2135599999455735,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini:gemini-2.5-flash-lite",
+  "copied_outputs": [],
+  "task_prompt": "# Priorizar clientes de alta prioridad\n\nLista los clientes con prioridad alta en `contactos_50.csv`. Agrupa por ciudad y recomienda tres acciones comerciales.",
+  "execution_prompt": "# Priorizar clientes de alta prioridad\n\nLista los clientes con prioridad alta en `contactos_50.csv`. Agrupa por ciudad y recomienda tres acciones comerciales.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\gemini_gemini_2_5_flash_lite\\test-11"
+}

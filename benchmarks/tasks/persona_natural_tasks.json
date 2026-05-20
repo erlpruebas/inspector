@@ -1,0 +1,1970 @@
+[
+  {
+    "id": "natural-001",
+    "category": "persona_natural_task",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Tarea natural natural-001: Agente inmobiliaria\n\nPersona sintetica: Clara Benavides.\nProfesion: Agente inmobiliaria.\nMensaje entrante tipo Telegram: \"El comprador me acaba de escribir que solo puede visitar hoy a partir de las seis. Mira mis inmuebles y proponme dos opciones realistas para responderle por WhatsApp.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "visita",
+      "dos opciones",
+      "WhatsApp"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "compare",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-002",
+    "category": "persona_natural_task",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Tarea natural natural-002: Agente inmobiliaria\n\nPersona sintetica: Clara Benavides.\nProfesion: Agente inmobiliaria.\nMensaje entrante tipo Telegram: \"Prepara un email al propietario explicando por que no conviene subir el precio esta semana.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "read_files"
+    ],
+    "expected_keys": [
+      "propietario",
+      "precio",
+      "no conviene"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-003",
+    "category": "persona_natural_task",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Tarea natural natural-003: Agente inmobiliaria\n\nPersona sintetica: Clara Benavides.\nProfesion: Agente inmobiliaria.\nMensaje entrante tipo Telegram: \"Tengo notas de tres visitas. Sacame objeciones repetidas y como responderlas sin sonar agresiva.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "synthesize",
+      "table"
+    ],
+    "expected_keys": [
+      "objeciones",
+      "visitas",
+      "responder"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "conversation",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-004",
+    "category": "persona_natural_task",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Tarea natural natural-004: Agente inmobiliaria\n\nPersona sintetica: Clara Benavides.\nProfesion: Agente inmobiliaria.\nMensaje entrante tipo Telegram: \"Ordename la ruta de visitas de manana minimizando desplazamientos y dime que huecos quedan.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calendar",
+      "decide",
+      "plan"
+    ],
+    "expected_keys": [
+      "ruta",
+      "visitas",
+      "huecos"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "calendar",
+      "risk": "medium",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-005",
+    "category": "persona_natural_task",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Tarea natural natural-005: Agente inmobiliaria\n\nPersona sintetica: Clara Benavides.\nProfesion: Agente inmobiliaria.\nMensaje entrante tipo Telegram: \"Compara tres inmuebles para un inversor: precio, reforma probable, alquiler estimado y riesgo.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "inversor",
+      "precio",
+      "riesgo"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "tables",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-006",
+    "category": "persona_natural_task",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Tarea natural natural-006: Agente inmobiliaria\n\nPersona sintetica: Clara Benavides.\nProfesion: Agente inmobiliaria.\nMensaje entrante tipo Telegram: \"Redacta una respuesta breve a un comprador que quiere negociar demasiado a la baja.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "none",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "negociar",
+      "baja",
+      "respuesta"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "conversation",
+      "tool_need": "none",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "static_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-007",
+    "category": "persona_natural_task",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Tarea natural natural-007: Agente inmobiliaria\n\nPersona sintetica: Clara Benavides.\nProfesion: Agente inmobiliaria.\nMensaje entrante tipo Telegram: \"Hazme un resumen semanal de oportunidades calientes y propietarios que debo llamar.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "oportunidades",
+      "propietarios",
+      "llamar"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-008",
+    "category": "persona_natural_task",
+    "persona_id": "inmobiliaria",
+    "profession": "Agente inmobiliaria",
+    "prompt": "# Tarea natural natural-008: Agente inmobiliaria\n\nPersona sintetica: Clara Benavides.\nProfesion: Agente inmobiliaria.\nMensaje entrante tipo Telegram: \"Busca en la web si los precios de esta zona han cambiado y cruzalo con mis fichas.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "web",
+      "precios",
+      "zona"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-009",
+    "category": "persona_natural_task",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Tarea natural natural-009: Responsable informatico / DevOps\n\nPersona sintetica: Nicolas Ortega.\nProfesion: Responsable informatico / DevOps.\nMensaje entrante tipo Telegram: \"Mira el log de esta manana y dime si el problema de login parece de nuestra app o del proveedor SSO.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "login",
+      "SSO",
+      "log"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "logs",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "short_reply",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-010",
+    "category": "persona_natural_task",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Tarea natural natural-010: Responsable informatico / DevOps\n\nPersona sintetica: Nicolas Ortega.\nProfesion: Responsable informatico / DevOps.\nMensaje entrante tipo Telegram: \"Convierte estos tickets en una tabla por prioridad, responsable y siguiente accion.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "tickets",
+      "prioridad",
+      "responsable"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-011",
+    "category": "persona_natural_task",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Tarea natural natural-011: Responsable informatico / DevOps\n\nPersona sintetica: Nicolas Ortega.\nProfesion: Responsable informatico / DevOps.\nMensaje entrante tipo Telegram: \"Escribe un runbook corto para rotar la clave API sin romper produccion.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "runbook",
+      "clave API",
+      "rollback"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "static_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-012",
+    "category": "persona_natural_task",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Tarea natural natural-012: Responsable informatico / DevOps\n\nPersona sintetica: Nicolas Ortega.\nProfesion: Responsable informatico / DevOps.\nMensaje entrante tipo Telegram: \"Genera un script sencillo para contar errores 5xx por minuto en access.log.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "code_execution",
+      "script"
+    ],
+    "expected_keys": [
+      "script",
+      "5xx",
+      "por minuto"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "logs",
+      "tool_need": "code_execution",
+      "risk": "medium",
+      "output_form": "script",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-013",
+    "category": "persona_natural_task",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Tarea natural natural-013: Responsable informatico / DevOps\n\nPersona sintetica: Nicolas Ortega.\nProfesion: Responsable informatico / DevOps.\nMensaje entrante tipo Telegram: \"Redacta aviso interno sobre la incidencia sin asustar a comercial.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "none",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "aviso",
+      "incidencia",
+      "comercial"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "conversation",
+      "tool_need": "none",
+      "risk": "medium",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-014",
+    "category": "persona_natural_task",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Tarea natural natural-014: Responsable informatico / DevOps\n\nPersona sintetica: Nicolas Ortega.\nProfesion: Responsable informatico / DevOps.\nMensaje entrante tipo Telegram: \"Haz postmortem corto con causa probable, impacto, mitigacion y accion preventiva.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "diagnose",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "postmortem",
+      "causa",
+      "mitigacion"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "diagnose",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-015",
+    "category": "persona_natural_task",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Tarea natural natural-015: Responsable informatico / DevOps\n\nPersona sintetica: Nicolas Ortega.\nProfesion: Responsable informatico / DevOps.\nMensaje entrante tipo Telegram: \"Revisa dependencias del proyecto y dime si hay algo sospechoso o urgente.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "code_execution",
+      "diagnose",
+      "report"
+    ],
+    "expected_keys": [
+      "dependencias",
+      "sospechoso",
+      "urgente"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "documents",
+      "tool_need": "code_execution",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "diagnose",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-016",
+    "category": "persona_natural_task",
+    "persona_id": "informatico",
+    "profession": "Responsable informatico / DevOps",
+    "prompt": "# Tarea natural natural-016: Responsable informatico / DevOps\n\nPersona sintetica: Nicolas Ortega.\nProfesion: Responsable informatico / DevOps.\nMensaje entrante tipo Telegram: \"Prepara plan de migracion a otro proveedor de monitorizacion con pros, contras y riesgos.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "decide",
+      "plan",
+      "web_search"
+    ],
+    "expected_keys": [
+      "migracion",
+      "monitorizacion",
+      "riesgos"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-017",
+    "category": "persona_natural_task",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Tarea natural natural-017: Cientifica biomedica\n\nPersona sintetica: Dra. Irene Salvatierra.\nProfesion: Cientifica biomedica.\nMensaje entrante tipo Telegram: \"Resume las notas de laboratorio separando observaciones, hipotesis y dudas.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "observaciones",
+      "hipotesis",
+      "dudas"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-018",
+    "category": "persona_natural_task",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Tarea natural natural-018: Cientifica biomedica\n\nPersona sintetica: Dra. Irene Salvatierra.\nProfesion: Cientifica biomedica.\nMensaje entrante tipo Telegram: \"Ordena la tabla de resultados por marcador y senala anomalias sin concluir causalidad.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "marcador",
+      "anomalias",
+      "sin causalidad"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "tables",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-019",
+    "category": "persona_natural_task",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Tarea natural natural-019: Cientifica biomedica\n\nPersona sintetica: Dra. Irene Salvatierra.\nProfesion: Cientifica biomedica.\nMensaje entrante tipo Telegram: \"Redacta email prudente al comite pidiendo ampliar muestra.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "none"
+    ],
+    "expected_keys": [
+      "comite",
+      "ampliar muestra",
+      "prudente"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "documents",
+      "tool_need": "none",
+      "risk": "high",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "static_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-020",
+    "category": "persona_natural_task",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Tarea natural natural-020: Cientifica biomedica\n\nPersona sintetica: Dra. Irene Salvatierra.\nProfesion: Cientifica biomedica.\nMensaje entrante tipo Telegram: \"Dame preguntas para estadistica antes de enviar el abstract.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "decide",
+      "read_files"
+    ],
+    "expected_keys": [
+      "estadistica",
+      "abstract",
+      "preguntas"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "checklist",
+      "reasoning_shape": "decide",
+      "freshness": "static_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-021",
+    "category": "persona_natural_task",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Tarea natural natural-021: Cientifica biomedica\n\nPersona sintetica: Dra. Irene Salvatierra.\nProfesion: Cientifica biomedica.\nMensaje entrante tipo Telegram: \"Cruza notas y tabla para briefing de direccion: que sabemos, que no sabemos y decision recomendada.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "sabemos",
+      "no sabemos",
+      "decision"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-022",
+    "category": "persona_natural_task",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Tarea natural natural-022: Cientifica biomedica\n\nPersona sintetica: Dra. Irene Salvatierra.\nProfesion: Cientifica biomedica.\nMensaje entrante tipo Telegram: \"Convierte estas notas en un resumen para pacientes, sin tecnicismos y sin prometer resultados.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "pacientes",
+      "sin tecnicismos",
+      "sin prometer"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "critical",
+      "output_form": "short_reply",
+      "reasoning_shape": "draft",
+      "freshness": "static_local",
+      "error_tolerance": "near_zero"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-023",
+    "category": "persona_natural_task",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Tarea natural natural-023: Cientifica biomedica\n\nPersona sintetica: Dra. Irene Salvatierra.\nProfesion: Cientifica biomedica.\nMensaje entrante tipo Telegram: \"Busca literatura reciente sobre este marcador y dime si cambia nuestra interpretacion.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "literatura reciente",
+      "marcador",
+      "interpretacion"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "critical",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "near_zero"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-024",
+    "category": "persona_natural_task",
+    "persona_id": "cientifica",
+    "profession": "Cientifica biomedica",
+    "prompt": "# Tarea natural natural-024: Cientifica biomedica\n\nPersona sintetica: Dra. Irene Salvatierra.\nProfesion: Cientifica biomedica.\nMensaje entrante tipo Telegram: \"Prepara una tabla de limitaciones del estudio y mitigaciones posibles.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "synthesize",
+      "table"
+    ],
+    "expected_keys": [
+      "limitaciones",
+      "mitigaciones",
+      "estudio"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-025",
+    "category": "persona_natural_task",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Tarea natural natural-025: Ingeniero industrial\n\nPersona sintetica: Marcos Valcarce.\nProfesion: Ingeniero industrial.\nMensaje entrante tipo Telegram: \"Del parte de obra de hoy, dime los dos riesgos que debo mirar primero.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "riesgos",
+      "obra",
+      "primero"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "short_reply",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-026",
+    "category": "persona_natural_task",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Tarea natural natural-026: Ingeniero industrial\n\nPersona sintetica: Marcos Valcarce.\nProfesion: Ingeniero industrial.\nMensaje entrante tipo Telegram: \"Calcula desviacion entre presupuesto y coste real por hito.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "desviacion",
+      "presupuesto",
+      "coste real"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "tables",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-027",
+    "category": "persona_natural_task",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Tarea natural natural-027: Ingeniero industrial\n\nPersona sintetica: Marcos Valcarce.\nProfesion: Ingeniero industrial.\nMensaje entrante tipo Telegram: \"Redacta aviso al proveedor por retraso sin romper la relacion.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "none"
+    ],
+    "expected_keys": [
+      "proveedor",
+      "retraso",
+      "relacion"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "conversation",
+      "tool_need": "none",
+      "risk": "medium",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-028",
+    "category": "persona_natural_task",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Tarea natural natural-028: Ingeniero industrial\n\nPersona sintetica: Marcos Valcarce.\nProfesion: Ingeniero industrial.\nMensaje entrante tipo Telegram: \"Prepara checklist de seguridad para inspeccion de manana.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "checklist",
+      "extract",
+      "read_files"
+    ],
+    "expected_keys": [
+      "checklist",
+      "seguridad",
+      "inspeccion"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "critical",
+      "output_form": "checklist",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "near_zero"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-029",
+    "category": "persona_natural_task",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Tarea natural natural-029: Ingeniero industrial\n\nPersona sintetica: Marcos Valcarce.\nProfesion: Ingeniero industrial.\nMensaje entrante tipo Telegram: \"Dame plan de recuperacion si el proveedor llega tres dias tarde.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "plan",
+      "read_files"
+    ],
+    "expected_keys": [
+      "plan",
+      "tres dias",
+      "proveedor"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "plan",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-030",
+    "category": "persona_natural_task",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Tarea natural natural-030: Ingeniero industrial\n\nPersona sintetica: Marcos Valcarce.\nProfesion: Ingeniero industrial.\nMensaje entrante tipo Telegram: \"Haz informe para direccion con estado, desviaciones y decisiones pendientes.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "direccion",
+      "desviaciones",
+      "decisiones"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-031",
+    "category": "persona_natural_task",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Tarea natural natural-031: Ingeniero industrial\n\nPersona sintetica: Marcos Valcarce.\nProfesion: Ingeniero industrial.\nMensaje entrante tipo Telegram: \"Crea un CSV con hitos, responsable, riesgo y siguiente accion.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CSV",
+      "hitos",
+      "responsable"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "tables",
+      "tool_need": "create_file",
+      "risk": "medium",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-032",
+    "category": "persona_natural_task",
+    "persona_id": "ingeniero",
+    "profession": "Ingeniero industrial",
+    "prompt": "# Tarea natural natural-032: Ingeniero industrial\n\nPersona sintetica: Marcos Valcarce.\nProfesion: Ingeniero industrial.\nMensaje entrante tipo Telegram: \"Busca alternativas de proveedor y compara plazo, coste y riesgo tecnico.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "alternativas",
+      "proveedor",
+      "plazo"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-033",
+    "category": "persona_natural_task",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Tarea natural natural-033: Abogada laboralista\n\nPersona sintetica: Laura Montalban.\nProfesion: Abogada laboralista.\nMensaje entrante tipo Telegram: \"Resume este hilo de cliente y dime que documentos faltan antes de contestar.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "documentos faltan",
+      "cliente",
+      "contestar"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "conversation",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "short_reply",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-034",
+    "category": "persona_natural_task",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Tarea natural natural-034: Abogada laboralista\n\nPersona sintetica: Laura Montalban.\nProfesion: Abogada laboralista.\nMensaje entrante tipo Telegram: \"Redacta respuesta formal al cliente sin prometer resultado.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "none"
+    ],
+    "expected_keys": [
+      "formal",
+      "sin prometer",
+      "cliente"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "conversation",
+      "tool_need": "none",
+      "risk": "high",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "static_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-035",
+    "category": "persona_natural_task",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Tarea natural natural-035: Abogada laboralista\n\nPersona sintetica: Laura Montalban.\nProfesion: Abogada laboralista.\nMensaje entrante tipo Telegram: \"Extrae plazos, riesgos y puntos ambiguos de estos contratos.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "plazos",
+      "riesgos",
+      "ambiguos"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "critical",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "near_zero"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-036",
+    "category": "persona_natural_task",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Tarea natural natural-036: Abogada laboralista\n\nPersona sintetica: Laura Montalban.\nProfesion: Abogada laboralista.\nMensaje entrante tipo Telegram: \"Prepara minuta de reunion de mediacion con puntos no negociables.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "mediacion",
+      "no negociables",
+      "minuta"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-037",
+    "category": "persona_natural_task",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Tarea natural natural-037: Abogada laboralista\n\nPersona sintetica: Laura Montalban.\nProfesion: Abogada laboralista.\nMensaje entrante tipo Telegram: \"Compara dos clausulas y dime cual es menos arriesgada, con cautelas.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "compare",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "clausula",
+      "menos arriesgada",
+      "cautelas"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "documents",
+      "tool_need": "read_files",
+      "risk": "critical",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "static_local",
+      "error_tolerance": "near_zero"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-038",
+    "category": "persona_natural_task",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Tarea natural natural-038: Abogada laboralista\n\nPersona sintetica: Laura Montalban.\nProfesion: Abogada laboralista.\nMensaje entrante tipo Telegram: \"Haz informe semanal de expedientes: urgencias, bloqueos y siguiente accion.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "urgencias",
+      "bloqueos",
+      "siguiente accion"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-039",
+    "category": "persona_natural_task",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Tarea natural natural-039: Abogada laboralista\n\nPersona sintetica: Laura Montalban.\nProfesion: Abogada laboralista.\nMensaje entrante tipo Telegram: \"Convierte este audio transcrito en lista de tareas con plazos y responsables.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "extract",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "tareas",
+      "plazos",
+      "responsables"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "conversation",
+      "tool_need": "read_files",
+      "risk": "medium",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-040",
+    "category": "persona_natural_task",
+    "persona_id": "abogada",
+    "profession": "Abogada laboralista",
+    "prompt": "# Tarea natural natural-040: Abogada laboralista\n\nPersona sintetica: Laura Montalban.\nProfesion: Abogada laboralista.\nMensaje entrante tipo Telegram: \"Busca si ha cambiado alguna referencia normativa relevante y resume impacto sin asesorar definitivamente.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "referencia normativa",
+      "impacto",
+      "sin asesorar"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "critical",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "near_zero"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-041",
+    "category": "persona_natural_task",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Tarea natural natural-041: Consultor financiero para pymes\n\nPersona sintetica: Hector Rivas.\nProfesion: Consultor financiero para pymes.\nMensaje entrante tipo Telegram: \"Mira facturas y cobros: dime que cliente genera tension de caja esta semana.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "short_reply"
+    ],
+    "expected_keys": [
+      "facturas",
+      "cobros",
+      "tension de caja"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "tables",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "short_reply",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-042",
+    "category": "persona_natural_task",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Tarea natural natural-042: Consultor financiero para pymes\n\nPersona sintetica: Hector Rivas.\nProfesion: Consultor financiero para pymes.\nMensaje entrante tipo Telegram: \"Redacta email amable reclamando una factura vencida.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "draft",
+      "email",
+      "none"
+    ],
+    "expected_keys": [
+      "email",
+      "factura vencida",
+      "amable"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "conversation",
+      "tool_need": "none",
+      "risk": "medium",
+      "output_form": "email",
+      "reasoning_shape": "draft",
+      "freshness": "recent_local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-043",
+    "category": "persona_natural_task",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Tarea natural natural-043: Consultor financiero para pymes\n\nPersona sintetica: Hector Rivas.\nProfesion: Consultor financiero para pymes.\nMensaje entrante tipo Telegram: \"Agrupa gastos por categoria y marca anomalias.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "table"
+    ],
+    "expected_keys": [
+      "gastos",
+      "categoria",
+      "anomalias"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "tables",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "table",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-044",
+    "category": "persona_natural_task",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Tarea natural natural-044: Consultor financiero para pymes\n\nPersona sintetica: Hector Rivas.\nProfesion: Consultor financiero para pymes.\nMensaje entrante tipo Telegram: \"Haz prevision de caja sencilla para 14 dias con supuestos claros.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "calculate",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "prevision",
+      "14 dias",
+      "supuestos"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "tables",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "calculate",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-045",
+    "category": "persona_natural_task",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Tarea natural natural-045: Consultor financiero para pymes\n\nPersona sintetica: Hector Rivas.\nProfesion: Consultor financiero para pymes.\nMensaje entrante tipo Telegram: \"Crea resumen para direccion con tres medidas para mejorar caja este mes.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "decide",
+      "read_files",
+      "report"
+    ],
+    "expected_keys": [
+      "direccion",
+      "tres medidas",
+      "caja"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "decide",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-046",
+    "category": "persona_natural_task",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Tarea natural natural-046: Consultor financiero para pymes\n\nPersona sintetica: Hector Rivas.\nProfesion: Consultor financiero para pymes.\nMensaje entrante tipo Telegram: \"Cruza facturas, cobros y gastos para detectar riesgos financieros y acciones.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "read_files",
+      "report",
+      "synthesize"
+    ],
+    "expected_keys": [
+      "facturas",
+      "cobros",
+      "riesgos"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "mixed",
+      "tool_need": "read_files",
+      "risk": "high",
+      "output_form": "report",
+      "reasoning_shape": "synthesize",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-047",
+    "category": "persona_natural_task",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Tarea natural natural-047: Consultor financiero para pymes\n\nPersona sintetica: Hector Rivas.\nProfesion: Consultor financiero para pymes.\nMensaje entrante tipo Telegram: \"Genera un CSV limpio de clientes con deuda vencida, importe y dias de retraso.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "create_file",
+      "data_file",
+      "extract"
+    ],
+    "expected_keys": [
+      "CSV",
+      "deuda vencida",
+      "dias"
+    ],
+    "dimensions": {
+      "context_scope": "medium",
+      "data_mode": "tables",
+      "tool_need": "create_file",
+      "risk": "high",
+      "output_form": "data_file",
+      "reasoning_shape": "extract",
+      "freshness": "recent_local",
+      "error_tolerance": "low"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  },
+  {
+    "id": "natural-048",
+    "category": "persona_natural_task",
+    "persona_id": "finanzas",
+    "profession": "Consultor financiero para pymes",
+    "prompt": "# Tarea natural natural-048: Consultor financiero para pymes\n\nPersona sintetica: Hector Rivas.\nProfesion: Consultor financiero para pymes.\nMensaje entrante tipo Telegram: \"Busca alternativas de financiacion a corto plazo y dime pros, contras y coste probable.\"\n\nUsa el contexto local disponible sobre esta profesion y responde como asistente operativo.\nNo clasifiques por dificultad. Resuelve la tarea de manera natural, breve y util.\nSi falta informacion, dilo y propone la accion minima siguiente.\n",
+    "required_files": [
+      "persona_task_research/profession_worlds.json"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": true,
+    "skills": [
+      "compare",
+      "report",
+      "web_search"
+    ],
+    "expected_keys": [
+      "financiacion",
+      "pros",
+      "coste"
+    ],
+    "dimensions": {
+      "context_scope": "large",
+      "data_mode": "web_fresh",
+      "tool_need": "web_search",
+      "risk": "critical",
+      "output_form": "report",
+      "reasoning_shape": "compare",
+      "freshness": "current_web",
+      "error_tolerance": "near_zero"
+    },
+    "rubric": {
+      "intent_detection": 2,
+      "correctness": 3,
+      "expected_keys": 2,
+      "professional_fit": 2,
+      "actionability": 1
+    }
+  }
+]

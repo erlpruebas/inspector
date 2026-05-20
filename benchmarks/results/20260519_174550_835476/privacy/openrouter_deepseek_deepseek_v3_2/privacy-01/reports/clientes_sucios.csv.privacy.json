@@ -1,0 +1,140 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "Nombre,Email,Telefono,Ciudad\nAna Lopez,ANA.LOPEZ@EMPRESA.COM,600111222,Madrid\nLuis Martin,luis.martin@empresa.com,600333444,Valencia\nAna Lopez,ana.lopez@empresa.com,600111222,Madrid\nMarta Ruiz, MARTA.RUIZ@EMPRESA.COM ,600555666,Sevilla\nJorge Soler,jorge.soler@empresa.com,,Bilbao\n",
+  "mixed_text": "Nombre,Email,Telefono,Ciudad\nAna Lopez [PERSON_0006],ANA.LOPEZ@EMPRESA.COM [EMAIL_0004],600111222 [PHONE_0003],Madrid\nLuis Martin [PERSON_0005],luis.martin@empresa.com [EMAIL_0005],600333444 [PHONE_0004],Valencia\nAna Lopez [PERSON_0004],ana.lopez@empresa.com [EMAIL_0004],600111222 [PHONE_0003],Madrid\nMarta Ruiz [PERSON_0003], MARTA.RUIZ@EMPRESA.COM [EMAIL_0003] ,600555666 [PHONE_0002],Sevilla\nJorge Soler [PERSON_0002],jorge.soler@empresa.com [EMAIL_0002],,Bilbao\n",
+  "redacted_text": "Nombre,Email,Telefono,PERSON_0006,EMAIL_0004,PHONE_0003,PERSON_0005,EMAIL_0005,PHONE_0004,PERSON_0004,EMAIL_0004,PHONE_0003,PERSON_0003, EMAIL_0003 ,PHONE_0002,PERSON_0002,EMAIL_0002,,Bilbao\n",
+  "entities": [
+    {
+      "start": 22,
+      "end": 38,
+      "text": "Ciudad\nAna Lopez",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0006"
+    },
+    {
+      "start": 39,
+      "end": 60,
+      "text": "ANA.LOPEZ@EMPRESA.COM",
+      "entity_type": "EMAIL",
+      "confidence": 0.99,
+      "source": "regex",
+      "token": "EMAIL_0004"
+    },
+    {
+      "start": 61,
+      "end": 70,
+      "text": "600111222",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0003"
+    },
+    {
+      "start": 71,
+      "end": 89,
+      "text": "Madrid\nLuis Martin",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0005"
+    },
+    {
+      "start": 90,
+      "end": 113,
+      "text": "luis.martin@empresa.com",
+      "entity_type": "EMAIL",
+      "confidence": 0.99,
+      "source": "regex",
+      "token": "EMAIL_0005"
+    },
+    {
+      "start": 114,
+      "end": 123,
+      "text": "600333444",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0004"
+    },
+    {
+      "start": 124,
+      "end": 142,
+      "text": "Valencia\nAna Lopez",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0004"
+    },
+    {
+      "start": 143,
+      "end": 164,
+      "text": "ana.lopez@empresa.com",
+      "entity_type": "EMAIL",
+      "confidence": 0.99,
+      "source": "regex",
+      "token": "EMAIL_0004"
+    },
+    {
+      "start": 165,
+      "end": 174,
+      "text": "600111222",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0003"
+    },
+    {
+      "start": 175,
+      "end": 192,
+      "text": "Madrid\nMarta Ruiz",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0003"
+    },
+    {
+      "start": 194,
+      "end": 216,
+      "text": "MARTA.RUIZ@EMPRESA.COM",
+      "entity_type": "EMAIL",
+      "confidence": 0.99,
+      "source": "regex",
+      "token": "EMAIL_0003"
+    },
+    {
+      "start": 218,
+      "end": 227,
+      "text": "600555666",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "regex",
+      "token": "PHONE_0002"
+    },
+    {
+      "start": 228,
+      "end": 247,
+      "text": "Sevilla\nJorge Soler",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0002"
+    },
+    {
+      "start": 248,
+      "end": 271,
+      "text": "jorge.soler@empresa.com",
+      "entity_type": "EMAIL",
+      "confidence": 0.99,
+      "source": "regex",
+      "token": "EMAIL_0002"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "entity_count": 0
+  }
+}

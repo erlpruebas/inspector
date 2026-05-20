@@ -1,0 +1,63 @@
+{
+  "context_scope": [
+    "small",
+    "medium",
+    "large",
+    "cross_project"
+  ],
+  "data_mode": [
+    "conversation",
+    "documents",
+    "tables",
+    "logs",
+    "mixed",
+    "web_fresh"
+  ],
+  "tool_need": [
+    "none",
+    "read_files",
+    "create_file",
+    "code_execution",
+    "web_search",
+    "calendar",
+    "multi_tool"
+  ],
+  "risk": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "output_form": [
+    "short_reply",
+    "email",
+    "table",
+    "checklist",
+    "plan",
+    "report",
+    "script",
+    "calendar",
+    "data_file"
+  ],
+  "reasoning_shape": [
+    "retrieve",
+    "extract",
+    "compare",
+    "calculate",
+    "synthesize",
+    "diagnose",
+    "decide",
+    "draft"
+  ],
+  "freshness": [
+    "static_local",
+    "recent_local",
+    "current_web"
+  ],
+  "error_tolerance": [
+    "high",
+    "medium",
+    "low",
+    "near_zero"
+  ]
+}

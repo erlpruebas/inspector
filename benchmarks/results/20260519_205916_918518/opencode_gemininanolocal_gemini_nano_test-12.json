@@ -1,0 +1,37 @@
+{
+  "engine": "opencode_gemininanolocal_gemini_nano",
+  "task_id": "test-12",
+  "returncode": 124,
+  "stdout": "",
+  "stderr": "",
+  "output_files": [],
+  "elapsed_seconds": 1800.1108848999938,
+  "timed_out": true,
+  "usage": {},
+  "model": "geminiNanoLocal/gemini-nano",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:geminiNanoLocal/gemini-nano",
+  "copied_outputs": [],
+  "task_prompt": "# Preparar minuta de contrato IberLegal\n\nPrepara una minuta de revision del contrato de IberLegal usando `emails_hilos.md` y `notas_voz.jsonl`. Incluye fecha limite y puntos de riesgo.",
+  "execution_prompt": "# Preparar minuta de contrato IberLegal\n\nPrepara una minuta de revision del contrato de IberLegal usando `emails_hilos.md` y `notas_voz.jsonl`. Incluye fecha limite y puntos de riesgo.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-12",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-12",
+    "mode": "redacted",
+    "files_processed": 2,
+    "files_skipped": 0,
+    "entities_found": 60,
+    "verification_passed": false,
+    "residual_findings": [
+      {
+        "start": 80,
+        "end": 89,
+        "text": "Noelia de",
+        "entity_type": "PERSON",
+        "source": "heuristic"
+      }
+    ],
+    "reviewer_used": false
+  }
+}

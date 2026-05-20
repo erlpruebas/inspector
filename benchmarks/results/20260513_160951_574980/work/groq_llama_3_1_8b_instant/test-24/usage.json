@@ -1,0 +1,14 @@
+{
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "elapsed_seconds": 0.751,
+  "usage": {
+    "queue_time": 0.019943961,
+    "prompt_tokens": 3334,
+    "prompt_time": 0.223310281,
+    "completion_tokens": 253,
+    "completion_time": 0.365901686,
+    "total_tokens": 3587,
+    "total_time": 0.589211967
+  }
+}

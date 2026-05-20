@@ -1,0 +1,85 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_groq_llama_3_1_8b_instant",
+    "engine_spec": "opencode:groq/llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  }
+]

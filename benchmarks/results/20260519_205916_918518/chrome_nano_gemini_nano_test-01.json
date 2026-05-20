@@ -1,0 +1,33 @@
+{
+  "engine": "chrome_nano_gemini_nano",
+  "task_id": "test-01",
+  "returncode": 1,
+  "stdout": "{\"provider\": \"chrome-nano\", \"model\": \"gemini-nano\", \"error\": \"Chrome Gemini Nano is not available: unavailable. Enable Chrome Built-in AI flags and wait for the model download if needed.\"}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-01\\resultado.md"
+  ],
+  "elapsed_seconds": 20.546400100000028,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-nano",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "chrome-nano:gemini-nano",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\chrome_nano_gemini_nano_test-01_resultado.md"
+  ],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-01",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-01",
+    "mode": "redacted",
+    "files_processed": 2,
+    "files_skipped": 0,
+    "entities_found": 189,
+    "verification_passed": true,
+    "residual_findings": [],
+    "reviewer_used": false
+  }
+}

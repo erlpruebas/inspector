@@ -1,0 +1,41 @@
+{
+  "engine": "chrome_nano_gemini_nano",
+  "task_id": "test-25",
+  "returncode": 1,
+  "stdout": "{\"provider\": \"chrome-nano\", \"model\": \"gemini-nano\", \"error\": \"Chrome Gemini Nano is not available: unavailable. Enable Chrome Built-in AI flags and wait for the model download if needed.\"}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-25\\resultado.md"
+  ],
+  "elapsed_seconds": 2.9843001999979606,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-nano",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "chrome-nano:gemini-nano",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\chrome_nano_gemini_nano_test-25_resultado.md"
+  ],
+  "task_prompt": "# Informe ejecutivo de cuentas prioritarias\n\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.",
+  "execution_prompt": "# Informe ejecutivo de cuentas prioritarias\n\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-25",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-25",
+    "mode": "redacted",
+    "files_processed": 3,
+    "files_skipped": 0,
+    "entities_found": 221,
+    "verification_passed": false,
+    "residual_findings": [
+      {
+        "start": 80,
+        "end": 89,
+        "text": "Noelia de",
+        "entity_type": "PERSON",
+        "source": "heuristic"
+      }
+    ],
+    "reviewer_used": false
+  }
+}

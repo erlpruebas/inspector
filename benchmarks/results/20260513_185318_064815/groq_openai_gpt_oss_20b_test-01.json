@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-01",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 0.747, \"usage\": {\"queue_time\": 0.015911766, \"prompt_tokens\": 2595, \"prompt_time\": 0.138264958, \"completion_tokens\": 453, \"completion_time\": 0.458731753, \"total_tokens\": 3048, \"total_time\": 0.596996711, \"completion_tokens_details\": {\"reasoning_tokens\": 409}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\groq_openai_gpt_oss_20b\\test-01\\resultado.md"
+  ],
+  "elapsed_seconds": 0.9770484000910074,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 0.747,
+    "usage": {
+      "queue_time": 0.015911766,
+      "prompt_tokens": 2595,
+      "prompt_time": 0.138264958,
+      "completion_tokens": 453,
+      "completion_time": 0.458731753,
+      "total_tokens": 3048,
+      "total_time": 0.596996711,
+      "completion_tokens_details": {
+        "reasoning_tokens": 409
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\groq_openai_gpt_oss_20b_test-01_resultado.md"
+  ],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\groq_openai_gpt_oss_20b\\test-01"
+}

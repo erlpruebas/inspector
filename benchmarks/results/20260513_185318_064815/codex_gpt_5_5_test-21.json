@@ -1,0 +1,23 @@
+{
+  "engine": "codex_gpt_5_5",
+  "task_id": "test-21",
+  "returncode": 0,
+  "stdout": "Voy a leer primero el contexto preparado y las notas locales para entender requisitos y restricciones de GreenBox; después contrasto precios actuales en web antes de proponer alternativas.\n\nLeí `assistant_synthetic/notas_voz.jsonl`: la nota relevante es `VN-009` del `2026-05-06 14:29`: “Buscar alternativa barata a herramienta de encuestas para GreenBox”.\n\n**Recomendación corta:** para GreenBox probaría primero **Tally** o **Google Forms**. Si hace falta algo más “corporativo” sin subir demasiado el coste, miraría **Zoho Survey**.\n\n| Opción | Coste bajo | Encaja si GreenBox necesita | Límites / cautelas |\n|---|---:|---|---|\n| **Tally** | Gratis con formularios y envíos ilimitados; Pro desde **$24/mes** | Encuestas simples/medias, lógica condicional, Google Sheets, Notion, Airtable, Zapier, webhooks | Marca Tally en gratis; revisar fair use |\n| **Google Forms** | **0 €** con cuenta Google | Encuestas básicas, respuestas en Sheets, colaboración sencilla | Menos branding, analítica e integraciones avanzadas |\n| **Zoho Survey** | Gratis: 3 encuestas, 10 preguntas, 100 respuestas/encuesta/mes | Alternativa económica con plantillas, lógica y opción de escalar | El plan gratis se queda corto si hay mucho volumen |\n| **Jotform** | Gratis: 5 formularios, 100 envíos/mes; pago desde aprox. **$39/mes** | Más diseño, plantillas y formularios más ricos | Gratis limitado; sube antes que Tally/Google |\n| **LimeSurvey** | Gratis cloud: 25 respuestas/mes; Basic **$39/mes** o autohospedado | Control de datos, encuestas más complejas, personalización | Requiere más configuración si se autohospeda |\n| **QuestionPro** | Gratis: 200 respuestas por encuesta | Encuestas con más tipos de pregunta y soporte | Plan avanzado desde **$99/usuario/mes**, ya no tan barato |\n\n**Mi elección para GreenBox:**\n\n1. **Tally** como primera opción si quieren ahorrar y mantener buen aspecto, lógica, integraciones y volumen sin pagar desde el día uno.  \n2. **Google Forms** si la prioridad absoluta es coste cero y ya trabajan con Google Workspace.  \n3. **Zoho Survey** si necesitan una herramienta más “de encuestas” con mejor estructura que Google Forms, pero todavía económica.\n\nComo referencia, **SurveyMonkey** ya parte de **$30/usuario/mes en plan de equipo con mínimo 3 usuarios** o **$99/mes individual**, así que cualquiera de las tres primeras reduce coste claramente.\n\n**Fuentes consultadas el 13 de mayo de 2026:** Tally pricing: https://tally.so/pricing; Google Forms: https://www.about.google/intl/es/forms/about/; Zoho Survey pricing: https://www.zoho.com/survey/pricing.html; Jotform limits: https://www.jotform.com/answers/4068080-pricing-and-plans; LimeSurvey pricing/free plan: https://www.limesurvey.org/pricing y https://help.limesurvey.org/portal/en/kb/articles/free-plan-type; QuestionPro pricing: https://www.questionpro.com/pricing/; SurveyMonkey pricing: https://www.surveymonkey.com/pricing/. También usé el contexto preparado: ClickUp alternativas SurveyMonkey, Jotform alternativas 2026 y Contentsquare herramientas de encuestas.",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\codex_gpt_5_5\\test-21\\resultado.md"
+  ],
+  "elapsed_seconds": 59.85782440006733,
+  "timed_out": false,
+  "usage": {},
+  "model": "gpt-5.5",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "codex:gpt-5.5",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\codex_gpt_5_5_test-21_resultado.md"
+  ],
+  "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+  "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\codex_gpt_5_5\\test-21"
+}

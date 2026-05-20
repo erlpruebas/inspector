@@ -1,0 +1,18 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "geminiNanoLocal": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Gemini Nano Local",
+      "options": {
+        "baseURL": "http://127.0.0.1:8787/v1"
+      },
+      "models": {
+        "gemini-nano": {
+          "name": "Gemini Nano"
+        }
+      }
+    }
+  },
+  "model": "geminiNanoLocal/gemini-nano"
+}

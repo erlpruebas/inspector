@@ -1,0 +1,37 @@
+{
+  "engine": "opencode_gemininanolocal_gemini_nano",
+  "task_id": "test-03",
+  "returncode": 124,
+  "stdout": "",
+  "stderr": "",
+  "output_files": [],
+  "elapsed_seconds": 1800.2984753000019,
+  "timed_out": true,
+  "usage": {},
+  "model": "geminiNanoLocal/gemini-nano",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:geminiNanoLocal/gemini-nano",
+  "copied_outputs": [],
+  "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+  "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-03",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-03",
+    "mode": "redacted",
+    "files_processed": 1,
+    "files_skipped": 0,
+    "entities_found": 32,
+    "verification_passed": false,
+    "residual_findings": [
+      {
+        "start": 80,
+        "end": 89,
+        "text": "Noelia de",
+        "entity_type": "PERSON",
+        "source": "heuristic"
+      }
+    ],
+    "reviewer_used": false
+  }
+}

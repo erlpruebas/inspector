@@ -1,0 +1,3 @@
+- Se identificaron múltiples entradas duplicadas en la base de datos de clientes, lo que sugiere la necesidad de un proceso de limpieza y deduplicación.
+- Se observó una cantidad significativa de direcciones de correo electrónico escritas completamente en mayúsculas, lo cual puede afectar la consistencia y la búsqueda de información.
+- Existe un número considerable de registros de clientes que carecen de información de contacto telefónico, lo que dificulta la comunicación directa.

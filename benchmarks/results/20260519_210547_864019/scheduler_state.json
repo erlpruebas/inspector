@@ -1,0 +1,23 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260519_210547_864019",
+  "jobs": [
+    {
+      "engine": "opencode:geminiNanoLocal/gemini-nano",
+      "task_id": "test-01",
+      "next_run_at": 1779226548.0117652,
+      "attempts": 1,
+      "done": false
+    }
+  ],
+  "completed": [],
+  "deferred": [
+    {
+      "job": "opencode:geminiNanoLocal/gemini-nano::test-01",
+      "at": "2026-05-19T19:35:48.011928+00:00",
+      "next_run_at": "2026-05-19T21:35:48.011765+00:00",
+      "reason": "timeout"
+    }
+  ],
+  "failed": [],
+  "running": null
+}

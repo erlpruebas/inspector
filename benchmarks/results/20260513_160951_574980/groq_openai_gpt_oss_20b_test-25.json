@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-25",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 2.541, \"usage\": {\"queue_time\": 0.016854156, \"prompt_tokens\": 3516, \"prompt_time\": 0.305324269, \"completion_tokens\": 2048, \"completion_time\": 2.093635555, \"total_tokens\": 5564, \"total_time\": 2.398959824, \"completion_tokens_details\": {\"reasoning_tokens\": 1935}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-25\\resultado.md"
+  ],
+  "elapsed_seconds": 2.7463335000211373,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 2.541,
+    "usage": {
+      "queue_time": 0.016854156,
+      "prompt_tokens": 3516,
+      "prompt_time": 0.305324269,
+      "completion_tokens": 2048,
+      "completion_time": 2.093635555,
+      "total_tokens": 5564,
+      "total_time": 2.398959824,
+      "completion_tokens_details": {
+        "reasoning_tokens": 1935
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-25_resultado.md"
+  ],
+  "task_prompt": "# Informe ejecutivo de cuentas prioritarias\n\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.",
+  "execution_prompt": "# Informe ejecutivo de cuentas prioritarias\n\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-25"
+}

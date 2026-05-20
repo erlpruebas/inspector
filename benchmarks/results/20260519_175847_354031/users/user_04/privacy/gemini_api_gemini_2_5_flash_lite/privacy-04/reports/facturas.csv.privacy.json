@@ -1,0 +1,86 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "factura,cliente,fecha,total\nF-100,Acme SL,2026-04-02,1210.00\nF-101,Norte SA,2026-04-05,847.50\nF-102,Delta SL,2026-04-08,430.00\nF-103,Clinica Centro,2026-04-12,980.00\n",
+  "mixed_text": "factura,cliente,fecha,total\nF-100,Acme SL [ORG_0004],2026-04-02 [PHONE_0008],1210.00\nF-101,Norte SA [ORG_0003],2026-04-05 [PHONE_0007],847.50\nF-102,Delta SL [ORG_0002],2026-04-08 [PHONE_0006],430.00\nF-103 Clinica Centro [ORG_0001],2026-04-12 [PHONE_0005],980.00\n",
+  "redacted_text": "factura,cliente,fecha,total\nF-100,ORG_0004,PHONE_0008,1210.00\nF-101,ORG_0003,PHONE_0007,847.50\nF-102,ORG_0002,PHONE_0006,430.00\nORG_0001,PHONE_0005,980.00\n",
+  "entities": [
+    {
+      "start": 34,
+      "end": 41,
+      "text": "Acme SL",
+      "entity_type": "ORG",
+      "confidence": 0.82,
+      "source": "alias",
+      "token": "ORG_0004"
+    },
+    {
+      "start": 42,
+      "end": 52,
+      "text": "2026-04-02",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0008"
+    },
+    {
+      "start": 67,
+      "end": 75,
+      "text": "Norte SA",
+      "entity_type": "ORG",
+      "confidence": 0.82,
+      "source": "alias",
+      "token": "ORG_0003"
+    },
+    {
+      "start": 76,
+      "end": 86,
+      "text": "2026-04-05",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0007"
+    },
+    {
+      "start": 100,
+      "end": 108,
+      "text": "Delta SL",
+      "entity_type": "ORG",
+      "confidence": 0.82,
+      "source": "alias",
+      "token": "ORG_0002"
+    },
+    {
+      "start": 109,
+      "end": 119,
+      "text": "2026-04-08",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0006"
+    },
+    {
+      "start": 127,
+      "end": 147,
+      "text": "F-103 Clinica Centro",
+      "entity_type": "ORG",
+      "confidence": 0.81,
+      "source": "heuristic",
+      "token": "ORG_0001"
+    },
+    {
+      "start": 148,
+      "end": 158,
+      "text": "2026-04-12",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0005"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "entity_count": 0
+  }
+}

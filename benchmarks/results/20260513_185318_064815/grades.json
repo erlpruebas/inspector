@@ -1,0 +1,4840 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Sergio Campos"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "correo corto"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: BravoSoft, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-06",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-07",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: IberLegal, Tecnoria, SerConta",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-11",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Nova Iberia, Clinica Centro",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-12",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "sala",
+      "viernes 09:30"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Clinica Centro, sala, viernes 09:30",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-16",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "discrepancias"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: discrepancias",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-18",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "dia 22"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Laura Marin, dia 22",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-22",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "fecha de consulta"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: fecha de consulta",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-24",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "comparativa"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: comparativa",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: clientes alta, siguientes acciones, Madrid",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "importe_discrepante"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-27",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "cliente"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: cliente",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-28",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-29",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "tareas pendientes",
+      "clientes prioritarios"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: tareas pendientes, clientes prioritarios",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Sergio Campos"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Paula Ferrer, BravoSoft, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-06",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-07",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: IberLegal, Tecnoria, SerConta",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-11",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-12",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "viernes 09:30"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: viernes 09:30",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-16",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "riesgos de seguridad"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: riesgos de seguridad",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: total mensual",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-18",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "dia 22"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: dia 22",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-22",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "fecha de consulta"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: fecha de consulta",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-24",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: clientes alta, siguientes acciones, Madrid",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: sin_recibo, importe_discrepante, revisar_proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-27",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "cliente"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: cliente",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-28",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-29",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "tareas pendientes",
+      "clientes prioritarios"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: tareas pendientes, clientes prioritarios",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Madrid, prioridad alta, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "correo corto"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Paula Ferrer, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-06",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-07",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-11",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-12",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: sala, viernes 09:30",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-16",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Faltan claves esperadas: total mensual, discrepancias, sin_recibo, revisar_proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-18",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: dia 22, hitos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "precio",
+      "fuentes"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: precio, fuentes",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-22",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "fecha de consulta"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: fecha de consulta",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: fuentes",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-24",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "monitores 27",
+      "comparativa"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: monitores 27, comparativa",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: clientes alta",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-27",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "cliente"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: cliente",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-28",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: fuentes",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-29",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "tareas pendientes",
+      "clientes prioritarios"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: tareas pendientes, clientes prioritarios",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "engine_spec": "gemini_api:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "coste"
+    ],
+    "heuristic_score": 8.0,
+    "score": 8.0,
+    "comment": "Faltan claves esperadas: coste",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "prioridad alta"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: prioridad alta",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "reservar"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: reservar",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "correo corto"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Paula Ferrer, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-06",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-07",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-11",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-12",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: sala, viernes 09:30",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-16",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: total mensual, discrepancias",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-18",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: formacion, dia 22, hitos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: fuentes",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-22",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "fecha de consulta"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: fecha de consulta",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Xavier Puig"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: Xavier Puig",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-24",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "comparativa"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: comparativa",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "siguientes acciones"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: clientes alta, siguientes acciones",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-27",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: fecha limite, cliente, prioridad",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-28",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-29",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Madrid, prioridad alta, Sergio Campos",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "correo corto"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Paula Ferrer, correo corto",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-06",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-07",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [
+      "Ana Lopez"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: Ana Lopez",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Clinica Centro, Delta Equipos, SSL",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 420.00, 210.00",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-11",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Faltan claves esperadas: alta, cliente, Nova Iberia, Clinica Centro",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-12",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: sala, viernes 09:30",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-16",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: total mensual, discrepancias",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-18",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-22",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-24",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-27",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-28",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-29",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-06",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-07",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-11",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-12",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-16",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-18",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-22",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-24",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-27",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-28",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-29",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-06",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-07",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-11",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-12",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-16",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-18",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-22",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-24",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-27",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-28",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-29",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-02",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-04",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "missing_keys": [
+      "Paula Ferrer",
+      "BravoSoft",
+      "correo corto",
+      "propuesta CRM"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-06",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "missing_keys": [
+      "Xavier Puig",
+      "Barna Health",
+      "18 de mayo",
+      "10:00"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-07",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "missing_keys": [
+      "Ana Lopez",
+      "PDF",
+      "resumen ejecutivo",
+      "anexos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-09",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "missing_keys": [
+      "Hotel Barcelona",
+      "duplicado",
+      "420.00",
+      "210.00"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-11",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "missing_keys": [
+      "alta",
+      "cliente",
+      "Nova Iberia",
+      "Clinica Centro"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-12",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "missing_keys": [
+      "clausula 8",
+      "responsabilidad",
+      "renovacion automatica",
+      "12 de mayo"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-13",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "Hotel Barcelona",
+      "duplicado",
+      "febrero"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-15",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Luis Martin",
+      "Tomas Vega",
+      "Laura Marin"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-16",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "missing_keys": [
+      "Sergio Campos",
+      "Innotek",
+      "riesgos de seguridad",
+      "auditoria"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-18",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "missing_keys": [
+      "prospecto",
+      "BravoSoft",
+      "Noda Labs",
+      "RedNova"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-22",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "missing_keys": [
+      "Apple",
+      "Microsoft",
+      "seis meses",
+      "fecha de consulta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-24",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "missing_keys": [
+      "Delta Equipos",
+      "monitores 27",
+      "4%",
+      "comparativa"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-27",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "missing_keys": [
+      "responsable",
+      "fecha limite",
+      "cliente",
+      "prioridad"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-28",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "BravoSoft",
+      "CRM",
+      "Paula Ferrer",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-29",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "missing_keys": [
+      "gastos",
+      "tareas pendientes",
+      "clientes prioritarios",
+      "riesgos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  }
+]

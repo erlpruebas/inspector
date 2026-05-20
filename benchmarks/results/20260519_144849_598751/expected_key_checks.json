@@ -1,0 +1,19 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "vikingnano_gemini_nano_local",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "passed": false
+  }
+]

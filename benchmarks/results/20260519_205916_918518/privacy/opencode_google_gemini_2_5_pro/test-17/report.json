@@ -1,0 +1,10 @@
+{
+  "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_google_gemini_2_5_pro\\test-17",
+  "mode": "redacted",
+  "files_processed": 5,
+  "files_skipped": 0,
+  "entities_found": 20,
+  "verification_passed": true,
+  "residual_findings": [],
+  "reviewer_used": false
+}

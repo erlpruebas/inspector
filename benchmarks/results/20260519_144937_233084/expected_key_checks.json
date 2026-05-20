@@ -1,0 +1,19 @@
+[
+  {
+    "task_id": "test-02",
+    "engine": "vikingnano_gemini_nano_local",
+    "expected_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "missing_keys": [
+      "Madrid",
+      "prioridad alta",
+      "Ana Lopez",
+      "Sergio Campos"
+    ],
+    "passed": false
+  }
+]

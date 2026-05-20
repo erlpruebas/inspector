@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-04",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.565, \"usage\": {\"queue_time\": 0.019273402, \"prompt_tokens\": 2677, \"prompt_time\": 0.149222653, \"completion_tokens\": 145, \"completion_time\": 0.239521701, \"total_tokens\": 2822, \"total_time\": 0.388744354}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\work\\groq_llama_3_1_8b_instant\\test-04\\resultado.md"
+  ],
+  "elapsed_seconds": 0.7854782999493182,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 0.565,
+    "usage": {
+      "queue_time": 0.019273402,
+      "prompt_tokens": 2677,
+      "prompt_time": 0.149222653,
+      "completion_tokens": 145,
+      "completion_time": 0.239521701,
+      "total_tokens": 2822,
+      "total_time": 0.388744354
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\groq_llama_3_1_8b_instant_test-04_resultado.md"
+  ],
+  "task_prompt": "# Redactar email de seguimiento a BravoSoft\n\nCon `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`, redacta un email breve y amable a Paula Ferrer para seguimiento de la propuesta CRM.",
+  "execution_prompt": "# Redactar email de seguimiento a BravoSoft\n\nCon `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`, redacta un email breve y amable a Paula Ferrer para seguimiento de la propuesta CRM.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\work\\groq_llama_3_1_8b_instant\\test-04"
+}

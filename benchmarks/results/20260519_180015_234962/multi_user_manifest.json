@@ -1,0 +1,25 @@
+{
+  "users": 4,
+  "lanes": [
+    [
+      "privacy-01"
+    ],
+    [
+      "privacy-02"
+    ],
+    [
+      "privacy-03"
+    ],
+    [
+      "privacy-04"
+    ]
+  ],
+  "engines": [
+    "groq:llama-3.1-8b-instant",
+    "openrouter:deepseek/deepseek-v3.2",
+    "gemini_api:gemini-2.5-flash-lite",
+    "codex:gpt-5.4-mini"
+  ],
+  "privacy_mode": "redacted",
+  "privacy_review": "none"
+}

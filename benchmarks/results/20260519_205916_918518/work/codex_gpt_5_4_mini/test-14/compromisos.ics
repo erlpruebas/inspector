@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Codex//Compromisos desde notas y correos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20260520T025916Z-demo-pagos@codex
+DTSTAMP:20260520T025916Z
+SUMMARY:Demo modulo de pagos
+DTSTART;TZID=Europe/Madrid:20260514T113000
+DTEND;TZID=Europe/Madrid:20260514T123000
+DESCRIPTION:Fuente: assistant_synthetic/emails_hilos.md (Hilo ORG_0006) y assistant_synthetic/notas_voz.jsonl (VN-001). Duracion no indicada; se asumio 1 hora.
+END:VEVENT
+BEGIN:VEVENT
+UID:20260520T025916Z-contrato-iberlegal@codex
+DTSTAMP:20260520T025916Z
+SUMMARY:Revisar contrato IberLegal
+DTSTART;VALUE=DATE:20260512
+DTEND;VALUE=DATE:20260513
+DESCRIPTION:Fuente: assistant_synthetic/emails_hilos.md (Hilo E-003) y assistant_synthetic/notas_voz.jsonl (VN-006). El correo pide comentarios antes del 12 de mayo; la hora exacta no se especifica.
+END:VEVENT
+BEGIN:VEVENT
+UID:20260520T025916Z-csv-monitores@codex
+DTSTAMP:20260520T025916Z
+SUMMARY:Enviar CSV actualizado de monitores
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+DESCRIPTION:Fuente: assistant_synthetic/notas_voz.jsonl (VN-002) y assistant_synthetic/emails_hilos.md (Hilo E-002). Falta incluir el descuento del 4 por ciento; la hora de envio no esta indicada.
+END:VEVENT
+BEGIN:VEVENT
+UID:20260520T025916Z-barna-health@codex
+DTSTAMP:20260520T025916Z
+SUMMARY:Reunion presencial Barna Health
+DTSTART;TZID=Europe/Madrid:20260518T100000
+DTEND;TZID=Europe/Madrid:20260518T110000
+DESCRIPTION:Fuente: assistant_synthetic/emails_hilos.md (Hilo E-004) y assistant_synthetic/notas_voz.jsonl (VN-003). Duracion no indicada; se asumio 1 hora.
+END:VEVENT
+END:VCALENDAR

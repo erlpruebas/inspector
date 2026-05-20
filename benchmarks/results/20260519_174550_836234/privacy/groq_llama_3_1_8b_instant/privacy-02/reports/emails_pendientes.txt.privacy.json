@@ -1,0 +1,77 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "De: Ana\nAsunto: Demo de producto\nPodemos reunirnos el 14 de mayo de 2026 a las 10:30 para ver la demo?\n\nDe: Javier\nAsunto: Revision contrato\nReserva el 15 de mayo de 2026 a las 16:00 para revisar el contrato con legal.\n\nDe: Lucia\nAsunto: Seguimiento cliente\nNos vemos el 18 de mayo de 2026 a las 09:15 para preparar la llamada con el cliente.\n",
+  "mixed_text": "De: Ana\nAsunto [PERSON_0005]: Demo de [PERSON_0004] producto\nPodemos reunirnos el 14 de mayo de 2026 [DATE_0003] a las 10:30 para ver la demo?\n\nDe: Javier\nAsunto [PERSON_0003]: Revision contrato\nReserva el 15 de mayo de 2026 [DATE_0002] a las 16:00 para revisar el contrato con legal.\n\nDe: Lucia\nAsunto [PERSON_0002]: Seguimiento cliente\nNos vemos el 18 de mayo de 2026 [DATE_0001] a las 09:15 para preparar la llamada con el cliente.\n",
+  "redacted_text": "De: PERSON_0005: PERSON_0004 producto\nPodemos reunirnos el DATE_0003 a las 10:30 para ver la demo?\n\nDe: PERSON_0003: Revision contrato\nReserva el DATE_0002 a las 16:00 para revisar el contrato con legal.\n\nDe: PERSON_0002: Seguimiento cliente\nNos vemos el DATE_0001 a las 09:15 para preparar la llamada con el cliente.\n",
+  "entities": [
+    {
+      "start": 4,
+      "end": 14,
+      "text": "Ana\nAsunto",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0005"
+    },
+    {
+      "start": 16,
+      "end": 23,
+      "text": "Demo de",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0004"
+    },
+    {
+      "start": 54,
+      "end": 72,
+      "text": "14 de mayo de 2026",
+      "entity_type": "DATE",
+      "confidence": 0.88,
+      "source": "regex",
+      "token": "DATE_0003"
+    },
+    {
+      "start": 108,
+      "end": 121,
+      "text": "Javier\nAsunto",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0003"
+    },
+    {
+      "start": 152,
+      "end": 170,
+      "text": "15 de mayo de 2026",
+      "entity_type": "DATE",
+      "confidence": 0.88,
+      "source": "regex",
+      "token": "DATE_0002"
+    },
+    {
+      "start": 224,
+      "end": 236,
+      "text": "Lucia\nAsunto",
+      "entity_type": "PERSON",
+      "confidence": 0.78,
+      "source": "heuristic",
+      "token": "PERSON_0002"
+    },
+    {
+      "start": 271,
+      "end": 289,
+      "text": "18 de mayo de 2026",
+      "entity_type": "DATE",
+      "confidence": 0.88,
+      "source": "regex",
+      "token": "DATE_0001"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "entity_count": 0
+  }
+}

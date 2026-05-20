@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-14",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.027, \"usage\": {\"queue_time\": 0.055656331, \"prompt_tokens\": 1812, \"prompt_time\": 0.179119255, \"completion_tokens\": 417, \"completion_time\": 0.633891187, \"total_tokens\": 2229, \"total_time\": 0.813010442}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_llama_3_1_8b_instant\\test-14\\resultado.md"
+  ],
+  "elapsed_seconds": 1.2247604000149295,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 1.027,
+    "usage": {
+      "queue_time": 0.055656331,
+      "prompt_tokens": 1812,
+      "prompt_time": 0.179119255,
+      "completion_tokens": 417,
+      "completion_time": 0.633891187,
+      "total_tokens": 2229,
+      "total_time": 0.813010442
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_llama_3_1_8b_instant_test-14_resultado.md"
+  ],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_llama_3_1_8b_instant\\test-14"
+}

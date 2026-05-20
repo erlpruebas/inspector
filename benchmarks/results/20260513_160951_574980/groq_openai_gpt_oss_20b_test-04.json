@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-04",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 0.636, \"usage\": {\"queue_time\": 0.016064518, \"prompt_tokens\": 2586, \"prompt_time\": 0.137919414, \"completion_tokens\": 329, \"completion_time\": 0.339152035, \"total_tokens\": 2915, \"total_time\": 0.477071449, \"completion_tokens_details\": {\"reasoning_tokens\": 242}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-04\\resultado.md"
+  ],
+  "elapsed_seconds": 0.8237915999488905,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 0.636,
+    "usage": {
+      "queue_time": 0.016064518,
+      "prompt_tokens": 2586,
+      "prompt_time": 0.137919414,
+      "completion_tokens": 329,
+      "completion_time": 0.339152035,
+      "total_tokens": 2915,
+      "total_time": 0.477071449,
+      "completion_tokens_details": {
+        "reasoning_tokens": 242
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-04_resultado.md"
+  ],
+  "task_prompt": "# Redactar email de seguimiento a BravoSoft\n\nCon `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`, redacta un email breve y amable a Paula Ferrer para seguimiento de la propuesta CRM.",
+  "execution_prompt": "# Redactar email de seguimiento a BravoSoft\n\nCon `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`, redacta un email breve y amable a Paula Ferrer para seguimiento de la propuesta CRM.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-04"
+}

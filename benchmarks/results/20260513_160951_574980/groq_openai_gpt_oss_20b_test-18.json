@@ -1,0 +1,39 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-18",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 1.237, \"usage\": {\"queue_time\": 0.017263813, \"prompt_tokens\": 2012, \"prompt_time\": 0.107792492, \"completion_tokens\": 950, \"completion_time\": 0.978606974, \"total_tokens\": 2962, \"total_time\": 1.086399466, \"completion_tokens_details\": {\"reasoning_tokens\": 781}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-18\\resultado.md"
+  ],
+  "elapsed_seconds": 1.468270399956964,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 1.237,
+    "usage": {
+      "queue_time": 0.017263813,
+      "prompt_tokens": 2012,
+      "prompt_time": 0.107792492,
+      "completion_tokens": 950,
+      "completion_time": 0.978606974,
+      "total_tokens": 2962,
+      "total_time": 1.086399466,
+      "completion_tokens_details": {
+        "reasoning_tokens": 781
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_openai_gpt_oss_20b_test-18_resultado.md"
+  ],
+  "task_prompt": "# Segmentar prospectos para campana\n\nSegmenta los contactos tipo prospecto para una campana. Incluye empresa, ciudad, responsable sugerido y motivo de prioridad.",
+  "execution_prompt": "# Segmentar prospectos para campana\n\nSegmenta los contactos tipo prospecto para una campana. Incluye empresa, ciudad, responsable sugerido y motivo de prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_openai_gpt_oss_20b\\test-18"
+}

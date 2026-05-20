@@ -1,0 +1,19 @@
+{
+  "engine": "openrouter_deepseek_deepseek_v4_flash",
+  "task_id": "test-19",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 238, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 64, in main\n    raw_prompt = read_prompt(args.prompt, args.prompt_file)\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 100, in read_prompt\n    return Path(prompt_file).read_text(encoding=\"utf-8\")\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\_local.py\", line 546, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\_abc.py\", line 632, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\pathlib\\_local.py\", line 537, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [Errno 22] Invalid argument: '# Plan de seguimiento de implantacion\\n\\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.\\n\\nArchivos locales preparados en el directorio de trabajo:\\n- `assistant_synthetic\\\\notas_voz.jsonl`\\n- `assistant_synthetic\\\\emails_hilos.md`\\n\\nUsa esas rutas relativas cuando necesites leer datos locales.'\n",
+  "output_files": [],
+  "elapsed_seconds": 0.27373059996170923,
+  "timed_out": false,
+  "usage": {},
+  "model": "deepseek/deepseek-v4-flash",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+  "copied_outputs": [],
+  "task_prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.",
+  "execution_prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_130231_288791\\work\\openrouter_deepseek_deepseek_v4_flash\\test-19"
+}

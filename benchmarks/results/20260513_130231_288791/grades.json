@@ -1,0 +1,1368 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos proporcionados, incluyendo todos los campos clave esperados y un objetivo adicional relevante. El formato es claro y conciso.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos clave.",
+      "Formato de nota claro y organizado.",
+      "Inclusión de un objetivo detallado y relevante."
+    ],
+    "issues": [
+      "Se añade un año ('2026') que no estaba explícitamente en las claves esperadas, aunque es una inferencia razonable si el contexto del archivo lo permitiera."
+    ]
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae las tareas de forma precisa y completa, utilizando el formato de tabla solicitado. Identifica correctamente las acciones, entidades y fechas límite, marcando adecuadamente las fechas inferidas. No inventa datos y sigue las instrucciones.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de tareas.",
+      "Formato de tabla claro y legible.",
+      "Identificación correcta de acciones, entidades y fechas.",
+      "Marcado adecuado de fechas inferidas.",
+      "No inventa datos."
+    ],
+    "issues": [
+      "La acción 'Comprar billete para Barcelona si Xavier confirma la reunión' podría ser más concisa, pero la descripción es fiel al texto original."
+    ]
+  },
+  {
+    "task_id": "test-08",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 8.0,
+    "comment": "La respuesta genera un resumen de tareas pendientes muy completo y bien priorizado, extrayendo información de las fuentes indicadas. Cumple con la mayoría de los requisitos, aunque no incluye explícitamente las claves esperadas en el formato de salida, sino que las integra en el resumen.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción de información de múltiples fuentes (JSONL y MD).",
+      "Priorización efectiva de tareas basada en fechas y clientes.",
+      "Clasificación clara de tareas por prioridad (alta, media, sin fecha).",
+      "Inclusión de detalles relevantes para cada tarea (fechas, personas, acciones específicas).",
+      "Identificación de tareas vencidas."
+    ],
+    "issues": [
+      "Las claves esperadas ('IberLegal', 'Clinica Centro', 'Delta Equipos', 'SSL') no se presentan como una lista separada, sino integradas en el resumen de tareas.",
+      "Se inventa una fecha de referencia (2026-05-13) que no estaba en la tarea original, aunque la usa consistentemente."
+    ]
+  },
+  {
+    "task_id": "test-19",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.0,
+    "comment": "La respuesta ha convertido las referencias a implantación y formación en un plan de seguimiento, incluyendo hitos, responsables y dependencias. Sin embargo, no se especifica quién es el responsable principal ni se detalla la trazabilidad de la información de Laura Marin.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Convierte referencias a plan de seguimiento",
+      "Incluye hitos, responsable y dependencias",
+      "Proporciona enlaces a los archivos modificados",
+      "Estructura el plan de seguimiento de forma clara"
+    ],
+    "issues": [
+      "No se especifica el responsable principal de forma explícita.",
+      "No se menciona ni se integra la información de 'Laura Marin' en el plan de seguimiento.",
+      "La trazabilidad de la información de 'Laura Marin' no está clara."
+    ]
+  },
+  {
+    "task_id": "test-25",
+    "engine": "codex_gpt_5_4_mini",
+    "engine_spec": "codex:gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta"
+    ],
+    "heuristic_score": 7.5,
+    "score": 9.0,
+    "comment": "La respuesta genera un informe ejecutivo muy completo y bien estructurado, abordando todos los puntos solicitados. La inclusión de métricas, riesgos transversales y acciones específicas, junto con la trazabilidad a los archivos de origen, la hace muy valiosa. La única mejora sería una mención explícita de 'Madrid' en el resumen o en las acciones, aunque se infiere en la última acción.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Informe ejecutivo detallado y bien estructurado.",
+      "Identificación clara de riesgos y siguientes acciones.",
+      "Inclusión de métricas y resumen ejecutivo.",
+      "Tabla de cuentas con atención prioritaria.",
+      "Trazabilidad a los archivos de origen."
+    ],
+    "issues": [
+      "La clave 'Madrid' no se menciona explícitamente en el resumen o en las acciones, aunque se infiere en la última acción."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrae correctamente la información solicitada de los archivos, incluyendo persona, empresa, fecha, hora y objetivo. Cumple con todos los requisitos de la tarea.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos.",
+      "Cumplimiento de todos los campos solicitados.",
+      "Formato de nota breve claro y conciso."
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-03",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta extrajo las tareas de manera precisa y las presentó en una tabla bien formateada. La interpretación de la fecha en VN-007 es correcta y demuestra un buen razonamiento.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de tareas.",
+      "Formato de tabla claro y legible.",
+      "Identificación correcta de acciones, entidades y fechas.",
+      "Buena interpretación de fechas relativas (VN-007)."
+    ],
+    "issues": [
+      "La entidad relacionada en VN-002 podría ser más específica (Luis, Delta Equipos en lugar de solo Luis o Delta Equipos).",
+      "La entidad relacionada en VN-004 podría ser más específica (Sergio Campos en lugar de solo Sergio Campos)."
+    ]
+  },
+  {
+    "task_id": "test-08",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta genera un resumen semanal de tareas pendientes muy completo y bien estructurado, priorizando correctamente los compromisos. Cumple con la mayoría de los requisitos de la tarea original.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Priorización efectiva de tareas por fecha y cliente.",
+      "Formato de tabla claro y fácil de leer.",
+      "Inclusión de fuentes para trazabilidad.",
+      "Identificación de tareas por prioridad (Alta, Media, Baja).",
+      "Sugerencia de orden de ejecución para el día."
+    ],
+    "issues": [
+      "La tarea 'Renovar certificado SSL' para 'Cobalto' está en Prioridad Media, pero la clave esperada 'SSL' no se menciona explícitamente en el resumen, aunque la tarea sí se incluye.",
+      "Se incluye una tarea para 'Barna Health' que no estaba en las claves esperadas ('IberLegal', 'Clinica Centro', 'Delta Equipos', 'SSL')."
+    ]
+  },
+  {
+    "task_id": "test-19",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "dia 22"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: Laura Marin, dia 22",
+    "judge_model": "",
+    "judge_error": "HTTPError: HTTP Error 503: Service Unavailable"
+  },
+  {
+    "task_id": "test-25",
+    "engine": "codex_gpt_5_5",
+    "engine_spec": "codex:gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "Madrid"
+    ],
+    "heuristic_score": 5.0,
+    "score": 2.0,
+    "comment": "La respuesta describe el proceso de generación del informe pero no proporciona el informe en sí ni su contenido. No se incluyen las claves esperadas ni se genera un informe ejecutivo real.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Describe el proceso de análisis de datos y generación de informe."
+    ],
+    "issues": [
+      "No genera el informe ejecutivo solicitado.",
+      "No incluye las claves esperadas ('clientes alta', 'riesgos', 'siguientes acciones', 'Madrid').",
+      "No proporciona contenido real del informe.",
+      "El enlace al informe es un path local y no accesible."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los archivos de referencia y la presenta de forma clara y concisa, cumpliendo con todas las claves esperadas.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos",
+      "Formato claro y organizado",
+      "Cumplimiento de todas las claves esperadas"
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 7.0,
+    "comment": "La respuesta extrae la mayoría de las tareas correctamente y las presenta en una tabla. Sin embargo, incluye acciones que no están en la lista de claves esperadas ('Comprar', 'Preparar', 'Pedir', 'Crear tarea', 'No olvidar', 'Buscar', 'Revisar', 'Poner recordatorio', 'Enviar email', 'Cruzar', 'Crear', 'Investigar', 'Recordar') y no extrae la fecha límite en todos los casos donde es posible.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Formato de tabla claro y legible.",
+      "Identifica correctamente la mayoría de las acciones y entidades.",
+      "Utiliza el 'id de nota' como se esperaba."
+    ],
+    "issues": [
+      "Incluye acciones no esperadas (ej. 'Comprar', 'Preparar', 'Pedir').",
+      "No extrae la fecha límite en todos los casos posibles (ej. VN-002, VN-004).",
+      "Interpreta algunas frases de forma demasiado literal en la columna 'accion' (ej. 'No olvidar', 'Poner recordatorio')."
+    ]
+  },
+  {
+    "task_id": "test-08",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta genera un resumen de tareas pendientes muy completo y bien estructurado, priorizando correctamente los compromisos con fecha o cliente específico. Incluye referencias a las fuentes de información y organiza las tareas de forma lógica. La única mejora sería la inclusión explícita de 'SSL' como una clave esperada, aunque la tarea relacionada está presente.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Excelente priorización de tareas por fecha y cliente.",
+      "Estructura clara y organizada del resumen.",
+      "Inclusión de referencias a las fuentes (ej. E-002, VN-006).",
+      "Identificación de tareas urgentes y próximas citas.",
+      "Buena categorización de tareas (urgentes, próximas, con clientes, generales)."
+    ],
+    "issues": [
+      "No se menciona explícitamente la clave 'SSL' en el resumen, aunque la tarea de renovación de certificado SSL para Cobalto está presente."
+    ]
+  },
+  {
+    "task_id": "test-19",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "dia 22"
+    ],
+    "heuristic_score": 7.5,
+    "score": 8.0,
+    "comment": "La respuesta genera un plan de seguimiento de implantación y formación con hitos, responsables y dependencias. Incluye la clave 'Laura Marin' y el concepto de 'formacion'. El hito de formación está asociado al 'dia 22'. La estructura es clara y la información es trazable.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Genera un plan de seguimiento estructurado.",
+      "Identifica hitos, responsables y dependencias.",
+      "Incluye las claves esperadas ('Laura Marin', 'formacion', 'dia 22').",
+      "Proporciona trazabilidad a las fuentes de información."
+    ],
+    "issues": [
+      "No se especifica explícitamente el 'dia 22' como un hito independiente, sino como parte de la fecha de un hito de formación.",
+      "Falta un responsable claro para el 'Hito 3' (remitente de VN-011)."
+    ]
+  },
+  {
+    "task_id": "test-25",
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 2.5,
+    "score": 8.0,
+    "comment": "La respuesta genera un informe ejecutivo de cuentas prioritarias muy completo, incluyendo contactos, resúmenes, riesgos y siguientes acciones. Cumple con la mayoría de las claves esperadas, aunque no menciona explícitamente 'Madrid' como una ubicación geográfica en los datos de las cuentas.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Formato claro y organizado",
+      "Detalla contactos, resúmenes, riesgos y acciones para cada cuenta",
+      "Incluye referencias a tareas y correos (VN-XXX, E-XXX)",
+      "Cubre la mayoría de las claves esperadas ('clientes alta', 'riesgos', 'siguientes acciones')"
+    ],
+    "issues": [
+      "No se menciona explícitamente la clave 'Madrid' en la información de las cuentas."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los archivos de referencia y la presenta en un formato claro y conciso, sin inventar datos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos",
+      "Formato claro y organizado",
+      "Cumplimiento de todas las claves esperadas",
+      "No inventa información"
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 4.0,
+    "comment": "La respuesta no extrae las tareas pendientes de forma precisa. No se limita a las claves esperadas y la tabla contiene acciones que no son tareas pendientes. Además, el formato de la tabla es ilegible debido a los espacios excesivos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Intenta estructurar la información en una tabla.",
+      "Identifica algunas notas y sus IDs."
+    ],
+    "issues": [
+      "No se limita a las claves esperadas ('llamar', 'enviar', 'agendar', 'reservar').",
+      "Incluye acciones que no son tareas pendientes ('Recordar', 'Comprar', 'Preparar minuta', etc.).",
+      "El formato de la tabla es ilegible debido a los espacios excesivos entre caracteres.",
+      "No extrae todas las tareas pendientes de forma correcta.",
+      "No se proporciona el contenido del archivo `notas_voz.jsonl` para una verificación completa."
+    ]
+  },
+  {
+    "task_id": "test-08",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 7.0,
+    "comment": "La respuesta genera un resumen de tareas pendientes bien estructurado y priorizado, pero incluye información de clientes (BravoSoft, Barna Health, Marta Ruiz, Laura Marin, Nova Iberia, GreenBox, Zenit Food, Norte SA, Cobalto, Sergio Campos, Elena Vidal) que no se mencionan en las claves esperadas ni se pueden inferir de los nombres de archivo proporcionados.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Estructura clara y priorización de tareas.",
+      "Formato legible y fácil de seguir.",
+      "Identifica compromisos con fecha y cliente concreto."
+    ],
+    "issues": [
+      "Incluye clientes/tareas no especificados en las claves esperadas ni inferibles de los archivos de origen.",
+      "Falta de trazabilidad explícita de la fuente de cada tarea (aunque se infiere la intención)."
+    ]
+  },
+  {
+    "task_id": "test-19",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "dia 22"
+    ],
+    "heuristic_score": 7.5,
+    "score": 9.0,
+    "comment": "La respuesta ha creado un plan de seguimiento detallado, incluyendo hitos, responsables y dependencias, tal como se solicitó. Ha incorporado las claves esperadas de forma natural dentro del contexto del plan.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Creación de un plan de seguimiento estructurado.",
+      "Inclusión de hitos, responsables y dependencias.",
+      "Integración natural de las claves esperadas ('Laura Marin', 'formacion', 'dia 22').",
+      "Formato claro y organizado."
+    ],
+    "issues": [
+      "La fecha 'dia 22' se ha interpretado como '22 de mayo de 2026', lo cual es una suposición razonable pero no explícitamente confirmada en la tarea original."
+    ]
+  },
+  {
+    "task_id": "test-25",
+    "engine": "gemini_gemini_2_5_flash",
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 2.5,
+    "score": 9.0,
+    "comment": "La respuesta cumple con la mayoría de los requisitos de la tarea, presentando un informe bien estructurado y detallado. Sin embargo, no incluye explícitamente la clave 'Madrid' en ninguna de las cuentas o acciones, lo cual era un requisito esperado.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "El informe está bien estructurado y es fácil de leer.",
+      "Combina contactos, correos y notas de forma efectiva.",
+      "Identifica claramente riesgos y siguientes acciones para cada cuenta.",
+      "Se enfoca en cuentas de prioridad 'alta' como se solicitó."
+    ],
+    "issues": [
+      "No se menciona explícitamente la clave 'Madrid' en ninguna de las cuentas o acciones."
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los documentos de referencia y la presenta en un formato claro y conciso, sin inventar datos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de todos los datos clave.",
+      "Formato claro y organizado.",
+      "Cumplimiento de todas las restricciones (no inventar datos)."
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-03",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 8.0,
+    "comment": "La respuesta extrae la mayoría de las tareas correctamente y las presenta en una tabla bien formateada. Sin embargo, hay algunas imprecisiones en la categorización de las acciones y la identificación de entidades relacionadas.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Formato de tabla correcto y legible.",
+      "Extracción de la mayoría de las tareas pendientes.",
+      "Identificación de la mayoría de los IDs de nota.",
+      "Inclusión de fechas límite cuando están presentes."
+    ],
+    "issues": [
+      "La acción 'Comprar billete para Barcelona' no se corresponde con las claves esperadas ('llamar', 'enviar', 'agendar', 'reservar').",
+      "La acción 'Preparar minuta con riesgos de seguridad y coste de auditoría' no se corresponde con las claves esperadas.",
+      "La acción 'Pedir las facturas de abril' no se corresponde con las claves esperadas.",
+      "La acción 'Revisar contrato' no se corresponde con las claves esperadas.",
+      "La acción 'Recordar preferencia de informes en PDF y resumen corto' no se corresponde con las claves esperadas.",
+      "La acción 'Buscar alternativa a herramienta de encuestas' no se corresponde con las claves esperadas.",
+      "La acción 'Revisar gastos de marzo por cargos duplicados' no tiene una acción clara y no se corresponde con las claves esperadas.",
+      "La acción 'Preparar comparativa para tareas de ofimática' no se corresponde con las claves esperadas.",
+      "La acción 'Cruzar pagos con facturas' no se corresponde con las claves esperadas.",
+      "La acción 'Crear lista de contactos prioritarios' no se corresponde con las claves esperadas.",
+      "La acción 'Investigar rendimiento de acciones' no se corresponde con las claves esperadas.",
+      "La acción 'Preparar informe mensual de incidencias' no se corresponde con las claves esperadas.",
+      "La entidad relacionada para VN-012 está vacía.",
+      "La entidad relacionada para VN-020 está vacía."
+    ]
+  },
+  {
+    "task_id": "test-08",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 7.0,
+    "comment": "La respuesta genera un resumen de tareas pendientes bien estructurado y priorizado, pero no se basa en los archivos especificados (`notas_voz.jsonl` y `emails_hilos.md`) ni incluye todas las claves esperadas. Inventa fechas y tareas que no se pueden verificar a partir de los datos de entrada.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Estructura clara y organizada del resumen.",
+      "Buena priorización de tareas por urgencia y fecha.",
+      "Formato legible y fácil de seguir."
+    ],
+    "issues": [
+      "No se basa en los archivos de entrada especificados (`notas_voz.jsonl`, `emails_hilos.md`).",
+      "No incluye todas las claves esperadas (falta 'SSL' como tarea prioritaria, aunque aparece al final).",
+      "Inventa fechas y detalles de tareas que no se pueden verificar a partir de los archivos de entrada.",
+      "Incluye tareas no relacionadas con las claves esperadas o los archivos de entrada."
+    ]
+  },
+  {
+    "task_id": "test-19",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 5.0,
+    "score": 7.0,
+    "comment": "La respuesta genera un plan de seguimiento con hitos, responsables y dependencias, incluyendo las claves esperadas. Sin embargo, la fecha de la sesión de formación es el 'dia 22' pero la tabla la sitúa el 22 de mayo de 2026, lo cual es una interpretación y no una mención directa. Además, se inventan datos como nombres de clientes y fechas específicas que no estaban en la tarea original.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Crea un plan de seguimiento estructurado.",
+      "Incluye hitos, responsables y dependencias.",
+      "Incorpora las claves 'Laura Marin' y 'formacion'.",
+      "Utiliza formato de tabla para la organización."
+    ],
+    "issues": [
+      "Interpreta 'dia 22' como una fecha específica (22 de mayo de 2026) en lugar de una referencia temporal más general.",
+      "Inventa datos adicionales como nombres de clientes (Clínica Centro, Barna Health) y fechas específicas de eventos no mencionados en la tarea original."
+    ]
+  },
+  {
+    "task_id": "test-25",
+    "engine": "gemini_gemini_2_5_pro",
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 2.5,
+    "score": 9.0,
+    "comment": "La respuesta genera un informe ejecutivo de cuentas prioritarias muy completo, detallando clientes, riesgos y siguientes acciones. Cumple con la mayoría de las claves esperadas, aunque no menciona explícitamente 'Madrid'. El formato es claro y la información es relevante.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Formato claro y organizado",
+      "Detalle de riesgos y siguientes acciones por cada contacto",
+      "Identificación de clientes prioritarios y otros tipos de contactos",
+      "Cumplimiento de la mayoría de las claves esperadas"
+    ],
+    "issues": [
+      "No se menciona explícitamente la clave 'Madrid'"
+    ]
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "La respuesta extrae correctamente toda la información solicitada de los archivos de referencia y la presenta en un formato claro y conciso, sin inventar datos.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Extracción precisa de datos",
+      "Formato claro y organizado",
+      "Cumplimiento de todas las claves esperadas",
+      "No inventa información"
+    ],
+    "issues": []
+  },
+  {
+    "task_id": "test-03",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 7.0,
+    "comment": "La respuesta extrae la mayoría de las tareas correctamente y las presenta en una tabla. Sin embargo, incluye una entrada que no es una tarea directa y no extrae todas las acciones esperadas. La acción 'Comprar billete' no está en la lista de claves esperadas.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Formato de tabla claro y legible.",
+      "Identifica correctamente la mayoría de las tareas y sus detalles.",
+      "Incluye el ID de nota para cada entrada."
+    ],
+    "issues": [
+      "La entrada 'VN-008' se etiqueta como 'Información, no tarea directa', lo cual no es una tarea extraída.",
+      "La acción 'Comprar billete' (VN-003) no se encuentra entre las claves esperadas ('llamar', 'enviar', 'agendar', 'reservar').",
+      "No se extraen todas las acciones posibles de las claves esperadas (por ejemplo, 'reservar' solo aparece una vez)."
+    ]
+  },
+  {
+    "task_id": "test-08",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 9.0,
+    "comment": "La respuesta genera un resumen de tareas pendientes muy completo y bien estructurado, priorizando correctamente según la fecha o cliente. Incluye referencias a los archivos de origen y las claves esperadas están presentes. La única mejora sería una mención explícita de las fuentes de cada tarea para una trazabilidad total.",
+    "judge_model": "gemini-2.5-flash-lite",
+    "strengths": [
+      "Excelente priorización de tareas.",
+      "Estructura clara y organizada.",
+      "Inclusión de referencias a tareas (VN, E).",
+      "Cumplimiento de las claves esperadas.",
+      "Identificación de fechas límite y clientes críticos."
+    ],
+    "issues": [
+      "Falta de trazabilidad explícita de cada tarea a su archivo de origen (notas_voz.jsonl o emails_hilos.md)."
+    ]
+  },
+  {
+    "task_id": "test-19",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "opencode_google_gemini_2_5_flash",
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=2147483651.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-19",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "missing_keys": [
+      "Laura Marin",
+      "formacion",
+      "dia 22",
+      "hitos"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-25",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "missing_keys": [
+      "clientes alta",
+      "riesgos",
+      "siguientes acciones",
+      "Madrid"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  }
+]

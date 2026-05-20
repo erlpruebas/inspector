@@ -1,0 +1,23 @@
+{
+  "engine": "gemini_gemini_2_5_flash_lite",
+  "task_id": "test-02",
+  "returncode": 2147483651,
+  "stdout": "",
+  "stderr": "Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.\nYOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\n\n\n#\n# Fatal process out of memory: Zone\n#\n----- Native stack trace -----\n\n 1: 00007FF637626F4D node::MultiIsolatePlatform::DisposeIsolate+5341\n 2: 00007FF638A8DAC6 v8::base::FatalOOM+54\n 3: 00007FF63831F9F5 v8::Function::NewInstance+245\n 4: 00007FF637C99986 v8::SnapshotCreator::GetIsolate+56566\n 5: 00007FF638F0F9BA v8::platform::DelayedTaskQueue::Terminate+1698954\n 6: 00007FF638F0F0AB v8::platform::DelayedTaskQueue::Terminate+1696635\n 7: 00007FF638F0E56D v8::platform::DelayedTaskQueue::Terminate+1693757\n 8: 00007FF638F0E044 v8::platform::DelayedTaskQueue::Terminate+1692436\n 9: 00007FF638F0D5D1 v8::platform::DelayedTaskQueue::Terminate+1689761\n10: 00007FF638F0D32F v8::platform::DelayedTaskQueue::Terminate+1689087\n11: 00007FF638D1B0F6 v8::base::DiyFp::Multiply+414934\n12: 00007FF638D19E10 v8::base::DiyFp::Multiply+410096\n13: 00007FF638AEDDAB v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord+192907\n14: 00007FF637993256 DSA_get0_engine+658470\n15: 00007FF63798E993 DSA_get0_engine+639843\n16: 00007FF63798E279 DSA_get0_engine+638025\n17: 00007FF638B00C5F v8::platform::DefaultJobHandle::UpdatePriority+591\n18: 00007FF637622E0E node::GetNodeReport+90430\n19: 00007FF638374A36 uv_thread_detach+150\n20: 00007FF6395D5A73 v8::base::UnsignedDivisionByConstant<unsigned __int64>+2907235\n21: 00007FFAA724E8D7 BaseThreadInitThunk+23\n22: 00007FFAA79DC34C RtlUserThreadStart+44\n",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\work\\gemini_gemini_2_5_flash_lite\\test-02\\resultado.md"
+  ],
+  "elapsed_seconds": 51.16321719996631,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini:gemini-2.5-flash-lite",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\gemini_gemini_2_5_flash_lite_test-02_resultado.md"
+  ],
+  "task_prompt": "# Crear lista de contactos prioritarios de Madrid\n\nUsa `benchmarks/assets/assistant_synthetic/contactos_50.csv` para generar una lista de contactos ubicados en Madrid con prioridad alta. Incluye nombre, empresa, rol y email.",
+  "execution_prompt": "# Crear lista de contactos prioritarios de Madrid\n\nUsa `benchmarks/assets/assistant_synthetic/contactos_50.csv` para generar una lista de contactos ubicados en Madrid con prioridad alta. Incluye nombre, empresa, rol y email.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_151640_705408\\work\\gemini_gemini_2_5_flash_lite\\test-02"
+}

@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 INSPECTOR_ROOT = ROOT.parent
+DEFAULT_CODEX_MODEL = "gpt-5.5"
 
 
 def _load_env_file(path: Path) -> None:
@@ -175,7 +176,7 @@ def load_settings() -> Settings:
         codex_workdir=_env_path("ORCH_CODEX_WORKDIR", INSPECTOR_ROOT),
         codex_dirs_file=codex_dirs_file,
         codex_extra_dirs=_dedupe_paths([*_json_path_list(codex_dirs_file), *_env_path_list("ORCH_CODEX_EXTRA_DIRS")]),
-        codex_model=os.getenv("ORCH_CODEX_MODEL", "").strip(),
+        codex_model=DEFAULT_CODEX_MODEL,
         codex_sandbox=os.getenv("ORCH_CODEX_SANDBOX", "workspace-write").strip(),
         codex_approval=os.getenv("ORCH_CODEX_APPROVAL", "never").strip(),
         codex_timeout_seconds=_env_int("ORCH_CODEX_TIMEOUT_SECONDS", default=1800),

@@ -1,0 +1,10 @@
+{
+  "root": "D:\\inspector\\benchmarks\\results\\20260519_180015_234962\\users\\user_01\\work\\codex_gpt_5_4_mini\\privacy-01",
+  "mode": "redacted",
+  "files_processed": 1,
+  "files_skipped": 0,
+  "entities_found": 14,
+  "verification_passed": true,
+  "residual_findings": [],
+  "reviewer_used": false
+}

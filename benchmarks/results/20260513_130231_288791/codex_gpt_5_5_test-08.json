@@ -1,0 +1,23 @@
+{
+  "engine": "codex_gpt_5_5",
+  "task_id": "test-08",
+  "returncode": 0,
+  "stdout": "Voy a leer las notas y los hilos de email para extraer compromisos, fechas y clientes, y luego los agruparé por prioridad semanal.\n\n**Resumen semanal de tareas pendientes**  \nSemana de referencia: miércoles 13 de mayo de 2026.\n\n**Prioridad Alta**\n\n| Vencimiento | Cliente / contacto | Tarea pendiente | Fuente |\n|---|---|---|---|\n| **12 mayo, vencida** | IberLegal / David Navarro | Enviar comentarios sobre contrato de soporte, especialmente cláusula 8 de responsabilidad y renovación automática. | E-003, VN-006 |\n| **13 mayo, hoy** | Delta Equipos / Luis Martín | Enviar CSV actualizado de monitores incluyendo descuento del 4%. El descuento aplica si se cierra antes del día 13. | E-002, VN-002 |\n| **14 mayo 11:30** | Clínica Centro / Noelia Castro | Confirmar asistencia y preparar demo del módulo de pagos centrada en conciliación y estado de pagos. Asegurar presencia de alguien de administración. | E-001, VN-001 |\n| **18 mayo 10:00** | Barna Health / Xavier Puig | Comprar billete a Barcelona y preparar reunión técnica presencial sobre integración SSO. | E-004, VN-003 |\n\n**Prioridad Media**\n\n| Fecha / plazo | Cliente / contacto | Tarea pendiente | Fuente |\n|---|---|---|---|\n| **22 mayo** | Laura Marín | Enviar agenda de implantación incluyendo hito de formación del día 22. | VN-011 |\n| **Antes del 28 mayo** | Cobalto | Renovar certificado SSL. | VN-013 |\n| Esta semana | BravoSoft / Paula Ferrer | Enviar correo corto y amable de seguimiento por la propuesta CRM pendiente. | E-006, VN-015 |\n| Esta semana | Clínica Centro | Preparar informe mensual de incidencias incluyendo Clínica Centro y facturación. | VN-019 |\n| Esta semana | Zenit Food / Tomás | Llamar por pedido de licencias y confirmar dirección fiscal. | VN-010 |\n| Esta semana | Norte SA | Cruzar pagos con facturas; revisar posible factura pendiente de 847,50. | VN-016 |\n\n**Prioridad Baja / sin fecha concreta**\n\n| Área | Tarea |\n|---|---|\n| Administración | Pedir a Elena Vidal facturas de abril que no aparecen en el banco. |\n| Finanzas | Revisar gastos de marzo por dos cargos duplicados de hotel. |\n| Interno | Reservar sala para reunión interna del viernes a las 09:30. |\n| Comercial | Crear lista de contactos prioritarios de Madrid con nivel alta. |\n| Producto / análisis | Buscar alternativa barata a herramienta de encuestas para GreenBox. |\n| Dirección / seguridad | Preparar minuta para Sergio Campos con riesgos de seguridad y coste de auditoría. |\n| Informes | Recordar que Ana López / Nova Iberia quiere PDFs con una página de resumen ejecutivo y anexos separados. |\n| Investigación | Preparar comparativa OpenRouter vs Gemini para tareas de ofimática. |\n| Investigación | Revisar si Apple ha subido más que Microsoft en los últimos seis meses. |\n\n**Orden recomendado para hoy**\n\n1. IberLegal: enviar comentarios vencidos del contrato.\n2. Delta Equipos: cerrar CSV con descuento del 4%.\n3. Clínica Centro: confirmar demo de mañana y preparar materiales.\n4. Barna Health: reservar viaje a Barcelona para el 18 de mayo.\n5. BravoSoft: enviar seguimiento breve a Paula Ferrer.",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_130231_288791\\work\\codex_gpt_5_5\\test-08\\resultado.md"
+  ],
+  "elapsed_seconds": 27.69600439997157,
+  "timed_out": false,
+  "usage": {},
+  "model": "gpt-5.5",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "codex:gpt-5.5",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_130231_288791\\codex_gpt_5_5_test-08_resultado.md"
+  ],
+  "task_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+  "execution_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_130231_288791\\work\\codex_gpt_5_5\\test-08"
+}

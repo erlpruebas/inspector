@@ -1,0 +1,3 @@
+- Se detectaron múltiples duplicados en los datos, incluyendo registros con información personal y de contacto repetida.
+- Varias direcciones de correo electrónico están escritas completamente en mayúsculas, lo que requiere normalización.
+- Existen campos de teléfono vacíos o faltantes, así como inconsistencias en la estructura de los registros.

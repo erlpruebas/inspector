@@ -1,0 +1,23 @@
+{
+  "engine": "gemini_gemini_2_5_flash_lite",
+  "task_id": "test-01",
+  "returncode": 0,
+  "stdout": "# Cita Clinica Centro\n\n**Persona:** Noelia Castro\n**Empresa:** Clinica Centro\n**Fecha:** 14 de mayo de 2026\n**Hora:** 11:30\n**Objetivo:** Demo del módulo de pagos, enfocada en conciliación y estado de pagos.\n",
+  "stderr": "YOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nAttempt 1 failed with status 503. Retrying with backoff... _ApiError: {\"error\":{\"message\":\"{\\n  \\\"error\\\": {\\n    \\\"code\\\": 503,\\n    \\\"message\\\": \\\"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\\\",\\n    \\\"status\\\": \\\"UNAVAILABLE\\\"\\n  }\\n}\\n\",\"code\":503,\"status\":\"Service Unavailable\"}}\n    at throwErrorIfNotOK (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-SAJ72M2G.js:36185:24)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-SAJ72M2G.js:35948:7\n    at async Models.generateContentStream (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-SAJ72M2G.js:37044:16)\n    at async file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:273444:19\n    at async file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:250345:23\n    at async retryWithBackoff (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:270539:23)\n    at async GeminiChat.makeApiCallAndProcessStream (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293199:28)\n    at async GeminiChat.streamWithRetries (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293037:29)\n    at async Turn.run (file:///C:/Users/user/AppData/Roaming/npm/node_modules/@google/gemini-cli/bundle/chunk-6DSAZLFF.js:293564:24) {\n  status: 503\n}\n",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\gemini_gemini_2_5_flash_lite\\test-01\\resultado.md"
+  ],
+  "elapsed_seconds": 201.55128569999943,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-2.5-flash-lite",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "gemini:gemini-2.5-flash-lite",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\gemini_gemini_2_5_flash_lite_test-01_resultado.md"
+  ],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\gemini_gemini_2_5_flash_lite\\test-01"
+}

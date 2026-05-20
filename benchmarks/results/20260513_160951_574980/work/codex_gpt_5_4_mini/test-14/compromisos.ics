@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+PRODID:-//Codex//Compromisos sinteticos//ES
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20260513T145153Z-vn001-e001@codex.local
+DTSTAMP:20260513T145153Z
+SUMMARY:Demo modulo de pagos - Clinica Centro
+DTSTART:20260514T093000Z
+DTEND:20260514T103000Z
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+DESCRIPTION:Origen: VN-001 y E-001. Confirmar la demo con Noelia Castro antes del jueves. La email indica que la demo es el 14 de mayo a las 11:30 en hora local. Duracion no especificada.
+END:VEVENT
+BEGIN:VEVENT
+UID:20260513T145153Z-vn002-e002@codex.local
+DTSTAMP:20260513T145153Z
+SUMMARY:Enviar CSV actualizado a Luis Martin
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+DESCRIPTION:Origen: VN-002 y E-002. Incluir el descuento del 4 por ciento. Hora no especificada. Debe enviarse antes del 13 de mayo.
+END:VEVENT
+BEGIN:VEVENT
+UID:20260513T145153Z-vn006-e003@codex.local
+DTSTAMP:20260513T145153Z
+SUMMARY:Revisar contrato de IberLegal
+DTSTART;VALUE=DATE:20260512
+DTEND;VALUE=DATE:20260513
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+DESCRIPTION:Origen: VN-006 y E-003. Revisar la clausula 8 de responsabilidad y la renovacion automatica. Hora no especificada. Se pidieron comentarios antes del 12 de mayo.
+END:VEVENT
+BEGIN:VEVENT
+UID:20260513T145153Z-vn003-e004@codex.local
+DTSTAMP:20260513T145153Z
+SUMMARY:Reunion tecnica en Barcelona - Barna Health
+DTSTART:20260518T080000Z
+DTEND:20260518T090000Z
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+DESCRIPTION:Origen: VN-003 y E-004. La reunion presencial esta confirmada para el 18 de mayo a las 10:00 en hora local. El mensaje de voz indica que el billete a Barcelona depende de la confirmacion.
+END:VEVENT
+END:VCALENDAR

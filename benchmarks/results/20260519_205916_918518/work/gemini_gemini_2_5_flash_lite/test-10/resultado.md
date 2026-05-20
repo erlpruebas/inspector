@@ -1,0 +1,9 @@
+Nombre,Empresa,Rol,Email,Ciudad,Prioridad
+PERSON_0066,PERSON_0065,proveedor,EMAIL_0054,Valencia,media
+PERSON_0058,IberLegal,proveedor,EMAIL_0048,Madrid,media
+PERSON_0051,Tecnoria,proveedor,EMAIL_0042,Valladolid,media
+PERSON_0041,Ferrovia,proveedor,EMAIL_0034,Oviedo,media
+PERSON_0037,Cobalto,proveedor,EMAIL_0030,Madrid,alta
+PERSON_0030,PixelArte,proveedor,EMAIL_0023,Malaga,baja
+PERSON_0023,SerConta,proveedor,EMAIL_0017,Toledo,media
+PERSON_0014,Alboran,proveedor,EMAIL_0008,Malaga,media

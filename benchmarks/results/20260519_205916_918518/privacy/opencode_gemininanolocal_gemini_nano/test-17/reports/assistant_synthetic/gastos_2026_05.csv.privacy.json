@@ -1,0 +1,50 @@
+{
+  "source_path": "",
+  "mode": "redacted",
+  "original_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\n2026-05-01,Vuelo Barcelona,viajes,155.0,155.0,ok\n2026-05-03,Suscripcion IA,software,120.0,120.0,revisar_proveedor\n2026-05-05,Cafe reunion,comidas,18.4,18.4,ok\n",
+  "mixed_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\n2026-05-01 [PHONE_0101],Vuelo Barcelona [PERSON_0078],viajes,155.0,155.0,ok\n2026-05-03 [PHONE_0100],Suscripcion IA,software,120.0,120.0,revisar_proveedor\n2026-05-05 [PHONE_0099],Cafe reunion,comidas,18.4,18.4,ok\n",
+  "redacted_text": "fecha,concepto,categoria,importe_declarado,importe_esperado,estado\nPHONE_0101,PERSON_0078,viajes,155.0,155.0,ok\nPHONE_0100,Suscripcion IA,software,120.0,120.0,revisar_proveedor\nPHONE_0099,Cafe reunion,comidas,18.4,18.4,ok\n",
+  "entities": [
+    {
+      "start": 67,
+      "end": 77,
+      "text": "2026-05-01",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0101"
+    },
+    {
+      "start": 78,
+      "end": 93,
+      "text": "Vuelo Barcelona",
+      "entity_type": "PERSON",
+      "confidence": 0.8,
+      "source": "alias",
+      "token": "PERSON_0078"
+    },
+    {
+      "start": 116,
+      "end": 126,
+      "text": "2026-05-03",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0100"
+    },
+    {
+      "start": 181,
+      "end": 191,
+      "text": "2026-05-05",
+      "entity_type": "PHONE",
+      "confidence": 0.95,
+      "source": "alias",
+      "token": "PHONE_0099"
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "findings": [],
+    "entity_count": 0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "engine": "chrome_nano_gemini_nano",
+  "task_id": "test-17",
+  "returncode": 1,
+  "stdout": "{\"provider\": \"chrome-nano\", \"model\": \"gemini-nano\", \"error\": \"Chrome Gemini Nano is not available: unavailable. Enable Chrome Built-in AI flags and wait for the model download if needed.\"}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-17\\resultado.md"
+  ],
+  "elapsed_seconds": 2.315207100000407,
+  "timed_out": false,
+  "usage": {},
+  "model": "gemini-nano",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "chrome-nano:gemini-nano",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\chrome_nano_gemini_nano_test-17_resultado.md"
+  ],
+  "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+  "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-17",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\chrome_nano_gemini_nano\\test-17",
+    "mode": "redacted",
+    "files_processed": 5,
+    "files_skipped": 0,
+    "entities_found": 20,
+    "verification_passed": true,
+    "residual_findings": [],
+    "reviewer_used": false
+  }
+}

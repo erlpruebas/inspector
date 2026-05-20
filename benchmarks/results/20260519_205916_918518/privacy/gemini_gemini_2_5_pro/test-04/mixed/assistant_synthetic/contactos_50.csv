@@ -1,0 +1,51 @@
+nombre,email,telefono,ciudad,empresa,rol,tipo,prioridad
+Ana Lopez [PERSON_0069],ana.lopez@novaiberia.es [EMAIL_0055],+34 600 100 001 [PHONE_0062],Madrid,Nova Iberia [PERSON_0068],Directora Operaciones [PERSON_0067],cliente,alta
+Luis Martin [PERSON_0066],luis.martin@deltaequipos.es [EMAIL_0054],+34 600 100 002 [PHONE_0061],Valencia,Delta Equipos [PERSON_0065],Compras,proveedor,media
+Marta Ruiz [PERSON_0064],marta.ruiz@clinicasol.es [EMAIL_0053],+34 600 100 003 [PHONE_0060],Sevilla,Clinica Sol,Administracion,cliente,alta
+Jorge Soler [PERSON_0063],jorge.soler@logimedit.es [EMAIL_0052],+34 600 100 004 [PHONE_0059],Bilbao,Logimedit,Logistica,partner,media
+Elena Vidal [PERSON_0062],elena.vidal@atlanticdata.es [EMAIL_0051],+34 600 100 005 [PHONE_0058],A Coruna,Atlantic Data [PERSON_0061],Finanzas,cliente,alta
+Sergio Campos [PERSON_0060],sergio.campos@innotek.es [EMAIL_0050],+34 600 100 006 [PHONE_0057],Zaragoza,Innotek,CTO,cliente,alta
+Paula Ferrer [PERSON_0059],paula.ferrer@bravosoft.es [EMAIL_0049],+34 600 100 007 [PHONE_0056],Malaga,BravoSoft,Ventas,prospecto,media
+David Navarro [PERSON_0058],david.navarro@iberlegal.es [EMAIL_0048],+34 600 100 008 [PHONE_0055],Madrid,IberLegal,Legal,proveedor,media
+Clara Molina [PERSON_0057],clara.molina@greenbox.es [EMAIL_0047],+34 600 100 009 [PHONE_0054],Barcelona,GreenBox,Marketing,cliente,baja
+Ruben Ortega [PERSON_0056],ruben.ortega@metalsur.es [EMAIL_0046],+34 600 100 010 [PHONE_0053],Murcia,MetalSur,Gerencia,cliente,alta
+Teresa Blanco [PERSON_0055],teresa.blanco@aquanet.es [EMAIL_0045],+34 600 100 011 [PHONE_0052],Vigo,AquaNet,Soporte,cliente,media
+Hector Mora [PERSON_0054],hector.mora@finansys.es [EMAIL_0044],+34 600 100 012 [PHONE_0051],Madrid,FinanSys,Producto,partner,alta
+Lucia Torres [PERSON_0053],lucia.torres@solucionesmar.es [EMAIL_0043],+34 600 100 013 [PHONE_0050],Cadiz,Soluciones Mar [PERSON_0052],Direccion,cliente,alta
+Marcos Gil [PERSON_0051],marcos.gil@tecnoria.es [EMAIL_0042],+34 600 100 014 [PHONE_0049],Valladolid,Tecnoria,IT,proveedor,media
+Nuria Vega [PERSON_0050],nuria.vega@almacenesnorte.es [EMAIL_0041],+34 600 100 015 [PHONE_0048],Santander,Almacenes Norte [PERSON_0049],Compras,cliente,media
+Oscar Prieto [PERSON_0048],oscar.prieto@consultia.es [EMAIL_0040],+34 600 100 016 [PHONE_0047],Madrid,Consultia,Consultor,partner,baja
+Irene Sanz [PERSON_0047],irene.sanz@biocentro.es [EMAIL_0039],+34 600 100 017 [PHONE_0046],Granada,BioCentro,Calidad,cliente,alta
+Victor Leon [PERSON_0046],victor.leon@urbanlift.es [EMAIL_0038],+34 600 100 018 [PHONE_0045],Barcelona,UrbanLift,Operaciones,cliente,media
+Raquel Cano [PERSON_0045],raquel.cano@nodalabs.es [EMAIL_0037],+34 600 100 019 [PHONE_0044],Madrid,Noda Labs,Data,prospecto,alta
+Adrian Pons [PERSON_0044],adrian.pons@mediatres.es [EMAIL_0036],+34 600 100 020 [PHONE_0043],Palma,MediaTres,Cuentas,cliente,baja
+Beatriz Costa [PERSON_0043],beatriz.costa@orionretail.es [EMAIL_0035],+34 600 100 021 [PHONE_0042],Barcelona,Orion Retail [PERSON_0042],Retail,cliente,alta
+Daniel Rios [PERSON_0041],daniel.rios@ferrovia.es [EMAIL_0034],+34 600 100 022 [PHONE_0041],Oviedo,Ferrovia,Compras,proveedor,media
+Eva Roman [PERSON_0040],eva.roman@kairon.es [EMAIL_0033],+34 600 100 023 [PHONE_0040],Madrid,Kairon,People,cliente,media
+Gonzalo Pardo [PERSON_0039],gonzalo.pardo@mintcloud.es [EMAIL_0032],+34 600 100 024 [PHONE_0039],Valencia,MintCloud,Cloud,partner,alta
+Helena Suarez [PERSON_0038],helena.suarez@puravida.es [EMAIL_0031],+34 600 100 025 [PHONE_0038],Alicante,PuraVida,Expansion,prospecto,media
+Ivan Duran [PERSON_0037],ivan.duran@cobalto.es [EMAIL_0030],+34 600 100 026 [PHONE_0037],Madrid,Cobalto,Seguridad,proveedor,alta
+Julia Iglesias [PERSON_0036],julia.iglesias@tresnaves.es [EMAIL_0029],+34 600 100 027 [PHONE_0036],Sevilla,Tres Naves [PERSON_0035],Direccion,cliente,alta
+Kevin Ramos [PERSON_0034],kevin.ramos@aurea.es [EMAIL_0028],+34 600 100 028 [PHONE_0035],Barcelona,Aurea,Finanzas,cliente,media
+Laura Marin [PERSON_0033],laura.marin@northwind.es [EMAIL_0027],+34 600 100 029 [PHONE_0034],Bilbao,Northwind ES,Ventas,cliente,alta
+Miguel Santos [PERSON_0032],miguel.santos@argentalia.es [EMAIL_0026],+34 600 100 030 [PHONE_0033],Madrid,Argentalia,Inversiones,prospecto,media
+Noelia Castro [PERSON_0001],noelia.castro@clinicacentro.es [EMAIL_0025],+34 600 100 031 [PHONE_0032],Madrid,Clinica Centro [ORG_0005],Administracion,cliente,alta
+Pablo Herrero [PERSON_0031],pablo.herrero@navilux.es [EMAIL_0024],+34 600 100 032 [PHONE_0031],Valencia,Navilux,Operaciones,cliente,media
+Rocio Nieto [PERSON_0030],rocio.nieto@pixelarte.es [EMAIL_0023],+34 600 100 033 [PHONE_0030],Malaga,PixelArte,Diseno,proveedor,baja
+Samuel Ibanez [PERSON_0029],samuel.ibanez@quantica.es [EMAIL_0022],+34 600 100 034 [PHONE_0029],Madrid,Quantica,Analitica,partner,alta
+Silvia Rey [PERSON_0028],silvia.rey@transmed.es [EMAIL_0021],+34 600 100 035 [PHONE_0028],Zaragoza,TransMed,Logistica,cliente,media
+Tomas Vega [PERSON_0027],tomas.vega@zenitfood.es [EMAIL_0020],+34 600 100 036 [PHONE_0027],Barcelona,Zenit Food [PERSON_0026],Compras,cliente,alta
+Valeria Navas [PERSON_0025],valeria.navas@rednova.es [EMAIL_0019],+34 600 100 037 [PHONE_0026],Madrid,RedNova,Marketing,prospecto,media
+Xavier Puig [PERSON_0024],xavier.puig@barnahealth.es [EMAIL_0018],+34 600 100 038 [PHONE_0025],Barcelona,Barna Health,IT,cliente,alta
+Yolanda Cruz [PERSON_0023],yolanda.cruz@serconta.es [EMAIL_0017],+34 600 100 039 [PHONE_0024],Toledo,SerConta,Contabilidad,proveedor,media
+Alberto Saez [PERSON_0022],alberto.saez@omniplus.es [EMAIL_0016],+34 600 100 040 [PHONE_0023],Madrid,OmniPlus,Direccion,cliente,alta
+Belen Arias [PERSON_0021],belen.arias@vetor.es [EMAIL_0015],+34 600 100 041 [PHONE_0022],Gijon,Vetor,Soporte,cliente,baja
+Carlos Benitez [PERSON_0020],carlos.benitez@solardesk.es [EMAIL_0014],+34 600 100 042 [PHONE_0021],Sevilla,SolarDesk,Operaciones,cliente,alta
+Diana Estevez [PERSON_0019],diana.estevez@bluecargo.es [EMAIL_0013],+34 600 100 043 [PHONE_0020],Valencia,BlueCargo,Logistica,cliente,media
+Esteban Lozano [PERSON_0018],esteban.lozano@helixia.es [EMAIL_0012],+34 600 100 044 [PHONE_0019],Madrid,Helixia,CTO,partner,alta
+Fabiola Mendez [PERSON_0017],fabiola.mendez@optired.es [EMAIL_0011],+34 600 100 045 [PHONE_0018],Murcia,OptiRed,Ventas,prospecto,media
+Guillermo Casas [PERSON_0016],guillermo.casas@neotaller.es [EMAIL_0010],+34 600 100 046 [PHONE_0017],Valladolid,NeoTaller,Gerencia,cliente,alta
+Ines Robles [PERSON_0015],ines.robles@marketuno.es [EMAIL_0009],+34 600 100 047 [PHONE_0016],Madrid,MarketUno,Marketing,cliente,media
+Jaime Pastor [PERSON_0014],jaime.pastor@alboran.es [EMAIL_0008],+34 600 100 048 [PHONE_0015],Malaga,Alboran,Legal,proveedor,media
+Lorena Vidal [PERSON_0013],lorena.vidal@civitas.es [EMAIL_0007],+34 600 100 049 [PHONE_0014],Barcelona,Civitas,Producto,cliente,alta
+Manuel Fuentes [PERSON_0012],manuel.fuentes@dueroapps.es [EMAIL_0006],+34 600 100 050 [PHONE_0013],Salamanca,Duero Apps [PERSON_0011],Direccion,cliente,media

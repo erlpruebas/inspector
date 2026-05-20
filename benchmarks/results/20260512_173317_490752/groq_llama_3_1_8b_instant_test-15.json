@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-15",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.128, \"usage\": {\"queue_time\": 0.022542512, \"prompt_tokens\": 3069, \"prompt_time\": 0.196979824, \"completion_tokens\": 745, \"completion_time\": 0.764070457, \"total_tokens\": 3814, \"total_time\": 0.961050281}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\groq_llama_3_1_8b_instant\\test-15\\resultado.md"
+  ],
+  "elapsed_seconds": 1.3301104999845847,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 1.128,
+    "usage": {
+      "queue_time": 0.022542512,
+      "prompt_tokens": 3069,
+      "prompt_time": 0.196979824,
+      "completion_tokens": 745,
+      "completion_time": 0.764070457,
+      "total_tokens": 3814,
+      "total_time": 0.961050281
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\groq_llama_3_1_8b_instant_test-15_resultado.md"
+  ],
+  "task_prompt": "# Cruzar notas de voz con contactos\n\nCruza notas de voz con contactos para identificar personas mencionadas y sus empresas. Devuelve una tabla con tarea, persona, empresa y email.",
+  "execution_prompt": "# Cruzar notas de voz con contactos\n\nCruza notas de voz con contactos para identificar personas mencionadas y sus empresas. Devuelve una tabla con tarea, persona, empresa y email.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\groq_llama_3_1_8b_instant\\test-15"
+}

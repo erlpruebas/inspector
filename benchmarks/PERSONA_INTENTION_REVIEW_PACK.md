@@ -1,0 +1,516 @@
+# Pack De Revision Humana: Intenciones De Tareas Por Profesion
+
+Este documento NO contiene notas de voz falsas. Contiene la intencion sintetizada que podria salir de notas de voz largas reales.
+
+## Como pedir feedback
+
+Pidele a la persona real:
+
+> Lee las intenciones de tu profesion. Dime por nota de voz cuales son realistas, cuales sobran, cuales faltan, que datos concretos necesitarias aportar y que salida esperarias de una IA.
+
+Preguntas:
+
+- ¿Esta tarea sale realmente en tu dia a dia?
+- ¿Que datos concretos faltan?
+- ¿La pedirias por audio, por texto o no la pedirias?
+- ¿Que formato de salida te serviria?
+- ¿Que error seria grave?
+- ¿Que otras tareas repetitivas haces que no aparecen?
+
+## Agente inmobiliaria
+
+- **intent-001**: Seleccionar inmueble para comprador con presupuesto 310000 EUR, 3 dormitorios y colegio cercano.
+  - Salida esperada: short_reply; razonamiento: compare; riesgo: medium
+  - Claves: Piso Olivo, 305000, 3 dormitorios, Colegio Albor
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=compare, freshness=recent_local, error_tolerance=medium
+- **intent-002**: Ordenar ruta de visitas desde Calle Mayor 18 incluyendo direcciones concretas y hora sugerida.
+  - Salida esperada: plan; razonamiento: decide; riesgo: medium
+  - Claves: Calle Mayor 18, Calle Olivo 14, Ronda Norte 22, ruta
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=plan, reasoning_shape=decide, freshness=recent_local, error_tolerance=medium
+- **intent-003**: Preparar respuesta prudente para oferta baja sobre Atico Ronda Norte sin prometer aceptacion.
+  - Salida esperada: short_reply; razonamiento: draft; riesgo: medium
+  - Claves: Atico Ronda Norte, 2%, 377000, prudente
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-004**: Redactar email a propietario de Local Sur explicando por que no conviene subir precio.
+  - Salida esperada: email; razonamiento: draft; riesgo: medium
+  - Claves: Local Sur, 210000, tres semanas, visitas
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=email, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-005**: Comparar Casa Vallecas y Piso Olivo para inversor tolerante a reforma.
+  - Salida esperada: table; razonamiento: compare; riesgo: high
+  - Claves: Casa Vallecas, Piso Olivo, 18000, reforma
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=compare, freshness=recent_local, error_tolerance=low
+- **intent-006**: Crear lista de objeciones de compradores y respuestas comerciales no agresivas.
+  - Salida esperada: table; razonamiento: synthesize; riesgo: medium
+  - Claves: objeciones, compradores, respuestas, tono
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-007**: Preparar resumen semanal de oportunidades calientes y propietarios a llamar.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: oportunidades, propietarios, llamar, semana
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-008**: Generar mensaje de WhatsApp para confirmar visita con datos de inmueble y condiciones.
+  - Salida esperada: short_reply; razonamiento: draft; riesgo: medium
+  - Claves: WhatsApp, visita, inmueble, confirmar
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-009**: Crear tabla de inmuebles con precio, direccion, perfil de cliente y siguiente accion.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: precio, direccion, cliente, siguiente accion
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-010**: Detectar que datos faltan antes de contestar a comprador extranjero.
+  - Salida esperada: checklist; razonamiento: extract; riesgo: medium
+  - Claves: comprador extranjero, datos faltan, email, claridad
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-011**: Preparar comparativa para negociar rebaja sin danar relacion con propietario.
+  - Salida esperada: report; razonamiento: decide; riesgo: high
+  - Claves: rebaja, propietario, comparativa, negociar
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-012**: Crear agenda diaria de llamadas a propietarios y compradores por prioridad.
+  - Salida esperada: plan; razonamiento: decide; riesgo: medium
+  - Claves: agenda, llamadas, prioridad, propietarios
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=plan, reasoning_shape=decide, freshness=recent_local, error_tolerance=medium
+- **intent-013**: Convertir notas de visita en CRM: interes, objeciones, presupuesto y proxima accion.
+  - Salida esperada: data_file; razonamiento: extract; riesgo: medium
+  - Claves: CRM, interes, objeciones, proxima accion
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=create_file, risk=medium, output_form=data_file, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-014**: Redactar email a comprador que descarta inmueble por colegio, proponiendo alternativa.
+  - Salida esperada: email; razonamiento: draft; riesgo: medium
+  - Claves: colegio, alternativa, comprador, email
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=email, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-015**: Preparar informe de precios de zona usando datos locales y fuente web actual.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: precios, zona, fuente, web
+  - Dimensiones: context_scope=large, data_mode=web_fresh, tool_need=web_search, risk=high, output_form=report, reasoning_shape=compare, freshness=current_web, error_tolerance=low
+- **intent-016**: Priorizar captaciones de inmuebles segun demanda, precio y urgencia del propietario.
+  - Salida esperada: table; razonamiento: decide; riesgo: high
+  - Claves: captaciones, demanda, precio, urgencia
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-017**: Crear guion de llamada para propietario susceptible que quiere subir precio.
+  - Salida esperada: checklist; razonamiento: draft; riesgo: medium
+  - Claves: guion, propietario, subir precio, susceptible
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-018**: Calcular impacto de rebaja del 2% en Atico Ronda Norte.
+  - Salida esperada: table; razonamiento: calculate; riesgo: medium
+  - Claves: 2%, Atico Ronda Norte, 385000, impacto
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=calculate, freshness=recent_local, error_tolerance=medium
+- **intent-019**: Preparar briefing de 1 pagina para reunion comercial semanal.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: briefing, comercial, semana, acciones
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-020**: Crear archivo CSV de seguimiento de visitas con inmueble, cliente, estado y siguiente accion.
+  - Salida esperada: data_file; razonamiento: extract; riesgo: medium
+  - Claves: CSV, visitas, estado, siguiente accion
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=create_file, risk=medium, output_form=data_file, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+
+## Responsable informatico / DevOps
+
+- **intent-021**: Diagnosticar si fallo de login viene de AuthNova o portal-clientes usando logs.
+  - Salida esperada: short_reply; razonamiento: diagnose; riesgo: high
+  - Claves: login, AuthNova, portal-clientes, logs
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=short_reply, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-022**: Redactar aviso a comercial sobre incidencia sin generar alarma.
+  - Salida esperada: short_reply; razonamiento: draft; riesgo: medium
+  - Claves: comercial, incidencia, sin perdida de datos, aviso
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-023**: Crear runbook para rotar clave API SSO con staging, rollback y validacion.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: high
+  - Claves: runbook, staging, rollback, validacion
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-024**: Convertir tickets TCK-104, TCK-107 y TCK-111 en tabla por prioridad y responsable.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: TCK-104, TCK-107, TCK-111, responsable
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-025**: Generar script para contar errores 5xx por minuto en access.log.
+  - Salida esperada: script; razonamiento: calculate; riesgo: medium
+  - Claves: script, 5xx, access.log, minuto
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=code_execution, risk=medium, output_form=script, reasoning_shape=calculate, freshness=recent_local, error_tolerance=medium
+- **intent-026**: Preparar postmortem con causa probable, impacto, mitigacion y prevencion.
+  - Salida esperada: report; razonamiento: diagnose; riesgo: high
+  - Claves: postmortem, causa, impacto, mitigacion
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-027**: Crear checklist previo a despliegue con pruebas de login, rollback y monitorizacion.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: high
+  - Claves: despliegue, login, rollback, monitorizacion
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-028**: Resumir logs para direccion en lenguaje no tecnico.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: logs, direccion, no tecnico, resumen
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-029**: Extraer de una nota larga todas las acciones tecnicas y dependencias.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: acciones, dependencias, tecnicas, nota
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-030**: Preparar respuesta al proveedor SSO pidiendo RCA y tiempos de resolucion.
+  - Salida esperada: email; razonamiento: draft; riesgo: medium
+  - Claves: proveedor SSO, RCA, tiempos, resolucion
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=email, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-031**: Clasificar incidencia como aplicacion, proveedor, red o usuario con evidencia.
+  - Salida esperada: table; razonamiento: diagnose; riesgo: high
+  - Claves: aplicacion, proveedor, red, evidencia
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-032**: Crear plan de guardia para incidencias fuera de horario.
+  - Salida esperada: plan; razonamiento: decide; riesgo: medium
+  - Claves: guardia, incidencias, horario, plan
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=plan, reasoning_shape=decide, freshness=recent_local, error_tolerance=medium
+- **intent-033**: Detectar tareas automatizables en soporte interno.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: automatizables, soporte, interno, tareas
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-034**: Preparar documentacion breve para renovar certificado staging.
+  - Salida esperada: checklist; razonamiento: extract; riesgo: medium
+  - Claves: certificado, staging, renovar, documentacion
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-035**: Buscar alternativas de monitorizacion y comparar coste, cobertura y riesgo.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: monitorizacion, coste, cobertura, riesgo
+  - Dimensiones: context_scope=large, data_mode=web_fresh, tool_need=web_search, risk=high, output_form=report, reasoning_shape=compare, freshness=current_web, error_tolerance=low
+- **intent-036**: Generar CSV de tickets con prioridad, responsable, fecha objetivo y bloqueo.
+  - Salida esperada: data_file; razonamiento: extract; riesgo: medium
+  - Claves: CSV, tickets, prioridad, bloqueo
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=create_file, risk=medium, output_form=data_file, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-037**: Redactar mensaje de seguimiento tras recuperar servicio.
+  - Salida esperada: short_reply; razonamiento: draft; riesgo: medium
+  - Claves: seguimiento, servicio, recuperar, mensaje
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-038**: Calcular duracion estimada de degradacion entre primer y ultimo error.
+  - Salida esperada: table; razonamiento: calculate; riesgo: high
+  - Claves: duracion, degradacion, primer error, ultimo error
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=calculate, freshness=recent_local, error_tolerance=low
+- **intent-039**: Crear matriz de riesgos de seguridad para cambios SSO.
+  - Salida esperada: table; razonamiento: decide; riesgo: high
+  - Claves: riesgos, seguridad, SSO, matriz
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-040**: Preparar informe semanal de incidencias y deuda tecnica.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: informe semanal, incidencias, deuda tecnica, acciones
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+
+## Cientifica biomedica
+
+- **intent-041**: Extraer de una nota larga los hechos importantes sobre B17.
+  - Salida esperada: table; razonamiento: extract; riesgo: high
+  - Claves: B17, hechos, muestra, causalidad
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=low
+- **intent-042**: Redactar respuesta profesional relacionada con comite sin prometer mas de lo que se sabe.
+  - Salida esperada: email; razonamiento: draft; riesgo: high
+  - Claves: comite, respuesta, prudente, causalidad
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=email, reasoning_shape=draft, freshness=recent_local, error_tolerance=low
+- **intent-043**: Preparar plan de accion con prioridades, responsables y dudas abiertas sobre B17.
+  - Salida esperada: plan; razonamiento: decide; riesgo: high
+  - Claves: B17, prioridades, responsables, dudas
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=plan, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-044**: Crear informe para direccion con contexto, riesgos y decision recomendada.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: high
+  - Claves: direccion, riesgos, decision, B17
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=low
+- **intent-045**: Convertir informacion dispersa en tabla estructurada de seguimiento.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: tabla, seguimiento, muestra, causalidad
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-046**: Detectar inconsistencias o datos faltantes antes de contestar.
+  - Salida esperada: checklist; razonamiento: diagnose; riesgo: high
+  - Claves: inconsistencias, datos faltantes, contestar, B17
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-047**: Calcular impacto numerico a partir de datos de la nota y documentos.
+  - Salida esperada: table; razonamiento: calculate; riesgo: high
+  - Claves: calcular, impacto, datos, B17
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=calculate, freshness=recent_local, error_tolerance=low
+- **intent-048**: Preparar checklist operativo para no olvidar pasos criticos.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: high
+  - Claves: checklist, pasos criticos, muestra, causalidad
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-049**: Resumir para un destinatario no tecnico manteniendo cautelas.
+  - Salida esperada: short_reply; razonamiento: synthesize; riesgo: medium
+  - Claves: resumir, no tecnico, cautelas, B17
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-050**: Generar archivo CSV con campos clave extraidos de la informacion.
+  - Salida esperada: data_file; razonamiento: extract; riesgo: medium
+  - Claves: CSV, campos clave, extraidos, B17
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=create_file, risk=medium, output_form=data_file, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-051**: Preparar preguntas de aclaracion para desbloquear la tarea.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: medium
+  - Claves: preguntas, aclaracion, desbloquear, B17
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=medium
+- **intent-052**: Comparar dos opciones y recomendar una con cautelas.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: comparar, recomendar, cautelas, causalidad
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=compare, freshness=recent_local, error_tolerance=low
+- **intent-053**: Crear mensaje corto de seguimiento para confirmar datos pendientes.
+  - Salida esperada: short_reply; razonamiento: draft; riesgo: medium
+  - Claves: mensaje, seguimiento, datos pendientes, comite
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-054**: Ordenar cronologicamente eventos mencionados en una nota larga.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: cronologia, eventos, nota, B17
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-055**: Buscar informacion actual externa y cruzarla con datos locales.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: informacion actual, fuente, datos locales, B17
+  - Dimensiones: context_scope=large, data_mode=web_fresh, tool_need=web_search, risk=high, output_form=report, reasoning_shape=compare, freshness=current_web, error_tolerance=low
+- **intent-056**: Preparar resumen semanal de bloqueos y siguientes acciones.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: resumen semanal, bloqueos, acciones, B17
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-057**: Separar hechos, opiniones, hipotesis y decisiones pendientes.
+  - Salida esperada: table; razonamiento: extract; riesgo: high
+  - Claves: hechos, opiniones, hipotesis, decisiones
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=low
+- **intent-058**: Crear guion de llamada para obtener informacion que falta.
+  - Salida esperada: checklist; razonamiento: draft; riesgo: medium
+  - Claves: guion, llamada, informacion que falta, comite
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-059**: Evaluar riesgo de actuar con informacion incompleta.
+  - Salida esperada: report; razonamiento: diagnose; riesgo: high
+  - Claves: riesgo, informacion incompleta, actuar, causalidad
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-060**: Transformar una nota larga en entregable listo para copiar y pegar.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: entregable, copiar, pegar, B17
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+
+## Ingeniero industrial
+
+- **intent-061**: Extraer de una nota larga los hechos importantes sobre Planta Norte.
+  - Salida esperada: table; razonamiento: extract; riesgo: high
+  - Claves: Planta Norte, hechos, seguridad, hitos
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=low
+- **intent-062**: Redactar respuesta profesional relacionada con Norteval sin prometer mas de lo que se sabe.
+  - Salida esperada: email; razonamiento: draft; riesgo: high
+  - Claves: Norteval, respuesta, prudente, hitos
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=email, reasoning_shape=draft, freshness=recent_local, error_tolerance=low
+- **intent-063**: Preparar plan de accion con prioridades, responsables y dudas abiertas sobre Planta Norte.
+  - Salida esperada: plan; razonamiento: decide; riesgo: high
+  - Claves: Planta Norte, prioridades, responsables, dudas
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=plan, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-064**: Crear informe para direccion con contexto, riesgos y decision recomendada.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: high
+  - Claves: direccion, riesgos, decision, Planta Norte
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=low
+- **intent-065**: Convertir informacion dispersa en tabla estructurada de seguimiento.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: tabla, seguimiento, seguridad, hitos
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-066**: Detectar inconsistencias o datos faltantes antes de contestar.
+  - Salida esperada: checklist; razonamiento: diagnose; riesgo: high
+  - Claves: inconsistencias, datos faltantes, contestar, Planta Norte
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-067**: Calcular impacto numerico a partir de datos de la nota y documentos.
+  - Salida esperada: table; razonamiento: calculate; riesgo: high
+  - Claves: calcular, impacto, datos, Planta Norte
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=calculate, freshness=recent_local, error_tolerance=low
+- **intent-068**: Preparar checklist operativo para no olvidar pasos criticos.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: high
+  - Claves: checklist, pasos criticos, seguridad, hitos
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-069**: Resumir para un destinatario no tecnico manteniendo cautelas.
+  - Salida esperada: short_reply; razonamiento: synthesize; riesgo: medium
+  - Claves: resumir, no tecnico, cautelas, Planta Norte
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-070**: Generar archivo CSV con campos clave extraidos de la informacion.
+  - Salida esperada: data_file; razonamiento: extract; riesgo: medium
+  - Claves: CSV, campos clave, extraidos, Planta Norte
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=create_file, risk=medium, output_form=data_file, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-071**: Preparar preguntas de aclaracion para desbloquear la tarea.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: medium
+  - Claves: preguntas, aclaracion, desbloquear, Planta Norte
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=medium
+- **intent-072**: Comparar dos opciones y recomendar una con cautelas.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: comparar, recomendar, cautelas, hitos
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=compare, freshness=recent_local, error_tolerance=low
+- **intent-073**: Crear mensaje corto de seguimiento para confirmar datos pendientes.
+  - Salida esperada: short_reply; razonamiento: draft; riesgo: medium
+  - Claves: mensaje, seguimiento, datos pendientes, Norteval
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-074**: Ordenar cronologicamente eventos mencionados en una nota larga.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: cronologia, eventos, nota, Planta Norte
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-075**: Buscar informacion actual externa y cruzarla con datos locales.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: informacion actual, fuente, datos locales, Planta Norte
+  - Dimensiones: context_scope=large, data_mode=web_fresh, tool_need=web_search, risk=high, output_form=report, reasoning_shape=compare, freshness=current_web, error_tolerance=low
+- **intent-076**: Preparar resumen semanal de bloqueos y siguientes acciones.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: resumen semanal, bloqueos, acciones, Planta Norte
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-077**: Separar hechos, opiniones, hipotesis y decisiones pendientes.
+  - Salida esperada: table; razonamiento: extract; riesgo: high
+  - Claves: hechos, opiniones, hipotesis, decisiones
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=low
+- **intent-078**: Crear guion de llamada para obtener informacion que falta.
+  - Salida esperada: checklist; razonamiento: draft; riesgo: medium
+  - Claves: guion, llamada, informacion que falta, Norteval
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-079**: Evaluar riesgo de actuar con informacion incompleta.
+  - Salida esperada: report; razonamiento: diagnose; riesgo: high
+  - Claves: riesgo, informacion incompleta, actuar, hitos
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-080**: Transformar una nota larga en entregable listo para copiar y pegar.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: entregable, copiar, pegar, Planta Norte
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+
+## Abogada laboralista
+
+- **intent-081**: Extraer de una nota larga los hechos importantes sobre DES-24.
+  - Salida esperada: table; razonamiento: extract; riesgo: high
+  - Claves: DES-24, hechos, plazos, riesgo
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=low
+- **intent-082**: Redactar respuesta profesional relacionada con cliente sin prometer mas de lo que se sabe.
+  - Salida esperada: email; razonamiento: draft; riesgo: high
+  - Claves: cliente, respuesta, prudente, riesgo
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=email, reasoning_shape=draft, freshness=recent_local, error_tolerance=low
+- **intent-083**: Preparar plan de accion con prioridades, responsables y dudas abiertas sobre DES-24.
+  - Salida esperada: plan; razonamiento: decide; riesgo: high
+  - Claves: DES-24, prioridades, responsables, dudas
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=plan, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-084**: Crear informe para direccion con contexto, riesgos y decision recomendada.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: high
+  - Claves: direccion, riesgos, decision, DES-24
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=low
+- **intent-085**: Convertir informacion dispersa en tabla estructurada de seguimiento.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: tabla, seguimiento, plazos, riesgo
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-086**: Detectar inconsistencias o datos faltantes antes de contestar.
+  - Salida esperada: checklist; razonamiento: diagnose; riesgo: high
+  - Claves: inconsistencias, datos faltantes, contestar, DES-24
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-087**: Calcular impacto numerico a partir de datos de la nota y documentos.
+  - Salida esperada: table; razonamiento: calculate; riesgo: high
+  - Claves: calcular, impacto, datos, DES-24
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=calculate, freshness=recent_local, error_tolerance=low
+- **intent-088**: Preparar checklist operativo para no olvidar pasos criticos.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: high
+  - Claves: checklist, pasos criticos, plazos, riesgo
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-089**: Resumir para un destinatario no tecnico manteniendo cautelas.
+  - Salida esperada: short_reply; razonamiento: synthesize; riesgo: medium
+  - Claves: resumir, no tecnico, cautelas, DES-24
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-090**: Generar archivo CSV con campos clave extraidos de la informacion.
+  - Salida esperada: data_file; razonamiento: extract; riesgo: medium
+  - Claves: CSV, campos clave, extraidos, DES-24
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=create_file, risk=medium, output_form=data_file, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-091**: Preparar preguntas de aclaracion para desbloquear la tarea.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: medium
+  - Claves: preguntas, aclaracion, desbloquear, DES-24
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=medium
+- **intent-092**: Comparar dos opciones y recomendar una con cautelas.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: comparar, recomendar, cautelas, riesgo
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=compare, freshness=recent_local, error_tolerance=low
+- **intent-093**: Crear mensaje corto de seguimiento para confirmar datos pendientes.
+  - Salida esperada: short_reply; razonamiento: draft; riesgo: medium
+  - Claves: mensaje, seguimiento, datos pendientes, cliente
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-094**: Ordenar cronologicamente eventos mencionados en una nota larga.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: cronologia, eventos, nota, DES-24
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-095**: Buscar informacion actual externa y cruzarla con datos locales.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: informacion actual, fuente, datos locales, DES-24
+  - Dimensiones: context_scope=large, data_mode=web_fresh, tool_need=web_search, risk=high, output_form=report, reasoning_shape=compare, freshness=current_web, error_tolerance=low
+- **intent-096**: Preparar resumen semanal de bloqueos y siguientes acciones.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: resumen semanal, bloqueos, acciones, DES-24
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-097**: Separar hechos, opiniones, hipotesis y decisiones pendientes.
+  - Salida esperada: table; razonamiento: extract; riesgo: high
+  - Claves: hechos, opiniones, hipotesis, decisiones
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=low
+- **intent-098**: Crear guion de llamada para obtener informacion que falta.
+  - Salida esperada: checklist; razonamiento: draft; riesgo: medium
+  - Claves: guion, llamada, informacion que falta, cliente
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-099**: Evaluar riesgo de actuar con informacion incompleta.
+  - Salida esperada: report; razonamiento: diagnose; riesgo: high
+  - Claves: riesgo, informacion incompleta, actuar, riesgo
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-100**: Transformar una nota larga en entregable listo para copiar y pegar.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: entregable, copiar, pegar, DES-24
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+
+## Consultor financiero para pymes
+
+- **intent-101**: Extraer de una nota larga los hechos importantes sobre Norte SA.
+  - Salida esperada: table; razonamiento: extract; riesgo: high
+  - Claves: Norte SA, hechos, facturas, riesgo financiero
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=low
+- **intent-102**: Redactar respuesta profesional relacionada con caja sin prometer mas de lo que se sabe.
+  - Salida esperada: email; razonamiento: draft; riesgo: high
+  - Claves: caja, respuesta, prudente, riesgo financiero
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=email, reasoning_shape=draft, freshness=recent_local, error_tolerance=low
+- **intent-103**: Preparar plan de accion con prioridades, responsables y dudas abiertas sobre Norte SA.
+  - Salida esperada: plan; razonamiento: decide; riesgo: high
+  - Claves: Norte SA, prioridades, responsables, dudas
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=plan, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-104**: Crear informe para direccion con contexto, riesgos y decision recomendada.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: high
+  - Claves: direccion, riesgos, decision, Norte SA
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=low
+- **intent-105**: Convertir informacion dispersa en tabla estructurada de seguimiento.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: tabla, seguimiento, facturas, riesgo financiero
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-106**: Detectar inconsistencias o datos faltantes antes de contestar.
+  - Salida esperada: checklist; razonamiento: diagnose; riesgo: high
+  - Claves: inconsistencias, datos faltantes, contestar, Norte SA
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-107**: Calcular impacto numerico a partir de datos de la nota y documentos.
+  - Salida esperada: table; razonamiento: calculate; riesgo: high
+  - Claves: calcular, impacto, datos, Norte SA
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=calculate, freshness=recent_local, error_tolerance=low
+- **intent-108**: Preparar checklist operativo para no olvidar pasos criticos.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: high
+  - Claves: checklist, pasos criticos, facturas, riesgo financiero
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=low
+- **intent-109**: Resumir para un destinatario no tecnico manteniendo cautelas.
+  - Salida esperada: short_reply; razonamiento: synthesize; riesgo: medium
+  - Claves: resumir, no tecnico, cautelas, Norte SA
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-110**: Generar archivo CSV con campos clave extraidos de la informacion.
+  - Salida esperada: data_file; razonamiento: extract; riesgo: medium
+  - Claves: CSV, campos clave, extraidos, Norte SA
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=create_file, risk=medium, output_form=data_file, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-111**: Preparar preguntas de aclaracion para desbloquear la tarea.
+  - Salida esperada: checklist; razonamiento: decide; riesgo: medium
+  - Claves: preguntas, aclaracion, desbloquear, Norte SA
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=decide, freshness=recent_local, error_tolerance=medium
+- **intent-112**: Comparar dos opciones y recomendar una con cautelas.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: comparar, recomendar, cautelas, riesgo financiero
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=compare, freshness=recent_local, error_tolerance=low
+- **intent-113**: Crear mensaje corto de seguimiento para confirmar datos pendientes.
+  - Salida esperada: short_reply; razonamiento: draft; riesgo: medium
+  - Claves: mensaje, seguimiento, datos pendientes, caja
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=short_reply, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-114**: Ordenar cronologicamente eventos mencionados en una nota larga.
+  - Salida esperada: table; razonamiento: extract; riesgo: medium
+  - Claves: cronologia, eventos, nota, Norte SA
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=medium
+- **intent-115**: Buscar informacion actual externa y cruzarla con datos locales.
+  - Salida esperada: report; razonamiento: compare; riesgo: high
+  - Claves: informacion actual, fuente, datos locales, Norte SA
+  - Dimensiones: context_scope=large, data_mode=web_fresh, tool_need=web_search, risk=high, output_form=report, reasoning_shape=compare, freshness=current_web, error_tolerance=low
+- **intent-116**: Preparar resumen semanal de bloqueos y siguientes acciones.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: resumen semanal, bloqueos, acciones, Norte SA
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium
+- **intent-117**: Separar hechos, opiniones, hipotesis y decisiones pendientes.
+  - Salida esperada: table; razonamiento: extract; riesgo: high
+  - Claves: hechos, opiniones, hipotesis, decisiones
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=table, reasoning_shape=extract, freshness=recent_local, error_tolerance=low
+- **intent-118**: Crear guion de llamada para obtener informacion que falta.
+  - Salida esperada: checklist; razonamiento: draft; riesgo: medium
+  - Claves: guion, llamada, informacion que falta, caja
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=checklist, reasoning_shape=draft, freshness=recent_local, error_tolerance=medium
+- **intent-119**: Evaluar riesgo de actuar con informacion incompleta.
+  - Salida esperada: report; razonamiento: diagnose; riesgo: high
+  - Claves: riesgo, informacion incompleta, actuar, riesgo financiero
+  - Dimensiones: context_scope=large, data_mode=mixed, tool_need=read_files, risk=high, output_form=report, reasoning_shape=diagnose, freshness=recent_local, error_tolerance=low
+- **intent-120**: Transformar una nota larga en entregable listo para copiar y pegar.
+  - Salida esperada: report; razonamiento: synthesize; riesgo: medium
+  - Claves: entregable, copiar, pegar, Norte SA
+  - Dimensiones: context_scope=medium, data_mode=mixed, tool_need=read_files, risk=medium, output_form=report, reasoning_shape=synthesize, freshness=recent_local, error_tolerance=medium

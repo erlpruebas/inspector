@@ -1,0 +1,6 @@
+Nombre,Email,Telefono,Ciudad
+Ana Lopez [PERSON_0006],ANA.LOPEZ@EMPRESA.COM [EMAIL_0004],600111222 [PHONE_0003],Madrid
+Luis Martin [PERSON_0005],luis.martin@empresa.com [EMAIL_0005],600333444 [PHONE_0004],Valencia
+Ana Lopez [PERSON_0004],ana.lopez@empresa.com [EMAIL_0004],600111222 [PHONE_0003],Madrid
+Marta Ruiz [PERSON_0003], MARTA.RUIZ@EMPRESA.COM [EMAIL_0003] ,600555666 [PHONE_0002],Sevilla
+Jorge Soler [PERSON_0002],jorge.soler@empresa.com [EMAIL_0002],,Bilbao

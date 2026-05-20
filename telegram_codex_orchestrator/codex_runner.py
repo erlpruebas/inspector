@@ -107,6 +107,10 @@ class CodexRunner:
         with self._lock:
             return self._process is not None and self._process.poll() is None
 
+    def preview_command(self, instruction: str, thread_id: str = "") -> str:
+        command = self._build_command(self.settings.codex_workdir, instruction, thread_id=thread_id)
+        return subprocess.list2cmdline(command)
+
     def _build_command(self, workdir: Path, instruction: str, thread_id: str = "") -> list[str]:
         command = [*self.settings.codex_command]
         if self.settings.codex_approval:

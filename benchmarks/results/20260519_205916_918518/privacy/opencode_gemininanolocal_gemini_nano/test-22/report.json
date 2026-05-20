@@ -1,0 +1,18 @@
+{
+  "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_gemininanolocal_gemini_nano\\test-22",
+  "mode": "redacted",
+  "files_processed": 1,
+  "files_skipped": 0,
+  "entities_found": 32,
+  "verification_passed": false,
+  "residual_findings": [
+    {
+      "start": 80,
+      "end": 89,
+      "text": "Noelia de",
+      "entity_type": "PERSON",
+      "source": "heuristic"
+    }
+  ],
+  "reviewer_used": false
+}

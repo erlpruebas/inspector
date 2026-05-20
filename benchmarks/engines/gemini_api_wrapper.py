@@ -114,7 +114,7 @@ def workspace_file_context() -> str:
     skip_names = {"resultado.md", "usage.json"}
     cwd = Path.cwd()
     for path in sorted(cwd.rglob("*")):
-        if not path.is_file() or path.name in skip_names:
+        if not path.is_file() or path.name in skip_names or "privacy" in path.parts:
             continue
         if path.stat().st_size > 80_000:
             parts.append(f"### {path.relative_to(cwd)}\n[archivo omitido por tamano: {path.stat().st_size} bytes]")

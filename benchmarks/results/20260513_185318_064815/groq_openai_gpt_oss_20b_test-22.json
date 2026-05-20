@@ -1,0 +1,19 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-22",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 119, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 189, in urlopen\n    return opener.open(url, data, timeout)\n           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 495, in open\n    response = meth(req, response)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 604, in http_response\n    response = self.parent.error(\n        'http', request, response, code, msg, hdrs)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 533, in error\n    return self._call_chain(*args)\n           ~~~~~~~~~~~~~~~~^^^^^^^\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 466, in _call_chain\n    result = func(*args)\n  File \"C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\urllib\\request.py\", line 613, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 238, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 81, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 123, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kkkqs7apf21aaqjgzy953669` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 197611, Requested 5008. Please try again in 18m51.408s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}\n\n",
+  "output_files": [],
+  "elapsed_seconds": 0.31065050000324845,
+  "timed_out": false,
+  "usage": {},
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [],
+  "task_prompt": "# Comparar Apple y Microsoft seis meses\n\nUsa busqueda web para comparar el rendimiento de Apple y Microsoft en los ultimos seis meses. Cruza el resultado con la nota de voz que lo solicita.",
+  "execution_prompt": "# Comparar Apple y Microsoft seis meses\n\nUsa busqueda web para comparar el rendimiento de Apple y Microsoft en los ultimos seis meses. Cruza el resultado con la nota de voz que lo solicita.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_185318_064815\\work\\groq_openai_gpt_oss_20b\\test-22"
+}

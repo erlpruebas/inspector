@@ -1,0 +1,5 @@
+- **Persona:** PERSON_0024
+- **Empresa:** Barna Health
+- **Fecha:** 18 de mayo
+- **Hora:** 10:00
+- **Objetivo:** Reunión técnica para revisar integración con SSO.

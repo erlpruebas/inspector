@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Codex//Compromisos//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Compromisos extraidos
+X-WR-TIMEZONE:Europe/Madrid
+
+BEGIN:VEVENT
+UID:20260514-noelia-clinica-centro@codex.local
+DTSTAMP:20260513T171222Z
+DTSTART;TZID=Europe/Madrid:20260514T113000
+DTEND;TZID=Europe/Madrid:20260514T123000
+SUMMARY:Demo modulo de pagos con Noelia
+DESCRIPTION:Correo de Noelia Castro del 2026-05-06. La demo es el jueves 14 de mayo a las 11:30. La nota de voz pide llamar antes del jueves para confirmar la cita. Duracion asumida de 1 hora porque no aparece en la fuente.
+END:VEVENT
+
+BEGIN:VEVENT
+UID:20260513-delta-equipos-csv@codex.local
+DTSTAMP:20260513T171222Z
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+SUMMARY:Enviar CSV actualizado a Luis
+DESCRIPTION:Nota de voz VN-002 y correo de Delta Equipos. Hay que enviar el CSV actualizado de monitores antes del 13 de mayo. Falta fijar hora exacta.
+END:VEVENT
+
+BEGIN:VEVENT
+UID:20260512-iberlegal-contrato@codex.local
+DTSTAMP:20260513T171222Z
+DTSTART;VALUE=DATE:20260512
+DTEND;VALUE=DATE:20260513
+SUMMARY:Revisar contrato de IberLegal
+DESCRIPTION:Nota de voz VN-006 y correo de David Navarro. Se pidieron comentarios antes del 12 de mayo. Falta fijar hora exacta.
+END:VEVENT
+
+BEGIN:VEVENT
+UID:20260518-barna-health-barcelona@codex.local
+DTSTAMP:20260513T171222Z
+DTSTART;TZID=Europe/Madrid:20260518T100000
+DTEND;TZID=Europe/Madrid:20260518T110000
+SUMMARY:Reunion presencial con Barna Health en Barcelona
+DESCRIPTION:Correo de Xavier Puig. Reunion presencial el 18 de mayo a las 10:00. La nota de voz VN-003 menciona comprar billete para Barcelona si se confirma la reunion. Duracion asumida de 1 hora porque no aparece en la fuente.
+END:VEVENT
+
+END:VCALENDAR

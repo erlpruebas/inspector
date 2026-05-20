@@ -1,0 +1,10 @@
+{
+  "root": "D:\\inspector\\benchmarks\\results\\20260519_175628_109011\\users\\user_04\\work\\vikingnano_gemini_nano_local\\privacy-04",
+  "mode": "redacted",
+  "files_processed": 2,
+  "files_skipped": 0,
+  "entities_found": 14,
+  "verification_passed": true,
+  "residual_findings": [],
+  "reviewer_used": false
+}

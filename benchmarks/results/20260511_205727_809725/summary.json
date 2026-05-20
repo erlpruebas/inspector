@@ -1,0 +1,384 @@
+[
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "Voy a leer los dos archivos locales para extraer solo los datos confirmados de la cita de Clinica Centro y dejar una nota breve sin inferencias.\n\nNota breve:\n\n- Persona: Noelia Castro\n- Empresa: Clinica Centro\n- Fecha: jueves 14 de mayo de 2026\n- Hora: 11:30\n- Objetivo: demo del módulo de pagos, centrada en conciliación y estado de pagos\n\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\codex_gpt_5_4_mini\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 9.89839500002563,
+    "timed_out": false,
+    "usage": {},
+    "model": "gpt-5.4-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "codex:gpt-5.4-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\codex_gpt_5_4_mini_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\codex_gpt_5_4_mini\\test-01"
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "Voy a leer los dos archivos locales y cruzar solo los datos que aparezcan allí. Luego dejaré una nota breve con los campos pedidos, sin completar huecos por inferencia.\n\nNota breve:\n\nPersona: Noelia Castro  \nEmpresa: Clinica Centro  \nFecha: jueves 14 de mayo de 2026  \nHora: 11:30  \nObjetivo: demo del modulo de pagos, centrada en conciliacion y estado de pagos. Debe asistir alguien de administracion.",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\codex_gpt_5_5\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 14.18242080003256,
+    "timed_out": false,
+    "usage": {},
+    "model": "gpt-5.5",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "codex:gpt-5.5",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\codex_gpt_5_5_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\codex_gpt_5_5\\test-01"
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash_lite",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "The task is complete. I have extracted the Clinica Centro appointment details and saved them to `resultado.md`. I am ready for your next instruction.\n",
+    "stderr": "YOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\n",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\gemini_gemini_2_5_flash_lite\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 39.33890859998064,
+    "timed_out": false,
+    "usage": {},
+    "model": "gemini-2.5-flash-lite",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "gemini:gemini-2.5-flash-lite",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\gemini_gemini_2_5_flash_lite_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\gemini_gemini_2_5_flash_lite\\test-01"
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "Cita Clinica Centro:\nPersona: Noelia Castro\nEmpresa: Clinica Centro\nFecha: 14 de mayo de 2026\nHora: 11:30\nObjetivo: Demo modulo de pagos (conciliacion y estado de pagos)\n",
+    "stderr": "YOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\n",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\gemini_gemini_2_5_flash\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 20.121564399974886,
+    "timed_out": false,
+    "usage": {},
+    "model": "gemini-2.5-flash",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "gemini:gemini-2.5-flash",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\gemini_gemini_2_5_flash_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\gemini_gemini_2_5_flash\\test-01"
+  },
+  {
+    "engine": "gemini_gemini_2_5_pro",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "I have created the file `resultado.md` with the appointment details for Clinica Centro as requested. I am now awaiting your next instruction.\n",
+    "stderr": "YOLO mode is enabled. All tool calls will be automatically approved.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nYOLO mode is enabled. All tool calls will be automatically approved.\nRipgrep is not available. Falling back to GrepTool.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\nBoth GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.\n",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\gemini_gemini_2_5_pro\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 35.694314799970016,
+    "timed_out": false,
+    "usage": {},
+    "model": "gemini-2.5-pro",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "gemini:gemini-2.5-pro",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\gemini_gemini_2_5_pro_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\gemini_gemini_2_5_pro\\test-01"
+  },
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.623, \"usage\": {\"queue_time\": 0.020709743, \"prompt_tokens\": 2681, \"prompt_time\": 0.316471881, \"completion_tokens\": 95, \"completion_time\": 0.13278798, \"total_tokens\": 2776, \"total_time\": 0.449259861}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\groq_llama_3_1_8b_instant\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 0.8540897000348195,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 0.623,
+      "usage": {
+        "queue_time": 0.020709743,
+        "prompt_tokens": 2681,
+        "prompt_time": 0.316471881,
+        "completion_tokens": 95,
+        "completion_time": 0.13278798,
+        "total_tokens": 2776,
+        "total_time": 0.449259861
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\groq_llama_3_1_8b_instant_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\groq_llama_3_1_8b_instant\\test-01"
+  },
+  {
+    "engine": "groq_openai_gpt_oss_20b",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 0.666, \"usage\": {\"queue_time\": 0.015885588, \"prompt_tokens\": 2595, \"prompt_time\": 0.138451484, \"completion_tokens\": 382, \"completion_time\": 0.387612749, \"total_tokens\": 2977, \"total_time\": 0.526064233, \"completion_tokens_details\": {\"reasoning_tokens\": 338}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\groq_openai_gpt_oss_20b\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 0.8911915000062436,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-20b",
+      "elapsed_seconds": 0.666,
+      "usage": {
+        "queue_time": 0.015885588,
+        "prompt_tokens": 2595,
+        "prompt_time": 0.138451484,
+        "completion_tokens": 382,
+        "completion_time": 0.387612749,
+        "total_tokens": 2977,
+        "total_time": 0.526064233,
+        "completion_tokens_details": {
+          "reasoning_tokens": 338
+        }
+      }
+    },
+    "model": "openai/gpt-oss-20b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\groq_openai_gpt_oss_20b_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\groq_openai_gpt_oss_20b\\test-01"
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-01",
+    "returncode": 1,
+    "stdout": "{\"type\":\"error\",\"timestamp\":1778526041572,\"sessionID\":\"ses_1e7964f07ffegHsExtMEifwg9l\",\"error\":{\"name\":\"ProviderAuthError\",\"data\":{\"providerID\":\"google\",\"message\":\"Google Generative AI API key is missing. Pass it using the 'apiKey' parameter or the GOOGLE_GENERATIVE_AI_API_KEY environment variable.\"}}}\n",
+    "stderr": "OpenCode finished without creating expected output.",
+    "output_files": [],
+    "elapsed_seconds": 4.207851000013761,
+    "timed_out": false,
+    "usage": {},
+    "model": "google/gemini-2.5-flash",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:google/gemini-2.5-flash",
+    "copied_outputs": [],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\opencode_google_gemini_2_5_flash\\test-01"
+  },
+  {
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "I'll search for the Clinica Centro appointment by examining the email threads and contacts data. Let me first read these files to find the relevant information\nNow let me read the contacts file to get more details about Noelia Castro and Clinica Centro:\n\n\nNow I have all the information I need. From the email thread E-001, I can see:\n\n1. **Person**: Noelia Castro (from Clinica Centro)\n2. **Company**: Clinica Centro (from the email address and contacts file)\n3. **Date**: Thursday, May 14 (2026) - \"jueves 14 de mayo\"\n4. **Time**: 11:30 - \"a las 11:30\"\n5. **Objective**: Demo of payment module - \"Demo modulo de pagos\"\n\nFrom the contacts file (line 32), I can confirm:\n- Noelia Castro, noelia.castro@clinicacentro.es, +34 600 100 031, Madrid, Clinica Centro, Administracion, cliente, alta\n\nNow I'll create the resultado.md file with the brief note\nThe resultado.md file has been created with the Clinica Centro appointment information based on the data from the email threads and contacts file.",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 38.43077469995478,
+    "timed_out": false,
+    "usage": {},
+    "model": "openrouter/deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\opencode_openrouter_deepseek_deepseek_v3_2_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-01"
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2-speciale\", \"elapsed_seconds\": 22.161, \"usage\": {\"prompt_tokens\": 2741, \"completion_tokens\": 887, \"total_tokens\": 3628, \"cost\": 0.001168964, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.001168964, \"upstream_inference_prompt_cost\": 0.000786667, \"upstream_inference_completions_cost\": 0.000382297}, \"completion_tokens_details\": {\"reasoning_tokens\": 841, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\openrouter_deepseek_deepseek_v3_2_speciale\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 22.374344900017604,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2-speciale",
+      "elapsed_seconds": 22.161,
+      "usage": {
+        "prompt_tokens": 2741,
+        "completion_tokens": 887,
+        "total_tokens": 3628,
+        "cost": 0.001168964,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001168964,
+          "upstream_inference_prompt_cost": 0.000786667,
+          "upstream_inference_completions_cost": 0.000382297
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 841,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2-speciale",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\openrouter_deepseek_deepseek_v3_2_speciale_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\openrouter_deepseek_deepseek_v3_2_speciale\\test-01"
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 3.002, \"usage\": {\"prompt_tokens\": 2741, \"completion_tokens\": 44, \"total_tokens\": 2785, \"cost\": 0.00072106, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 64, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00072106, \"upstream_inference_prompt_cost\": 0.00070434, \"upstream_inference_completions_cost\": 1.672e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\openrouter_deepseek_deepseek_v3_2\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 3.2029901000205427,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 3.002,
+      "usage": {
+        "prompt_tokens": 2741,
+        "completion_tokens": 44,
+        "total_tokens": 2785,
+        "cost": 0.00072106,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 64,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00072106,
+          "upstream_inference_prompt_cost": 0.00070434,
+          "upstream_inference_completions_cost": 1.672e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\openrouter_deepseek_deepseek_v3_2_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\openrouter_deepseek_deepseek_v3_2\\test-01"
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v4-flash\", \"elapsed_seconds\": 4.287, \"usage\": {\"prompt_tokens\": 2741, \"completion_tokens\": 266, \"total_tokens\": 3007, \"cost\": 0.00045822, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00045822, \"upstream_inference_prompt_cost\": 0.00038374, \"upstream_inference_completions_cost\": 7.448e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 192, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\openrouter_deepseek_deepseek_v4_flash\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 4.660446599998977,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v4-flash",
+      "elapsed_seconds": 4.287,
+      "usage": {
+        "prompt_tokens": 2741,
+        "completion_tokens": 266,
+        "total_tokens": 3007,
+        "cost": 0.00045822,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00045822,
+          "upstream_inference_prompt_cost": 0.00038374,
+          "upstream_inference_completions_cost": 7.448e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 192,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v4-flash",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\openrouter_deepseek_deepseek_v4_flash_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260511_205727_809725\\work\\openrouter_deepseek_deepseek_v4_flash\\test-01"
+  }
+]

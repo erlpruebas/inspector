@@ -9,10 +9,22 @@ from pathlib import Path
 from env_utils import load_env_files
 from benchmark_context import prompt_for_execution
 from engines.engine_factory import create_engine
+from privacy_guard import DEFAULT_STORE_PATH, MiniNanoPrivacyReviewer, apply_privacy_to_workdir
 from task_loader import RESULTS_DIR, TASKS_FILE, BenchmarkTask, load_tasks, prefixed_result_name, prepare_workdir
+from memory_guard import wait_for_memory_budget
 
 
-def run_benchmark(engine_names: list[str], task_ids: list[str] | None = None, tasks_file: Path = TASKS_FILE) -> Path:
+def run_benchmark(
+    engine_names: list[str],
+    task_ids: list[str] | None = None,
+    tasks_file: Path = TASKS_FILE,
+    *,
+    min_free_memory_mb: int = 512,
+    memory_poll_seconds: int = 30,
+    privacy_mode: str = "clear",
+    privacy_review: str = "none",
+    privacy_map: Path | None = None,
+) -> Path:
     load_env_files()
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     run_dir = RESULTS_DIR / run_id
@@ -21,10 +33,20 @@ def run_benchmark(engine_names: list[str], task_ids: list[str] | None = None, ta
     selected = select_tasks(load_tasks(tasks_file), task_ids)
     engines = [create_engine(name) for name in engine_names]
     summary: list[dict[str, object]] = []
+    reviewer = MiniNanoPrivacyReviewer.from_env() if privacy_review == "mini-nano" else None
 
     for task in selected:
         for engine in engines:
+            wait_for_memory_budget(min_free_memory_mb, memory_poll_seconds)
             workdir = prepare_workdir(task, engine.name, run_id)
+            privacy_result = None
+            if privacy_mode != "clear":
+                privacy_result = apply_privacy_to_workdir(
+                    workdir,
+                    mode=privacy_mode,
+                    store_path=privacy_map or DEFAULT_STORE_PATH,
+                    reviewer=reviewer,
+                )
             execution_prompt = prompt_for_execution(task, workdir)
             result = engine.run(task.id, execution_prompt, workdir, task.expected_outputs)
             copied_outputs = copy_prefixed_outputs(result.output_files, run_dir, engine.name, task.id)
@@ -33,6 +55,7 @@ def run_benchmark(engine_names: list[str], task_ids: list[str] | None = None, ta
             result_payload["task_prompt"] = task.prompt
             result_payload["execution_prompt"] = execution_prompt
             result_payload["workdir"] = str(workdir)
+            result_payload["privacy"] = privacy_result.to_dict() if privacy_result is not None else {"mode": "clear"}
             result_path = run_dir / f"{engine.name}_{task.id}.json"
             result_path.write_text(json.dumps(result_payload, ensure_ascii=False, indent=2), encoding="utf-8")
             summary.append(result_payload)

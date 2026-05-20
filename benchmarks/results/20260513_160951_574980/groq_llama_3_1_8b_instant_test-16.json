@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-16",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.012, \"usage\": {\"queue_time\": 0.020751702, \"prompt_tokens\": 3063, \"prompt_time\": 0.219084078, \"completion_tokens\": 445, \"completion_time\": 0.632081284, \"total_tokens\": 3508, \"total_time\": 0.851165362}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_llama_3_1_8b_instant\\test-16\\resultado.md"
+  ],
+  "elapsed_seconds": 1.2301732000196353,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 1.012,
+    "usage": {
+      "queue_time": 0.020751702,
+      "prompt_tokens": 3063,
+      "prompt_time": 0.219084078,
+      "completion_tokens": 445,
+      "completion_time": 0.632081284,
+      "total_tokens": 3508,
+      "total_time": 0.851165362
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\groq_llama_3_1_8b_instant_test-16_resultado.md"
+  ],
+  "task_prompt": "# Preparar briefing de seguridad para Innotek\n\nPrepara un briefing para Sergio Campos de Innotek sobre riesgos de seguridad y auditoria usando los recursos locales disponibles.",
+  "execution_prompt": "# Preparar briefing de seguridad para Innotek\n\nPrepara un briefing para Sergio Campos de Innotek sobre riesgos de seguridad y auditoria usando los recursos locales disponibles.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260513_160951_574980\\work\\groq_llama_3_1_8b_instant\\test-16"
+}

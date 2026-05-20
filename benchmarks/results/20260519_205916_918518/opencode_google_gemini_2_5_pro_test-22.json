@@ -1,0 +1,37 @@
+{
+  "engine": "opencode_google_gemini_2_5_pro",
+  "task_id": "test-22",
+  "returncode": 124,
+  "stdout": "",
+  "stderr": "",
+  "output_files": [],
+  "elapsed_seconds": 1800.2616284999967,
+  "timed_out": true,
+  "usage": {},
+  "model": "google/gemini-2.5-pro",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:google/gemini-2.5-pro",
+  "copied_outputs": [],
+  "task_prompt": "# Comparar Apple y Microsoft seis meses\n\nUsa busqueda web para comparar el rendimiento de Apple y Microsoft en los ultimos seis meses. Cruza el resultado con la nota de voz que lo solicita.",
+  "execution_prompt": "# Comparar Apple y Microsoft seis meses\n\nUsa busqueda web para comparar el rendimiento de Apple y Microsoft en los ultimos seis meses. Cruza el resultado con la nota de voz que lo solicita.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_google_gemini_2_5_pro\\test-22",
+  "privacy": {
+    "root": "D:\\inspector\\benchmarks\\results\\20260519_205916_918518\\work\\opencode_google_gemini_2_5_pro\\test-22",
+    "mode": "redacted",
+    "files_processed": 1,
+    "files_skipped": 0,
+    "entities_found": 32,
+    "verification_passed": false,
+    "residual_findings": [
+      {
+        "start": 80,
+        "end": 89,
+        "text": "Noelia de",
+        "entity_type": "PERSON",
+        "source": "heuristic"
+      }
+    ],
+    "reviewer_used": false
+  }
+}

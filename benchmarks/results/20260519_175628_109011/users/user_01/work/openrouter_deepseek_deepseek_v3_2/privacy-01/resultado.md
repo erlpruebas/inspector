@@ -1,0 +1,3 @@
+- Se detectaron 4 registros duplicados basados en combinaciones de nombre, email y teléfono.
+- 3 direcciones de correo electrónico están completamente en mayúsculas, lo que puede afectar la normalización y validación.
+- 2 registros carecen de número de teléfono, dejando el campo vacío o con formato inconsistente.

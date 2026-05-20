@@ -1,0 +1,44 @@
+{
+  "inmobiliaria": [
+    "Oficina: Calle Mayor 18, Madrid.",
+    "Piso Olivo: Calle Olivo 14, 305000 EUR, 3 dormitorios, Colegio Albor a 350 m.",
+    "Atico Ronda Norte: Ronda Norte 22, 385000 EUR, margen maximo 2%, minimo recomendado 377000 EUR.",
+    "Casa Vallecas: Avenida de la Albufera 210, 298000 EUR, reforma estimada 18000 EUR.",
+    "Local Sur: Calle Puerto Rico 7, 210000 EUR, tres semanas sin visitas cualificadas."
+  ],
+  "informatico": [
+    "portal-clientes gestiona login y facturas.",
+    "AuthNova es proveedor SSO; /oauth/token tuvo latencia de 4800 ms.",
+    "TCK-104 alta: login clientes, Marta.",
+    "TCK-107 media: certificado staging, Raul.",
+    "TCK-111 baja: limpieza logs, Ana."
+  ],
+  "cientifica": [
+    "Ensayo piloto B17, n=18.",
+    "IL-6 media 8.4 en B17 frente a 5.1 control.",
+    "CRP media 3.2 frente a 2.9 control.",
+    "Outliers B17-06 y B17-14 por posible demora.",
+    "No afirmar causalidad; pedir ampliacion de muestra."
+  ],
+  "ingeniero": [
+    "Planta Norte, Poligono 4, nave 12.",
+    "Bomba secundaria con vibracion alta.",
+    "Cuadro electrico C2 requiere bloqueo antes de inspeccion.",
+    "Hito 2: presupuesto 18400, real 19780.",
+    "Norteval puede retrasar valvulas 3 dias."
+  ],
+  "abogada": [
+    "DES-24: despido disciplinario; faltan carta firmada, registro horario y pruebas completas.",
+    "CON-18: renovacion automatica ambigua.",
+    "MED-07: mediacion; confidencialidad, calendario de pago y no reconocimiento de hechos no probados.",
+    "Clausula A: alcance concreto.",
+    "Clausula B: obligaciones posteriores ambiguas."
+  ],
+  "finanzas": [
+    "Saldo inicial 6200 EUR.",
+    "Cobros probables 14 dias: 3400 EUR.",
+    "Pagos comprometidos 14 dias: 5100 EUR.",
+    "Norte SA debe F-118 por 847.50 EUR, vencida hace 12 dias.",
+    "Marzo tiene duplicado hotel 210 EUR; mayo software IA 120 EUR pendiente."
+  ]
+}

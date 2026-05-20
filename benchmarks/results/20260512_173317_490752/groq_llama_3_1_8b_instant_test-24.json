@@ -1,0 +1,36 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-24",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 2.391, \"usage\": {\"queue_time\": 0.020891785, \"prompt_tokens\": 3531, \"prompt_time\": 0.21496256, \"completion_tokens\": 2048, \"completion_time\": 1.995338157, \"total_tokens\": 5579, \"total_time\": 2.210300717}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\groq_llama_3_1_8b_instant\\test-24\\resultado.md"
+  ],
+  "elapsed_seconds": 2.612946999957785,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 2.391,
+    "usage": {
+      "queue_time": 0.020891785,
+      "prompt_tokens": 3531,
+      "prompt_time": 0.21496256,
+      "completion_tokens": 2048,
+      "completion_time": 1.995338157,
+      "total_tokens": 5579,
+      "total_time": 2.210300717
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\groq_llama_3_1_8b_instant_test-24_resultado.md"
+  ],
+  "task_prompt": "# Validar descuento Delta Equipos con mercado\n\nValida si el descuento del 4% ofrecido por Delta Equipos para monitores 27 parece competitivo frente a referencias web actuales.",
+  "execution_prompt": "# Validar descuento Delta Equipos con mercado\n\nValida si el descuento del 4% ofrecido por Delta Equipos para monitores 27 parece competitivo frente a referencias web actuales.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260512_173317_490752\\work\\groq_llama_3_1_8b_instant\\test-24"
+}

@@ -1,0 +1,169 @@
+[
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "privacy-02",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.26, \"usage\": {\"queue_time\": 0.018230141, \"prompt_tokens\": 329, \"prompt_time\": 0.019892313, \"completion_tokens\": 48, \"completion_time\": 0.063976724, \"total_tokens\": 377, \"total_time\": 0.083869037}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\groq_llama_3_1_8b_instant\\privacy-02\\resultado.md"
+    ],
+    "elapsed_seconds": 0.5749132000000827,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 0.26,
+      "usage": {
+        "queue_time": 0.018230141,
+        "prompt_tokens": 329,
+        "prompt_time": 0.019892313,
+        "completion_tokens": 48,
+        "completion_time": 0.063976724,
+        "total_tokens": 377,
+        "total_time": 0.083869037
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq_llama_3_1_8b_instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\outputs\\user_02\\groq_llama_3_1_8b_instant_privacy-02_resultado.md"
+    ],
+    "task_prompt": "# Normalizar emails pendientes\n\nUsa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.",
+    "execution_prompt": "# Normalizar emails pendientes\n\nUsa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.\n\nArchivos locales preparados en el directorio de trabajo:\n- `emails_pendientes.txt`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\groq_llama_3_1_8b_instant\\privacy-02",
+    "user": "user_02",
+    "privacy": {
+      "root": "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\groq_llama_3_1_8b_instant\\privacy-02",
+      "mode": "redacted",
+      "files_processed": 1,
+      "files_skipped": 0,
+      "entities_found": 7,
+      "verification_passed": true,
+      "residual_findings": [],
+      "reviewer_used": false
+    },
+    "attempts": 1,
+    "transient_error": "",
+    "elapsed_wall_seconds": 0.596
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "privacy-02",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 2.463, \"usage\": {\"prompt_tokens\": 312, \"completion_tokens\": 38, \"total_tokens\": 350, \"cost\": 9.6768e-05, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 9.6768e-05, \"upstream_inference_prompt_cost\": 8.0808e-05, \"upstream_inference_completions_cost\": 1.596e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\openrouter_deepseek_deepseek_v3_2\\privacy-02\\resultado.md"
+    ],
+    "elapsed_seconds": 2.7363998999990145,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 2.463,
+      "usage": {
+        "prompt_tokens": 312,
+        "completion_tokens": 38,
+        "total_tokens": 350,
+        "cost": 9.6768e-05,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 9.6768e-05,
+          "upstream_inference_prompt_cost": 8.0808e-05,
+          "upstream_inference_completions_cost": 1.596e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter_deepseek_deepseek_v3_2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\outputs\\user_02\\openrouter_deepseek_deepseek_v3_2_privacy-02_resultado.md"
+    ],
+    "task_prompt": "# Normalizar emails pendientes\n\nUsa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.",
+    "execution_prompt": "# Normalizar emails pendientes\n\nUsa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.\n\nArchivos locales preparados en el directorio de trabajo:\n- `emails_pendientes.txt`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\openrouter_deepseek_deepseek_v3_2\\privacy-02",
+    "user": "user_02",
+    "privacy": {
+      "root": "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\openrouter_deepseek_deepseek_v3_2\\privacy-02",
+      "mode": "redacted",
+      "files_processed": 1,
+      "files_skipped": 0,
+      "entities_found": 7,
+      "verification_passed": true,
+      "residual_findings": [],
+      "reviewer_used": false
+    },
+    "attempts": 1,
+    "transient_error": "",
+    "elapsed_wall_seconds": 2.752
+  },
+  {
+    "engine": "gemini_api_gemini_2_5_flash_lite",
+    "task_id": "privacy-02",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"gemini_api\", \"model\": \"gemini-2.5-flash-lite\", \"elapsed_seconds\": 1.573, \"usage\": {\"promptTokenCount\": 367, \"candidatesTokenCount\": 81, \"totalTokenCount\": 448, \"promptTokensDetails\": [{\"modality\": \"TEXT\", \"tokenCount\": 367}], \"serviceTier\": \"standard\"}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\gemini_api_gemini_2_5_flash_lite\\privacy-02\\resultado.md"
+    ],
+    "elapsed_seconds": 1.8761114999997517,
+    "timed_out": false,
+    "usage": {
+      "provider": "gemini_api",
+      "model": "gemini-2.5-flash-lite",
+      "elapsed_seconds": 1.573,
+      "usage": {
+        "promptTokenCount": 367,
+        "candidatesTokenCount": 81,
+        "totalTokenCount": 448,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 367
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    "model": "gemini-2.5-flash-lite",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "gemini_api_gemini_2_5_flash_lite",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\outputs\\user_02\\gemini_api_gemini_2_5_flash_lite_privacy-02_resultado.md"
+    ],
+    "task_prompt": "# Normalizar emails pendientes\n\nUsa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.",
+    "execution_prompt": "# Normalizar emails pendientes\n\nUsa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.\n\nArchivos locales preparados en el directorio de trabajo:\n- `emails_pendientes.txt`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\gemini_api_gemini_2_5_flash_lite\\privacy-02",
+    "user": "user_02",
+    "privacy": {
+      "root": "D:\\inspector\\benchmarks\\results\\20260519_175847_354031\\users\\user_02\\work\\gemini_api_gemini_2_5_flash_lite\\privacy-02",
+      "mode": "redacted",
+      "files_processed": 1,
+      "files_skipped": 0,
+      "entities_found": 7,
+      "verification_passed": true,
+      "residual_findings": [],
+      "reviewer_used": false
+    },
+    "attempts": 2,
+    "transient_error": "",
+    "elapsed_wall_seconds": 14.266
+  }
+]

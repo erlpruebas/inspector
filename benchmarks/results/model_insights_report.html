@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lab Report 20260519_180015_234962</title>
+<style>
+:root{--ink:#172033;--muted:#667085;--line:#e5e7eb;--bg:#f7f8fb;--panel:#fff;--blue:#2557a7;--green:#137a4b;--amber:#b7791f;--red:#b83232;}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45} a{color:var(--blue)}
+.hero{background:linear-gradient(135deg,#10233f,#265a7f 48%,#2b7a5b);color:white;padding:44px 56px 34px} .hero h1{margin:0;font-size:38px} .hero p{max-width:1040px;color:#dce9f5;font-size:17px}
+.wrap{max-width:1480px;margin:0 auto;padding:28px 36px 60px} .grid{display:grid;gap:18px} .kpis{grid-template-columns:repeat(4,minmax(180px,1fr));margin-top:-44px}
+.kpi,.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 26px rgba(16,24,40,.06)} .kpi{padding:18px} .kpi span{color:var(--muted);font-size:13px} .kpi b{display:block;font-size:28px;margin-top:6px}
+.panel{padding:22px;margin-top:22px} h2{font-size:23px;margin:0 0 14px} h3{margin:0;font-size:17px} .lead{font-size:17px;color:#344054;max-width:1080px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));} .card{padding:18px} .card .num{font-size:34px;font-weight:800;margin:10px 0 4px} .tag{display:inline-block;padding:4px 8px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:#344054;background:#f9fafb}
+.example-card{display:flex;flex-direction:column;gap:12px} .example-list{display:grid;gap:12px} .example-item{border:1px solid var(--line);border-radius:8px;background:#fbfdff;padding:12px} .example-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:4px} pre{margin:8px 0 0;white-space:pre-wrap;word-break:break-word;font-family:Consolas,Monaco,monospace;font-size:12px;line-height:1.45;background:#f8fafc;border:1px solid #e6edf7;border-radius:6px;padding:10px;max-height:240px;overflow:auto}
+table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:white;font-size:13px} th,td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{background:#f2f4f7;color:#344054;font-weight:700} tr:last-child td,tr:last-child th{border-bottom:0}
+.steps{display:grid;gap:10px} .step{border:1px solid var(--line);border-left:5px solid var(--blue);padding:13px;border-radius:8px;background:#fff}
+.muted{color:var(--muted)} .bad{color:var(--red)} .good{color:var(--green)} .warn{color:#9f3412;background:#fff7ed;border:1px solid #fed7aa;border-radius:7px;padding:8px}
+.scroll{overflow:auto;max-height:760px;border-radius:8px} @media(max-width:900px){.hero{padding:32px 22px}.wrap{padding:18px}.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <h1>Lab Report · 20260519_180015_234962</h1>
+  <p>Informe operativo del laboratorio: anonimización, calidad por modelo y orquestación multiusuario. Este run es la pieza que nos dice qué modelo conviene para cada tipo de trabajo y cómo repartirlo sin mezclar carpetas ni contextos.</p>
+</section>
+<main class="wrap">
+  <section class="grid kpis">
+    <div class="kpi"><span>Tareas corridas</span><b>16</b></div>
+    <div class="kpi"><span>Motores</span><b>4</b></div>
+    <div class="kpi"><span>Usuarios aislados</span><b>4</b></div>
+    <div class="kpi"><span>Score medio</span><b>5.25</b></div>
+  </section>
+
+  <section class="panel">
+    <h2>Lectura Ejecutiva</h2>
+    <p class="lead">La arquitectura ya permite correr tareas privadas con carpetas separadas por usuario, anonimizar antes de llamar al modelo y guardar un mapa global estable. En el corte actual, <b>Groq Llama 3.1 8B Instant</b> es el mejor modelo por calidad media, <b>Groq Llama 3.1 8B Instant</b> es el más ágil y <b>Groq Llama 3.1 8B Instant</b> es el más barato en el conjunto observado.</p>
+    <div class="steps">
+      <div class="step"><b>1. Privacidad primero</b>Las tareas con datos sensibles se anonimizan antes de entrar al modelo. El mapa de tokens queda fuera del workdir y no viaja al proveedor.</div>
+      <div class="step"><b>2. Cuatro usuarios aislados</b>La carga se reparte en cuatro lanes con carpetas separadas y sin interacción entre hilos.</div>
+      <div class="step"><b>3. Router barato</b>Groq y Gemini Flash-Lite son los mejores candidatos para clasificar, extraer y enrutar antes de gastar motores caros.</div>
+      <div class="step"><b>4. Escalado selectivo</b>Codex 5.4 mini se queda como caballo de batalla y 5.5 solo entra cuando la tarea es crítica o el intento barato falla.</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Métricas Por Modelo</h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Motor</th>
+            <th>Score medio</th>
+            <th>% Claves OK</th>
+            <th>% Éxito técnico</th>
+            <th>Tiempo medio</th>
+            <th>Coste medio</th>
+            <th>Observación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Groq Llama 3.1 8B Instant</td><td>6.00</td><td>100%</td><td>100%</td><td>0.76s</td><td>0.000000</td><td>Muy rápido, sensible al tamaño del prompt.</td></tr><tr><td>OpenRouter DeepSeek V3.2</td><td>6.00</td><td>100%</td><td>100%</td><td>8.25s</td><td>0.000149</td><td>Buena relación coste/calidad en DeepSeek.</td></tr><tr><td>Codex GPT-5.4 mini</td><td>6.00</td><td>100%</td><td>100%</td><td>63.18s</td><td>0.000000</td><td>Agente robusto. 5.4 mini como base y 5.5 como escalado.</td></tr><tr><td>Gemini 2.5 Flash-Lite API</td><td>3.00</td><td>50%</td><td>50%</td><td>5.20s</td><td>0.000000</td><td>Barato y útil, pero conviene vigilar disponibilidad.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Ejemplos Reales Del Run Privado</h2>
+    <p class="lead">Estas tarjetas muestran ejemplos concretos de salida obtenida por cada motor en la última campaña privada. Es una lectura más útil que una sola nota media porque enseña el estilo de respuesta, la disciplina con la privacidad y el tipo de tarea donde cada motor se mueve mejor.</p>
+    <div class="grid cards">
+      
+            <article class="card example-card">
+              <div class="model-head"><h3>Codex GPT-5.4 mini</h3><span class="tag">CLI agente</span></div>
+              <p class="small muted">Muestra de las salidas más representativas de este motor en la campaña reciente.</p>
+              <div class="example-list">
+                
+                <div class="example-item">
+                  <div class="example-top">
+                    <b>Usa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.</b>
+                    <span class="tag">privacy-02</span>
+                  </div>
+                  <div class="small muted">privado · score 6.0 · 32.01922399999967s</div>
+                  <pre>Voy a leer `benchmarks/assets/emails_pendientes.txt`, extraer las tres citas y devolverte una lista normalizada con fecha, hora y motivo, omitiendo nombres completos y correos si aparecen.
+La ruta indicada no existe tal cual en el workspace. Voy a localizar el archivo real y luego extraer las citas desde ahí.
+- `DATE_0003` a las `10:30` - ver la demo.
+- `DATE_0002` a las `16:00` - revisar el contrato con legal.
+- `DA...</pre>
+                </div>
+                
+                <div class="example-item">
+                  <div class="example-top">
+                    <b>Analiza `benchmarks/assets/facturas.csv` y genera una tabla con factura, cliente ofuscado y total. No reproduzcas clientes reales fuera de tokens anonimos.</b>
+                    <span class="tag">privacy-03</span>
+                  </div>
+                  <div class="small muted">privado · score 6.0 · 64.87425299999995s</div>
+                  <pre>Voy a leer `benchmarks/assets/facturas.csv`, extraer `factura`, cliente ofuscado y `total`, y devolver una tabla sin exponer nombres reales.
+Estoy revisando la estructura del CSV para extraer solo las columnas necesarias y ofuscar cualquier cliente real antes de construir la tabla.
+La ruta que diste parece resolverse aquí como `facturas.csv` en el directorio actual. Voy a localizar el archivo exacto y leerlo desde ah...</pre>
+                </div>
+                
+              </div>
+            </article>
+            
+            <article class="card example-card">
+              <div class="model-head"><h3>Gemini 2.5 Flash-Lite API</h3><span class="tag">API directa</span></div>
+              <p class="small muted">Muestra de las salidas más representativas de este motor en la campaña reciente.</p>
+              <div class="example-list">
+                
+                <div class="example-item">
+                  <div class="example-top">
+                    <b>Lee `benchmarks/assets/clientes_sucios.csv` y devuelve un resumen en 3 puntos sobre duplicados, emails en mayusculas y telefonos faltantes. No repitas datos sensibles literales.</b>
+                    <span class="tag">privacy-01</span>
+                  </div>
+                  <div class="small muted">privado · score 6.0 · 7.604089899999963s</div>
+                  <pre>- Se identificaron múltiples entradas duplicadas en la base de datos de clientes, lo que sugiere la necesidad de un proceso de limpieza y deduplicación.
+- Se observó una cantidad significativa de direcciones de correo electrónico escritas completamente en mayúsculas, lo cual puede afectar la consistencia y la búsqueda de información.
+- Existe un número considerable de registros de clientes que carecen de información...</pre>
+                </div>
+                
+                <div class="example-item">
+                  <div class="example-top">
+                    <b>Analiza `benchmarks/assets/facturas.csv` y genera una tabla con factura, cliente ofuscado y total. No reproduzcas clientes reales fuera de tokens anonimos.</b>
+                    <span class="tag">privacy-03</span>
+                  </div>
+                  <div class="small muted">privado · score 6.0 · 11.436431899999661s</div>
+                  <pre>| factura | cliente ofuscado | total |
+|---|---|---|
+| F-100 | ORG_0004 | 1210.00 |
+| F-101 | ORG_0003 | 847.50 |
+| F-102 | ORG_0002 | 430.00 |
+| ORG_0001 | PHONE_0005 | 980.00 |</pre>
+                </div>
+                
+              </div>
+            </article>
+            
+            <article class="card example-card">
+              <div class="model-head"><h3>Groq Llama 3.1 8B Instant</h3><span class="tag">Router rápido</span></div>
+              <p class="small muted">Muestra de las salidas más representativas de este motor en la campaña reciente.</p>
+              <div class="example-list">
+                
+                <div class="example-item">
+                  <div class="example-top">
+                    <b>Usa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.</b>
+                    <span class="tag">privacy-02</span>
+                  </div>
+                  <div class="small muted">privado · score 6.0 · 0.6719204999990325s</div>
+                  <pre>Fecha, Hora, Motivo
+DATE_0003, 10:30, Ver demo
+DATE_0002, 16:00, Revisar contrato
+DATE_0001, 09:15, Preparar llamada</pre>
+                </div>
+                
+                <div class="example-item">
+                  <div class="example-top">
+                    <b>Analiza `benchmarks/assets/facturas.csv` y genera una tabla con factura, cliente ofuscado y total. No reproduzcas clientes reales fuera de tokens anonimos.</b>
+                    <span class="tag">privacy-03</span>
+                  </div>
+                  <div class="small muted">privado · score 6.0 · 0.7483274999995047s</div>
+                  <pre>Factura | Cliente ofuscado | Total
+--------|------------------|------
+F-100   | ORG_0004         | 1210.00
+F-101   | ORG_0003         | 847.50
+F-102   | ORG_0002         | 430.00
+F-103   | ORG_0001         | 980.00</pre>
+                </div>
+                
+              </div>
+            </article>
+            
+            <article class="card example-card">
+              <div class="model-head"><h3>OpenRouter DeepSeek V3.2</h3><span class="tag">API barata</span></div>
+              <p class="small muted">Muestra de las salidas más representativas de este motor en la campaña reciente.</p>
+              <div class="example-list">
+                
+                <div class="example-item">
+                  <div class="example-top">
+                    <b>Usa `benchmarks/assets/emails_pendientes.txt` para extraer las tres citas y escribe una lista con fecha, hora y motivo. No incluyas nombres completos ni emails si aparecen.</b>
+                    <span class="tag">privacy-02</span>
+                  </div>
+                  <div class="small muted">privado · score 6.0 · 2.6466808000004676s</div>
+                  <pre>- 2025-03-10, 09:15, Seguimiento cliente
+- 2025-03-11, 16:00, Revision contrato
+- 2025-03-12, 10:30, producto</pre>
+                </div>
+                
+                <div class="example-item">
+                  <div class="example-top">
+                    <b>Analiza `benchmarks/assets/facturas.csv` y genera una tabla con factura, cliente ofuscado y total. No reproduzcas clientes reales fuera de tokens anonimos.</b>
+                    <span class="tag">privacy-03</span>
+                  </div>
+                  <div class="small muted">privado · score 6.0 · 4.367562999999791s</div>
+                  <pre>factura,cliente,total
+F-100,CLIENT_001,1210.00
+F-101,CLIENT_002,847.50
+F-102,CLIENT_003,430.00
+F-103,CLIENT_004,980.00</pre>
+                </div>
+                
+              </div>
+            </article>
+            
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Referencia Histórica De Codex 5.5</h2>
+    
+    <p class="lead">Sí, Codex GPT-5.5 fue benchmarkeado en un run histórico separado y aparece como el mejor en calidad media en el informe histórico. En la campaña privada reciente no se usó 5.5; ahí el caballito de batalla fue 5.4 mini. Puedes revisar el informe histórico completo en <a href="../latest_model_quality_report.html">latest_model_quality_report.html</a>.</p>
+    <div class="grid cards">
+      <div class="card">
+        <span class="tag">Run histórico</span>
+        <div class="num">20260513_185318_064815</div>
+        <div class="muted">Matriz completa con Codex 5.5, 5.4 mini, Gemini, Groq y OpenRouter.</div>
+      </div>
+      <div class="card">
+        <span class="tag">Conclusión histórica</span>
+        <div class="num">5.5</div>
+        <div class="muted">Mejor calidad media en esa campaña, con 5.4 mini cerca y mucho más barato.</div>
+      </div>
+      <div class="card">
+        <span class="tag">Lectura práctica</span>
+        <div class="num">5.4 mini</div>
+        <div class="muted">Mejor base operativa para iterar sin comerse la ventana de proceso.</div>
+      </div>
+    </div>
+    
+  </section>
+
+  <section class="panel">
+    <h2>Distribución Por Usuario</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Usuario</th><th>Tareas</th><th>Motores</th><th>Ruta</th></tr></thead>
+        <tbody><tr><td>user_01</td><td>4</td><td>codex_gpt_5_4_mini, gemini_api_gemini_2_5_flash_lite, groq_llama_3_1_8b_instant, openrouter_deepseek_deepseek_v3_2</td><td>benchmarks\results\20260519_180015_234962\users\user_01</td></tr><tr><td>user_02</td><td>4</td><td>codex_gpt_5_4_mini, gemini_api_gemini_2_5_flash_lite, groq_llama_3_1_8b_instant, openrouter_deepseek_deepseek_v3_2</td><td>benchmarks\results\20260519_180015_234962\users\user_02</td></tr><tr><td>user_03</td><td>4</td><td>codex_gpt_5_4_mini, gemini_api_gemini_2_5_flash_lite, groq_llama_3_1_8b_instant, openrouter_deepseek_deepseek_v3_2</td><td>benchmarks\results\20260519_180015_234962\users\user_03</td></tr><tr><td>user_04</td><td>4</td><td>codex_gpt_5_4_mini, gemini_api_gemini_2_5_flash_lite, groq_llama_3_1_8b_instant, openrouter_deepseek_deepseek_v3_2</td><td>benchmarks\results\20260519_180015_234962\users\user_04</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Privacidad</h2>
+    <div class="grid cards">
+      <div class="card"><span class="tag">Tokens encontrados</span><div class="num">172</div><div class="muted">Durante el run privado</div></div>
+      <div class="card"><span class="tag">Archivos procesados</span><div class="num">20</div><div class="muted">Copia original, mixed y redacted generadas</div></div>
+      <div class="card"><span class="tag">Verificación</span><div class="num">OK</div><div class="muted">Sin restos detectables</div></div>
+      <div class="card"><span class="tag">Revisor Mini Nano</span><div class="num">no</div><div class="muted">Usado solo si se activó review semántico</div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Recomendaciones Operativas</h2>
+    <div class="steps">
+      <div class="step">Modelo de calidad: Groq Llama 3.1 8B Instant con score medio 6.00.</div><div class="step">Modelo más rápido: Groq Llama 3.1 8B Instant con 0.76s medio.</div><div class="step">Modelo más barato: Groq Llama 3.1 8B Instant con coste medio 0.000000.</div><div class="step">Groq y Gemini Flash-Lite quedan bien como router barato o extractor corto.</div><div class="step">Codex 5.4 mini debe ser el trabajo estándar si la tarea toca archivos.</div><div class="step">Codex 5.5 solo debería entrar cuando falten claves, haya riesgo alto o el primer intento no alcance.</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Notas</h2>
+    <p class="lead">Este informe combina las señales técnicas del run con la capa de privacidad y la distribución por usuario. Cuando tengamos más muestras, podremos convertir estas recomendaciones en reglas de enrutado más finas por profesión, riesgo y tipo de salida.</p>
+    <p class="warn">Bloqueos observados en esta base: Groq puede cortar por tamaño de contexto, OpenRouter necesita margen de tokens, Mini Nano sigue siendo sensible a timeout y Codex conviene reservarlo para fases con valor real.</p>
+  </section>
+</main>
+</body></html>

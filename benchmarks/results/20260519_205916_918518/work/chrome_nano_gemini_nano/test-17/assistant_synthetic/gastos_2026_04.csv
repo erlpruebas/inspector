@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+PHONE_0008,Dominio anual,software,14.99,14.99,ok
+PHONE_0098,Taxi cliente,viajes,28.3,28.3,sin_recibo
+PHONE_0097,Material oficina,oficina,73.4,73.4,ok

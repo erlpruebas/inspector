@@ -15,6 +15,7 @@ Este repositorio esta dividido en dos bloques principales:
 
 - `benchmarks/`: la arena de evaluacion, los motores, las tareas, el juez y los reportes.
 - `telegram_codex_orchestrator/`: el orquestador operativo que recibe instrucciones y las ejecuta con Codex CLI y sus variantes.
+- `assistant/`, `server.js` y `desktop_assistant.py`: el gestor conversacional ligero con Tkinter, Telegram, Groq STT, memoria, alarmas y voz.
 
 ## Que vas a encontrar aqui
 
@@ -61,6 +62,20 @@ python -m venv .venv
 .\.venv\Scripts\pip.exe install -r requirements.txt
 ```
 
+Gestor conversacional de escritorio:
+
+```powershell
+cd /d D:\inspector
+.\start_desktop.ps1
+```
+
+Backend del gestor sin abrir Tkinter:
+
+```powershell
+cd /d D:\inspector
+npm start
+```
+
 Orquestador Telegram:
 
 ```powershell
@@ -105,6 +120,10 @@ python .\benchmarks\benchmark_main.py --engine codex --engine groq --task test-0
 - `benchmarks/judge.py`: comparador ciego para salidas.
 - `benchmarks/report_generator.py`: generador de informes.
 - `telegram_codex_orchestrator/`: logica del bot, memoria, voz y threads.
+- `assistant/`: memoria, transcripcion, router, TTS y alarmas del gestor conversacional.
+- `public/`: laboratorio web auxiliar; no es la interfaz principal.
+- `desktop_assistant.py`: ventana Tkinter siempre visible.
+- `server.js`: backend local del gestor y puente con Telegram.
 - `arrancar*.bat`: accesos rapidos para Windows.
 
 ## Nota de publicacion

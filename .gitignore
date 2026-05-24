@@ -15,12 +15,21 @@ __pycache__/
 # Logs and runtime noise
 *.log
 *.err
+server.*.log
 logs/
 telegram_codex_orchestrator/runtime/
 telegram_codex_orchestrator/memory/*.json
 orchestrator_v2/runtime/
+assistant/state.json
+assistant/alarms.md
+assistant/media/
+assistant/__pycache__/
+.chrome-profile/
+.chrome-worker-*/
 
 # Generated media and local caches
 tts_samples/*.wav
 tts_samples/*.mp3
 *.sqlite3
+models/
+models/.locks/

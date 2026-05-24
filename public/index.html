@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inspector Lab</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <h1>Inspector Lab</h1>
+          <p id="statusText">Comprobando Chrome...</p>
+        </div>
+        <button id="refreshStatus" type="button">Estado</button>
+      </header>
+
+      <section class="panel">
+        <div class="tabs" role="tablist" aria-label="Modos de prueba">
+          <button class="tab active" type="button" data-tab="browser">Chrome directo</button>
+          <button class="tab" type="button" data-tab="direct">Mini API</button>
+          <button class="tab" type="button" data-tab="openai">OpenAI API</button>
+          <button class="tab" type="button" data-tab="assistant">Asistente</button>
+          <button class="tab" type="button" data-tab="curl">cURL</button>
+        </div>
+
+        <div class="tabPage active" id="browser">
+          <label for="browserSystemPrompt">System prompt</label>
+          <textarea id="browserSystemPrompt" rows="3">Responde en español, de forma breve y práctica.</textarea>
+
+          <label for="browserPrompt">Prompt</label>
+          <textarea id="browserPrompt" rows="8">Dime si la API local está disponible desde esta página de Chrome.</textarea>
+
+          <div class="actions">
+            <button id="sendBrowserPrompt" type="button">Enviar directo a Chrome</button>
+            <span id="browserTiming"></span>
+          </div>
+        </div>
+
+        <div class="tabPage" id="direct">
+          <label for="systemPrompt">System prompt</label>
+          <textarea id="systemPrompt" rows="3">Responde en español, de forma breve y práctica.</textarea>
+
+          <label for="prompt">Prompt</label>
+          <textarea id="prompt" rows="8">Dame tres ideas rápidas para probar el modelo localmente.</textarea>
+
+          <div class="actions">
+            <button id="sendPrompt" type="button">Enviar a /api/prompt</button>
+            <span id="directTiming"></span>
+          </div>
+        </div>
+
+        <div class="tabPage" id="openai">
+          <label for="openaiMessages">Mensajes estilo OpenAI</label>
+          <textarea id="openaiMessages" rows="13">[
+  { "role": "system", "content": "Responde como asistente técnico conciso." },
+  { "role": "user", "content": "Explica qué limitaciones tiene usar la API local desde Chrome." }
+]</textarea>
+
+          <div class="actions">
+            <button id="sendOpenAI" type="button">Enviar a /v1/chat/completions</button>
+            <span id="openaiTiming"></span>
+          </div>
+        </div>
+
+        <div class="tabPage" id="assistant">
+          <div class="grid2">
+            <div>
+              <label for="assistantThread">Hilo activo</label>
+              <input id="assistantThread" type="text" value="desktop" />
+            </div>
+            <div>
+              <label for="assistantUser">Usuario</label>
+              <input id="assistantUser" type="text" value="desktop" />
+            </div>
+          </div>
+
+          <label for="assistantText">Mensaje</label>
+          <textarea id="assistantText" rows="7">Quiero revisar el flujo del asistente y comprobar que mantiene contexto entre mensajes.</textarea>
+
+          <label for="assistantAudio">Audio opcional</label>
+          <input id="assistantAudio" type="file" accept="audio/*" />
+
+          <div class="actions">
+            <button id="recordAssistant" type="button">Grabar</button>
+            <button id="sendAssistant" type="button">Enviar al asistente</button>
+            <span id="assistantTiming"></span>
+          </div>
+          <p id="assistantVoiceStatus" class="subtle">Voz actual: Kokoro.</p>
+        </div>
+
+        <div class="tabPage" id="curl">
+          <pre><code>curl http://127.0.0.1:8787/api/status
+
+curl -X POST http://127.0.0.1:8787/api/prompt ^
+  -H "Content-Type: application/json" ^
+  -d "{\"prompt\":\"Di hola desde Inspector Lab\"}"
+
+curl -X POST http://127.0.0.1:8787/v1/chat/completions ^
+  -H "Content-Type: application/json" ^
+  -d "{\"model\":\"chrome-gemini-nano\",\"messages\":[{\"role\":\"user\",\"content\":\"Resume Chrome Prompt API\"}]}"
+
+curl -X POST http://127.0.0.1:8787/api/assistant/message ^
+  -H "Content-Type: application/json" ^
+  -d "{\"source\":\"desktop\",\"threadId\":\"desktop\",\"text\":\"Quiero empezar una tarea nueva\"}"</code></pre>
+        </div>
+      </section>
+
+      <section class="output">
+        <div class="outputHead">
+          <h2>Respuesta</h2>
+          <button id="clearOutput" type="button">Limpiar</button>
+        </div>
+        <pre id="outputText">Todavía no hay respuesta.</pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

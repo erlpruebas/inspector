@@ -1,0 +1,14 @@
+{
+  "name": "inspector-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "smoke": "node assistant/smoke.js",
+    "desktop": ".\\.venv\\Scripts\\python.exe desktop_assistant.py"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

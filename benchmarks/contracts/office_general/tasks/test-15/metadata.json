@@ -1,0 +1,25 @@
+{
+  "id": "test-15",
+  "title": "Cruzar notas de voz con contactos",
+  "difficulty": 3,
+  "level": "L3",
+  "category": "assistant_digital",
+  "skills": [
+    "entity_resolution",
+    "contacts"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "Noelia Castro",
+    "Luis Martin",
+    "Tomas Vega",
+    "Laura Marin"
+  ],
+  "response_shape": "respuesta util y trazable",
+  "prompt": "# Cruzar notas de voz con contactos\n\nCruza notas de voz con contactos para identificar personas mencionadas y sus empresas. Devuelve una tabla con tarea, persona, empresa y email.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-15/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-15/metadata.json"
+}

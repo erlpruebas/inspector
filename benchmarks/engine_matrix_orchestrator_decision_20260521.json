@@ -1,0 +1,35 @@
+[
+  {
+    "group": "router_candidates_groq_api",
+    "engines": [
+      "groq:llama-3.1-8b-instant",
+      "groq:qwen/qwen3-32b",
+      "groq:llama-3.3-70b-versatile"
+    ]
+  },
+  {
+    "group": "worker_candidates_groq_api",
+    "engines": [
+      "groq:openai/gpt-oss-20b",
+      "groq:openai/gpt-oss-120b",
+      "groq:meta-llama/llama-4-scout-17b-16e-instruct"
+    ]
+  },
+  {
+    "group": "worker_candidates_openrouter_api",
+    "engines": [
+      "openrouter:deepseek/deepseek-v3.2",
+      "openrouter:deepseek/deepseek-r1",
+      "openrouter:openai/gpt-5.4-mini",
+      "openrouter:qwen/qwen3.5-flash-02-23"
+    ]
+  },
+  {
+    "group": "agentic_runtime_candidates",
+    "engines": [
+      "groq:groq/compound-mini",
+      "groq:groq/compound",
+      "opencode:openrouter/deepseek/deepseek-v3.2"
+    ]
+  }
+]

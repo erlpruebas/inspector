@@ -1,0 +1,28 @@
+{
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v3.2",
+  "elapsed_seconds": 3.562,
+  "usage": {
+    "prompt_tokens": 1968,
+    "completion_tokens": 53,
+    "total_tokens": 2021,
+    "cost": 0.0002304288,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1259,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0002304288,
+      "upstream_inference_prompt_cost": 0.0002103948,
+      "upstream_inference_completions_cost": 2.0034e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

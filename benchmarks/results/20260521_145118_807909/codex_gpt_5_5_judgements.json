@@ -1,0 +1,58 @@
+[
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.158348Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.158400Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.163148Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.163261Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.168521Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.168585Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.174865Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.174914Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.180729Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.180782Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.548253Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:23.583184Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:23.583772Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 4.047
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.205026Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.205084Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.209336Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.209430Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.214725Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.214784Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.218570Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.218603Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.221295Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.221319Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.530121Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:29.564866Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:29.565731Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 6.5
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.705865Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.705902Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.710604Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.710652Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.715960Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.716029Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.720842Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.720886Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.725513Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.725551Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:34.133188Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:34.176916Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:34.177558Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 4.125
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.517231Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.517271Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.521371Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.521418Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.525366Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.525429Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.529147Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.529181Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.533292Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.533337Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.887202Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:37.925037Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:37.925684Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 3.812
+  }
+]

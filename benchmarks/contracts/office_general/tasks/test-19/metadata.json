@@ -1,0 +1,25 @@
+{
+  "id": "test-19",
+  "title": "Plan de seguimiento de implantacion",
+  "difficulty": 3,
+  "level": "L3",
+  "category": "assistant_digital",
+  "skills": [
+    "planning",
+    "timeline"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md"
+  ],
+  "expected_keys": [
+    "Laura Marin",
+    "formacion",
+    "dia 22",
+    "hitos"
+  ],
+  "response_shape": "respuesta util y trazable",
+  "prompt": "# Plan de seguimiento de implantacion\n\nConvierte las referencias a implantacion y formacion en un plan de seguimiento con hitos, responsables y dependencias.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-19/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-19/metadata.json"
+}

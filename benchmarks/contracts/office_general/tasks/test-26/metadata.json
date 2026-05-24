@@ -1,0 +1,29 @@
+{
+  "id": "test-26",
+  "title": "Auditoria completa de gastos con recomendaciones",
+  "difficulty": 4,
+  "level": "L4",
+  "category": "assistant_digital",
+  "skills": [
+    "expense_audit",
+    "multi_file_analysis",
+    "recommendations"
+  ],
+  "required_files": [
+    "assistant_synthetic/gastos_2026_01.csv",
+    "assistant_synthetic/gastos_2026_02.csv",
+    "assistant_synthetic/gastos_2026_03.csv",
+    "assistant_synthetic/gastos_2026_04.csv",
+    "assistant_synthetic/gastos_2026_05.csv"
+  ],
+  "expected_keys": [
+    "duplicado",
+    "sin_recibo",
+    "importe_discrepante",
+    "revisar_proveedor"
+  ],
+  "response_shape": "tabla de auditoria con discrepancias y recomendacion",
+  "prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-26/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-26/metadata.json"
+}

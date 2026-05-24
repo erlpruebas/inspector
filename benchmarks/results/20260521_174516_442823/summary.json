@@ -1,0 +1,1978 @@
+[
+  {
+    "engine": "groq_groq_compound_mini",
+    "task_id": "test-17",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 5.094, \"usage\": {\"queue_time\": 0.108033, \"prompt_tokens\": 1999, \"prompt_time\": 0.162743, \"completion_tokens\": 1833, \"completion_time\": 3.909708, \"total_tokens\": 3832, \"total_time\": 4.072451}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-17\\resultado.md"
+    ],
+    "elapsed_seconds": 5.35899999999674,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "groq/compound-mini",
+      "elapsed_seconds": 5.094,
+      "usage": {
+        "queue_time": 0.108033,
+        "prompt_tokens": 1999,
+        "prompt_time": 0.162743,
+        "completion_tokens": 1833,
+        "completion_time": 3.909708,
+        "total_tokens": 3832,
+        "total_time": 4.072451
+      }
+    },
+    "model": "groq/compound-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:groq/compound-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_groq_compound_mini_test-17_resultado.md"
+    ],
+    "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-17",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_groq_compound_mini",
+    "task_id": "test-20",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 6.578, \"usage\": {\"queue_time\": 0.064947, \"prompt_tokens\": 6548, \"prompt_time\": 0.36391, \"completion_tokens\": 2615, \"completion_time\": 5.982689, \"total_tokens\": 9163, \"total_time\": 6.346599}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-20\\resultado.md"
+    ],
+    "elapsed_seconds": 6.812999999994645,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "groq/compound-mini",
+      "elapsed_seconds": 6.578,
+      "usage": {
+        "queue_time": 0.064947,
+        "prompt_tokens": 6548,
+        "prompt_time": 0.36391,
+        "completion_tokens": 2615,
+        "completion_time": 5.982689,
+        "total_tokens": 9163,
+        "total_time": 6.346599
+      }
+    },
+    "model": "groq/compound-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:groq/compound-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_groq_compound_mini_test-20_resultado.md"
+    ],
+    "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-20",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_groq_compound_mini",
+    "task_id": "test-21",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 3.312, \"usage\": {\"queue_time\": 0.283306, \"prompt_tokens\": 6267, \"prompt_time\": 0.316743, \"completion_tokens\": 1257, \"completion_time\": 2.575196, \"total_tokens\": 7524, \"total_time\": 2.891939}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-21\\resultado.md"
+    ],
+    "elapsed_seconds": 3.5,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "groq/compound-mini",
+      "elapsed_seconds": 3.312,
+      "usage": {
+        "queue_time": 0.283306,
+        "prompt_tokens": 6267,
+        "prompt_time": 0.316743,
+        "completion_tokens": 1257,
+        "completion_time": 2.575196,
+        "total_tokens": 7524,
+        "total_time": 2.891939
+      }
+    },
+    "model": "groq/compound-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:groq/compound-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_groq_compound_mini_test-21_resultado.md"
+    ],
+    "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-21",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_groq_compound_mini",
+    "task_id": "test-23",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 5.64, \"usage\": {\"queue_time\": 0.067564, \"prompt_tokens\": 9228, \"prompt_time\": 0.446355, \"completion_tokens\": 2261, \"completion_time\": 4.986473, \"total_tokens\": 11489, \"total_time\": 5.432828}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-23\\resultado.md"
+    ],
+    "elapsed_seconds": 5.812000000005355,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "groq/compound-mini",
+      "elapsed_seconds": 5.64,
+      "usage": {
+        "queue_time": 0.067564,
+        "prompt_tokens": 9228,
+        "prompt_time": 0.446355,
+        "completion_tokens": 2261,
+        "completion_time": 4.986473,
+        "total_tokens": 11489,
+        "total_time": 5.432828
+      }
+    },
+    "model": "groq/compound-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:groq/compound-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_groq_compound_mini_test-23_resultado.md"
+    ],
+    "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-23",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_groq_compound_mini",
+    "task_id": "test-26",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 6.422, \"usage\": {\"queue_time\": 0.111381, \"prompt_tokens\": 2007, \"prompt_time\": 0.210777, \"completion_tokens\": 2376, \"completion_time\": 5.085476, \"total_tokens\": 4383, \"total_time\": 5.296252}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-26\\resultado.md"
+    ],
+    "elapsed_seconds": 6.5939999999973224,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "groq/compound-mini",
+      "elapsed_seconds": 6.422,
+      "usage": {
+        "queue_time": 0.111381,
+        "prompt_tokens": 2007,
+        "prompt_time": 0.210777,
+        "completion_tokens": 2376,
+        "completion_time": 5.085476,
+        "total_tokens": 4383,
+        "total_time": 5.296252
+      }
+    },
+    "model": "groq/compound-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:groq/compound-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_groq_compound_mini_test-26_resultado.md"
+    ],
+    "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-26",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_groq_compound_mini",
+    "task_id": "test-30",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 9.094, \"usage\": {\"queue_time\": 0.067971, \"prompt_tokens\": 8184, \"prompt_time\": 0.646464, \"completion_tokens\": 3338, \"completion_time\": 7.742594, \"total_tokens\": 11522, \"total_time\": 8.389058}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-30\\resultado.md"
+    ],
+    "elapsed_seconds": 9.281000000002678,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "groq/compound-mini",
+      "elapsed_seconds": 9.094,
+      "usage": {
+        "queue_time": 0.067971,
+        "prompt_tokens": 8184,
+        "prompt_time": 0.646464,
+        "completion_tokens": 3338,
+        "completion_time": 7.742594,
+        "total_tokens": 11522,
+        "total_time": 8.389058
+      }
+    },
+    "model": "groq/compound-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:groq/compound-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_groq_compound_mini_test-30_resultado.md"
+    ],
+    "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-30",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-17",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.64, \"usage\": {\"queue_time\": 0.019043688, \"prompt_tokens\": 826, \"prompt_time\": 0.058068998, \"completion_tokens\": 218, \"completion_time\": 0.332054662, \"total_tokens\": 1044, \"total_time\": 0.39012366}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-17\\resultado.md"
+    ],
+    "elapsed_seconds": 0.9059999999881256,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 0.64,
+      "usage": {
+        "queue_time": 0.019043688,
+        "prompt_tokens": 826,
+        "prompt_time": 0.058068998,
+        "completion_tokens": 218,
+        "completion_time": 0.332054662,
+        "total_tokens": 1044,
+        "total_time": 0.39012366
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_1_8b_instant_test-17_resultado.md"
+    ],
+    "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-17",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-20",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.391, \"usage\": {\"queue_time\": 0.074842039, \"prompt_tokens\": 3167, \"prompt_time\": 0.285289229, \"completion_tokens\": 537, \"completion_time\": 0.843845906, \"total_tokens\": 3704, \"total_time\": 1.129135135}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-20\\resultado.md"
+    ],
+    "elapsed_seconds": 1.6410000000032596,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 1.391,
+      "usage": {
+        "queue_time": 0.074842039,
+        "prompt_tokens": 3167,
+        "prompt_time": 0.285289229,
+        "completion_tokens": 537,
+        "completion_time": 0.843845906,
+        "total_tokens": 3704,
+        "total_time": 1.129135135
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_1_8b_instant_test-20_resultado.md"
+    ],
+    "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-20",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-21",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.218, \"usage\": {\"queue_time\": 0.031749837, \"prompt_tokens\": 3068, \"prompt_time\": 0.249170134, \"completion_tokens\": 590, \"completion_time\": 0.760204046, \"total_tokens\": 3658, \"total_time\": 1.00937418}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-21\\resultado.md"
+    ],
+    "elapsed_seconds": 1.485000000000582,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 1.218,
+      "usage": {
+        "queue_time": 0.031749837,
+        "prompt_tokens": 3068,
+        "prompt_time": 0.249170134,
+        "completion_tokens": 590,
+        "completion_time": 0.760204046,
+        "total_tokens": 3658,
+        "total_time": 1.00937418
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_1_8b_instant_test-21_resultado.md"
+    ],
+    "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-21",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-23",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.5, \"usage\": {\"queue_time\": 0.049480845, \"prompt_tokens\": 4578, \"prompt_time\": 0.314881179, \"completion_tokens\": 734, \"completion_time\": 0.919285142, \"total_tokens\": 5312, \"total_time\": 1.234166321}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-23\\resultado.md"
+    ],
+    "elapsed_seconds": 1.7660000000032596,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 1.5,
+      "usage": {
+        "queue_time": 0.049480845,
+        "prompt_tokens": 4578,
+        "prompt_time": 0.314881179,
+        "completion_tokens": 734,
+        "completion_time": 0.919285142,
+        "total_tokens": 5312,
+        "total_time": 1.234166321
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_1_8b_instant_test-23_resultado.md"
+    ],
+    "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-23",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-26",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.172, \"usage\": {\"queue_time\": 0.050445123, \"prompt_tokens\": 831, \"prompt_time\": 0.102649674, \"completion_tokens\": 428, \"completion_time\": 0.86978175, \"total_tokens\": 1259, \"total_time\": 0.972431424}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-26\\resultado.md"
+    ],
+    "elapsed_seconds": 1.3279999999940628,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 1.172,
+      "usage": {
+        "queue_time": 0.050445123,
+        "prompt_tokens": 831,
+        "prompt_time": 0.102649674,
+        "completion_tokens": 428,
+        "completion_time": 0.86978175,
+        "total_tokens": 1259,
+        "total_time": 0.972431424
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_1_8b_instant_test-26_resultado.md"
+    ],
+    "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-26",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-30",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 1.344, \"usage\": {\"queue_time\": 0.023103612, \"prompt_tokens\": 4090, \"prompt_time\": 0.294639456, \"completion_tokens\": 597, \"completion_time\": 0.833664222, \"total_tokens\": 4687, \"total_time\": 1.128303678}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-30\\resultado.md"
+    ],
+    "elapsed_seconds": 1.5929999999934807,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "elapsed_seconds": 1.344,
+      "usage": {
+        "queue_time": 0.023103612,
+        "prompt_tokens": 4090,
+        "prompt_time": 0.294639456,
+        "completion_tokens": 597,
+        "completion_time": 0.833664222,
+        "total_tokens": 4687,
+        "total_time": 1.128303678
+      }
+    },
+    "model": "llama-3.1-8b-instant",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_1_8b_instant_test-30_resultado.md"
+    ],
+    "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-30",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_3_70b_versatile",
+    "task_id": "test-17",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 0.968, \"usage\": {\"queue_time\": 0.093718058, \"prompt_tokens\": 826, \"prompt_time\": 0.128877794, \"completion_tokens\": 211, \"completion_time\": 0.563819334, \"total_tokens\": 1037, \"total_time\": 0.692697128}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-17\\resultado.md"
+    ],
+    "elapsed_seconds": 1.2659999999887077,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "elapsed_seconds": 0.968,
+      "usage": {
+        "queue_time": 0.093718058,
+        "prompt_tokens": 826,
+        "prompt_time": 0.128877794,
+        "completion_tokens": 211,
+        "completion_time": 0.563819334,
+        "total_tokens": 1037,
+        "total_time": 0.692697128
+      }
+    },
+    "model": "llama-3.3-70b-versatile",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_3_70b_versatile_test-17_resultado.md"
+    ],
+    "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-17",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_3_70b_versatile",
+    "task_id": "test-20",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 2.297, \"usage\": {\"queue_time\": 0.063645815, \"prompt_tokens\": 3167, \"prompt_time\": 0.155944624, \"completion_tokens\": 576, \"completion_time\": 1.921940265, \"total_tokens\": 3743, \"total_time\": 2.077884889}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-20\\resultado.md"
+    ],
+    "elapsed_seconds": 2.514999999999418,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "elapsed_seconds": 2.297,
+      "usage": {
+        "queue_time": 0.063645815,
+        "prompt_tokens": 3167,
+        "prompt_time": 0.155944624,
+        "completion_tokens": 576,
+        "completion_time": 1.921940265,
+        "total_tokens": 3743,
+        "total_time": 2.077884889
+      }
+    },
+    "model": "llama-3.3-70b-versatile",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_3_70b_versatile_test-20_resultado.md"
+    ],
+    "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-20",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_3_70b_versatile",
+    "task_id": "test-21",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 1.891, \"usage\": {\"queue_time\": 0.073097107, \"prompt_tokens\": 3075, \"prompt_time\": 0.529260209, \"completion_tokens\": 422, \"completion_time\": 1.090656309, \"total_tokens\": 3497, \"total_time\": 1.6199165180000001}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-21\\resultado.md"
+    ],
+    "elapsed_seconds": 2.110000000000582,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "elapsed_seconds": 1.891,
+      "usage": {
+        "queue_time": 0.073097107,
+        "prompt_tokens": 3075,
+        "prompt_time": 0.529260209,
+        "completion_tokens": 422,
+        "completion_time": 1.090656309,
+        "total_tokens": 3497,
+        "total_time": 1.6199165180000001
+      }
+    },
+    "model": "llama-3.3-70b-versatile",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_3_70b_versatile_test-21_resultado.md"
+    ],
+    "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-21",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_3_70b_versatile",
+    "task_id": "test-23",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 3.171, \"usage\": {\"queue_time\": 0.058068331, \"prompt_tokens\": 4578, \"prompt_time\": 1.3705708300000001, \"completion_tokens\": 625, \"completion_time\": 1.586200611, \"total_tokens\": 5203, \"total_time\": 2.956771441}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-23\\resultado.md"
+    ],
+    "elapsed_seconds": 3.4219999999913853,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "elapsed_seconds": 3.171,
+      "usage": {
+        "queue_time": 0.058068331,
+        "prompt_tokens": 4578,
+        "prompt_time": 1.3705708300000001,
+        "completion_tokens": 625,
+        "completion_time": 1.586200611,
+        "total_tokens": 5203,
+        "total_time": 2.956771441
+      }
+    },
+    "model": "llama-3.3-70b-versatile",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_3_70b_versatile_test-23_resultado.md"
+    ],
+    "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-23",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_3_70b_versatile",
+    "task_id": "test-26",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 1.297, \"usage\": {\"queue_time\": 0.047013901, \"prompt_tokens\": 831, \"prompt_time\": 0.045099634, \"completion_tokens\": 411, \"completion_time\": 1.093377309, \"total_tokens\": 1242, \"total_time\": 1.138476943}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-26\\resultado.md"
+    ],
+    "elapsed_seconds": 1.5160000000032596,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "elapsed_seconds": 1.297,
+      "usage": {
+        "queue_time": 0.047013901,
+        "prompt_tokens": 831,
+        "prompt_time": 0.045099634,
+        "completion_tokens": 411,
+        "completion_time": 1.093377309,
+        "total_tokens": 1242,
+        "total_time": 1.138476943
+      }
+    },
+    "model": "llama-3.3-70b-versatile",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_3_70b_versatile_test-26_resultado.md"
+    ],
+    "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-26",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_llama_3_3_70b_versatile",
+    "task_id": "test-30",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 2.547, \"usage\": {\"queue_time\": 0.184374392, \"prompt_tokens\": 4090, \"prompt_time\": 0.556741504, \"completion_tokens\": 643, \"completion_time\": 1.683444905, \"total_tokens\": 4733, \"total_time\": 2.240186409}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-30\\resultado.md"
+    ],
+    "elapsed_seconds": 2.735000000000582,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "elapsed_seconds": 2.547,
+      "usage": {
+        "queue_time": 0.184374392,
+        "prompt_tokens": 4090,
+        "prompt_time": 0.556741504,
+        "completion_tokens": 643,
+        "completion_time": 1.683444905,
+        "total_tokens": 4733,
+        "total_time": 2.240186409
+      }
+    },
+    "model": "llama-3.3-70b-versatile",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_3_70b_versatile_test-30_resultado.md"
+    ],
+    "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-30",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_openai_gpt_oss_120b",
+    "task_id": "test-17",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 2.375, \"usage\": {\"queue_time\": 0.018243027, \"prompt_tokens\": 840, \"prompt_time\": 0.036776612, \"completion_tokens\": 1024, \"completion_time\": 2.160638109, \"total_tokens\": 1864, \"total_time\": 2.197414721, \"completion_tokens_details\": {\"reasoning_tokens\": 870}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-17\\resultado.md"
+    ],
+    "elapsed_seconds": 2.625,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "elapsed_seconds": 2.375,
+      "usage": {
+        "queue_time": 0.018243027,
+        "prompt_tokens": 840,
+        "prompt_time": 0.036776612,
+        "completion_tokens": 1024,
+        "completion_time": 2.160638109,
+        "total_tokens": 1864,
+        "total_time": 2.197414721,
+        "completion_tokens_details": {
+          "reasoning_tokens": 870
+        }
+      }
+    },
+    "model": "openai/gpt-oss-120b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_openai_gpt_oss_120b_test-17_resultado.md"
+    ],
+    "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-17",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_openai_gpt_oss_120b",
+    "task_id": "test-20",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 2.469, \"usage\": {\"queue_time\": 0.018734524, \"prompt_tokens\": 3048, \"prompt_time\": 0.146171353, \"completion_tokens\": 1024, \"completion_time\": 2.160155754, \"total_tokens\": 4072, \"total_time\": 2.306327107, \"completion_tokens_details\": {\"reasoning_tokens\": 451}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-20\\resultado.md"
+    ],
+    "elapsed_seconds": 2.735000000000582,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "elapsed_seconds": 2.469,
+      "usage": {
+        "queue_time": 0.018734524,
+        "prompt_tokens": 3048,
+        "prompt_time": 0.146171353,
+        "completion_tokens": 1024,
+        "completion_time": 2.160155754,
+        "total_tokens": 4072,
+        "total_time": 2.306327107,
+        "completion_tokens_details": {
+          "reasoning_tokens": 451
+        }
+      }
+    },
+    "model": "openai/gpt-oss-120b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_openai_gpt_oss_120b_test-20_resultado.md"
+    ],
+    "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-20",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_openai_gpt_oss_120b",
+    "task_id": "test-21",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 2.468, \"usage\": {\"queue_time\": 0.019426456, \"prompt_tokens\": 2866, \"prompt_time\": 0.134133748, \"completion_tokens\": 1024, \"completion_time\": 2.159261313, \"total_tokens\": 3890, \"total_time\": 2.293395061, \"completion_tokens_details\": {\"reasoning_tokens\": 244}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-21\\resultado.md"
+    ],
+    "elapsed_seconds": 2.687000000005355,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "elapsed_seconds": 2.468,
+      "usage": {
+        "queue_time": 0.019426456,
+        "prompt_tokens": 2866,
+        "prompt_time": 0.134133748,
+        "completion_tokens": 1024,
+        "completion_time": 2.159261313,
+        "total_tokens": 3890,
+        "total_time": 2.293395061,
+        "completion_tokens_details": {
+          "reasoning_tokens": 244
+        }
+      }
+    },
+    "model": "openai/gpt-oss-120b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_openai_gpt_oss_120b_test-21_resultado.md"
+    ],
+    "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-21",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_openai_gpt_oss_120b",
+    "task_id": "test-23",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 2.578, \"usage\": {\"queue_time\": 0.019615908, \"prompt_tokens\": 4317, \"prompt_time\": 0.191102128, \"completion_tokens\": 1024, \"completion_time\": 2.169985621, \"total_tokens\": 5341, \"total_time\": 2.361087749, \"completion_tokens_details\": {\"reasoning_tokens\": 285}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-23\\resultado.md"
+    ],
+    "elapsed_seconds": 2.7810000000026776,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "elapsed_seconds": 2.578,
+      "usage": {
+        "queue_time": 0.019615908,
+        "prompt_tokens": 4317,
+        "prompt_time": 0.191102128,
+        "completion_tokens": 1024,
+        "completion_time": 2.169985621,
+        "total_tokens": 5341,
+        "total_time": 2.361087749,
+        "completion_tokens_details": {
+          "reasoning_tokens": 285
+        }
+      }
+    },
+    "model": "openai/gpt-oss-120b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_openai_gpt_oss_120b_test-23_resultado.md"
+    ],
+    "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-23",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_openai_gpt_oss_120b",
+    "task_id": "test-26",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 2.438, \"usage\": {\"queue_time\": 0.091640171, \"prompt_tokens\": 843, \"prompt_time\": 0.038774115, \"completion_tokens\": 1024, \"completion_time\": 2.152247941, \"total_tokens\": 1867, \"total_time\": 2.191022056, \"completion_tokens_details\": {\"reasoning_tokens\": 567}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-26\\resultado.md"
+    ],
+    "elapsed_seconds": 2.610000000000582,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "elapsed_seconds": 2.438,
+      "usage": {
+        "queue_time": 0.091640171,
+        "prompt_tokens": 843,
+        "prompt_time": 0.038774115,
+        "completion_tokens": 1024,
+        "completion_time": 2.152247941,
+        "total_tokens": 1867,
+        "total_time": 2.191022056,
+        "completion_tokens_details": {
+          "reasoning_tokens": 567
+        }
+      }
+    },
+    "model": "openai/gpt-oss-120b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_openai_gpt_oss_120b_test-26_resultado.md"
+    ],
+    "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-26",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_openai_gpt_oss_120b",
+    "task_id": "test-30",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 2.484, \"usage\": {\"queue_time\": 0.017900311, \"prompt_tokens\": 3789, \"prompt_time\": 0.160152821, \"completion_tokens\": 1024, \"completion_time\": 2.143534366, \"total_tokens\": 4813, \"total_time\": 2.303687187, \"completion_tokens_details\": {\"reasoning_tokens\": 461}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-30\\resultado.md"
+    ],
+    "elapsed_seconds": 2.6560000000026776,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "elapsed_seconds": 2.484,
+      "usage": {
+        "queue_time": 0.017900311,
+        "prompt_tokens": 3789,
+        "prompt_time": 0.160152821,
+        "completion_tokens": 1024,
+        "completion_time": 2.143534366,
+        "total_tokens": 4813,
+        "total_time": 2.303687187,
+        "completion_tokens_details": {
+          "reasoning_tokens": 461
+        }
+      }
+    },
+    "model": "openai/gpt-oss-120b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_openai_gpt_oss_120b_test-30_resultado.md"
+    ],
+    "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-30",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_qwen_qwen3_32b",
+    "task_id": "test-17",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.125, \"usage\": {\"queue_time\": 0.090922238, \"prompt_tokens\": 939, \"prompt_time\": 0.044155927, \"completion_tokens\": 1024, \"completion_time\": 1.817816273, \"total_tokens\": 1963, \"total_time\": 1.8619721999999999}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-17\\resultado.md"
+    ],
+    "elapsed_seconds": 2.389999999999418,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "qwen/qwen3-32b",
+      "elapsed_seconds": 2.125,
+      "usage": {
+        "queue_time": 0.090922238,
+        "prompt_tokens": 939,
+        "prompt_time": 0.044155927,
+        "completion_tokens": 1024,
+        "completion_time": 1.817816273,
+        "total_tokens": 1963,
+        "total_time": 1.8619721999999999
+      }
+    },
+    "model": "qwen/qwen3-32b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-17_resultado.md"
+    ],
+    "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-17",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_qwen_qwen3_32b",
+    "task_id": "test-20",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.937, \"usage\": {\"queue_time\": 0.090239827, \"prompt_tokens\": 3642, \"prompt_time\": 0.17624339, \"completion_tokens\": 1024, \"completion_time\": 2.497415208, \"total_tokens\": 4666, \"total_time\": 2.6736585980000003}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-20\\resultado.md"
+    ],
+    "elapsed_seconds": 3.1719999999913853,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "qwen/qwen3-32b",
+      "elapsed_seconds": 2.937,
+      "usage": {
+        "queue_time": 0.090239827,
+        "prompt_tokens": 3642,
+        "prompt_time": 0.17624339,
+        "completion_tokens": 1024,
+        "completion_time": 2.497415208,
+        "total_tokens": 4666,
+        "total_time": 2.6736585980000003
+      }
+    },
+    "model": "qwen/qwen3-32b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-20_resultado.md"
+    ],
+    "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-20",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_qwen_qwen3_32b",
+    "task_id": "test-21",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.688, \"usage\": {\"queue_time\": 0.088591607, \"prompt_tokens\": 3280, \"prompt_time\": 0.171328252, \"completion_tokens\": 1024, \"completion_time\": 2.287541881, \"total_tokens\": 4304, \"total_time\": 2.458870133}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-21\\resultado.md"
+    ],
+    "elapsed_seconds": 2.875,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "qwen/qwen3-32b",
+      "elapsed_seconds": 2.688,
+      "usage": {
+        "queue_time": 0.088591607,
+        "prompt_tokens": 3280,
+        "prompt_time": 0.171328252,
+        "completion_tokens": 1024,
+        "completion_time": 2.287541881,
+        "total_tokens": 4304,
+        "total_time": 2.458870133
+      }
+    },
+    "model": "qwen/qwen3-32b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-21_resultado.md"
+    ],
+    "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-21",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_qwen_qwen3_32b",
+    "task_id": "test-23",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.782, \"usage\": {\"queue_time\": 0.089924861, \"prompt_tokens\": 5008, \"prompt_time\": 0.251146977, \"completion_tokens\": 1024, \"completion_time\": 2.296538855, \"total_tokens\": 6032, \"total_time\": 2.547685832}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-23\\resultado.md"
+    ],
+    "elapsed_seconds": 2.9689999999973224,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "qwen/qwen3-32b",
+      "elapsed_seconds": 2.782,
+      "usage": {
+        "queue_time": 0.089924861,
+        "prompt_tokens": 5008,
+        "prompt_time": 0.251146977,
+        "completion_tokens": 1024,
+        "completion_time": 2.296538855,
+        "total_tokens": 6032,
+        "total_time": 2.547685832
+      }
+    },
+    "model": "qwen/qwen3-32b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-23_resultado.md"
+    ],
+    "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-23",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_qwen_qwen3_32b",
+    "task_id": "test-26",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.703, \"usage\": {\"queue_time\": 0.089954709, \"prompt_tokens\": 944, \"prompt_time\": 0.05154608, \"completion_tokens\": 1007, \"completion_time\": 2.444473788, \"total_tokens\": 1951, \"total_time\": 2.496019868}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-26\\resultado.md"
+    ],
+    "elapsed_seconds": 2.8910000000032596,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "qwen/qwen3-32b",
+      "elapsed_seconds": 2.703,
+      "usage": {
+        "queue_time": 0.089954709,
+        "prompt_tokens": 944,
+        "prompt_time": 0.05154608,
+        "completion_tokens": 1007,
+        "completion_time": 2.444473788,
+        "total_tokens": 1951,
+        "total_time": 2.496019868
+      }
+    },
+    "model": "qwen/qwen3-32b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-26_resultado.md"
+    ],
+    "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-26",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "groq_qwen_qwen3_32b",
+    "task_id": "test-30",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 3.454, \"usage\": {\"queue_time\": 0.191096556, \"prompt_tokens\": 4419, \"prompt_time\": 0.35399056, \"completion_tokens\": 1024, \"completion_time\": 2.753714816, \"total_tokens\": 5443, \"total_time\": 3.107705376}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-30\\resultado.md"
+    ],
+    "elapsed_seconds": 3.5939999999973224,
+    "timed_out": false,
+    "usage": {
+      "provider": "groq",
+      "model": "qwen/qwen3-32b",
+      "elapsed_seconds": 3.454,
+      "usage": {
+        "queue_time": 0.191096556,
+        "prompt_tokens": 4419,
+        "prompt_time": 0.35399056,
+        "completion_tokens": 1024,
+        "completion_time": 2.753714816,
+        "total_tokens": 5443,
+        "total_time": 3.107705376
+      }
+    },
+    "model": "qwen/qwen3-32b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-30_resultado.md"
+    ],
+    "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-30",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-17",
+    "returncode": 1,
+    "stdout": "{\"type\":\"step_start\",\"timestamp\":1779378371082,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b373a06001rrqacUS5nzZe5E\",\"messageID\":\"msg_e4b371b54001tgTJwmH6GJP1LK\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"type\":\"step-start\"}}\n{\"type\":\"tool_use\",\"timestamp\":1779378371130,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"todowrite\",\"callID\":\"cc2a0e46e91445e4b3216189beaf5a5b\",\"state\":{\"status\":\"completed\",\"input\":{\"todos\":[{\"content\":\"Explorar archivos CSV de gastos disponibles\",\"priority\":\"high\",\"status\":\"pending\"},{\"content\":\"Leer y analizar datos de enero a mayo\",\"priority\":\"high\",\"status\":\"pending\"},{\"content\":\"Calcular totales por mes\",\"priority\":\"high\",\"status\":\"pending\"},{\"content\":\"Calcular categorías principales\",\"priority\":\"medium\",\"status\":\"pending\"},{\"content\":\"Identificar anomalías en los datos\",\"priority\":\"medium\",\"status\":\"pending\"},{\"content\":\"Crear archivo resultado.md con resumen financiero\",\"priority\":\"high\",\"status\":\"pending\"}]},\"output\":\"[\\n  {\\n    \\\"content\\\": \\\"Explorar archivos CSV de gastos disponibles\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Leer y analizar datos de enero a mayo\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Calcular totales por mes\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Calcular categorías principales\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"medium\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Identificar anomalías en los datos\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"medium\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Crear archivo resultado.md con resumen financiero\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  }\\n]\",\"metadata\":{\"todos\":[{\"content\":\"Explorar archivos CSV de gastos disponibles\",\"status\":\"pending\",\"priority\":\"high\"},{\"content\":\"Leer y analizar datos de enero a mayo\",\"status\":\"pending\",\"priority\":\"high\"},{\"content\":\"Calcular totales por mes\",\"status\":\"pending\",\"priority\":\"high\"},{\"content\":\"Calcular categorías principales\",\"status\":\"pending\",\"priority\":\"medium\"},{\"content\":\"Identificar anomalías en los datos\",\"status\":\"pending\",\"priority\":\"medium\"},{\"content\":\"Crear archivo resultado.md con resumen financiero\",\"status\":\"pending\",\"priority\":\"high\"}],\"truncated\":false},\"title\":\"6 todos\",\"time\":{\"start\":1779378371111,\"end\":1779378371120}},\"metadata\":{\"openrouter\":{\"reasoning_details\":[]}},\"id\":\"prt_e4b373a13001SlHDerp1FE4THE\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b371b54001tgTJwmH6GJP1LK\"}}\n{\"type\":\"text\",\"timestamp\":1779378371130,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b373a0b0010KnVyPaPM1n5lL\",\"messageID\":\"msg_e4b371b54001tgTJwmH6GJP1LK\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"text\",\"text\":\"\\n\\n\",\"time\":{\"start\":1779378371083,\"end\":1779378371123}}}\n{\"type\":\"step_finish\",\"timestamp\":1779378371440,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b373b6b001m0Mgwwt9Fix3vH\",\"reason\":\"tool-calls\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"messageID\":\"msg_e4b371b54001tgTJwmH6GJP1LK\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"step-finish\",\"tokens\":{\"total\":8505,\"input\":2659,\"output\":198,\"reasoning\":0,\"cache\":{\"write\":0,\"read\":5648}},\"cost\":0.0008872416}}\n{\"type\":\"step_start\",\"timestamp\":1779378379325,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b375a3a001yTCjz8PkNsUhwT\",\"messageID\":\"msg_e4b373c7d001WA13vyS72Gzbly\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"type\":\"step-start\"}}\n{\"type\":\"tool_use\",\"timestamp\":1779378379367,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"todowrite\",\"callID\":\"a33f183cd55f48a78297c96fc6271a4c\",\"state\":{\"status\":\"completed\",\"input\":{\"todos\":[{\"content\":\"Explorar archivos CSV de gastos disponibles\",\"priority\":\"high\",\"status\":\"in_progress\"},{\"content\":\"Leer y analizar datos de enero a mayo\",\"priority\":\"high\",\"status\":\"pending\"},{\"content\":\"Calcular totales por mes\",\"priority\":\"high\",\"status\":\"pending\"},{\"content\":\"Calcular categorías principales\",\"priority\":\"medium\",\"status\":\"pending\"},{\"content\":\"Identificar anomalías en los datos\",\"priority\":\"medium\",\"status\":\"pending\"},{\"content\":\"Crear archivo resultado.md con resumen financiero\",\"priority\":\"high\",\"status\":\"pending\"}]},\"output\":\"[\\n  {\\n    \\\"content\\\": \\\"Explorar archivos CSV de gastos disponibles\\\",\\n    \\\"status\\\": \\\"in_progress\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Leer y analizar datos de enero a mayo\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Calcular totales por mes\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Calcular categorías principales\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"medium\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Identificar anomalías en los datos\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"medium\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Crear archivo resultado.md con resumen financiero\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  }\\n]\",\"metadata\":{\"todos\":[{\"content\":\"Explorar archivos CSV de gastos disponibles\",\"status\":\"in_progress\",\"priority\":\"high\"},{\"content\":\"Leer y analizar datos de enero a mayo\",\"status\":\"pending\",\"priority\":\"high\"},{\"content\":\"Calcular totales por mes\",\"status\":\"pending\",\"priority\":\"high\"},{\"content\":\"Calcular categorías principales\",\"status\":\"pending\",\"priority\":\"medium\"},{\"content\":\"Identificar anomalías en los datos\",\"status\":\"pending\",\"priority\":\"medium\"},{\"content\":\"Crear archivo resultado.md con resumen financiero\",\"status\":\"pending\",\"priority\":\"high\"}],\"truncated\":false},\"title\":\"6 todos\",\"time\":{\"start\":1779378379345,\"end\":1779378379356}},\"metadata\":{\"openrouter\":{\"reasoning_details\":[]}},\"id\":\"prt_e4b375a41001K1zz6RXmw69V6m\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b373c7d001WA13vyS72Gzbly\"}}\n{\"type\":\"text\",\"timestamp\":1779378379367,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b375a3d001YHj8kXGtT8e4ve\",\"messageID\":\"msg_e4b373c7d001WA13vyS72Gzbly\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"text\",\"text\":\"\\n\\n\",\"time\":{\"start\":1779378379325,\"end\":1779378379360}}}\n{\"type\":\"step_finish\",\"timestamp\":1779378379669,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b375b8f001OcR03LEbMYGrcT\",\"reason\":\"tool-calls\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"messageID\":\"msg_e4b373c7d001WA13vyS72Gzbly\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"step-finish\",\"tokens\":{\"total\":8916,\"input\":2877,\"output\":200,\"reasoning\":0,\"cache\":{\"write\":0,\"read\":5839}},\"cost\":0.0009477468}}\n{\"type\":\"step_start\",\"timestamp\":1779378383379,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b376a11001FVIdY9SAqZRH10\",\"messageID\":\"msg_e4b375ccb001E2ZKAA01jaKuda\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"type\":\"step-start\"}}\n{\"type\":\"text\",\"timestamp\":1779378383399,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b376a13001oSZXUgThGCy6iV\",\"messageID\":\"msg_e4b375ccb001E2ZKAA01jaKuda\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"text\",\"text\":\"\\n\\n\",\"time\":{\"start\":1779378383379,\"end\":1779378383396}}}\n{\"type\":\"tool_use\",\"timestamp\":1779378383486,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"glob\",\"callID\":\"7866a86df64c46128b7998c4a6a209a9\",\"state\":{\"status\":\"completed\",\"input\":{\"pattern\":\"assistant_synthetic/*.csv\"},\"output\":\"D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_05.csv\\nD:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_04.csv\\nD:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_02.csv\\nD:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_03.csv\\nD:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_01.csv\",\"metadata\":{\"count\":5,\"truncated\":false},\"title\":\"benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\",\"time\":{\"start\":1779378383392,\"end\":1779378383483}},\"metadata\":{\"openrouter\":{\"reasoning_details\":[]}},\"id\":\"prt_e4b376a17001aQmJieKnV6Zdpc\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b375ccb001E2ZKAA01jaKuda\"}}\n{\"type\":\"step_finish\",\"timestamp\":1779378383795,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b376bad001HZbqhhvThDfh5P\",\"reason\":\"tool-calls\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"messageID\":\"msg_e4b375ccb001E2ZKAA01jaKuda\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"step-finish\",\"tokens\":{\"total\":9178,\"input\":3196,\"output\":49,\"reasoning\":0,\"cache\":{\"write\":0,\"read\":5933}},\"cost\":0.0009734256}}\n{\"type\":\"step_start\",\"timestamp\":1779378391379,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b378950001zo2vyjkF3gMe50\",\"messageID\":\"msg_e4b376cd4001DAYFQw1jrsQlcD\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"type\":\"step-start\"}}\n{\"type\":\"tool_use\",\"timestamp\":1779378391403,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"todowrite\",\"callID\":\"8e64f5c888824f9abbdd46e6c6171ac9\",\"state\":{\"status\":\"completed\",\"input\":{\"todos\":[{\"content\":\"Explorar archivos CSV de gastos disponibles\",\"priority\":\"high\",\"status\":\"completed\"},{\"content\":\"Leer y analizar datos de enero a mayo\",\"priority\":\"high\",\"status\":\"in_progress\"},{\"content\":\"Calcular totales por mes\",\"priority\":\"high\",\"status\":\"pending\"},{\"content\":\"Calcular categorías principales\",\"priority\":\"medium\",\"status\":\"pending\"},{\"content\":\"Identificar anomalías en los datos\",\"priority\":\"medium\",\"status\":\"pending\"},{\"content\":\"Crear archivo resultado.md con resumen financiero\",\"priority\":\"high\",\"status\":\"pending\"}]},\"output\":\"[\\n  {\\n    \\\"content\\\": \\\"Explorar archivos CSV de gastos disponibles\\\",\\n    \\\"status\\\": \\\"completed\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Leer y analizar datos de enero a mayo\\\",\\n    \\\"status\\\": \\\"in_progress\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Calcular totales por mes\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Calcular categorías principales\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"medium\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Identificar anomalías en los datos\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"medium\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Crear archivo resultado.md con resumen financiero\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  }\\n]\",\"metadata\":{\"todos\":[{\"content\":\"Explorar archivos CSV de gastos disponibles\",\"status\":\"completed\",\"priority\":\"high\"},{\"content\":\"Leer y analizar datos de enero a mayo\",\"status\":\"in_progress\",\"priority\":\"high\"},{\"content\":\"Calcular totales por mes\",\"status\":\"pending\",\"priority\":\"high\"},{\"content\":\"Calcular categorías principales\",\"status\":\"pending\",\"priority\":\"medium\"},{\"content\":\"Identificar anomalías en los datos\",\"status\":\"pending\",\"priority\":\"medium\"},{\"content\":\"Crear archivo resultado.md con resumen financiero\",\"status\":\"pending\",\"priority\":\"high\"}],\"truncated\":false},\"title\":\"5 todos\",\"time\":{\"start\":1779378391391,\"end\":1779378391398}},\"metadata\":{\"openrouter\":{\"reasoning_details\":[]}},\"id\":\"prt_e4b378955002F0fSrZg0Pf4eje\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b376cd4001DAYFQw1jrsQlcD\"}}\n{\"type\":\"text\",\"timestamp\":1779378391403,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b378953001SzbgFx8BdksQ3P\",\"messageID\":\"msg_e4b376cd4001DAYFQw1jrsQlcD\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"text\",\"text\":\"\\n\\n\",\"time\":{\"start\":1779378391379,\"end\":1779378391400}}}\n{\"type\":\"step_finish\",\"timestamp\":1779378391702,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b378a910010sfwGhdaKq3v96\",\"reason\":\"tool-calls\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"messageID\":\"msg_e4b376cd4001DAYFQw1jrsQlcD\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"step-finish\",\"tokens\":{\"total\":9673,\"input\":2937,\"output\":200,\"reasoning\":0,\"cache\":{\"write\":0,\"read\":6536}},\"cost\":0.0009804312}}\n{\"type\":\"step_start\",\"timestamp\":1779378405257,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37bf86001mid9q4vmj5DbYS\",\"messageID\":\"msg_e4b378ba4001G1HlN9KyFvdnUL\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"type\":\"step-start\"}}\n{\"type\":\"text\",\"timestamp\":1779378405399,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37bf8a001oL7oP0ASDZajnR\",\"messageID\":\"msg_e4b378ba4001G1HlN9KyFvdnUL\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"text\",\"text\":\"\\n\\n\",\"time\":{\"start\":1779378405258,\"end\":1779378405373}}}\n{\"type\":\"tool_use\",\"timestamp\":1779378405423,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"read\",\"callID\":\"b73563f8276448eeb06e97dfe06f9746\",\"state\":{\"status\":\"completed\",\"input\":{\"filePath\":\"D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_01.csv\"},\"output\":\"<path>D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_01.csv</path>\\n<type>file</type>\\n<content>\\n1: fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2: 2026-01-08,Hotel Madrid,viajes,180.0,180.0,ok\\n3: 2026-01-09,Taxi aeropuerto,viajes,38.5,38.5,ok\\n4: 2026-01-15,Software encuestas,software,49.0,49.0,ok\\n\\n(End of file - total 4 lines)\\n</content>\",\"metadata\":{\"preview\":\"fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2026-01-08,Hotel Madrid,viajes,180.0,180.0,ok\\n2026-01-09,Taxi aeropuerto,viajes,38.5,38.5,ok\\n2026-01-15,Software encuestas,software,49.0,49.0,ok\",\"truncated\":false,\"loaded\":[]},\"title\":\"benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_01.csv\",\"time\":{\"start\":1779378405278,\"end\":1779378405418}},\"metadata\":{\"openrouter\":{\"reasoning_details\":[]}},\"id\":\"prt_e4b37bf8f001g1wY97lOOWOYN4\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b378ba4001G1HlN9KyFvdnUL\"}}\n{\"type\":\"tool_use\",\"timestamp\":1779378405454,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"read\",\"callID\":\"56b0efad564d46369c339848ccd0bf01\",\"state\":{\"status\":\"completed\",\"input\":{\"filePath\":\"D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_02.csv\"},\"output\":\"<path>D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_02.csv</path>\\n<type>file</type>\\n<content>\\n1: fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2: 2026-02-03,Cena cliente,comidas,96.2,96.2,ok\\n3: 2026-02-14,Tren Valencia,viajes,62.0,62.0,ok\\n4: 2026-02-22,Licencia PDF,software,19.9,29.9,importe_discrepante\\n\\n(End of file - total 4 lines)\\n</content>\",\"metadata\":{\"preview\":\"fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2026-02-03,Cena cliente,comidas,96.2,96.2,ok\\n2026-02-14,Tren Valencia,viajes,62.0,62.0,ok\\n2026-02-22,Licencia PDF,software,19.9,29.9,importe_discrepante\",\"truncated\":false,\"loaded\":[]},\"title\":\"benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_02.csv\",\"time\":{\"start\":1779378405302,\"end\":1779378405428}},\"id\":\"prt_e4b37bfa7001stWZlpTBaQDv5P\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b378ba4001G1HlN9KyFvdnUL\"}}\n{\"type\":\"tool_use\",\"timestamp\":1779378405454,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"read\",\"callID\":\"307907c7d910470d90af087ea541e206\",\"state\":{\"status\":\"completed\",\"input\":{\"filePath\":\"D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_03.csv\"},\"output\":\"<path>D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_03.csv</path>\\n<type>file</type>\\n<content>\\n1: fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2: 2026-03-04,Hotel Barcelona,viajes,210.0,210.0,posible_duplicado\\n3: 2026-03-04,Hotel Barcelona,viajes,210.0,210.0,posible_duplicado\\n4: 2026-03-19,Comida equipo,comidas,134.7,134.7,ok\\n\\n(End of file - total 4 lines)\\n</content>\",\"metadata\":{\"preview\":\"fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2026-03-04,Hotel Barcelona,viajes,210.0,210.0,posible_duplicado\\n2026-03-04,Hotel Barcelona,viajes,210.0,210.0,posible_duplicado\\n2026-03-19,Comida equipo,comidas,134.7,134.7,ok\",\"truncated\":false,\"loaded\":[]},\"title\":\"benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_03.csv\",\"time\":{\"start\":1779378405324,\"end\":1779378405440}},\"id\":\"prt_e4b37bfbd001LBG48Kl5T23PM3\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b378ba4001G1HlN9KyFvdnUL\"}}\n{\"type\":\"tool_use\",\"timestamp\":1779378405454,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"read\",\"callID\":\"9ab115ddfb534e26a57351d2b2e059be\",\"state\":{\"status\":\"completed\",\"input\":{\"filePath\":\"D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_04.csv\"},\"output\":\"<path>D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_04.csv</path>\\n<type>file</type>\\n<content>\\n1: fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2: 2026-04-02,Dominio anual,software,14.99,14.99,ok\\n3: 2026-04-11,Taxi cliente,viajes,28.3,28.3,sin_recibo\\n4: 2026-04-25,Material oficina,oficina,73.4,73.4,ok\\n\\n(End of file - total 4 lines)\\n</content>\",\"metadata\":{\"preview\":\"fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2026-04-02,Dominio anual,software,14.99,14.99,ok\\n2026-04-11,Taxi cliente,viajes,28.3,28.3,sin_recibo\\n2026-04-25,Material oficina,oficina,73.4,73.4,ok\",\"truncated\":false,\"loaded\":[]},\"title\":\"benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_04.csv\",\"time\":{\"start\":1779378405344,\"end\":1779378405450}},\"id\":\"prt_e4b37bfd5001u2bOaKDlyndaHb\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b378ba4001G1HlN9KyFvdnUL\"}}\n{\"type\":\"tool_use\",\"timestamp\":1779378405474,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"read\",\"callID\":\"c85d5fe93d214b2dbea20cde34a18e44\",\"state\":{\"status\":\"completed\",\"input\":{\"filePath\":\"D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_05.csv\"},\"output\":\"<path>D:\\\\inspector\\\\benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_05.csv</path>\\n<type>file</type>\\n<content>\\n1: fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2: 2026-05-01,Vuelo Barcelona,viajes,155.0,155.0,ok\\n3: 2026-05-03,Suscripcion IA,software,120.0,120.0,revisar_proveedor\\n4: 2026-05-05,Cafe reunion,comidas,18.4,18.4,ok\\n\\n(End of file - total 4 lines)\\n</content>\",\"metadata\":{\"preview\":\"fecha,concepto,categoria,importe_declarado,importe_esperado,estado\\n2026-05-01,Vuelo Barcelona,viajes,155.0,155.0,ok\\n2026-05-03,Suscripcion IA,software,120.0,120.0,revisar_proveedor\\n2026-05-05,Cafe reunion,comidas,18.4,18.4,ok\",\"truncated\":false,\"loaded\":[]},\"title\":\"benchmarks\\\\results\\\\20260521_174516_442823\\\\work\\\\opencode_openrouter_deepseek_deepseek_v3_2\\\\test-17\\\\assistant_synthetic\\\\gastos_2026_05.csv\",\"time\":{\"start\":1779378405366,\"end\":1779378405470}},\"id\":\"prt_e4b37bfe4001GJxOmVG2e6FgHk\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b378ba4001G1HlN9KyFvdnUL\"}}\n{\"type\":\"step_finish\",\"timestamp\":1779378405777,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37c18d0016x68uJXpEpMrbg\",\"reason\":\"tool-calls\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"messageID\":\"msg_e4b378ba4001G1HlN9KyFvdnUL\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"step-finish\",\"tokens\":{\"total\":10320,\"input\":3856,\"output\":434,\"reasoning\":0,\"cache\":{\"write\":0,\"read\":6030}},\"cost\":0.00128772}}\n{\"type\":\"step_start\",\"timestamp\":1779378414092,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37e209001Hlx8Zu5ctxJNZb\",\"messageID\":\"msg_e4b37c2ab0011MKR7O0aiA90aN\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"type\":\"step-start\"}}\n{\"type\":\"tool_use\",\"timestamp\":1779378414125,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"type\":\"tool\",\"tool\":\"todowrite\",\"callID\":\"86abe7e3cb824cd299c226dd90a7daeb\",\"state\":{\"status\":\"completed\",\"input\":{\"todos\":[{\"content\":\"Explorar archivos CSV de gastos disponibles\",\"priority\":\"high\",\"status\":\"completed\"},{\"content\":\"Leer y analizar datos de enero a mayo\",\"priority\":\"high\",\"status\":\"completed\"},{\"content\":\"Calcular totales por mes\",\"priority\":\"high\",\"status\":\"in_progress\"},{\"content\":\"Calcular categorías principales\",\"priority\":\"medium\",\"status\":\"pending\"},{\"content\":\"Identificar anomalías en los datos\",\"priority\":\"medium\",\"status\":\"pending\"},{\"content\":\"Crear archivo resultado.md con resumen financiero\",\"priority\":\"high\",\"status\":\"pending\"}]},\"output\":\"[\\n  {\\n    \\\"content\\\": \\\"Explorar archivos CSV de gastos disponibles\\\",\\n    \\\"status\\\": \\\"completed\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Leer y analizar datos de enero a mayo\\\",\\n    \\\"status\\\": \\\"completed\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Calcular totales por mes\\\",\\n    \\\"status\\\": \\\"in_progress\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Calcular categorías principales\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"medium\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Identificar anomalías en los datos\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"medium\\\"\\n  },\\n  {\\n    \\\"content\\\": \\\"Crear archivo resultado.md con resumen financiero\\\",\\n    \\\"status\\\": \\\"pending\\\",\\n    \\\"priority\\\": \\\"high\\\"\\n  }\\n]\",\"metadata\":{\"todos\":[{\"content\":\"Explorar archivos CSV de gastos disponibles\",\"status\":\"completed\",\"priority\":\"high\"},{\"content\":\"Leer y analizar datos de enero a mayo\",\"status\":\"completed\",\"priority\":\"high\"},{\"content\":\"Calcular totales por mes\",\"status\":\"in_progress\",\"priority\":\"high\"},{\"content\":\"Calcular categorías principales\",\"status\":\"pending\",\"priority\":\"medium\"},{\"content\":\"Identificar anomalías en los datos\",\"status\":\"pending\",\"priority\":\"medium\"},{\"content\":\"Crear archivo resultado.md con resumen financiero\",\"status\":\"pending\",\"priority\":\"high\"}],\"truncated\":false},\"title\":\"4 todos\",\"time\":{\"start\":1779378414112,\"end\":1779378414119}},\"metadata\":{\"openrouter\":{\"reasoning_details\":[]}},\"id\":\"prt_e4b37e20f0015kAsmKkQyDA6am\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"messageID\":\"msg_e4b37c2ab0011MKR7O0aiA90aN\"}}\n{\"type\":\"text\",\"timestamp\":1779378414125,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37e20d001pkdVM7W7WDKWp6\",\"messageID\":\"msg_e4b37c2ab0011MKR7O0aiA90aN\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"text\",\"text\":\"\\n\\n\",\"time\":{\"start\":1779378414093,\"end\":1779378414122}}}\n{\"type\":\"step_finish\",\"timestamp\":1779378414407,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37e341001ldF584dyKZCbN3\",\"reason\":\"tool-calls\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"messageID\":\"msg_e4b37c2ab0011MKR7O0aiA90aN\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"step-finish\",\"tokens\":{\"total\":11515,\"input\":4413,\"output\":200,\"reasoning\":0,\"cache\":{\"write\":0,\"read\":6902}},\"cost\":0.0013616064}}\n{\"type\":\"step_start\",\"timestamp\":1779378416848,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37eccc001TL8RjHTknVVuY4\",\"messageID\":\"msg_e4b37e44e001T31R6gtVjbSLDX\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"type\":\"step-start\"}}\n{\"type\":\"text\",\"timestamp\":1779378416856,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37ecd0001soSVjAU8P9pX0i\",\"messageID\":\"msg_e4b37e44e001T31R6gtVjbSLDX\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"text\",\"text\":\"\\n\\n\",\"time\":{\"start\":1779378416848,\"end\":1779378416852}}}\n{\"type\":\"step_finish\",\"timestamp\":1779378417191,\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"part\":{\"id\":\"prt_e4b37ee20001mJ0jlZAKE3GC4X\",\"reason\":\"stop\",\"snapshot\":\"d20399a4b7b690f4a5b199eec2458e88b00ed4d7\",\"messageID\":\"msg_e4b37e44e001T31R6gtVjbSLDX\",\"sessionID\":\"ses_1b4c8e78bffeQw4lsnp8GsrqoQ\",\"type\":\"step-finish\",\"tokens\":{\"total\":11730,\"input\":3871,\"output\":2,\"reasoning\":0,\"cache\":{\"write\":0,\"read\":7857}},\"cost\":0.0011742444}}\n",
+    "stderr": "OpenCode finished without creating expected output.",
+    "output_files": [],
+    "elapsed_seconds": 61.03199999999197,
+    "timed_out": false,
+    "usage": {},
+    "model": "openrouter/deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "copied_outputs": [],
+    "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-17",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-20",
+    "returncode": 0,
+    "stdout": "I'll help you create an incident report for Clinica Centro using the provided data files. First, let me explore the directory structure and read the data files.\n\n\nNow let me read each of the data files to understand the content and create the incident report.\n\n\n\n\nNow let me analyze the data and create the incident report for Clinica Centro. I can see that:\n\n1. **From the voice notes (VN-001)**: There's a note about \"Call Noelia from Clinica Centro before Thursday to confirm demo of payment module\"\n2. **From the emails (E-001)**: There's an email thread about Clinica Centro - payment module demo with Noelia Castro\n3. **From the contacts**: Noelia Castro is listed as a contact for Clinica Centro with high priority\n\nLet me create a comprehensive incident report based on this data and the other information that might be relevant to Clinica Centro's operations.\n\n\n\n\n\n\n\n\n\n\n\n\nHe creado el informe de incidencias y oportunidades para Clínica Centro en el archivo `resultado.md`. El informe incluye:\n\n1. **2 incidencias críticas**: Demostración pendiente del módulo de pagos e informe mensual\n2. **3 oportunidades de mejora**: Optimización de procesos, seguimiento de contactos y formatos de comunicación\n3. **Recomendaciones prioritarias** con plan de acción inmediato\n4. **Métricas propuestas** para seguimiento\n5. **Análisis de contexto** competitivo del sector salud\n\nEl archivo está disponible en el directorio de trabajo y cumple con los requisitos especificados.",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-20\\resultado.md"
+    ],
+    "elapsed_seconds": 139.63999999999942,
+    "timed_out": false,
+    "usage": {},
+    "model": "openrouter/deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\opencode_openrouter_deepseek_deepseek_v3_2_test-20_resultado.md"
+    ],
+    "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-20",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-21",
+    "returncode": 0,
+    "stdout": "De las notas de voz, la entrada VN-009 indica claramente: \"Buscar alternativa barata a herramienta de encuestas para GreenBox.\" Esto es un requisito específico de buscar una opción económica.\n\n\nBasándome en las fuentes web analizadas, puedo identificar varias alternativas económicas:\n\nDe la fuente 1 (QuestionPro): Google Forms (gratis), Wufoo (desde $15/mes), SurveySparrow (desde $18/mes), Zoho Forms (gratuito con opciones limitadas)\n\nDe la fuente 2 (Contentsquare): Google Forms (gratis), Zoho Survey\n\nDe la fuente 3 (Jotform): Google Forms (gratis), Crowdsignal (antes Polldaddy, desde $15/mes), ProProfs Survey Maker (desde $9.99/mes), Zoho Survey (gratuito con límites)\n\n\n\n\n\n\n\n\n\n\n\n\n\nArchivo `resultado.md` creado con alternativas económicas para GreenBox, incluyendo Google Forms (gratuito), Zoho Survey (gratuito), Crowdsignal ($15/mes) y otras opciones, con referencias a las fuentes consultadas.",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-21\\resultado.md"
+    ],
+    "elapsed_seconds": 122.40699999999197,
+    "timed_out": false,
+    "usage": {},
+    "model": "openrouter/deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\opencode_openrouter_deepseek_deepseek_v3_2_test-21_resultado.md"
+    ],
+    "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-21",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-23",
+    "returncode": 0,
+    "stdout": "Entiendo la tarea. Primero leeré el contexto web preparado, luego los datos locales y finalmente investigaré opciones de SSO para Barna Health\nAhora leeré los datos locales preparados:\n\n\nAhora investigaré más información sobre proveedores de SSO del contexto web. También buscaré información específica sobre el sector salud:\n\n\nAhora crearé un análisis de opciones de SSO para Barna Health basándome en los datos disponibles\n\n\n\n\n\n\n\n\n\nArchivo `resultado.md` creado exitosamente en el directorio de trabajo con el análisis completo de opciones SSO para Barna Health, incluyendo:\n\n- Contexto del cliente basado en datos locales\n- Top 10 proveedores SSO para 2026\n- Evaluación específica para sector salud\n- Recomendaciones prioritarias (Okta como opción principal)\n- Plan de acción para la reunión del 18 de mayo de 2026",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-23\\resultado.md"
+    ],
+    "elapsed_seconds": 157.48500000000058,
+    "timed_out": false,
+    "usage": {},
+    "model": "openrouter/deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\opencode_openrouter_deepseek_deepseek_v3_2_test-23_resultado.md"
+    ],
+    "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-23",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-26",
+    "returncode": 0,
+    "stdout": "I'll analyze the expense data from January to May and generate audit recommendations. Let me start by exploring the data files.\n\n\n\n\n\nLet me read the first file to understand the data structure:\n\n\nNow let me read all the files to analyze the complete dataset\n\n\n\nLet me create a PowerShell script to analyze the data comprehensively:\n\n\nNow let me run a comprehensive analysis:\n\n\nLet me check for exact duplicates and analyze patterns more thoroughly:\n\n\n\n\nNow I'll create the comprehensive audit report:\n\n\n\n\n\n\n\n\nAuditoría completada. Se ha creado el archivo `resultado.md` con:\n\n1. **Hallazgos críticos:** 5 casos problemáticos identificados\n2. **Análisis cuantitativo:** €1.410,39 auditados, 15 transacciones\n3. **Recomendaciones de control:** 5 áreas principales con planes específicos\n4. **Plan de acción:** Prioridades inmediatas para resolver incidencias\n\nEl reporte incluye métricas de seguimiento y estimaciones de ahorro potencial.",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-26\\resultado.md"
+    ],
+    "elapsed_seconds": 249.42199999999139,
+    "timed_out": false,
+    "usage": {},
+    "model": "openrouter/deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\opencode_openrouter_deepseek_deepseek_v3_2_test-26_resultado.md"
+    ],
+    "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-26",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-30",
+    "returncode": 0,
+    "stdout": "Ahora investigaré las herramientas de IA para ofimática y agentes CLI en el contexto actual:\n\n\n\n\n\nAhora escribiré el archivo de resultados con el análisis y recomendaciones ejecutivas:\n\n\nArchivo `resultado.md` creado con el análisis completo y recomendaciones ejecutivas basadas en la investigación de herramientas IA para ofimática, datos locales (notas de voz, correos, contactos) y contexto web proporcionado.",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-30\\resultado.md"
+    ],
+    "elapsed_seconds": 181.2039999999979,
+    "timed_out": false,
+    "usage": {},
+    "model": "openrouter/deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\opencode_openrouter_deepseek_deepseek_v3_2_test-30_resultado.md"
+    ],
+    "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-30",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-17",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 14.641, \"usage\": {\"prompt_tokens\": 844, \"completion_tokens\": 287, \"total_tokens\": 1131, \"cost\": 0.0002064132, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 506, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0002064132, \"upstream_inference_prompt_cost\": 9.79272e-05, \"upstream_inference_completions_cost\": 0.000108486}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-17\\resultado.md"
+    ],
+    "elapsed_seconds": 14.875,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 14.641,
+      "usage": {
+        "prompt_tokens": 844,
+        "completion_tokens": 287,
+        "total_tokens": 1131,
+        "cost": 0.0002064132,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 506,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0002064132,
+          "upstream_inference_prompt_cost": 9.79272e-05,
+          "upstream_inference_completions_cost": 0.000108486
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_deepseek_deepseek_v3_2_test-17_resultado.md"
+    ],
+    "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-17",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-20",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 17.546, \"usage\": {\"prompt_tokens\": 3224, \"completion_tokens\": 768, \"total_tokens\": 3992, \"cost\": 0.002048124, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.002048124, \"upstream_inference_prompt_cost\": 0.001194492, \"upstream_inference_completions_cost\": 0.000853632}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-20\\resultado.md"
+    ],
+    "elapsed_seconds": 17.780999999988126,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 17.546,
+      "usage": {
+        "prompt_tokens": 3224,
+        "completion_tokens": 768,
+        "total_tokens": 3992,
+        "cost": 0.002048124,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.002048124,
+          "upstream_inference_prompt_cost": 0.001194492,
+          "upstream_inference_completions_cost": 0.000853632
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_deepseek_deepseek_v3_2_test-20_resultado.md"
+    ],
+    "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-20",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-21",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 35.5, \"usage\": {\"prompt_tokens\": 3094, \"completion_tokens\": 744, \"total_tokens\": 3838, \"cost\": 0.001113826, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.001113826, \"upstream_inference_prompt_cost\": 0.000801346, \"upstream_inference_completions_cost\": 0.00031248}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-21\\resultado.md"
+    ],
+    "elapsed_seconds": 35.625,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 35.5,
+      "usage": {
+        "prompt_tokens": 3094,
+        "completion_tokens": 744,
+        "total_tokens": 3838,
+        "cost": 0.001113826,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001113826,
+          "upstream_inference_prompt_cost": 0.000801346,
+          "upstream_inference_completions_cost": 0.00031248
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_deepseek_deepseek_v3_2_test-21_resultado.md"
+    ],
+    "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-21",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-23",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 12.469, \"usage\": {\"prompt_tokens\": 4680, \"completion_tokens\": 726, \"total_tokens\": 5406, \"cost\": 0.003429, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.003429, \"upstream_inference_prompt_cost\": 0.00234, \"upstream_inference_completions_cost\": 0.001089}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-23\\resultado.md"
+    ],
+    "elapsed_seconds": 12.671999999991385,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 12.469,
+      "usage": {
+        "prompt_tokens": 4680,
+        "completion_tokens": 726,
+        "total_tokens": 5406,
+        "cost": 0.003429,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.003429,
+          "upstream_inference_prompt_cost": 0.00234,
+          "upstream_inference_completions_cost": 0.001089
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_deepseek_deepseek_v3_2_test-23_resultado.md"
+    ],
+    "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-23",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-26",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 19.938, \"usage\": {\"prompt_tokens\": 849, \"completion_tokens\": 768, \"total_tokens\": 1617, \"cost\": 0.000371574, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 585, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.000371574, \"upstream_inference_prompt_cost\": 8.127e-05, \"upstream_inference_completions_cost\": 0.000290304}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-26\\resultado.md"
+    ],
+    "elapsed_seconds": 20.139999999999418,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 19.938,
+      "usage": {
+        "prompt_tokens": 849,
+        "completion_tokens": 768,
+        "total_tokens": 1617,
+        "cost": 0.000371574,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 585,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.000371574,
+          "upstream_inference_prompt_cost": 8.127e-05,
+          "upstream_inference_completions_cost": 0.000290304
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_deepseek_deepseek_v3_2_test-26_resultado.md"
+    ],
+    "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-26",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-30",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 23.218, \"usage\": {\"prompt_tokens\": 4088, \"completion_tokens\": 768, \"total_tokens\": 4856, \"cost\": 0.00135472, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00135472, \"upstream_inference_prompt_cost\": 0.00106288, \"upstream_inference_completions_cost\": 0.00029184}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-30\\resultado.md"
+    ],
+    "elapsed_seconds": 23.360000000000582,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 23.218,
+      "usage": {
+        "prompt_tokens": 4088,
+        "completion_tokens": 768,
+        "total_tokens": 4856,
+        "cost": 0.00135472,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00135472,
+          "upstream_inference_prompt_cost": 0.00106288,
+          "upstream_inference_completions_cost": 0.00029184
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_deepseek_deepseek_v3_2_test-30_resultado.md"
+    ],
+    "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_deepseek_deepseek_v3_2\\test-30",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-17",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-5.4-mini\", \"elapsed_seconds\": 5.156, \"usage\": {\"prompt_tokens\": 776, \"completion_tokens\": 735, \"total_tokens\": 1511, \"cost\": 0.0038895, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0038895, \"upstream_inference_prompt_cost\": 0.000582, \"upstream_inference_completions_cost\": 0.0033075}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-17\\resultado.md"
+    ],
+    "elapsed_seconds": 5.437999999994645,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "elapsed_seconds": 5.156,
+      "usage": {
+        "prompt_tokens": 776,
+        "completion_tokens": 735,
+        "total_tokens": 1511,
+        "cost": 0.0038895,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0038895,
+          "upstream_inference_prompt_cost": 0.000582,
+          "upstream_inference_completions_cost": 0.0033075
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "openai/gpt-5.4-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_openai_gpt_5_4_mini_test-17_resultado.md"
+    ],
+    "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+    "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-17",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-20",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-5.4-mini\", \"elapsed_seconds\": 5.39, \"usage\": {\"prompt_tokens\": 2984, \"completion_tokens\": 768, \"total_tokens\": 3752, \"cost\": 0.005694, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.005694, \"upstream_inference_prompt_cost\": 0.002238, \"upstream_inference_completions_cost\": 0.003456}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-20\\resultado.md"
+    ],
+    "elapsed_seconds": 5.547000000005937,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "elapsed_seconds": 5.39,
+      "usage": {
+        "prompt_tokens": 2984,
+        "completion_tokens": 768,
+        "total_tokens": 3752,
+        "cost": 0.005694,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.005694,
+          "upstream_inference_prompt_cost": 0.002238,
+          "upstream_inference_completions_cost": 0.003456
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "openai/gpt-5.4-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_openai_gpt_5_4_mini_test-20_resultado.md"
+    ],
+    "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+    "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-20",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-21",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-5.4-mini\", \"elapsed_seconds\": 5.453, \"usage\": {\"prompt_tokens\": 2806, \"completion_tokens\": 768, \"total_tokens\": 3574, \"cost\": 0.0055605, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0055605, \"upstream_inference_prompt_cost\": 0.0021045, \"upstream_inference_completions_cost\": 0.003456}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-21\\resultado.md"
+    ],
+    "elapsed_seconds": 5.593000000008033,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "elapsed_seconds": 5.453,
+      "usage": {
+        "prompt_tokens": 2806,
+        "completion_tokens": 768,
+        "total_tokens": 3574,
+        "cost": 0.0055605,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0055605,
+          "upstream_inference_prompt_cost": 0.0021045,
+          "upstream_inference_completions_cost": 0.003456
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "openai/gpt-5.4-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_openai_gpt_5_4_mini_test-21_resultado.md"
+    ],
+    "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+    "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-21",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-23",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-5.4-mini\", \"elapsed_seconds\": 6.562, \"usage\": {\"prompt_tokens\": 4253, \"completion_tokens\": 768, \"total_tokens\": 5021, \"cost\": 0.00664575, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00664575, \"upstream_inference_prompt_cost\": 0.00318975, \"upstream_inference_completions_cost\": 0.003456}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-23\\resultado.md"
+    ],
+    "elapsed_seconds": 6.719000000011874,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "elapsed_seconds": 6.562,
+      "usage": {
+        "prompt_tokens": 4253,
+        "completion_tokens": 768,
+        "total_tokens": 5021,
+        "cost": 0.00664575,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00664575,
+          "upstream_inference_prompt_cost": 0.00318975,
+          "upstream_inference_completions_cost": 0.003456
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "openai/gpt-5.4-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_openai_gpt_5_4_mini_test-23_resultado.md"
+    ],
+    "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+    "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-23",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-26",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-5.4-mini\", \"elapsed_seconds\": 5.156, \"usage\": {\"prompt_tokens\": 779, \"completion_tokens\": 768, \"total_tokens\": 1547, \"cost\": 0.00404025, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00404025, \"upstream_inference_prompt_cost\": 0.00058425, \"upstream_inference_completions_cost\": 0.003456}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-26\\resultado.md"
+    ],
+    "elapsed_seconds": 5.313000000009197,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "elapsed_seconds": 5.156,
+      "usage": {
+        "prompt_tokens": 779,
+        "completion_tokens": 768,
+        "total_tokens": 1547,
+        "cost": 0.00404025,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00404025,
+          "upstream_inference_prompt_cost": 0.00058425,
+          "upstream_inference_completions_cost": 0.003456
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "openai/gpt-5.4-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_openai_gpt_5_4_mini_test-26_resultado.md"
+    ],
+    "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+    "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-26",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-30",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-5.4-mini\", \"elapsed_seconds\": 6.125, \"usage\": {\"prompt_tokens\": 3683, \"completion_tokens\": 768, \"total_tokens\": 4451, \"cost\": 0.00621825, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00621825, \"upstream_inference_prompt_cost\": 0.00276225, \"upstream_inference_completions_cost\": 0.003456}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-30\\resultado.md"
+    ],
+    "elapsed_seconds": 6.296999999991385,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-mini",
+      "elapsed_seconds": 6.125,
+      "usage": {
+        "prompt_tokens": 3683,
+        "completion_tokens": 768,
+        "total_tokens": 4451,
+        "cost": 0.00621825,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00621825,
+          "upstream_inference_prompt_cost": 0.00276225,
+          "upstream_inference_completions_cost": 0.003456
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "openai/gpt-5.4-mini",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\openrouter_openai_gpt_5_4_mini_test-30_resultado.md"
+    ],
+    "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+    "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\openrouter_openai_gpt_5_4_mini\\test-30",
+    "privacy": {
+      "mode": "clear"
+    }
+  }
+]

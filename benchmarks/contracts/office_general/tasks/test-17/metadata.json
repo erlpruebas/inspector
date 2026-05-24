@@ -1,0 +1,28 @@
+{
+  "id": "test-17",
+  "title": "Resumen financiero de gastos enero-mayo",
+  "difficulty": 3,
+  "level": "L3",
+  "category": "assistant_digital",
+  "skills": [
+    "expense_audit",
+    "aggregation"
+  ],
+  "required_files": [
+    "assistant_synthetic/gastos_2026_01.csv",
+    "assistant_synthetic/gastos_2026_02.csv",
+    "assistant_synthetic/gastos_2026_03.csv",
+    "assistant_synthetic/gastos_2026_04.csv",
+    "assistant_synthetic/gastos_2026_05.csv"
+  ],
+  "expected_keys": [
+    "total mensual",
+    "discrepancias",
+    "sin_recibo",
+    "revisar_proveedor"
+  ],
+  "response_shape": "tabla de auditoria con discrepancias y recomendacion",
+  "prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-17/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-17/metadata.json"
+}

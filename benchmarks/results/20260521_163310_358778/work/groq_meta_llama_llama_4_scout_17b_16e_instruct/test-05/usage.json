@@ -1,0 +1,14 @@
+{
+  "provider": "groq",
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "elapsed_seconds": 1.484,
+  "usage": {
+    "queue_time": 0.974588381,
+    "prompt_tokens": 300,
+    "prompt_time": 0.015237912,
+    "completion_tokens": 142,
+    "completion_time": 0.322290766,
+    "total_tokens": 442,
+    "total_time": 0.337528678
+  }
+}

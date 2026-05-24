@@ -1,0 +1,27 @@
+{
+  "id": "test-27",
+  "title": "Preparar tablero de acciones por responsable",
+  "difficulty": 4,
+  "level": "L4",
+  "category": "assistant_digital",
+  "skills": [
+    "task_extraction",
+    "entity_resolution",
+    "planning"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/contactos_50.csv",
+    "assistant_synthetic/emails_hilos.md"
+  ],
+  "expected_keys": [
+    "responsable",
+    "fecha limite",
+    "cliente",
+    "prioridad"
+  ],
+  "response_shape": "tabla de elementos extraidos",
+  "prompt": "# Preparar tablero de acciones por responsable\n\nCrea un tablero de acciones por responsable combinando notas de voz, correos y contactos. Incluye prioridad y fecha limite cuando exista.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-27/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-27/metadata.json"
+}

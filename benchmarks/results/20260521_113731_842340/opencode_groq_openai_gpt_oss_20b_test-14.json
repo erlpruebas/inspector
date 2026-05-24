@@ -1,0 +1,22 @@
+{
+  "engine": "opencode_groq_openai_gpt_oss_20b",
+  "task_id": "test-14",
+  "returncode": 1,
+  "stdout": "{\"type\":\"error\",\"timestamp\":1779357782586,\"sessionID\":\"ses_1b602f139ffeyc708oTd0husYy\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"\"}}}\n{\"type\":\"error\",\"timestamp\":1779357782621,\"sessionID\":\"ses_1b602f139ffeyc708oTd0husYy\",\"error\":{\"name\":\"UnknownError\",\"data\":{\"message\":\"Unexpected server error. Check server logs for details.\"}}}\n",
+  "stderr": "",
+  "output_files": [],
+  "elapsed_seconds": 6.125,
+  "timed_out": false,
+  "usage": {},
+  "model": "groq/openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:groq/openai/gpt-oss-20b",
+  "copied_outputs": [],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_113731_842340\\work\\opencode_groq_openai_gpt_oss_20b\\test-14",
+  "privacy": {
+    "mode": "clear"
+  }
+}

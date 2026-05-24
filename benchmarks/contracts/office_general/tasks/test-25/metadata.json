@@ -1,0 +1,27 @@
+{
+  "id": "test-25",
+  "title": "Informe ejecutivo de cuentas prioritarias",
+  "difficulty": 4,
+  "level": "L4",
+  "category": "assistant_digital",
+  "skills": [
+    "synthesis",
+    "contacts",
+    "executive_report"
+  ],
+  "required_files": [
+    "assistant_synthetic/contactos_50.csv",
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "expected_keys": [
+    "clientes alta",
+    "riesgos",
+    "siguientes acciones",
+    "Madrid"
+  ],
+  "response_shape": "informe sintetico con acciones",
+  "prompt": "# Informe ejecutivo de cuentas prioritarias\n\nGenera un informe ejecutivo de cuentas prioritarias combinando contactos, correos y notas. Debe incluir riesgos y siguientes acciones.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-25/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-25/metadata.json"
+}

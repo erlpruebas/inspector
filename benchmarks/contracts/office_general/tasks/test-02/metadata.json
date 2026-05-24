@@ -1,0 +1,24 @@
+{
+  "id": "test-02",
+  "title": "Crear lista de contactos prioritarios de Madrid",
+  "difficulty": 1,
+  "level": "L1",
+  "category": "assistant_digital",
+  "skills": [
+    "data_filtering",
+    "contacts"
+  ],
+  "required_files": [
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "Madrid",
+    "prioridad alta",
+    "Ana Lopez",
+    "Sergio Campos"
+  ],
+  "response_shape": "respuesta util y trazable",
+  "prompt": "# Crear lista de contactos prioritarios de Madrid\n\nUsa `benchmarks/assets/assistant_synthetic/contactos_50.csv` para generar una lista de contactos ubicados en Madrid con prioridad alta. Incluye nombre, empresa, rol y email.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-02/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-02/metadata.json"
+}

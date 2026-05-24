@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_openai_gpt_5_4_mini",
+  "task_id": "test-30",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"openai/gpt-5.4-mini\", \"elapsed_seconds\": 7.985, \"usage\": {\"prompt_tokens\": 5111, \"completion_tokens\": 1024, \"total_tokens\": 6135, \"cost\": 0.00844125, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00844125, \"upstream_inference_prompt_cost\": 0.00383325, \"upstream_inference_completions_cost\": 0.004608}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_145118_807909\\work\\openrouter_openai_gpt_5_4_mini\\test-30\\resultado.md"
+  ],
+  "elapsed_seconds": 8.188000000009197,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "openai/gpt-5.4-mini",
+    "elapsed_seconds": 7.985,
+    "usage": {
+      "prompt_tokens": 5111,
+      "completion_tokens": 1024,
+      "total_tokens": 6135,
+      "cost": 0.00844125,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00844125,
+        "upstream_inference_prompt_cost": 0.00383325,
+        "upstream_inference_completions_cost": 0.004608
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "openai/gpt-5.4-mini",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:openai/gpt-5.4-mini",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_145118_807909\\openrouter_openai_gpt_5_4_mini_test-30_resultado.md"
+  ],
+  "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+  "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_145118_807909\\work\\openrouter_openai_gpt_5_4_mini\\test-30",
+  "privacy": {
+    "mode": "clear"
+  }
+}

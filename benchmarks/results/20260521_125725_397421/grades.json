@@ -1,0 +1,742 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "engine_spec": "openrouter:arcee-ai/trinity-large-thinking",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "engine_spec": "openrouter:arcee-ai/trinity-large-thinking",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "engine_spec": "openrouter:arcee-ai/trinity-large-thinking",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "engine_spec": "openrouter:arcee-ai/trinity-large-thinking",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 5.0,
+    "score": 4.0,
+    "comment": "La respuesta tiene formato de tabla y algunas extracciones útiles, pero está incompleta y no respeta bien las claves esperadas: incluye acciones fuera del conjunto y queda truncada en VN-006.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Formato tabular correcto",
+      "Incluye id de nota, acción, entidad y fecha cuando aplica",
+      "Algunas entidades y fechas parecen concretas"
+    ],
+    "issues": [
+      "Respuesta incompleta: termina en VN-006 sin completar la fila ni el resto de notas",
+      "Usa acciones no esperadas como 'comprar billete', 'preparar minuta' y 'pedir facturas' en lugar de las claves esperadas",
+      "No hay trazabilidad al archivo leído ni evidencia de haber procesado todas las líneas",
+      "Posible mezcla de acción y objeto en 'enviar CSV'"
+    ]
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 8.0,
+    "comment": "Identifica correctamente el concepto y la discrepancia, pero no conserva el formato decimal esperado ni usa la recomendacion exacta indicada.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado numericamente correctos",
+      "Respuesta clara y completa"
+    ],
+    "issues": [
+      "Importes devueltos como 19.9 y 29.9 en lugar de 19.90 y 29.90",
+      "La recomendacion no coincide exactamente con la clave esperada importe_discrepante"
+    ]
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "engine_spec": "openrouter:meta-llama/llama-3.3-70b-instruct",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "engine_spec": "openrouter:meta-llama/llama-3.3-70b-instruct",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 5.0,
+    "score": 3.0,
+    "comment": "La respuesta identifica algunas tareas reales, pero no respeta las claves esperadas, incluye acciones no solicitadas y omite varias tareas relevantes del archivo.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Formato de tabla parcialmente adecuado",
+      "VN-001 y VN-002 están razonablemente extraídas",
+      "Incluye id, acción, entidad y fecha cuando aplica"
+    ],
+    "issues": [
+      "No filtra por las claves esperadas: incluye comprar, preparar y pedir",
+      "Omite tareas con acciones esperadas como agendar VN-007, llamar VN-010, enviar VN-011/VN-015 y reservar VN-020",
+      "La fila VN-005 está incompleta",
+      "No cubre todo el archivo JSONL",
+      "Algunas entidades/fechas están incompletas o poco precisas"
+    ]
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "engine_spec": "openrouter:meta-llama/llama-3.3-70b-instruct",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 8.0,
+    "comment": "Identifica correctamente la discrepancia principal, pero no conserva el formato decimal esperado ni devuelve la recomendacion exacta indicada.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado correctos en valor",
+      "Explica la correccion necesaria"
+    ],
+    "issues": [
+      "Importes formateados como 19.9 y 29.9 en lugar de 19.90 y 29.90",
+      "Recomendacion no usa la clave esperada importe_discrepante",
+      "Respuesta queda truncada al final"
+    ]
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "engine_spec": "openrouter:meta-llama/llama-3.3-70b-instruct",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "engine_spec": "openrouter:moonshotai/kimi-k2.6",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "engine_spec": "openrouter:moonshotai/kimi-k2.6",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "engine_spec": "openrouter:moonshotai/kimi-k2.6",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "engine_spec": "openrouter:moonshotai/kimi-k2.6",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "engine_spec": "openrouter:qwen/qwen3.6-35b-a3b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "engine_spec": "openrouter:qwen/qwen3.6-35b-a3b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "engine_spec": "openrouter:qwen/qwen3.6-35b-a3b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "engine_spec": "openrouter:qwen/qwen3.6-35b-a3b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "engine_spec": "openrouter:qwen/qwen3.6-plus",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "engine_spec": "openrouter:qwen/qwen3.6-plus",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "engine_spec": "openrouter:qwen/qwen3.6-plus",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "engine_spec": "openrouter:qwen/qwen3.6-plus",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_x_ai_grok_4_3",
+    "engine_spec": "openrouter:x-ai/grok-4.3",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_x_ai_grok_4_3",
+    "engine_spec": "openrouter:x-ai/grok-4.3",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_x_ai_grok_4_3",
+    "engine_spec": "openrouter:x-ai/grok-4.3",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_x_ai_grok_4_3",
+    "engine_spec": "openrouter:x-ai/grok-4.3",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "id": "test-22",
+  "title": "Comparar Apple y Microsoft seis meses",
+  "difficulty": 4,
+  "level": "L4",
+  "category": "assistant_digital",
+  "skills": [
+    "web_search",
+    "financial_analysis",
+    "synthesis"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "expected_keys": [
+    "Apple",
+    "Microsoft",
+    "seis meses",
+    "fecha de consulta"
+  ],
+  "response_shape": "informe con fuentes y conclusion operativa",
+  "prompt": "# Comparar Apple y Microsoft seis meses\n\nUsa busqueda web para comparar el rendimiento de Apple y Microsoft en los ultimos seis meses. Cruza el resultado con la nota de voz que lo solicita.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-22/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-22/metadata.json"
+}

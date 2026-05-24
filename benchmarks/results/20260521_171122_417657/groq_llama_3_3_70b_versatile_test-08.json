@@ -1,0 +1,39 @@
+{
+  "engine": "groq_llama_3_3_70b_versatile",
+  "task_id": "test-08",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 1.625, \"usage\": {\"queue_time\": 0.048594654, \"prompt_tokens\": 1432, \"prompt_time\": 0.077126608, \"completion_tokens\": 535, \"completion_time\": 1.321324151, \"total_tokens\": 1967, \"total_time\": 1.398450759}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\groq_llama_3_3_70b_versatile\\test-08\\resultado.md"
+  ],
+  "elapsed_seconds": 1.9060000000026776,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "elapsed_seconds": 1.625,
+    "usage": {
+      "queue_time": 0.048594654,
+      "prompt_tokens": 1432,
+      "prompt_time": 0.077126608,
+      "completion_tokens": 535,
+      "completion_time": 1.321324151,
+      "total_tokens": 1967,
+      "total_time": 1.398450759
+    }
+  },
+  "model": "llama-3.3-70b-versatile",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.3-70b-versatile",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\groq_llama_3_3_70b_versatile_test-08_resultado.md"
+  ],
+  "task_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+  "execution_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\groq_llama_3_3_70b_versatile\\test-08",
+  "privacy": {
+    "mode": "clear"
+  }
+}

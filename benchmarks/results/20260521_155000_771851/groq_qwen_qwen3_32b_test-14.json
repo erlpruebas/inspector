@@ -1,0 +1,39 @@
+{
+  "engine": "groq_qwen_qwen3_32b",
+  "task_id": "test-14",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.11, \"usage\": {\"queue_time\": 0.202066972, \"prompt_tokens\": 2020, \"prompt_time\": 0.097719235, \"completion_tokens\": 905, \"completion_time\": 1.695891899, \"total_tokens\": 2925, \"total_time\": 1.793611134}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_155000_771851\\work\\groq_qwen_qwen3_32b\\test-14\\resultado.md"
+  ],
+  "elapsed_seconds": 2.2339999999967404,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "qwen/qwen3-32b",
+    "elapsed_seconds": 2.11,
+    "usage": {
+      "queue_time": 0.202066972,
+      "prompt_tokens": 2020,
+      "prompt_time": 0.097719235,
+      "completion_tokens": 905,
+      "completion_time": 1.695891899,
+      "total_tokens": 2925,
+      "total_time": 1.793611134
+    }
+  },
+  "model": "qwen/qwen3-32b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:qwen/qwen3-32b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_155000_771851\\groq_qwen_qwen3_32b_test-14_resultado.md"
+  ],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_155000_771851\\work\\groq_qwen_qwen3_32b\\test-14",
+  "privacy": {
+    "mode": "clear"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "engine": "groq_groq_compound_mini",
+  "task_id": "test-10",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 2.609, \"usage\": {\"queue_time\": 0.185352, \"prompt_tokens\": 1414, \"prompt_time\": 0.079145, \"completion_tokens\": 507, \"completion_time\": 1.184322, \"total_tokens\": 1921, \"total_time\": 1.263467}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\groq_groq_compound_mini\\test-10\\resultado.md"
+  ],
+  "elapsed_seconds": 3.186999999990803,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "groq/compound-mini",
+    "elapsed_seconds": 2.609,
+    "usage": {
+      "queue_time": 0.185352,
+      "prompt_tokens": 1414,
+      "prompt_time": 0.079145,
+      "completion_tokens": 507,
+      "completion_time": 1.184322,
+      "total_tokens": 1921,
+      "total_time": 1.263467
+    }
+  },
+  "model": "groq/compound-mini",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:groq/compound-mini",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\groq_groq_compound_mini_test-10_resultado.md"
+  ],
+  "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+  "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\groq_groq_compound_mini\\test-10",
+  "privacy": {
+    "mode": "clear"
+  }
+}

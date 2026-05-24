@@ -1,0 +1,39 @@
+{
+  "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+  "task_id": "test-10",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"meta-llama/llama-4-scout-17b-16e-instruct\", \"elapsed_seconds\": 2.593, \"usage\": {\"queue_time\": 1.819696279, \"prompt_tokens\": 1952, \"prompt_time\": 0.084722447, \"completion_tokens\": 212, \"completion_time\": 0.480091804, \"total_tokens\": 2164, \"total_time\": 0.564814251}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\work\\groq_meta_llama_llama_4_scout_17b_16e_instruct\\test-10\\resultado.md"
+  ],
+  "elapsed_seconds": 2.8909999999887077,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "elapsed_seconds": 2.593,
+    "usage": {
+      "queue_time": 1.819696279,
+      "prompt_tokens": 1952,
+      "prompt_time": 0.084722447,
+      "completion_tokens": 212,
+      "completion_time": 0.480091804,
+      "total_tokens": 2164,
+      "total_time": 0.564814251
+    }
+  },
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\groq_meta_llama_llama_4_scout_17b_16e_instruct_test-10_resultado.md"
+  ],
+  "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+  "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\work\\groq_meta_llama_llama_4_scout_17b_16e_instruct\\test-10",
+  "privacy": {
+    "mode": "clear"
+  }
+}

@@ -23,6 +23,7 @@ from memory_guard import wait_for_memory_budget
 from task_loader import RESULTS_DIR, TASKS_FILE, BenchmarkTask, load_tasks, prefixed_result_name, prepare_workdir_in_root
 from engines.engine_factory import create_engine
 from engines.base_engine import EngineResult
+from token_accounting import record_usage, summarize_usage
 
 
 def main() -> int:
@@ -115,6 +116,7 @@ def run_multi_user_benchmark(
                     task=task,
                     engine=engine,
                     run_id=run_id,
+                    run_dir=run_dir,
                     lane_root=lane_root,
                     user_name=user_name,
                     privacy_mode=privacy_mode,
@@ -137,8 +139,13 @@ def run_multi_user_benchmark(
             future.result()
 
     (run_dir / "summary.json").write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+    (run_dir / "token_usage.jsonl").touch(exist_ok=True)
     if not no_grade:
         write_checks_and_grades(run_dir, tasks_file, heuristic_only)
+    (run_dir / "token_usage_summary.json").write_text(
+        json.dumps(summarize_usage(run_dir / "token_usage.jsonl"), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     write_multi_user_manifest(run_dir, users, lanes, engine_names, privacy_mode, privacy_review)
     return run_dir
 
@@ -148,6 +155,7 @@ def run_single_job(
     task: BenchmarkTask,
     engine,
     run_id: str,
+    run_dir: Path,
     lane_root: Path,
     user_name: str,
     privacy_mode: str,
@@ -208,6 +216,21 @@ def run_single_job(
     )
     result_path = lane_root / f"{engine.name}_{task.id}.json"
     result_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    record_usage(
+        run_dir / "token_usage.jsonl",
+        source="benchmark_multi_user",
+        component=engine.name,
+        provider=str(engine.name).split(":", 1)[0],
+        model=str(getattr(engine, "model", "")),
+        operation="task_run",
+        usage=payload.get("usage", {}),
+        prompt_text=execution_prompt,
+        completion_text=str(payload.get("stdout", "")),
+        task_id=task.id,
+        user_id=user_name,
+        run_id=run_id,
+        metadata={"engine_spec": engine.name, "privacy_mode": privacy_mode, "attempts": attempts},
+    )
     if rest_seconds:
         time.sleep(rest_seconds)
     return payload

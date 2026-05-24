@@ -1,0 +1,29 @@
+{
+  "id": "test-30",
+  "title": "Investigacion profunda y plan ejecutivo de IA ofimatica",
+  "difficulty": 5,
+  "level": "L5",
+  "category": "assistant_digital",
+  "skills": [
+    "web_search",
+    "local_data_crosscheck",
+    "executive_report",
+    "strategy"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "OpenRouter",
+    "Gemini",
+    "ofimatica",
+    "coste",
+    "recomendacion ejecutiva"
+  ],
+  "response_shape": "informe con fuentes y conclusion operativa",
+  "prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-30/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-30/metadata.json"
+}

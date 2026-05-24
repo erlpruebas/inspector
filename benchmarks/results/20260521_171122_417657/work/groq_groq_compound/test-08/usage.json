@@ -1,0 +1,14 @@
+{
+  "provider": "groq",
+  "model": "groq/compound",
+  "elapsed_seconds": 15.61,
+  "usage": {
+    "queue_time": 2.322789,
+    "prompt_tokens": 18707,
+    "prompt_time": 0.900109,
+    "completion_tokens": 5372,
+    "completion_time": 11.997294,
+    "total_tokens": 24079,
+    "total_time": 12.897404
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+  "task_id": "test-01",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"meta-llama/llama-4-scout-17b-16e-instruct\", \"elapsed_seconds\": 1.89, \"usage\": {\"queue_time\": 1.438546456, \"prompt_tokens\": 2535, \"prompt_time\": 0.10230819, \"completion_tokens\": 62, \"completion_time\": 0.14024856, \"total_tokens\": 2597, \"total_time\": 0.24255675}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_meta_llama_llama_4_scout_17b_16e_instruct\\test-01\\resultado.md"
+  ],
+  "elapsed_seconds": 2.1570000000065193,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "elapsed_seconds": 1.89,
+    "usage": {
+      "queue_time": 1.438546456,
+      "prompt_tokens": 2535,
+      "prompt_time": 0.10230819,
+      "completion_tokens": 62,
+      "completion_time": 0.14024856,
+      "total_tokens": 2597,
+      "total_time": 0.24255675
+    }
+  },
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\groq_meta_llama_llama_4_scout_17b_16e_instruct_test-01_resultado.md"
+  ],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_meta_llama_llama_4_scout_17b_16e_instruct\\test-01",
+  "privacy": {
+    "mode": "clear"
+  }
+}

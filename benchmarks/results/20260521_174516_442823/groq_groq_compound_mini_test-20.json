@@ -1,0 +1,39 @@
+{
+  "engine": "groq_groq_compound_mini",
+  "task_id": "test-20",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 6.578, \"usage\": {\"queue_time\": 0.064947, \"prompt_tokens\": 6548, \"prompt_time\": 0.36391, \"completion_tokens\": 2615, \"completion_time\": 5.982689, \"total_tokens\": 9163, \"total_time\": 6.346599}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-20\\resultado.md"
+  ],
+  "elapsed_seconds": 6.812999999994645,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "groq/compound-mini",
+    "elapsed_seconds": 6.578,
+    "usage": {
+      "queue_time": 0.064947,
+      "prompt_tokens": 6548,
+      "prompt_time": 0.36391,
+      "completion_tokens": 2615,
+      "completion_time": 5.982689,
+      "total_tokens": 9163,
+      "total_time": 6.346599
+    }
+  },
+  "model": "groq/compound-mini",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:groq/compound-mini",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_groq_compound_mini_test-20_resultado.md"
+  ],
+  "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+  "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_groq_compound_mini\\test-20",
+  "privacy": {
+    "mode": "clear"
+  }
+}

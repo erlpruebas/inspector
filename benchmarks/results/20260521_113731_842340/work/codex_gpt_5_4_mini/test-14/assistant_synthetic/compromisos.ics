@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//OpenAI Codex//Compromisos sinteticos//ES
+
+BEGIN:VEVENT
+UID:vn-001-demo-pagos@assistant.synthetic
+DTSTAMP:20260521T000000Z
+SUMMARY:Demo modulo de pagos con Clinica Centro
+DESCRIPTION:Fuente combinada: nota de voz VN-001 y hilo E-001. La nota de voz pide llamar antes del jueves para confirmar la demo; el correo fija la demo para el 14 de mayo a las 11:30 y solicita presencia de administracion.
+DTSTART:20260514T093000Z
+DTEND:20260514T103000Z
+LOCATION:Clinica Centro
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+
+BEGIN:VEVENT
+UID:vn-002-csv-delta-equipos@assistant.synthetic
+DTSTAMP:20260521T000000Z
+SUMMARY:Enviar CSV actualizado a Delta Equipos
+DESCRIPTION:Fuente combinada: nota de voz VN-002 y hilo E-002. Falta hora exacta en la fuente; se representa como recordatorio de fecha limite. El descuento del 4% aplica si se cierra antes del 13 de mayo.
+DTSTART;VALUE=DATE:20260513
+DTEND;VALUE=DATE:20260514
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+
+BEGIN:VEVENT
+UID:vn-006-iberlegal-contrato@assistant.synthetic
+DTSTAMP:20260521T000000Z
+SUMMARY:Revisar contrato de IberLegal
+DESCRIPTION:Fuente combinada: nota de voz VN-006 y hilo E-003. Falta hora exacta en la fuente; se representa como recordatorio de fecha limite. David pide comentarios antes del 12 de mayo y le preocupan la clausula 8 y la renovacion automatica.
+DTSTART;VALUE=DATE:20260512
+DTEND;VALUE=DATE:20260513
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+
+BEGIN:VEVENT
+UID:vn-003-barna-health@assistant.synthetic
+DTSTAMP:20260521T000000Z
+SUMMARY:Reunion presencial con Barna Health en Barcelona
+DESCRIPTION:Fuente combinada: nota de voz VN-003 y hilo E-004. La nota de voz condiciona la compra del billete a la confirmacion de Xavier; el correo ya confirma la reunion el 18 de mayo a las 10:00. Se asume desplazamiento a Barcelona.
+DTSTART:20260518T080000Z
+DTEND:20260518T090000Z
+LOCATION:Barcelona
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+
+END:VCALENDAR

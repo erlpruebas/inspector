@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_deepseek_deepseek_v4_flash",
+  "task_id": "test-26",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v4-flash\", \"elapsed_seconds\": 27.406, \"usage\": {\"prompt_tokens\": 849, \"completion_tokens\": 890, \"total_tokens\": 1739, \"cost\": 0.00036806, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00036806, \"upstream_inference_prompt_cost\": 0.00011886, \"upstream_inference_completions_cost\": 0.0002492}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\work\\openrouter_deepseek_deepseek_v4_flash\\test-26\\resultado.md"
+  ],
+  "elapsed_seconds": 27.703000000008615,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4-flash",
+    "elapsed_seconds": 27.406,
+    "usage": {
+      "prompt_tokens": 849,
+      "completion_tokens": 890,
+      "total_tokens": 1739,
+      "cost": 0.00036806,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00036806,
+        "upstream_inference_prompt_cost": 0.00011886,
+        "upstream_inference_completions_cost": 0.0002492
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "deepseek/deepseek-v4-flash",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:deepseek/deepseek-v4-flash",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\openrouter_deepseek_deepseek_v4_flash_test-26_resultado.md"
+  ],
+  "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+  "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\work\\openrouter_deepseek_deepseek_v4_flash\\test-26",
+  "privacy": {
+    "mode": "clear"
+  }
+}

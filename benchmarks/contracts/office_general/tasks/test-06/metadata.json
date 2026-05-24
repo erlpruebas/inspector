@@ -1,0 +1,25 @@
+{
+  "id": "test-06",
+  "title": "Preparar agenda de viaje a Barcelona",
+  "difficulty": 2,
+  "level": "L2",
+  "category": "assistant_digital",
+  "skills": [
+    "agenda",
+    "synthesis"
+  ],
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "expected_keys": [
+    "Xavier Puig",
+    "Barna Health",
+    "18 de mayo",
+    "10:00"
+  ],
+  "response_shape": "tabla o calendario con fechas y horas",
+  "prompt": "# Preparar agenda de viaje a Barcelona\n\nCruza `emails_hilos.md` y `notas_voz.jsonl` para preparar una agenda de viaje a Barcelona relacionada con Barna Health. Incluye motivo, fecha, hora y contacto.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-06/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-06/metadata.json"
+}

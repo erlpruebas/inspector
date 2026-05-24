@@ -1,0 +1,185 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260521_145118_807909",
+  "jobs": [
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-01",
+      "next_run_at": 1779367939.4152355,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-03",
+      "next_run_at": 1779367941.184456,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-05",
+      "next_run_at": 1779367942.7715259,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-08",
+      "next_run_at": 1779367944.333554,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-14",
+      "next_run_at": 1779367945.9170325,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-17",
+      "next_run_at": 1779367947.4530003,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-21",
+      "next_run_at": 1779367954.1913555,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-23",
+      "next_run_at": 1779367958.127567,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-26",
+      "next_run_at": 1779367959.6907012,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-30",
+      "next_run_at": 1779367968.004852,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-30",
+      "at": "2026-05-21T12:52:31.088560+00:00"
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-30",
+      "at": "2026-05-21T12:52:54.314183+00:00"
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-30",
+      "at": "2026-05-21T12:53:07.855247+00:00"
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-30",
+      "at": "2026-05-21T12:53:48.638689+00:00"
+    }
+  ],
+  "deferred": [
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-01",
+      "at": "2026-05-21T12:51:19.415235+00:00",
+      "next_run_at": "2026-05-21T12:52:19.415236+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-03",
+      "at": "2026-05-21T12:51:21.184456+00:00",
+      "next_run_at": "2026-05-21T12:52:21.184456+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-05",
+      "at": "2026-05-21T12:51:22.771526+00:00",
+      "next_run_at": "2026-05-21T12:52:22.771526+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-08",
+      "at": "2026-05-21T12:51:24.333553+00:00",
+      "next_run_at": "2026-05-21T12:52:24.333554+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-14",
+      "at": "2026-05-21T12:51:25.917032+00:00",
+      "next_run_at": "2026-05-21T12:52:25.917032+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-17",
+      "at": "2026-05-21T12:51:27.453000+00:00",
+      "next_run_at": "2026-05-21T12:52:27.453000+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-21",
+      "at": "2026-05-21T12:51:34.191355+00:00",
+      "next_run_at": "2026-05-21T12:52:34.191355+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-23",
+      "at": "2026-05-21T12:51:38.127567+00:00",
+      "next_run_at": "2026-05-21T12:52:38.127567+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-26",
+      "at": "2026-05-21T12:51:39.690701+00:00",
+      "next_run_at": "2026-05-21T12:52:39.690701+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-30",
+      "at": "2026-05-21T12:51:48.004852+00:00",
+      "next_run_at": "2026-05-21T12:52:48.004852+00:00",
+      "reason": "429"
+    }
+  ],
+  "failed": [],
+  "running": null
+}

@@ -1,0 +1,14 @@
+{
+  "provider": "groq",
+  "model": "llama-3.3-70b-versatile",
+  "elapsed_seconds": 2.547,
+  "usage": {
+    "queue_time": 0.184374392,
+    "prompt_tokens": 4090,
+    "prompt_time": 0.556741504,
+    "completion_tokens": 643,
+    "completion_time": 1.683444905,
+    "total_tokens": 4733,
+    "total_time": 2.240186409
+  }
+}

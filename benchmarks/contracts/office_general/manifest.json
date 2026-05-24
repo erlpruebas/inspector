@@ -1,0 +1,365 @@
+{
+  "profession": {
+    "id": "office_general",
+    "title": "Ofimatica transversal para asistente ejecutivo",
+    "description": "Conjunto de tareas de oficina y coordinacion que un ejecutivo o profesional puede delegar en un asistente: correo, agenda, documentos, tablas, seguimiento, priorizacion y reportes.",
+    "scope": [
+      "emails",
+      "agenda",
+      "documentos",
+      "tablas",
+      "seguimiento",
+      "priorizacion",
+      "reportes",
+      "archivo sintetico"
+    ],
+    "constraints": [
+      "No inventar datos.",
+      "Priorizar trazabilidad y claridad.",
+      "Pedir aclaracion si falta un dato esencial.",
+      "Mantener tono profesional y util."
+    ],
+    "evaluation_dimensions": [
+      "correctness",
+      "format",
+      "traceability",
+      "tone",
+      "completeness"
+    ]
+  },
+  "source": "benchmarks\\tasks\\assistant_tasks.json",
+  "tasks_root": "benchmarks\\contracts\\office_general\\tasks",
+  "task_count": 30,
+  "tasks": [
+    {
+      "id": "test-01",
+      "title": "Recordar cita de Clinica Centro",
+      "difficulty": 1,
+      "level": "L1",
+      "category": "assistant_digital",
+      "folder": "tasks/test-01",
+      "metadata": "tasks/test-01/metadata.json",
+      "contract": "tasks/test-01/contract.md",
+      "reference": "tasks/test-01/reference.md"
+    },
+    {
+      "id": "test-02",
+      "title": "Crear lista de contactos prioritarios de Madrid",
+      "difficulty": 1,
+      "level": "L1",
+      "category": "assistant_digital",
+      "folder": "tasks/test-02",
+      "metadata": "tasks/test-02/metadata.json",
+      "contract": "tasks/test-02/contract.md",
+      "reference": "tasks/test-02/reference.md"
+    },
+    {
+      "id": "test-03",
+      "title": "Extraer tareas de notas de voz",
+      "difficulty": 1,
+      "level": "L1",
+      "category": "assistant_digital",
+      "folder": "tasks/test-03",
+      "metadata": "tasks/test-03/metadata.json",
+      "contract": "tasks/test-03/contract.md",
+      "reference": "tasks/test-03/reference.md"
+    },
+    {
+      "id": "test-04",
+      "title": "Redactar email de seguimiento a BravoSoft",
+      "difficulty": 1,
+      "level": "L1",
+      "category": "assistant_digital",
+      "folder": "tasks/test-04",
+      "metadata": "tasks/test-04/metadata.json",
+      "contract": "tasks/test-04/contract.md",
+      "reference": "tasks/test-04/reference.md"
+    },
+    {
+      "id": "test-05",
+      "title": "Detectar gasto discrepante de febrero",
+      "difficulty": 1,
+      "level": "L1",
+      "category": "assistant_digital",
+      "folder": "tasks/test-05",
+      "metadata": "tasks/test-05/metadata.json",
+      "contract": "tasks/test-05/contract.md",
+      "reference": "tasks/test-05/reference.md"
+    },
+    {
+      "id": "test-06",
+      "title": "Preparar agenda de viaje a Barcelona",
+      "difficulty": 2,
+      "level": "L2",
+      "category": "assistant_digital",
+      "folder": "tasks/test-06",
+      "metadata": "tasks/test-06/metadata.json",
+      "contract": "tasks/test-06/contract.md",
+      "reference": "tasks/test-06/reference.md"
+    },
+    {
+      "id": "test-07",
+      "title": "Conciliar preferencias de informe de Nova Iberia",
+      "difficulty": 2,
+      "level": "L2",
+      "category": "assistant_digital",
+      "folder": "tasks/test-07",
+      "metadata": "tasks/test-07/metadata.json",
+      "contract": "tasks/test-07/contract.md",
+      "reference": "tasks/test-07/reference.md"
+    },
+    {
+      "id": "test-08",
+      "title": "Resumen semanal de tareas pendientes",
+      "difficulty": 2,
+      "level": "L2",
+      "category": "assistant_digital",
+      "folder": "tasks/test-08",
+      "metadata": "tasks/test-08/metadata.json",
+      "contract": "tasks/test-08/contract.md",
+      "reference": "tasks/test-08/reference.md"
+    },
+    {
+      "id": "test-09",
+      "title": "Auditar duplicados de marzo",
+      "difficulty": 2,
+      "level": "L2",
+      "category": "assistant_digital",
+      "folder": "tasks/test-09",
+      "metadata": "tasks/test-09/metadata.json",
+      "contract": "tasks/test-09/contract.md",
+      "reference": "tasks/test-09/reference.md"
+    },
+    {
+      "id": "test-10",
+      "title": "Crear CSV de proveedores",
+      "difficulty": 2,
+      "level": "L2",
+      "category": "assistant_digital",
+      "folder": "tasks/test-10",
+      "metadata": "tasks/test-10/metadata.json",
+      "contract": "tasks/test-10/contract.md",
+      "reference": "tasks/test-10/reference.md"
+    },
+    {
+      "id": "test-11",
+      "title": "Priorizar clientes de alta prioridad",
+      "difficulty": 2,
+      "level": "L2",
+      "category": "assistant_digital",
+      "folder": "tasks/test-11",
+      "metadata": "tasks/test-11/metadata.json",
+      "contract": "tasks/test-11/contract.md",
+      "reference": "tasks/test-11/reference.md"
+    },
+    {
+      "id": "test-12",
+      "title": "Preparar minuta de contrato IberLegal",
+      "difficulty": 2,
+      "level": "L2",
+      "category": "assistant_digital",
+      "folder": "tasks/test-12",
+      "metadata": "tasks/test-12/metadata.json",
+      "contract": "tasks/test-12/contract.md",
+      "reference": "tasks/test-12/reference.md"
+    },
+    {
+      "id": "test-13",
+      "title": "Informe de discrepancias de gastos Q1",
+      "difficulty": 3,
+      "level": "L3",
+      "category": "assistant_digital",
+      "folder": "tasks/test-13",
+      "metadata": "tasks/test-13/metadata.json",
+      "contract": "tasks/test-13/contract.md",
+      "reference": "tasks/test-13/reference.md"
+    },
+    {
+      "id": "test-14",
+      "title": "Crear calendario ICS de cuatro compromisos",
+      "difficulty": 3,
+      "level": "L3",
+      "category": "assistant_digital",
+      "folder": "tasks/test-14",
+      "metadata": "tasks/test-14/metadata.json",
+      "contract": "tasks/test-14/contract.md",
+      "reference": "tasks/test-14/reference.md"
+    },
+    {
+      "id": "test-15",
+      "title": "Cruzar notas de voz con contactos",
+      "difficulty": 3,
+      "level": "L3",
+      "category": "assistant_digital",
+      "folder": "tasks/test-15",
+      "metadata": "tasks/test-15/metadata.json",
+      "contract": "tasks/test-15/contract.md",
+      "reference": "tasks/test-15/reference.md"
+    },
+    {
+      "id": "test-16",
+      "title": "Preparar briefing de seguridad para Innotek",
+      "difficulty": 3,
+      "level": "L3",
+      "category": "assistant_digital",
+      "folder": "tasks/test-16",
+      "metadata": "tasks/test-16/metadata.json",
+      "contract": "tasks/test-16/contract.md",
+      "reference": "tasks/test-16/reference.md"
+    },
+    {
+      "id": "test-17",
+      "title": "Resumen financiero de gastos enero-mayo",
+      "difficulty": 3,
+      "level": "L3",
+      "category": "assistant_digital",
+      "folder": "tasks/test-17",
+      "metadata": "tasks/test-17/metadata.json",
+      "contract": "tasks/test-17/contract.md",
+      "reference": "tasks/test-17/reference.md"
+    },
+    {
+      "id": "test-18",
+      "title": "Segmentar prospectos para campana",
+      "difficulty": 3,
+      "level": "L3",
+      "category": "assistant_digital",
+      "folder": "tasks/test-18",
+      "metadata": "tasks/test-18/metadata.json",
+      "contract": "tasks/test-18/contract.md",
+      "reference": "tasks/test-18/reference.md"
+    },
+    {
+      "id": "test-19",
+      "title": "Plan de seguimiento de implantacion",
+      "difficulty": 3,
+      "level": "L3",
+      "category": "assistant_digital",
+      "folder": "tasks/test-19",
+      "metadata": "tasks/test-19/metadata.json",
+      "contract": "tasks/test-19/contract.md",
+      "reference": "tasks/test-19/reference.md"
+    },
+    {
+      "id": "test-20",
+      "title": "Informe de incidencias de Clinica Centro",
+      "difficulty": 3,
+      "level": "L3",
+      "category": "assistant_digital",
+      "folder": "tasks/test-20",
+      "metadata": "tasks/test-20/metadata.json",
+      "contract": "tasks/test-20/contract.md",
+      "reference": "tasks/test-20/reference.md"
+    },
+    {
+      "id": "test-21",
+      "title": "Buscar alternativa a herramienta de encuestas",
+      "difficulty": 4,
+      "level": "L4",
+      "category": "assistant_digital",
+      "folder": "tasks/test-21",
+      "metadata": "tasks/test-21/metadata.json",
+      "contract": "tasks/test-21/contract.md",
+      "reference": "tasks/test-21/reference.md"
+    },
+    {
+      "id": "test-22",
+      "title": "Comparar Apple y Microsoft seis meses",
+      "difficulty": 4,
+      "level": "L4",
+      "category": "assistant_digital",
+      "folder": "tasks/test-22",
+      "metadata": "tasks/test-22/metadata.json",
+      "contract": "tasks/test-22/contract.md",
+      "reference": "tasks/test-22/reference.md"
+    },
+    {
+      "id": "test-23",
+      "title": "Investigar proveedor de SSO para Barna Health",
+      "difficulty": 4,
+      "level": "L4",
+      "category": "assistant_digital",
+      "folder": "tasks/test-23",
+      "metadata": "tasks/test-23/metadata.json",
+      "contract": "tasks/test-23/contract.md",
+      "reference": "tasks/test-23/reference.md"
+    },
+    {
+      "id": "test-24",
+      "title": "Validar descuento Delta Equipos con mercado",
+      "difficulty": 4,
+      "level": "L4",
+      "category": "assistant_digital",
+      "folder": "tasks/test-24",
+      "metadata": "tasks/test-24/metadata.json",
+      "contract": "tasks/test-24/contract.md",
+      "reference": "tasks/test-24/reference.md"
+    },
+    {
+      "id": "test-25",
+      "title": "Informe ejecutivo de cuentas prioritarias",
+      "difficulty": 4,
+      "level": "L4",
+      "category": "assistant_digital",
+      "folder": "tasks/test-25",
+      "metadata": "tasks/test-25/metadata.json",
+      "contract": "tasks/test-25/contract.md",
+      "reference": "tasks/test-25/reference.md"
+    },
+    {
+      "id": "test-26",
+      "title": "Auditoria completa de gastos con recomendaciones",
+      "difficulty": 4,
+      "level": "L4",
+      "category": "assistant_digital",
+      "folder": "tasks/test-26",
+      "metadata": "tasks/test-26/metadata.json",
+      "contract": "tasks/test-26/contract.md",
+      "reference": "tasks/test-26/reference.md"
+    },
+    {
+      "id": "test-27",
+      "title": "Preparar tablero de acciones por responsable",
+      "difficulty": 4,
+      "level": "L4",
+      "category": "assistant_digital",
+      "folder": "tasks/test-27",
+      "metadata": "tasks/test-27/metadata.json",
+      "contract": "tasks/test-27/contract.md",
+      "reference": "tasks/test-27/reference.md"
+    },
+    {
+      "id": "test-28",
+      "title": "Investigacion web y propuesta CRM para BravoSoft",
+      "difficulty": 5,
+      "level": "L5",
+      "category": "assistant_digital",
+      "folder": "tasks/test-28",
+      "metadata": "tasks/test-28/metadata.json",
+      "contract": "tasks/test-28/contract.md",
+      "reference": "tasks/test-28/reference.md"
+    },
+    {
+      "id": "test-29",
+      "title": "Informe mensual combinado operaciones-finanzas",
+      "difficulty": 5,
+      "level": "L5",
+      "category": "assistant_digital",
+      "folder": "tasks/test-29",
+      "metadata": "tasks/test-29/metadata.json",
+      "contract": "tasks/test-29/contract.md",
+      "reference": "tasks/test-29/reference.md"
+    },
+    {
+      "id": "test-30",
+      "title": "Investigacion profunda y plan ejecutivo de IA ofimatica",
+      "difficulty": 5,
+      "level": "L5",
+      "category": "assistant_digital",
+      "folder": "tasks/test-30",
+      "metadata": "tasks/test-30/metadata.json",
+      "contract": "tasks/test-30/contract.md",
+      "reference": "tasks/test-30/reference.md"
+    }
+  ]
+}

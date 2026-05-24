@@ -1,0 +1,47 @@
+[
+  {
+    "group": "openrouter_free_or_cheap",
+    "engines": [
+      "openrouter:deepseek/deepseek-v4-flash",
+      "openrouter:deepseek/deepseek-v4-flash:free",
+      "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "openrouter:qwen/qwen3.6-flash",
+      "openrouter:qwen/qwen3.6-35b-a3b",
+      "openrouter:arcee-ai/trinity-large-thinking",
+      "openrouter:arcee-ai/trinity-large-thinking:free"
+    ]
+  },
+  {
+    "group": "openrouter_strategic_paid",
+    "engines": [
+      "openrouter:deepseek/deepseek-r1",
+      "openrouter:qwen/qwen3.6-plus",
+      "openrouter:moonshotai/kimi-k2.6",
+      "openrouter:x-ai/grok-4.3",
+      "openrouter:openai/gpt-5.4-mini",
+      "openrouter:openai/gpt-5.5"
+    ]
+  },
+  {
+    "group": "groq",
+    "engines": [
+      "groq:llama-3.1-8b-instant",
+      "groq:openai/gpt-oss-20b",
+      "groq:openai/gpt-oss-120b",
+      "groq:qwen/qwen3-32b",
+      "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "groq:llama-3.3-70b-versatile"
+    ]
+  },
+  {
+    "group": "cli_agentic",
+    "engines": [
+      "codex:gpt-5.4-mini",
+      "codex:gpt-5.5",
+      "gemini:gemini-2.5-flash",
+      "opencode:google/gemini-2.5-flash",
+      "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "opencode:groq/openai/gpt-oss-20b"
+    ]
+  }
+]

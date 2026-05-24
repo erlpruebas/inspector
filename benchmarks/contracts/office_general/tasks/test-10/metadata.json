@@ -1,0 +1,24 @@
+{
+  "id": "test-10",
+  "title": "Crear CSV de proveedores",
+  "difficulty": 2,
+  "level": "L2",
+  "category": "assistant_digital",
+  "skills": [
+    "data_filtering",
+    "csv_generation"
+  ],
+  "required_files": [
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "proveedor",
+    "IberLegal",
+    "Tecnoria",
+    "SerConta"
+  ],
+  "response_shape": "csv o tabla limpia",
+  "prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-10/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-10/metadata.json"
+}

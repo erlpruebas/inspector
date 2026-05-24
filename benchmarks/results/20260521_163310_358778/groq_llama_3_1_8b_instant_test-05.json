@@ -1,0 +1,39 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-05",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.438, \"usage\": {\"queue_time\": 0.018498742, \"prompt_tokens\": 341, \"prompt_time\": 0.020273181, \"completion_tokens\": 132, \"completion_time\": 0.1927766, \"total_tokens\": 473, \"total_time\": 0.213049781}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\work\\groq_llama_3_1_8b_instant\\test-05\\resultado.md"
+  ],
+  "elapsed_seconds": 0.7339999999967404,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 0.438,
+    "usage": {
+      "queue_time": 0.018498742,
+      "prompt_tokens": 341,
+      "prompt_time": 0.020273181,
+      "completion_tokens": 132,
+      "completion_time": 0.1927766,
+      "total_tokens": 473,
+      "total_time": 0.213049781
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\groq_llama_3_1_8b_instant_test-05_resultado.md"
+  ],
+  "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+  "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\work\\groq_llama_3_1_8b_instant\\test-05",
+  "privacy": {
+    "mode": "clear"
+  }
+}

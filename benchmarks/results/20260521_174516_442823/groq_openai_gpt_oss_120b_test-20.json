@@ -1,0 +1,42 @@
+{
+  "engine": "groq_openai_gpt_oss_120b",
+  "task_id": "test-20",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 2.469, \"usage\": {\"queue_time\": 0.018734524, \"prompt_tokens\": 3048, \"prompt_time\": 0.146171353, \"completion_tokens\": 1024, \"completion_time\": 2.160155754, \"total_tokens\": 4072, \"total_time\": 2.306327107, \"completion_tokens_details\": {\"reasoning_tokens\": 451}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-20\\resultado.md"
+  ],
+  "elapsed_seconds": 2.735000000000582,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "elapsed_seconds": 2.469,
+    "usage": {
+      "queue_time": 0.018734524,
+      "prompt_tokens": 3048,
+      "prompt_time": 0.146171353,
+      "completion_tokens": 1024,
+      "completion_time": 2.160155754,
+      "total_tokens": 4072,
+      "total_time": 2.306327107,
+      "completion_tokens_details": {
+        "reasoning_tokens": 451
+      }
+    }
+  },
+  "model": "openai/gpt-oss-120b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-120b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_openai_gpt_oss_120b_test-20_resultado.md"
+  ],
+  "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+  "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-20",
+  "privacy": {
+    "mode": "clear"
+  }
+}

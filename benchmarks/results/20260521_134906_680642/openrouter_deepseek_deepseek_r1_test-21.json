@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_deepseek_deepseek_r1",
+  "task_id": "test-21",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-r1\", \"elapsed_seconds\": 61.547, \"usage\": {\"prompt_tokens\": 3090, \"completion_tokens\": 1431, \"total_tokens\": 4521, \"cost\": 0.0057405, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0057405, \"upstream_inference_prompt_cost\": 0.002163, \"upstream_inference_completions_cost\": 0.0035775}, \"completion_tokens_details\": {\"reasoning_tokens\": 761, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\work\\openrouter_deepseek_deepseek_r1\\test-21\\resultado.md"
+  ],
+  "elapsed_seconds": 61.76499999999942,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-r1",
+    "elapsed_seconds": 61.547,
+    "usage": {
+      "prompt_tokens": 3090,
+      "completion_tokens": 1431,
+      "total_tokens": 4521,
+      "cost": 0.0057405,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0057405,
+        "upstream_inference_prompt_cost": 0.002163,
+        "upstream_inference_completions_cost": 0.0035775
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 761,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "deepseek/deepseek-r1",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:deepseek/deepseek-r1",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\openrouter_deepseek_deepseek_r1_test-21_resultado.md"
+  ],
+  "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+  "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\work\\openrouter_deepseek_deepseek_r1\\test-21",
+  "privacy": {
+    "mode": "clear"
+  }
+}

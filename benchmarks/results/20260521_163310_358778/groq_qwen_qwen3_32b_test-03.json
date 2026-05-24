@@ -1,0 +1,39 @@
+{
+  "engine": "groq_qwen_qwen3_32b",
+  "task_id": "test-03",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.062, \"usage\": {\"queue_time\": 0.090483642, \"prompt_tokens\": 1361, \"prompt_time\": 0.063758395, \"completion_tokens\": 988, \"completion_time\": 1.699022096, \"total_tokens\": 2349, \"total_time\": 1.762780491}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\work\\groq_qwen_qwen3_32b\\test-03\\resultado.md"
+  ],
+  "elapsed_seconds": 2.3589999999967404,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "qwen/qwen3-32b",
+    "elapsed_seconds": 2.062,
+    "usage": {
+      "queue_time": 0.090483642,
+      "prompt_tokens": 1361,
+      "prompt_time": 0.063758395,
+      "completion_tokens": 988,
+      "completion_time": 1.699022096,
+      "total_tokens": 2349,
+      "total_time": 1.762780491
+    }
+  },
+  "model": "qwen/qwen3-32b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:qwen/qwen3-32b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\groq_qwen_qwen3_32b_test-03_resultado.md"
+  ],
+  "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+  "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\work\\groq_qwen_qwen3_32b\\test-03",
+  "privacy": {
+    "mode": "clear"
+  }
+}

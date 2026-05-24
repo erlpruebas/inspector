@@ -1,0 +1,25 @@
+{
+  "id": "test-08",
+  "title": "Resumen semanal de tareas pendientes",
+  "difficulty": 2,
+  "level": "L2",
+  "category": "assistant_digital",
+  "skills": [
+    "summarization",
+    "prioritization"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md"
+  ],
+  "expected_keys": [
+    "IberLegal",
+    "Clinica Centro",
+    "Delta Equipos",
+    "SSL"
+  ],
+  "response_shape": "resumen claro y corto",
+  "prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-08/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-08/metadata.json"
+}

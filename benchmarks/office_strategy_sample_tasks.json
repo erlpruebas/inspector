@@ -1,0 +1,50 @@
+[
+  {
+    "id": "test-01",
+    "reason": "cita sencilla con cruce de email y contactos"
+  },
+  {
+    "id": "test-03",
+    "reason": "extraccion de tareas desde notas de voz"
+  },
+  {
+    "id": "test-05",
+    "reason": "auditoria simple de gasto"
+  },
+  {
+    "id": "test-08",
+    "reason": "resumen semanal con priorizacion"
+  },
+  {
+    "id": "test-10",
+    "reason": "generacion de CSV estructurado"
+  },
+  {
+    "id": "test-14",
+    "reason": "calendario ICS con restricciones"
+  },
+  {
+    "id": "test-17",
+    "reason": "agregacion financiera multiarchivo"
+  },
+  {
+    "id": "test-20",
+    "reason": "sintesis de cliente con varios archivos"
+  },
+  {
+    "id": "test-21",
+    "reason": "busqueda web ligera"
+  },
+  {
+    "id": "test-23",
+    "reason": "investigacion tecnica con contexto local"
+  },
+  {
+    "id": "test-26",
+    "reason": "auditoria completa con recomendaciones"
+  },
+  {
+    "id": "test-30",
+    "reason": "investigacion profunda y decision ejecutiva"
+  }
+]

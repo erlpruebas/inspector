@@ -1,0 +1,39 @@
+{
+  "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+  "task_id": "test-30",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"meta-llama/llama-4-scout-17b-16e-instruct\", \"elapsed_seconds\": 2.406, \"usage\": {\"queue_time\": 0.367519558, \"prompt_tokens\": 5117, \"prompt_time\": 0.224889363, \"completion_tokens\": 728, \"completion_time\": 1.649405091, \"total_tokens\": 5845, \"total_time\": 1.8742944540000002}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_meta_llama_llama_4_scout_17b_16e_instruct\\test-30\\resultado.md"
+  ],
+  "elapsed_seconds": 2.5939999999973224,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "elapsed_seconds": 2.406,
+    "usage": {
+      "queue_time": 0.367519558,
+      "prompt_tokens": 5117,
+      "prompt_time": 0.224889363,
+      "completion_tokens": 728,
+      "completion_time": 1.649405091,
+      "total_tokens": 5845,
+      "total_time": 1.8742944540000002
+    }
+  },
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\groq_meta_llama_llama_4_scout_17b_16e_instruct_test-30_resultado.md"
+  ],
+  "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+  "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_meta_llama_llama_4_scout_17b_16e_instruct\\test-30",
+  "privacy": {
+    "mode": "clear"
+  }
+}

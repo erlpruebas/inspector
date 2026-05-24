@@ -1,0 +1,39 @@
+{
+  "engine": "groq_qwen_qwen3_32b",
+  "task_id": "test-17",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.125, \"usage\": {\"queue_time\": 0.090922238, \"prompt_tokens\": 939, \"prompt_time\": 0.044155927, \"completion_tokens\": 1024, \"completion_time\": 1.817816273, \"total_tokens\": 1963, \"total_time\": 1.8619721999999999}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-17\\resultado.md"
+  ],
+  "elapsed_seconds": 2.389999999999418,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "qwen/qwen3-32b",
+    "elapsed_seconds": 2.125,
+    "usage": {
+      "queue_time": 0.090922238,
+      "prompt_tokens": 939,
+      "prompt_time": 0.044155927,
+      "completion_tokens": 1024,
+      "completion_time": 1.817816273,
+      "total_tokens": 1963,
+      "total_time": 1.8619721999999999
+    }
+  },
+  "model": "qwen/qwen3-32b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:qwen/qwen3-32b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-17_resultado.md"
+  ],
+  "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+  "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-17",
+  "privacy": {
+    "mode": "clear"
+  }
+}

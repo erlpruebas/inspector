@@ -1,0 +1,566 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577",
+  "jobs": [
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-01",
+      "next_run_at": 1779381366.6281488,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:z-ai/glm-5.1",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:minimax/minimax-m2.5:free",
+      "task_id": "test-01",
+      "next_run_at": 1779381378.3757231,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+      "task_id": "test-01",
+      "next_run_at": 1779381380.4318142,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:baidu/cobuddy:free",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-9b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:z-ai/glm-4.7-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:minimax/minimax-m2.7",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:z-ai/glm-5.1",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:minimax/minimax-m2.5:free",
+      "task_id": "test-03",
+      "next_run_at": 1779381584.5623777,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+      "task_id": "test-03",
+      "next_run_at": 1779381586.4474678,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:baidu/cobuddy:free",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-9b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:z-ai/glm-4.7-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:minimax/minimax-m2.7",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-05",
+      "next_run_at": 1779381714.915503,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:z-ai/glm-5.1",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:minimax/minimax-m2.5:free",
+      "task_id": "test-05",
+      "next_run_at": 1779381731.314257,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+      "task_id": "test-05",
+      "next_run_at": 1779381733.223582,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:baidu/cobuddy:free",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-9b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:z-ai/glm-4.7-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:minimax/minimax-m2.7",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-10",
+      "next_run_at": 1779381817.5982807,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:z-ai/glm-5.1",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:minimax/minimax-m2.5:free",
+      "task_id": "test-10",
+      "next_run_at": 1779381852.5298724,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+      "task_id": "test-10",
+      "next_run_at": 1779381854.5123081,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:baidu/cobuddy:free",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2-speciale",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-9b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:z-ai/glm-4.7-flash",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:minimax/minimax-m2.7",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "openrouter:z-ai/glm-5.1::test-01",
+      "at": "2026-05-21T14:36:16.042253+00:00"
+    },
+    {
+      "job": "openrouter:nvidia/nemotron-3-super-120b-a12b:free::test-01",
+      "at": "2026-05-21T14:37:00.912535+00:00"
+    },
+    {
+      "job": "openrouter:baidu/cobuddy:free::test-01",
+      "at": "2026-05-21T14:37:20.691355+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-21T14:37:26.112275+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-9b::test-01",
+      "at": "2026-05-21T14:38:14.144072+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-01",
+      "at": "2026-05-21T14:38:31.897345+00:00"
+    },
+    {
+      "job": "openrouter:z-ai/glm-4.7-flash::test-01",
+      "at": "2026-05-21T14:38:39.494857+00:00"
+    },
+    {
+      "job": "openrouter:minimax/minimax-m2.7::test-01",
+      "at": "2026-05-21T14:38:59.173445+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-03",
+      "at": "2026-05-21T14:39:33.450909+00:00"
+    },
+    {
+      "job": "openrouter:z-ai/glm-5.1::test-03",
+      "at": "2026-05-21T14:39:42.517347+00:00"
+    },
+    {
+      "job": "openrouter:nvidia/nemotron-3-super-120b-a12b:free::test-03",
+      "at": "2026-05-21T14:40:13.408874+00:00"
+    },
+    {
+      "job": "openrouter:baidu/cobuddy:free::test-03",
+      "at": "2026-05-21T14:40:22.711059+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-03",
+      "at": "2026-05-21T14:40:33.681379+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-9b::test-03",
+      "at": "2026-05-21T14:40:45.714722+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-03",
+      "at": "2026-05-21T14:41:25.474106+00:00"
+    },
+    {
+      "job": "openrouter:z-ai/glm-4.7-flash::test-03",
+      "at": "2026-05-21T14:41:35.548134+00:00"
+    },
+    {
+      "job": "openrouter:minimax/minimax-m2.7::test-03",
+      "at": "2026-05-21T14:41:52.808877+00:00"
+    },
+    {
+      "job": "openrouter:z-ai/glm-5.1::test-05",
+      "at": "2026-05-21T14:42:07.074206+00:00"
+    },
+    {
+      "job": "openrouter:nvidia/nemotron-3-super-120b-a12b:free::test-05",
+      "at": "2026-05-21T14:42:29.181533+00:00"
+    },
+    {
+      "job": "openrouter:baidu/cobuddy:free::test-05",
+      "at": "2026-05-21T14:42:48.236510+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-05",
+      "at": "2026-05-21T14:42:52.646888+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-9b::test-05",
+      "at": "2026-05-21T14:43:00.133860+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-05",
+      "at": "2026-05-21T14:43:18.354019+00:00"
+    },
+    {
+      "job": "openrouter:z-ai/glm-4.7-flash::test-05",
+      "at": "2026-05-21T14:43:24.964618+00:00"
+    },
+    {
+      "job": "openrouter:minimax/minimax-m2.7::test-05",
+      "at": "2026-05-21T14:43:35.536317+00:00"
+    },
+    {
+      "job": "openrouter:z-ai/glm-5.1::test-10",
+      "at": "2026-05-21T14:44:09.777707+00:00"
+    },
+    {
+      "job": "openrouter:nvidia/nemotron-3-super-120b-a12b:free::test-10",
+      "at": "2026-05-21T14:44:45.274545+00:00"
+    },
+    {
+      "job": "openrouter:baidu/cobuddy:free::test-10",
+      "at": "2026-05-21T14:44:58.498875+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-10",
+      "at": "2026-05-21T14:45:07.555796+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-9b::test-10",
+      "at": "2026-05-21T14:45:32.928048+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-10",
+      "at": "2026-05-21T14:46:10.696119+00:00"
+    },
+    {
+      "job": "openrouter:z-ai/glm-4.7-flash::test-10",
+      "at": "2026-05-21T14:46:19.298802+00:00"
+    },
+    {
+      "job": "openrouter:minimax/minimax-m2.7::test-10",
+      "at": "2026-05-21T14:46:30.524540+00:00"
+    }
+  ],
+  "deferred": [
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-01",
+      "at": "2026-05-21T14:36:06.628148+00:00",
+      "next_run_at": "2026-05-21T16:36:06.628149+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:minimax/minimax-m2.5:free::test-01",
+      "at": "2026-05-21T14:36:18.375723+00:00",
+      "next_run_at": "2026-05-21T16:36:18.375723+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free::test-01",
+      "at": "2026-05-21T14:36:20.431814+00:00",
+      "next_run_at": "2026-05-21T16:36:20.431814+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:minimax/minimax-m2.5:free::test-03",
+      "at": "2026-05-21T14:39:44.562377+00:00",
+      "next_run_at": "2026-05-21T16:39:44.562378+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free::test-03",
+      "at": "2026-05-21T14:39:46.447467+00:00",
+      "next_run_at": "2026-05-21T16:39:46.447468+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-05",
+      "at": "2026-05-21T14:41:54.915503+00:00",
+      "next_run_at": "2026-05-21T16:41:54.915503+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:minimax/minimax-m2.5:free::test-05",
+      "at": "2026-05-21T14:42:11.314257+00:00",
+      "next_run_at": "2026-05-21T16:42:11.314257+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free::test-05",
+      "at": "2026-05-21T14:42:13.223582+00:00",
+      "next_run_at": "2026-05-21T16:42:13.223582+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-10",
+      "at": "2026-05-21T14:43:37.598280+00:00",
+      "next_run_at": "2026-05-21T16:43:37.598281+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:minimax/minimax-m2.5:free::test-10",
+      "at": "2026-05-21T14:44:12.529872+00:00",
+      "next_run_at": "2026-05-21T16:44:12.529872+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free::test-10",
+      "at": "2026-05-21T14:44:14.512308+00:00",
+      "next_run_at": "2026-05-21T16:44:14.512308+00:00",
+      "reason": "429"
+    }
+  ],
+  "failed": [
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-01",
+      "at": "2026-05-21T14:37:28.204703+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-03",
+      "at": "2026-05-21T14:40:36.224533+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-05",
+      "at": "2026-05-21T14:42:55.078649+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2-speciale::test-10",
+      "at": "2026-05-21T14:45:09.553147+00:00",
+      "returncode": 1
+    }
+  ],
+  "running": null
+}

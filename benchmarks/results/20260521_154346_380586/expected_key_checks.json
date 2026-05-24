@@ -1,0 +1,1025 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Xavier Puig"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_llama_3_1_8b_instant",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "precio",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "coste"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "reservar"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "coste"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Noelia Castro"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_openai_gpt_oss_120b",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "recomendacion ejecutiva"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "reservar"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_openai_gpt_oss_20b",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-08",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-14",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "passed": false
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "passed": true
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_qwen_qwen3_32b",
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "passed": false
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "engine": "groq_groq_compound_mini",
+  "task_id": "test-03",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 6.985, \"usage\": {\"queue_time\": 0.0985, \"prompt_tokens\": 2736, \"prompt_time\": 0.145058, \"completion_tokens\": 2826, \"completion_time\": 6.034202, \"total_tokens\": 5562, \"total_time\": 6.17926}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\work\\groq_groq_compound_mini\\test-03\\resultado.md"
+  ],
+  "elapsed_seconds": 7.327999999994063,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "groq/compound-mini",
+    "elapsed_seconds": 6.985,
+    "usage": {
+      "queue_time": 0.0985,
+      "prompt_tokens": 2736,
+      "prompt_time": 0.145058,
+      "completion_tokens": 2826,
+      "completion_time": 6.034202,
+      "total_tokens": 5562,
+      "total_time": 6.17926
+    }
+  },
+  "model": "groq/compound-mini",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:groq/compound-mini",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\groq_groq_compound_mini_test-03_resultado.md"
+  ],
+  "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+  "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163310_358778\\work\\groq_groq_compound_mini\\test-03",
+  "privacy": {
+    "mode": "clear"
+  }
+}

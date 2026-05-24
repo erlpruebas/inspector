@@ -1,0 +1,1404 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260521_171122_417657",
+  "jobs": [
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v3.2",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.5-flash-02-23",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    }
+  ],
+  "completed": [
+    {
+      "job": "groq:llama-3.1-8b-instant::test-01",
+      "at": "2026-05-21T15:11:23.661627+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-01",
+      "at": "2026-05-21T15:11:26.167573+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-01",
+      "at": "2026-05-21T15:11:27.769189+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-01",
+      "at": "2026-05-21T15:11:29.570497+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-01",
+      "at": "2026-05-21T15:11:32.023809+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-01",
+      "at": "2026-05-21T15:11:34.116008+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-21T15:11:39.104109+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-01",
+      "at": "2026-05-21T15:11:56.462700+00:00"
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-01",
+      "at": "2026-05-21T15:11:59.153392+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-01",
+      "at": "2026-05-21T15:12:21.344711+00:00"
+    },
+    {
+      "job": "groq:groq/compound-mini::test-01",
+      "at": "2026-05-21T15:12:24.388678+00:00"
+    },
+    {
+      "job": "groq:groq/compound::test-01",
+      "at": "2026-05-21T15:12:38.998268+00:00"
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-21T15:13:24.040110+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-03",
+      "at": "2026-05-21T15:13:27.808107+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-03",
+      "at": "2026-05-21T15:13:31.269344+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-03",
+      "at": "2026-05-21T15:13:33.634838+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-03",
+      "at": "2026-05-21T15:13:36.344123+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-03",
+      "at": "2026-05-21T15:13:40.083756+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-03",
+      "at": "2026-05-21T15:13:44.508941+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-03",
+      "at": "2026-05-21T15:14:13.085136+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-03",
+      "at": "2026-05-21T15:17:25.287341+00:00"
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-03",
+      "at": "2026-05-21T15:17:31.671263+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-03",
+      "at": "2026-05-21T15:18:19.024110+00:00"
+    },
+    {
+      "job": "groq:groq/compound-mini::test-03",
+      "at": "2026-05-21T15:18:27.076972+00:00"
+    },
+    {
+      "job": "groq:groq/compound::test-03",
+      "at": "2026-05-21T15:18:54.173244+00:00"
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v3.2::test-03",
+      "at": "2026-05-21T15:20:19.167145+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-05",
+      "at": "2026-05-21T15:20:23.746369+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-05",
+      "at": "2026-05-21T15:20:27.553634+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-05",
+      "at": "2026-05-21T15:20:29.959666+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-05",
+      "at": "2026-05-21T15:20:31.860427+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-05",
+      "at": "2026-05-21T15:20:34.474162+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-05",
+      "at": "2026-05-21T15:20:36.614236+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-05",
+      "at": "2026-05-21T15:20:40.813297+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-05",
+      "at": "2026-05-21T15:21:02.004112+00:00"
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-05",
+      "at": "2026-05-21T15:21:04.571560+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-05",
+      "at": "2026-05-21T15:21:36.374141+00:00"
+    },
+    {
+      "job": "groq:groq/compound-mini::test-05",
+      "at": "2026-05-21T15:21:39.204227+00:00"
+    },
+    {
+      "job": "groq:groq/compound::test-05",
+      "at": "2026-05-21T15:21:47.256243+00:00"
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v3.2::test-05",
+      "at": "2026-05-21T15:22:25.568212+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-08",
+      "at": "2026-05-21T15:22:28.098138+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-08",
+      "at": "2026-05-21T15:22:32.291973+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-08",
+      "at": "2026-05-21T15:22:35.234042+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-08",
+      "at": "2026-05-21T15:22:38.140072+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-08",
+      "at": "2026-05-21T15:22:41.895777+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-08",
+      "at": "2026-05-21T15:22:45.623202+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-08",
+      "at": "2026-05-21T15:23:05.389756+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-08",
+      "at": "2026-05-21T15:24:24.997059+00:00"
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-08",
+      "at": "2026-05-21T15:24:31.125225+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-08",
+      "at": "2026-05-21T15:25:06.356230+00:00"
+    },
+    {
+      "job": "groq:groq/compound-mini::test-08",
+      "at": "2026-05-21T15:25:13.498485+00:00"
+    },
+    {
+      "job": "groq:groq/compound::test-08",
+      "at": "2026-05-21T15:25:30.344732+00:00"
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v3.2::test-08",
+      "at": "2026-05-21T15:28:32.112158+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-10",
+      "at": "2026-05-21T15:28:34.767709+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-10",
+      "at": "2026-05-21T15:28:37.571458+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-10",
+      "at": "2026-05-21T15:28:39.515769+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-10",
+      "at": "2026-05-21T15:28:41.626745+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-10",
+      "at": "2026-05-21T15:28:44.289957+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-10",
+      "at": "2026-05-21T15:28:46.537738+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-10",
+      "at": "2026-05-21T15:28:51.386345+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-10",
+      "at": "2026-05-21T15:29:13.852158+00:00"
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-10",
+      "at": "2026-05-21T15:29:16.336363+00:00"
+    },
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-10",
+      "at": "2026-05-21T15:29:41.306619+00:00"
+    },
+    {
+      "job": "groq:groq/compound-mini::test-10",
+      "at": "2026-05-21T15:29:45.573188+00:00"
+    },
+    {
+      "job": "groq:groq/compound::test-10",
+      "at": "2026-05-21T15:29:53.953448+00:00"
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v3.2::test-10",
+      "at": "2026-05-21T15:31:42.877567+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-14",
+      "at": "2026-05-21T15:31:45.182930+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-14",
+      "at": "2026-05-21T15:31:48.666069+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-14",
+      "at": "2026-05-21T15:31:51.382390+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-14",
+      "at": "2026-05-21T15:31:53.989282+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-14",
+      "at": "2026-05-21T15:31:57.686120+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-14",
+      "at": "2026-05-21T15:32:00.704388+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v3.2::test-14",
+      "at": "2026-05-21T15:32:26.538077+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-14",
+      "at": "2026-05-21T15:35:33.167976+00:00"
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-14",
+      "at": "2026-05-21T15:35:40.744748+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [
+    {
+      "job": "openrouter:qwen/qwen3.5-flash-02-23::test-14",
+      "at": "2026-05-21T15:43:37.942906+00:00",
+      "returncode": 4294967295
+    }
+  ],
+  "running": null
+}

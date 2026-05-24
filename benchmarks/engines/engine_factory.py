@@ -32,6 +32,8 @@ def create_engine(name: str) -> Engine:
             )
             base_part = f"--base-url {_quote(base_url)} "
         max_tokens = os.getenv("BENCH_LMSTUDIO_MAX_TOKENS", "256") if normalized == "lmstudio" else "2048"
+        if normalized == "groq":
+            max_tokens = os.getenv("BENCH_GROQ_MAX_TOKENS", max_tokens)
         if normalized == "vikingnano":
             max_tokens = os.getenv("BENCH_VIKING_NANO_MAX_TOKENS", "2048")
         if normalized == "openrouter":
@@ -40,6 +42,10 @@ def create_engine(name: str) -> Engine:
         if normalized == "vikingnano":
             api_timeout = os.getenv("BENCH_VIKING_NANO_API_TIMEOUT", "600")
         context_mode = os.getenv("BENCH_LMSTUDIO_CONTEXT_MODE", "compact") if normalized == "lmstudio" else "full"
+        if normalized == "groq":
+            context_mode = os.getenv("BENCH_GROQ_CONTEXT_MODE", context_mode)
+        if normalized == "openrouter":
+            context_mode = os.getenv("BENCH_OPENROUTER_CONTEXT_MODE", context_mode)
         command_timeout = int(os.getenv("BENCH_VIKING_NANO_COMMAND_TIMEOUT_SECONDS", "600")) if normalized == "vikingnano" else 1800
         command = (
             f'"{sys.executable}" "{script}" '

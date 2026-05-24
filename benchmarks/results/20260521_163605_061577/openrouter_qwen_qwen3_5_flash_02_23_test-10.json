@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_qwen_qwen3_5_flash_02_23",
+  "task_id": "test-10",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"elapsed_seconds\": 36.438, \"usage\": {\"prompt_tokens\": 2328, \"completion_tokens\": 5709, \"total_tokens\": 8037, \"cost\": 0.00163566, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00163566, \"upstream_inference_prompt_cost\": 0.00015132, \"upstream_inference_completions_cost\": 0.00148434}, \"completion_tokens_details\": {\"reasoning_tokens\": 5500, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-10\\resultado.md"
+  ],
+  "elapsed_seconds": 36.73500000000058,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "qwen/qwen3.5-flash-02-23",
+    "elapsed_seconds": 36.438,
+    "usage": {
+      "prompt_tokens": 2328,
+      "completion_tokens": 5709,
+      "total_tokens": 8037,
+      "cost": 0.00163566,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00163566,
+        "upstream_inference_prompt_cost": 0.00015132,
+        "upstream_inference_completions_cost": 0.00148434
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5500,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "qwen/qwen3.5-flash-02-23",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:qwen/qwen3.5-flash-02-23",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_flash_02_23_test-10_resultado.md"
+  ],
+  "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+  "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-10",
+  "privacy": {
+    "mode": "clear"
+  }
+}

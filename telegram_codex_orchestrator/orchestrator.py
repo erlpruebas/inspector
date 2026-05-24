@@ -10,6 +10,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.append(str(REPO_ROOT))
+
 from alarms import AlarmStore, confirmation_text, format_alarm, parse_alarm_request
 from codex_runner import CodexRunner
 from codex_dirs import CodexDirStore
@@ -45,6 +49,7 @@ from speech_io import SpeechIO
 from thread_store import ThreadRecord, ThreadStore
 from telegram_api import TelegramApi
 from voice_state import VoiceStateStore
+from benchmarks.token_accounting import record_usage
 
 
 RESTART_EXIT_CODE = 75
@@ -616,6 +621,20 @@ class Orchestrator:
                 f"returncode={result.returncode} timed_out={result.timed_out} codex_thread_id={thread_record.codex_thread_id}\n\n{response}",
                 "codex",
                 thread=thread_record.name,
+            )
+            record_usage(
+                self.settings.memory_file.with_name("token_usage.jsonl"),
+                source="telegram_orchestrator",
+                component="codex_cli",
+                provider="codex",
+                model=self.settings.codex_model,
+                operation="codex_run",
+                prompt_text=instruction,
+                completion_text=response,
+                task_id=str(pending_task.id if pending_task else ""),
+                user_id=str(chat_id),
+                thread_id=thread_record.name,
+                metadata={"thread_id": thread_record.codex_thread_id, "returncode": result.returncode, "timed_out": result.timed_out},
             )
             self._reply(chat_id, response)
         except Exception as exc:

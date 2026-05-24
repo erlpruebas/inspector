@@ -1,0 +1,28 @@
+{
+  "provider": "openrouter",
+  "model": "moonshotai/kimi-k2.6",
+  "elapsed_seconds": 37.641,
+  "usage": {
+    "prompt_tokens": 5990,
+    "completion_tokens": 1024,
+    "total_tokens": 7014,
+    "cost": 0.00794646,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00794646,
+      "upstream_inference_prompt_cost": 0.0043727,
+      "upstream_inference_completions_cost": 0.00357376
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 871,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "test-21",
+  "title": "Buscar alternativa a herramienta de encuestas",
+  "difficulty": 4,
+  "level": "L4",
+  "category": "assistant_digital",
+  "skills": [
+    "web_search",
+    "comparison",
+    "reporting"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "expected_keys": [
+    "GreenBox",
+    "encuestas",
+    "precio",
+    "fuentes"
+  ],
+  "response_shape": "informe con fuentes y conclusion operativa",
+  "prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-21/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-21/metadata.json"
+}

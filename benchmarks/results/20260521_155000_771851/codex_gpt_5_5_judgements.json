@@ -1,0 +1,102 @@
+[
+  {
+    "engine": "groq_llama_3_1_8b_instant",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 3.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta enumera herramientas de encuestas, pero no cumple la tarea: no incluye precios, fuentes web ni trazabilidad a notas_voz.jsonl, y no justifica que sean alternativas económicas para GreenBox.",
+    "strengths": [
+      "Menciona GreenBox y el contexto de encuestas",
+      "Incluye varias alternativas conocidas",
+      "Formato legible por secciones"
+    ],
+    "issues": [
+      "No incluye fuentes ni enlaces verificables",
+      "No muestra uso real de busqueda web ni de notas_voz.jsonl",
+      "No compara precios ni planes económicos",
+      "Incluye opciones potencialmente caras como Qualtrics sin advertencia",
+      "Descripciones genéricas y repetitivas, con posible relleno no trazable"
+    ],
+    "elapsed_seconds": 9.625
+  },
+  {
+    "engine": "groq_openai_gpt_oss_120b",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "El CSV tiene el formato y columnas solicitadas e incluye IberLegal, Tecnoria y SerConta, pero no evidencia la clave esperada \"proveedor\" y agrega varios registros no justificados por las claves dadas.",
+    "strengths": [
+      "Formato CSV valido",
+      "Columnas solicitadas presentes",
+      "Incluye IberLegal, Tecnoria y SerConta"
+    ],
+    "issues": [
+      "Falta la clave esperada \"proveedor\"",
+      "Incluye proveedores adicionales sin trazabilidad",
+      "No demuestra que los datos provengan de contactos_50.csv"
+    ],
+    "elapsed_seconds": 12.484
+  },
+  {
+    "engine": "groq_openai_gpt_oss_20b",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y estructura bien incidencias, oportunidades y acciones, pero introduce muchos datos específicos sin trazabilidad aparente y contiene una inconsistencia de fecha.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Formato claro y accionable",
+      "Distingue incidencias, oportunidades y próximos pasos"
+    ],
+    "issues": [
+      "Inventa o no justifica teléfono, email, ciudad, prioridad y reuniones concretas",
+      "Fechas y días de la semana inconsistentes, por ejemplo 'jueves 12 de mayo'",
+      "No cita ni diferencia qué proviene de notas, emails o contactos",
+      "Algunas oportunidades son especulativas sin apoyo explícito en las fuentes"
+    ],
+    "elapsed_seconds": 32.297
+  },
+  {
+    "engine": "groq_qwen_qwen3_32b",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre muchas notas y la tabla es útil, pero no respeta las claves esperadas ni normaliza las acciones a llamar/enviar/agendar/reservar; además incluye razonamiento interno y tareas extra no solicitadas según las claves.",
+    "strengths": [
+      "Lee correctamente el contenido principal de las notas",
+      "Incluye id, accion, entidad y fecha limite",
+      "Detecta las acciones esperadas en varias filas"
+    ],
+    "issues": [
+      "Expone un bloque <think> antes de la tabla",
+      "No usa las claves esperadas de forma normalizada",
+      "Incluye muchas acciones fuera de las claves esperadas",
+      "Algunas entidades o fechas limite son discutibles, como VN-017 y VN-011"
+    ],
+    "elapsed_seconds": 33.469
+  },
+  {
+    "engine": "groq_qwen_qwen3_32b",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 4.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta genera cuatro VEVENT, pero no recoge claves esperadas como \"sala\" y \"viernes 09:30\", y parece elegir compromisos incorrectos o menos claros.",
+    "strengths": [
+      "Incluye estructura ICS reconocible",
+      "Contiene cuatro compromisos",
+      "Incluye Clínica Centro y Barna Health"
+    ],
+    "issues": [
+      "Faltan claves esperadas: sala y viernes 09:30",
+      "Añade texto de razonamiento antes del ICS",
+      "Asigna horas/lugares posiblemente inventados para tareas sin hora concreta",
+      "No indica claramente datos faltantes en la descripcion"
+    ],
+    "elapsed_seconds": 15.859
+  }
+]

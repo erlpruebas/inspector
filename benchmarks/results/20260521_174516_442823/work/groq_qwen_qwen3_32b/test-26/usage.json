@@ -1,0 +1,14 @@
+{
+  "provider": "groq",
+  "model": "qwen/qwen3-32b",
+  "elapsed_seconds": 2.703,
+  "usage": {
+    "queue_time": 0.089954709,
+    "prompt_tokens": 944,
+    "prompt_time": 0.05154608,
+    "completion_tokens": 1007,
+    "completion_time": 2.444473788,
+    "total_tokens": 1951,
+    "total_time": 2.496019868
+  }
+}

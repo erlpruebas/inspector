@@ -1,0 +1,24 @@
+[
+  {
+    "group": "openrouter_free_candidates",
+    "engines": [
+      "openrouter:deepseek/deepseek-v4-flash:free",
+      "openrouter:z-ai/glm-5.1",
+      "openrouter:minimax/minimax-m2.5:free",
+      "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+      "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+      "openrouter:baidu/cobuddy:free"
+    ]
+  },
+  {
+    "group": "openrouter_cheap_candidates",
+    "engines": [
+      "openrouter:deepseek/deepseek-v3.2",
+      "openrouter:deepseek/deepseek-v3.2-speciale",
+      "openrouter:qwen/qwen3.5-9b",
+      "openrouter:qwen/qwen3.5-flash-02-23",
+      "openrouter:z-ai/glm-4.7-flash",
+      "openrouter:minimax/minimax-m2.7"
+    ]
+  }
+]

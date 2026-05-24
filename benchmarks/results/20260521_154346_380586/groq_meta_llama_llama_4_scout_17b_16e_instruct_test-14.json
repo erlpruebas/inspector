@@ -1,0 +1,39 @@
+{
+  "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+  "task_id": "test-14",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"meta-llama/llama-4-scout-17b-16e-instruct\", \"elapsed_seconds\": 1.343, \"usage\": {\"queue_time\": 0.088774209, \"prompt_tokens\": 1680, \"prompt_time\": 0.072460635, \"completion_tokens\": 434, \"completion_time\": 0.982933771, \"total_tokens\": 2114, \"total_time\": 1.055394406}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_meta_llama_llama_4_scout_17b_16e_instruct\\test-14\\resultado.md"
+  ],
+  "elapsed_seconds": 1.5940000000118744,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "elapsed_seconds": 1.343,
+    "usage": {
+      "queue_time": 0.088774209,
+      "prompt_tokens": 1680,
+      "prompt_time": 0.072460635,
+      "completion_tokens": 434,
+      "completion_time": 0.982933771,
+      "total_tokens": 2114,
+      "total_time": 1.055394406
+    }
+  },
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\groq_meta_llama_llama_4_scout_17b_16e_instruct_test-14_resultado.md"
+  ],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_meta_llama_llama_4_scout_17b_16e_instruct\\test-14",
+  "privacy": {
+    "mode": "clear"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "engine": "opencode_openrouter_deepseek_deepseek_v4_flash",
+  "task_id": "test-14",
+  "returncode": 1,
+  "stdout": "{\"type\":\"error\",\"timestamp\":1779357773913,\"sessionID\":\"ses_1b6031c54ffeJM5M84ox3CiXZn\",\"error\":{\"name\":\"APIError\",\"data\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 32000 tokens, but can only afford 299. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"statusCode\":402,\"isRetryable\":false,\"responseHeaders\":{\"access-control-allow-origin\":\"*\",\"access-control-expose-headers\":\"X-Generation-Id,cf-ray\",\"cf-ray\":\"9ff2bf8758d83c61-MAD\",\"connection\":\"keep-alive\",\"content-type\":\"application/json\",\"date\":\"Thu, 21 May 2026 10:02:54 GMT\",\"permissions-policy\":\"payment=(self \\\"https://checkout.stripe.com\\\" \\\"https://connect-js.stripe.com\\\" \\\"https://js.stripe.com\\\" \\\"https://*.js.stripe.com\\\" \\\"https://hooks.stripe.com\\\")\",\"referrer-policy\":\"no-referrer, strict-origin-when-cross-origin\",\"server\":\"cloudflare\",\"transfer-encoding\":\"chunked\",\"x-content-type-options\":\"nosniff\"},\"responseBody\":\"{\\\"error\\\":{\\\"message\\\":\\\"This request requires more credits, or fewer max_tokens. You requested up to 32000 tokens, but can only afford 299. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\\\",\\\"code\\\":402,\\\"metadata\\\":{\\\"provider_name\\\":null}},\\\"user_id\\\":\\\"user_39kmbBz5se6cCcG2oBweWgOyvQH\\\"}\",\"metadata\":{\"url\":\"https://openrouter.ai/api/v1/chat/completions\"}}}}\n",
+  "stderr": "OpenCode finished without creating expected output.",
+  "output_files": [],
+  "elapsed_seconds": 9.639999999999418,
+  "timed_out": false,
+  "usage": {},
+  "model": "openrouter/deepseek/deepseek-v4-flash",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:openrouter/deepseek/deepseek-v4-flash",
+  "copied_outputs": [],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_113731_842340\\work\\opencode_openrouter_deepseek_deepseek_v4_flash\\test-14",
+  "privacy": {
+    "mode": "clear"
+  }
+}

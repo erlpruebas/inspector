@@ -1,0 +1,39 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-10",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.875, \"usage\": {\"queue_time\": 0.026499962, \"prompt_tokens\": 2058, \"prompt_time\": 0.137186619, \"completion_tokens\": 437, \"completion_time\": 0.565853979, \"total_tokens\": 2495, \"total_time\": 0.703040598}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_llama_3_1_8b_instant\\test-10\\resultado.md"
+  ],
+  "elapsed_seconds": 1.0779999999940628,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 0.875,
+    "usage": {
+      "queue_time": 0.026499962,
+      "prompt_tokens": 2058,
+      "prompt_time": 0.137186619,
+      "completion_tokens": 437,
+      "completion_time": 0.565853979,
+      "total_tokens": 2495,
+      "total_time": 0.703040598
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\groq_llama_3_1_8b_instant_test-10_resultado.md"
+  ],
+  "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+  "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_llama_3_1_8b_instant\\test-10",
+  "privacy": {
+    "mode": "clear"
+  }
+}

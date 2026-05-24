@@ -1,0 +1,28 @@
+{
+  "provider": "openrouter",
+  "model": "qwen/qwen3.5-flash-02-23",
+  "elapsed_seconds": 23.641,
+  "usage": {
+    "prompt_tokens": 559,
+    "completion_tokens": 4064,
+    "total_tokens": 4623,
+    "cost": 0.001092975,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.001092975,
+      "upstream_inference_prompt_cost": 3.6335e-05,
+      "upstream_inference_completions_cost": 0.00105664
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 4000,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

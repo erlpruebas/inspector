@@ -1,0 +1,25 @@
+{
+  "id": "test-07",
+  "title": "Conciliar preferencias de informe de Nova Iberia",
+  "difficulty": 2,
+  "level": "L2",
+  "category": "assistant_digital",
+  "skills": [
+    "preference_extraction",
+    "reporting"
+  ],
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "Ana Lopez",
+    "PDF",
+    "resumen ejecutivo",
+    "anexos"
+  ],
+  "response_shape": "informe sintetico con acciones",
+  "prompt": "# Conciliar preferencias de informe de Nova Iberia\n\nExtrae la preferencia de formato de informes de Nova Iberia usando `emails_hilos.md` y confirma el contacto correcto en `contactos_50.csv`.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-07/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-07/metadata.json"
+}

@@ -1,0 +1,2167 @@
+[
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta incluye las claves esperadas y una nota breve en el formato pedido, pero posiblemente añade el año 2026 si no estaba en las fuentes.",
+    "strengths": [
+      "Identifica correctamente persona, empresa, fecha y hora",
+      "Formato claro y breve",
+      "Incluye objetivo de la cita"
+    ],
+    "issues": [
+      "La fecha se expresa con año, que podría ser un dato inventado si no aparece en los archivos",
+      "Faltan tildes en 'Clínica' y 'módulo'"
+    ],
+    "elapsed_seconds": 9.266
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ninguna extracción ni tabla; no cumple la tarea original.",
+    "strengths": [],
+    "issues": [
+      "No leyó ni procesó el archivo indicado",
+      "No extrajo tareas pendientes",
+      "No incluyó las claves esperadas ni los campos solicitados",
+      "Formato inexistente"
+    ],
+    "elapsed_seconds": 6.453
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no proporciona ningun resultado y omite todos los campos solicitados sobre la discrepancia.",
+    "strengths": [],
+    "issues": [
+      "No identifica el concepto discrepante",
+      "No incluye importe declarado ni esperado",
+      "No da recomendacion",
+      "Respuesta vacia o nula"
+    ],
+    "elapsed_seconds": 10.25
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ningun resumen ni menciona las claves esperadas; es completamente incompleta.",
+    "strengths": [],
+    "issues": [
+      "No procesa ni resume las fuentes indicadas",
+      "No incluye ninguna clave esperada: IberLegal, Clinica Centro, Delta Equipos o SSL",
+      "No prioriza compromisos con fecha o cliente concreto",
+      "Formato de respuesta ausente"
+    ],
+    "elapsed_seconds": 7.36
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ningun CSV ni explica acciones realizadas; no cumple la tarea original.",
+    "strengths": [],
+    "issues": [
+      "No se creo ni se proporciono el CSV solicitado",
+      "Faltan todas las columnas requeridas",
+      "No hay trazabilidad desde contactos_50.csv",
+      "No verifica las claves esperadas: proveedor, IberLegal, Tecnoria, SerConta"
+    ],
+    "elapsed_seconds": 9.547
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ningun contenido ICS ni identifica los cuatro compromisos requeridos.",
+    "strengths": [],
+    "issues": [
+      "No crea el archivo ICS solicitado",
+      "No usa ni referencia notas_voz.jsonl ni emails_hilos.md",
+      "No incluye los cuatro compromisos claros",
+      "No indica datos faltantes en descripciones",
+      "Formato de respuesta inexistente"
+    ],
+    "elapsed_seconds": 26.547
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun resumen financiero ni aborda la tarea solicitada.",
+    "strengths": [],
+    "issues": [
+      "No calcula total mensual de enero a mayo",
+      "No identifica categorias principales",
+      "No lista anomalias ni discrepancias",
+      "No incluye claves esperadas como sin_recibo o revisar_proveedor",
+      "Respuesta vacia o nula"
+    ],
+    "elapsed_seconds": 6.593
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta está vacía y no cumple ninguna parte de la tarea solicitada.",
+    "strengths": [],
+    "issues": [
+      "No elabora el informe de incidencias y oportunidades",
+      "No menciona las claves esperadas: Clinica Centro, Noelia Castro, modulo de pagos, facturacion",
+      "No usa ni referencia notas, emails o contactos",
+      "No hay formato útil ni trazabilidad"
+    ],
+    "elapsed_seconds": 8.016
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ninguna propuesta ni usa busqueda web o notas_voz.jsonl; no cumple la tarea.",
+    "strengths": [],
+    "issues": [
+      "No menciona GreenBox ni encuestas",
+      "No incluye alternativas economicas ni precios",
+      "No aporta fuentes",
+      "No evidencia uso de notas_voz.jsonl",
+      "Respuesta vacia o nula"
+    ],
+    "elapsed_seconds": 7.516
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no aporta ningun contenido y no cumple la tarea de investigar proveedores de SSO para Barna Health ni usar datos locales.",
+    "strengths": [],
+    "issues": [
+      "No menciona Barna Health, SSO ni Xavier Puig",
+      "No incluye fuentes ni trazabilidad",
+      "No contextualiza contacto, fecha ni necesidad tecnica",
+      "No presenta opciones de proveedores ni evaluacion"
+    ],
+    "elapsed_seconds": 9.875
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las cuatro claves esperadas y ofrece recomendaciones pertinentes, pero presenta trazabilidad limitada y una inconsistencia en el conteo de duplicados.",
+    "strengths": [
+      "Incluye duplicado, sin recibo, importe discrepante y revisar proveedor",
+      "Recomendaciones de control interno concretas y accionables",
+      "Formato claro con resumen y hallazgos"
+    ],
+    "issues": [
+      "Afirma 3 duplicados confirmados pero solo detalla un caso duplicado",
+      "No incluye IDs de gastos ni referencia a fuente de datos auditada",
+      "Las claves esperadas no aparecen exactamente como etiquetas estructuradas"
+    ],
+    "elapsed_seconds": 12.218
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 4.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre superficialmente OpenRouter, Gemini y ofimática, pero no aporta trazabilidad, análisis de coste ni una recomendación ejecutiva clara; además parece inventar datos locales no justificados.",
+    "strengths": [
+      "Incluye las claves OpenRouter, Gemini y ofimática",
+      "Presenta una comparativa estructurada",
+      "Identifica casos de uso generales para herramientas de IA"
+    ],
+    "issues": [
+      "No cita fuentes ni evidencia de investigación actual",
+      "No cruza de forma verificable con datos locales sobre OpenRouter/Gemini",
+      "Incluye datos locales específicos sin trazabilidad aparente",
+      "El análisis de coste es prácticamente inexistente",
+      "Falta una recomendación ejecutiva concreta y accionable"
+    ],
+    "elapsed_seconds": 12.016
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 9.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta correcta y completa; incluye todos los datos esperados y el objetivo está respaldado por el hilo. La única pequeña desviación es expresar la fecha como 2026-05-14 en vez de '14 de mayo'.",
+    "strengths": [
+      "Incluye persona, empresa, fecha, hora y objetivo",
+      "Datos clave coinciden con lo esperado",
+      "Formato claro y breve"
+    ],
+    "issues": [
+      "La fecha se normaliza con año, aunque la clave esperada era '14 de mayo'",
+      "No menciona la fuente consultada, aunque no era obligatorio"
+    ],
+    "elapsed_seconds": 37.719
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La tabla es clara y con trazabilidad por ID, pero no respeta las claves esperadas: incluye muchas acciones fuera de llamar/enviar/agendar/reservar y no normaliza la acción a esas claves.",
+    "strengths": [
+      "Formato tabular adecuado",
+      "Incluye ID de nota y entidades en la mayoría de filas",
+      "Captura correctamente varias fechas límite posibles"
+    ],
+    "issues": [
+      "Añade muchas tareas no solicitadas según las claves esperadas",
+      "La columna Acción mezcla verbo y descripción completa en vez de usar claves normalizadas",
+      "Algunas inferencias son discutibles, como convertir preferencias en tareas o tratar hitos como fecha límite"
+    ],
+    "elapsed_seconds": 37.781
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente el concepto y la discrepancia, pero no respeta el formato exacto de importes ni la recomendación esperada.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado numéricamente correctos",
+      "Respuesta clara en tabla"
+    ],
+    "issues": [
+      "Importes sin dos decimales: usa 19.9 y 29.9 en lugar de 19.90 y 29.90",
+      "La recomendación no coincide con la clave esperada importe_discrepante"
+    ],
+    "elapsed_seconds": 10.422
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y prioriza tareas con cliente o fecha, pero presenta posibles errores de calendario y añade tareas no esperadas sin validar relevancia semanal.",
+    "strengths": [
+      "Incluye IberLegal, Clinica Centro, Delta Equipos y SSL",
+      "Organiza por fecha y por cliente/contacto",
+      "Aporta trazabilidad con referencias a emails y notas"
+    ],
+    "issues": [
+      "Algunos días de la semana parecen incorrectos para las fechas indicadas",
+      "Incluye tareas adicionales que pueden diluir la priorización solicitada",
+      "No queda claro si todas las tareas pertenecen realmente al resumen semanal"
+    ],
+    "elapsed_seconds": 15.14
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "El CSV tiene el formato solicitado y contiene las empresas clave esperadas, pero parece incluir contactos adicionales no justificados como proveedores y no permite verificar el filtrado desde el archivo fuente.",
+    "strengths": [
+      "Incluye las columnas requeridas en el orden indicado",
+      "Contiene IberLegal, Tecnoria y SerConta",
+      "Formato CSV válido"
+    ],
+    "issues": [
+      "Incluye filas extra que no están respaldadas por las claves esperadas",
+      "No aparece la clave o criterio 'proveedor' en los datos generados",
+      "No hay trazabilidad hacia contactos_50.csv"
+    ],
+    "elapsed_seconds": 12.954
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "El ICS tiene formato general valido y cuatro VEVENT, pero no cubre todas las claves esperadas y parece convertir tareas/deadlines en compromisos con horas inventadas.",
+    "strengths": [
+      "Incluye estructura VCALENDAR/VEVENT clara",
+      "Contiene Clinica Centro y Barna Health",
+      "Indica algunos datos faltantes en DESCRIPTION"
+    ],
+    "issues": [
+      "Faltan las claves esperadas 'sala' y 'viernes 09:30'",
+      "IberLegal y Delta Equipos parecen deadlines/tareas, no compromisos claros",
+      "Asigna horas estimadas de 09:00 sin trazabilidad suficiente",
+      "No incluye zona horaria ni UTC en DTSTART/DTEND"
+    ],
+    "elapsed_seconds": 11.156
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre totales mensuales, categorias y anomalias, pero no usa claramente la clave esperada 'discrepancias' y no muestra trazabilidad de los calculos ni fuente de datos.",
+    "strengths": [
+      "Incluye total mensual de enero a mayo",
+      "Agrupa por categorias principales",
+      "Lista anomalias con fechas, conceptos e importes",
+      "Incluye sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "No menciona explicitamente 'discrepancias' como categoria/clave esperada",
+      "No aporta detalle de calculo ni trazabilidad por gasto",
+      "La exactitud de importes no puede verificarse con los datos dados",
+      "Incluye estados no solicitados como posible_duplicado sin justificar"
+    ],
+    "elapsed_seconds": 10.844
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y presenta un formato de informe útil, pero mezcla incidencias de otros clientes y parece inventar identificadores, fechas y orígenes sin trazabilidad verificable.",
+    "strengths": [
+      "Incluye Clínica Centro, Noelia Castro, módulo de pagos y facturación",
+      "Estructura clara con resumen y tabla de incidencias",
+      "Identifica una acción concreta relacionada con la demo del módulo de pagos"
+    ],
+    "issues": [
+      "Pierde foco al incluir múltiples clientes no solicitados",
+      "No muestra trazabilidad real a notas, emails o contactos; usa códigos como VN-001/E-001 sin explicar",
+      "Puede estar inventando fechas, prioridades, estados e IDs",
+      "El informe queda incompleto o truncado al final"
+    ],
+    "elapsed_seconds": 9.015
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre GreenBox y propone alternativas de encuestas económicas, pero las fuentes no son trazables porque no incluye URLs ni citas verificables, y el apartado final queda truncado. Los precios son vagos y algunos datos parecen no comprobados.",
+    "strengths": [
+      "Menciona GreenBox y la nota de voz VN-009",
+      "Incluye varias alternativas relevantes de encuestas",
+      "Describe ventajas económicas generales"
+    ],
+    "issues": [
+      "No incluye enlaces ni fuentes verificables",
+      "No demuestra realmente la búsqueda web ni el uso del archivo notas_voz.jsonl más allá de una mención",
+      "Faltan precios concretos o comparables",
+      "La respuesta está truncada al final",
+      "Puede estar inventando o mezclando atribuciones de fuentes"
+    ],
+    "elapsed_seconds": 11.672
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta contextualiza Barna Health, SSO y Xavier Puig, pero no aporta fuentes verificables ni trazabilidad suficiente, y parece inventar datos locales como correo, hilo y reunión sin evidencia.",
+    "strengths": [
+      "Incluye las claves esperadas: Barna Health, SSO y Xavier Puig",
+      "Presenta opciones de proveedores en formato comparativo",
+      "Relaciona la necesidad tecnica con IAM/SSO"
+    ],
+    "issues": [
+      "No incluye enlaces ni listado claro de fuentes, pese a mencionarlas",
+      "No demuestra uso de datos locales ni cita su origen",
+      "Posible invencion de correo, hilo E-004, prioridad y reunion",
+      "La seleccion de proveedores es incompleta y omite opciones SSO/IAM muy relevantes como Okta, Microsoft Entra ID, Auth0 o Google Workspace",
+      "La investigacion queda parcialmente cortada y no concluye recomendacion clara"
+    ],
+    "elapsed_seconds": 15.203
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las cuatro claves esperadas y aporta recomendaciones de control interno relevantes, pero parece incompleta al final y no ofrece trazabilidad completa de todas las transacciones auditadas.",
+    "strengths": [
+      "Incluye duplicado, sin_recibo, importe_discrepante y revisar_proveedor",
+      "Presenta casos específicos con fecha, proveedor e importe",
+      "Propone controles internos accionables"
+    ],
+    "issues": [
+      "El texto queda cortado en la última recomendación",
+      "No muestra el detalle completo de las 15 transacciones auditadas",
+      "Afirma totales y casos sin evidenciar la fuente de datos"
+    ],
+    "elapsed_seconds": 10.594
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_r1",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre las claves principales y ofrece una recomendacion ejecutiva, pero la trazabilidad es debil: menciona fuentes y datos locales sin evidenciar su contenido ni citar archivos concretos, y parece inferir o inventar detalles.",
+    "strengths": [
+      "Incluye OpenRouter, Gemini, ofimatica, coste y recomendacion ejecutiva",
+      "Propone una estrategia hibrida clara",
+      "Estructura ejecutiva legible"
+    ],
+    "issues": [
+      "No demuestra investigacion actual con fuentes verificables",
+      "No cruza de forma trazable los datos locales con la recomendacion",
+      "Menciona Fuente 1-4 sin referencias concretas",
+      "Posible invencion de datos locales como notas de voz, correos y contactos",
+      "Analisis de costes demasiado superficial"
+    ],
+    "elapsed_seconds": 10.734
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta incluye las claves esperadas y estructura la nota de forma clara, pero añade el año 2026 en la fecha, que no estaba entre las claves esperadas y podría ser un dato no trazable si no aparecía en los archivos.",
+    "strengths": [
+      "Incluye persona, empresa, fecha y hora esperadas",
+      "Formato claro y breve",
+      "No omite el objetivo"
+    ],
+    "issues": [
+      "La fecha se da como 2026-05-14 en vez de '14 de mayo'",
+      "El año podría considerarse inventado si no consta en la fuente"
+    ],
+    "elapsed_seconds": 9.687
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta usa el formato de tabla y extrae varias tareas reales, pero no respeta las claves esperadas y sobreincluye muchas acciones fuera de llamar/enviar/agendar/reservar.",
+    "strengths": [
+      "Formato tabular correcto",
+      "Incluye id, accion, entidad y fecha limite",
+      "Varias filas clave estan presentes y trazables al JSONL"
+    ],
+    "issues": [
+      "Incluye muchas tareas no solicitadas segun las claves esperadas",
+      "No normaliza acciones como enviar, agendar o reservar",
+      "VN-008 parece inferida: la nota habla de preferencia de Ana, no de una tarea explicita de enviar",
+      "Contiene acciones ajenas como comprar, preparar, pedir, revisar, investigar"
+    ],
+    "elapsed_seconds": 32.422
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente la discrepancia y los importes, aunque no conserva el formato decimal esperado ni usa la recomendacion clave exacta.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado correctos numericamente",
+      "Recomendacion accionable"
+    ],
+    "issues": [
+      "Los importes aparecen como 19.9 y 29.9 en lugar de 19.90 y 29.90",
+      "La recomendacion no devuelve la clave esperada importe_discrepante"
+    ],
+    "elapsed_seconds": 9.907
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y prioriza bien tareas con fecha o cliente concreto, aunque incluye bastantes tareas secundarias que pueden diluir el foco semanal y no se puede verificar si todas las referencias son reales.",
+    "strengths": [
+      "Incluye las cuatro claves esperadas: IberLegal, Clinica/Clínica Centro, Delta Equipos y SSL",
+      "Organiza por urgencia y fechas concretas",
+      "Aporta trazabilidad mediante IDs de emails/notas"
+    ],
+    "issues": [
+      "Incluye muchas tareas adicionales sin justificar su prioridad semanal",
+      "La semana indicada puede ser asumida y debería derivarse claramente de los datos",
+      "Algunas referencias o detalles podrían ser inventados si no existen exactamente en las fuentes"
+    ],
+    "elapsed_seconds": 13.703
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "El CSV tiene el formato y columnas solicitadas, e incluye IberLegal, Tecnoria y SerConta, pero parece añadir registros no justificados por las claves esperadas y no evidencia el criterio de filtrado por proveedor.",
+    "strengths": [
+      "Formato CSV valido",
+      "Columnas solicitadas presentes",
+      "Incluye IberLegal, Tecnoria y SerConta"
+    ],
+    "issues": [
+      "Incluye empresas extra no indicadas como claves esperadas",
+      "No aparece ni se demuestra el filtro por la clave proveedor",
+      "No hay trazabilidad hacia contactos_50.csv"
+    ],
+    "elapsed_seconds": 9.328
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun contenido ICS ni aborda la tarea solicitada.",
+    "strengths": [],
+    "issues": [
+      "No crea los cuatro compromisos requeridos",
+      "No usa ni referencia las fuentes indicadas",
+      "No incluye las claves esperadas",
+      "No indica datos faltantes en descripciones",
+      "Formato de salida inexistente"
+    ],
+    "elapsed_seconds": 7.422
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre totales mensuales y categorias principales, pero esta incompleta y no incluye claramente las claves esperadas de anomalias.",
+    "strengths": [
+      "Incluye total mensual y total acumulado",
+      "Presenta categorias principales agregadas",
+      "Formato tabular claro"
+    ],
+    "issues": [
+      "La seccion de anomalias esta truncada",
+      "No aparecen explicitamente sin_recibo ni revisar_proveedor",
+      "Usa importe_discrepante en vez de discrepancias",
+      "No hay trazabilidad ni fuente para verificar los importes"
+    ],
+    "elapsed_seconds": 9.578
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta incluye las claves esperadas sobre Clínica Centro, Noelia Castro, módulo de pagos y facturación, pero mezcla muchas incidencias de otros clientes/proveedores y parece inventar referencias, fechas e identificadores sin trazabilidad verificable.",
+    "strengths": [
+      "Incluye las claves esperadas principales",
+      "Estructura clara de incidencias y oportunidades",
+      "Propone acciones concretas"
+    ],
+    "issues": [
+      "Introduce información no centrada en Clínica Centro",
+      "No justifica la trazabilidad real desde notas, emails y contactos",
+      "Posible invención de IDs, fechas y contactos",
+      "La sección de facturación no está claramente vinculada a Clínica Centro"
+    ],
+    "elapsed_seconds": 11.047
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": true,
+    "comment": "Cumple parcialmente: propone alternativas para GreenBox con precios y fuentes, pero la trazabilidad a notas_voz.jsonl es débil y varios datos de precio/límites parecen imprecisos o no verificados con fuentes primarias.",
+    "strengths": [
+      "Incluye GreenBox, encuestas, precio y fuentes",
+      "Formato claro con tabla comparativa",
+      "Da una recomendación principal económica"
+    ],
+    "issues": [
+      "No cita ni resume el contenido real de notas_voz.jsonl, solo menciona VN-009 sin evidencia",
+      "Usa fuentes secundarias y pocas fuentes, no páginas oficiales de precios",
+      "Algunos límites/precios parecen inventados o desactualizados, por ejemplo Google Forms y planes de Typeform/Jotform",
+      "No queda claro que se haya hecho búsqueda web actual ni verificación de precios"
+    ],
+    "elapsed_seconds": 12.984
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre Barna Health, SSO y Xavier Puig, pero queda incompleta y la trazabilidad de fuentes es débil: no incluye URLs ni evidencia local verificable y parece truncada al final.",
+    "strengths": [
+      "Contextualiza contacto interno con Xavier Puig",
+      "Compara varias opciones comerciales y open source de SSO",
+      "Incluye criterios técnicos relevantes como SAML, OIDC, MFA y SCIM"
+    ],
+    "issues": [
+      "No aporta fuentes verificables con enlaces o citas precisas",
+      "No demuestra uso real de datos locales; menciona correos y contacto sin trazabilidad",
+      "La respuesta está truncada al final",
+      "Puede inventar o asumir datos como el hilo E-004 y la reunión sin evidencia",
+      "La fecha del informe no coincide claramente con la fecha del entorno"
+    ],
+    "elapsed_seconds": 9.984
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre la auditoria enero-mayo y propone controles internos relevantes, pero no usa las claves esperadas literalmente y parece asumir datos concretos sin trazabilidad al origen.",
+    "strengths": [
+      "Identifica las cuatro incidencias esperadas de forma semantica",
+      "Incluye recomendaciones de control interno accionables",
+      "Presenta resumen, detalle mensual, totales y acciones inmediatas"
+    ],
+    "issues": [
+      "No etiqueta las incidencias con las claves exactas: duplicado, sin_recibo, importe_discrepante, revisar_proveedor",
+      "No aporta trazabilidad a registros, IDs o fuente de datos",
+      "Puede estar inventando importes, proveedores y totales si no proceden de un dataset dado",
+      "En marzo indica 3 gastos pero solo muestra 2 lineas, lo que reduce claridad"
+    ],
+    "elapsed_seconds": 11.422
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "Cubre las claves principales y ofrece una recomendación ejecutiva, pero la trazabilidad es débil y contiene posibles datos inventados o inconsistentes sobre fuentes, fechas y costes.",
+    "strengths": [
+      "Incluye OpenRouter, Gemini, ofimática, coste y recomendación ejecutiva",
+      "Cruza la propuesta con supuestos datos locales y casos de uso concretos",
+      "Presenta un plan por fases accionable"
+    ],
+    "issues": [
+      "No aporta enlaces, citas verificables ni evidencia de haber consultado fuentes o archivos locales",
+      "Hay inconsistencia temporal: menciona fuentes hasta mayo de 2025 pero cita Sider AI de septiembre de 2025",
+      "Los precios de Gemini/OpenRouter parecen no verificados y pueden estar desactualizados",
+      "La investigación de herramientas ofimáticas y agentes CLI es superficial y mezcla investigación profunda con ofimática sin mucho detalle",
+      "Afirma detalles concretos de archivos locales y contactos sin trazabilidad suficiente"
+    ],
+    "elapsed_seconds": 11.937
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta recoge la persona, empresa, fecha, hora y objetivo esperados, pero convierte la fecha a formato con año 2026, que no estaba entre las claves esperadas y podría ser un dato inferido.",
+    "strengths": [
+      "Incluye Noelia Castro",
+      "Incluye Clinica Centro",
+      "Incluye la hora 11:30",
+      "Incluye un objetivo plausible y específico"
+    ],
+    "issues": [
+      "Añade el año 2026 sin trazabilidad explícita",
+      "La fecha no conserva el formato esperado '14 de mayo'",
+      "Faltan tildes en 'módulo'"
+    ],
+    "elapsed_seconds": 11.047
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta lee bien muchas notas y mantiene trazabilidad por id, pero no respeta las claves esperadas como acciones normalizadas y sobreextrae muchas tareas fuera de llamar/enviar/agendar/reservar.",
+    "strengths": [
+      "Formato tabular claro",
+      "Incluye id de nota y fechas limite cuando existen",
+      "La mayoria de entidades coinciden con el contenido original"
+    ],
+    "issues": [
+      "Incluye muchas acciones no esperadas como comprar, preparar, pedir, revisar e investigar",
+      "La columna accion no usa las claves esperadas normalizadas",
+      "VN-020 deberia extraerse como reservar, no como recordar reservar",
+      "No filtra ni estructura segun las claves esperadas"
+    ],
+    "elapsed_seconds": 36.562
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente la discrepancia principal, pero no respeta exactamente el formato esperado de importes ni la recomendación clave.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado correctos en valor numérico",
+      "Incluye recomendación y referencia al archivo"
+    ],
+    "issues": [
+      "Los importes no conservan dos decimales: 19.90 y 29.90",
+      "La recomendación no usa la clave esperada importe_discrepante",
+      "Añade detalle de diferencia no solicitado, aunque no es incorrecto"
+    ],
+    "elapsed_seconds": 13.375
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y organiza por fechas, pero parece demasiado amplia para un resumen semanal y mezcla tareas de baja prioridad o no claramente pendientes.",
+    "strengths": [
+      "Incluye las claves esperadas: IberLegal, Clinica Centro, Delta Equipos y SSL",
+      "Distingue tareas con fecha y sin fecha",
+      "Aporta trazabilidad con IDs de hilos y notas"
+    ],
+    "issues": [
+      "Incluye muchas tareas no priorizadas pese a que se pedian compromisos con fecha o cliente concreto",
+      "No queda claro el criterio semanal; aparecen fechas muy dispersas",
+      "Puede sobreincluir asuntos secundarios no relevantes para el resumen esperado"
+    ],
+    "elapsed_seconds": 8.407
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "Incluye las columnas solicitadas y contiene IberLegal, Tecnoria y SerConta, pero no entrega un CSV limpio y puede incluir registros no verificados o no filtrados como proveedores.",
+    "strengths": [
+      "Columnas correctas",
+      "Formato de filas CSV mayormente válido",
+      "Incluye tres claves esperadas: IberLegal, Tecnoria y SerConta"
+    ],
+    "issues": [
+      "Añade un encabezado Markdown que rompe el CSV puro",
+      "No evidencia uso de contactos_50.csv",
+      "No aparece la clave esperada proveedor",
+      "Incluye empresas adicionales sin justificar si son proveedores"
+    ],
+    "elapsed_seconds": 11.39
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta genera un ICS con cuatro eventos, pero no incorpora claves esperadas importantes y probablemente interpreta como compromisos fechas límite que no son reuniones claras.",
+    "strengths": [
+      "Formato ICS básico válido y legible",
+      "Incluye cuatro VEVENT",
+      "Incluye Clinica Centro y Barna Health"
+    ],
+    "issues": [
+      "Faltan las claves esperadas \"sala\" y \"viernes 09:30\"",
+      "No indica datos faltantes en DESCRIPTION cuando corresponde",
+      "Algunos compromisos parecen ser deadlines de correos, no citas claras",
+      "Fechas y horas no tienen trazabilidad visible respecto a las fuentes",
+      "ICS incompleto: falta PRODID y DTSTAMP recomendados"
+    ],
+    "elapsed_seconds": 11.782
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre los totales mensuales, categorias principales y anomalias esperadas, aunque la trazabilidad es limitada y no usa exactamente todas las claves solicitadas.",
+    "strengths": [
+      "Incluye total por mes de enero a mayo",
+      "Resume totales por categoria",
+      "Lista anomalias relevantes: discrepancia, sin recibo y revisar proveedor"
+    ],
+    "issues": [
+      "No muestra datos fuente ni metodo de agregacion para verificar cifras",
+      "La clave esperada 'discrepancias' aparece como 'Importe discrepante', no de forma literal",
+      "No explica criterios para detectar duplicados o anomalias"
+    ],
+    "elapsed_seconds": 8.938
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta identifica correctamente Clinica Centro, Noelia Castro y el modulo de pagos, pero mezcla muchas incidencias de otras empresas y no desarrolla claramente facturacion, por lo que el informe queda poco focalizado y con baja trazabilidad.",
+    "strengths": [
+      "Incluye el titulo correcto",
+      "Menciona a Noelia Castro",
+      "Recoge la demo del modulo de pagos"
+    ],
+    "issues": [
+      "Incluye informacion irrelevante de IberLegal, Barna Health, Delta Equipos, BravoSoft y otros",
+      "No aborda explicitamente facturacion como clave esperada",
+      "No separa bien incidencias y oportunidades especificas de Clinica Centro",
+      "Puede estar inventando o arrastrando datos no justificados para esta clinica"
+    ],
+    "elapsed_seconds": 15.672
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta menciona GreenBox y propone alternativas de encuestas con fuentes, pero no demuestra haber usado notas_voz.jsonl ni incluye precios concretos comparables.",
+    "strengths": [
+      "Incluye varias alternativas relevantes de encuestas",
+      "Aporta enlaces de fuentes externas",
+      "Mantiene foco general en opciones economicas"
+    ],
+    "issues": [
+      "No hay trazabilidad ni citas a notas_voz.jsonl",
+      "No incluye precios concretos ni comparacion economica real",
+      "Las fuentes son listas secundarias, no paginas oficiales de precios",
+      "La recomendacion es generica y no adaptada a necesidades especificas de GreenBox"
+    ],
+    "elapsed_seconds": 10.078
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 3.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta es demasiado generica y no usa datos locales para contextualizar contacto, fecha ni necesidad tecnica; ademas omite a Xavier Puig y hace afirmaciones no trazadas o dudosas sobre capacidades y costes.",
+    "strengths": [
+      "Menciona Barna Health y SSO",
+      "Incluye una lista de proveedores",
+      "Incluye una seccion de fuentes"
+    ],
+    "issues": [
+      "No menciona a Xavier Puig ni ningun contacto local",
+      "No contextualiza fecha ni necesidad tecnica con datos locales",
+      "Las recomendaciones son superficiales y repetitivas",
+      "Afirma capacidades para todos los proveedores sin evidencia",
+      "Costes imprecisos o potencialmente inventados, por ejemplo Keycloak con version de pago",
+      "Fuentes genericas y sin trazabilidad directa a cada afirmacion"
+    ],
+    "elapsed_seconds": 12.843
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre enero a mayo y ofrece recomendaciones relevantes, pero tiene trazabilidad limitada y usa 'posible_duplicado' en lugar de la clave esperada 'duplicado'.",
+    "strengths": [
+      "Incluye resumen cuantitativo por estado, categoría y mes",
+      "Cubre las claves sin_recibo, importe_discrepante y revisar_proveedor",
+      "Propone recomendaciones de control interno pertinentes"
+    ],
+    "issues": [
+      "No lista los gastos específicos afectados, reduciendo trazabilidad",
+      "La clave esperada 'duplicado' aparece como 'posible_duplicado'",
+      "No explica metodología ni evidencia para validar totales y conteos"
+    ],
+    "elapsed_seconds": 12.594
+  },
+  {
+    "engine": "openrouter_meta_llama_llama_3_3_70b_instruct",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 3.0,
+    "passed_expected_keys": false,
+    "comment": "Respuesta demasiado genérica: menciona OpenRouter/Gemini y una recomendación, pero no demuestra investigación profunda, no cruza datos locales, omite costes y casi no cubre agentes CLI.",
+    "strengths": [
+      "Incluye estructura ejecutiva básica",
+      "Menciona OpenRouter, Gemini y ofimática",
+      "Propone un piloto y capacitación"
+    ],
+    "issues": [
+      "No hay trazabilidad, fuentes ni evidencia concreta",
+      "No cruza la investigación con datos locales sobre OpenRouter/Gemini",
+      "Omite análisis de coste pese a ser clave esperada",
+      "No analiza agentes CLI de forma real",
+      "Afirma capacidades de OpenRouter/Gemini sin respaldo y puede estar inventando o mezclando productos",
+      "Recomendación ejecutiva superficial y poco accionable"
+    ],
+    "elapsed_seconds": 8.86
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ninguna nota ni datos de la cita solicitada; no cumple la tarea.",
+    "strengths": [],
+    "issues": [
+      "No revisa ni refleja la informacion de los archivos",
+      "Omite persona, empresa, fecha, hora y objetivo",
+      "No incluye las claves esperadas: Noelia Castro, Clinica Centro, 14 de mayo, 11:30"
+    ],
+    "elapsed_seconds": 7.656
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta es nula y no cumple ninguna parte de la tarea de extracción ni formato solicitado.",
+    "strengths": [],
+    "issues": [
+      "No lee ni procesa el archivo JSONL indicado",
+      "No extrae tareas pendientes ni claves esperadas",
+      "No entrega la tabla con id de nota, accion, entidad y fecha limite",
+      "No hay trazabilidad ni contenido evaluable"
+    ],
+    "elapsed_seconds": 7.0
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": false,
+    "comment": "Identifica correctamente el concepto y los importes, pero deja la recomendacion vacia y no incluye la clave esperada importe_discrepante.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado correcto",
+      "Importe esperado correcto",
+      "No inventa datos relevantes"
+    ],
+    "issues": [
+      "Falta la recomendacion solicitada",
+      "No devuelve la clave esperada importe_discrepante",
+      "Respuesta incompleta al quedar un encabezado sin contenido"
+    ],
+    "elapsed_seconds": 10.515
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ningun resumen ni menciona las claves esperadas, por lo que incumple completamente la tarea.",
+    "strengths": [],
+    "issues": [
+      "Respuesta vacia o nula",
+      "No usa notas_voz.jsonl ni emails_hilos.md",
+      "No prioriza compromisos con fecha o cliente concreto",
+      "No incluye las claves esperadas: IberLegal, Clinica Centro, Delta Equipos, SSL"
+    ],
+    "elapsed_seconds": 10.516
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ningún CSV ni evidencia de haber procesado contactos_50.csv o incluido las claves esperadas.",
+    "strengths": [],
+    "issues": [
+      "No se creó ni presentó el CSV solicitado",
+      "Faltan las columnas requeridas",
+      "No hay trazabilidad al archivo contactos_50.csv",
+      "No se verifican las claves esperadas proveedor, IberLegal, Tecnoria y SerConta"
+    ],
+    "elapsed_seconds": 8.531
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ningun contenido ICS ni identifica los cuatro compromisos solicitados.",
+    "strengths": [],
+    "issues": [
+      "No se proporciona archivo ni contenido ICS",
+      "No usa ni referencia notas_voz.jsonl ni emails_hilos.md",
+      "No incluye los cuatro compromisos claros",
+      "No contiene las claves esperadas",
+      "No indica datos faltantes en descripcion"
+    ],
+    "elapsed_seconds": 6.969
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no proporciona ningun resumen financiero ni aborda las claves esperadas de la tarea.",
+    "strengths": [],
+    "issues": [
+      "No calcula total mensual de enero a mayo",
+      "No identifica categorias principales",
+      "No lista anomalias ni discrepancias",
+      "No incluye sin_recibo ni revisar_proveedor",
+      "Respuesta vacia o nula"
+    ],
+    "elapsed_seconds": 6.953
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y presenta un informe estructurado con incidencias, oportunidades, contactos y referencias internas. Penaliza que añade muchos datos no verificables y cuentas ajenas a Clínica Centro, lo que puede indicar invención o exceso de alcance.",
+    "strengths": [
+      "Incluye todas las claves esperadas: Clinica/Clínica Centro, Noelia Castro, módulo de pagos y facturación.",
+      "Formato claro de informe con resumen, acciones, riesgos y agenda.",
+      "Aporta trazabilidad mediante IDs de notas/correos como E-001 y VN-001."
+    ],
+    "issues": [
+      "Introduce numerosos detalles específicos no respaldados por la tarea original visible.",
+      "El foco se dispersa hacia otras cuentas y riesgos que no son claramente de Clínica Centro.",
+      "La trazabilidad es parcial: menciona fuentes e IDs, pero no muestra evidencia ni citas concretas."
+    ],
+    "elapsed_seconds": 13.61
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ningun contenido evaluable: no usa notas_voz.jsonl, no realiza busqueda web, no propone alternativas ni incluye fuentes o precios para GreenBox.",
+    "strengths": [],
+    "issues": [
+      "Respuesta vacia o nula",
+      "No menciona GreenBox ni encuestas",
+      "No incluye precios ni alternativas economicas",
+      "No aporta fuentes",
+      "No demuestra uso de notas_voz.jsonl"
+    ],
+    "elapsed_seconds": 6.843
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun contenido evaluable y no aborda la investigacion solicitada sobre SSO para Barna Health.",
+    "strengths": [],
+    "issues": [
+      "No menciona Barna Health, SSO ni Xavier Puig",
+      "No usa datos locales ni contextualiza contacto, fecha o necesidad tecnica",
+      "No incluye fuentes ni trazabilidad",
+      "No compara proveedores ni ofrece recomendacion"
+    ],
+    "elapsed_seconds": 8.891
+  },
+  {
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta es nula y no realiza ninguna auditoria ni incluye recomendaciones o hallazgos esperados.",
+    "strengths": [],
+    "issues": [
+      "No audita gastos de enero a mayo",
+      "No identifica duplicados, recibos faltantes, discrepancias ni proveedores a revisar",
+      "No genera recomendaciones de control interno",
+      "No hay trazabilidad ni formato util"
+    ],
+    "elapsed_seconds": 10.547
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 10.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta correcta y completa; incluye persona, empresa, fecha, hora y objetivo sin inventar datos.",
+    "strengths": [
+      "Contiene todas las claves esperadas",
+      "Objetivo alineado con el hilo de correo",
+      "Formato claro y breve"
+    ],
+    "issues": [],
+    "elapsed_seconds": 51.828
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La tabla es clara y muchas extracciones son fieles, pero no respeta las claves esperadas: incluye muchas acciones fuera de llamar/enviar/agendar/reservar y no normaliza la columna accion a esas claves.",
+    "strengths": [
+      "Formato de tabla correcto",
+      "Incluye id, entidad y fecha limite",
+      "Captura correctamente varias tareas relevantes como VN-001, VN-002, VN-007, VN-010, VN-011 y VN-020"
+    ],
+    "issues": [
+      "Incluye tareas con acciones no esperadas como comprar, preparar, pedir, revisar, buscar e investigar",
+      "La accion aparece mezclada con detalles en vez de usar claves normalizadas",
+      "Genera demasiadas filas si la evaluacion esperaba filtrar solo las claves dadas"
+    ],
+    "elapsed_seconds": 27.437
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 9.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente la discrepancia y la recomendación, aunque no conserva el formato decimal esperado con dos cifras.",
+    "strengths": [
+      "Concepto correcto",
+      "Importes correctos en valor",
+      "Recomendación adecuada"
+    ],
+    "issues": [
+      "Formato de importes como 19.9/29.9 en lugar de 19.90/29.90",
+      "No usa literalmente la clave recomendada importe_discrepante"
+    ],
+    "elapsed_seconds": 7.141
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y prioriza bien compromisos con fecha o cliente, pero no aporta trazabilidad a los archivos fuente y puede incluir elementos extra no verificables.",
+    "strengths": [
+      "Incluye IberLegal, Clinica Centro, Delta Equipos y SSL",
+      "Organiza por prioridad y fechas clave",
+      "Extrae acciones concretas con responsables, fechas y contexto"
+    ],
+    "issues": [
+      "No cita ni distingue el origen entre notas_voz.jsonl y emails_hilos.md",
+      "Incluye muchos compromisos adicionales cuya procedencia no puede verificarse",
+      "El ítem SSL aparece asociado a Cobalto, lo que puede dificultar identificarlo como clave esperada"
+    ],
+    "elapsed_seconds": 10.531
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "El CSV tiene el formato correcto y contiene IberLegal, Tecnoria y SerConta, pero incluye filas adicionales no justificadas y no evidencia el filtrado por la clave proveedor.",
+    "strengths": [
+      "Columnas solicitadas presentes",
+      "Formato CSV válido",
+      "Incluye las empresas esperadas IberLegal, Tecnoria y SerConta"
+    ],
+    "issues": [
+      "Incluye proveedores/empresas no esperadas",
+      "No aparece ni se demuestra la clave proveedor",
+      "No hay trazabilidad respecto a contactos_50.csv"
+    ],
+    "elapsed_seconds": 10.531
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta genera un ICS con cuatro eventos y contiene algunas claves esperadas, pero omite datos clave esperados como \"sala\" y \"viernes 09:30\", lo que sugiere que no identifico correctamente todos los compromisos originales.",
+    "strengths": [
+      "Formato general ICS reconocible",
+      "Incluye cuatro VEVENT",
+      "Incluye referencias a Clinica Centro y Barna Health",
+      "Indica en algunas descripciones cuando falta la hora exacta"
+    ],
+    "issues": [
+      "No aparece la clave esperada \"sala\"",
+      "No aparece la clave esperada \"viernes 09:30\"",
+      "Puede haber compromisos inventados o seleccionados incorrectamente respecto a las fuentes",
+      "No hay trazabilidad precisa por evento mas alla de menciones generales",
+      "El texto ICS no escapa caracteres como comas y punto y coma en DESCRIPTION"
+    ],
+    "elapsed_seconds": 10.984
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 9.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre totales mensuales, categorias principales y anomalias relevantes, incluyendo sin_recibo y revisar_proveedor. Solo falta usar explicitamente la clave esperada 'discrepancias'.",
+    "strengths": [
+      "Totales mensuales claros con diferencias",
+      "Categorias principales agregadas y ordenadas",
+      "Anomalias especificas y trazables por mes"
+    ],
+    "issues": [
+      "No incluye literalmente la clave 'discrepancias'",
+      "No indica fuente o metodo de agregacion"
+    ],
+    "elapsed_seconds": 11.703
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y estructura un informe útil, pero introduce información de otros clientes como si fuera relevante para Clinica Centro, lo que reduce precisión y trazabilidad.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion/pagos.",
+      "Formato claro con incidencias, oportunidades, contactos y seguimiento.",
+      "Distingue acciones recomendadas y prioridad comercial."
+    ],
+    "issues": [
+      "Usa casos de Atlantic Data, Clinica Sol y Nova Iberia para inferir oportunidades de Clinica Centro, lo que puede ser extrapolación no justificada.",
+      "Incluye datos concretos de contacto y fuentes que no pueden verificarse en la respuesta evaluada.",
+      "La incidencia de facturación para Clinica Centro queda algo inferida, no demostrada directamente."
+    ],
+    "elapsed_seconds": 11.687
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "Cumple la idea general y menciona GreenBox, encuestas, precio y fuentes, pero la comparativa de precios es demasiado vaga y no aporta cifras verificables.",
+    "strengths": [
+      "Identifica la nota local relevante VN-009",
+      "Propone alternativas económicas razonables",
+      "Incluye una sección de fuentes con enlaces",
+      "Da una recomendación práctica para GreenBox"
+    ],
+    "issues": [
+      "No incluye precios concretos ni límites de planes gratuitos",
+      "La trazabilidad a las fuentes web es débil: no cita qué dato sale de cada fuente",
+      "Algunas afirmaciones son genéricas y podrían estar inferidas sin verificación explícita",
+      "No muestra evidencia directa del contenido de notas_voz.jsonl más allá de una cita breve"
+    ],
+    "elapsed_seconds": 9.656
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre Barna Health, SSO, Xavier Puig y ofrece una recomendacion razonable, pero la trazabilidad de fuentes es debil y hay inferencias no verificadas.",
+    "strengths": [
+      "Contextualiza con contacto, fecha y necesidad tecnica",
+      "Compara varias opciones SSO relevantes",
+      "Incluye recomendacion principal y puntos para la reunion"
+    ],
+    "issues": [
+      "No incluye enlaces ni citas verificables a las fuentes",
+      "Las fuentes usadas parecen secundarias y una queda truncada",
+      "Asume posible entorno Microsoft sin evidencia local",
+      "No distingue claramente datos locales verificados de inferencias"
+    ],
+    "elapsed_seconds": 11.828
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre la auditoria enero-mayo y detecta las cuatro clases de incidencias esperadas, pero no usa todas las claves exactas y parece incompleta al final.",
+    "strengths": [
+      "Incluye resumen ejecutivo, detalle por incidencia y recomendaciones de control interno",
+      "Cubre duplicado, sin_recibo, importe_discrepante y revisar_proveedor de forma sustantiva",
+      "Presenta totales e incidencias por mes"
+    ],
+    "issues": [
+      "No usa exactamente las claves esperadas: usa 'importe discrepante' y 'posible duplicado' en vez de 'importe_discrepante' y 'duplicado'",
+      "La respuesta queda truncada en la ultima recomendacion",
+      "No aporta trazabilidad a los datos fuente ni IDs de gasto",
+      "Puede estar inventando totales o registros si no provenian de datos entregados"
+    ],
+    "elapsed_seconds": 11.625
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta incluye correctamente persona, empresa, fecha y hora esperadas. Podria estar agregando precision no trazable en el dia de la semana, el año y el objetivo si esos datos no aparecen en las fuentes.",
+    "strengths": [
+      "Incluye las claves esperadas",
+      "Formato claro y breve",
+      "No omite persona, empresa, fecha ni hora"
+    ],
+    "issues": [
+      "Añade 'jueves' y '2026', que podrian ser inferidos o inventados si no constan en los archivos",
+      "El objetivo es especifico y no puede validarse solo con las claves esperadas"
+    ],
+    "elapsed_seconds": 11.329
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta extrae muchas tareas correctamente y mantiene el formato de tabla, pero no respeta las claves esperadas: incluye numerosas acciones fuera de llamar, enviar, agendar y reservar, y no normaliza la columna de acción a esas claves.",
+    "strengths": [
+      "Formato tabular claro con las columnas solicitadas",
+      "Incluye las tareas relevantes de llamar, enviar, agendar y reservar",
+      "Identifica entidades y varias fechas límite razonablemente"
+    ],
+    "issues": [
+      "Incluye muchos falsos positivos como comprar, preparar, revisar, renovar o investigar",
+      "La acción no está normalizada a las claves esperadas",
+      "VN-007 asigna una fecha posiblemente incorrecta o ambigua para 'martes a las cuatro'",
+      "No deja claro qué tareas pertenecen a las claves esperadas frente a otras pendientes"
+    ],
+    "elapsed_seconds": 36.015
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 9.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente el concepto y los importes discrepantes. La recomendación es útil, aunque no usa literalmente la clave esperada `importe_discrepante`.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado correcto",
+      "Importe esperado correcto",
+      "Formato claro y completo"
+    ],
+    "issues": [
+      "La recomendación no coincide literalmente con la clave esperada `importe_discrepante`"
+    ],
+    "elapsed_seconds": 8.453
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta identifica algunos compromisos esperados, como IberLegal y Delta Equipos, y usa un formato claro de prioridades, pero la salida evaluada esta incompleta y no se observan todas las claves esperadas.",
+    "strengths": [
+      "Formato semanal claro con tabla de prioridades",
+      "Prioriza tareas con fecha y cliente concreto",
+      "Incluye detalles accionables para IberLegal"
+    ],
+    "issues": [
+      "No aparecen todas las claves esperadas: Clinica Centro y SSL no son visibles",
+      "La respuesta esta truncada en la fila de Delta Equipos",
+      "No hay trazabilidad explicita a notas_voz.jsonl o emails_hilos.md",
+      "Incluye una tarea de Marta Ruiz que podria ser menos prioritaria frente a clientes esperados"
+    ],
+    "elapsed_seconds": 9.437
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "El formato CSV y las columnas son correctos, e incluye IberLegal, Tecnoria y SerConta, pero añade varios registros no trazados como proveedores y no evidencia el filtrado por la clave esperada \"proveedor\".",
+    "strengths": [
+      "Columnas solicitadas presentes",
+      "Formato CSV válido",
+      "Incluye IberLegal, Tecnoria y SerConta"
+    ],
+    "issues": [
+      "Incluye empresas/personas adicionales posiblemente no proveedoras",
+      "No aparece ni se justifica la clave \"proveedor\"",
+      "Sin trazabilidad a contactos_50.csv"
+    ],
+    "elapsed_seconds": 9.579
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta evaluada no contiene ningun contenido ICS ni aborda la tarea solicitada.",
+    "strengths": [],
+    "issues": [
+      "No crea el archivo ICS con cuatro compromisos",
+      "No incluye las claves esperadas: Clinica Centro, Barna Health, sala, viernes 09:30",
+      "No indica datos faltantes en descripciones",
+      "No hay trazabilidad ni formato valido para un calendario"
+    ],
+    "elapsed_seconds": 7.953
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre el resumen mensual, categorias y anomalias, e incluye sin_recibo y revisar_proveedor, pero no usa explicitamente la clave esperada 'discrepancias' y no aporta trazabilidad de los datos usados.",
+    "strengths": [
+      "Incluye total mensual y total enero-mayo",
+      "Presenta categorias principales con porcentajes",
+      "Lista anomalias concretas con observaciones"
+    ],
+    "issues": [
+      "No aparece la clave exacta 'discrepancias'",
+      "No hay referencia a fuente, filas o dataset para verificar calculos",
+      "Puede estar inventando datos si no provienen de una tabla original"
+    ],
+    "elapsed_seconds": 13.563
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y estructura bien incidencias y oportunidades, pero incorpora datos de contacto y detalles específicos sin trazabilidad verificable en la tarea mostrada.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Distingue evidencias, incidencias, impacto y acciones recomendadas",
+      "Formato claro de informe tecnico"
+    ],
+    "issues": [
+      "Puede estar inventando email, telefono, ciudad, prioridad e identificadores de evidencias si no estaban en las fuentes",
+      "Algunas inferencias no estan claramente marcadas como supuestos",
+      "La respuesta evaluada parece quedar cortada al final"
+    ],
+    "elapsed_seconds": 15.891
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 4.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta identifica la necesidad de GreenBox y propone alternativas plausibles, pero no incluye precios ni fuentes web, por lo que incumple partes centrales de la tarea.",
+    "strengths": [
+      "Menciona GreenBox y el contexto de encuestas",
+      "Usa aparentemente notas_voz.jsonl con una referencia concreta",
+      "Propone varias alternativas económicas razonables"
+    ],
+    "issues": [
+      "No incluye fuentes verificables",
+      "No aporta precios ni comparación económica concreta",
+      "No demuestra haber usado búsqueda web",
+      "La respuesta está incompleta o cortada"
+    ],
+    "elapsed_seconds": 8.656
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta contextualiza bien Barna Health, SSO y Xavier Puig, pero queda incompleta, no aporta fuentes y presenta datos locales sensibles sin trazabilidad verificable.",
+    "strengths": [
+      "Incluye las claves Barna Health, SSO y Xavier Puig",
+      "Define criterios técnicos relevantes para un proveedor SSO sanitario",
+      "Relaciona la necesidad con integración SAML/OIDC, MFA, SCIM y GDPR"
+    ],
+    "issues": [
+      "No incluye fuentes ni enlaces, pese a ser una clave esperada",
+      "La tabla de opciones queda truncada y solo desarrolla Microsoft Entra ID",
+      "No justifica de dónde salen email, teléfono, fecha, reunión y prioridad",
+      "Puede estar inventando datos locales al no mostrar trazabilidad",
+      "Falta comparación completa de proveedores actuales"
+    ],
+    "elapsed_seconds": 11.141
+  },
+  {
+    "engine": "openrouter_openai_gpt_5_5",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre el alcance general y menciona las incidencias esperadas, pero no usa todas las claves exactas solicitadas ni muestra suficiente trazabilidad por gasto para validar los hallazgos.",
+    "strengths": [
+      "Incluye resumen ejecutivo y periodo auditado",
+      "Identifica duplicado, gasto sin recibo, discrepancia de importe y proveedor a revisar",
+      "Presenta totales y desglose mensual"
+    ],
+    "issues": [
+      "No incluye las claves exactas esperadas: sin_recibo, importe_discrepante y revisar_proveedor",
+      "Falta evidencia fila a fila o referencias concretas a los registros afectados",
+      "Los importes y archivos citados no son verificables desde la respuesta",
+      "La respuesta evaluada parece incompleta o truncada"
+    ],
+    "elapsed_seconds": 12.234
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La nota identifica correctamente persona y empresa, pero confunde la fecha y la hora de la cita con datos incorrectos; las claves esperadas eran 14 de mayo y 11:30.",
+    "strengths": [
+      "Formato claro de nota breve",
+      "Incluye persona y empresa correctas",
+      "Incluye un objetivo concreto"
+    ],
+    "issues": [
+      "Fecha incorrecta: indica 2026-05-06 en lugar de 14 de mayo",
+      "Hora incorrecta: indica 09:12 en lugar de 11:30",
+      "Posible falta de trazabilidad al usar datos que parecen del correo y no de la cita"
+    ],
+    "elapsed_seconds": 8.86
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega ningun resultado ni procesa el archivo solicitado, por lo que incumple completamente la tarea.",
+    "strengths": [],
+    "issues": [
+      "No lee ni referencia `notas_voz.jsonl`",
+      "No extrae tareas pendientes",
+      "No presenta la tabla solicitada con id, accion, entidad y fecha limite",
+      "No incluye las claves esperadas: llamar, enviar, agendar, reservar"
+    ],
+    "elapsed_seconds": 9.922
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun resultado de auditoria ni identifica la discrepancia solicitada.",
+    "strengths": [],
+    "issues": [
+      "No proporciona concepto, importe declarado, importe esperado ni recomendacion.",
+      "No audita ni referencia el CSV indicado.",
+      "La respuesta es nula y no cumple el formato esperado de la tarea."
+    ],
+    "elapsed_seconds": 7.625
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y prioriza bien tareas con fecha o cliente concreto, aunque no ofrece trazabilidad a los archivos fuente y puede contener demasiados detalles no verificables.",
+    "strengths": [
+      "Incluye IberLegal, Clinica Centro, Delta Equipos y SSL",
+      "Organiza por prioridad temporal y cliente",
+      "Resume acciones pendientes de forma clara"
+    ],
+    "issues": [
+      "No indica de qué archivo o nota sale cada compromiso",
+      "SSL aparece asociado a Cobalto y no como clave destacada propia",
+      "Incluye muchos datos específicos sin trazabilidad, lo que dificulta detectar posibles invenciones"
+    ],
+    "elapsed_seconds": 15.594
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "El CSV tiene el formato correcto y contiene IberLegal, Tecnoria y SerConta, pero incluye proveedores no trazables a las claves esperadas y no evidencia el criterio 'proveedor'.",
+    "strengths": [
+      "Columnas solicitadas presentes y en orden",
+      "Formato CSV valido",
+      "Incluye IberLegal, Tecnoria y SerConta"
+    ],
+    "issues": [
+      "Incluye filas extra no indicadas por las claves esperadas",
+      "No aparece ni se justifica la clave 'proveedor'",
+      "No hay trazabilidad a contactos_50.csv para validar el filtrado"
+    ],
+    "elapsed_seconds": 15.281
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun contenido ICS ni extrae los cuatro compromisos solicitados.",
+    "strengths": [],
+    "issues": [
+      "No entrega un archivo ICS ni eventos",
+      "No incluye las claves esperadas",
+      "No indica datos faltantes en descripciones",
+      "Respuesta vacia o nula"
+    ],
+    "elapsed_seconds": 8.625
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre el formato solicitado con totales mensuales, categorias y anomalias, pero no muestra trazabilidad de datos y no usa exactamente la clave esperada 'discrepancias'.",
+    "strengths": [
+      "Incluye total mensual y total general",
+      "Agrupa por categorias principales",
+      "Lista anomalias con sin_recibo y revisar_proveedor",
+      "Formato claro en tablas"
+    ],
+    "issues": [
+      "No hay trazabilidad ni fuente de los calculos",
+      "La anomalia de discrepancia aparece como importe_discrepante, no como 'discrepancias'",
+      "Posible invencion de importes si no proceden de datos entregados",
+      "El duplicado se lista dos veces sin explicar si ambos registros deben mostrarse"
+    ],
+    "elapsed_seconds": 13.5
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun informe ni menciona las claves esperadas; no cumple la tarea original.",
+    "strengths": [],
+    "issues": [
+      "Respuesta vacia o nula",
+      "No incluye Clinica Centro ni Noelia Castro",
+      "No aborda modulo de pagos ni facturacion",
+      "No hay trazabilidad a notas, emails o contactos"
+    ],
+    "elapsed_seconds": 7.0
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta propone alternativas razonables para encuestas de GreenBox, pero no demuestra uso real de notas_voz.jsonl, aporta precios incompletos y usa fuentes poco trazables o no oficiales.",
+    "strengths": [
+      "Incluye GreenBox, encuestas, precio y fuentes",
+      "Presenta varias alternativas económicas",
+      "Formato claro y accionable"
+    ],
+    "issues": [
+      "No cita ni resume contenido concreto de notas_voz.jsonl",
+      "Precios incompletos o vagos; faltan importes de planes de pago",
+      "Varias fuentes son blogs de terceros, no páginas oficiales de precios",
+      "Menciona fuentes consultadas al final que no están enlazadas en el cuerpo",
+      "Puede inventar contexto al afirmar uso de notas internas sin evidencia"
+    ],
+    "elapsed_seconds": 10.062
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "Cumple parcialmente las claves esperadas y estructura la investigación, pero la trazabilidad es débil y parece inventar o asumir datos locales sensibles sin evidencia.",
+    "strengths": [
+      "Incluye Barna Health, SSO, Xavier Puig y una sección de fuentes",
+      "Contextualiza una necesidad técnica concreta y propone criterios de selección",
+      "Distingue opciones comerciales y open source"
+    ],
+    "issues": [
+      "No demuestra el uso de datos locales: cita un hilo E-004, teléfono y reunión sin aportar trazabilidad",
+      "Fuentes mayoritariamente secundarias/SEO y poco sólidas para una recomendación técnica sanitaria",
+      "Omite proveedores SSO empresariales muy relevantes como Microsoft Entra ID, Okta, Ping Identity o OneLogin",
+      "Algunas afirmaciones de cumplimiento y liderazgo parecen no verificadas",
+      "La recomendación depende de datos posiblemente inventados"
+    ],
+    "elapsed_seconds": 11.735
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre la auditoria y recomendaciones, pero tiene inconsistencias y no usa exactamente una clave esperada para duplicados.",
+    "strengths": [
+      "Incluye hallazgos por periodo enero-mayo",
+      "Cubre sin_recibo, importe_discrepante y revisar_proveedor",
+      "Propone controles internos concretos para duplicados, recibos y discrepancias"
+    ],
+    "issues": [
+      "Usa posible_duplicado en lugar de la clave esperada duplicado",
+      "Dice 4 incidencias pero lista 5 filas de hallazgos",
+      "Afirma haber analizado 15 transacciones sin trazabilidad de los datos fuente",
+      "Incluye un caracter chino en 'Automatizar el比对', afectando calidad formal"
+    ],
+    "elapsed_seconds": 10.39
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_35b_a3b",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre OpenRouter, Gemini, ofimatica y una recomendacion ejecutiva, pero queda incompleta, tiene trazabilidad debil y no desarrolla el coste con datos concretos.",
+    "strengths": [
+      "Estructura ejecutiva clara",
+      "Cruza supuestos datos locales con casos de uso",
+      "Incluye recomendacion hibrida OpenRouter/Gemini",
+      "Menciona agentes CLI y automatizacion ofimatica"
+    ],
+    "issues": [
+      "Respuesta truncada al final",
+      "Citas vagas como 'Fuente 2' sin enlaces ni referencias verificables",
+      "Coste tratado de forma superficial, sin comparativa numerica",
+      "Afirma datos locales muy especificos sin demostrar trazabilidad suficiente",
+      "Estado actual fechado en septiembre de 2025, no claramente actualizado a la fecha de la tarea"
+    ],
+    "elapsed_seconds": 16.438
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta tiene el formato CSV y contiene IberLegal, Tecnoria y SerConta, pero no demuestra haber filtrado por la clave 'proveedor' y añade registros que parecen no corresponder a proveedores esperados.",
+    "strengths": [
+      "Incluye las columnas solicitadas",
+      "Contiene tres claves esperadas: IberLegal, Tecnoria y SerConta",
+      "El CSV es legible y estructurado"
+    ],
+    "issues": [
+      "Falta la clave esperada 'proveedor' como criterio trazable",
+      "Incluye filas extra potencialmente no proveedoras",
+      "No hay evidencia de que los datos provengan de contactos_50.csv"
+    ],
+    "elapsed_seconds": 17.484
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y estructura un informe útil, pero introduce muchos detalles específicos sin evidenciar su origen exacto.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Formato claro con incidencias, oportunidades y próximos pasos",
+      "Menciona trazabilidad general a contactos, emails y notas"
+    ],
+    "issues": [
+      "Puede estar inventando email, teléfono, ubicación, prioridad y fechas si no están en las fuentes",
+      "La trazabilidad es superficial: cita archivos e IDs pero no muestra evidencias concretas",
+      "Algunas oportunidades son inferencias comerciales no claramente sustentadas"
+    ],
+    "elapsed_seconds": 10.641
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta incluye las claves esperadas y el formato es claro, pero añade el año 2026 aunque la clave esperada solo indica '14 de mayo', lo que puede ser un dato inventado si no estaba en las fuentes.",
+    "strengths": [
+      "Incluye persona, empresa, fecha y hora esperadas",
+      "Formato breve y legible",
+      "Incluye objetivo solicitado"
+    ],
+    "issues": [
+      "Posible invención del año 2026",
+      "No aporta trazabilidad a los archivos revisados"
+    ],
+    "elapsed_seconds": 11.344
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La tabla está bien formada y muchas extracciones son fieles, pero no respeta las claves esperadas: incluye numerosas acciones fuera de llamar, enviar, agendar y reservar, y no normaliza la columna accion a esas claves.",
+    "strengths": [
+      "Formato tabular claro con las columnas solicitadas",
+      "Buena trazabilidad por id de nota",
+      "Varias entidades y fechas limite están correctamente identificadas"
+    ],
+    "issues": [
+      "Incluye muchos falsos positivos con acciones no esperadas como comprar, preparar, revisar, renovar o investigar",
+      "La accion se expresa como frase completa en vez de usar las claves esperadas",
+      "Algunas fechas son dudosas como fecha limite, por ejemplo el hito de formacion del dia 22"
+    ],
+    "elapsed_seconds": 31.875
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente el concepto y los importes, pero pierde el formato con dos decimales y no devuelve la recomendacion esperada como clave exacta.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado correctos en valor",
+      "Recomendacion accionable"
+    ],
+    "issues": [
+      "Importes no formateados como 19.90 y 29.90",
+      "No incluye la clave exacta importe_discrepante"
+    ],
+    "elapsed_seconds": 13.406
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y prioriza bien varias tareas con fecha o cliente, pero añade muchas tareas no verificables y no aporta trazabilidad a los archivos fuente.",
+    "strengths": [
+      "Incluye IberLegal, Clinica Centro, Delta Equipos y SSL",
+      "Organiza por prioridad y separa compromisos con fecha",
+      "Resume acciones concretas con responsables o destinatarios"
+    ],
+    "issues": [
+      "No cita ni distingue información procedente de notas_voz.jsonl o emails_hilos.md",
+      "Incluye numerosas tareas adicionales que podrían ser invención si no están en las fuentes",
+      "La clave SSL aparece asociada a Cobalto, no destacada como entidad principal",
+      "Algunas secciones finales parecen menos alineadas con tareas pendientes prioritarias"
+    ],
+    "elapsed_seconds": 15.125
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "El CSV tiene el formato y columnas correctas e incluye IberLegal, Tecnoria y SerConta, pero agrega filas no justificadas y no evidencia haber filtrado por la clave 'proveedor'.",
+    "strengths": [
+      "Formato CSV valido",
+      "Columnas solicitadas presentes",
+      "Incluye varias claves esperadas"
+    ],
+    "issues": [
+      "Incluye proveedores no esperados o no trazables",
+      "No aparece la clave 'proveedor' como criterio verificable",
+      "Posible falta de filtrado desde contactos_50.csv"
+    ],
+    "elapsed_seconds": 8.875
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta crea un ICS con cuatro eventos claros e incluye las claves esperadas, aunque falta trazabilidad directa a los archivos y hay detalles ICS mejorables.",
+    "strengths": [
+      "Incluye cuatro VEVENT bien delimitados",
+      "Aparecen Clinica Centro, Barna Health, sala y el compromiso de viernes a las 09:30",
+      "Indica datos faltantes en DESCRIPTION"
+    ],
+    "issues": [
+      "No cita ni demuestra extraccion desde notas_voz.jsonl y emails_hilos.md",
+      "El valor esperado 'viernes 09:30' no aparece literalmente, solo como fecha/hora",
+      "Formato ICS basico con algunos textos sin escapado completo y sin zona horaria explícita"
+    ],
+    "elapsed_seconds": 14.375
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre el formato solicitado y contiene totales, categorias y anomalias, pero no hay trazabilidad de los datos y parece inventar importes sin fuente. Ademas falta la clave esperada exacta \"discrepancias\".",
+    "strengths": [
+      "Incluye total mensual y total general",
+      "Agrupa categorias principales",
+      "Lista anomalias con sin_recibo y revisar_proveedor",
+      "Formato claro en tablas"
+    ],
+    "issues": [
+      "No aporta fuente ni calculos verificables",
+      "Los importes parecen inventados si no habia datos base",
+      "No usa la clave exacta \"discrepancias\"",
+      "La anomalia de discrepancia aparece como \"importe_discrepante\""
+    ],
+    "elapsed_seconds": 17.797
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre las claves esperadas y tiene formato de informe, pero introduce datos muy específicos sin trazabilidad a notas, emails o contactos proporcionados.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Estructura clara con incidencias, oportunidades y plan de acción",
+      "Identifica acciones concretas de seguimiento"
+    ],
+    "issues": [
+      "Inventa o no justifica email, telefono, ubicacion, fechas y estados",
+      "No cita ni referencia las notas, emails o contactos usados",
+      "Algunas conclusiones comerciales no estan sustentadas por evidencia visible"
+    ],
+    "elapsed_seconds": 14.469
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta útil y alineada con GreenBox, encuestas y alternativas económicas, con referencia a notas_voz.jsonl y fuentes. Sin embargo, falta comparar precios concretos y la trazabilidad fuente-opción es algo vaga.",
+    "strengths": [
+      "Identifica explícitamente GreenBox y la nota de voz VN-009",
+      "Propone varias alternativas económicas o gratuitas",
+      "Incluye sección de recomendación práctica",
+      "Lista fuentes con enlaces"
+    ],
+    "issues": [
+      "No muestra precios concretos ni comparación clara de costes",
+      "La trazabilidad de cada afirmación a una fuente específica es débil",
+      "Afirma datos de planes gratuitos que pueden requerir verificación actual",
+      "No explica cómo se usó notas_voz.jsonl más allá de citar la nota"
+    ],
+    "elapsed_seconds": 9.593
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta útil y bien estructurada, cubre Barna Health, SSO, Xavier Puig y fuentes, pero la trazabilidad local y la actualidad de las fuentes son débiles y hay riesgo de datos inventados.",
+    "strengths": [
+      "Incluye contexto del cliente, contacto, fecha y necesidad técnica",
+      "Propone varias opciones SSO relevantes como Entra ID, Okta y Keycloak",
+      "Incluye criterios técnicos razonables y próximos pasos",
+      "Añade una sección de fuentes consultadas"
+    ],
+    "issues": [
+      "No demuestra acceso real a datos locales; email, teléfono, fecha e hilo podrían estar inventados",
+      "Fuentes web poco sólidas o incompletas, especialmente LinkedIn Advice sin enlace",
+      "No compara opciones con una matriz clara de coste, cumplimiento, integración y riesgo",
+      "Algunas afirmaciones de actualidad 2025-2026 no están suficientemente trazadas"
+    ],
+    "elapsed_seconds": 11.954
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre el periodo, identifica las cuatro clases de incidencias esperadas y aporta recomendaciones útiles, pero no usa explícitamente las claves esperadas y presenta cifras detalladas sin trazabilidad a datos fuente.",
+    "strengths": [
+      "Incluye hallazgos por duplicados, recibos faltantes, discrepancias de importe y revisión de proveedor",
+      "Aporta recomendaciones de control interno concretas",
+      "Formato claro y organizado"
+    ],
+    "issues": [
+      "No incluye literalmente las claves esperadas: duplicado, sin_recibo, importe_discrepante, revisar_proveedor",
+      "Los totales, número de registros e importes parecen no estar trazados a una fuente verificable",
+      "No muestra metodología ni evidencia completa de todos los gastos auditados"
+    ],
+    "elapsed_seconds": 15.625
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_6_plus",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:21.196422Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:21.196443Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:21.198917Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:21.198938Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:21.201901Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:21.201927Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:21.205086Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:21.205124Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:21.207953Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:21.207994Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:21.447016Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:21.482318Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:21.482891Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 3.766
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:24.616173Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:24.616230Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:24.620455Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:24.620497Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:24.624348Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:24.624386Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:24.628242Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:24.628281Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:24.632304Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:24.632345Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:24.990517Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:25.027616Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:25.028235Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 3.594
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:28.495129Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:28.495184Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:28.497770Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:28.497792Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:28.500744Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:28.500766Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:28.503242Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:28.503307Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:28.506509Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:28.506575Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:28.788342Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:28.812919Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:28.813465Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 3.735
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:32.230577Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:32.230617Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:32.235208Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:32.235260Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:32.239665Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:32.239708Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:32.243974Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:32.244011Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:32.248612Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:32.248651Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:32.618173Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:32.657086Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:32.657770Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 3.921
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:37.544251Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:37.544305Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:37.548810Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:37.548855Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:37.553363Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:37.553413Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:37.557992Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:37.558039Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:37.562713Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:37.562767Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:37.948326Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:37.987575Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:37.988254Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 5.282
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:41.691650Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:41.691730Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:41.696061Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:41.696137Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:41.700550Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:41.700590Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:41.704888Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:41.704940Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:41.708955Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:41.709019Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:41.997078Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:42.020543Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:42.020906Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 4.016
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:45.325803Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:45.325836Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:45.328255Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:45.328281Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:45.330979Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:45.331015Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:45.333650Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:45.333672Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:45.336239Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:45.336260Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:45.550168Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:45.572761Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:45.573218Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 3.562
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:51.004018Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:51.004065Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:51.008774Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:51.008840Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:51.014084Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:51.014129Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:51.019767Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:51.019814Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:51.024685Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:51.024724Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:51.426734Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:51.469063Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:51.469861Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 5.89
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:54.924127Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:54.924166Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:54.926646Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:54.926674Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:54.929749Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:54.929807Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:54.933778Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:54.933820Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:54.937262Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:54.937314Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:55.273546Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:55.305385Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:55.305907Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 3.844
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:59.022624Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:59.022665Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:59.027545Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:59.027597Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:59.032267Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:59.032318Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:59.036736Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:59.036786Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:59.041428Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:17:59.041476Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:17:59.452959Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:59.496490Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:17:59.497182Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 4.172
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:03.212863Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:03.212926Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:03.218387Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:03.218429Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:03.223855Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:03.223917Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:03.229286Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:03.229389Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:03.234711Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:03.234768Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:03.666904Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:03.710719Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:03.711630Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 4.234
+  },
+  {
+    "engine": "openrouter_x_ai_grok_4_3",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 0.0,
+    "passed_expected_keys": false,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:08.772973Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:08.773054Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:08.778414Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:08.778462Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:08.783611Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:08.783661Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:08.788933Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:08.788996Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:08.794494Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:08.794532Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:09.204325Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:09.246468Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:09.247300Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n",
+    "elapsed_seconds": 5.531
+  }
+]

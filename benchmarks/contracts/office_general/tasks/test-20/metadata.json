@@ -1,0 +1,26 @@
+{
+  "id": "test-20",
+  "title": "Informe de incidencias de Clinica Centro",
+  "difficulty": 3,
+  "level": "L3",
+  "category": "assistant_digital",
+  "skills": [
+    "synthesis",
+    "client_context"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "Clinica Centro",
+    "Noelia Castro",
+    "modulo de pagos",
+    "facturacion"
+  ],
+  "response_shape": "informe sintetico con acciones",
+  "prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-20/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-20/metadata.json"
+}

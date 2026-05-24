@@ -1,0 +1,372 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260521_163310_358778",
+  "jobs": [
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-01",
+      "next_run_at": 1779381208.0414777,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:groq/compound-mini",
+      "task_id": "test-10",
+      "next_run_at": 1779381315.9926982,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "groq:groq/compound",
+      "task_id": "test-10",
+      "next_run_at": 1779381344.9120133,
+      "attempts": 1,
+      "done": false
+    }
+  ],
+  "completed": [
+    {
+      "job": "groq:llama-3.1-8b-instant::test-01",
+      "at": "2026-05-21T14:33:11.166973+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-01",
+      "at": "2026-05-21T14:33:13.541116+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-01",
+      "at": "2026-05-21T14:33:15.550898+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-01",
+      "at": "2026-05-21T14:33:18.179452+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-01",
+      "at": "2026-05-21T14:33:20.208122+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-01",
+      "at": "2026-05-21T14:33:23.113435+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-03",
+      "at": "2026-05-21T14:33:40.864022+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-03",
+      "at": "2026-05-21T14:33:44.249045+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-03",
+      "at": "2026-05-21T14:33:47.755866+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-03",
+      "at": "2026-05-21T14:33:53.575152+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-03",
+      "at": "2026-05-21T14:33:56.188272+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-03",
+      "at": "2026-05-21T14:33:58.951853+00:00"
+    },
+    {
+      "job": "groq:groq/compound-mini::test-03",
+      "at": "2026-05-21T14:34:07.315366+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-05",
+      "at": "2026-05-21T14:34:26.448326+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-05",
+      "at": "2026-05-21T14:34:28.985005+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-05",
+      "at": "2026-05-21T14:34:30.693957+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-05",
+      "at": "2026-05-21T14:34:32.762662+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-05",
+      "at": "2026-05-21T14:34:34.686226+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-05",
+      "at": "2026-05-21T14:34:37.503440+00:00"
+    },
+    {
+      "job": "groq:groq/compound-mini::test-05",
+      "at": "2026-05-21T14:34:40.241735+00:00"
+    },
+    {
+      "job": "groq:groq/compound::test-05",
+      "at": "2026-05-21T14:34:47.198961+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-10",
+      "at": "2026-05-21T14:34:50.030262+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-10",
+      "at": "2026-05-21T14:34:55.238847+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-10",
+      "at": "2026-05-21T14:34:58.377785+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-10",
+      "at": "2026-05-21T14:35:03.720164+00:00"
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-10",
+      "at": "2026-05-21T14:35:05.966262+00:00"
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-10",
+      "at": "2026-05-21T14:35:09.915564+00:00"
+    }
+  ],
+  "deferred": [
+    {
+      "job": "groq:groq/compound-mini::test-01",
+      "at": "2026-05-21T14:33:28.041477+00:00",
+      "next_run_at": "2026-05-21T16:33:28.041478+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "groq:groq/compound-mini::test-10",
+      "at": "2026-05-21T14:35:15.992698+00:00",
+      "next_run_at": "2026-05-21T16:35:15.992698+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "groq:groq/compound::test-10",
+      "at": "2026-05-21T14:35:44.912013+00:00",
+      "next_run_at": "2026-05-21T16:35:44.912013+00:00",
+      "reason": "429"
+    }
+  ],
+  "failed": [
+    {
+      "job": "groq:groq/compound::test-01",
+      "at": "2026-05-21T14:33:38.794480+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:groq/compound::test-03",
+      "at": "2026-05-21T14:34:24.667287+00:00",
+      "returncode": 1
+    }
+  ],
+  "running": null
+}

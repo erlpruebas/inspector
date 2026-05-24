@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Nano Bridge</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f0e8;
+      --panel: #fffdfa;
+      --ink: #1f2933;
+      --muted: #6b7280;
+      --line: #ddd5c8;
+      --accent: #265c7d;
+      --good: #eaf4ec;
+      --bad: #fde8e8;
+      --warn: #fdf3d2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(38, 92, 125, 0.14), transparent 24rem),
+        linear-gradient(180deg, #faf7f1, var(--bg));
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(920px, 100%);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 20px 60px rgba(31, 41, 51, 0.12);
+      padding: 22px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 720;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: right;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: white;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font: inherit;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .good { background: var(--good); }
+    .bad { background: var(--bad); }
+    .warn { background: var(--warn); }
+
+    .full {
+      margin-top: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfaf7;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 0; }
+      main {
+        width: 100%;
+        min-height: 100vh;
+        border: 0;
+        border-radius: 0;
+      }
+      .grid { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; }
+      .status { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Mini Nano Bridge</h1>
+      <div id="status" class="status">Iniciando...</div>
+    </header>
+
+    <section class="grid">
+      <div class="card good">
+        <strong>Rol del navegador</strong>
+        <pre>Esta pestaña ejecuta Gemini Nano local cuando llega una petición desde la app de escritorio.</pre>
+      </div>
+      <div class="card warn">
+        <strong>Modo de prueba</strong>
+        <pre>Abre esta URL con <code>?mock=1</code> para simular respuestas y validar el puente sin depender del modelo real.</pre>
+      </div>
+    </section>
+
+    <section class="full card" id="logCard">
+      <strong>Estado</strong>
+      <pre id="log">Esperando el primer mensaje...</pre>
+    </section>
+  </main>
+
+  <script>
+    const statusEl = document.querySelector("#status");
+    const logEl = document.querySelector("#log");
+    const params = new URLSearchParams(location.search);
+    const mockMode = params.has("mock");
+
+    const systemPrompt = "Eres un asistente útil y conciso. Responde siempre en español y con frases cortas.";
+    let session = null;
+    let adapter = null;
+    let processing = false;
+    let ready = false;
+    let lastRequestId = "-";
+
+    function setStatus(text) {
+      statusEl.textContent = text;
+    }
+
+    function setLog(text) {
+      logEl.textContent = text;
+    }
+
+    function appendLog(text) {
+      logEl.textContent = text;
+    }
+
+    function getPromptApi() {
+      if (window.LanguageModel) {
+        return {
+          name: "LanguageModel",
+          availability: (options) => window.LanguageModel.availability(options),
+          create: (options) => window.LanguageModel.create(options)
+        };
+      }
+
+      if (window.ai?.languageModel) {
+        return {
+          name: "window.ai.languageModel",
+          availability: async (options) => {
+            if (typeof window.ai.languageModel.availability === "function") {
+              return window.ai.languageModel.availability(options);
+            }
+            return "unavailable";
+          },
+          create: (options) => window.ai.languageModel.create(options)
+        };
+      }
+
+      return null;
+    }
+
+    function installMockApi() {
+      if (!mockMode) return;
+      window.LanguageModel = {
+        availability: async () => "available",
+        create: async () => ({
+          async *promptStreaming(input) {
+            const marker = "Usuario:";
+            const lastUserLine = input
+              .split("\n")
+              .filter((line) => line.startsWith(marker))
+              .slice(-1)[0] || input;
+            const userText = lastUserLine.replace(marker, "").trim();
+            const answer = `Modo prueba: recibí "${userText}". El puente está funcionando.`;
+            for (const chunk of answer.split(" ")) {
+              await new Promise((resolve) => setTimeout(resolve, 35));
+              yield chunk + " ";
+            }
+          }
+        })
+      };
+    }
+
+    function flattenMessages(messages) {
+      const lines = [systemPrompt, "", "Historial:"];
+      for (const message of messages || []) {
+        const prefix = message.role === "assistant" ? "Asistente" : "Usuario";
+        lines.push(`${prefix}: ${message.content}`);
+      }
+      return `${lines.join("\n")}\n\nResponde solo al ultimo mensaje del usuario.`;
+    }
+
+    async function postEvent(event) {
+      await fetch("/api/browser/event", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          request_id: lastRequestId,
+          ...event
+        })
+      });
+    }
+
+    async function ensureSession() {
+      if (ready) return true;
+      adapter = getPromptApi();
+
+      if (!adapter) {
+        setStatus("Sin API");
+        setLog("No existe window.LanguageModel ni window.ai.languageModel. Abre Chrome compatible o usa ?mock=1 para probar.");
+        return false;
+      }
+
+      try {
+        const availability = await adapter.availability({
+          initialPrompts: [{ role: "system", content: systemPrompt }]
+        });
+
+        if (availability === "unavailable") {
+          setStatus("Modelo no disponible");
+          setLog("La API existe, pero Gemini Nano no está listo o no está instalado.");
+          return false;
+        }
+
+        session = await adapter.create({
+          initialPrompts: [{ role: "system", content: systemPrompt }]
+        });
+        ready = true;
+        setStatus(mockMode ? "Listo en modo prueba" : "Listo");
+        setLog("Puente conectado y a la espera de trabajo.");
+        return true;
+      } catch (error) {
+        setStatus("Error");
+        setLog(`No pude crear la sesión local: ${error.message}`);
+        return false;
+      }
+    }
+
+    async function processRequest(request) {
+      if (processing) return;
+      processing = true;
+      lastRequestId = request.id;
+      setStatus(`Procesando ${request.id}`);
+      appendLog(`Procesando petición ${request.id}`);
+
+      try {
+        if (!(await ensureSession())) {
+          await postEvent({ type: "error", error: "Sesión no disponible" });
+          return;
+        }
+
+        const prompt = flattenMessages(request.messages);
+        let content = "";
+        await postEvent({ type: "started" });
+
+        for await (const chunk of session.promptStreaming(prompt)) {
+          const text = String(chunk);
+          content += text;
+          await postEvent({ type: "delta", delta: text, content });
+          appendLog(`Procesando petición ${request.id}\n\n${content}`);
+        }
+
+        await postEvent({ type: "done", content });
+        setStatus("Listo");
+      } catch (error) {
+        await postEvent({ type: "error", error: error.message || String(error) });
+        setStatus("Error");
+        appendLog(`Error en ${request.id}\n\n${error.message || String(error)}`);
+      } finally {
+        processing = false;
+      }
+    }
+
+    async function poll() {
+      try {
+        const response = await fetch("/api/browser/next", { cache: "no-store" });
+        if (response.ok) {
+          const payload = await response.json();
+          if (payload.request) {
+            await processRequest(payload.request);
+          }
+        }
+      } catch (error) {
+        if (!ready) {
+          setStatus("Esperando servidor");
+          setLog(`No pude conectar con el servidor local: ${error.message}`);
+        }
+      } finally {
+        window.setTimeout(poll, 250);
+      }
+    }
+
+    installMockApi();
+    ensureSession().then(() => poll());
+  </script>
+</body>
+</html>

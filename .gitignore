@@ -18,6 +18,7 @@ __pycache__/
 logs/
 telegram_codex_orchestrator/runtime/
 telegram_codex_orchestrator/memory/*.json
+orchestrator_v2/runtime/
 
 # Generated media and local caches
 tts_samples/*.wav

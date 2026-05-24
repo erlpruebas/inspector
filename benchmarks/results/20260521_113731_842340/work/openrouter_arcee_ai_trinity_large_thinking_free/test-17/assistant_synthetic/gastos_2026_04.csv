@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+2026-04-02,Dominio anual,software,14.99,14.99,ok
+2026-04-11,Taxi cliente,viajes,28.3,28.3,sin_recibo
+2026-04-25,Material oficina,oficina,73.4,73.4,ok

@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_qwen_qwen3_5_flash_02_23",
+  "task_id": "test-08",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"elapsed_seconds\": 33.953, \"usage\": {\"prompt_tokens\": 1549, \"completion_tokens\": 6172, \"total_tokens\": 7721, \"cost\": 0.001705405, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.001705405, \"upstream_inference_prompt_cost\": 0.000100685, \"upstream_inference_completions_cost\": 0.00160472}, \"completion_tokens_details\": {\"reasoning_tokens\": 5655, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-08\\resultado.md"
+  ],
+  "elapsed_seconds": 34.203000000008615,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "qwen/qwen3.5-flash-02-23",
+    "elapsed_seconds": 33.953,
+    "usage": {
+      "prompt_tokens": 1549,
+      "completion_tokens": 6172,
+      "total_tokens": 7721,
+      "cost": 0.001705405,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.001705405,
+        "upstream_inference_prompt_cost": 0.000100685,
+        "upstream_inference_completions_cost": 0.00160472
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5655,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "qwen/qwen3.5-flash-02-23",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:qwen/qwen3.5-flash-02-23",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\openrouter_qwen_qwen3_5_flash_02_23_test-08_resultado.md"
+  ],
+  "task_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+  "execution_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-08",
+  "privacy": {
+    "mode": "clear"
+  }
+}

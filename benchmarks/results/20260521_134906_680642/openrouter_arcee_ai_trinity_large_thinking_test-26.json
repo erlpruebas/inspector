@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_arcee_ai_trinity_large_thinking",
+  "task_id": "test-26",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"arcee-ai/trinity-large-thinking\", \"elapsed_seconds\": 11.5, \"usage\": {\"prompt_tokens\": 790, \"completion_tokens\": 1024, \"total_tokens\": 1814, \"cost\": 0.00103652, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 48, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00103652, \"upstream_inference_prompt_cost\": 0.00016612, \"upstream_inference_completions_cost\": 0.0008704}, \"completion_tokens_details\": {\"reasoning_tokens\": 265, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\work\\openrouter_arcee_ai_trinity_large_thinking\\test-26\\resultado.md"
+  ],
+  "elapsed_seconds": 11.686999999990803,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "arcee-ai/trinity-large-thinking",
+    "elapsed_seconds": 11.5,
+    "usage": {
+      "prompt_tokens": 790,
+      "completion_tokens": 1024,
+      "total_tokens": 1814,
+      "cost": 0.00103652,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 48,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00103652,
+        "upstream_inference_prompt_cost": 0.00016612,
+        "upstream_inference_completions_cost": 0.0008704
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 265,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "arcee-ai/trinity-large-thinking",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:arcee-ai/trinity-large-thinking",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\openrouter_arcee_ai_trinity_large_thinking_test-26_resultado.md"
+  ],
+  "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+  "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\work\\openrouter_arcee_ai_trinity_large_thinking\\test-26",
+  "privacy": {
+    "mode": "clear"
+  }
+}

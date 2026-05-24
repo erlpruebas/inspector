@@ -1,0 +1,618 @@
+[
+  {
+    "task_id": "test-01",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_groq_compound",
+    "engine_spec": "groq:groq/compound",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_groq_compound",
+    "engine_spec": "groq:groq/compound",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_groq_compound",
+    "engine_spec": "groq:groq/compound",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_groq_compound",
+    "engine_spec": "groq:groq/compound",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "reservar"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: reservar",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "engine_spec": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "engine_spec": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "engine_spec": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_meta_llama_llama_4_scout_17b_16e_instruct",
+    "engine_spec": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: Noelia Castro, Clinica Centro, 14 de mayo",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 2.5,
+    "score": 2.5,
+    "comment": "Faltan claves esperadas: 19.90, 29.90, importe_discrepante",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_openai_gpt_oss_20b",
+    "engine_spec": "groq:openai/gpt-oss-20b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [
+      "proveedor"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.5,
+    "comment": "Faltan claves esperadas: proveedor",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-01",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "19.90",
+      "29.90"
+    ],
+    "heuristic_score": 5.0,
+    "score": 5.0,
+    "comment": "Faltan claves esperadas: 19.90, 29.90",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-10",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "proveedor",
+      "IberLegal",
+      "Tecnoria",
+      "SerConta"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 10.0,
+    "comment": "Incluye todas las claves esperadas.",
+    "judge_model": ""
+  }
+]

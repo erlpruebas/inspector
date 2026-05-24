@@ -1,0 +1,25 @@
+{
+  "id": "test-16",
+  "title": "Preparar briefing de seguridad para Innotek",
+  "difficulty": 3,
+  "level": "L3",
+  "category": "assistant_digital",
+  "skills": [
+    "briefing",
+    "synthesis"
+  ],
+  "required_files": [
+    "assistant_synthetic/notas_voz.jsonl",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "Sergio Campos",
+    "Innotek",
+    "riesgos de seguridad",
+    "auditoria"
+  ],
+  "response_shape": "respuesta util y trazable",
+  "prompt": "# Preparar briefing de seguridad para Innotek\n\nPrepara un briefing para Sergio Campos de Innotek sobre riesgos de seguridad y auditoria usando los recursos locales disponibles.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-16/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-16/metadata.json"
+}

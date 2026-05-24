@@ -1,0 +1,330 @@
+[
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_moonshotai_kimi_k2_6",
+    "engine_spec": "openrouter:moonshotai/kimi-k2.6",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.158348Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.158400Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.163148Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.163261Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.168521Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.168585Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.174865Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.174914Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.180729Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:23.180782Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:23.548253Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:23.583184Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:23.583772Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n"
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 0.0,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.205026Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.205084Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.209336Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.209430Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.214725Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.214784Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.218570Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.218603Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.221295Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:29.221319Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:29.530121Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:29.564866Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:29.565731Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n"
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_openai_gpt_5_5",
+    "engine_spec": "openrouter:openai/gpt-5.5",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.705865Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.705902Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.710604Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.710652Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.715960Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.716029Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.720842Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.720886Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:33.725513Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:33.725551Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:34.133188Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:34.176916Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:34.177558Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n"
+  },
+  {
+    "task_id": "test-01",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "missing_keys": [
+      "Noelia Castro",
+      "Clinica Centro",
+      "14 de mayo",
+      "11:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-03",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "missing_keys": [
+      "llamar",
+      "enviar",
+      "agendar",
+      "reservar"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-05",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "missing_keys": [
+      "Licencia PDF",
+      "19.90",
+      "29.90",
+      "importe_discrepante"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-08",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "missing_keys": [
+      "IberLegal",
+      "Clinica Centro",
+      "Delta Equipos",
+      "SSL"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-14",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "missing_keys": [
+      "Clinica Centro",
+      "Barna Health",
+      "sala",
+      "viernes 09:30"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_qwen_qwen3_6_flash",
+    "engine_spec": "openrouter:qwen/qwen3.6-flash",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_x_ai_grok_4_3",
+    "engine_spec": "openrouter:x-ai/grok-4.3",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 8.0,
+    "score": 0.0,
+    "comment": "El juez Codex no devolvio JSON valido.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [],
+    "issues": [
+      "judge_invalid_json"
+    ],
+    "judge_error": "dex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.517231Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.517271Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.521371Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.521418Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.525366Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.525429Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.529147Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.529181Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.533292Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'\n2026-05-21T13:18:37.533337Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'\n2026-05-21T13:18:37.887202Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:37.925037Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n2026-05-21T13:18:37.925684Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt: maximum of 3 prompts is supported path=C:\\Users\\erlqu\\.codex\\.tmp\\plugins\\plugins\\openai-developers\\.codex-plugin/plugin.json\n"
+  }
+]

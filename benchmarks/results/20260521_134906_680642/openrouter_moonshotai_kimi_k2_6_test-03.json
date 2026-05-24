@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_moonshotai_kimi_k2_6",
+  "task_id": "test-03",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"moonshotai/kimi-k2.6\", \"elapsed_seconds\": 3.812, \"usage\": {\"prompt_tokens\": 1248, \"completion_tokens\": 1024, \"total_tokens\": 2272, \"cost\": 0.0052816, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0052816, \"upstream_inference_prompt_cost\": 0.0011856, \"upstream_inference_completions_cost\": 0.004096}, \"completion_tokens_details\": {\"reasoning_tokens\": 809, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\work\\openrouter_moonshotai_kimi_k2_6\\test-03\\resultado.md"
+  ],
+  "elapsed_seconds": 4.0,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "moonshotai/kimi-k2.6",
+    "elapsed_seconds": 3.812,
+    "usage": {
+      "prompt_tokens": 1248,
+      "completion_tokens": 1024,
+      "total_tokens": 2272,
+      "cost": 0.0052816,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0052816,
+        "upstream_inference_prompt_cost": 0.0011856,
+        "upstream_inference_completions_cost": 0.004096
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 809,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "moonshotai/kimi-k2.6",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:moonshotai/kimi-k2.6",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\openrouter_moonshotai_kimi_k2_6_test-03_resultado.md"
+  ],
+  "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+  "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_134906_680642\\work\\openrouter_moonshotai_kimi_k2_6\\test-03",
+  "privacy": {
+    "mode": "clear"
+  }
+}

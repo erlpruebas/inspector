@@ -1,0 +1,25 @@
+{
+  "id": "test-24",
+  "title": "Validar descuento Delta Equipos con mercado",
+  "difficulty": 4,
+  "level": "L4",
+  "category": "assistant_digital",
+  "skills": [
+    "web_search",
+    "local_data_crosscheck"
+  ],
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "expected_keys": [
+    "Delta Equipos",
+    "monitores 27",
+    "4%",
+    "comparativa"
+  ],
+  "response_shape": "informe con fuentes y conclusion operativa",
+  "prompt": "# Validar descuento Delta Equipos con mercado\n\nValida si el descuento del 4% ofrecido por Delta Equipos para monitores 27 parece competitivo frente a referencias web actuales.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-24/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-24/metadata.json"
+}

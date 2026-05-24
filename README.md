@@ -2,6 +2,8 @@
 
 Inspector es un repositorio para probar, comparar y documentar como se comportan distintos sistemas de IA cuando trabajan con una interfaz de linea de comandos, wrappers API y un orquestador de Telegram.
 
+La carpeta esta pensada para ser portable: si copias `d:\inspector` a otro ordenador y mantienes la misma estructura, los lanzadores y los modulos locales siguen funcionando igual.
+
 La idea central es sencilla:
 
 1. Ejecutar las mismas tareas con varios motores.
@@ -69,6 +71,22 @@ Interfaz grafica del orquestador:
 
 ```powershell
 arrancar_orquestador_gui.bat
+```
+
+Panel web portable del laboratorio y del gestor v2:
+
+```powershell
+arrancar_orquestador_v2_web.bat
+```
+
+Preparar o lanzar la creacion de bots del laboratorio con Codex Desktop:
+
+```powershell
+medir_xy_raton.bat
+consola_clicks_codex.bat
+calibrar_codex_desktop.bat
+preparar_bots_lab_codex_desktop.bat
+crear_bots_lab_codex_desktop.bat
 ```
 
 Benchmark principal:

@@ -1,0 +1,17 @@
+{
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "elapsed_seconds": 1.203,
+  "usage": {
+    "queue_time": 0.017589357,
+    "prompt_tokens": 1886,
+    "prompt_time": 0.09770298,
+    "completion_tokens": 446,
+    "completion_time": 0.952518359,
+    "total_tokens": 2332,
+    "total_time": 1.050221339,
+    "completion_tokens_details": {
+      "reasoning_tokens": 377
+    }
+  }
+}

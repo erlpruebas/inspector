@@ -1,0 +1,42 @@
+{
+  "engine": "groq_openai_gpt_oss_20b",
+  "task_id": "test-30",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-20b\", \"elapsed_seconds\": 1.954, \"usage\": {\"queue_time\": 0.017541057, \"prompt_tokens\": 5179, \"prompt_time\": 0.276756955, \"completion_tokens\": 1489, \"completion_time\": 1.510172066, \"total_tokens\": 6668, \"total_time\": 1.786929021, \"completion_tokens_details\": {\"reasoning_tokens\": 243}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_openai_gpt_oss_20b\\test-30\\resultado.md"
+  ],
+  "elapsed_seconds": 2.1560000000026776,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "elapsed_seconds": 1.954,
+    "usage": {
+      "queue_time": 0.017541057,
+      "prompt_tokens": 5179,
+      "prompt_time": 0.276756955,
+      "completion_tokens": 1489,
+      "completion_time": 1.510172066,
+      "total_tokens": 6668,
+      "total_time": 1.786929021,
+      "completion_tokens_details": {
+        "reasoning_tokens": 243
+      }
+    }
+  },
+  "model": "openai/gpt-oss-20b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-20b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\groq_openai_gpt_oss_20b_test-30_resultado.md"
+  ],
+  "task_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.",
+  "execution_prompt": "# Investigacion profunda y plan ejecutivo de IA ofimatica\n\nInvestiga el estado actual de herramientas de IA para ofimatica y agentes CLI. Cruza esa investigacion con los datos locales sobre OpenRouter/Gemini y genera una recomendacion ejecutiva.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_openai_gpt_oss_20b\\test-30",
+  "privacy": {
+    "mode": "clear"
+  }
+}

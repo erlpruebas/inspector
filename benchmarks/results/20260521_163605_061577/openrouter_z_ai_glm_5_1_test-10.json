@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_z_ai_glm_5_1",
+  "task_id": "test-10",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-5.1\", \"elapsed_seconds\": 30.781, \"usage\": {\"prompt_tokens\": 2052, \"completion_tokens\": 1339, \"total_tokens\": 3391, \"cost\": 0.0087644, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0087644, \"upstream_inference_prompt_cost\": 0.0028728, \"upstream_inference_completions_cost\": 0.0058916}, \"completion_tokens_details\": {\"reasoning_tokens\": 1129, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-10\\resultado.md"
+  ],
+  "elapsed_seconds": 31.14100000000326,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "z-ai/glm-5.1",
+    "elapsed_seconds": 30.781,
+    "usage": {
+      "prompt_tokens": 2052,
+      "completion_tokens": 1339,
+      "total_tokens": 3391,
+      "cost": 0.0087644,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0087644,
+        "upstream_inference_prompt_cost": 0.0028728,
+        "upstream_inference_completions_cost": 0.0058916
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1129,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "z-ai/glm-5.1",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:z-ai/glm-5.1",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_5_1_test-10_resultado.md"
+  ],
+  "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+  "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-10",
+  "privacy": {
+    "mode": "clear"
+  }
+}

@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+2026-02-03,Cena cliente,comidas,96.2,96.2,ok
+2026-02-14,Tren Valencia,viajes,62.0,62.0,ok
+2026-02-22,Licencia PDF,software,19.9,29.9,importe_discrepante

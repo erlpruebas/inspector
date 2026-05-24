@@ -1,0 +1,25 @@
+{
+  "id": "test-04",
+  "title": "Redactar email de seguimiento a BravoSoft",
+  "difficulty": 1,
+  "level": "L1",
+  "category": "assistant_digital",
+  "skills": [
+    "email_drafting",
+    "tone_control"
+  ],
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "Paula Ferrer",
+    "BravoSoft",
+    "correo corto",
+    "propuesta CRM"
+  ],
+  "response_shape": "email breve o borrador profesional",
+  "prompt": "# Redactar email de seguimiento a BravoSoft\n\nCon `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`, redacta un email breve y amable a Paula Ferrer para seguimiento de la propuesta CRM.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-04/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-04/metadata.json"
+}

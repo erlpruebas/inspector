@@ -1,0 +1,4 @@
+fecha,concepto,categoria,importe_declarado,importe_esperado,estado
+2026-05-01,Vuelo Barcelona,viajes,155.0,155.0,ok
+2026-05-03,Suscripcion IA,software,120.0,120.0,revisar_proveedor
+2026-05-05,Cafe reunion,comidas,18.4,18.4,ok

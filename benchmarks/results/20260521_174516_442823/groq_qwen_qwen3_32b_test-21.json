@@ -1,0 +1,39 @@
+{
+  "engine": "groq_qwen_qwen3_32b",
+  "task_id": "test-21",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.688, \"usage\": {\"queue_time\": 0.088591607, \"prompt_tokens\": 3280, \"prompt_time\": 0.171328252, \"completion_tokens\": 1024, \"completion_time\": 2.287541881, \"total_tokens\": 4304, \"total_time\": 2.458870133}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-21\\resultado.md"
+  ],
+  "elapsed_seconds": 2.875,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "qwen/qwen3-32b",
+    "elapsed_seconds": 2.688,
+    "usage": {
+      "queue_time": 0.088591607,
+      "prompt_tokens": 3280,
+      "prompt_time": 0.171328252,
+      "completion_tokens": 1024,
+      "completion_time": 2.287541881,
+      "total_tokens": 4304,
+      "total_time": 2.458870133
+    }
+  },
+  "model": "qwen/qwen3-32b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:qwen/qwen3-32b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-21_resultado.md"
+  ],
+  "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+  "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-21",
+  "privacy": {
+    "mode": "clear"
+  }
+}

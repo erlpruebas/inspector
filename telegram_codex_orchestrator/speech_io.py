@@ -14,6 +14,12 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+import sys
+if str(REPO_ROOT) not in sys.path:
+    sys.path.append(str(REPO_ROOT))
+
+from benchmarks.token_accounting import record_usage
 from voice_state import VoiceState
 
 
@@ -65,6 +71,17 @@ class SpeechIO:
         text = "".join(str(part.get("text", "")) for part in parts if isinstance(part, dict)).strip()
         if not text:
             raise RuntimeError("Gemini no devolvio transcripcion")
+        record_usage(
+            self.runtime_dir / "token_usage.jsonl",
+            source="telegram_orchestrator",
+            component="speech_io",
+            provider="gemini",
+            model=model,
+            operation="stt",
+            prompt_text="transcribe audio",
+            completion_text=text,
+            metadata={"mime_type": mime_type, "audio_path": str(audio_path)},
+        )
         return text
 
     def transcribe(self, audio_path: Path, mime_type: str, groq_api_key: str, gemini_api_key: str) -> str:
@@ -129,6 +146,17 @@ class SpeechIO:
         text = str(payload.get("text", "")).strip()
         if not text:
             raise RuntimeError("Groq no devolvio transcripcion")
+        record_usage(
+            self.runtime_dir / "token_usage.jsonl",
+            source="telegram_orchestrator",
+            component="speech_io",
+            provider="groq",
+            model=model,
+            operation="stt",
+            prompt_text="transcribe audio",
+            completion_text=text,
+            metadata={"audio_path": str(audio_path)},
+        )
         return text
 
     def synthesize(self, text: str, state: VoiceState) -> SpeechResult:
@@ -190,6 +218,17 @@ class SpeechIO:
         pcm = base64.b64decode(str(inline["data"]))
         output_path = self.tts_dir / f"gemini_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}.wav"
         self._write_pcm_wav(output_path, pcm, sample_rate=24000)
+        record_usage(
+            self.runtime_dir / "token_usage.jsonl",
+            source="telegram_orchestrator",
+            component="speech_io",
+            provider="gemini",
+            model=state.gemini_model,
+            operation="tts",
+            prompt_text=text,
+            completion_text="",
+            metadata={"voice": state.gemini_voice, "audio_path": str(output_path)},
+        )
         return SpeechResult(output_path, "gemini", f"modelo={state.gemini_model}, voz={state.gemini_voice}")
 
     def _synthesize_groq(self, text: str, state: VoiceState) -> SpeechResult:
@@ -223,6 +262,17 @@ class SpeechIO:
             raise RuntimeError(f"Groq TTS HTTP {exc.code}: {detail}") from exc
         output_path = self.tts_dir / f"groq_{datetime.now().strftime('%Y%m%d_%H%M%S_%f')}.wav"
         output_path.write_bytes(audio)
+        record_usage(
+            self.runtime_dir / "token_usage.jsonl",
+            source="telegram_orchestrator",
+            component="speech_io",
+            provider="groq",
+            model=state.groq_model,
+            operation="tts",
+            prompt_text=clean_text,
+            completion_text="",
+            metadata={"voice": state.groq_voice, "audio_path": str(output_path)},
+        )
         return SpeechResult(output_path, "groq", f"modelo={state.groq_model}, voz={state.groq_voice}")
 
     def _synthesize_kokoro(self, text: str, state: VoiceState) -> SpeechResult:

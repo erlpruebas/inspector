@@ -1,0 +1,26 @@
+{
+  "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+  "task_id": "test-21",
+  "returncode": 0,
+  "stdout": "De las notas de voz, la entrada VN-009 indica claramente: \"Buscar alternativa barata a herramienta de encuestas para GreenBox.\" Esto es un requisito específico de buscar una opción económica.\n\n\nBasándome en las fuentes web analizadas, puedo identificar varias alternativas económicas:\n\nDe la fuente 1 (QuestionPro): Google Forms (gratis), Wufoo (desde $15/mes), SurveySparrow (desde $18/mes), Zoho Forms (gratuito con opciones limitadas)\n\nDe la fuente 2 (Contentsquare): Google Forms (gratis), Zoho Survey\n\nDe la fuente 3 (Jotform): Google Forms (gratis), Crowdsignal (antes Polldaddy, desde $15/mes), ProProfs Survey Maker (desde $9.99/mes), Zoho Survey (gratuito con límites)\n\n\n\n\n\n\n\n\n\n\n\n\n\nArchivo `resultado.md` creado con alternativas económicas para GreenBox, incluyendo Google Forms (gratuito), Zoho Survey (gratuito), Crowdsignal ($15/mes) y otras opciones, con referencias a las fuentes consultadas.",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-21\\resultado.md"
+  ],
+  "elapsed_seconds": 122.40699999999197,
+  "timed_out": false,
+  "usage": {},
+  "model": "openrouter/deepseek/deepseek-v3.2",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\opencode_openrouter_deepseek_deepseek_v3_2_test-21_resultado.md"
+  ],
+  "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+  "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\opencode_openrouter_deepseek_deepseek_v3_2\\test-21",
+  "privacy": {
+    "mode": "clear"
+  }
+}

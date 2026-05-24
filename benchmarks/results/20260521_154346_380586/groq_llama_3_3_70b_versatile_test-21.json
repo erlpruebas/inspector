@@ -1,0 +1,39 @@
+{
+  "engine": "groq_llama_3_3_70b_versatile",
+  "task_id": "test-21",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 2.14, \"usage\": {\"queue_time\": 0.130133218, \"prompt_tokens\": 3068, \"prompt_time\": 0.337726544, \"completion_tokens\": 766, \"completion_time\": 1.5195669870000001, \"total_tokens\": 3834, \"total_time\": 1.857293531}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_llama_3_3_70b_versatile\\test-21\\resultado.md"
+  ],
+  "elapsed_seconds": 2.313000000009197,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "elapsed_seconds": 2.14,
+    "usage": {
+      "queue_time": 0.130133218,
+      "prompt_tokens": 3068,
+      "prompt_time": 0.337726544,
+      "completion_tokens": 766,
+      "completion_time": 1.5195669870000001,
+      "total_tokens": 3834,
+      "total_time": 1.857293531
+    }
+  },
+  "model": "llama-3.3-70b-versatile",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.3-70b-versatile",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\groq_llama_3_3_70b_versatile_test-21_resultado.md"
+  ],
+  "task_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.",
+  "execution_prompt": "# Buscar alternativa a herramienta de encuestas\n\nUsa busqueda web y `notas_voz.jsonl` para proponer alternativas economicas a una herramienta de encuestas para GreenBox. Incluye fuentes.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_154346_380586\\work\\groq_llama_3_3_70b_versatile\\test-21",
+  "privacy": {
+    "mode": "clear"
+  }
+}

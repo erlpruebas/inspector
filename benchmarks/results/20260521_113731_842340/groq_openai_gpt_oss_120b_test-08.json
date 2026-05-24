@@ -1,0 +1,22 @@
+{
+  "engine": "groq_openai_gpt_oss_120b",
+  "task_id": "test-08",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Missing API key env var: GROQ_API_KEY\n",
+  "output_files": [],
+  "elapsed_seconds": 0.35899999999674037,
+  "timed_out": false,
+  "usage": {},
+  "model": "openai/gpt-oss-120b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-120b",
+  "copied_outputs": [],
+  "task_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.",
+  "execution_prompt": "# Resumen semanal de tareas pendientes\n\nGenera un resumen semanal de tareas pendientes a partir de `notas_voz.jsonl` y `emails_hilos.md`, priorizando compromisos con fecha o cliente concreto.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_113731_842340\\work\\groq_openai_gpt_oss_120b\\test-08",
+  "privacy": {
+    "mode": "clear"
+  }
+}

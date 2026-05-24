@@ -1,0 +1,42 @@
+{
+  "engine": "groq_openai_gpt_oss_120b",
+  "task_id": "test-17",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 2.375, \"usage\": {\"queue_time\": 0.018243027, \"prompt_tokens\": 840, \"prompt_time\": 0.036776612, \"completion_tokens\": 1024, \"completion_time\": 2.160638109, \"total_tokens\": 1864, \"total_time\": 2.197414721, \"completion_tokens_details\": {\"reasoning_tokens\": 870}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-17\\resultado.md"
+  ],
+  "elapsed_seconds": 2.625,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "elapsed_seconds": 2.375,
+    "usage": {
+      "queue_time": 0.018243027,
+      "prompt_tokens": 840,
+      "prompt_time": 0.036776612,
+      "completion_tokens": 1024,
+      "completion_time": 2.160638109,
+      "total_tokens": 1864,
+      "total_time": 2.197414721,
+      "completion_tokens_details": {
+        "reasoning_tokens": 870
+      }
+    }
+  },
+  "model": "openai/gpt-oss-120b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-120b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_openai_gpt_oss_120b_test-17_resultado.md"
+  ],
+  "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+  "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_openai_gpt_oss_120b\\test-17",
+  "privacy": {
+    "mode": "clear"
+  }
+}

@@ -12,6 +12,7 @@ from engines.engine_factory import create_engine
 from privacy_guard import DEFAULT_STORE_PATH, MiniNanoPrivacyReviewer, apply_privacy_to_workdir
 from task_loader import RESULTS_DIR, TASKS_FILE, BenchmarkTask, load_tasks, prefixed_result_name, prepare_workdir
 from memory_guard import wait_for_memory_budget
+from token_accounting import record_usage, summarize_usage
 
 
 def run_benchmark(
@@ -58,9 +59,27 @@ def run_benchmark(
             result_payload["privacy"] = privacy_result.to_dict() if privacy_result is not None else {"mode": "clear"}
             result_path = run_dir / f"{engine.name}_{task.id}.json"
             result_path.write_text(json.dumps(result_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+            record_usage(
+                run_dir / "token_usage.jsonl",
+                source="benchmark",
+                component=engine.name,
+                provider=str(engine.name).split(":", 1)[0],
+                model=str(getattr(engine, "model", "")),
+                operation="task_run",
+                usage=result.usage,
+                prompt_text=execution_prompt,
+                completion_text=result.stdout,
+                task_id=task.id,
+                run_id=run_id,
+                metadata={"engine_spec": engine.name, "privacy_mode": privacy_mode},
+            )
             summary.append(result_payload)
 
     (run_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    (run_dir / "token_usage_summary.json").write_text(
+        json.dumps(summarize_usage(run_dir / "token_usage.jsonl"), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     return run_dir
 
 

@@ -1,0 +1,21 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260521_113632_476123",
+  "jobs": [
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-01",
+      "at": "2026-05-21T09:37:07.975179+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [],
+  "running": null
+}

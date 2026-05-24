@@ -1,0 +1,39 @@
+{
+  "engine": "groq_qwen_qwen3_32b",
+  "task_id": "test-26",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"qwen/qwen3-32b\", \"elapsed_seconds\": 2.703, \"usage\": {\"queue_time\": 0.089954709, \"prompt_tokens\": 944, \"prompt_time\": 0.05154608, \"completion_tokens\": 1007, \"completion_time\": 2.444473788, \"total_tokens\": 1951, \"total_time\": 2.496019868}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-26\\resultado.md"
+  ],
+  "elapsed_seconds": 2.8910000000032596,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "qwen/qwen3-32b",
+    "elapsed_seconds": 2.703,
+    "usage": {
+      "queue_time": 0.089954709,
+      "prompt_tokens": 944,
+      "prompt_time": 0.05154608,
+      "completion_tokens": 1007,
+      "completion_time": 2.444473788,
+      "total_tokens": 1951,
+      "total_time": 2.496019868
+    }
+  },
+  "model": "qwen/qwen3-32b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:qwen/qwen3-32b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_qwen_qwen3_32b_test-26_resultado.md"
+  ],
+  "task_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.",
+  "execution_prompt": "# Auditoria completa de gastos con recomendaciones\n\nAudita todos los gastos de enero a mayo y genera recomendaciones de control interno para evitar duplicados, recibos faltantes y discrepancias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_qwen_qwen3_32b\\test-26",
+  "privacy": {
+    "mode": "clear"
+  }
+}

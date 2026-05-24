@@ -1,0 +1,3539 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260521_113731_842340",
+  "jobs": [
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-01",
+      "next_run_at": 1779356316.4069102,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-03",
+      "next_run_at": 1779356487.93531,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-05",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-08",
+      "next_run_at": 1779356872.5535896,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-08",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-10",
+      "next_run_at": 1779357397.073465,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-14",
+      "next_run_at": 1779357585.680533,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-17",
+      "next_run_at": 1779357849.0371456,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-17",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-20",
+      "next_run_at": 1779358113.3150866,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-23",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-26",
+      "next_run_at": 1779359261.098404,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-26",
+      "next_run_at": 1779359701.5647075,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-26",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-v4-flash:free",
+      "task_id": "test-30",
+      "next_run_at": 1779359732.3766696,
+      "attempts": 1,
+      "done": false
+    },
+    {
+      "engine": "openrouter:meta-llama/llama-3.3-70b-instruct",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-flash",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-35b-a3b",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:arcee-ai/trinity-large-thinking:free",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:deepseek/deepseek-r1",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:qwen/qwen3.6-plus",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:moonshotai/kimi-k2.6",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:x-ai/grok-4.3",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.4-mini",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "openrouter:openai/gpt-5.5",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:meta-llama/llama-4-scout-17b-16e-instruct",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.3-70b-versatile",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.4-mini",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "codex:gpt-5.5",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "gemini:gemini-2.5-flash",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:google/gemini-2.5-flash",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v4-flash",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-30",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": false
+    }
+  ],
+  "completed": [
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-01",
+      "at": "2026-05-21T09:37:54.234781+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-01",
+      "at": "2026-05-21T09:38:48.886322+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-01",
+      "at": "2026-05-21T09:39:17.625424+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-01",
+      "at": "2026-05-21T09:39:36.313917+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-01",
+      "at": "2026-05-21T09:40:07.160455+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-03",
+      "at": "2026-05-21T09:40:50.964448+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-03",
+      "at": "2026-05-21T09:42:01.172943+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-03",
+      "at": "2026-05-21T09:42:37.054325+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-03",
+      "at": "2026-05-21T09:43:11.629366+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-05",
+      "at": "2026-05-21T09:44:11.703494+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-05",
+      "at": "2026-05-21T09:44:32.613723+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-05",
+      "at": "2026-05-21T09:45:31.497477+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-05",
+      "at": "2026-05-21T09:45:47.330647+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-05",
+      "at": "2026-05-21T09:46:06.996163+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-05",
+      "at": "2026-05-21T09:46:30.743082+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-08",
+      "at": "2026-05-21T09:47:14.259377+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-08",
+      "at": "2026-05-21T09:48:39.934092+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-08",
+      "at": "2026-05-21T09:49:16.793045+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-08",
+      "at": "2026-05-21T09:54:43.112387+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-08",
+      "at": "2026-05-21T09:55:15.390967+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-10",
+      "at": "2026-05-21T09:56:05.325403+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-10",
+      "at": "2026-05-21T09:57:04.208946+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-10",
+      "at": "2026-05-21T09:57:36.236032+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-10",
+      "at": "2026-05-21T09:57:56.801809+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-10",
+      "at": "2026-05-21T09:58:24.006366+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-14",
+      "at": "2026-05-21T09:59:07.159689+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-14",
+      "at": "2026-05-21T10:00:50.993144+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-14",
+      "at": "2026-05-21T10:01:38.217679+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-14",
+      "at": "2026-05-21T10:02:06.762706+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-14",
+      "at": "2026-05-21T10:02:42.941033+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-17",
+      "at": "2026-05-21T10:03:32.725873+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-17",
+      "at": "2026-05-21T10:04:39.966938+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-17",
+      "at": "2026-05-21T10:05:41.227953+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-17",
+      "at": "2026-05-21T10:06:18.615044+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-17",
+      "at": "2026-05-21T10:07:09.743351+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-20",
+      "at": "2026-05-21T10:07:52.103465+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-20",
+      "at": "2026-05-21T10:09:07.259305+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-20",
+      "at": "2026-05-21T10:09:38.105827+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-20",
+      "at": "2026-05-21T10:10:05.130890+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-20",
+      "at": "2026-05-21T10:10:34.915650+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-21",
+      "at": "2026-05-21T10:11:31.345980+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-21",
+      "at": "2026-05-21T10:12:14.480444+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-21",
+      "at": "2026-05-21T10:16:17.954461+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-21",
+      "at": "2026-05-21T10:18:33.727677+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-21",
+      "at": "2026-05-21T10:18:56.886840+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-21",
+      "at": "2026-05-21T10:19:23.972212+00:00"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-23",
+      "at": "2026-05-21T10:20:21.524650+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-23",
+      "at": "2026-05-21T10:20:52.063697+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-23",
+      "at": "2026-05-21T10:23:49.300387+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-23",
+      "at": "2026-05-21T10:25:11.240545+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-23",
+      "at": "2026-05-21T10:25:37.166350+00:00"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-23",
+      "at": "2026-05-21T10:26:14.812409+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-26",
+      "at": "2026-05-21T10:27:07.740399+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-26",
+      "at": "2026-05-21T10:29:08.810548+00:00"
+    },
+    {
+      "job": "codex:gpt-5.5::test-26",
+      "at": "2026-05-21T10:32:19.685284+00:00"
+    },
+    {
+      "job": "gemini:gemini-2.5-flash::test-26",
+      "at": "2026-05-21T10:33:00.410502+00:00"
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking:free::test-30",
+      "at": "2026-05-21T10:35:15.702921+00:00"
+    },
+    {
+      "job": "codex:gpt-5.4-mini::test-30",
+      "at": "2026-05-21T10:39:23.732553+00:00"
+    }
+  ],
+  "deferred": [
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-01",
+      "at": "2026-05-21T09:37:36.406910+00:00",
+      "next_run_at": "2026-05-21T09:38:36.406910+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-03",
+      "at": "2026-05-21T09:40:27.935309+00:00",
+      "next_run_at": "2026-05-21T09:41:27.935310+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-08",
+      "at": "2026-05-21T09:46:52.553589+00:00",
+      "next_run_at": "2026-05-21T09:47:52.553590+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-10",
+      "at": "2026-05-21T09:55:37.073465+00:00",
+      "next_run_at": "2026-05-21T09:56:37.073465+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-14",
+      "at": "2026-05-21T09:58:45.680533+00:00",
+      "next_run_at": "2026-05-21T09:59:45.680533+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-17",
+      "at": "2026-05-21T10:03:09.037145+00:00",
+      "next_run_at": "2026-05-21T10:04:09.037146+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-20",
+      "at": "2026-05-21T10:07:33.315086+00:00",
+      "next_run_at": "2026-05-21T10:08:33.315087+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-26",
+      "at": "2026-05-21T10:26:41.098403+00:00",
+      "next_run_at": "2026-05-21T10:27:41.098404+00:00",
+      "reason": "429"
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-26",
+      "at": "2026-05-21T10:34:01.564707+00:00",
+      "next_run_at": "2026-05-21T10:35:01.564708+00:00",
+      "reason": "503"
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash:free::test-30",
+      "at": "2026-05-21T10:34:32.376669+00:00",
+      "next_run_at": "2026-05-21T10:35:32.376670+00:00",
+      "reason": "429"
+    }
+  ],
+  "failed": [
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-01",
+      "at": "2026-05-21T09:37:33.186252+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-01",
+      "at": "2026-05-21T09:37:39.133348+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-01",
+      "at": "2026-05-21T09:37:41.709879+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-01",
+      "at": "2026-05-21T09:37:44.446829+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-01",
+      "at": "2026-05-21T09:37:46.958468+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-01",
+      "at": "2026-05-21T09:37:56.816704+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-01",
+      "at": "2026-05-21T09:37:59.384295+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-01",
+      "at": "2026-05-21T09:38:02.029152+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-01",
+      "at": "2026-05-21T09:38:04.657362+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-01",
+      "at": "2026-05-21T09:38:07.310445+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-01",
+      "at": "2026-05-21T09:38:09.979333+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-01",
+      "at": "2026-05-21T09:38:12.324163+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-01",
+      "at": "2026-05-21T09:38:14.737413+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-01",
+      "at": "2026-05-21T09:38:17.146228+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-01",
+      "at": "2026-05-21T09:38:19.732257+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-01",
+      "at": "2026-05-21T09:38:22.031287+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-01",
+      "at": "2026-05-21T09:38:24.596252+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-01",
+      "at": "2026-05-21T09:40:15.741212+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-01",
+      "at": "2026-05-21T09:40:22.637774+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-03",
+      "at": "2026-05-21T09:40:25.048004+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-03",
+      "at": "2026-05-21T09:40:30.473113+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-03",
+      "at": "2026-05-21T09:40:32.879345+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-03",
+      "at": "2026-05-21T09:40:35.274978+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-03",
+      "at": "2026-05-21T09:40:37.745523+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-03",
+      "at": "2026-05-21T09:40:53.430301+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-03",
+      "at": "2026-05-21T09:40:55.933644+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-03",
+      "at": "2026-05-21T09:40:58.431546+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-03",
+      "at": "2026-05-21T09:41:00.841825+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-03",
+      "at": "2026-05-21T09:41:03.321583+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-03",
+      "at": "2026-05-21T09:41:05.725406+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-03",
+      "at": "2026-05-21T09:41:08.047814+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-03",
+      "at": "2026-05-21T09:41:10.304665+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-03",
+      "at": "2026-05-21T09:41:12.557014+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-03",
+      "at": "2026-05-21T09:41:14.841471+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-03",
+      "at": "2026-05-21T09:41:17.103137+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-03",
+      "at": "2026-05-21T09:41:19.326558+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:google/gemini-2.5-flash::test-03",
+      "at": "2026-05-21T09:43:46.302655+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-03",
+      "at": "2026-05-21T09:43:55.955425+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-03",
+      "at": "2026-05-21T09:44:02.816656+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-05",
+      "at": "2026-05-21T09:44:05.257037+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-05",
+      "at": "2026-05-21T09:44:14.204737+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-05",
+      "at": "2026-05-21T09:44:16.609889+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-05",
+      "at": "2026-05-21T09:44:19.077158+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-05",
+      "at": "2026-05-21T09:44:21.482864+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-05",
+      "at": "2026-05-21T09:44:35.061113+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-05",
+      "at": "2026-05-21T09:44:37.666705+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-05",
+      "at": "2026-05-21T09:44:40.125199+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-05",
+      "at": "2026-05-21T09:44:42.582211+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-05",
+      "at": "2026-05-21T09:44:45.022984+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-05",
+      "at": "2026-05-21T09:44:47.415284+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-05",
+      "at": "2026-05-21T09:44:49.673124+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-05",
+      "at": "2026-05-21T09:44:51.944354+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-05",
+      "at": "2026-05-21T09:44:54.235415+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-05",
+      "at": "2026-05-21T09:44:56.490330+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-05",
+      "at": "2026-05-21T09:44:58.728880+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-05",
+      "at": "2026-05-21T09:45:00.998550+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-05",
+      "at": "2026-05-21T09:46:39.689085+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-05",
+      "at": "2026-05-21T09:46:46.988004+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-08",
+      "at": "2026-05-21T09:46:49.506096+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-08",
+      "at": "2026-05-21T09:46:54.965469+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-08",
+      "at": "2026-05-21T09:46:57.427510+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-08",
+      "at": "2026-05-21T09:46:59.926136+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-08",
+      "at": "2026-05-21T09:47:02.398551+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-08",
+      "at": "2026-05-21T09:47:16.790929+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-08",
+      "at": "2026-05-21T09:47:19.202849+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-08",
+      "at": "2026-05-21T09:47:22.048692+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-08",
+      "at": "2026-05-21T09:47:24.486067+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-08",
+      "at": "2026-05-21T09:47:26.876901+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-08",
+      "at": "2026-05-21T09:47:29.440167+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-08",
+      "at": "2026-05-21T09:47:31.739629+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-08",
+      "at": "2026-05-21T09:47:33.954934+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-08",
+      "at": "2026-05-21T09:47:36.320587+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-08",
+      "at": "2026-05-21T09:47:38.539893+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-08",
+      "at": "2026-05-21T09:47:40.770754+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-08",
+      "at": "2026-05-21T09:47:43.014221+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-08",
+      "at": "2026-05-21T09:55:24.475663+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-08",
+      "at": "2026-05-21T09:55:31.573122+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-10",
+      "at": "2026-05-21T09:55:34.062268+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-10",
+      "at": "2026-05-21T09:55:39.486534+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-10",
+      "at": "2026-05-21T09:55:41.904090+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-10",
+      "at": "2026-05-21T09:55:44.474547+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-10",
+      "at": "2026-05-21T09:55:46.877718+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-10",
+      "at": "2026-05-21T09:56:07.902351+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-10",
+      "at": "2026-05-21T09:56:10.479464+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-10",
+      "at": "2026-05-21T09:56:13.000008+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-10",
+      "at": "2026-05-21T09:56:15.430685+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-10",
+      "at": "2026-05-21T09:56:18.008251+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-10",
+      "at": "2026-05-21T09:56:20.447197+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-10",
+      "at": "2026-05-21T09:56:22.732372+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-10",
+      "at": "2026-05-21T09:56:24.983943+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-10",
+      "at": "2026-05-21T09:56:27.170468+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-10",
+      "at": "2026-05-21T09:56:29.454839+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-10",
+      "at": "2026-05-21T09:56:31.727062+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-10",
+      "at": "2026-05-21T09:56:33.969236+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-10",
+      "at": "2026-05-21T09:58:32.926101+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-10",
+      "at": "2026-05-21T09:58:40.014222+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-14",
+      "at": "2026-05-21T09:58:42.773716+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-14",
+      "at": "2026-05-21T09:58:48.291384+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-14",
+      "at": "2026-05-21T09:58:50.678491+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-14",
+      "at": "2026-05-21T09:58:53.150870+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-14",
+      "at": "2026-05-21T09:58:55.587737+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-14",
+      "at": "2026-05-21T09:59:09.647073+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-14",
+      "at": "2026-05-21T09:59:12.163179+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-14",
+      "at": "2026-05-21T09:59:14.629014+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-14",
+      "at": "2026-05-21T09:59:17.087871+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-14",
+      "at": "2026-05-21T09:59:19.505460+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-14",
+      "at": "2026-05-21T09:59:21.963326+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-14",
+      "at": "2026-05-21T09:59:24.344405+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-14",
+      "at": "2026-05-21T09:59:26.786369+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-14",
+      "at": "2026-05-21T09:59:29.052424+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-14",
+      "at": "2026-05-21T09:59:31.387171+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-14",
+      "at": "2026-05-21T09:59:33.662970+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-14",
+      "at": "2026-05-21T09:59:35.975607+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-14",
+      "at": "2026-05-21T10:02:54.607854+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-14",
+      "at": "2026-05-21T10:03:02.767451+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-17",
+      "at": "2026-05-21T10:03:05.532090+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-17",
+      "at": "2026-05-21T10:03:11.627403+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-17",
+      "at": "2026-05-21T10:03:14.170259+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-17",
+      "at": "2026-05-21T10:03:16.656140+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-17",
+      "at": "2026-05-21T10:03:19.183617+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-17",
+      "at": "2026-05-21T10:03:35.485357+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-17",
+      "at": "2026-05-21T10:03:37.818931+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-17",
+      "at": "2026-05-21T10:03:40.259888+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-17",
+      "at": "2026-05-21T10:03:42.689301+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-17",
+      "at": "2026-05-21T10:03:45.109832+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-17",
+      "at": "2026-05-21T10:03:47.551023+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-17",
+      "at": "2026-05-21T10:03:49.770244+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-17",
+      "at": "2026-05-21T10:03:52.050326+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-17",
+      "at": "2026-05-21T10:03:54.424886+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-17",
+      "at": "2026-05-21T10:03:56.723926+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-17",
+      "at": "2026-05-21T10:03:58.998318+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-17",
+      "at": "2026-05-21T10:04:01.276381+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-17",
+      "at": "2026-05-21T10:07:19.651868+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-17",
+      "at": "2026-05-21T10:07:27.773182+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-20",
+      "at": "2026-05-21T10:07:30.299888+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-20",
+      "at": "2026-05-21T10:07:35.855989+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-20",
+      "at": "2026-05-21T10:07:38.307710+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-20",
+      "at": "2026-05-21T10:07:40.806649+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-20",
+      "at": "2026-05-21T10:07:43.274077+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-20",
+      "at": "2026-05-21T10:07:54.516988+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-20",
+      "at": "2026-05-21T10:07:56.837027+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-20",
+      "at": "2026-05-21T10:07:59.355436+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-20",
+      "at": "2026-05-21T10:08:01.809385+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-20",
+      "at": "2026-05-21T10:08:04.320904+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-20",
+      "at": "2026-05-21T10:08:06.778345+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-20",
+      "at": "2026-05-21T10:08:09.052641+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-20",
+      "at": "2026-05-21T10:08:11.416230+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-20",
+      "at": "2026-05-21T10:08:13.695406+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-20",
+      "at": "2026-05-21T10:08:15.987064+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-20",
+      "at": "2026-05-21T10:08:18.304176+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-20",
+      "at": "2026-05-21T10:08:20.603093+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-20",
+      "at": "2026-05-21T10:10:46.022326+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-20",
+      "at": "2026-05-21T10:10:55.131747+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-21",
+      "at": "2026-05-21T10:11:04.004162+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-21",
+      "at": "2026-05-21T10:11:38.057345+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-21",
+      "at": "2026-05-21T10:11:45.127695+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-21",
+      "at": "2026-05-21T10:11:51.983131+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-21",
+      "at": "2026-05-21T10:11:58.165244+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-21",
+      "at": "2026-05-21T10:12:21.604174+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-21",
+      "at": "2026-05-21T10:12:29.227410+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-21",
+      "at": "2026-05-21T10:12:36.041652+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-21",
+      "at": "2026-05-21T10:12:42.907203+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-21",
+      "at": "2026-05-21T10:12:49.802729+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-21",
+      "at": "2026-05-21T10:12:56.543163+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-21",
+      "at": "2026-05-21T10:13:02.347425+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-21",
+      "at": "2026-05-21T10:13:07.872379+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-21",
+      "at": "2026-05-21T10:13:13.983754+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-21",
+      "at": "2026-05-21T10:13:20.886453+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-21",
+      "at": "2026-05-21T10:13:26.961670+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-21",
+      "at": "2026-05-21T10:13:32.969367+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-21",
+      "at": "2026-05-21T10:19:36.173671+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-21",
+      "at": "2026-05-21T10:19:48.366704+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-23",
+      "at": "2026-05-21T10:19:56.401141+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-23",
+      "at": "2026-05-21T10:20:26.053914+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-23",
+      "at": "2026-05-21T10:20:30.279135+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-23",
+      "at": "2026-05-21T10:20:34.812305+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-23",
+      "at": "2026-05-21T10:20:39.082476+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-23",
+      "at": "2026-05-21T10:20:56.381731+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-23",
+      "at": "2026-05-21T10:21:00.764036+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-23",
+      "at": "2026-05-21T10:21:05.222935+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-23",
+      "at": "2026-05-21T10:21:09.938482+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-23",
+      "at": "2026-05-21T10:21:14.294952+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-23",
+      "at": "2026-05-21T10:21:18.684358+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-23",
+      "at": "2026-05-21T10:21:22.869573+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-23",
+      "at": "2026-05-21T10:21:26.803599+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-23",
+      "at": "2026-05-21T10:21:30.771792+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-23",
+      "at": "2026-05-21T10:21:34.821778+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-23",
+      "at": "2026-05-21T10:21:38.922676+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-23",
+      "at": "2026-05-21T10:21:43.133495+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-23",
+      "at": "2026-05-21T10:26:25.373676+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-23",
+      "at": "2026-05-21T10:26:35.373424+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-26",
+      "at": "2026-05-21T10:26:37.838384+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-26",
+      "at": "2026-05-21T10:26:43.732716+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-26",
+      "at": "2026-05-21T10:26:46.555844+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-26",
+      "at": "2026-05-21T10:26:49.131432+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-26",
+      "at": "2026-05-21T10:26:51.800626+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-26",
+      "at": "2026-05-21T10:27:10.249397+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-26",
+      "at": "2026-05-21T10:27:12.747095+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-26",
+      "at": "2026-05-21T10:27:15.328715+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-26",
+      "at": "2026-05-21T10:27:17.809518+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-26",
+      "at": "2026-05-21T10:27:20.330772+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-26",
+      "at": "2026-05-21T10:27:22.806385+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-26",
+      "at": "2026-05-21T10:27:25.118391+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-26",
+      "at": "2026-05-21T10:27:27.453098+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-26",
+      "at": "2026-05-21T10:27:29.712935+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-26",
+      "at": "2026-05-21T10:27:31.989794+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-26",
+      "at": "2026-05-21T10:27:34.262182+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-26",
+      "at": "2026-05-21T10:27:36.522544+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v4-flash::test-26",
+      "at": "2026-05-21T10:34:09.134733+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-26",
+      "at": "2026-05-21T10:34:16.566777+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-v4-flash::test-30",
+      "at": "2026-05-21T10:34:25.726034+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:meta-llama/llama-3.3-70b-instruct::test-30",
+      "at": "2026-05-21T10:34:38.718381+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-flash::test-30",
+      "at": "2026-05-21T10:34:44.921029+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-35b-a3b::test-30",
+      "at": "2026-05-21T10:34:51.134774+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:arcee-ai/trinity-large-thinking::test-30",
+      "at": "2026-05-21T10:34:57.343412+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:deepseek/deepseek-r1::test-30",
+      "at": "2026-05-21T10:35:22.255279+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:qwen/qwen3.6-plus::test-30",
+      "at": "2026-05-21T10:35:28.695394+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:moonshotai/kimi-k2.6::test-30",
+      "at": "2026-05-21T10:35:36.164716+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:x-ai/grok-4.3::test-30",
+      "at": "2026-05-21T10:35:42.074396+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.4-mini::test-30",
+      "at": "2026-05-21T10:35:50.650546+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "openrouter:openai/gpt-5.5::test-30",
+      "at": "2026-05-21T10:35:56.854725+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-30",
+      "at": "2026-05-21T10:36:03.984776+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-30",
+      "at": "2026-05-21T10:36:09.797294+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-30",
+      "at": "2026-05-21T10:36:15.955979+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-30",
+      "at": "2026-05-21T10:36:22.938894+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:meta-llama/llama-4-scout-17b-16e-instruct::test-30",
+      "at": "2026-05-21T10:36:28.984507+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "groq:llama-3.3-70b-versatile::test-30",
+      "at": "2026-05-21T10:36:35.464704+00:00",
+      "returncode": 1
+    }
+  ],
+  "running": null
+}

@@ -1,0 +1,65 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260521_155000_771851",
+  "jobs": [
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-03",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-120b",
+      "task_id": "test-10",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:qwen/qwen3-32b",
+      "task_id": "test-14",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:openai/gpt-oss-20b",
+      "task_id": "test-20",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "groq:llama-3.1-8b-instant",
+      "task_id": "test-21",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "groq:qwen/qwen3-32b::test-03",
+      "at": "2026-05-21T13:50:03.868238+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-120b::test-10",
+      "at": "2026-05-21T13:50:09.412549+00:00"
+    },
+    {
+      "job": "groq:qwen/qwen3-32b::test-14",
+      "at": "2026-05-21T13:50:13.667106+00:00"
+    },
+    {
+      "job": "groq:openai/gpt-oss-20b::test-20",
+      "at": "2026-05-21T13:50:17.691244+00:00"
+    },
+    {
+      "job": "groq:llama-3.1-8b-instant::test-21",
+      "at": "2026-05-21T13:50:25.764182+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [],
+  "running": null
+}

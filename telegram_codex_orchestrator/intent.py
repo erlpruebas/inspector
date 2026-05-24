@@ -7,8 +7,16 @@ import urllib.request
 from dataclasses import dataclass, field
 from typing import Any
 
+from pathlib import Path
+import sys
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.append(str(REPO_ROOT))
+
 from alarms import parse_alarm_request
 from config import Settings
+from benchmarks.token_accounting import record_usage
 
 
 ACTION_HELP = "help"
@@ -182,6 +190,22 @@ class IntentInterpreter:
                 payload = json.loads(response.read().decode("utf-8", errors="replace"))
         except Exception:
             return Intent(ACTION_UNKNOWN, {"text": text}, source="google_error", confidence=0.0)
+
+        try:
+            response_text = json.dumps(payload, ensure_ascii=False)
+            record_usage(
+                Path(self.settings.memory_file).with_name("token_usage.jsonl"),
+                source="telegram_orchestrator",
+                component="intent",
+                provider="gemini",
+                model=self.settings.google_model,
+                operation="intent",
+                prompt_text=prompt,
+                completion_text=response_text,
+                metadata={"input_text": text},
+            )
+        except Exception:
+            pass
 
         parsed = _extract_google_json(payload)
         action = str(parsed.get("action", ACTION_UNKNOWN)).strip()

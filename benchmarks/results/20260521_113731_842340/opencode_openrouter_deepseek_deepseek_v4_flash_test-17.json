@@ -1,0 +1,22 @@
+{
+  "engine": "opencode_openrouter_deepseek_deepseek_v4_flash",
+  "task_id": "test-17",
+  "returncode": 1,
+  "stdout": "{\"type\":\"error\",\"timestamp\":1779358039064,\"sessionID\":\"ses_1b5ff0dddffe6jEh5TfLlte7R5\",\"error\":{\"name\":\"APIError\",\"data\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 32000 tokens, but can only afford 299. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\",\"statusCode\":402,\"isRetryable\":false,\"responseHeaders\":{\"access-control-allow-origin\":\"*\",\"access-control-expose-headers\":\"X-Generation-Id,cf-ray\",\"cf-ray\":\"9ff2c6009b1bec95-MAD\",\"connection\":\"keep-alive\",\"content-type\":\"application/json\",\"date\":\"Thu, 21 May 2026 10:07:19 GMT\",\"permissions-policy\":\"payment=(self \\\"https://checkout.stripe.com\\\" \\\"https://connect-js.stripe.com\\\" \\\"https://js.stripe.com\\\" \\\"https://*.js.stripe.com\\\" \\\"https://hooks.stripe.com\\\")\",\"referrer-policy\":\"no-referrer, strict-origin-when-cross-origin\",\"server\":\"cloudflare\",\"transfer-encoding\":\"chunked\",\"x-content-type-options\":\"nosniff\"},\"responseBody\":\"{\\\"error\\\":{\\\"message\\\":\\\"This request requires more credits, or fewer max_tokens. You requested up to 32000 tokens, but can only afford 299. To increase, visit https://openrouter.ai/settings/credits and upgrade to a paid account\\\",\\\"code\\\":402,\\\"metadata\\\":{\\\"provider_name\\\":null}},\\\"user_id\\\":\\\"user_39kmbBz5se6cCcG2oBweWgOyvQH\\\"}\",\"metadata\":{\"url\":\"https://openrouter.ai/api/v1/chat/completions\"}}}}\n",
+  "stderr": "OpenCode finished without creating expected output.",
+  "output_files": [],
+  "elapsed_seconds": 7.875,
+  "timed_out": false,
+  "usage": {},
+  "model": "openrouter/deepseek/deepseek-v4-flash",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "opencode:openrouter/deepseek/deepseek-v4-flash",
+  "copied_outputs": [],
+  "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+  "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_113731_842340\\work\\opencode_openrouter_deepseek_deepseek_v4_flash\\test-17",
+  "privacy": {
+    "mode": "clear"
+  }
+}

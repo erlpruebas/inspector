@@ -11,6 +11,7 @@ from typing import Any
 
 from env_utils import google_api_key, load_env_files
 from task_loader import RESULTS_DIR, load_tasks
+from token_accounting import record_usage
 
 
 def main() -> int:
@@ -44,7 +45,7 @@ def build_grades(
 
     tasks = {task.id: task for task in load_tasks(tasks_file)}
     rows = json.loads(summary_path.read_text(encoding="utf-8"))
-    api_key = google_api_key()
+    api_key = judge_api_key(model)
     use_judge = bool(api_key) and not heuristic_only
 
     grades: list[dict[str, Any]] = []
@@ -71,7 +72,7 @@ def build_grades(
         }
         if use_judge and task and answer.strip() and row.get("returncode") == 0 and not row.get("timed_out"):
             try:
-                judged = judge_single(model, api_key or "", task.prompt, expected_keys, answer)
+                judged = judge_single(model, api_key or "", task.prompt, expected_keys, answer, usage_log_path=run_dir / "token_usage.jsonl", task_id=task_id, engine=engine)
             except Exception as exc:
                 judged = {}
                 grade["judge_error"] = f"{type(exc).__name__}: {exc}"
@@ -161,7 +162,25 @@ def heuristic_comment(expected_keys: list[str], missing: list[str], row: dict[st
     return "Faltan claves esperadas: " + ", ".join(missing)
 
 
-def judge_single(model: str, api_key: str, task_prompt: str, expected_keys: list[str], answer: str) -> dict[str, Any]:
+def judge_api_key(model: str) -> str:
+    if model.startswith("openrouter:"):
+        return os.getenv("OPENROUTER_API_KEY", "").strip()
+    if model.startswith("openai:"):
+        return os.getenv("OPENAI_API_KEY", "").strip()
+    return google_api_key()
+
+
+def judge_single(
+    model: str,
+    api_key: str,
+    task_prompt: str,
+    expected_keys: list[str],
+    answer: str,
+    *,
+    usage_log_path: Path | None = None,
+    task_id: str = "",
+    engine: str = "",
+) -> dict[str, Any]:
     prompt = f"""
 Eres un juez técnico de una arena de IA.
 Evalúa una respuesta frente a la tarea original.
@@ -182,12 +201,85 @@ Claves esperadas:
 Respuesta evaluada:
 {answer[:12000]}
 """.strip()
+    if model.startswith("openrouter:") or model.startswith("openai:"):
+        payload = call_openai_compatible_judge(model, api_key, prompt)
+        text = extract_openai_content(payload)
+        if usage_log_path is not None:
+            provider, model_name = model.split(":", 1)
+            record_usage(
+                usage_log_path,
+                source="benchmark_judge",
+                component="judge",
+                provider=provider,
+                model=model_name,
+                operation="judge",
+                usage=payload,
+                prompt_text=prompt,
+                completion_text=text,
+                task_id=task_id,
+                metadata={"engine": engine, "judge_model": model},
+            )
+        parsed = parse_json_object(text)
+        if not parsed:
+            return {}
+        return normalize_grade(parsed)
     payload = call_gemini(model, api_key, prompt)
     text = extract_text(payload)
+    if usage_log_path is not None:
+        record_usage(
+            usage_log_path,
+            source="benchmark_judge",
+            component="judge",
+            provider="gemini",
+            model=model,
+            operation="judge",
+            usage=payload,
+            prompt_text=prompt,
+            completion_text=text,
+            task_id=task_id,
+            metadata={"engine": engine, "judge_model": model},
+        )
     parsed = parse_json_object(text)
     if not parsed:
         return {}
     return normalize_grade(parsed)
+
+
+def call_openai_compatible_judge(model: str, api_key: str, prompt: str) -> dict[str, Any]:
+    provider, model_name = model.split(":", 1)
+    if provider == "openrouter":
+        url = "https://openrouter.ai/api/v1/chat/completions"
+    elif provider == "openai":
+        url = "https://api.openai.com/v1/chat/completions"
+    else:
+        raise ValueError(f"Unsupported judge provider: {provider}")
+    body = json.dumps(
+        {
+            "model": model_name,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0,
+            "response_format": {"type": "json_object"},
+        },
+        ensure_ascii=False,
+    ).encode("utf-8")
+    headers = {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": f"Bearer {api_key}",
+        "HTTP-Referer": "http://localhost/ai-arena",
+        "X-Title": "AI Arena Judge",
+    }
+    request = urllib.request.Request(url, data=body, method="POST", headers=headers)
+    with urllib.request.urlopen(request, timeout=180) as response:
+        return json.loads(response.read().decode("utf-8", errors="replace"))
+
+
+def extract_openai_content(payload: dict[str, Any]) -> str:
+    choices = payload.get("choices") or []
+    if not choices:
+        return ""
+    message = choices[0].get("message") or {}
+    return str(message.get("content", "")).strip()
 
 
 def call_gemini(model: str, api_key: str, prompt: str) -> dict[str, Any]:

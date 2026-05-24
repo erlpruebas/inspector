@@ -1,0 +1,39 @@
+{
+  "engine": "groq_groq_compound_mini",
+  "task_id": "test-01",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"groq/compound-mini\", \"elapsed_seconds\": 1.609, \"usage\": {\"queue_time\": 0.065594, \"prompt_tokens\": 4144, \"prompt_time\": 0.213086, \"completion_tokens\": 515, \"completion_time\": 1.127353, \"total_tokens\": 4659, \"total_time\": 1.34044}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\groq_groq_compound_mini\\test-01\\resultado.md"
+  ],
+  "elapsed_seconds": 1.9689999999973224,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "groq/compound-mini",
+    "elapsed_seconds": 1.609,
+    "usage": {
+      "queue_time": 0.065594,
+      "prompt_tokens": 4144,
+      "prompt_time": 0.213086,
+      "completion_tokens": 515,
+      "completion_time": 1.127353,
+      "total_tokens": 4659,
+      "total_time": 1.34044
+    }
+  },
+  "model": "groq/compound-mini",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:groq/compound-mini",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\groq_groq_compound_mini_test-01_resultado.md"
+  ],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\groq_groq_compound_mini\\test-01",
+  "privacy": {
+    "mode": "clear"
+  }
+}

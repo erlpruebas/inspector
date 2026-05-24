@@ -1,0 +1,22 @@
+{
+  "engine": "openrouter_qwen_qwen3_5_flash_02_23",
+  "task_id": "test-14",
+  "returncode": 4294967295,
+  "stdout": "",
+  "stderr": "",
+  "output_files": [],
+  "elapsed_seconds": 476.1570000000065,
+  "timed_out": false,
+  "usage": {},
+  "model": "qwen/qwen3.5-flash-02-23",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:qwen/qwen3.5-flash-02-23",
+  "copied_outputs": [],
+  "task_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.",
+  "execution_prompt": "# Crear calendario ICS de cuatro compromisos\n\nA partir de `notas_voz.jsonl` y `emails_hilos.md`, crea el contenido de un archivo ICS con cuatro compromisos claros. Si falta algun dato, indicalo en descripcion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-14",
+  "privacy": {
+    "mode": "clear"
+  }
+}

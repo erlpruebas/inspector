@@ -1,0 +1,88 @@
+Mini Nano API Chat Portable
+===========================
+
+Este ejecutable sirve para probar desde otro ordenador si tu Mini Nano expuesto por Cloudflare funciona como API compatible con OpenAI.
+
+Archivo principal:
+
+  MiniNanoApiChat.exe
+
+
+COMO USARLO EN OTRO ORDENADOR
+-----------------------------
+
+1. En el ordenador servidor, arranca primero:
+
+   D:\mininano\server\Tunnel.bat
+
+2. Copia la URL nueva que aparezca en la ventana de Cloudflare.
+   Tiene forma parecida a:
+
+   https://algo-algo-algo.trycloudflare.com
+
+3. En el otro ordenador, abre:
+
+   MiniNanoApiChat.exe
+
+4. En Base URL pega la direccion con /v1 al final:
+
+   https://algo-algo-algo.trycloudflare.com/v1
+
+   Si pegas /chat o solo el .com, la app intentara corregirlo automaticamente.
+
+5. Usa estos datos:
+
+   Model:   gemini-nano-local
+   API Key: local
+
+6. Pulsa "Probar API".
+
+   Si todo esta bien debe decir:
+
+   API OK. Modelos: gemini-nano-local. Estado: bridge conectado.
+
+   Esta version intenta una segunda ruta si el DNS de Windows no resuelve
+   trycloudflare.com: consulta DNS externo y conecta manteniendo el hostname
+   correcto. Por eso puede funcionar aunque el navegador del otro ordenador
+   diga que no resuelve la pagina.
+
+7. Escribe un mensaje abajo y pulsa "Enviar".
+
+
+IMPORTANTE
+----------
+
+No uses esta direccion en otro ordenador:
+
+  http://127.0.0.1:8788/v1
+
+127.0.0.1 siempre significa "este mismo ordenador". En otro ordenador apuntaria al otro ordenador, no al servidor Mini Nano.
+
+Para otro ordenador o movil debes usar siempre:
+
+  https://URL-ACTUAL.trycloudflare.com/v1
+
+
+ERRORES TIPICOS
+---------------
+
+DNS no resuelve esa URL:
+
+  El otro ordenador no puede resolver el nombre trycloudflare.com, la URL esta mal copiada,
+  o tambien esta bloqueada la consulta DNS externa que intenta la app.
+
+Cloudflare 530:
+
+  La URL publica esta cerrada o es antigua. Reinicia Tunnel.bat y copia la nueva URL.
+
+bridge no conectado:
+
+  El servidor esta vivo, pero en el ordenador servidor falta la pestana bridge de Chrome. Deja abierta la pestana que abre Tunnel.bat.
+
+No abre ni /chat ni /v1 desde otro ordenador:
+
+  Prueba primero una direccion de comprobacion:
+
+  https://URL-ACTUAL.trycloudflare.com/health
+
+  Si /health no abre, el problema esta en Cloudflare/tunel/red, no en el cliente OpenAI-compatible.

@@ -1,0 +1,37 @@
+{
+  "commands": {
+    "codex": {
+      "status": "found",
+      "path": "c:\\Users\\erlqu\\.vscode\\extensions\\openai.chatgpt-26.513.21555-win32-x64\\bin\\windows-x86_64\\codex.EXE",
+      "version": "codex-cli 0.131.0-alpha.9"
+    },
+    "gemini": {
+      "status": "found",
+      "path": "C:\\Users\\erlqu\\AppData\\Roaming\\npm\\gemini.cmd",
+      "version": "0.42.0"
+    },
+    "opencode": {
+      "status": "found",
+      "path": "C:\\Users\\erlqu\\AppData\\Roaming\\npm\\opencode.cmd",
+      "version": "1.15.6"
+    },
+    "groq": {
+      "status": "missing",
+      "path": ""
+    },
+    "openrouter": {
+      "status": "missing",
+      "path": ""
+    }
+  },
+  "keys": {
+    "OPENAI_API_KEY": false,
+    "GROQ_API_KEY": true,
+    "OPENROUTER_API_KEY": true,
+    "BENCH_VIKING_NANO_API_KEY": true,
+    "GOOGLE_API_KEY": false,
+    "GEMINI_API_KEY": true,
+    "ORCH_GOOGLE_API_KEY": false
+  },
+  "api": {}
+}

@@ -1,0 +1,46 @@
+{
+  "run_dir": "D:\\inspector\\benchmarks\\results\\20260521_164649_623710",
+  "jobs": [
+    {
+      "engine": "opencode:openrouter/deepseek/deepseek-v3.2",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/openai/gpt-oss-20b",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    },
+    {
+      "engine": "opencode:groq/llama-3.1-8b-instant",
+      "task_id": "test-01",
+      "next_run_at": 0,
+      "attempts": 0,
+      "done": true
+    }
+  ],
+  "completed": [
+    {
+      "job": "opencode:openrouter/deepseek/deepseek-v3.2::test-01",
+      "at": "2026-05-21T14:48:21.843867+00:00"
+    }
+  ],
+  "deferred": [],
+  "failed": [
+    {
+      "job": "opencode:groq/openai/gpt-oss-20b::test-01",
+      "at": "2026-05-21T14:48:34.125801+00:00",
+      "returncode": 1
+    },
+    {
+      "job": "opencode:groq/llama-3.1-8b-instant::test-01",
+      "at": "2026-05-21T14:48:47.640673+00:00",
+      "returncode": 1
+    }
+  ],
+  "running": null
+}

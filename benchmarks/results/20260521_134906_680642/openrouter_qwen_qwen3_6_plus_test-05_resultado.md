@@ -1,0 +1,4 @@
+- **Concepto:** Licencia PDF
+- **Importe declarado:** 19.9
+- **Importe esperado:** 29.9
+- **Recomendación:** Verificar el comprobante de pago original y ajustar el importe declarado a 29.9 para corregir la discrepancia y actualizar los registros contables.

@@ -1,0 +1,24 @@
+{
+  "id": "test-18",
+  "title": "Segmentar prospectos para campana",
+  "difficulty": 3,
+  "level": "L3",
+  "category": "assistant_digital",
+  "skills": [
+    "contacts",
+    "segmentation"
+  ],
+  "required_files": [
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "prospecto",
+    "BravoSoft",
+    "Noda Labs",
+    "RedNova"
+  ],
+  "response_shape": "respuesta util y trazable",
+  "prompt": "# Segmentar prospectos para campana\n\nSegmenta los contactos tipo prospecto para una campana. Incluye empresa, ciudad, responsable sugerido y motivo de prioridad.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-18/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-18/metadata.json"
+}

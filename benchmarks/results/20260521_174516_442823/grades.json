@@ -1,0 +1,1459 @@
+[
+  {
+    "task_id": "test-17",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "heuristic_score": 5.0,
+    "score": 8.0,
+    "comment": "La respuesta cubre totales mensuales, categorias principales y anomalias, e incluye sin_recibo y revisar_proveedor. La trazabilidad es limitada y no usa explicitamente la clave esperada discrepancias.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye total mensual y total acumulado",
+      "Agrupa gastos por categorias principales",
+      "Lista anomalias con fecha, concepto y estado",
+      "Incluye sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "No aparece la clave exacta discrepancias",
+      "No muestra fuente ni desglose de calculo para verificar importes",
+      "Puede estar inventando cifras si no provienen de datos trazables"
+    ]
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 5.0,
+    "comment": "Incluye las claves esperadas, pero mezcla datos potencialmente no relacionados con Clinica Centro y presenta trazabilidad dudosa con fuentes, contactos, fechas y teléfonos no verificables o posiblemente inventados.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Menciona Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Estructura clara de incidencias, oportunidades y acciones",
+      "Identifica la demo del modulo de pagos como punto principal"
+    ],
+    "issues": [
+      "Añade numerosos datos específicos sin evidencia visible: IDs de notas, emails, teléfonos, cargos y proveedores",
+      "Incluye contactos de otros dominios/clientes que parecen ajenos a Clinica Centro",
+      "Hay inconsistencias de fechas y planificación, como responder antes del 12 may en una acción del 13 may",
+      "La trazabilidad no es fiable si las fuentes VN/E citadas no estaban en el material original"
+    ]
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 6.0,
+    "comment": "La respuesta cubre GreenBox, encuestas y precios, y menciona la nota de voz, pero la trazabilidad es débil porque no incluye enlaces verificables ni evidencia clara de haber usado búsqueda web y notas_voz.jsonl más allá de una cita textual.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye varias alternativas económicas relevantes",
+      "Presenta precios aproximados y ventajas en formato claro",
+      "Menciona GreenBox y la nota de voz VN-009"
+    ],
+    "issues": [
+      "Las fuentes no tienen URLs ni citas verificables",
+      "No demuestra uso real de búsqueda web",
+      "Algunos precios o límites pueden estar desactualizados o no comprobados",
+      "La referencia a notas_voz.jsonl es insuficiente para trazabilidad completa"
+    ]
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 5.0,
+    "comment": "Cubre el tema y menciona Barna Health, SSO, Xavier Puig y fuentes, pero la trazabilidad es débil y parece inventar datos locales sensibles sin respaldo verificable.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Estructura clara con contexto, proveedores, criterios y recomendación",
+      "Incluye varias opciones relevantes como Okta, OneLogin, Keycloak y Microsoft",
+      "Relaciona la necesidad técnica con SAML, OIDC, MFA y cumplimiento"
+    ],
+    "issues": [
+      "Las fuentes son genéricas y no tienen enlaces, fechas verificables ni citas concretas",
+      "Email, teléfono, reunión e hilo de correo parecen inventados o no trazados a datos locales",
+      "Propone confirmar una reunión del 18 de mayo de 2026 aunque el informe está fechado el 21 de mayo de 2026",
+      "Usa nombres o datos discutibles, como Azure AD en vez de Microsoft Entra ID",
+      "Afirmaciones como conectores EHR, SLA 99.9% o prueba de 30 días no están sustentadas"
+    ]
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 8.0,
+    "comment": "Respuesta completa y accionable, cubre enero-mayo e incluye las incidencias esperadas, pero tiene una inconsistencia aritmetica en el total esperado y usa 'posible_duplicado' en lugar de la clave exacta 'duplicado'.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Cubre todos los meses solicitados",
+      "Incluye recomendaciones claras de control interno",
+      "Identifica sin_recibo, importe_discrepante y revisar_proveedor",
+      "Buena trazabilidad por mes y registro"
+    ],
+    "issues": [
+      "El total esperado deberia sumar 1420,39 EUR si febrero aumenta 10,00 EUR, no 1416,39 EUR",
+      "La clave esperada 'duplicado' no aparece exactamente como estado; usa 'posible_duplicado'",
+      "La conclusion mezcla la discrepancia con el duplicado sin cuantificar claramente el efecto del duplicado"
+    ]
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_groq_compound_mini",
+    "engine_spec": "groq:groq/compound-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 8.0,
+    "score": 5.0,
+    "comment": "Cubre las palabras clave y ofrece una recomendacion ejecutiva, pero la investigacion es superficial, con costes imprecisos, fuentes debiles y datos locales aparentemente asumidos sin trazabilidad verificable.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye comparativa OpenRouter vs Gemini y enfoque ofimatico/CLI",
+      "Propone una recomendacion ejecutiva y plan de 12 semanas",
+      "Menciona datos locales y los conecta con casos de uso"
+    ],
+    "issues": [
+      "No aporta cifras concretas de coste ni metodologia de comparacion",
+      "La trazabilidad es insuficiente: fuentes web limitadas y no oficiales para OpenRouter/Gemini",
+      "Varias afirmaciones parecen inexactas o simplificadas, como Gemini como modelo unico o integraciones nativas con Docs/Sheets/Slides",
+      "Los datos locales citados pueden estar inventados o no verificables porque no se muestran rutas, extractos ni evidencias",
+      "Falta una evaluacion actual rigurosa de agentes CLI reales y herramientas ofimaticas empresariales"
+    ]
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 8.0,
+    "comment": "La respuesta cubre el resumen mensual, categorias y anomalias relevantes, pero no usa exactamente las claves esperadas ni aporta trazabilidad de calculos.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye totales por mes de enero a mayo",
+      "Resume categorias principales con importes",
+      "Lista anomalias incluyendo discrepancia, sin recibo y revisar proveedor"
+    ],
+    "issues": [
+      "No usa las claves exactas esperadas: total mensual, discrepancias, sin_recibo, revisar_proveedor",
+      "No muestra fuente ni metodo de agregacion para verificar los totales",
+      "La categoria de duplicado no estaba entre las claves esperadas y queda sin explicacion"
+    ]
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "facturacion"
+    ],
+    "heuristic_score": 7.5,
+    "score": 5.0,
+    "comment": "La respuesta identifica parcialmente la incidencia principal de Clinica Centro y menciona a Noelia Castro y el modulo de pagos, pero omite facturacion e incluye mucho contenido no relacionado o duplicado.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro y modulo de pagos",
+      "Distingue entre incidencias y oportunidades",
+      "Aporta una accion concreta sobre la demo"
+    ],
+    "issues": [
+      "Falta la clave esperada facturacion",
+      "Incluye incidencias y oportunidades de otros clientes sin relacion con la tarea",
+      "Repite elementos entre incidencias y oportunidades",
+      "Puede estar inventando o arrastrando datos no trazables como IberLegal, Marta Ruiz y otros clientes",
+      "El informe no esta centrado en Clinica Centro"
+    ]
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 4.0,
+    "comment": "La respuesta menciona GreenBox y fuentes, pero no demuestra uso de notas_voz.jsonl ni incluye precios concretos, por lo que no cumple una clave central de la tarea.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye varias alternativas de encuestas",
+      "Aporta enlaces como fuentes",
+      "Formato claro y fácil de leer"
+    ],
+    "issues": [
+      "No cita ni resume información específica de notas_voz.jsonl",
+      "No incluye precios ni comparación económica real",
+      "Las fuentes son mayormente artículos comparativos secundarios, no páginas oficiales de pricing",
+      "Las descripciones son genéricas y repetitivas",
+      "Afirma haber analizado notas de voz sin trazabilidad"
+    ]
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Xavier Puig"
+    ],
+    "heuristic_score": 7.5,
+    "score": 3.0,
+    "comment": "La respuesta menciona Barna Health y SSO, pero es genérica, no usa datos locales, no contextualiza contacto, fecha ni necesidad técnica, y no aporta fuentes trazables.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye una lista de posibles opciones SSO",
+      "Menciona criterios generales de evaluación",
+      "Usa formato claro con secciones"
+    ],
+    "issues": [
+      "No menciona a Xavier Puig ni ningún contacto contextual",
+      "No incluye fecha ni evidencia de datos locales",
+      "No aporta fuentes ni enlaces",
+      "Las descripciones de proveedores son repetitivas y poco específicas",
+      "No justifica por qué esas opciones son adecuadas para Barna Health",
+      "Puede inventar o exagerar compatibilidades sin trazabilidad"
+    ]
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 7.0,
+    "comment": "La respuesta cubre enero a mayo e incluye recomendaciones y las claves esperadas, pero la trazabilidad es limitada y no detalla los gastos específicos que originan cada hallazgo.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye resumen mensual de enero a mayo",
+      "Contempla duplicados, recibos faltantes, discrepancias y proveedor a revisar",
+      "Aporta recomendaciones de control interno",
+      "Presenta totales por categoría, estado y mes"
+    ],
+    "issues": [
+      "No muestra el detalle de cada gasto auditado ni evidencia de los hallazgos",
+      "Usa 'posible_duplicado' en vez de la clave esperada exacta 'duplicado' en la tabla de estados",
+      "Las recomendaciones son generales y poco accionables",
+      "No explica cómo se calcularon los totales ni valida discrepancias contra importes esperados"
+    ]
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_llama_3_1_8b_instant",
+    "engine_spec": "groq:llama-3.1-8b-instant",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "coste"
+    ],
+    "heuristic_score": 8.0,
+    "score": 3.0,
+    "comment": "La respuesta es superficial y generica; menciona las claves esperadas pero no realiza investigacion profunda, no cruza datos locales de OpenRouter/Gemini, no analiza costes ni ofrece una recomendacion ejecutiva concreta.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye una estructura basica con estado, agentes, recomendacion y plan",
+      "Menciona OpenRouter, Gemini, ofimatica y recomendacion ejecutiva"
+    ],
+    "issues": [
+      "No hay trazabilidad ni fuentes verificables pese a decir 'fuentes consultadas'",
+      "No cruza ningun dato local sobre OpenRouter/Gemini",
+      "No analiza coste ni compara opciones",
+      "Presenta OpenRouter y Gemini como agentes CLI de ofimatica sin justificarlo",
+      "La recomendacion es vaga y no accionable",
+      "Lista herramientas sin evaluar capacidades, riesgos, madurez o casos de uso"
+    ]
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 8.0,
+    "comment": "La respuesta cubre totales mensuales, categorias principales y anomalias con fechas y motivos, aunque no usa exactamente todas las claves esperadas y repite el duplicado sin aclaracion.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye total mensual de enero a mayo",
+      "Agrupa categorias principales",
+      "Lista anomalias relevantes con detalle",
+      "Cubre sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "No usa explicitamente la clave discrepancias",
+      "El duplicado de Hotel Barcelona aparece dos veces sin explicar si son dos registros",
+      "No muestra fuente o metodo de agregacion"
+    ]
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "facturacion"
+    ],
+    "heuristic_score": 7.5,
+    "score": 5.0,
+    "comment": "La respuesta incluye Clinica Centro, Noelia Castro y el modulo de pagos, pero omite facturacion y mezcla muchas incidencias de otros clientes sin justificar su relevancia para Clinica Centro.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Formato claro de informe",
+      "Incluye varias claves esperadas",
+      "Propone acciones pendientes"
+    ],
+    "issues": [
+      "Falta la clave esperada facturacion",
+      "Incluye contactos y oportunidades ajenas a Clinica Centro",
+      "No aporta trazabilidad concreta a notas, emails o contactos",
+      "Puede estar inventando datos no verificables desde la tarea"
+    ]
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 4.0,
+    "comment": "La respuesta menciona GreenBox y alternativas de encuestas, pero no demuestra uso de notas_voz.jsonl, no compara precios concretos y las fuentes no son trazables porque no incluye enlaces.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye varias alternativas relevantes para encuestas",
+      "Menciona GreenBox",
+      "Añade una sección de referencias"
+    ],
+    "issues": [
+      "No evidencia uso de notas_voz.jsonl",
+      "No incluye precios ni comparación económica real",
+      "Fuentes sin URL y poco verificables",
+      "Referencias parecen genéricas y algunas duplicadas",
+      "No justifica por qué son adecuadas para GreenBox"
+    ]
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "Xavier Puig"
+    ],
+    "heuristic_score": 7.5,
+    "score": 4.0,
+    "comment": "La respuesta menciona Barna Health, SSO y fuentes, pero no usa datos locales ni contextualiza contacto, fecha o necesidad tecnica; tampoco menciona a Xavier Puig y las fuentes son genericas.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye una lista clara de opciones de SSO",
+      "Aporta una recomendacion basica",
+      "Incluye enlaces bajo un apartado de fuentes"
+    ],
+    "issues": [
+      "No menciona a Xavier Puig, clave esperada",
+      "No evidencia uso de datos locales para contacto, fecha o necesidad tecnica",
+      "La investigacion es generica y poco contextualizada para Barna Health",
+      "No compara criterios relevantes como cumplimiento sanitario, integracion, coste o soporte empresarial",
+      "Algunas fuentes son secundarias/genericas y no se trazan afirmaciones concretas a cada fuente"
+    ]
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 2.5,
+    "score": 7.0,
+    "comment": "La respuesta cubre enero a mayo y da recomendaciones pertinentes, pero no usa todas las claves esperadas de forma trazable y exacta, especialmente falta `importe_discrepante` como hallazgo explícito.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye desglose mensual y totales",
+      "Identifica casos de duplicado, sin recibo y proveedor a revisar",
+      "Propone controles internos concretos"
+    ],
+    "issues": [
+      "No incluye las claves exactas `importe_discrepante` ni `revisar_proveedor` con guion bajo",
+      "La discrepancia de importe se menciona solo en recomendaciones y no queda trazada en el resumen",
+      "No explica criterios de auditoría ni evidencia para cada hallazgo"
+    ]
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_llama_3_3_70b_versatile",
+    "engine_spec": "groq:llama-3.3-70b-versatile",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 6.0,
+    "score": 3.0,
+    "comment": "La respuesta es demasiado generica y no cumple la investigacion profunda solicitada ni cruza datos locales reales sobre OpenRouter/Gemini.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye una estructura basica de informe",
+      "Menciona OpenRouter/Gemini y una recomendacion ejecutiva general",
+      "Toca el tema de productividad ofimatica"
+    ],
+    "issues": [
+      "No analiza agentes CLI, que eran parte explicita de la tarea",
+      "No aporta costes, comparativas ni trazabilidad de fuentes",
+      "No cruza datos locales verificables sobre OpenRouter/Gemini",
+      "La recomendacion ejecutiva es vaga y no accionable",
+      "Lista herramientas de investigacion general, no herramientas de IA ofimatica relevantes",
+      "Puede inventar o asumir fuentes consultadas sin citarlas"
+    ]
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 6.0,
+    "comment": "Incluye totales mensuales y categorías, pero la sección de anomalías está incompleta y no cubre explícitamente las claves esperadas.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Presenta total mensual de enero a mayo",
+      "Incluye totales acumulados por categoría",
+      "Formato claro y legible"
+    ],
+    "issues": [
+      "No menciona explícitamente discrepancias, sin_recibo ni revisar_proveedor",
+      "La lista de anomalías está truncada",
+      "No hay trazabilidad ni detalle de agregación",
+      "Los importes no pueden verificarse con los datos fuente"
+    ]
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "Noelia Castro"
+    ],
+    "heuristic_score": 7.5,
+    "score": 5.0,
+    "comment": "Incluye las claves esperadas y estructura de informe, pero la respuesta esta incompleta y parece inventar referencias, fechas, contactos y detalles no trazables.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Menciona Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Distingue incidencias, oportunidades y acciones",
+      "Formato claro con tablas"
+    ],
+    "issues": [
+      "El texto queda cortado en el plan de accion",
+      "Incluye datos no sustentados como IDs de emails/notas, fechas y Ana Lopez/Nova Iberia",
+      "Trazabilidad debil: cita fuentes sin aportar evidencia verificable",
+      "Puede mezclar informacion de otros clientes o contextos"
+    ]
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 4.0,
+    "comment": "La respuesta propone alternativas relevantes y económicas, pero no demuestra uso de notas_voz.jsonl ni aporta fuentes trazables con enlaces; además varios precios parecen no verificados o inventados.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye GreenBox, encuestas, precios y una recomendación clara",
+      "Formato comparativo útil en tabla",
+      "Cubre opciones gratuitas, SaaS y auto-hospedadas"
+    ],
+    "issues": [
+      "No hay evidencia de haber usado notas_voz.jsonl",
+      "Las fuentes no tienen enlaces ni trazabilidad real y se repite el marcador 【3】",
+      "Precios y límites de planes pueden estar desactualizados o inventados",
+      "No explica cómo las notas de voz influyeron en la recomendación"
+    ]
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 6.0,
+    "comment": "La respuesta cubre Barna Health, SSO y Xavier Puig, pero no aporta fuentes verificables ni trazabilidad real; además parece inventar o asumir datos locales concretos sin evidencia.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Contextualiza la necesidad técnica de SSO",
+      "Incluye contacto Xavier Puig y Barna Health",
+      "Compara varios proveedores relevantes",
+      "Formato claro en tablas"
+    ],
+    "issues": [
+      "No incluye enlaces ni referencias verificables a fuentes",
+      "Menciona Fuente 1/Fuente 2 sin detalle ni trazabilidad",
+      "Posible invención de email, teléfono, reunión e hilo E-004",
+      "Algunos precios y cumplimientos parecen aproximados sin respaldo",
+      "La respuesta está incompleta o cortada al final"
+    ]
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 6.0,
+    "comment": "La respuesta cubre enero a mayo y detecta varias incidencias esperadas, pero no usa exactamente la clave 'duplicado' en el detalle y las recomendaciones quedan incompletas/truncadas.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye resumen mensual y total",
+      "Identifica sin_recibo, importe_discrepante y revisar_proveedor",
+      "Aporta detalle de incidencias con observaciones"
+    ],
+    "issues": [
+      "Usa 'posible_duplicado' en lugar de la clave esperada 'duplicado'",
+      "La sección de recomendaciones está incompleta",
+      "No hay trazabilidad clara a datos fuente o IDs de gasto",
+      "Puede haber datos inventados si no provienen del dataset original"
+    ]
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_openai_gpt_oss_120b",
+    "engine_spec": "groq:openai/gpt-oss-120b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 8.0,
+    "score": 4.0,
+    "comment": "La respuesta cubre parcialmente ofimática y menciona OpenRouter/Gemini, pero está incompleta, sin recomendación ejecutiva visible, sin costes concretos y sin trazabilidad real a datos locales.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye una estructura comparativa por áreas de ofimática",
+      "Menciona explícitamente OpenRouter y Gemini",
+      "Cubre parcialmente agentes CLI y automatización"
+    ],
+    "issues": [
+      "No cruza la investigación con datos locales sobre OpenRouter/Gemini",
+      "No aporta análisis de coste concreto ni cifras verificables",
+      "Las citas tipo   no son trazables y parecen inventadas",
+      "La respuesta está cortada en la sección comparativa clave",
+      "Falta una recomendación ejecutiva clara y accionable"
+    ]
+  },
+  {
+    "task_id": "test-17",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "heuristic_score": 5.0,
+    "score": 6.0,
+    "comment": "La respuesta calcula varios totales y categorias, pero esta truncada, expone razonamiento interno y no entrega claramente todas las claves esperadas ni una lista final de anomalias verificable.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye totales mensuales para enero-mayo",
+      "Agrupa categorias principales por mes",
+      "Identifica estados anomalos como sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "Formato invalido para una respuesta final por incluir bloque <think>",
+      "Respuesta truncada en mayo, incompleta",
+      "No incluye explicitamente la clave esperada discrepancias",
+      "La lista de anomalias no queda presentada de forma completa y trazable",
+      "No hay trazabilidad a los archivos o registros fuente"
+    ]
+  },
+  {
+    "task_id": "test-20",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "facturacion"
+    ],
+    "heuristic_score": 7.5,
+    "score": 5.0,
+    "comment": "La respuesta menciona Clinica Centro, Noelia Castro, modulo de pagos y facturacion, pero mezcla datos de otros clientes y presenta inferencias no trazadas como incidencias propias de Clinica Centro.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye varias claves esperadas",
+      "Estructura el informe en incidencias y oportunidades",
+      "Cita algunas fuentes internas como notas y correos"
+    ],
+    "issues": [
+      "Filtra razonamiento interno con etiqueta think, formato inadecuado",
+      "Atribuye a Clinica Centro datos de Nova Iberia, Atlantic Data y BravoSoft sin evidencia",
+      "Inventa o exagera incidencias como retraso de implementacion y facturas pendientes para Clinica Centro",
+      "La respuesta evaluada queda cortada e incompleta"
+    ]
+  },
+  {
+    "task_id": "test-21",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 4.0,
+    "comment": "La respuesta cubre parcialmente GreenBox, encuestas, precio y fuentes, pero está incompleta, filtra razonamiento interno, no demuestra uso claro de notas_voz.jsonl en la respuesta final y aporta precios vagos o posiblemente no verificados.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Menciona alternativas relevantes como Jotform, Google Forms y Typeform",
+      "Incluye algunas fuentes con enlaces",
+      "Orienta la selección hacia opciones gratuitas o económicas"
+    ],
+    "issues": [
+      "Incluye un bloque <think> con razonamiento interno, formato inapropiado",
+      "La respuesta está truncada en LimeSurvey y queda incompleta",
+      "No integra de forma trazable el contenido de notas_voz.jsonl en la salida final",
+      "No evidencia una búsqueda web real ni valida precios actuales",
+      "Algunas afirmaciones de precio son vagas o potencialmente inventadas"
+    ]
+  },
+  {
+    "task_id": "test-23",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 5.0,
+    "comment": "La respuesta contextualiza parcialmente Barna Health y Xavier Puig, pero se apoya en proveedores y afirmaciones poco trazables, omite la fecha y necesidad tecnica con precision y contiene razonamiento interno expuesto.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye Barna Health, SSO y Xavier Puig",
+      "Propone varias opciones y enlaza fuentes",
+      "Menciona protocolos relevantes como SAML y OAuth 2.0"
+    ],
+    "issues": [
+      "Expone bloque <think>, formato inadecuado para una entrega final",
+      "Afirma soporte sanitario, GDPR y SOC 2 sin evidencia clara",
+      "Usa proveedores dudosos o poco establecidos como EMÚ OneIdP y Veltar sin justificar actualidad",
+      "No contextualiza bien la fecha ni el contenido tecnico local de la reunion",
+      "Falta comparativa practica con opciones habituales como Okta, Microsoft Entra ID, Auth0 o OneLogin"
+    ]
+  },
+  {
+    "task_id": "test-26",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "importe_discrepante"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.0,
+    "comment": "La respuesta cubre los hallazgos principales y ofrece recomendaciones útiles, pero tiene problemas de formato, trazabilidad y una fecha inventada/futura.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Identifica las cuatro categorías esperadas de hallazgos",
+      "Incluye recomendaciones accionables de control interno",
+      "Cubre el periodo enero-mayo y propone acciones inmediatas"
+    ],
+    "issues": [
+      "Incluye contenido de razonamiento interno en etiquetas <think>, inapropiado para el entregable",
+      "No usa exactamente todas las claves esperadas, por ejemplo importe_discrepante",
+      "La trazabilidad es limitada: faltan IDs, fechas exactas o referencias de registros",
+      "Marca los duplicados de marzo también como discrepancia de importe sin evidencia",
+      "Inventa una fecha de generación 2026-05-31, posterior a la fecha actual indicada"
+    ]
+  },
+  {
+    "task_id": "test-30",
+    "engine": "groq_qwen_qwen3_32b",
+    "engine_spec": "groq:qwen/qwen3-32b",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "coste"
+    ],
+    "heuristic_score": 8.0,
+    "score": 3.0,
+    "comment": "La respuesta es incompleta, incluye razonamiento interno, no desarrolla costes ni una recomendacion ejecutiva solida, y parece inventar datos locales sin trazabilidad verificable.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Menciona OpenRouter, Gemini, ofimatica y agentes CLI",
+      "Intenta cruzar herramientas con supuestos datos locales",
+      "Propone una estructura ejecutiva basica"
+    ],
+    "issues": [
+      "Incluye bloque <think>, formato inapropiado para una entrega final",
+      "No cubre coste de forma sustantiva pese a ser clave esperada",
+      "La respuesta esta truncada e incompleta",
+      "No hay trazabilidad real: fuentes vagas como 'Fuente 4' o 'web_context.md' sin citas verificables",
+      "Probable invencion de datos locales como nombres, IDs de hilos y notas de voz",
+      "Confunde o clasifica mal agentes CLI y herramientas de investigacion",
+      "La recomendacion ejecutiva no queda cerrada con decision, fases, riesgos y criterios"
+    ]
+  },
+  {
+    "task_id": "test-17",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 0.0,
+    "score": 0.0,
+    "comment": "Ejecución fallida con returncode=1.",
+    "judge_model": ""
+  },
+  {
+    "task_id": "test-20",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 6.0,
+    "comment": "La respuesta cubre las claves esperadas, pero añade muchos datos no trazables y presenta inconsistencias temporales importantes, como tratar como futura una demo del 14 de mayo en un informe fechado el 21 de mayo.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Estructura clara de informe con incidencias, oportunidades y acciones",
+      "Distingue prioridades y propone seguimiento"
+    ],
+    "issues": [
+      "Inventa o asume datos específicos sin evidencia: email, teléfono, IDs de notas, número de contactos, métricas y responsables",
+      "Inconsistencia temporal: la demo del 14/05/2026 aparece como pendiente y dentro de próximos 7 días pese a que el informe está fechado el 21/05/2026",
+      "Incluye oportunidades basadas en otros clientes o fuentes no claramente relacionadas con Clinica Centro",
+      "Trazabilidad aparente pero no verificable; cita notas y emails concretos sin que estén dados en la tarea"
+    ]
+  },
+  {
+    "task_id": "test-21",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 7.0,
+    "comment": "La respuesta cubre GreenBox, encuestas, precios y fuentes, pero la trazabilidad es limitada y varios precios deberían estar respaldados por páginas oficiales actualizadas.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye varias alternativas económicas",
+      "Menciona GreenBox y la nota de voz VN-009",
+      "Aporta precios aproximados y una recomendación clara",
+      "Incluye enlaces de fuentes consultadas"
+    ],
+    "issues": [
+      "Las fuentes son mayormente artículos comparativos, no páginas oficiales de precios",
+      "No hay citas directas por dato de precio ni fecha de consulta",
+      "Algunos precios o límites pueden estar desactualizados o no verificados",
+      "La referencia a notas_voz.jsonl es mínima y no demuestra uso amplio del archivo"
+    ]
+  },
+  {
+    "task_id": "test-23",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 6.0,
+    "comment": "La respuesta cubre Barna Health, SSO, Xavier Puig y menciona fuentes, pero la trazabilidad es débil y contiene posibles datos inventados o no verificables.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Contextualiza cliente, contacto y necesidad técnica",
+      "Compara varias opciones SSO relevantes",
+      "Incluye recomendación principal y alternativas",
+      "Menciona fecha de investigación y fuentes"
+    ],
+    "issues": [
+      "No aporta enlaces ni citas verificables de las fuentes",
+      "Se basa casi solo en un blog potencialmente sesgado",
+      "El evento del 18 de mayo de 2026 se llama próximo aunque la investigación está fechada el 21 de mayo de 2026",
+      "Incluye datos personales y detalles locales sin demostrar origen",
+      "HIPAA puede no ser criterio aplicable para una entidad en Barcelona salvo contexto adicional",
+      "Algunas afirmaciones de precios, ratings y certificaciones no están trazadas"
+    ]
+  },
+  {
+    "task_id": "test-26",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "importe_discrepante"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.0,
+    "comment": "La respuesta cubre los principales tipos de hallazgo y aporta recomendaciones útiles, pero falta trazabilidad concreta y hay algunos datos/estimaciones no justificadas.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye duplicados, recibos faltantes, discrepancias de importe y proveedor a revisar",
+      "Propone controles internos accionables",
+      "Presenta resumen, hallazgos y plan de acción"
+    ],
+    "issues": [
+      "No usa exactamente todas las claves esperadas, especialmente importe_discrepante",
+      "No aporta IDs, filas o evidencia de origen para cada gasto auditado",
+      "Incluye totales, categorías y estimación anual sin explicar su cálculo",
+      "Asume el año 2026 sin que la tarea lo especifique"
+    ]
+  },
+  {
+    "task_id": "test-30",
+    "engine": "opencode_openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "opencode:openrouter/deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "coste"
+    ],
+    "heuristic_score": 8.0,
+    "score": 5.0,
+    "comment": "La respuesta cubre la estructura ejecutiva y menciona OpenRouter, Gemini, ofimática, coste y recomendación, pero la investigación es poco trazable, contiene cifras no justificadas y casi no compara Gemini ni costes reales.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Formato claro y ejecutivo",
+      "Cruza parcialmente la recomendación con datos locales citados",
+      "Incluye plan, KPIs y riesgos"
+    ],
+    "issues": [
+      "No aporta citas verificables ni enlaces; referencias genéricas a web_context.md",
+      "Gemini queda tratado de forma superficial y aparece un posible modelo inventado: Gemini 3.1 Pro",
+      "Faltan cifras concretas de coste y una comparación económica OpenRouter vs Gemini",
+      "Incluye estadísticas muy específicas de OpenCode/OpenRouter sin trazabilidad",
+      "La recomendación es plausible pero demasiado genérica para una investigación profunda"
+    ]
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "heuristic_score": 5.0,
+    "score": 7.0,
+    "comment": "La respuesta cubre el formato principal y lista anomalias, pero la suma por categorias no cuadra con el total general y falta la clave exacta \"discrepancias\".",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye total mensual y total general",
+      "Presenta categorias principales",
+      "Lista anomalias con sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "Los totales por categoria suman 1214.89 €, no 1410.39 €",
+      "No usa la clave esperada exacta \"discrepancias\"",
+      "No hay trazabilidad a datos fuente o registros agregados"
+    ]
+  },
+  {
+    "task_id": "test-20",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [
+      "facturacion"
+    ],
+    "heuristic_score": 7.5,
+    "score": 6.0,
+    "comment": "La respuesta identifica a Clinica Centro, Noelia Castro y el modulo de pagos, pero queda incompleta, introduce incidencias de otros clientes y no trata claramente facturacion como oportunidad/incidencia propia de Clinica Centro.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Formato de informe claro y estructurado",
+      "Incluye Clinica Centro, Noelia Castro y modulo de pagos",
+      "Distingue acciones y estados pendientes"
+    ],
+    "issues": [
+      "Incluye clientes y contactos no solicitados, desviando el foco",
+      "La seccion final esta cortada/incompleta",
+      "No aborda de forma clara facturacion para Clinica Centro",
+      "Puede estar inventando IDs, fechas o detalles sin trazabilidad visible"
+    ]
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 7.0,
+    "comment": "Cumple la idea principal y menciona GreenBox, encuestas, precios gratuitos y fuentes, pero la trazabilidad es débil porque no incluye enlaces ni citas verificables a notas_voz.jsonl o a páginas web concretas.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Propone varias alternativas económicas relevantes",
+      "Incluye recomendaciones contextualizadas para GreenBox",
+      "Menciona precios o planes gratuitos",
+      "Lista fuentes consultadas"
+    ],
+    "issues": [
+      "No incluye URLs ni citas directas verificables",
+      "La referencia a notas_voz.jsonl es mínima y no muestra evidencia concreta",
+      "Algunas fuentes y fechas parecen imprecisas o inconsistentes",
+      "Faltan comparaciones de precios más detalladas para planes de pago"
+    ]
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 5.0,
+    "comment": "Cumple parcialmente las claves esperadas, pero la investigacion es poco trazable y contiene posibles datos inventados o no verificables, especialmente el contexto local y las fuentes sin enlaces.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye Barna Health, SSO y Xavier Puig",
+      "Contextualiza una necesidad tecnica y fecha",
+      "Menciona criterios tecnicos relevantes como SAML, OAuth2, OIDC, MFA y cumplimiento"
+    ],
+    "issues": [
+      "No aporta enlaces ni citas verificables de las fuentes",
+      "Las fuentes son genericas y no comparan proveedores concretos de forma util",
+      "El contexto local parece afirmado sin trazabilidad y puede estar inventado",
+      "La reunion del 18 de mayo de 2026 ya estaria pasada respecto a la fecha actual",
+      "La recomendacion queda superficial y no prioriza claramente opciones adecuadas para salud"
+    ]
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 8.0,
+    "comment": "La respuesta cubre los hallazgos clave esperados y aporta recomendaciones útiles, pero usa algunos estados no exactamente iguales y presenta cifras agregadas sin trazabilidad a los datos fuente.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye duplicados, sin_recibo, importe_discrepante y revisar_proveedor",
+      "Organiza hallazgos por mes y tipo de riesgo",
+      "Propone controles internos específicos y accionables"
+    ],
+    "issues": [
+      "No usa exactamente la clave esperada duplicado; usa posible_duplicado",
+      "No muestra trazabilidad completa a registros o archivos fuente",
+      "Algunos totales y conteos podrían ser inventados si no proceden de datos verificables",
+      "La respuesta evaluada parece incompleta al final, cortada en recomendaciones"
+    ]
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [
+      "OpenRouter",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "heuristic_score": 4.0,
+    "score": 3.0,
+    "comment": "La respuesta aborda parcialmente ofimática y menciona Gemini, pero queda incompleta, no desarrolla OpenRouter ni costes, no entrega una recomendación ejecutiva clara y usa fuentes sin trazabilidad verificable.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Estructura inicial clara",
+      "Conecta herramientas de IA con casos de uso ofimáticos",
+      "Intenta cruzar algunos datos locales"
+    ],
+    "issues": [
+      "Respuesta truncada e incompleta",
+      "No analiza OpenRouter de forma sustantiva",
+      "No compara costes ni modelos",
+      "No hay recomendación ejecutiva final",
+      "Fuentes citadas sin enlaces ni trazabilidad",
+      "Posible invención o sobreinterpretación de datos locales"
+    ]
+  },
+  {
+    "task_id": "test-17",
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "total mensual",
+      "discrepancias",
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "total mensual",
+      "discrepancias"
+    ],
+    "heuristic_score": 5.0,
+    "score": 8.0,
+    "comment": "La respuesta cubre totales mensuales, categorias principales y anomalias relevantes, incluyendo sin_recibo y revisar_proveedor. Falta usar explicitamente la clave esperada 'discrepancias' y no aporta trazabilidad a los datos fuente.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye desglose mensual claro",
+      "Agrupa por categorias principales",
+      "Lista anomalias con importes y estados",
+      "Detecta sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "No usa la clave exacta 'discrepancias'",
+      "No muestra fuente ni metodo de calculo",
+      "Puede estar inventando campos como 'total esperado' si no venian en los datos",
+      "Formato Markdown en vez de estructura facilmente procesable"
+    ]
+  },
+  {
+    "task_id": "test-20",
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "Clinica Centro",
+      "Noelia Castro",
+      "modulo de pagos",
+      "facturacion"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 7.0,
+    "comment": "La respuesta cubre las claves esperadas y estructura un informe útil, pero introduce elementos ajenos a Clínica Centro y algunas inferencias no claramente trazadas.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Formato claro de informe con incidencias, oportunidades e impacto",
+      "Propone siguientes pasos concretos"
+    ],
+    "issues": [
+      "Añade contactos y empresas no relacionados con Clínica Centro",
+      "La sección sobre Clinica Sol es contextual pero distrae de la tarea original",
+      "Cita fuentes específicas sin evidenciar trazabilidad completa",
+      "La conclusión queda truncada"
+    ]
+  },
+  {
+    "task_id": "test-21",
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "GreenBox",
+      "encuestas",
+      "precio",
+      "fuentes"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 6.0,
+    "comment": "Cumple parcialmente: identifica GreenBox y propone alternativas de encuestas con algunas fuentes, pero falta comparativa de precios concretos y trazabilidad clara desde las fuentes web.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Menciona GreenBox y la necesidad extraida de notas_voz.jsonl",
+      "Propone varias alternativas plausibles",
+      "Incluye una seccion de fuentes"
+    ],
+    "issues": [
+      "No incluye precios concretos ni planes actuales, solo coste relativo",
+      "Las fuentes no estan vinculadas a afirmaciones especificas",
+      "La lista de fuentes parece incompleta o truncada",
+      "No demuestra uso real de busqueda web ni verificacion de precios",
+      "Hay un error de formato/texto en la tabla: 'אינטեգraciones'"
+    ]
+  },
+  {
+    "task_id": "test-23",
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "Barna Health",
+      "SSO",
+      "Xavier Puig",
+      "fuentes"
+    ],
+    "missing_keys": [
+      "fuentes"
+    ],
+    "heuristic_score": 7.5,
+    "score": 7.0,
+    "comment": "La respuesta cubre Barna Health, SSO, Xavier Puig y contextualiza fecha/necesidad tecnica, pero falla en trazabilidad: no incluye fuentes ni evidencia para las opciones o datos usados.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Contexto local claro con contacto, fecha y necesidad tecnica",
+      "Compara proveedores relevantes de SSO",
+      "Recomendacion practica segun escenarios"
+    ],
+    "issues": [
+      "No incluye fuentes, pese a ser una clave esperada",
+      "No documenta de donde salen los datos locales ni las afirmaciones sobre proveedores",
+      "La investigacion es generica y no valida opciones actuales con referencias"
+    ]
+  },
+  {
+    "task_id": "test-26",
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "passed_expected_keys": true,
+    "expected_keys": [
+      "duplicado",
+      "sin_recibo",
+      "importe_discrepante",
+      "revisar_proveedor"
+    ],
+    "missing_keys": [
+      "sin_recibo",
+      "revisar_proveedor"
+    ],
+    "heuristic_score": 5.0,
+    "score": 7.0,
+    "comment": "La respuesta cubre la auditoria de enero a mayo en apariencia y detecta las categorias esperadas, pero usa 'posible_duplicado' en lugar de la clave esperada 'duplicado' y la trazabilidad queda limitada porque la respuesta esta truncada y no se ven todas las recomendaciones.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye resumen ejecutivo con conteo de incidencias",
+      "Identifica discrepancia de importe, duplicados, recibo faltante y proveedor a revisar",
+      "Organiza hallazgos por mes con tablas y riesgos"
+    ],
+    "issues": [
+      "No respeta exactamente la clave esperada 'duplicado'",
+      "La respuesta evaluada aparece incompleta o truncada desde abril",
+      "No queda claro el origen de los datos ni evidencia de trazabilidad completa",
+      "Puede estar inventando detalles si no provenian de una base de gastos proporcionada"
+    ]
+  },
+  {
+    "task_id": "test-30",
+    "engine": "openrouter_openai_gpt_5_4_mini",
+    "engine_spec": "openrouter:openai/gpt-5.4-mini",
+    "passed_expected_keys": false,
+    "expected_keys": [
+      "OpenRouter",
+      "Gemini",
+      "ofimatica",
+      "coste",
+      "recomendacion ejecutiva"
+    ],
+    "missing_keys": [],
+    "heuristic_score": 10.0,
+    "score": 5.0,
+    "comment": "La respuesta cubre el tema de forma general y contiene una recomendacion ejecutiva, pero no demuestra haber investigado datos actuales ni haber cruzado datos locales reales sobre OpenRouter/Gemini. Falta trazabilidad verificable, cifras de coste y evidencia concreta.",
+    "judge_model": "codex:gpt-5.5",
+    "strengths": [
+      "Incluye OpenRouter, Gemini, ofimatica, coste y recomendacion ejecutiva",
+      "Estructura clara con resumen ejecutivo y categorias de mercado",
+      "La recomendacion principal es comprensible"
+    ],
+    "issues": [
+      "No aporta datos locales concretos ni explica como se cruzaron con la investigacion",
+      "Las fuentes se mencionan sin enlaces, citas verificables ni fechas suficientemente trazables",
+      "El coste se trata de forma vaga, sin precios, comparativas ni supuestos",
+      "Puede estar inventando o dando por hecho fuentes/contexto web no mostrado",
+      "La respuesta parece incompleta y termina cortada"
+    ]
+  }
+]

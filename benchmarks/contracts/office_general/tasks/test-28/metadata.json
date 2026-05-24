@@ -1,0 +1,26 @@
+{
+  "id": "test-28",
+  "title": "Investigacion web y propuesta CRM para BravoSoft",
+  "difficulty": 5,
+  "level": "L5",
+  "category": "assistant_digital",
+  "skills": [
+    "web_search",
+    "email_drafting",
+    "business_analysis"
+  ],
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "BravoSoft",
+    "CRM",
+    "Paula Ferrer",
+    "fuentes"
+  ],
+  "response_shape": "informe con fuentes y conclusion operativa",
+  "prompt": "# Investigacion web y propuesta CRM para BravoSoft\n\nInvestiga opciones actuales de CRM para pymes y redacta una propuesta de seguimiento para BravoSoft usando el contexto local de Paula Ferrer.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-28/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-28/metadata.json"
+}

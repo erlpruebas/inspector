@@ -1,0 +1,2081 @@
+[
+  {
+    "engine": "openrouter_baidu_cobuddy_free",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"baidu/cobuddy:free\", \"elapsed_seconds\": 18.391, \"usage\": {\"prompt_tokens\": 2660, \"completion_tokens\": 279, \"total_tokens\": 2939, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 242, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_baidu_cobuddy_free\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 18.687999999994645,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "baidu/cobuddy:free",
+      "elapsed_seconds": 18.391,
+      "usage": {
+        "prompt_tokens": 2660,
+        "completion_tokens": 279,
+        "total_tokens": 2939,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 242,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "baidu/cobuddy:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:baidu/cobuddy:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_baidu_cobuddy_free_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_baidu_cobuddy_free\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_baidu_cobuddy_free",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"baidu/cobuddy:free\", \"elapsed_seconds\": 7.984, \"usage\": {\"prompt_tokens\": 1175, \"completion_tokens\": 511, \"total_tokens\": 1686, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 511, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_baidu_cobuddy_free\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 8.26600000000326,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "baidu/cobuddy:free",
+      "elapsed_seconds": 7.984,
+      "usage": {
+        "prompt_tokens": 1175,
+        "completion_tokens": 511,
+        "total_tokens": 1686,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 511,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "baidu/cobuddy:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:baidu/cobuddy:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_baidu_cobuddy_free_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_baidu_cobuddy_free\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_baidu_cobuddy_free",
+    "task_id": "test-05",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"baidu/cobuddy:free\", \"elapsed_seconds\": 17.735, \"usage\": {\"prompt_tokens\": 300, \"completion_tokens\": 252, \"total_tokens\": 552, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 150, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_baidu_cobuddy_free\\test-05\\resultado.md"
+    ],
+    "elapsed_seconds": 18.01600000000326,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "baidu/cobuddy:free",
+      "elapsed_seconds": 17.735,
+      "usage": {
+        "prompt_tokens": 300,
+        "completion_tokens": 252,
+        "total_tokens": 552,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 150,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "baidu/cobuddy:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:baidu/cobuddy:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_baidu_cobuddy_free_test-05_resultado.md"
+    ],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_baidu_cobuddy_free\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_baidu_cobuddy_free",
+    "task_id": "test-10",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"baidu/cobuddy:free\", \"elapsed_seconds\": 11.906, \"usage\": {\"prompt_tokens\": 2045, \"completion_tokens\": 511, \"total_tokens\": 2556, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 511, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_baidu_cobuddy_free\\test-10\\resultado.md"
+    ],
+    "elapsed_seconds": 12.187000000005355,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "baidu/cobuddy:free",
+      "elapsed_seconds": 11.906,
+      "usage": {
+        "prompt_tokens": 2045,
+        "completion_tokens": 511,
+        "total_tokens": 2556,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 511,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "baidu/cobuddy:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:baidu/cobuddy:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_baidu_cobuddy_free_test-10_resultado.md"
+    ],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_baidu_cobuddy_free\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "task_id": "test-01",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 400: Bad Request\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 400: {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\\"code\\\":400,\\\"msg\\\":\\\"bad request\\\",\\\"request_id\\\":\\\"5ffdc559-e179-4e2b-97bf-190f3bb8ebc8\\\"}\",\"provider_name\":\"AtlasCloud\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.062000000005355,
+    "timed_out": false,
+    "usage": {},
+    "model": "deepseek/deepseek-v3.2-speciale",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "copied_outputs": [],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2_speciale\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "task_id": "test-03",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 400: Bad Request\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 400: {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\\"code\\\":400,\\\"msg\\\":\\\"bad request\\\",\\\"request_id\\\":\\\"d80927d4-7f05-4d6d-a573-8e5449d62268\\\"}\",\"provider_name\":\"AtlasCloud\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.5160000000032596,
+    "timed_out": false,
+    "usage": {},
+    "model": "deepseek/deepseek-v3.2-speciale",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "copied_outputs": [],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2_speciale\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "task_id": "test-05",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 400: Bad Request\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 400: {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\\"code\\\":400,\\\"msg\\\":\\\"bad request\\\",\\\"request_id\\\":\\\"be2d7d69-48a2-4fac-ab35-f0426b44425f\\\"}\",\"provider_name\":\"AtlasCloud\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.3589999999967404,
+    "timed_out": false,
+    "usage": {},
+    "model": "deepseek/deepseek-v3.2-speciale",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "copied_outputs": [],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2_speciale\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2_speciale",
+    "task_id": "test-10",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 400: Bad Request\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 400: {\"error\":{\"message\":\"Provider returned error\",\"code\":400,\"metadata\":{\"raw\":\"{\\\"code\\\":400,\\\"msg\\\":\\\"bad request\\\",\\\"request_id\\\":\\\"4acc7090-33f3-4d14-8c86-32bf34dccdbd\\\"}\",\"provider_name\":\"AtlasCloud\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 0.9839999999967404,
+    "timed_out": false,
+    "usage": {},
+    "model": "deepseek/deepseek-v3.2-speciale",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2-speciale",
+    "copied_outputs": [],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2_speciale\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 4.0, \"usage\": {\"prompt_tokens\": 2741, \"completion_tokens\": 25, \"total_tokens\": 2766, \"cost\": 0.000720419, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.000720419, \"upstream_inference_prompt_cost\": 0.000709919, \"upstream_inference_completions_cost\": 1.05e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 4.39100000000326,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 4.0,
+      "usage": {
+        "prompt_tokens": 2741,
+        "completion_tokens": 25,
+        "total_tokens": 2766,
+        "cost": 0.000720419,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.000720419,
+          "upstream_inference_prompt_cost": 0.000709919,
+          "upstream_inference_completions_cost": 1.05e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_deepseek_deepseek_v3_2_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 9.672, \"usage\": {\"prompt_tokens\": 1217, \"completion_tokens\": 275, \"total_tokens\": 1492, \"cost\": 0.0002176272, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 851, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0002176272, \"upstream_inference_prompt_cost\": 0.0001136772, \"upstream_inference_completions_cost\": 0.00010395}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 9.952999999994063,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 9.672,
+      "usage": {
+        "prompt_tokens": 1217,
+        "completion_tokens": 275,
+        "total_tokens": 1492,
+        "cost": 0.0002176272,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 851,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0002176272,
+          "upstream_inference_prompt_cost": 0.0001136772,
+          "upstream_inference_completions_cost": 0.00010395
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_deepseek_deepseek_v3_2_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-05",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 3.031, \"usage\": {\"prompt_tokens\": 328, \"completion_tokens\": 48, \"total_tokens\": 376, \"cost\": 0.000105112, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.000105112, \"upstream_inference_prompt_cost\": 8.4952e-05, \"upstream_inference_completions_cost\": 2.016e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2\\test-05\\resultado.md"
+    ],
+    "elapsed_seconds": 3.3590000000112923,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 3.031,
+      "usage": {
+        "prompt_tokens": 328,
+        "completion_tokens": 48,
+        "total_tokens": 376,
+        "cost": 0.000105112,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.000105112,
+          "upstream_inference_prompt_cost": 8.4952e-05,
+          "upstream_inference_completions_cost": 2.016e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_deepseek_deepseek_v3_2_test-05_resultado.md"
+    ],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v3_2",
+    "task_id": "test-10",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v3.2\", \"elapsed_seconds\": 7.657, \"usage\": {\"prompt_tokens\": 2102, \"completion_tokens\": 224, \"total_tokens\": 2326, \"cost\": 0.00063164, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00063164, \"upstream_inference_prompt_cost\": 0.00054652, \"upstream_inference_completions_cost\": 8.512e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 0, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2\\test-10\\resultado.md"
+    ],
+    "elapsed_seconds": 8.01600000000326,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "elapsed_seconds": 7.657,
+      "usage": {
+        "prompt_tokens": 2102,
+        "completion_tokens": 224,
+        "total_tokens": 2326,
+        "cost": 0.00063164,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00063164,
+          "upstream_inference_prompt_cost": 0.00054652,
+          "upstream_inference_completions_cost": 8.512e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v3.2",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v3.2",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_deepseek_deepseek_v3_2_test-10_resultado.md"
+    ],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v3_2\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash_free",
+    "task_id": "test-01",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Crucible\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.5470000000059372,
+    "timed_out": false,
+    "usage": {},
+    "model": "deepseek/deepseek-v4-flash:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash:free",
+    "copied_outputs": [],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v4_flash_free\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash_free",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"deepseek/deepseek-v4-flash:free\", \"elapsed_seconds\": 32.828, \"usage\": {\"prompt_tokens\": 1217, \"completion_tokens\": 2181, \"total_tokens\": 3398, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 1556, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v4_flash_free\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 33.21899999999732,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v4-flash:free",
+      "elapsed_seconds": 32.828,
+      "usage": {
+        "prompt_tokens": 1217,
+        "completion_tokens": 2181,
+        "total_tokens": 3398,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1556,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "deepseek/deepseek-v4-flash:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_deepseek_deepseek_v4_flash_free_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v4_flash_free\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash_free",
+    "task_id": "test-05",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Crucible\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.0939999999973224,
+    "timed_out": false,
+    "usage": {},
+    "model": "deepseek/deepseek-v4-flash:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash:free",
+    "copied_outputs": [],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v4_flash_free\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash_free",
+    "task_id": "test-10",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"deepseek/deepseek-v4-flash:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Crucible\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.0310000000026776,
+    "timed_out": false,
+    "usage": {},
+    "model": "deepseek/deepseek-v4-flash:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:deepseek/deepseek-v4-flash:free",
+    "copied_outputs": [],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_deepseek_deepseek_v4_flash_free\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_minimax_minimax_m2_5_free",
+    "task_id": "test-01",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"minimax/minimax-m2.5:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"OpenInference\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.312000000005355,
+    "timed_out": false,
+    "usage": {},
+    "model": "minimax/minimax-m2.5:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:minimax/minimax-m2.5:free",
+    "copied_outputs": [],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_5_free\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_minimax_minimax_m2_5_free",
+    "task_id": "test-03",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"minimax/minimax-m2.5:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"OpenInference\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.0320000000065193,
+    "timed_out": false,
+    "usage": {},
+    "model": "minimax/minimax-m2.5:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:minimax/minimax-m2.5:free",
+    "copied_outputs": [],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_5_free\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_minimax_minimax_m2_5_free",
+    "task_id": "test-05",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"minimax/minimax-m2.5:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"OpenInference\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 3.2189999999973224,
+    "timed_out": false,
+    "usage": {},
+    "model": "minimax/minimax-m2.5:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:minimax/minimax-m2.5:free",
+    "copied_outputs": [],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_5_free\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_minimax_minimax_m2_5_free",
+    "task_id": "test-10",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"minimax/minimax-m2.5:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"OpenInference\",\"is_byok\":false}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.7339999999967404,
+    "timed_out": false,
+    "usage": {},
+    "model": "minimax/minimax-m2.5:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:minimax/minimax-m2.5:free",
+    "copied_outputs": [],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_5_free\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_minimax_minimax_m2_7",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"minimax/minimax-m2.7\", \"elapsed_seconds\": 18.328, \"usage\": {\"prompt_tokens\": 2528, \"completion_tokens\": 268, \"total_tokens\": 2796, \"cost\": 0.00108, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00108, \"upstream_inference_prompt_cost\": 0.0007584, \"upstream_inference_completions_cost\": 0.0003216}, \"completion_tokens_details\": {\"reasoning_tokens\": 204, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_7\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 18.639999999999418,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "minimax/minimax-m2.7",
+      "elapsed_seconds": 18.328,
+      "usage": {
+        "prompt_tokens": 2528,
+        "completion_tokens": 268,
+        "total_tokens": 2796,
+        "cost": 0.00108,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00108,
+          "upstream_inference_prompt_cost": 0.0007584,
+          "upstream_inference_completions_cost": 0.0003216
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 204,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "minimax/minimax-m2.7",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:minimax/minimax-m2.7",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_minimax_minimax_m2_7_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_7\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_minimax_minimax_m2_7",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"minimax/minimax-m2.7\", \"elapsed_seconds\": 15.922, \"usage\": {\"prompt_tokens\": 1121, \"completion_tokens\": 512, \"total_tokens\": 1633, \"cost\": 0.0009507, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0009507, \"upstream_inference_prompt_cost\": 0.0003363, \"upstream_inference_completions_cost\": 0.0006144}, \"completion_tokens_details\": {\"reasoning_tokens\": 512, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_7\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 16.23399999999674,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "minimax/minimax-m2.7",
+      "elapsed_seconds": 15.922,
+      "usage": {
+        "prompt_tokens": 1121,
+        "completion_tokens": 512,
+        "total_tokens": 1633,
+        "cost": 0.0009507,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0009507,
+          "upstream_inference_prompt_cost": 0.0003363,
+          "upstream_inference_completions_cost": 0.0006144
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 512,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "minimax/minimax-m2.7",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:minimax/minimax-m2.7",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_minimax_minimax_m2_7_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_7\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_minimax_minimax_m2_7",
+    "task_id": "test-05",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"minimax/minimax-m2.7\", \"elapsed_seconds\": 9.25, \"usage\": {\"prompt_tokens\": 300, \"completion_tokens\": 385, \"total_tokens\": 685, \"cost\": 0.000552, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.000552, \"upstream_inference_prompt_cost\": 9e-05, \"upstream_inference_completions_cost\": 0.000462}, \"completion_tokens_details\": {\"reasoning_tokens\": 138, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_7\\test-05\\resultado.md"
+    ],
+    "elapsed_seconds": 9.531999999991967,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "minimax/minimax-m2.7",
+      "elapsed_seconds": 9.25,
+      "usage": {
+        "prompt_tokens": 300,
+        "completion_tokens": 385,
+        "total_tokens": 685,
+        "cost": 0.000552,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.000552,
+          "upstream_inference_prompt_cost": 9e-05,
+          "upstream_inference_completions_cost": 0.000462
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 138,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "minimax/minimax-m2.7",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:minimax/minimax-m2.7",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_minimax_minimax_m2_7_test-05_resultado.md"
+    ],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_7\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_minimax_minimax_m2_7",
+    "task_id": "test-10",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"minimax/minimax-m2.7\", \"elapsed_seconds\": 9.781, \"usage\": {\"prompt_tokens\": 1952, \"completion_tokens\": 512, \"total_tokens\": 2464, \"cost\": 0.0012, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0012, \"upstream_inference_prompt_cost\": 0.0005856, \"upstream_inference_completions_cost\": 0.0006144}, \"completion_tokens_details\": {\"reasoning_tokens\": 433, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_7\\test-10\\resultado.md"
+    ],
+    "elapsed_seconds": 10.187000000005355,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "minimax/minimax-m2.7",
+      "elapsed_seconds": 9.781,
+      "usage": {
+        "prompt_tokens": 1952,
+        "completion_tokens": 512,
+        "total_tokens": 2464,
+        "cost": 0.0012,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0012,
+          "upstream_inference_prompt_cost": 0.0005856,
+          "upstream_inference_completions_cost": 0.0006144
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 433,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "minimax/minimax-m2.7",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:minimax/minimax-m2.7",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_minimax_minimax_m2_7_test-10_resultado.md"
+    ],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_minimax_minimax_m2_7\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_nvidia_nemotron_3_super_120b_a12b_free",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"nvidia/nemotron-3-super-120b-a12b:free\", \"elapsed_seconds\": 38.922, \"usage\": {\"prompt_tokens\": 3132, \"completion_tokens\": 492, \"total_tokens\": 3624, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 410, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_nvidia_nemotron_3_super_120b_a12b_free\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 39.421999999991385,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "elapsed_seconds": 38.922,
+      "usage": {
+        "prompt_tokens": 3132,
+        "completion_tokens": 492,
+        "total_tokens": 3624,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 410,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_nvidia_nemotron_3_super_120b_a12b_free_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_nvidia_nemotron_3_super_120b_a12b_free\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_nvidia_nemotron_3_super_120b_a12b_free",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"nvidia/nemotron-3-super-120b-a12b:free\", \"elapsed_seconds\": 25.61, \"usage\": {\"prompt_tokens\": 1345, \"completion_tokens\": 512, \"total_tokens\": 1857, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 360, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_nvidia_nemotron_3_super_120b_a12b_free\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 25.921999999991385,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "elapsed_seconds": 25.61,
+      "usage": {
+        "prompt_tokens": 1345,
+        "completion_tokens": 512,
+        "total_tokens": 1857,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 360,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_nvidia_nemotron_3_super_120b_a12b_free_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_nvidia_nemotron_3_super_120b_a12b_free\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_nvidia_nemotron_3_super_120b_a12b_free",
+    "task_id": "test-05",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"nvidia/nemotron-3-super-120b-a12b:free\", \"elapsed_seconds\": 14.625, \"usage\": {\"prompt_tokens\": 345, \"completion_tokens\": 429, \"total_tokens\": 774, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 379, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_nvidia_nemotron_3_super_120b_a12b_free\\test-05\\resultado.md"
+    ],
+    "elapsed_seconds": 14.921999999991385,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "elapsed_seconds": 14.625,
+      "usage": {
+        "prompt_tokens": 345,
+        "completion_tokens": 429,
+        "total_tokens": 774,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 379,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_nvidia_nemotron_3_super_120b_a12b_free_test-05_resultado.md"
+    ],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_nvidia_nemotron_3_super_120b_a12b_free\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_nvidia_nemotron_3_super_120b_a12b_free",
+    "task_id": "test-10",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"nvidia/nemotron-3-super-120b-a12b:free\", \"elapsed_seconds\": 29.297, \"usage\": {\"prompt_tokens\": 2455, \"completion_tokens\": 512, \"total_tokens\": 2967, \"cost\": 0, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0, \"upstream_inference_prompt_cost\": 0, \"upstream_inference_completions_cost\": 0}, \"completion_tokens_details\": {\"reasoning_tokens\": 362, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_nvidia_nemotron_3_super_120b_a12b_free\\test-10\\resultado.md"
+    ],
+    "elapsed_seconds": 29.703000000008615,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "elapsed_seconds": 29.297,
+      "usage": {
+        "prompt_tokens": 2455,
+        "completion_tokens": 512,
+        "total_tokens": 2967,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 362,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_nvidia_nemotron_3_super_120b_a12b_free_test-10_resultado.md"
+    ],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_nvidia_nemotron_3_super_120b_a12b_free\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_5_9b",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-9b\", \"elapsed_seconds\": 44.609, \"usage\": {\"prompt_tokens\": 2995, \"completion_tokens\": 512, \"total_tokens\": 3507, \"cost\": 0.0001966, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0001966, \"upstream_inference_prompt_cost\": 0.0001198, \"upstream_inference_completions_cost\": 7.68e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 467, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_9b\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 44.90600000000268,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-9b",
+      "elapsed_seconds": 44.609,
+      "usage": {
+        "prompt_tokens": 2995,
+        "completion_tokens": 512,
+        "total_tokens": 3507,
+        "cost": 0.0001966,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0001966,
+          "upstream_inference_prompt_cost": 0.0001198,
+          "upstream_inference_completions_cost": 7.68e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 467,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "qwen/qwen3.5-9b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3.5-9b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_9b_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_9b\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_5_9b",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-9b\", \"elapsed_seconds\": 8.016, \"usage\": {\"prompt_tokens\": 1329, \"completion_tokens\": 512, \"total_tokens\": 1841, \"cost\": 0.0002097, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0002097, \"upstream_inference_prompt_cost\": 0.0001329, \"upstream_inference_completions_cost\": 7.68e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 471, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_9b\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 8.437999999994645,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-9b",
+      "elapsed_seconds": 8.016,
+      "usage": {
+        "prompt_tokens": 1329,
+        "completion_tokens": 512,
+        "total_tokens": 1841,
+        "cost": 0.0002097,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0002097,
+          "upstream_inference_prompt_cost": 0.0001329,
+          "upstream_inference_completions_cost": 7.68e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 471,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "qwen/qwen3.5-9b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3.5-9b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_9b_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_9b\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_5_9b",
+    "task_id": "test-05",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-9b\", \"elapsed_seconds\": 3.704, \"usage\": {\"prompt_tokens\": 336, \"completion_tokens\": 512, \"total_tokens\": 848, \"cost\": 0.0001104, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0001104, \"upstream_inference_prompt_cost\": 3.36e-05, \"upstream_inference_completions_cost\": 7.68e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 458, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_9b\\test-05\\resultado.md"
+    ],
+    "elapsed_seconds": 4.014999999999418,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-9b",
+      "elapsed_seconds": 3.704,
+      "usage": {
+        "prompt_tokens": 336,
+        "completion_tokens": 512,
+        "total_tokens": 848,
+        "cost": 0.0001104,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0001104,
+          "upstream_inference_prompt_cost": 3.36e-05,
+          "upstream_inference_completions_cost": 7.68e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 458,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "qwen/qwen3.5-9b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3.5-9b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_9b_test-05_resultado.md"
+    ],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_9b\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_5_9b",
+    "task_id": "test-10",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-9b\", \"elapsed_seconds\": 22.046, \"usage\": {\"prompt_tokens\": 2328, \"completion_tokens\": 512, \"total_tokens\": 2840, \"cost\": 0.0003096, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0003096, \"upstream_inference_prompt_cost\": 0.0002328, \"upstream_inference_completions_cost\": 7.68e-05}, \"completion_tokens_details\": {\"reasoning_tokens\": 523, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_9b\\test-10\\resultado.md"
+    ],
+    "elapsed_seconds": 22.327999999994063,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-9b",
+      "elapsed_seconds": 22.046,
+      "usage": {
+        "prompt_tokens": 2328,
+        "completion_tokens": 512,
+        "total_tokens": 2840,
+        "cost": 0.0003096,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0003096,
+          "upstream_inference_prompt_cost": 0.0002328,
+          "upstream_inference_completions_cost": 7.68e-05
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 523,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "qwen/qwen3.5-9b",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3.5-9b",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_9b_test-10_resultado.md"
+    ],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_9b\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_5_flash_02_23",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"elapsed_seconds\": 16.375, \"usage\": {\"prompt_tokens\": 2995, \"completion_tokens\": 2880, \"total_tokens\": 5875, \"cost\": 0.000943475, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.000943475, \"upstream_inference_prompt_cost\": 0.000194675, \"upstream_inference_completions_cost\": 0.0007488}, \"completion_tokens_details\": {\"reasoning_tokens\": 2813, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 16.719000000011874,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-flash-02-23",
+      "elapsed_seconds": 16.375,
+      "usage": {
+        "prompt_tokens": 2995,
+        "completion_tokens": 2880,
+        "total_tokens": 5875,
+        "cost": 0.000943475,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.000943475,
+          "upstream_inference_prompt_cost": 0.000194675,
+          "upstream_inference_completions_cost": 0.0007488
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2813,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "qwen/qwen3.5-flash-02-23",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3.5-flash-02-23",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_flash_02_23_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_5_flash_02_23",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"elapsed_seconds\": 38.344, \"usage\": {\"prompt_tokens\": 1329, \"completion_tokens\": 6472, \"total_tokens\": 7801, \"cost\": 0.001769105, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.001769105, \"upstream_inference_prompt_cost\": 8.6385e-05, \"upstream_inference_completions_cost\": 0.00168272}, \"completion_tokens_details\": {\"reasoning_tokens\": 5973, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 38.71899999999732,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-flash-02-23",
+      "elapsed_seconds": 38.344,
+      "usage": {
+        "prompt_tokens": 1329,
+        "completion_tokens": 6472,
+        "total_tokens": 7801,
+        "cost": 0.001769105,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.001769105,
+          "upstream_inference_prompt_cost": 8.6385e-05,
+          "upstream_inference_completions_cost": 0.00168272
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5973,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "qwen/qwen3.5-flash-02-23",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3.5-flash-02-23",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_flash_02_23_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_5_flash_02_23",
+    "task_id": "test-05",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"elapsed_seconds\": 16.875, \"usage\": {\"prompt_tokens\": 336, \"completion_tokens\": 3246, \"total_tokens\": 3582, \"cost\": 0.0008658, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0008658, \"upstream_inference_prompt_cost\": 2.184e-05, \"upstream_inference_completions_cost\": 0.00084396}, \"completion_tokens_details\": {\"reasoning_tokens\": 3119, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-05\\resultado.md"
+    ],
+    "elapsed_seconds": 17.172000000005937,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-flash-02-23",
+      "elapsed_seconds": 16.875,
+      "usage": {
+        "prompt_tokens": 336,
+        "completion_tokens": 3246,
+        "total_tokens": 3582,
+        "cost": 0.0008658,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0008658,
+          "upstream_inference_prompt_cost": 2.184e-05,
+          "upstream_inference_completions_cost": 0.00084396
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3119,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "qwen/qwen3.5-flash-02-23",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3.5-flash-02-23",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_flash_02_23_test-05_resultado.md"
+    ],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_5_flash_02_23",
+    "task_id": "test-10",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"qwen/qwen3.5-flash-02-23\", \"elapsed_seconds\": 36.438, \"usage\": {\"prompt_tokens\": 2328, \"completion_tokens\": 5709, \"total_tokens\": 8037, \"cost\": 0.00163566, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00163566, \"upstream_inference_prompt_cost\": 0.00015132, \"upstream_inference_completions_cost\": 0.00148434}, \"completion_tokens_details\": {\"reasoning_tokens\": 5500, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-10\\resultado.md"
+    ],
+    "elapsed_seconds": 36.73500000000058,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "qwen/qwen3.5-flash-02-23",
+      "elapsed_seconds": 36.438,
+      "usage": {
+        "prompt_tokens": 2328,
+        "completion_tokens": 5709,
+        "total_tokens": 8037,
+        "cost": 0.00163566,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00163566,
+          "upstream_inference_prompt_cost": 0.00015132,
+          "upstream_inference_completions_cost": 0.00148434
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5500,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "qwen/qwen3.5-flash-02-23",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3.5-flash-02-23",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_qwen_qwen3_5_flash_02_23_test-10_resultado.md"
+    ],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_5_flash_02_23\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_next_80b_a3b_instruct_free",
+    "task_id": "test-01",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3-next-80b-a3b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Venice\",\"is_byok\":false,\"retry_after_seconds\":15,\"retry_after_seconds_raw\":14.411,\"headers\":{\"Retry-After\":\"15\"}}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 1.0320000000065193,
+    "timed_out": false,
+    "usage": {},
+    "model": "qwen/qwen3-next-80b-a3b-instruct:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+    "copied_outputs": [],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_next_80b_a3b_instruct_free\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_next_80b_a3b_instruct_free",
+    "task_id": "test-03",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3-next-80b-a3b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Venice\",\"is_byok\":false,\"retry_after_seconds\":19,\"retry_after_seconds_raw\":18.805,\"headers\":{\"Retry-After\":\"19\"}}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 0.875,
+    "timed_out": false,
+    "usage": {},
+    "model": "qwen/qwen3-next-80b-a3b-instruct:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+    "copied_outputs": [],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_next_80b_a3b_instruct_free\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_next_80b_a3b_instruct_free",
+    "task_id": "test-05",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3-next-80b-a3b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Venice\",\"is_byok\":false,\"retry_after_seconds\":23,\"retry_after_seconds_raw\":22.216,\"headers\":{\"Retry-After\":\"23\"}}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 0.8910000000032596,
+    "timed_out": false,
+    "usage": {},
+    "model": "qwen/qwen3-next-80b-a3b-instruct:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+    "copied_outputs": [],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_next_80b_a3b_instruct_free\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_qwen_qwen3_next_80b_a3b_instruct_free",
+    "task_id": "test-10",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 128, in post_json\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 521, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 630, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 559, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"D:\\Program Files\\Python312\\Lib\\urllib\\request.py\", line 639, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 247, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 90, in main\n    data = post_json(url, payload, api_key, timeout=args.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\inspector\\benchmarks\\engines\\api_wrapper.py\", line 132, in post_json\n    raise RuntimeError(f\"API error {exc.code}: {detail}\") from exc\nRuntimeError: API error 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"qwen/qwen3-next-80b-a3b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Venice\",\"is_byok\":false,\"retry_after_seconds\":22,\"retry_after_seconds_raw\":21.072,\"headers\":{\"Retry-After\":\"22\"}}},\"user_id\":\"user_3Diy7IHk0RsoD9yJg1hULGuopvq\"}\n",
+    "output_files": [],
+    "elapsed_seconds": 0.9379999999946449,
+    "timed_out": false,
+    "usage": {},
+    "model": "qwen/qwen3-next-80b-a3b-instruct:free",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:qwen/qwen3-next-80b-a3b-instruct:free",
+    "copied_outputs": [],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_qwen_qwen3_next_80b_a3b_instruct_free\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_z_ai_glm_4_7_flash",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-4.7-flash\", \"elapsed_seconds\": 6.266, \"usage\": {\"prompt_tokens\": 2667, \"completion_tokens\": 512, \"total_tokens\": 3179, \"cost\": 0.00039137, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 2, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00039137, \"upstream_inference_prompt_cost\": 0.00018657, \"upstream_inference_completions_cost\": 0.0002048}, \"completion_tokens_details\": {\"reasoning_tokens\": 512, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_4_7_flash\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 6.547000000005937,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-4.7-flash",
+      "elapsed_seconds": 6.266,
+      "usage": {
+        "prompt_tokens": 2667,
+        "completion_tokens": 512,
+        "total_tokens": 3179,
+        "cost": 0.00039137,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 2,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00039137,
+          "upstream_inference_prompt_cost": 0.00018657,
+          "upstream_inference_completions_cost": 0.0002048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 512,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "z-ai/glm-4.7-flash",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:z-ai/glm-4.7-flash",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_4_7_flash_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_4_7_flash\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_z_ai_glm_4_7_flash",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-4.7-flash\", \"elapsed_seconds\": 8.734, \"usage\": {\"prompt_tokens\": 1182, \"completion_tokens\": 512, \"total_tokens\": 1694, \"cost\": 0.00033836, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00033836, \"upstream_inference_prompt_cost\": 0.0001182, \"upstream_inference_completions_cost\": 0.00022016}, \"completion_tokens_details\": {\"reasoning_tokens\": 478, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_4_7_flash\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 9.030999999988126,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-4.7-flash",
+      "elapsed_seconds": 8.734,
+      "usage": {
+        "prompt_tokens": 1182,
+        "completion_tokens": 512,
+        "total_tokens": 1694,
+        "cost": 0.00033836,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00033836,
+          "upstream_inference_prompt_cost": 0.0001182,
+          "upstream_inference_completions_cost": 0.00022016
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 478,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "z-ai/glm-4.7-flash",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:z-ai/glm-4.7-flash",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_4_7_flash_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_4_7_flash\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_z_ai_glm_4_7_flash",
+    "task_id": "test-05",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-4.7-flash\", \"elapsed_seconds\": 5.297, \"usage\": {\"prompt_tokens\": 307, \"completion_tokens\": 512, \"total_tokens\": 819, \"cost\": 0.0002233735, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0002233735, \"upstream_inference_prompt_cost\": 1.85735e-05, \"upstream_inference_completions_cost\": 0.0002048}, \"completion_tokens_details\": {\"reasoning_tokens\": 458, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_4_7_flash\\test-05\\resultado.md"
+    ],
+    "elapsed_seconds": 5.577999999994063,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-4.7-flash",
+      "elapsed_seconds": 5.297,
+      "usage": {
+        "prompt_tokens": 307,
+        "completion_tokens": 512,
+        "total_tokens": 819,
+        "cost": 0.0002233735,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0002233735,
+          "upstream_inference_prompt_cost": 1.85735e-05,
+          "upstream_inference_completions_cost": 0.0002048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 458,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "z-ai/glm-4.7-flash",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:z-ai/glm-4.7-flash",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_4_7_flash_test-05_resultado.md"
+    ],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_4_7_flash\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_z_ai_glm_4_7_flash",
+    "task_id": "test-10",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-4.7-flash\", \"elapsed_seconds\": 7.203, \"usage\": {\"prompt_tokens\": 2052, \"completion_tokens\": 512, \"total_tokens\": 2564, \"cost\": 0.000328946, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.000328946, \"upstream_inference_prompt_cost\": 0.000124146, \"upstream_inference_completions_cost\": 0.0002048}, \"completion_tokens_details\": {\"reasoning_tokens\": 490, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_4_7_flash\\test-10\\resultado.md"
+    ],
+    "elapsed_seconds": 7.546999999991385,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-4.7-flash",
+      "elapsed_seconds": 7.203,
+      "usage": {
+        "prompt_tokens": 2052,
+        "completion_tokens": 512,
+        "total_tokens": 2564,
+        "cost": 0.000328946,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.000328946,
+          "upstream_inference_prompt_cost": 0.000124146,
+          "upstream_inference_completions_cost": 0.0002048
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 490,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "z-ai/glm-4.7-flash",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:z-ai/glm-4.7-flash",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_4_7_flash_test-10_resultado.md"
+    ],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_4_7_flash\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_z_ai_glm_5_1",
+    "task_id": "test-01",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-5.1\", \"elapsed_seconds\": 8.016, \"usage\": {\"prompt_tokens\": 2667, \"completion_tokens\": 512, \"total_tokens\": 3179, \"cost\": 0.00589635, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00589635, \"upstream_inference_prompt_cost\": 0.00365379, \"upstream_inference_completions_cost\": 0.00224256}, \"completion_tokens_details\": {\"reasoning_tokens\": 479, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-01\\resultado.md"
+    ],
+    "elapsed_seconds": 8.389999999999418,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.1",
+      "elapsed_seconds": 8.016,
+      "usage": {
+        "prompt_tokens": 2667,
+        "completion_tokens": 512,
+        "total_tokens": 3179,
+        "cost": 0.00589635,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00589635,
+          "upstream_inference_prompt_cost": 0.00365379,
+          "upstream_inference_completions_cost": 0.00224256
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 479,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "z-ai/glm-5.1",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:z-ai/glm-5.1",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_5_1_test-01_resultado.md"
+    ],
+    "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+    "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-01",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_z_ai_glm_5_1",
+    "task_id": "test-03",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-5.1\", \"elapsed_seconds\": 7.719, \"usage\": {\"prompt_tokens\": 1182, \"completion_tokens\": 512, \"total_tokens\": 1694, \"cost\": 0.00389578, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00389578, \"upstream_inference_prompt_cost\": 0.00164298, \"upstream_inference_completions_cost\": 0.0022528}, \"completion_tokens_details\": {\"reasoning_tokens\": 511, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-03\\resultado.md"
+    ],
+    "elapsed_seconds": 8.031000000002678,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.1",
+      "elapsed_seconds": 7.719,
+      "usage": {
+        "prompt_tokens": 1182,
+        "completion_tokens": 512,
+        "total_tokens": 1694,
+        "cost": 0.00389578,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00389578,
+          "upstream_inference_prompt_cost": 0.00164298,
+          "upstream_inference_completions_cost": 0.0022528
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 511,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "z-ai/glm-5.1",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:z-ai/glm-5.1",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_5_1_test-03_resultado.md"
+    ],
+    "task_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.",
+    "execution_prompt": "# Extraer tareas de notas de voz\n\nLee `benchmarks/assets/assistant_synthetic/notas_voz.jsonl` y extrae las tareas pendientes en una tabla con id de nota, accion, entidad relacionada y posible fecha limite.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-03",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_z_ai_glm_5_1",
+    "task_id": "test-05",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-5.1\", \"elapsed_seconds\": 10.828, \"usage\": {\"prompt_tokens\": 307, \"completion_tokens\": 512, \"total_tokens\": 819, \"cost\": 0.00267646, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00267646, \"upstream_inference_prompt_cost\": 0.00042366, \"upstream_inference_completions_cost\": 0.0022528}, \"completion_tokens_details\": {\"reasoning_tokens\": 512, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-05\\resultado.md"
+    ],
+    "elapsed_seconds": 11.125,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.1",
+      "elapsed_seconds": 10.828,
+      "usage": {
+        "prompt_tokens": 307,
+        "completion_tokens": 512,
+        "total_tokens": 819,
+        "cost": 0.00267646,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.00267646,
+          "upstream_inference_prompt_cost": 0.00042366,
+          "upstream_inference_completions_cost": 0.0022528
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 512,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "z-ai/glm-5.1",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:z-ai/glm-5.1",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_5_1_test-05_resultado.md"
+    ],
+    "task_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+    "execution_prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_02.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-05",
+    "privacy": {
+      "mode": "clear"
+    }
+  },
+  {
+    "engine": "openrouter_z_ai_glm_5_1",
+    "task_id": "test-10",
+    "returncode": 0,
+    "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-5.1\", \"elapsed_seconds\": 30.781, \"usage\": {\"prompt_tokens\": 2052, \"completion_tokens\": 1339, \"total_tokens\": 3391, \"cost\": 0.0087644, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.0087644, \"upstream_inference_prompt_cost\": 0.0028728, \"upstream_inference_completions_cost\": 0.0058916}, \"completion_tokens_details\": {\"reasoning_tokens\": 1129, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+    "stderr": "",
+    "output_files": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-10\\resultado.md"
+    ],
+    "elapsed_seconds": 31.14100000000326,
+    "timed_out": false,
+    "usage": {
+      "provider": "openrouter",
+      "model": "z-ai/glm-5.1",
+      "elapsed_seconds": 30.781,
+      "usage": {
+        "prompt_tokens": 2052,
+        "completion_tokens": 1339,
+        "total_tokens": 3391,
+        "cost": 0.0087644,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0087644,
+          "upstream_inference_prompt_cost": 0.0028728,
+          "upstream_inference_completions_cost": 0.0058916
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1129,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      }
+    },
+    "model": "z-ai/glm-5.1",
+    "error_type": "",
+    "retry_after_seconds": 0,
+    "engine_spec": "openrouter:z-ai/glm-5.1",
+    "copied_outputs": [
+      "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_5_1_test-10_resultado.md"
+    ],
+    "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+    "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+    "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-10",
+    "privacy": {
+      "mode": "clear"
+    }
+  }
+]

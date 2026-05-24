@@ -1,0 +1,14 @@
+{
+  "provider": "groq",
+  "model": "groq/compound-mini",
+  "elapsed_seconds": 1.422,
+  "usage": {
+    "queue_time": 0.09153,
+    "prompt_tokens": 1033,
+    "prompt_time": 0.05174,
+    "completion_tokens": 419,
+    "completion_time": 1.080106,
+    "total_tokens": 1452,
+    "total_time": 1.131846
+  }
+}

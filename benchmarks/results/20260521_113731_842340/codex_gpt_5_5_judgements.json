@@ -1,0 +1,1136 @@
+[
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta identifica correctamente persona, empresa, fecha, hora y objetivo, pero añade el año 2026 sin evidencia en los archivos.",
+    "strengths": [
+      "Incluye todas las claves esperadas",
+      "El objetivo coincide con el hilo de correo",
+      "Formato claro de nota breve"
+    ],
+    "issues": [
+      "Inventa o infiere el año 2026, que no aparece en los datos",
+      "Incluye una frase inicial de proceso innecesaria"
+    ],
+    "elapsed_seconds": 41.188
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta extrae una tabla útil y cubre las claves esperadas, pero no normaliza las acciones a las claves pedidas y añade muchas tareas fuera de esas claves, lo que reduce precisión.",
+    "strengths": [
+      "Incluye tabla con id, acción, entidad y fecha límite",
+      "Detecta correctamente llamar, enviar, agendar y reservar",
+      "Excluye razonablemente VN-008 por no ser tarea",
+      "Convierte varias fechas relativas de forma plausible"
+    ],
+    "issues": [
+      "No limita ni normaliza las acciones a las claves esperadas: llamar, enviar, agendar, reservar",
+      "Incluye tareas adicionales como comprar, preparar, pedir, revisar e investigar",
+      "Algunas fechas son discutibles, como VN-011 y VN-003, donde la fecha puede ser hito o evento, no límite",
+      "Añade narración de proceso no solicitada"
+    ],
+    "elapsed_seconds": 35.921
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": false,
+    "comment": "Identifica correctamente el concepto y los importes, pero no conserva el formato decimal esperado ni devuelve la recomendacion clave exacta.",
+    "strengths": [
+      "Concepto correcto: Licencia PDF",
+      "Detecta la discrepancia principal",
+      "Incluye importe declarado y esperado"
+    ],
+    "issues": [
+      "Usa 19.9 y 29.9 en lugar de 19.90 y 29.90",
+      "La recomendacion no es la clave esperada importe_discrepante",
+      "Incluye narrativa operativa innecesaria",
+      "Afirma que la ruta original no existe sin aportar evidencia relevante"
+    ],
+    "elapsed_seconds": 10.454
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "Cubre las claves esperadas y recoge los compromisos principales, pero mezcla demasiados pendientes secundarios y contiene errores de priorizacion temporal.",
+    "strengths": [
+      "Incluye IberLegal, Clinica Centro, Delta Equipos y SSL/Cobalto",
+      "Extrae correctamente varias fechas y contactos concretos",
+      "Organiza por prioridades de forma legible"
+    ],
+    "issues": [
+      "Afirma que todos los compromisos con fecha estan vencidos, pero hay fechas futuras como 2026-05-22 y 2026-05-28",
+      "Incluye tareas poco relevantes para la prioridad pedida, como Apple vs Microsoft o OpenRouter vs Gemini",
+      "La trazabilidad a notas o hilos concretos es debil: no cita IDs VN/E",
+      "Algunas fechas relativas son inferidas sin suficiente cautela"
+    ],
+    "elapsed_seconds": 37.781
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta indica que creó el CSV con el esquema solicitado y filtró por proveedores, pero no evidencia explícitamente que contenga las claves esperadas IberLegal, Tecnoria y SerConta.",
+    "strengths": [
+      "Columnas solicitadas en orden correcto",
+      "Filtrado declarado por tipo=proveedor",
+      "Incluye ruta del archivo generado",
+      "Verificación básica de filas y encabezado mencionada"
+    ],
+    "issues": [
+      "No muestra una muestra del CSV ni las empresas incluidas",
+      "No confirma las claves esperadas IberLegal, Tecnoria y SerConta",
+      "La trazabilidad depende de afirmaciones, no de salida verificable"
+    ],
+    "elapsed_seconds": 12.031
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 4.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no entrega el contenido ICS solicitado y no evidencia claves esperadas como \"sala\" ni \"viernes 09:30\"; solo resume que creó un archivo.",
+    "strengths": [
+      "Identifica cuatro compromisos claros",
+      "Incluye Clínica Centro y Barna Health",
+      "Menciona gestión de datos faltantes en descripción"
+    ],
+    "issues": [
+      "No muestra el contenido del archivo ICS",
+      "Faltan claves esperadas visibles: sala y viernes 09:30",
+      "No hay trazabilidad concreta a notas_voz.jsonl ni emails_hilos.md",
+      "No permite verificar formato ICS ni campos VEVENT"
+    ],
+    "elapsed_seconds": 10.703
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre totales mensuales, categorias principales y anomalias con buena trazabilidad por fila, aunque no usa literalmente algunas claves esperadas y contiene texto operativo innecesario.",
+    "strengths": [
+      "Incluye total mensual de enero a mayo",
+      "Lista categorias principales con importes",
+      "Detecta anomalias relevantes como sin_recibo y revisar_proveedor",
+      "Explica el tratamiento de duplicados y discrepancias"
+    ],
+    "issues": [
+      "No incluye la clave literal discrepancias, solo importe_discrepante",
+      "No usa exactamente total mensual como etiqueta esperada",
+      "Incluye mensajes de proceso que no forman parte del resultado final",
+      "No especifica moneda ni fuente exacta de los datos"
+    ],
+    "elapsed_seconds": 25.469
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y entrega un informe útil con evidencias trazables, aunque incluye texto de proceso y algunas inferencias no totalmente demostradas.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Estructura clara de incidencias, oportunidades y prioridades",
+      "Aporta trazabilidad a contactos, notas y emails",
+      "Distingue bien entre evidencia directa e hipótesis en varios puntos"
+    ],
+    "issues": [
+      "Empieza con mensajes de proceso que no forman parte del informe final",
+      "Algunas conclusiones sobre friccion o dolor funcional son inferidas y no evidenciadas directamente",
+      "No aporta citas textuales exactas pese a decir que sacaria lineas exactas",
+      "La ruta de enlaces locales puede no ser portable fuera del entorno"
+    ],
+    "elapsed_seconds": 13.5
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Cumple la tarea: usa la nota de voz para contextualizar GreenBox, propone alternativas de encuestas económicas, incluye precios y fuentes. Hay algunas debilidades de trazabilidad y posible variación de precios.",
+    "strengths": [
+      "Menciona explícitamente GreenBox y la nota VN-009 de notas_voz.jsonl",
+      "Incluye varias alternativas económicas con comparación práctica",
+      "Aporta enlaces a fuentes oficiales o de soporte",
+      "Da una recomendación clara según necesidad y coste"
+    ],
+    "issues": [
+      "No indica fecha de consulta de precios, importante porque pueden cambiar",
+      "Algunas fuentes no parecen ser la página exacta de pricing del dato citado, por ejemplo Google Workspace",
+      "Asume que la prioridad es coste sobre funciones enterprise sin explorar otros requisitos posibles",
+      "No contrasta claramente contra la herramienta actual que se quiere sustituir"
+    ],
+    "elapsed_seconds": 15.422
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta completa y bien contextualizada para Barna Health, con contacto, necesidad técnica y fuentes oficiales. Pierde puntos por no mostrar evidencia verificable de haber consultado realmente los datos locales y por algunas recomendaciones inferidas sin aclarar supuestos.",
+    "strengths": [
+      "Incluye Barna Health, SSO, Xavier Puig y fuentes",
+      "Contextualiza fecha, contacto y necesidad técnica",
+      "Compara proveedores relevantes con criterios técnicos adecuados",
+      "Cita documentación oficial de los proveedores"
+    ],
+    "issues": [
+      "No separa claramente hechos locales de inferencias técnicas",
+      "La recomendación de Entra ID depende de un supuesto no confirmado sobre uso de Microsoft",
+      "Los enlaces locales con líneas pueden no ser trazables fuera del entorno",
+      "Falta una matriz más explícita de requisitos sanitarios/GDPR y riesgos"
+    ],
+    "elapsed_seconds": 15.141
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre la auditoria enero-mayo, identifica las cuatro claves esperadas y propone controles internos concretos, aunque la trazabilidad de los datos es limitada.",
+    "strengths": [
+      "Incluye todos los tipos esperados de hallazgo",
+      "Resume excepciones por mes y por impacto",
+      "Aporta recomendaciones de control interno accionables"
+    ],
+    "issues": [
+      "No referencia archivos, IDs de fila ni evidencia verificable",
+      "Usa algunos hallazgos en lenguaje natural en vez de las claves exactas en la tabla principal",
+      "Afirma importes y conteos sin mostrar calculo o fuente"
+    ],
+    "elapsed_seconds": 11.968
+  },
+  {
+    "engine": "codex_gpt_5_4_mini",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta sólida y bien orientada a una recomendación ejecutiva, con cruce real de señales locales y fuentes actuales, pero el análisis de coste queda demasiado superficial y algunas inferencias sobre el stack Google no están plenamente justificadas por los datos locales.",
+    "strengths": [
+      "Incluye OpenRouter, Gemini, ofimática, coste y recomendación ejecutiva",
+      "Cruza datos locales con investigación externa y cita archivos/fuentes",
+      "Distingue correctamente entre suites ofimáticas, orquestación de modelos y agentes CLI",
+      "Propone un plan de adopción por fases con métricas"
+    ],
+    "issues": [
+      "No aporta cifras concretas de coste, precios, TCO ni comparación económica cuantificada",
+      "La recomendación de Gemini asume un contexto Gmail/Drive/Docs/Meet que los datos locales no demuestran de forma directa",
+      "Las fuentes se listan al final, pero faltan citas o trazabilidad puntual por afirmación clave",
+      "Incluye mensajes de proceso iniciales que ensucian el formato final ejecutivo"
+    ],
+    "elapsed_seconds": 45.735
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Incluye las claves esperadas y una nota breve con persona, empresa, fecha, hora y objetivo, aunque añade texto de proceso innecesario y algunos detalles no verificables desde la respuesta.",
+    "strengths": [
+      "Contiene Noelia Castro, Clinica Centro, 14 de mayo y 11:30",
+      "Incluye un objetivo claro de la cita",
+      "Formato de la nota final es comprensible"
+    ],
+    "issues": [
+      "Incluye comentarios de búsqueda previos que no eran necesarios",
+      "Añade 2026 y detalles sobre administración que podrían ser invención si no estaban explícitos en los archivos"
+    ],
+    "elapsed_seconds": 14.281
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta localiza correctamente varias tareas y fechas, pero no respeta bien las claves esperadas: mezcla muchas acciones fuera de llamar/enviar/agendar/reservar y no normaliza la columna accion a esas claves.",
+    "strengths": [
+      "Incluye una tabla con los campos pedidos",
+      "Detecta las tareas principales de llamar, enviar, agendar y reservar",
+      "Resuelve varias fechas relativas de forma razonable"
+    ],
+    "issues": [
+      "Añade muchos falsos positivos con acciones no esperadas como comprar, preparar, pedir o revisar",
+      "La accion se expresa como frase larga en vez de clave normalizada",
+      "Incluye texto de proceso antes de la tabla, reduciendo limpieza del formato",
+      "Algunas fechas relativas son inferidas y potencialmente ambiguas"
+    ],
+    "elapsed_seconds": 41.375
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta identifica correctamente el concepto y los importes discrepantes, pero no devuelve la recomendacion esperada exactamente como clave `importe_discrepante`.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado correcto",
+      "Importe esperado correcto",
+      "Recomendacion accionable"
+    ],
+    "issues": [
+      "No incluye literalmente la recomendacion esperada `importe_discrepante`",
+      "Agrega una diferencia no solicitada"
+    ],
+    "elapsed_seconds": 11.109
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y prioriza bien por fechas/clientes, pero no aporta trazabilidad a las fuentes y puede incluir pendientes adicionales sin justificar.",
+    "strengths": [
+      "Incluye las cuatro claves esperadas: IberLegal, Clínica Centro, Delta Equipos y SSL",
+      "Organiza por prioridad y fecha límite",
+      "Señala tareas vencidas usando la fecha actual"
+    ],
+    "issues": [
+      "No cita ni referencia líneas de notas_voz.jsonl o emails_hilos.md",
+      "Añade muchos pendientes cuya procedencia no queda verificable",
+      "No separa claramente tareas confirmadas de posibles inferencias"
+    ],
+    "elapsed_seconds": 11.688
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta indica que filtró por proveedor, creó el CSV con las columnas solicitadas y menciona la ruta y cantidad exportada. Falta mostrar o verificar explícitamente que las empresas clave esperadas estén presentes.",
+    "strengths": [
+      "Formato de columnas solicitado respetado",
+      "Usa la fuente correcta",
+      "Filtra por tipo proveedor",
+      "Indica archivo de salida y número de registros"
+    ],
+    "issues": [
+      "No confirma las claves esperadas IberLegal, Tecnoria y SerConta",
+      "No muestra una muestra del CSV ni evidencia del contenido",
+      "La ruta de salida usa assistant_synthetic, que no estaba especificada en la tarea"
+    ],
+    "elapsed_seconds": 10.593
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta entrega un ICS con cuatro eventos claros e incluye las claves esperadas, pero añade texto fuera del contenido ICS y asume duraciones de una hora aunque declara que faltan.",
+    "strengths": [
+      "Incluye cuatro VEVENT bien diferenciados",
+      "Aparecen las claves esperadas: Clinica Centro, Barna Health, sala y viernes 09:30",
+      "Marca datos faltantes en DESCRIPTION",
+      "Usa zona horaria Europe/Madrid"
+    ],
+    "issues": [
+      "Incluye introduccion y bloque markdown; no devuelve solo el contenido ICS puro",
+      "Inventa DTEND de una hora para eventos con duracion faltante",
+      "Algunas inferencias de fecha no quedan plenamente trazadas al origen",
+      "El escapado ICS de textos es irregular"
+    ],
+    "elapsed_seconds": 14.141
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre totales mensuales, categorías principales y anomalías, incluyendo sin_recibo y revisar_proveedor. Falta usar explícitamente la clave esperada \"discrepancias\" y hay algo de ruido operativo al inicio.",
+    "strengths": [
+      "Incluye total mensual enero-mayo",
+      "Desglosa categorías principales con porcentajes",
+      "Lista anomalías con detalle y nota sobre duplicado",
+      "Incluye sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "No usa explícitamente la clave \"discrepancias\"",
+      "No aporta trazabilidad a archivos o registros fuente",
+      "El preámbulo sobre la skill no pertenece al resultado final"
+    ],
+    "elapsed_seconds": 11.25
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y estructura bien incidencias, oportunidades y acciones, con trazabilidad a notas/emails. Resta porque añade datos muy específicos de contacto y prioridad que no son verificables en la tarea dada y podrían ser inventados.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Formato claro de informe con incidencias, oportunidades y acciones",
+      "Buena trazabilidad mediante referencias a notas y emails",
+      "Acciones recomendadas concretas"
+    ],
+    "issues": [
+      "Posible invencion de email, telefono, ciudad y prioridad sin evidencia visible",
+      "No distingue claramente entre hechos confirmados e inferencias",
+      "Incluye una frase inicial de proceso que no aporta al informe final"
+    ],
+    "elapsed_seconds": 12.641
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 9.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta completa y útil: usa el contexto de GreenBox, menciona notas_voz.jsonl, compara alternativas económicas con precios y aporta fuentes relevantes.",
+    "strengths": [
+      "Incluye GreenBox y el objetivo de encuestas económicas",
+      "Compara varias alternativas con precio y encaje",
+      "Aporta fuentes directas de precios y disponibilidad",
+      "Da una recomendación práctica y justificada"
+    ],
+    "issues": [
+      "No cita fragmentos específicos de notas_voz.jsonl más allá de VN-009",
+      "Algunos precios podrían requerir verificación exacta por región o moneda",
+      "Las fuentes están agrupadas al final, no vinculadas a cada afirmación individual"
+    ],
+    "elapsed_seconds": 11.281
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta completa y útil, con contexto de Barna Health, Xavier Puig, fecha y shortlist de SSO, pero la trazabilidad de los datos locales es débil y algunas fuentes/precios no quedan verificados con precisión.",
+    "strengths": [
+      "Incluye las claves esperadas: Barna Health, SSO, Xavier Puig y fuentes",
+      "Contextualiza contacto, reunión y necesidad técnica",
+      "Compara proveedores relevantes con criterios prácticos",
+      "Propone una shortlist accionable"
+    ],
+    "issues": [
+      "No cita archivos o registros locales concretos para respaldar el contexto E-004",
+      "Algunas afirmaciones de precios y cumplimiento pueden requerir verificación actualizada",
+      "Las fuentes están listadas al final, pero no vinculadas a afirmaciones específicas",
+      "Incluye fuentes secundarias genéricas como Scalefusion/Guru99 sin URLs concretas"
+    ],
+    "elapsed_seconds": 14.359
+  },
+  {
+    "engine": "codex_gpt_5_5",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre la auditoria general y menciona las principales excepciones, pero no incluye las recomendaciones concretas en el cuerpo y no usa todas las claves esperadas de forma literal.",
+    "strengths": [
+      "Consolida enero a mayo y cuantifica registros, importes y excepciones",
+      "Identifica duplicado, recibo faltante, discrepancia y proveedor a revisar",
+      "Incluye trazabilidad mediante archivo Markdown generado"
+    ],
+    "issues": [
+      "No devuelve recomendaciones de control interno detalladas en la respuesta visible",
+      "No usa literalmente claves esperadas como sin_recibo, importe_discrepante y revisar_proveedor",
+      "Incluye mensajes de proceso innecesarios para un entregable final"
+    ],
+    "elapsed_seconds": 11.656
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta incluye las claves esperadas y una nota breve, pero añade el año 2026 sin que esté entre las claves esperadas, lo que podría ser un dato no trazado.",
+    "strengths": [
+      "Identifica correctamente a Noelia Castro",
+      "Incluye empresa, fecha y hora esperadas",
+      "Formato claro y breve",
+      "Añade un objetivo plausible y específico"
+    ],
+    "issues": [
+      "Agrega el año 2026 aunque la clave esperada solo indica 14 de mayo",
+      "No muestra trazabilidad a los archivos revisados"
+    ],
+    "elapsed_seconds": 11.219
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La tabla tiene buen formato y contiene las notas relevantes, pero no respeta las claves esperadas: incluye muchas acciones fuera de llamar/enviar/agendar/reservar y no normaliza las acciones.",
+    "strengths": [
+      "Formato tabular claro con las columnas solicitadas",
+      "Incluye los ids de nota y varias entidades/fechas correctamente",
+      "No omite las notas clave de llamar, enviar, agendar y reservar"
+    ],
+    "issues": [
+      "Añade muchas tareas no esperadas como comprar, preparar, pedir, revisar o investigar",
+      "Las acciones no están normalizadas a las claves esperadas y mezclan mayúsculas/descripciones largas",
+      "Incluye posibles no-tareas como preferencias de informes",
+      "Algunas entidades son incompletas o imprecisas, por ejemplo VN-020 sin entidad"
+    ],
+    "elapsed_seconds": 41.234
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente el concepto y la discrepancia, pero no conserva el formato exacto de importes ni la recomendacion esperada como clave.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado correctos semanticamente",
+      "Incluye una recomendacion accionable"
+    ],
+    "issues": [
+      "Importes sin dos decimales: usa 19.9 y 29.9 en vez de 19.90 y 29.90",
+      "No devuelve la recomendacion exacta esperada: importe_discrepante",
+      "Formato no estructurado para comparacion automatica"
+    ],
+    "elapsed_seconds": 15.391
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": true,
+    "comment": "Incluye las claves esperadas, pero prioriza de forma inconsistente y mezcla tareas posiblemente vencidas o menos relevantes con muchos elementos secundarios sin justificar trazabilidad.",
+    "strengths": [
+      "Contiene IberLegal, Clinica Centro, Delta Equipos y SSL",
+      "Formato claro con casillas de tareas",
+      "Separa tareas con fecha y sin fecha"
+    ],
+    "issues": [
+      "IberLegal, pese a tener fecha concreta, no aparece en tareas prioritarias",
+      "Incluye muchas tareas no solicitadas que diluyen el resumen semanal",
+      "No indica origen ni trazabilidad entre notas y emails",
+      "Algunas fechas pasadas aparecen como pendientes sin aclaración"
+    ],
+    "elapsed_seconds": 12.25
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "El CSV tiene el formato y columnas solicitadas, pero no respeta completamente las claves esperadas: falta 'proveedor' y aparecen varias empresas no esperadas, lo que sugiere filtrado incorrecto o datos inventados.",
+    "strengths": [
+      "Incluye cabecera correcta",
+      "Contiene IberLegal, Tecnoria y SerConta",
+      "Formato CSV legible"
+    ],
+    "issues": [
+      "Falta la clave esperada 'proveedor'",
+      "Incluye registros extra no indicados por las claves esperadas",
+      "No demuestra trazabilidad desde contactos_50.csv"
+    ],
+    "elapsed_seconds": 9.453
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "El ICS tiene estructura valida basica y cuatro eventos, pero no cubre todas las claves esperadas y parece inventar o sustituir compromisos relevantes.",
+    "strengths": [
+      "Incluye formato VCALENDAR/VEVENT reconocible",
+      "Contiene cuatro compromisos claros",
+      "Incluye Clinica Centro y Barna Health"
+    ],
+    "issues": [
+      "Faltan las claves esperadas \"sala\" y \"viernes 09:30\"",
+      "No indica datos faltantes en las descripciones",
+      "Puede haber eventos inventados o no trazables como IberLegal y Laura Marin",
+      "Fechas/horas ICS son ambiguas: UID marca Z pero DTSTART/DTEND no usan zona horaria ni UTC"
+    ],
+    "elapsed_seconds": 11.125
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 7.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre totales mensuales, categorias y anomalias, e incluye sin_recibo y revisar_proveedor, pero no usa claramente la clave esperada discrepancias y no ofrece trazabilidad de calculo ni fuente de datos.",
+    "strengths": [
+      "Incluye total mensual de enero a mayo",
+      "Resume totales por categoria principal",
+      "Lista anomalias con fechas, conceptos e importes",
+      "Incluye sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "No aparece la clave exacta discrepancias",
+      "No muestra trazabilidad ni desglose que permita verificar los totales",
+      "Puede haber datos inventados o no verificables al no citar fuente",
+      "Formato no orientado a las claves esperadas"
+    ],
+    "elapsed_seconds": 13.437
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y presenta un informe claro, pero añade datos de contacto y referencias específicas que no pueden verificarse con la información dada.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Formato claro con incidencias y oportunidades",
+      "Relaciona la oportunidad del modulo de pagos con conciliacion y pagos"
+    ],
+    "issues": [
+      "Posible invencion de email, telefono, rol y codigos de notas/hilos",
+      "La incidencia de facturacion queda algo inferida y poco concreta",
+      "No evidencia claramente el uso de emails y contactos salvo por datos no trazables"
+    ],
+    "elapsed_seconds": 9.422
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre GreenBox y propone alternativas de encuestas, pero no demuestra uso de notas_voz.jsonl, no incluye precios concretos comparables y las fuentes no son trazables con enlaces verificables.",
+    "strengths": [
+      "Menciona GreenBox y el contexto de encuestas",
+      "Propone alternativas económicas conocidas",
+      "Incluye alguna referencia nominal a fuentes"
+    ],
+    "issues": [
+      "No evidencia haber usado notas_voz.jsonl",
+      "Faltan enlaces o citas verificables",
+      "No compara precios de forma concreta",
+      "Posible dependencia de fuentes secundarias/promocionales sin contraste",
+      "Formato de fuentes ambiguo con etiquetas como [Fuente 3] no trazables"
+    ],
+    "elapsed_seconds": 8.937
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 4.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre las claves nominales, pero la investigacion es superficial, con fuentes poco trazables y posibles datos/proveedores inventados o no verificados.",
+    "strengths": [
+      "Incluye Barna Health, SSO y Xavier Puig",
+      "Contextualiza contacto, fecha y necesidad tecnica",
+      "Menciona criterios relevantes como SAML, OIDC, MFA, GDPR"
+    ],
+    "issues": [
+      "No aporta enlaces ni citas verificables, solo dominios genericos",
+      "No demuestra uso de datos locales ni trazabilidad a archivos/contexto",
+      "Omite proveedores SSO empresariales habituales como Microsoft Entra ID, Okta, Auth0, OneLogin o Ping",
+      "Incluye proveedores dudosos o poco justificados como EMÚ, OneIdP y Veltar",
+      "No compara opciones ni recomienda segun necesidades sanitarias concretas"
+    ],
+    "elapsed_seconds": 13.047
+  },
+  {
+    "engine": "gemini_gemini_2_5_flash",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Respuesta completa y accionable; cubre las incidencias esperadas y recomendaciones, aunque usa 'posible_duplicado' en vez de la clave exacta 'duplicado' y no demuestra cobertura de todos los gastos auditados.",
+    "strengths": [
+      "Identifica duplicados, recibos faltantes, discrepancias y proveedor a revisar",
+      "Incluye evidencias concretas por incidencia",
+      "Propone recomendaciones de control interno pertinentes"
+    ],
+    "issues": [
+      "La clave esperada 'duplicado' no aparece exactamente como etiqueta",
+      "Asume el año 2026 sin justificarlo",
+      "No incluye resumen de universo auditado ni totales por tipo de incidencia"
+    ],
+    "elapsed_seconds": 10.032
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta incluye las claves esperadas y cubre persona, empresa, fecha, hora y objetivo. La única reserva es que expresa la fecha como 2026-05-14, añadiendo un año que podría no estar trazado si en las fuentes solo figuraba '14 de mayo'.",
+    "strengths": [
+      "Incluye Noelia Castro, Clinica Centro, 14 de mayo/11:30",
+      "Formato claro y breve",
+      "Incluye objetivo de la cita"
+    ],
+    "issues": [
+      "Posible invención o sobreespecificación del año 2026",
+      "No menciona trazabilidad a los archivos revisados"
+    ],
+    "elapsed_seconds": 13.187
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente la discrepancia principal, pero no conserva el formato decimal esperado ni devuelve la recomendacion exacta esperada.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado correctos en valor",
+      "Recomendacion coherente"
+    ],
+    "issues": [
+      "Usa 19.9 y 29.9 en lugar de 19.90 y 29.90",
+      "No incluye la recomendacion clave exacta importe_discrepante",
+      "Formato mas verbose que lo solicitado"
+    ],
+    "elapsed_seconds": 9.938
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y prioriza varios compromisos con cliente o fecha, aunque añade muchas tareas no verificables y el resumen queda algo disperso.",
+    "strengths": [
+      "Incluye las claves esperadas: IberLegal, Clinica Centro, Delta Equipos y SSL.",
+      "Identifica fechas concretas y acciones de seguimiento.",
+      "Organiza las tareas por urgencia, plazos y clientes."
+    ],
+    "issues": [
+      "Puede estar sobreincluyendo tareas no priorizadas o no solicitadas.",
+      "No cita ni separa claramente qué proviene de notas de voz frente a emails.",
+      "Algunas fechas vencidas se presentan como seguimiento, pero sin indicar claramente el estado o riesgo."
+    ],
+    "elapsed_seconds": 12.14
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 2.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no crea el CSV solicitado; solo propone un plan y además indica generar una tabla Markdown en resultado.md, lo que contradice el formato requerido.",
+    "strengths": [
+      "Identifica correctamente que debe filtrar por tipo proveedor",
+      "Reconoce las columnas necesarias"
+    ],
+    "issues": [
+      "No entrega ni crea un CSV de proveedores",
+      "Formato incorrecto: propone Markdown y resultado.md",
+      "No verifica ni incluye las claves esperadas IberLegal, Tecnoria y SerConta",
+      "No hay trazabilidad de datos extraídos desde contactos_50.csv"
+    ],
+    "elapsed_seconds": 7.75
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "El ICS tiene formato valido y cuatro eventos, pero omite claves esperadas importantes como \"sala\" y \"viernes 09:30\", y parece sustituir datos por valores no especificados o fechas/horas dudosas.",
+    "strengths": [
+      "Formato ICS completo y parseable",
+      "Incluye cuatro compromisos",
+      "Incluye Clinica Centro y Barna Health",
+      "Marca algunos datos faltantes en DESCRIPTION"
+    ],
+    "issues": [
+      "No aparece la clave esperada \"sala\"",
+      "No refleja \"viernes 09:30\"",
+      "Varias localizaciones quedan como no especificadas pese a que habia una clave esperada",
+      "Posible invencion o mala inferencia de fechas y horas",
+      "No muestra trazabilidad clara a notas_voz.jsonl ni emails_hilos.md"
+    ],
+    "elapsed_seconds": 11.781
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre totales mensuales, categorias y anomalias de enero a mayo, pero no usa explicitamente la clave esperada \"discrepancias\" y presenta problemas de codificacion en simbolos y acentos.",
+    "strengths": [
+      "Incluye total mensual para cada mes",
+      "Desglosa gastos por categoria",
+      "Lista anomalias relevantes como sin_recibo y revisar_proveedor"
+    ],
+    "issues": [
+      "Falta la clave literal \"discrepancias\"",
+      "Problemas de codificacion: � en euros y acentos",
+      "La anomalia de duplicado en marzo aparece repetida sin consolidacion"
+    ],
+    "elapsed_seconds": 8.641
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre las claves esperadas y organiza incidencias, oportunidades y contactos, aunque parte de la incidencia de facturacion queda formulada como inferencia y no como hecho confirmado.",
+    "strengths": [
+      "Incluye Clinica Centro, Noelia Castro, modulo de pagos y facturacion",
+      "Estructura clara por incidencias, oportunidades y contactos",
+      "Aporta trazabilidad parcial con referencias VN-019, VN-001 y E-001"
+    ],
+    "issues": [
+      "La incidencia de facturacion es algo vaga y especulativa",
+      "No queda claro si email, telefono y prioridad provienen de las fuentes o son inferidos",
+      "Falta mayor detalle sobre evidencias concretas de notas, emails y contactos"
+    ],
+    "elapsed_seconds": 10.031
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 4.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta propone alternativas relevantes para encuestas y menciona GreenBox, pero no demuestra haber usado notas_voz.jsonl, no incluye precios concretos ni fuentes trazables con enlaces, y las referencias son vagas.",
+    "strengths": [
+      "Incluye varias herramientas de encuestas conocidas",
+      "Mantiene el foco general en alternativas económicas",
+      "Menciona explícitamente GreenBox"
+    ],
+    "issues": [
+      "No hay evidencia de uso de notas_voz.jsonl",
+      "No incluye precios concretos ni comparación económica real",
+      "Las fuentes no son verificables: no hay enlaces ni citas completas",
+      "Puede inventar o asumir datos al decir que tienen precios competitivos sin respaldarlo",
+      "Falta trazabilidad entre recomendaciones y necesidades específicas de GreenBox"
+    ],
+    "elapsed_seconds": 9.157
+  },
+  {
+    "engine": "opencode_google_gemini_2_5_flash",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "Cumple parcialmente las claves esperadas, pero la investigación es débil: no aporta enlaces ni trazabilidad real de fuentes, prioriza proveedores poco justificados y parece inventar o asumir datos de contacto y reunión sin evidenciar datos locales.",
+    "strengths": [
+      "Incluye Barna Health, SSO y Xavier Puig",
+      "Contextualiza la necesidad en sector sanitario",
+      "Menciona criterios técnicos relevantes como SAML, OAuth, OIDC, MFA y auditoría"
+    ],
+    "issues": [
+      "No incluye URLs ni fuentes verificables, solo referencias vagas",
+      "Faltan proveedores SSO/IAM principales como Microsoft Entra ID, Okta, Auth0, OneLogin o Ping Identity",
+      "Posible invención de email, teléfono, prioridad del cliente y reunión presencial sin trazabilidad",
+      "La selección de proveedores es poco equilibrada y no compara opciones actuales de forma útil",
+      "Formato más narrativo que investigativo; falta tabla comparativa, recomendación clara y evidencia local"
+    ],
+    "elapsed_seconds": 14.953
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-01",
+    "judge_model": "codex:gpt-5.5",
+    "score": 9.0,
+    "passed_expected_keys": true,
+    "comment": "La respuesta cubre los datos clave esperados y mantiene un formato claro. Solo añade el año, que no estaba entre las claves esperadas y podría ser una inferencia si no consta en las fuentes.",
+    "strengths": [
+      "Incluye persona, empresa, fecha y hora correctas",
+      "Formato breve y legible",
+      "Incluye objetivo de la cita"
+    ],
+    "issues": [
+      "Añade '2026', dato no incluido en las claves esperadas"
+    ],
+    "elapsed_seconds": 22.766
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-03",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no realiza la extracción solicitada ni entrega la tabla requerida; simplemente no hay contenido evaluable.",
+    "strengths": [],
+    "issues": [
+      "No lee ni procesa el archivo indicado",
+      "No extrae tareas pendientes",
+      "No presenta tabla con id de nota, accion, entidad y fecha limite",
+      "No cubre las claves esperadas: llamar, enviar, agendar, reservar"
+    ],
+    "elapsed_seconds": 7.719
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente la discrepancia, pero no respeta exactamente el formato esperado de importes ni la recomendacion clave.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado correctos en valor",
+      "Recomendacion semanticamente adecuada"
+    ],
+    "issues": [
+      "Los importes no conservan el formato esperado con dos decimales: 19.90 y 29.90",
+      "La recomendacion no usa la clave esperada importe_discrepante",
+      "No aporta trazabilidad al CSV auditado"
+    ],
+    "elapsed_seconds": 8.343
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-08",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun resumen ni procesa las fuentes solicitadas; omite todas las claves esperadas.",
+    "strengths": [],
+    "issues": [
+      "Respuesta vacia o nula",
+      "No menciona IberLegal, Clinica Centro, Delta Equipos ni SSL",
+      "No prioriza compromisos con fecha o cliente concreto",
+      "No hay trazabilidad a notas_voz.jsonl ni emails_hilos.md"
+    ],
+    "elapsed_seconds": 7.61
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-10",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "Incluye las columnas correctas y algunos proveedores esperados, pero mezcla registros no trazables como proveedores y la salida queda truncada/incompleta.",
+    "strengths": [
+      "Formato CSV con cabecera correcta",
+      "Incluye IberLegal, Tecnoria y SerConta"
+    ],
+    "issues": [
+      "No evidencia filtrado por la clave proveedor",
+      "Incluye empresas no esperadas",
+      "Respuesta truncada en la ultima fila",
+      "No hay trazabilidad a contactos_50.csv"
+    ],
+    "elapsed_seconds": 10.797
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-14",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun contenido ICS ni extrae los cuatro compromisos solicitados.",
+    "strengths": [],
+    "issues": [
+      "No entrega un archivo ICS ni eventos VEVENT",
+      "No incluye los cuatro compromisos claros",
+      "No usa ni referencia las claves esperadas",
+      "No indica datos faltantes en la descripcion",
+      "Respuesta vacia o nula"
+    ],
+    "elapsed_seconds": 7.328
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-17",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun resumen financiero ni calcula los elementos solicitados.",
+    "strengths": [],
+    "issues": [
+      "No incluye total mensual de enero a mayo",
+      "No identifica categorias principales",
+      "No lista anomalias ni discrepancias",
+      "No cubre claves esperadas como sin_recibo o revisar_proveedor",
+      "Respuesta vacia: no hay trazabilidad ni datos verificables"
+    ],
+    "elapsed_seconds": 9.515
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-20",
+    "judge_model": "codex:gpt-5.5",
+    "score": 1.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta no contiene ningun informe ni menciona las claves esperadas; no cumple la tarea original.",
+    "strengths": [],
+    "issues": [
+      "Respuesta vacia o nula",
+      "No aborda incidencias ni oportunidades",
+      "No incluye las claves esperadas: Clinica Centro, Noelia Castro, modulo de pagos, facturacion",
+      "Sin trazabilidad ni formato de informe"
+    ],
+    "elapsed_seconds": 6.61
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta identifica alternativas relevantes para GreenBox, pero no incluye precios concretos ni fuentes verificables completas, y algunas referencias parecen genéricas o inventadas.",
+    "strengths": [
+      "Menciona GreenBox y la necesidad de una alternativa barata para encuestas",
+      "Propone varias herramientas conocidas con planes gratuitos o económicos",
+      "Incluye una recomendación práctica inicial"
+    ],
+    "issues": [
+      "No aporta precios numéricos ni comparativa clara de coste",
+      "Las fuentes están incompletas o son anclas internas no verificables",
+      "No demuestra uso trazable de busqueda web ni de notas_voz.jsonl más allá de citar VN-009",
+      "Puede inventar o exagerar datos como años, planes o características sin respaldo visible"
+    ],
+    "elapsed_seconds": 10.75
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre Barna Health, SSO y Xavier Puig, pero la trazabilidad es débil y parece inventar o asumir datos sin evidencias claras ni fuentes verificables.",
+    "strengths": [
+      "Incluye contexto local aparente: fecha, contacto y necesidad técnica",
+      "Compara varias opciones de SSO relevantes",
+      "Ofrece una recomendación y alternativas"
+    ],
+    "issues": [
+      "No aporta enlaces ni citas verificables de fuentes; solo menciona nombres genéricos",
+      "Puede inventar datos locales como email, prioridad o ubicación sin mostrar evidencia",
+      "Usa HIPAA como requisito pese a que Barna Health parece contexto español/europeo, donde GDPR sería más pertinente",
+      "La respuesta queda cortada al final y no completa los pasos siguientes",
+      "Fuentes como Guru99/LinkedIn/Scalefusion no son ideales para una evaluación técnica rigurosa"
+    ],
+    "elapsed_seconds": 8.938
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-26",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre los tipos de hallazgos esperados y da recomendaciones, pero no usa las claves esperadas de forma trazable y parece inventar importes, proveedores y fechas sin mostrar evidencia.",
+    "strengths": [
+      "Identifica duplicados, recibo faltante, importe discrepante y proveedor a revisar",
+      "Incluye recomendaciones concretas de control interno",
+      "Estructura clara por mes y plan de acción"
+    ],
+    "issues": [
+      "No incluye explícitamente las claves esperadas: duplicado, sin_recibo, importe_discrepante, revisar_proveedor",
+      "Falta trazabilidad a los registros originales o IDs de gasto",
+      "Introduce datos específicos no justificados, como totales, Office Depot y fechas límite",
+      "No queda claro si auditó todos los gastos reales o si resumió con supuestos"
+    ],
+    "elapsed_seconds": 10.219
+  },
+  {
+    "engine": "openrouter_arcee_ai_trinity_large_thinking_free",
+    "task_id": "test-30",
+    "judge_model": "codex:gpt-5.5",
+    "score": 4.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta cubre parcialmente el panorama de IA ofimática, pero queda incompleta, no aporta trazabilidad real y parece inventar datos locales como VN-014 sin evidencia.",
+    "strengths": [
+      "Incluye estructura ejecutiva clara",
+      "Menciona herramientas ofimáticas y agentes CLI",
+      "Incluye OpenRouter y Gemini en el objetivo"
+    ],
+    "issues": [
+      "No desarrolla la comparativa OpenRouter vs Gemini ni una recomendación ejecutiva final",
+      "No cruza de forma verificable la investigación con datos locales",
+      "Faltan fuentes, citas o trazabilidad de la investigación web",
+      "Incluye afirmaciones potencialmente desactualizadas o imprecisas, como Duet AI en vez de Gemini for Workspace",
+      "Parece inventar datos locales como contactos, correos, notas de voz y VN-014"
+    ],
+    "elapsed_seconds": 9.218
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash_free",
+    "task_id": "test-05",
+    "judge_model": "codex:gpt-5.5",
+    "score": 8.0,
+    "passed_expected_keys": true,
+    "comment": "Identifica correctamente el concepto y los importes discrepantes, pero no conserva el formato con dos decimales ni devuelve la recomendación esperada como clave exacta.",
+    "strengths": [
+      "Concepto correcto",
+      "Importe declarado y esperado correctos en valor",
+      "Recomendación práctica y coherente"
+    ],
+    "issues": [
+      "Importes formateados como 19.9 y 29.9 en lugar de 19.90 y 29.90",
+      "La recomendación no usa la clave esperada importe_discrepante"
+    ],
+    "elapsed_seconds": 8.907
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash_free",
+    "task_id": "test-21",
+    "judge_model": "codex:gpt-5.5",
+    "score": 6.0,
+    "passed_expected_keys": true,
+    "comment": "Cumple la estructura básica y menciona GreenBox, encuestas, precios y fuentes, pero la trazabilidad a notas_voz.jsonl es débil y varios precios parecen no verificados u obtenidos de fuentes secundarias.",
+    "strengths": [
+      "Incluye varias alternativas económicas",
+      "Indica precios o planes gratuitos",
+      "Aporta enlaces de fuentes",
+      "Da una recomendación final para GreenBox"
+    ],
+    "issues": [
+      "No cita ni resume contenido concreto de notas_voz.jsonl más allá de mencionar VN-009",
+      "Usa principalmente fuentes secundarias en vez de páginas oficiales de precios",
+      "Algunos datos de precios o límites pueden estar desactualizados o ser imprecisos",
+      "No explica la herramienta actual ni los criterios concretos extraídos de las notas"
+    ],
+    "elapsed_seconds": 10.844
+  },
+  {
+    "engine": "openrouter_deepseek_deepseek_v4_flash_free",
+    "task_id": "test-23",
+    "judge_model": "codex:gpt-5.5",
+    "score": 5.0,
+    "passed_expected_keys": false,
+    "comment": "La respuesta menciona Barna Health, SSO y Xavier Puig, pero es débil en trazabilidad y parece inventar o asumir datos locales sin mostrar fuentes. También omite URLs o referencias verificables y mezcla proveedores de forma poco justificada.",
+    "strengths": [
+      "Incluye contexto técnico y una recomendación accionable",
+      "Identifica varios proveedores relevantes como Okta, Azure AD y Keycloak",
+      "Usa el contacto Xavier Puig y fecha/reunión para contextualizar"
+    ],
+    "issues": [
+      "No aporta sección de fuentes con enlaces ni evidencia verificable",
+      "Afirma datos sensibles/locales como email, teléfono, prioridad y reunión confirmada sin trazabilidad",
+      "Fecha de investigación 2026-05-08 no se justifica frente a la fecha actual o datos locales",
+      "Varias afirmaciones parecen dudosas o no verificadas, por ejemplo cumplimiento SOC 2/GDPR de Keycloak o HIPAA para Okta",
+      "No compara criterios clave de forma completa: costes, despliegue, soporte sanitario, RGPD, SAML/OIDC, MFA"
+    ],
+    "elapsed_seconds": 11.5
+  }
+]

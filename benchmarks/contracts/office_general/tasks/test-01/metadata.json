@@ -1,0 +1,25 @@
+{
+  "id": "test-01",
+  "title": "Recordar cita de Clinica Centro",
+  "difficulty": 1,
+  "level": "L1",
+  "category": "assistant_digital",
+  "skills": [
+    "agenda",
+    "data_extraction"
+  ],
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/contactos_50.csv"
+  ],
+  "expected_keys": [
+    "Noelia Castro",
+    "Clinica Centro",
+    "14 de mayo",
+    "11:30"
+  ],
+  "response_shape": "respuesta util y trazable",
+  "prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-01/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-01/metadata.json"
+}

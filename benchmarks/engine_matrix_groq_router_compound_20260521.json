@@ -1,0 +1,25 @@
+[
+  {
+    "group": "groq_fast_router_candidates",
+    "engines": [
+      "groq:llama-3.1-8b-instant",
+      "groq:qwen/qwen3-32b",
+      "groq:openai/gpt-oss-20b"
+    ]
+  },
+  {
+    "group": "groq_stronger_workers",
+    "engines": [
+      "groq:openai/gpt-oss-120b",
+      "groq:llama-3.3-70b-versatile",
+      "groq:meta-llama/llama-4-scout-17b-16e-instruct"
+    ]
+  },
+  {
+    "group": "groq_compound_systems",
+    "engines": [
+      "groq:groq/compound-mini",
+      "groq:groq/compound"
+    ]
+  }
+]

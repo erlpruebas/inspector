@@ -1,0 +1,25 @@
+[
+  {
+    "group": "fast_router_finalists",
+    "engines": [
+      "groq:llama-3.1-8b-instant",
+      "groq:qwen/qwen3-32b",
+      "groq:llama-3.3-70b-versatile"
+    ]
+  },
+  {
+    "group": "worker_finalists",
+    "engines": [
+      "groq:openai/gpt-oss-120b",
+      "openrouter:deepseek/deepseek-v3.2",
+      "openrouter:openai/gpt-5.4-mini"
+    ]
+  },
+  {
+    "group": "agentic_finalists",
+    "engines": [
+      "groq:groq/compound-mini",
+      "opencode:openrouter/deepseek/deepseek-v3.2"
+    ]
+  }
+]

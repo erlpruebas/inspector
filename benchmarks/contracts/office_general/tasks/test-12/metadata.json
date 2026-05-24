@@ -1,0 +1,25 @@
+{
+  "id": "test-12",
+  "title": "Preparar minuta de contrato IberLegal",
+  "difficulty": 2,
+  "level": "L2",
+  "category": "assistant_digital",
+  "skills": [
+    "email_analysis",
+    "risk_extraction"
+  ],
+  "required_files": [
+    "assistant_synthetic/emails_hilos.md",
+    "assistant_synthetic/notas_voz.jsonl"
+  ],
+  "expected_keys": [
+    "clausula 8",
+    "responsabilidad",
+    "renovacion automatica",
+    "12 de mayo"
+  ],
+  "response_shape": "respuesta util y trazable",
+  "prompt": "# Preparar minuta de contrato IberLegal\n\nPrepara una minuta de revision del contrato de IberLegal usando `emails_hilos.md` y `notas_voz.jsonl`. Incluye fecha limite y puntos de riesgo.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-12/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-12/metadata.json"
+}

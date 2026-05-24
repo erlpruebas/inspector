@@ -1,0 +1,39 @@
+{
+  "engine": "groq_llama_3_3_70b_versatile",
+  "task_id": "test-20",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.3-70b-versatile\", \"elapsed_seconds\": 2.297, \"usage\": {\"queue_time\": 0.063645815, \"prompt_tokens\": 3167, \"prompt_time\": 0.155944624, \"completion_tokens\": 576, \"completion_time\": 1.921940265, \"total_tokens\": 3743, \"total_time\": 2.077884889}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-20\\resultado.md"
+  ],
+  "elapsed_seconds": 2.514999999999418,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.3-70b-versatile",
+    "elapsed_seconds": 2.297,
+    "usage": {
+      "queue_time": 0.063645815,
+      "prompt_tokens": 3167,
+      "prompt_time": 0.155944624,
+      "completion_tokens": 576,
+      "completion_time": 1.921940265,
+      "total_tokens": 3743,
+      "total_time": 2.077884889
+    }
+  },
+  "model": "llama-3.3-70b-versatile",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.3-70b-versatile",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_3_70b_versatile_test-20_resultado.md"
+  ],
+  "task_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.",
+  "execution_prompt": "# Informe de incidencias de Clinica Centro\n\nElabora un informe de incidencias y oportunidades para Clinica Centro usando notas, emails y contactos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/notas_voz.jsonl`\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_3_70b_versatile\\test-20",
+  "privacy": {
+    "mode": "clear"
+  }
+}

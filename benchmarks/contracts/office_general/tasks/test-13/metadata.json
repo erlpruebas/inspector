@@ -1,0 +1,26 @@
+{
+  "id": "test-13",
+  "title": "Informe de discrepancias de gastos Q1",
+  "difficulty": 3,
+  "level": "L3",
+  "category": "assistant_digital",
+  "skills": [
+    "expense_audit",
+    "multi_file_analysis"
+  ],
+  "required_files": [
+    "assistant_synthetic/gastos_2026_01.csv",
+    "assistant_synthetic/gastos_2026_02.csv",
+    "assistant_synthetic/gastos_2026_03.csv"
+  ],
+  "expected_keys": [
+    "Licencia PDF",
+    "Hotel Barcelona",
+    "duplicado",
+    "febrero"
+  ],
+  "response_shape": "tabla de auditoria con discrepancias y recomendacion",
+  "prompt": "# Informe de discrepancias de gastos Q1\n\nAudita los gastos de enero, febrero y marzo en los CSV correspondientes. Resume discrepancias, duplicados y partidas limpias.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-13/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-13/metadata.json"
+}

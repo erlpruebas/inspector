@@ -1,0 +1,22 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-23",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Missing API key env var: GROQ_API_KEY\n",
+  "output_files": [],
+  "elapsed_seconds": 0.25,
+  "timed_out": false,
+  "usage": {},
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [],
+  "task_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.",
+  "execution_prompt": "# Investigar proveedor de SSO para Barna Health\n\nInvestiga opciones actuales de SSO adecuadas para Barna Health. Usa datos locales para contextualizar contacto, fecha y necesidad tecnica.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.\n\nContexto web preparado por el benchmark: `web_context.md`.\nLee ese archivo antes de responder. Si usas datos del contexto web, incluye las fuentes relevantes en la respuesta.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_113731_842340\\work\\groq_llama_3_1_8b_instant\\test-23",
+  "privacy": {
+    "mode": "clear"
+  }
+}

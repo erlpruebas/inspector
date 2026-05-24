@@ -1,0 +1,42 @@
+{
+  "engine": "groq_openai_gpt_oss_120b",
+  "task_id": "test-10",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"openai/gpt-oss-120b\", \"elapsed_seconds\": 1.266, \"usage\": {\"queue_time\": 0.021231555, \"prompt_tokens\": 548, \"prompt_time\": 0.112008822, \"completion_tokens\": 461, \"completion_time\": 0.974002586, \"total_tokens\": 1009, \"total_time\": 1.086011408, \"completion_tokens_details\": {\"reasoning_tokens\": 393}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\groq_openai_gpt_oss_120b\\test-10\\resultado.md"
+  ],
+  "elapsed_seconds": 1.5939999999973224,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "elapsed_seconds": 1.266,
+    "usage": {
+      "queue_time": 0.021231555,
+      "prompt_tokens": 548,
+      "prompt_time": 0.112008822,
+      "completion_tokens": 461,
+      "completion_time": 0.974002586,
+      "total_tokens": 1009,
+      "total_time": 1.086011408,
+      "completion_tokens_details": {
+        "reasoning_tokens": 393
+      }
+    }
+  },
+  "model": "openai/gpt-oss-120b",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:openai/gpt-oss-120b",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\groq_openai_gpt_oss_120b_test-10_resultado.md"
+  ],
+  "task_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.",
+  "execution_prompt": "# Crear CSV de proveedores\n\nDesde `contactos_50.csv`, crea un CSV de proveedores con columnas Nombre, Empresa, Rol, Email, Ciudad y Prioridad.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_171122_417657\\work\\groq_openai_gpt_oss_120b\\test-10",
+  "privacy": {
+    "mode": "clear"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "engine": "groq_llama_3_1_8b_instant",
+  "task_id": "test-17",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"groq\", \"model\": \"llama-3.1-8b-instant\", \"elapsed_seconds\": 0.64, \"usage\": {\"queue_time\": 0.019043688, \"prompt_tokens\": 826, \"prompt_time\": 0.058068998, \"completion_tokens\": 218, \"completion_time\": 0.332054662, \"total_tokens\": 1044, \"total_time\": 0.39012366}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-17\\resultado.md"
+  ],
+  "elapsed_seconds": 0.9059999999881256,
+  "timed_out": false,
+  "usage": {
+    "provider": "groq",
+    "model": "llama-3.1-8b-instant",
+    "elapsed_seconds": 0.64,
+    "usage": {
+      "queue_time": 0.019043688,
+      "prompt_tokens": 826,
+      "prompt_time": 0.058068998,
+      "completion_tokens": 218,
+      "completion_time": 0.332054662,
+      "total_tokens": 1044,
+      "total_time": 0.39012366
+    }
+  },
+  "model": "llama-3.1-8b-instant",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "groq:llama-3.1-8b-instant",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\groq_llama_3_1_8b_instant_test-17_resultado.md"
+  ],
+  "task_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.",
+  "execution_prompt": "# Resumen financiero de gastos enero-mayo\n\nAgrega los gastos de enero a mayo. Calcula total por mes, categorias principales y lista de anomalias.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/gastos_2026_01.csv`\n- `assistant_synthetic/gastos_2026_02.csv`\n- `assistant_synthetic/gastos_2026_03.csv`\n- `assistant_synthetic/gastos_2026_04.csv`\n- `assistant_synthetic/gastos_2026_05.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_174516_442823\\work\\groq_llama_3_1_8b_instant\\test-17",
+  "privacy": {
+    "mode": "clear"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "engine": "openrouter_z_ai_glm_5_1",
+  "task_id": "test-01",
+  "returncode": 0,
+  "stdout": "{\"provider\": \"openrouter\", \"model\": \"z-ai/glm-5.1\", \"elapsed_seconds\": 8.016, \"usage\": {\"prompt_tokens\": 2667, \"completion_tokens\": 512, \"total_tokens\": 3179, \"cost\": 0.00589635, \"is_byok\": false, \"prompt_tokens_details\": {\"cached_tokens\": 0, \"cache_write_tokens\": 0, \"audio_tokens\": 0, \"video_tokens\": 0}, \"cost_details\": {\"upstream_inference_cost\": 0.00589635, \"upstream_inference_prompt_cost\": 0.00365379, \"upstream_inference_completions_cost\": 0.00224256}, \"completion_tokens_details\": {\"reasoning_tokens\": 479, \"image_tokens\": 0, \"audio_tokens\": 0}}}\n",
+  "stderr": "",
+  "output_files": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-01\\resultado.md"
+  ],
+  "elapsed_seconds": 8.389999999999418,
+  "timed_out": false,
+  "usage": {
+    "provider": "openrouter",
+    "model": "z-ai/glm-5.1",
+    "elapsed_seconds": 8.016,
+    "usage": {
+      "prompt_tokens": 2667,
+      "completion_tokens": 512,
+      "total_tokens": 3179,
+      "cost": 0.00589635,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00589635,
+        "upstream_inference_prompt_cost": 0.00365379,
+        "upstream_inference_completions_cost": 0.00224256
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 479,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "model": "z-ai/glm-5.1",
+  "error_type": "",
+  "retry_after_seconds": 0,
+  "engine_spec": "openrouter:z-ai/glm-5.1",
+  "copied_outputs": [
+    "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\openrouter_z_ai_glm_5_1_test-01_resultado.md"
+  ],
+  "task_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.",
+  "execution_prompt": "# Recordar cita de Clinica Centro\n\nRevisa `benchmarks/assets/assistant_synthetic/emails_hilos.md` y `benchmarks/assets/assistant_synthetic/contactos_50.csv`. Crea una nota breve con la cita de Clinica Centro: persona, empresa, fecha, hora y objetivo. No inventes datos.\n\nArchivos locales preparados en el directorio de trabajo:\n- `assistant_synthetic/emails_hilos.md`\n- `assistant_synthetic/contactos_50.csv`\n\nUsa esas rutas relativas cuando necesites leer datos locales.",
+  "workdir": "D:\\inspector\\benchmarks\\results\\20260521_163605_061577\\work\\openrouter_z_ai_glm_5_1\\test-01",
+  "privacy": {
+    "mode": "clear"
+  }
+}

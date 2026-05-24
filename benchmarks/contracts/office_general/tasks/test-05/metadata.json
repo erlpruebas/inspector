@@ -1,0 +1,24 @@
+{
+  "id": "test-05",
+  "title": "Detectar gasto discrepante de febrero",
+  "difficulty": 1,
+  "level": "L1",
+  "category": "assistant_digital",
+  "skills": [
+    "expense_audit",
+    "data_extraction"
+  ],
+  "required_files": [
+    "assistant_synthetic/gastos_2026_02.csv"
+  ],
+  "expected_keys": [
+    "Licencia PDF",
+    "19.90",
+    "29.90",
+    "importe_discrepante"
+  ],
+  "response_shape": "tabla de auditoria con discrepancias y recomendacion",
+  "prompt": "# Detectar gasto discrepante de febrero\n\nAudita `benchmarks/assets/assistant_synthetic/gastos_2026_02.csv` e identifica la discrepancia de importe. Devuelve concepto, importe declarado, importe esperado y recomendacion.",
+  "source_task_file": "benchmarks/tasks/assistant_suite/test-05/task.md",
+  "source_metadata_file": "benchmarks/tasks/assistant_suite/test-05/metadata.json"
+}

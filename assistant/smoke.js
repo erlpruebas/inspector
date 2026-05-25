@@ -7,6 +7,7 @@ async function main() {
   process.env.STT_PROVIDER = "local";
   process.env.ROUTER_PROVIDER = "local";
   process.env.TTS_ENABLED = "false";
+  process.env.ASSISTANT_REQUEST_MODE = "legacy";
 
   const rootDir = path.resolve(__dirname, "..");
   const core = createAssistantCore({

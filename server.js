@@ -383,6 +383,7 @@ async function handleAssistantMessage(body) {
     label: body.label || body.userName || body.source || "desktop",
     text: body.text || "",
     audioPath,
+    files: Array.isArray(body.files) ? body.files : [],
     language: body.language || "es",
     preferGroq: body.preferGroq,
     synthesize: body.synthesize,
@@ -512,6 +513,12 @@ function guessTelegramMime(filePath) {
   return map[ext] || "application/octet-stream";
 }
 
+function isAudioMime(mimeType, fileName = "") {
+  const mime = String(mimeType || "").toLowerCase();
+  const ext = path.extname(fileName || "").toLowerCase();
+  return mime.startsWith("audio/") || [".ogg", ".oga", ".mp3", ".wav", ".m4a", ".webm", ".flac", ".aac", ".mpga", ".mpeg"].includes(ext);
+}
+
 function parseIdList(value) {
   return String(value || "")
     .split(/[,\s]+/)
@@ -550,12 +557,28 @@ async function handleTelegramUpdate(token, update) {
 
   const text = message.text || message.caption || "";
   let audioPath = null;
+  const files = [];
 
-  if (message.voice?.file_id || message.audio?.file_id || message.document?.file_id) {
-    const fileId = message.voice?.file_id || message.audio?.file_id || message.document?.file_id;
+  if (message.voice?.file_id || message.audio?.file_id || message.document?.file_id || message.video?.file_id || message.photo?.length) {
+    const photo = Array.isArray(message.photo) && message.photo.length ? message.photo[message.photo.length - 1] : null;
+    const fileId =
+      message.voice?.file_id ||
+      message.audio?.file_id ||
+      message.document?.file_id ||
+      message.video?.file_id ||
+      photo?.file_id;
     const file = await telegramDownload(token, fileId);
-    const saved = await assistantCore.writeAudioBuffer(file);
-    audioPath = saved.path;
+    if (message.document?.file_name) file.fileName = message.document.file_name;
+    const saved = await assistantCore.writeInboxBuffer({
+      ...file,
+      source: "telegram",
+      threadId: String(chatId),
+      userName,
+    });
+    files.push(saved.path);
+    if (message.voice?.file_id || message.audio?.file_id || isAudioMime(saved.mimeType, saved.fileName)) {
+      audioPath = saved.path;
+    }
   }
 
   const result = await handleAssistantMessage({
@@ -566,6 +589,7 @@ async function handleTelegramUpdate(token, update) {
     userName,
     text,
     audioPath,
+    files,
     language: "es",
     preferGroq: true,
   });

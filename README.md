@@ -15,7 +15,7 @@ Este repositorio esta dividido en dos bloques principales:
 
 - `benchmarks/`: la arena de evaluacion, los motores, las tareas, el juez y los reportes.
 - `telegram_codex_orchestrator/`: el orquestador operativo que recibe instrucciones y las ejecuta con Codex CLI y sus variantes.
-- `assistant/`, `server.js` y `desktop_assistant.py`: el gestor conversacional ligero con Tkinter, Telegram, Groq STT, memoria, alarmas y voz.
+- `assistant/`, `server.js` y `desktop_assistant.py`: el gestor ligero con Tkinter, Telegram, Groq STT, Codex CLI, alarmas y voz.
 
 ## Que vas a encontrar aqui
 
@@ -27,7 +27,14 @@ Este repositorio esta dividido en dos bloques principales:
 
 ## Que estamos haciendo ahora
 
-En este momento el programa principal sigue en evolucion activa, asi que esta documentacion esta escrita para:
+En este momento el gestor se ha reconducido a un flujo mas simple:
+
+- cada mensaje es una peticion unica;
+- la ejecucion normal va por Codex CLI;
+- Codex Desktop solo se usa si el usuario lo pide explicitamente;
+- Telegram y Tkinter son entradas/salidas, no el motor principal de razonamiento.
+
+Esta documentacion esta escrita para:
 
 - explicar la arquitectura actual sin cambiar el comportamiento del sistema;
 - dejar claro que partes ya estan pensadas para publicacion;
@@ -48,6 +55,10 @@ Los detalles de la estructura de salida estan descritos en [docs/RESULTS.md](doc
 
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [docs/RESULTS.md](docs/RESULTS.md)
+- [docs/MODEL_LAB_SUMMARY.md](docs/MODEL_LAB_SUMMARY.md)
+- [docs/CODEX_ONESHOT_RUNTIME.md](docs/CODEX_ONESHOT_RUNTIME.md)
+- [docs/RUNTIME.md](docs/RUNTIME.md)
+- [docs/ALARMS.md](docs/ALARMS.md)
 - [BENCHMARK_SPEC.md](BENCHMARK_SPEC.md)
 - [benchmarks/MODEL_STRATEGY.md](benchmarks/MODEL_STRATEGY.md)
 - [benchmarks/PROVIDER_MATRIX.md](benchmarks/PROVIDER_MATRIX.md)

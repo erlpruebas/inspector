@@ -23,6 +23,8 @@ orchestrator_v2/runtime/
 assistant/state.json
 assistant/alarms.md
 assistant/media/
+assistant/inbox/
+assistant/runtime/
 assistant/__pycache__/
 .chrome-profile/
 .chrome-worker-*/

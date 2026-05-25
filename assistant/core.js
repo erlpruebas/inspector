@@ -10,6 +10,9 @@ const execFileAsync = promisify(execFile);
 function createAssistantCore({ rootDir, promptNano, logger = console }) {
   const assistantDir = path.join(rootDir, "assistant");
   const mediaDir = path.join(assistantDir, "media");
+  const inboxDir = path.join(assistantDir, "inbox");
+  const inboxLogFile = path.join(inboxDir, "index.jsonl");
+  const codexRunner = path.join(assistantDir, "codex_runner.py");
   const stateFile = path.join(assistantDir, "state.json");
   const alarmsMarkdownFile = path.join(assistantDir, "alarms.md");
   const modelsDir = path.join(rootDir, "models");
@@ -31,10 +34,15 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
     ttsLanguage: process.env.TTS_LANGUAGE || "es",
     ttsEnabled: process.env.TTS_ENABLED !== "false",
     ttsMaxChars: Number(process.env.TTS_MAX_CHARS || 700),
+    requestMode: process.env.ASSISTANT_REQUEST_MODE || "codex_oneshot",
+    codexModel: process.env.ASSISTANT_CODEX_MODEL || process.env.BENCH_CODEX_MODEL || "gpt-5.4-mini",
+    recentFileMinutes: Number(process.env.ASSISTANT_RECENT_FILE_MINUTES || 10),
+    desktopWaitSeconds: Number(process.env.ASSISTANT_DESKTOP_WAIT_SECONDS || 1800),
   };
 
   ensureDirSync(assistantDir);
   ensureDirSync(mediaDir);
+  ensureDirSync(inboxDir);
 
   let state = loadState();
   let saveQueue = Promise.resolve();
@@ -796,6 +804,49 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
     return { path: target, fileName: safeName, mimeType: mimeType || guessMimeFromName(safeName) };
   }
 
+  async function writeInboxBuffer({ buffer, fileName, mimeType, source = "telegram", threadId = "default", userName = "" }) {
+    ensureDirSync(inboxDir);
+    const day = new Date().toISOString().slice(0, 10);
+    const targetDir = path.join(inboxDir, source, String(threadId || "default"), day);
+    ensureDirSync(targetDir);
+    const safeName = `${new Date().toISOString().replace(/[:.]/g, "-")}__${safeFileName(fileName, "archivo")}`;
+    const target = path.join(targetDir, safeName);
+    await fsp.writeFile(target, buffer);
+    const record = {
+      id: crypto.randomUUID(),
+      path: target,
+      fileName: safeName,
+      originalName: fileName || "",
+      mimeType: mimeType || guessMimeFromName(safeName),
+      source,
+      threadId: String(threadId || "default"),
+      userName,
+      createdAt: new Date().toISOString(),
+      size: buffer.length,
+    };
+    await fsp.appendFile(inboxLogFile, `${JSON.stringify(record)}\n`, "utf8");
+    return record;
+  }
+
+  function getRecentInboxFiles({ source = "telegram", threadId = "default", minutes = config.recentFileMinutes } = {}) {
+    if (!fs.existsSync(inboxLogFile)) return [];
+    const cutoff = Date.now() - Math.max(1, minutes) * 60 * 1000;
+    const rows = fs.readFileSync(inboxLogFile, "utf8").split(/\r?\n/).filter(Boolean);
+    const files = [];
+    for (const row of rows) {
+      try {
+        const item = JSON.parse(row);
+        if (source && item.source !== source) continue;
+        if (threadId && String(item.threadId) !== String(threadId)) continue;
+        if (Date.parse(item.createdAt || "") < cutoff) continue;
+        if (item.path && fs.existsSync(item.path) && fs.statSync(item.path).isFile()) files.push(item.path);
+      } catch {
+        // Ignore malformed historical rows.
+      }
+    }
+    return [...new Set(files)];
+  }
+
   async function transcribeWithGroq({ filePath, language }) {
     if (!config.groqApiKey) {
       throw new Error("GROQ_API_KEY no está configurada");
@@ -1000,6 +1051,91 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
     );
   }
 
+  function wantsCodexDesktop(text) {
+    const normalized = foldText(text);
+    return /(codex\s+de\s+escritorio|codex\s+escritorio|codex\s+desktop|interfaz\s+de\s+codex|codex\s+visual)/.test(normalized);
+  }
+
+  function publicCodexResult(result) {
+    return result
+      ? {
+          ok: Boolean(result.ok),
+          mode: result.mode || "",
+          model: result.model || "",
+          workdir: result.workdir || "",
+          elapsedSeconds: result.elapsed_seconds ?? null,
+          files: Array.isArray(result.files) ? result.files : [],
+          returncode: result.returncode ?? null,
+          error: result.stderr || "",
+        }
+      : null;
+  }
+
+  async function executeCodexOneShot({ thread, incomingText, source, files = [] }) {
+    const mode = wantsCodexDesktop(incomingText) ? "desktop" : "cli";
+    const args = [
+      "-X",
+      "utf8",
+      codexRunner,
+      "--mode",
+      mode,
+      "--text",
+      incomingText,
+      "--source",
+      source,
+      "--thread-id",
+      thread.threadId,
+      "--files-json",
+      JSON.stringify(files),
+      "--model",
+      config.codexModel,
+      "--desktop-wait-seconds",
+      String(config.desktopWaitSeconds),
+    ];
+    const started = Date.now();
+    try {
+      const result = await execFileAsync(resolveLocalPython(), args, {
+        cwd: rootDir,
+        env: {
+          ...process.env,
+          PYTHONIOENCODING: "utf-8",
+          PYTHONUTF8: "1",
+        },
+        windowsHide: true,
+        timeout: Number(process.env.ASSISTANT_CODEX_TIMEOUT_MS || 45 * 60 * 1000),
+        maxBuffer: 20 * 1024 * 1024,
+      });
+      const parsed = extractJsonBlock(result.stdout) || JSON.parse(result.stdout.trim());
+      return {
+        ...parsed,
+        elapsedMs: Date.now() - started,
+      };
+    } catch (error) {
+      const stdout = error?.stdout ? String(error.stdout) : "";
+      const parsed = extractJsonBlock(stdout);
+      if (parsed) {
+        return {
+          ...parsed,
+          ok: false,
+          stderr: parsed.stderr || String(error?.stderr || error?.message || error),
+          elapsedMs: Date.now() - started,
+        };
+      }
+      return {
+        ok: false,
+        mode: mode === "desktop" ? "codex_desktop" : "codex_cli",
+        model: mode === "desktop" ? "codex-desktop" : config.codexModel,
+        output: "",
+        workdir: "",
+        elapsed_seconds: null,
+        files,
+        stderr: String(error?.stderr || error?.message || error),
+        returncode: error?.code || 1,
+        elapsedMs: Date.now() - started,
+      };
+    }
+  }
+
   async function synthesizeForThread({ source = "desktop", threadId = "default", label = source, text, forceFull = false }) {
     const thread = getThread({ source, threadId, label });
     const speech = await maybeSynthesizeReply({ thread, text, forceFull });
@@ -1152,6 +1288,47 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
       }
     }
 
+    const reminder = parseReminderRequest(incomingText);
+    if (reminder && config.requestMode === "codex_oneshot") {
+      const decision = {
+        intent: "alarm_create",
+        tool: "alarm",
+        reminder,
+        thread_title: "Alarma",
+        thread_summary: thread.summary,
+        understood:
+          reminder.mode === "absolute"
+            ? `quieres que te avise a las ${new Date(reminder.dueAt).toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" })} sobre: ${reminder.task}`
+            : `quieres que te avise dentro de ${reminder.minutes} minutos sobre: ${reminder.task}`,
+        proposal: `programar una alarma para ${new Date(reminder.dueAt).toLocaleString("es-ES")} y guardar la tarea: ${reminder.task}`,
+        requires_confirmation: false,
+        should_execute: true,
+        next_step: "execute",
+      };
+      const execution = await executeApprovedDecision({ thread, decision, inputText: incomingText });
+      thread.lastDecision = decision;
+      thread.currentTask = "Gestion de alarmas";
+      thread.status = "executed";
+      thread.pending = null;
+      const speech = synthesize ? await maybeSynthesizeReply({ thread, text: execution.text }) : null;
+      addHistory(thread, {
+        role: "assistant",
+        kind: "execution",
+        content: execution.text,
+        execution,
+        speech: speech ? { provider: speech.provider, voiceId: speech.voiceId || null, model: speech.model || null, fileName: speech.fileName } : null,
+      });
+      await persistState();
+      return {
+        thread: summarizeThread(thread),
+        transcription,
+        decision,
+        reply: execution.text,
+        executed: execution,
+        speech: publicSpeech(speech),
+      };
+    }
+
     const ttsDirective = parseTtsDirective(incomingText);
     if (ttsDirective?.provider) {
       thread.ttsProvider = ttsDirective.provider;
@@ -1194,6 +1371,58 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
         transcription,
         decision,
         reply,
+        speech: publicSpeech(speech),
+      };
+    }
+
+    if (config.requestMode === "codex_oneshot") {
+      const explicitFiles = Array.isArray(input.files) ? input.files : [];
+      const recentFiles = getRecentInboxFiles({ source, threadId, minutes: input.recentFileMinutes || config.recentFileMinutes });
+      const files = [...new Set([...explicitFiles, ...recentFiles].filter(Boolean))].filter((item) => item !== audioPath);
+      const codexResult = await executeCodexOneShot({ thread, incomingText, source, files });
+      const reply = codexResult.output || (codexResult.ok ? "Codex ha terminado la peticion." : `Codex no pudo completar la peticion: ${codexResult.stderr || "error desconocido"}`);
+      const decision = {
+        intent: wantsCodexDesktop(incomingText) ? "codex_desktop_oneshot" : "codex_cli_oneshot",
+        thread_title: "Peticion unica",
+        thread_summary: "Modo one-shot: cada mensaje se ejecuta como peticion independiente.",
+        understood: incomingText,
+        proposal: wantsCodexDesktop(incomingText)
+          ? "ejecutar la peticion con Codex Desktop porque el usuario lo pidio explicitamente"
+          : "ejecutar la peticion con Codex CLI",
+        requires_confirmation: false,
+        should_execute: true,
+        topic_changed: true,
+        confidence: 1,
+        next_step: "done",
+        correction_needed: false,
+        codex: publicCodexResult(codexResult),
+      };
+      thread.title = decision.thread_title;
+      thread.summary = decision.thread_summary;
+      thread.lastDecision = decision;
+      thread.activeSystem = codexResult.mode || "codex_cli";
+      thread.activeModel = codexResult.model || config.codexModel;
+      thread.lastRouter = { provider: "rule", model: "codex_oneshot" };
+      thread.currentTask = incomingText.slice(0, 240);
+      thread.status = codexResult.ok ? "executed" : "error";
+      thread.pending = null;
+      thread.continueCurrentTask = false;
+      const speech = synthesize ? await maybeSynthesizeReply({ thread, text: reply }) : null;
+      addHistory(thread, {
+        role: "assistant",
+        kind: "codex_oneshot",
+        content: reply,
+        decision,
+        execution: publicCodexResult(codexResult),
+        speech: speech ? { provider: speech.provider, voiceId: speech.voiceId || null, model: speech.model || null, fileName: speech.fileName } : null,
+      });
+      await persistState();
+      return {
+        thread: summarizeThread(thread),
+        transcription,
+        decision,
+        reply,
+        executed: publicCodexResult(codexResult),
         speech: publicSpeech(speech),
       };
     }
@@ -1345,6 +1574,8 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
     processInboundMessage,
     transcribeAudio,
     writeAudioBuffer,
+    writeInboxBuffer,
+    getRecentInboxFiles,
     getSnapshot,
     getDueAlarms,
     synthesizeForThread,

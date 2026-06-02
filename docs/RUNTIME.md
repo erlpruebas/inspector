@@ -17,7 +17,7 @@ La interfaz principal es `desktop_assistant.py`, una ventana Tkinter siempre vis
 
 - `Listo`: esperando texto o grabacion
 - `Grabando...`: el microfono esta capturando audio
-- `Transcribiendo...`: se envia el audio a Groq STT o fallback local
+- `Transcribiendo...`: se envia el audio a Gemini STT y, si falla, cae a Groq o fallback local
 - `Procesando...`: el router interpreta intencion, memoria, hilo y herramienta
 - `Generando voz...`: se sintetiza la respuesta con Kokoro o ElevenLabs
 - `Alarma`: hay un aviso vencido

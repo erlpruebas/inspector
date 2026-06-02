@@ -1,11 +1,14 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 import sys
 import threading
 import time
 import traceback
+import urllib.parse
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -40,8 +43,10 @@ from intent import (
     ACTION_CLEAR_PENDING,
     ACTION_CANCEL_CURRENT_TASK,
     ACTION_CODEX_DESKTOP,
+    ACTION_DIRECT_LOCAL,
     Intent,
     IntentInterpreter,
+    ACTION_QUERY_MEMORY,
 )
 from memories import RememberStore
 from memory import MemoryLog
@@ -51,7 +56,7 @@ from thread_store import ThreadRecord, ThreadStore
 from telegram_api import TelegramApi
 from voice_state import VoiceStateStore
 from benchmarks.token_accounting import record_usage
-from orchestrator_v2.desktop_codex_operator import run_desktop_codex_operator
+from orchestrator_v2.desktop_codex_operator import capture_desktop_screenshot, run_desktop_codex_operator
 
 
 RESTART_EXIT_CODE = 75
@@ -280,6 +285,13 @@ class Orchestrator:
             self.remembers.add(remember_text)
             self.memory.write("remember_created", remember_text, source, thread="recuerdos")
             self._reply(chat_id, "Guardado en memoria.", thread="recuerdos")
+            return
+        if intent.action == ACTION_QUERY_MEMORY:
+            query = str(intent.args.get("query", "")).strip()
+            self._reply(chat_id, self._memory_query_text(query), thread="recuerdos")
+            return
+        if intent.action == ACTION_DIRECT_LOCAL:
+            self._reply(chat_id, self._direct_local_text(intent.args), thread=self.threads.active_name())
             return
 
         instruction = str(intent.args.get("instruction", "")).strip()
@@ -530,6 +542,8 @@ class Orchestrator:
                 mime_type,
                 self.voice_state.groq_api_key or self.settings.groq_api_key,
                 self.voice_state.gemini_api_key or self.settings.google_api_key,
+                preferred_backend=self.voice_state.stt_backend,
+                fallback_order=self.voice_state.normalized_stt_order(),
             )
             self.memory.write("telegram_audio_transcribed", text, source, thread=self.threads.active_name())
             return text.strip()
@@ -570,6 +584,12 @@ class Orchestrator:
             self.voice_state.tts_backend = backend
             self.voice_store.save(self.voice_state)
             return self._voice_status_text(f"Proveedor TTS cambiado a {backend}.")
+
+        stt_backend = self._extract_stt_backend_command(lower)
+        if stt_backend:
+            self.voice_state.stt_backend = stt_backend
+            self.voice_store.save(self.voice_state)
+            return self._voice_status_text(f"Proveedor STT cambiado a {stt_backend}.")
 
         if lower.startswith(("voz modelo ", "modelo voz ", "/voz_modelo ")):
             model = stripped.split(maxsplit=2)[-1].strip()
@@ -642,6 +662,17 @@ class Orchestrator:
                 return backend
         return ""
 
+    @staticmethod
+    def _extract_stt_backend_command(lower: str) -> str:
+        phrases = {
+            "groq": ("usa transcripcion groq", "usar transcripcion groq", "stt groq", "transcripcion proveedor groq", "voz entrada groq"),
+            "gemini": ("usa transcripcion gemini", "usar transcripcion gemini", "stt gemini", "transcripcion proveedor gemini", "voz entrada gemini"),
+        }
+        for backend, options in phrases.items():
+            if lower in options:
+                return backend
+        return ""
+
     def _voice_status_text(self, prefix: str = "") -> str:
         lines = []
         if prefix:
@@ -651,7 +682,10 @@ class Orchestrator:
                 "Estado de voz:",
                 f"voz: {'ON' if self.voice_state.voz else 'OFF'}",
                 f"altavoz: {'ON' if self.voice_state.altavoz else 'OFF'}",
+                f"stt: {self.voice_state.stt_backend}",
+                f"stt_fallbacks: {' -> '.join(self.voice_state.normalized_stt_order())}",
                 f"tts: {self.voice_state.tts_backend}",
+                f"tts_fallback: {'ON' if self.voice_state.tts_allow_fallback else 'OFF'}",
                 f"fallbacks: {' -> '.join(self.voice_state.normalized_order())}",
                 f"groq_model: {self.voice_state.groq_model}",
                 f"groq_voice: {self.voice_state.groq_voice}",
@@ -752,7 +786,9 @@ class Orchestrator:
             )
             if result.ok:
                 self._reply(chat_id, response, thread=thread_record.name)
+                self._send_codex_desktop_screenshot(chat_id, result, thread_record)
                 return
+            self._send_codex_desktop_screenshot(chat_id, result, thread_record)
             self._reply(
                 chat_id,
                 "Codex Desktop no ha podido ejecutar la tarea ahora mismo.\n\n"
@@ -764,6 +800,7 @@ class Orchestrator:
         except Exception as exc:
             detail = f"{exc}\n{traceback.format_exc()}"
             self.memory.write("codex_desktop_error", detail, "system", thread=thread_record.name)
+            self._send_codex_desktop_screenshot(chat_id, None, thread_record)
             self._reply(
                 chat_id,
                 "Codex Desktop no esta disponible ahora mismo.\n\n"
@@ -775,6 +812,26 @@ class Orchestrator:
             self._current_task = None
             self._busy.release()
             self._notify_pending_after_finish(chat_id)
+
+    def _send_codex_desktop_screenshot(self, chat_id: int, result: Any, thread_record: ThreadRecord) -> None:
+        screenshot_path = getattr(result, "screenshot_path", None)
+        run_dir = getattr(result, "run_dir", None)
+        path = Path(screenshot_path) if screenshot_path else None
+        if path is None or not path.is_file():
+            fallback_dir = Path(run_dir) if run_dir else self.settings.voice_runtime_dir.parent / "desktop_screenshots"
+            path = fallback_dir / f"telegram_screen_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+            try:
+                capture_desktop_screenshot(path)
+            except Exception as exc:
+                self.memory.write("codex_desktop_screenshot_error", str(exc), "system", thread=thread_record.name)
+                self._reply(chat_id, f"No pude generar captura de pantalla para enviar al movil: {exc}", thread=thread_record.name)
+                return
+        try:
+            self.telegram.send_photo(chat_id, path, caption=f"Captura Codex Desktop | hilo: {thread_record.name}")
+            self.memory.write("codex_desktop_screenshot_sent", str(path), "telegram", thread=thread_record.name)
+        except Exception as exc:
+            self.memory.write("codex_desktop_screenshot_send_error", f"{path}\n{exc}", "system", thread=thread_record.name)
+            self._reply(chat_id, f"No pude enviar la captura al movil: {exc}\n\nRuta local: {path}", thread=thread_record.name)
 
     def _reply(self, chat_id: int, text: str, thread: str | None = None) -> None:
         self.memory.write("telegram_out", text, "orchestrator", thread=thread or self.threads.active_name())
@@ -899,6 +956,131 @@ class Orchestrator:
             return "No hay recuerdos guardados."
         return "Ultimos recuerdos:\n" + "\n".join(lines)
 
+    def _memory_query_text(self, query: str) -> str:
+        clean_query = " ".join((query or "").split())
+        remembered = self.remembers.search(clean_query, limit=8)
+        event_matches = self._search_event_memory(clean_query, limit=6)
+        if not remembered and not event_matches:
+            return f"No he encontrado memoria relevante sobre: {clean_query or 'ese tema'}."
+        gemini_answer = self._answer_memory_with_gemini(clean_query, remembered, event_matches)
+        if gemini_answer:
+            return gemini_answer
+        lines = [f"He encontrado esto sobre {clean_query or 'memoria'}:"]
+        if remembered:
+            lines.append("\nRecuerdos guardados:")
+            lines.extend(remembered)
+        if event_matches:
+            lines.append("\nEventos recientes:")
+            lines.extend(event_matches)
+        return "\n".join(lines)
+
+    def _search_event_memory(self, query: str, limit: int = 6) -> list[str]:
+        words = [word.casefold() for word in (query or "").split() if len(word) >= 3]
+        if not words:
+            return []
+        try:
+            lines = self.settings.memory_file.read_text(encoding="utf-8", errors="replace").splitlines()
+        except OSError:
+            return []
+        matches: list[str] = []
+        current_header = ""
+        for line in reversed(lines):
+            clean = line.strip()
+            if not clean:
+                continue
+            if clean.startswith("[") and "]" in clean:
+                current_header = clean
+                continue
+            folded = clean.casefold()
+            if any(word in folded for word in words):
+                prefix = f"{current_header} " if current_header else ""
+                matches.append((prefix + clean)[:260])
+                if len(matches) >= limit:
+                    break
+        return matches
+
+    def _answer_memory_with_gemini(self, query: str, remembered: list[str], event_matches: list[str]) -> str:
+        if not self.settings.google_api_key:
+            return ""
+        context_lines: list[str] = []
+        if remembered:
+            context_lines.append("Recuerdos guardados:")
+            context_lines.extend(remembered[:8])
+        if event_matches:
+            context_lines.append("Eventos relevantes:")
+            context_lines.extend(event_matches[:6])
+        context = "\n".join(context_lines).strip()
+        if not context:
+            return ""
+        prompt = (
+            "Responde en espanol de forma breve usando solo la memoria proporcionada. "
+            "Si la memoria no basta, dilo claramente.\n\n"
+            f"Pregunta: {query or 'resume la memoria relevante'}\n\n"
+            f"Memoria:\n{context}"
+        )
+        payload = {
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+            "generationConfig": {"temperature": 0.1},
+        }
+        url = (
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            + urllib.parse.quote(self.settings.google_model, safe="")
+            + ":generateContent?key="
+            + urllib.parse.quote(self.settings.google_api_key, safe="")
+        )
+        request = urllib.request.Request(
+            url,
+            data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+            method="POST",
+            headers={"Content-Type": "application/json"},
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=min(self.settings.google_intent_timeout_seconds, 20)) as response:
+                result = json.loads(response.read().decode("utf-8", errors="replace"))
+        except Exception as exc:
+            self.memory.write("memory_gemini_error", str(exc), "orchestrator", thread="recuerdos")
+            return ""
+        parts = (((result.get("candidates") or [{}])[0].get("content") or {}).get("parts") or [])
+        answer = "".join(str(part.get("text", "")) for part in parts if isinstance(part, dict)).strip()
+        if not answer:
+            return ""
+        try:
+            record_usage(
+                Path(self.settings.memory_file).with_name("token_usage.jsonl"),
+                source="telegram_orchestrator",
+                component="memory",
+                provider="gemini",
+                model=self.settings.google_model,
+                operation="memory_query",
+                prompt_text=prompt,
+                completion_text=answer,
+                metadata={"query": query},
+            )
+        except Exception:
+            pass
+        return answer
+
+    def _direct_local_text(self, args: dict[str, Any]) -> str:
+        kind = str(args.get("kind", "")).strip().lower()
+        now = datetime.now()
+        if kind == "time":
+            return "Son las " + now.strftime("%H:%M") + "."
+        if kind == "date":
+            return "Hoy es " + now.strftime("%Y-%m-%d") + "."
+        if kind == "list_files":
+            try:
+                items = sorted(self.settings.codex_workdir.iterdir(), key=lambda item: (item.is_file(), item.name.lower()))
+            except OSError as exc:
+                return f"No pude listar la carpeta de trabajo: {exc}"
+            lines = [f"Archivos en {self.settings.codex_workdir}:"]
+            for item in items[:40]:
+                marker = "[d]" if item.is_dir() else "[f]"
+                lines.append(f"{marker} {item.name}")
+            if len(items) > 40:
+                lines.append(f"... y {len(items) - 40} mas.")
+            return "\n".join(lines)
+        return "Puedo responder eso directamente, pero no reconoci la accion local concreta."
+
     def _codex_dirs_text(self) -> str:
         dirs = self.codex_dirs.list()
         if not dirs:
@@ -1019,7 +1201,10 @@ class Orchestrator:
                 f"alarms: {self.settings.alarms_file}",
                 f"voz: {'ON' if self.voice_state.voz else 'OFF'}",
                 f"altavoz: {'ON' if self.voice_state.altavoz else 'OFF'}",
+                f"stt_backend: {self.voice_state.stt_backend}",
+                f"stt_order: {' -> '.join(self.voice_state.normalized_stt_order())}",
                 f"tts_backend: {self.voice_state.tts_backend}",
+                f"tts_fallback: {'ON' if self.voice_state.tts_allow_fallback else 'OFF'}",
                 f"tts_order: {' -> '.join(self.voice_state.normalized_order())}",
                 f"groq_tts: {self.voice_state.groq_model} / {self.voice_state.groq_voice}",
                 f"voice_settings: {self.settings.voice_settings_file}",
@@ -1034,6 +1219,13 @@ class Orchestrator:
         return "\n".join(
             [
                 "Comandos:",
+                "alarma <texto>      Crea una alarma con parser estricto",
+                "memoria <texto>     Guarda memoria con timestamp",
+                "recuerdo <texto>    Busca y responde usando la memoria",
+                "escritorio <texto>  Fuerza Codex Desktop",
+                "linea <texto>       Fuerza Codex CLI",
+                "hilo actual | nuevo hilo <nombre> | usar hilo <nombre>",
+                "estado | pendientes | siguiente",
                 "Cd <instruccion>  Pide confirmacion y ejecuta Codex Desktop",
                 "/codex <instruccion>  Pide confirmacion y ejecuta Codex CLI",
                 "/status          Estado",
@@ -1056,6 +1248,7 @@ class Orchestrator:
                 "voz on/off       Envia tambien audio por Telegram",
                 "altavoz on/off   Altavoz on activa voz, manda audio y lo reproduce en el PC",
                 "usa voz groq|kokoro|piper|gemini",
+                "usa transcripcion groq|gemini",
                 "voz modelo <modelo TTS>",
                 "voz timbre <voz>",
                 "voz api groq <clave>",

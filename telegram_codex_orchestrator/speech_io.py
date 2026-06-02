@@ -22,6 +22,8 @@ if str(REPO_ROOT) not in sys.path:
 from benchmarks.token_accounting import record_usage
 from voice_state import VoiceState
 
+GROQ_USER_AGENT = "inspector-orchestrator/1.0"
+
 
 @dataclass(slots=True)
 class SpeechResult:
@@ -84,18 +86,28 @@ class SpeechIO:
         )
         return text
 
-    def transcribe(self, audio_path: Path, mime_type: str, groq_api_key: str, gemini_api_key: str) -> str:
+    def transcribe(
+        self,
+        audio_path: Path,
+        mime_type: str,
+        groq_api_key: str,
+        gemini_api_key: str,
+        preferred_backend: str = "gemini",
+        fallback_order: list[str] | None = None,
+    ) -> str:
         errors: list[str] = []
-        if groq_api_key:
-            try:
-                return self.transcribe_with_groq(audio_path, groq_api_key)
-            except Exception as exc:
-                errors.append(f"groq={exc}")
-        if gemini_api_key:
-            try:
-                return self.transcribe_with_gemini(audio_path, mime_type, gemini_api_key)
-            except Exception as exc:
-                errors.append(f"gemini={exc}")
+        order = self._ordered_stt_backends(preferred_backend, fallback_order)
+        for backend in order:
+            if backend == "gemini" and gemini_api_key:
+                try:
+                    return self.transcribe_with_gemini(audio_path, mime_type, gemini_api_key)
+                except Exception as exc:
+                    errors.append(f"gemini={exc}")
+            if backend == "groq" and groq_api_key:
+                try:
+                    return self.transcribe_with_groq(audio_path, groq_api_key)
+                except Exception as exc:
+                    errors.append(f"groq={exc}")
         raise RuntimeError("No se pudo transcribir audio. " + " | ".join(errors))
 
     def transcribe_with_groq(self, audio_path: Path, api_key: str, model: str = "whisper-large-v3-turbo") -> str:
@@ -134,6 +146,7 @@ class SpeechIO:
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": f"multipart/form-data; boundary={boundary}",
+                "User-Agent": GROQ_USER_AGENT,
             },
             method="POST",
         )
@@ -184,10 +197,28 @@ class SpeechIO:
         self._play_default(audio_path)
 
     def _ordered_backends(self, state: VoiceState) -> list[str]:
+        if not getattr(state, "tts_allow_fallback", True):
+            return [state.tts_backend]
         order = state.normalized_order()
         if state.tts_backend in order:
             order.remove(state.tts_backend)
         return [state.tts_backend, *order]
+
+    @staticmethod
+    def _ordered_stt_backends(preferred_backend: str, fallback_order: list[str] | None) -> list[str]:
+        preferred = (preferred_backend or "gemini").strip().lower()
+        raw_order = fallback_order or ["gemini", "groq"]
+        order: list[str] = []
+        if preferred in {"gemini", "groq"}:
+            order.append(preferred)
+        for item in raw_order:
+            backend = str(item).strip().lower()
+            if backend in {"gemini", "groq"} and backend not in order:
+                order.append(backend)
+        for backend in ("gemini", "groq"):
+            if backend not in order:
+                order.append(backend)
+        return order
 
     def _synthesize_gemini(self, text: str, state: VoiceState) -> SpeechResult:
         if not state.gemini_api_key:
@@ -251,6 +282,7 @@ class SpeechIO:
             headers={
                 "Authorization": f"Bearer {state.groq_api_key}",
                 "Content-Type": "application/json",
+                "User-Agent": GROQ_USER_AGENT,
             },
             method="POST",
         )

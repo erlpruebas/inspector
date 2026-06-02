@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "created_at": "2026-06-02T10:02:03Z",
+    "base_url": "https://api.groq.com/openai/v1",
+    "models": {
+      "chat": "llama-3.1-8b-instant",
+      "stt": "whisper-large-v3-turbo",
+      "tts": "canopylabs/orpheus-v1-english",
+      "tts_voice": "austin"
+    },
+    "env_present": {
+      "GROQ_API_KEY": true,
+      "PROVIDER_API_KEY": true
+    },
+    "commands": [
+      "python probe_groq.py --out artifacts"
+    ]
+  },
+  "tests": [
+    {
+      "ok": false,
+      "status": null,
+      "elapsed_ms": 124.86,
+      "headers": {},
+      "body_bytes": 0,
+      "error_type": "URLError",
+      "error": "<urlopen error [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso>",
+      "name": "list_models"
+    },
+    {
+      "ok": false,
+      "status": null,
+      "elapsed_ms": 3.16,
+      "headers": {},
+      "body_bytes": 0,
+      "error_type": "URLError",
+      "error": "<urlopen error [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso>",
+      "name": "chat_light"
+    },
+    {
+      "ok": false,
+      "status": null,
+      "elapsed_ms": 2.85,
+      "headers": {},
+      "body_bytes": 0,
+      "error_type": "URLError",
+      "error": "<urlopen error [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso>",
+      "name": "tts"
+    },
+    {
+      "ok": false,
+      "status": null,
+      "elapsed_ms": 13.87,
+      "headers": {},
+      "body_bytes": 0,
+      "error_type": "URLError",
+      "error": "<urlopen error [WinError 10013] Intento de acceso a un socket no permitido por sus permisos de acceso>",
+      "name": "stt_tone_fixture"
+    }
+  ]
+}

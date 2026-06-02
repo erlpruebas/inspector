@@ -29,3 +29,20 @@ class RememberStore:
         except OSError:
             return []
         return lines[-limit:]
+
+    def search(self, query: str, limit: int = 12) -> list[str]:
+        words = [word.casefold() for word in (query or "").split() if len(word) >= 3]
+        try:
+            lines = self.path.read_text(encoding="utf-8", errors="replace").splitlines()
+        except OSError:
+            return []
+        if not words:
+            return lines[-limit:]
+        matches = []
+        for line in reversed(lines):
+            folded = line.casefold()
+            score = sum(1 for word in words if word in folded)
+            if score:
+                matches.append((score, line))
+        matches.sort(key=lambda item: item[0], reverse=True)
+        return [line for _score, line in matches[:limit]]

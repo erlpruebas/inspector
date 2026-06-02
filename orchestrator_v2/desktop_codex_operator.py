@@ -604,6 +604,12 @@ def _grab_screen():
     return ImageGrab.grab()
 
 
+def capture_desktop_screenshot(output_path: Path) -> Path:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    _grab_screen().save(output_path)
+    return output_path
+
+
 def _extract_tokens_from_text(text: str, run_dir: Path) -> Path | None:
     token_pattern = re.compile(r"\b\d{8,12}:[A-Za-z0-9_-]{30,}\b")
     tokens = token_pattern.findall(text)

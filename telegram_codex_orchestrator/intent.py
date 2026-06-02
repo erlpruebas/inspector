@@ -27,6 +27,8 @@ ACTION_CODEX = "codex"
 ACTION_CODEX_DESKTOP = "codex_desktop"
 ACTION_CREATE_ALARM = "create_alarm"
 ACTION_REMEMBER = "remember"
+ACTION_QUERY_MEMORY = "query_memory"
+ACTION_DIRECT_LOCAL = "direct_local"
 ACTION_LIST_MEMORIES = "list_memories"
 ACTION_ADD_CODEX_DIR = "add_codex_dir"
 ACTION_LIST_CODEX_DIRS = "list_codex_dirs"
@@ -51,6 +53,8 @@ KNOWN_ACTIONS = {
     ACTION_CODEX_DESKTOP,
     ACTION_CREATE_ALARM,
     ACTION_REMEMBER,
+    ACTION_QUERY_MEMORY,
+    ACTION_DIRECT_LOCAL,
     ACTION_LIST_MEMORIES,
     ACTION_ADD_CODEX_DIR,
     ACTION_LIST_CODEX_DIRS,
@@ -95,6 +99,10 @@ class IntentInterpreter:
     def _local_intent(self, text: str) -> Intent:
         stripped = text.strip()
         lower = stripped.lower()
+
+        strict = extract_strict_command(stripped)
+        if strict is not None:
+            return strict
 
         if lower in {"/start", "/help", "help", "ayuda"}:
             return Intent(ACTION_HELP)
@@ -152,6 +160,14 @@ class IntentInterpreter:
         codex_instruction = extract_codex_instruction(stripped)
         if codex_instruction is not None:
             return Intent(ACTION_CODEX, {"instruction": codex_instruction})
+
+        memory_query = extract_memory_query(stripped)
+        if memory_query is not None:
+            return Intent(ACTION_QUERY_MEMORY, {"query": memory_query})
+
+        direct_local = extract_direct_local(stripped)
+        if direct_local is not None:
+            return Intent(ACTION_DIRECT_LOCAL, direct_local)
 
         remember_text = extract_remember_text(stripped)
         if remember_text is not None:
@@ -236,6 +252,11 @@ class IntentInterpreter:
             args.setdefault("instruction", text)
         if action == ACTION_REMEMBER:
             args.setdefault("text", text)
+        if action == ACTION_QUERY_MEMORY:
+            args.setdefault("query", text)
+        if action == ACTION_DIRECT_LOCAL:
+            args.setdefault("kind", "answer")
+            args.setdefault("text", text)
         if action in {ACTION_ADD_CODEX_DIR, ACTION_REMOVE_CODEX_DIR}:
             args.setdefault("path", "")
         if action in {ACTION_NEW_THREAD, ACTION_SWITCH_THREAD}:
@@ -255,12 +276,81 @@ def extract_codex_instruction(text: str) -> str | None:
     return None
 
 
+def extract_strict_command(text: str) -> Intent | None:
+    stripped = text.strip()
+    if not stripped:
+        return None
+    lowered = stripped.casefold()
+    if lowered in {"estado", "status"}:
+        return Intent(ACTION_STATUS_DETAIL)
+    if lowered in {"pendientes", "tareas pendientes"}:
+        return Intent(ACTION_LIST_PENDING)
+    if lowered in {"siguiente", "continuar", "continua", "contin\u00faa"}:
+        return Intent(ACTION_RUN_NEXT_PENDING)
+    if lowered in {"hilos", "lista hilos"}:
+        return Intent(ACTION_LIST_THREADS)
+    if lowered in {"hilo", "hilo actual", "actual"}:
+        return Intent(ACTION_CURRENT_THREAD)
+    new_thread = re.match(r"^(?:nuevo\s+hilo|crear\s+hilo)\s+(.+)$", stripped, flags=re.IGNORECASE)
+    if new_thread:
+        return Intent(ACTION_NEW_THREAD, {"name": new_thread.group(1).strip()})
+    switch_thread = re.match(r"^(?:usar\s+hilo|cambiar\s+hilo|cambia\s+hilo)\s+(.+)$", stripped, flags=re.IGNORECASE)
+    if switch_thread:
+        return Intent(ACTION_SWITCH_THREAD, {"name": switch_thread.group(1).strip()})
+    match = re.match(r"^(\S+)(?:\s+(.+))?$", stripped, flags=re.DOTALL)
+    if not match:
+        return None
+    command = match.group(1).casefold()
+    payload = (match.group(2) or "").strip()
+    if command == "alarma":
+        return Intent(ACTION_CREATE_ALARM, {"text": payload or stripped})
+    if command == "memoria":
+        return Intent(ACTION_REMEMBER, {"text": payload})
+    if command == "recuerdo":
+        return Intent(ACTION_QUERY_MEMORY, {"query": payload})
+    if command == "escritorio":
+        return Intent(ACTION_CODEX_DESKTOP, {"instruction": payload})
+    if command in {"linea", "l\u00ednea"}:
+        return Intent(ACTION_CODEX, {"instruction": payload})
+    return None
+
+
 def extract_codex_desktop_instruction(text: str) -> str | None:
     stripped = text.strip()
     for prefix in ("cd ", "/cd ", "/codex_desktop "):
         if stripped.lower().startswith(prefix):
             instruction = stripped[len(prefix) :].strip()
             return instruction or None
+    lowered = stripped.lower()
+    phrases = (
+        "codex de escritorio",
+        "codex escritorio",
+        "codex desktop",
+        "interfaz de codex",
+        "codex visual",
+    )
+    if any(phrase in lowered for phrase in phrases):
+        return stripped
+    return None
+
+
+def extract_memory_query(text: str) -> str | None:
+    patterns = (
+        r"^(?:que|qué)\s+(?:recuerdas|sabes|tienes apuntado)\s+(?:sobre|de|del|acerca de)?\s*(.+)$",
+        r"^(?:busca|revisa|mira|consulta)\s+(?:en\s+)?(?:la\s+)?memoria\s+(?:sobre|de|del|acerca de)?\s*(.+)$",
+        r"^(?:hablamos|habíamos hablado|habiamos hablado|que dijimos|qué dijimos)\s+(?:sobre|de|del|acerca de)?\s*(.+)$",
+    )
+    return _first_match(text, patterns)
+
+
+def extract_direct_local(text: str) -> dict[str, str] | None:
+    lowered = text.strip().lower()
+    if re.search(r"\b(que|qué|dime|di)\s+hora\s+es\b", lowered) or lowered in {"hora", "dame la hora"}:
+        return {"kind": "time"}
+    if re.search(r"\b(que|qué|dime|di)\s+fecha\s+es\b", lowered) or lowered in {"fecha", "dame la fecha"}:
+        return {"kind": "date"}
+    if re.search(r"\b(lista|listar|dime|muestra|enséñame|ensename).*\b(archivos|ficheros)\b", lowered):
+        return {"kind": "list_files"}
     return None
 
 
@@ -305,7 +395,7 @@ def extract_new_thread(text: str) -> str | None:
 def extract_switch_thread(text: str) -> str | None:
     patterns = (
         r"^(?:/usar_hilo|/switch_thread|/hilo)\s+(.+)$",
-        r"^(?:usa|cambia a|ponme en|sigue en|vamos al|ve al)\s+(?:el\s+)?(?:hilo|tema|conversacion|conversación)?\s*(.+)$",
+        r"^(?:usa|cambia a|ponme en|sigue en|vamos al|ve al)\s+(?:el\s+)?(?:hilo|tema|conversacion|conversación)\s+(.+)$",
     )
     return _first_match(text, patterns)
 
@@ -333,6 +423,8 @@ Acciones disponibles:
 - codex_desktop: ejecutar obligatoriamente Codex Desktop. args: {{"instruction":"..."}}
 - create_alarm: crear una alarma o recordatorio temporal. args: {{"text":"frase original o normalizada en espanol"}}
 - remember: guardar una memoria persistente. args: {{"text":"contenido a recordar"}}
+- query_memory: responder buscando en memoria. args: {{"query":"tema a buscar"}}
+- direct_local: responder con una accion local sencilla y segura. args: {{"kind":"time|date|list_files","text":"frase original"}}
 - list_memories: listar recuerdos.
 - add_codex_dir: anadir carpeta adicional para que Codex pueda trabajar alli. args: {{"path":"ruta absoluta"}}
 - list_codex_dirs: listar carpetas adicionales de Codex.
@@ -353,6 +445,9 @@ Reglas:
 - Para codex, incluye args.thread_name si el usuario menciona un hilo, tema o proyecto claro.
 - Si pide "avisame", "ponme una alarma", "recuerdame manana/dentro de...", usa create_alarm.
 - Si dice "recuerda que", "guarda en memoria", "ten en cuenta", usa remember.
+- Si pregunta que recuerdas, que sabes, o pide revisar memoria, usa query_memory.
+- Si pide hora, fecha o listar archivos de la carpeta actual, usa direct_local.
+- Si pide explicitamente Codex Desktop, Codex de escritorio o interfaz visual de Codex, usa codex_desktop.
 - Si pregunta por hilos o quiere cambiar/crear una conversacion, usa list_threads, current_thread, new_thread o switch_thread.
 - Si pregunta "que estas haciendo", "estas ocupado" o estado de trabajo, usa status_detail.
 - Si pregunta por pendientes o quiere continuar algo pendiente, usa list_pending o run_next_pending.

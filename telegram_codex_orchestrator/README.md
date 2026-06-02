@@ -5,6 +5,13 @@ Las ordenes pasan por una capa de interpretacion de intenciones: reglas locales 
 
 ## Comandos Telegram
 
+- `alarma <texto>` crea una alarma usando parser estricto.
+- `memoria <texto>` guarda memoria con timestamp y no ejecuta nada mas.
+- `recuerdo <texto>` busca en memoria y responde con Gemini si esta disponible.
+- `escritorio <texto>` fuerza Codex Desktop con confirmacion previa.
+- `linea <texto>` fuerza Codex CLI con confirmacion previa.
+- `hilo actual`, `nuevo hilo <nombre>`, `usar hilo <nombre>` gestionan el contexto manualmente.
+- `estado`, `pendientes`, `siguiente` consultan actividad y cola.
 - `Cd <instruccion>` fuerza Codex Desktop con confirmacion previa.
 - `/codex <instruccion>` ejecuta `codex exec` por CLI con confirmacion previa.
 - `/status` muestra configuracion operativa.
@@ -32,6 +39,8 @@ Las ordenes pasan por una capa de interpretacion de intenciones: reglas locales 
 - `usa voz groq`, `usa voz kokoro`, `usa voz piper` cambia el primer TTS a intentar.
 - `voz api groq <clave>` guarda la clave en `D:\credenciales` y en `memory/voice_settings.json`.
 - `voz modelo <modelo>` y `voz timbre <voz>` cambian modelo/voz del proveedor activo.
+
+La transcripcion de notas de voz usa Gemini primero y deja Groq como respaldo. En las pruebas locales de 2026-06-02, Groq devolvio `HTTP 403 / error code: 1010` desde este entorno, asi que la ruta operativa queda fijada en Gemini mientras no cambie ese resultado. Ver `docs/GROQ_PROBE_20260602.md`.
 
 Tambien entiende peticiones de alarma en lenguaje natural:
 
@@ -77,6 +86,7 @@ python -m orchestrator_v2.codex_desktop_calibrator
 ```
 
 En Telegram, usa `Cd <instruccion>` cuando quieras que la tarea vaya obligatoriamente por Codex Desktop.
+Cuando una tarea usa Codex Desktop desde Telegram, el orquestador envia al movil una captura final. Si el operador no genero captura durante la ejecucion, se hace una captura inmediata de pantalla y se manda como respaldo.
 
 Para Google/Gemini, ademas inspecciona `D:\credenciales`: si existe una linea marcada como `use this .erlquimica GOOGLE_API_KEY=...`, esa clave tiene prioridad sobre las variables genericas.
 Para Groq, lee `GROQ_API_KEY` desde `D:\credenciales` antes que `.env`.

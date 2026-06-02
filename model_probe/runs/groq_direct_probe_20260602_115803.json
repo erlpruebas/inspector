@@ -1,0 +1,30 @@
+[
+  {
+    "name": "models",
+    "ok": false,
+    "status": 403,
+    "elapsed": 0.21373680000033346,
+    "error": "error code: 1010"
+  },
+  {
+    "name": "chat",
+    "ok": false,
+    "status": 403,
+    "elapsed": 0.03103720000035537,
+    "error": "error code: 1010"
+  },
+  {
+    "name": "stt",
+    "ok": false,
+    "status": 403,
+    "elapsed": 0.06120850000024802,
+    "error": "error code: 1010"
+  },
+  {
+    "name": "tts",
+    "ok": false,
+    "status": 403,
+    "elapsed": 0.04516940000030445,
+    "error": "error code: 1010"
+  }
+]

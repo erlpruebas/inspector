@@ -54,6 +54,12 @@ class TelegramApi:
             fields["caption"] = caption[:1024]
         self._multipart_call("sendAudio", fields, "audio", audio_path)
 
+    def send_photo(self, chat_id: int, photo_path: Path, caption: str = "") -> None:
+        fields = {"chat_id": str(chat_id)}
+        if caption:
+            fields["caption"] = caption[:1024]
+        self._multipart_call("sendPhoto", fields, "photo", photo_path)
+
     def get_file_path(self, file_id: str) -> str:
         payload = self.call("getFile", {"file_id": file_id})
         result = payload.get("result") or {}

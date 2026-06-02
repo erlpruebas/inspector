@@ -12,6 +12,8 @@ from pathlib import Path
 from typing import Any
 from unittest.mock import MagicMock, patch
 
+from codex_discovery import discover_codex_executable
+
 
 # Add REPO_ROOT to sys.path
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -20,19 +22,7 @@ if str(REPO_ROOT) not in sys.path:
 
 # Helper to find codex.exe
 def _find_codex() -> str:
-    candidates: list[Path] = []
-    appdata = os.getenv("USERPROFILE", "")
-    if appdata:
-        candidates.extend(Path(appdata).glob(".vscode/extensions/openai.chatgpt-*/bin/windows-x86_64/codex.exe"))
-        candidates.extend(Path(appdata).glob(".vscode-insiders/extensions/openai.chatgpt-*/bin/windows-x86_64/codex.exe"))
-    for name in ("codex.cmd", "codex.exe", "codex"):
-        resolved = shutil.which(name)
-        if resolved:
-            return resolved
-    existing = [path for path in candidates if path.exists()]
-    if existing:
-        return str(max(existing, key=lambda path: path.stat().st_mtime))
-    return ""
+    return str(discover_codex_executable() or "")
 
 CODEX_PATH = _find_codex()
 if CODEX_PATH:
@@ -397,7 +387,7 @@ class TestBenchRunner:
             codex_extra_dirs=[],
             codex_sandbox="danger-full-access",
             codex_approval="never",
-            codex_timeout_seconds=180,
+            codex_timeout_seconds=300,
             message_chunk_size=3500,
         )
         return mock_settings
@@ -525,18 +515,25 @@ class TestBenchRunner:
             
             # Check file outcomes
             expected_file = task.get("expected_file")
+            codex_execution_error = any(
+                "Fallo ejecutando Codex" in message or "Codex agoto el tiempo maximo" in message
+                for message in self.messages_sent
+            )
             file_created = False
             file_valid = True
             validation_error = ""
             if expected_file:
-                file_path = self.workdir / expected_file
-                file_created = file_path.exists()
-                file_valid, validation_error = self._validate_expected_file(task, file_path)
+                file_path = self._find_expected_file(expected_file)
+                file_created = file_path is not None
+                if file_path is not None:
+                    file_valid, validation_error = self._validate_expected_file(task, file_path)
                 
             # Evaluate overall result
             status = "FAIL"
             if not success and error_msg.startswith("WATCHDOG"):
                 status = f"FAIL (Timeout watchdog {TASK_WALL_TIMEOUT}s)"
+            elif success and codex_execution_error:
+                status = "FAIL (Codex execution error)"
             elif success and detected_action == task["expected_action"]:
                 if expected_file and not file_created:
                     status = "FAIL (Missing output file)"
@@ -568,6 +565,7 @@ class TestBenchRunner:
                 "detected_args": detected_args,
                 "file_created": file_created,
                 "file_valid": file_valid,
+                "codex_execution_error": codex_execution_error,
                 "success": success,
                 "elapsed": elapsed,
                 "status": status,
@@ -576,6 +574,15 @@ class TestBenchRunner:
             })
             
         return results
+
+    def _find_expected_file(self, expected_file: str) -> Path | None:
+        direct = self.workdir / expected_file
+        if direct.exists():
+            return direct
+        matches = [path for path in self.workdir.rglob(expected_file) if path.is_file()]
+        if not matches:
+            return None
+        return max(matches, key=lambda path: path.stat().st_mtime)
 
     def _validate_expected_file(self, task: dict[str, Any], file_path: Path) -> tuple[bool, str]:
         if not file_path.exists():

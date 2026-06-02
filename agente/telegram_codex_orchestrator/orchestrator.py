@@ -773,7 +773,10 @@ class Orchestrator:
                 import shutil
                 for item in inbox_dir.iterdir():
                     if item.is_file():
-                        shutil.copy(item, workdir / item.name)
+                        target = workdir / item.name
+                        if target.exists() and target.stat().st_mtime > item.stat().st_mtime:
+                            continue
+                        shutil.copy(item, target)
             
             files = []
             if workdir.exists():
@@ -785,6 +788,7 @@ class Orchestrator:
 
             repaired_python = repair_python_syntax_if_requested(instruction, workdir)
             if repaired_python is not None:
+                self._sync_repaired_file_to_shared_workdir(repaired_python.path)
                 response = repaired_python.message
                 self.memory.write(
                     "codex_fast_path_python_repair",
@@ -847,6 +851,22 @@ class Orchestrator:
             self._current_task = None
             self._busy.release()
             self._notify_pending_after_finish(chat_id)
+
+    def _sync_repaired_file_to_shared_workdir(self, path: Path) -> None:
+        import shutil
+
+        base_workdir = Path(self.settings.codex_workdir)
+        inbox_dir = base_workdir / "inbox"
+        destinations = [base_workdir / path.name, inbox_dir / path.name]
+        if base_workdir.exists():
+            destinations.extend(item for item in base_workdir.rglob(path.name) if item.is_file())
+        for destination in destinations:
+            try:
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                if destination.resolve() != path.resolve():
+                    shutil.copy(path, destination)
+            except OSError as exc:
+                self.memory.write("python_repair_sync_error", f"{path} -> {destination}\n{exc}", "system")
 
     def _run_codex_desktop_and_reply(self, chat_id: int, instruction: str, source: str, thread_record: ThreadRecord) -> None:
         try:

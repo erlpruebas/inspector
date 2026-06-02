@@ -10,7 +10,7 @@ from typing import Any
 class VoiceState:
     voz: bool = False
     altavoz: bool = False
-    stt_backend: str = "gemini"
+    stt_backend: str = "groq"
     stt_fallback_order: list[str] | None = None
     tts_backend: str = "gemini"
     tts_fallback_order: list[str] | None = None
@@ -37,13 +37,13 @@ class VoiceState:
         return cleaned
 
     def normalized_stt_order(self) -> list[str]:
-        order = self.stt_fallback_order or ["gemini", "groq"]
+        order = self.stt_fallback_order or ["groq", "gemini"]
         cleaned: list[str] = []
         for item in order:
             backend = str(item).strip().lower()
             if backend in {"groq", "gemini"} and backend not in cleaned:
                 cleaned.append(backend)
-        for backend in ("gemini", "groq"):
+        for backend in ("groq", "gemini"):
             if backend not in cleaned:
                 cleaned.append(backend)
         return cleaned
@@ -67,8 +67,8 @@ class VoiceStateStore:
         state = VoiceState(
             voz=bool(raw.get("voz", False)),
             altavoz=bool(raw.get("altavoz", False)),
-            stt_backend=str(raw.get("stt_backend", "gemini") or "gemini").lower(),
-            stt_fallback_order=list(raw.get("stt_fallback_order", ["gemini", "groq"])),
+            stt_backend=str(raw.get("stt_backend", "groq") or "groq").lower(),
+            stt_fallback_order=list(raw.get("stt_fallback_order", ["groq", "gemini"])),
             tts_backend=str(raw.get("tts_backend", "gemini") or "gemini").lower(),
             tts_fallback_order=list(raw.get("tts_fallback_order", ["gemini", "kokoro", "piper"])),
             tts_allow_fallback=bool(raw.get("tts_allow_fallback", True)),
@@ -81,6 +81,7 @@ class VoiceStateStore:
             kokoro_voice=str(raw.get("kokoro_voice", "ef_dora") or "ef_dora"),
             piper_voice=str(raw.get("piper_voice", "es_ES-davefx-medium") or "es_ES-davefx-medium"),
         )
+
         if not state.gemini_api_key:
             state.gemini_api_key = self.default_google_api_key
         if not state.groq_api_key:

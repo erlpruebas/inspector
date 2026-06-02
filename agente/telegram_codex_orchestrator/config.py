@@ -2,10 +2,11 @@ from __future__ import annotations
 
 import os
 import re
-import shlex
 import json
 from dataclasses import dataclass
 from pathlib import Path
+
+from codex_discovery import discover_codex_command
 
 
 ROOT = Path(__file__).resolve().parent
@@ -154,7 +155,7 @@ class Settings:
 def load_settings() -> Settings:
     load_environment()
 
-    codex_command_text = os.getenv("ORCH_CODEX_COMMAND", "codex").strip() or "codex"
+    codex_command = discover_codex_command()
     codex_dirs_file = _env_path("ORCH_CODEX_DIRS_FILE", ROOT / "memory" / "codex_dirs.json")
     memory_file = _env_path("ORCH_MEMORY_FILE", ROOT / "memory" / "events.txt")
     memories_file = _env_path("ORCH_MEMORIES_FILE", ROOT / "memory" / "memories.txt")
@@ -184,7 +185,7 @@ def load_settings() -> Settings:
             default=0,
         ),
         telegram_poll_timeout=_env_int("ORCH_TELEGRAM_POLL_TIMEOUT", default=30),
-        codex_command=shlex.split(codex_command_text, posix=False),
+        codex_command=codex_command,
         codex_workdir=_env_path("ORCH_CODEX_WORKDIR", INSPECTOR_ROOT),
         codex_dirs_file=codex_dirs_file,
         codex_extra_dirs=_dedupe_paths([*_json_path_list(codex_dirs_file), *_env_path_list("ORCH_CODEX_EXTRA_DIRS")]),

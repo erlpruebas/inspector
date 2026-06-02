@@ -10,11 +10,20 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from orchestrator_v2.desktop_calibration_store import (
+    DEFAULT_CALIBRATION_FILE,
+    DEFAULT_CLICK_PROFILE_FILE,
+    machine_calibration_file,
+    machine_click_profile_file,
+    machine_name,
+    tracked_machine_calibration_file,
+)
 
 RUNTIME_ROOT = Path("orchestrator_v2/runtime/desktop_codex_operator")
 DEFAULT_WINDOW_RE = r"^Codex$"
-CALIBRATION_FILE = RUNTIME_ROOT / "calibration.json"
-CLICK_PROFILE_FILE = RUNTIME_ROOT / "codex_click_profile.json"
+CALIBRATION_FILE = machine_calibration_file()
+TRACKED_CALIBRATION_FILE = tracked_machine_calibration_file()
+CLICK_PROFILE_FILE = machine_click_profile_file()
 
 DEFAULT_CLICK_PROFILE = {
     "new_chat": {"x": 71, "y": 47, "label": "Nueva conversacion"},
@@ -426,28 +435,48 @@ def _paste_points(x: int, y: int) -> list[tuple[int, int]]:
 
 
 def _load_calibration() -> dict[str, Any]:
-    if not CALIBRATION_FILE.exists():
-        return {}
-    try:
-        data = json.loads(CALIBRATION_FILE.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return {}
-    return data if isinstance(data, dict) else {}
+    for path in (CALIBRATION_FILE, TRACKED_CALIBRATION_FILE, DEFAULT_CALIBRATION_FILE):
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(data, dict):
+            return data
+    return {}
 
 
 def _load_click_profile() -> dict[str, Any]:
-    if not CLICK_PROFILE_FILE.exists():
-        return DEFAULT_CLICK_PROFILE
-    try:
-        data = json.loads(CLICK_PROFILE_FILE.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return DEFAULT_CLICK_PROFILE
-    return {**DEFAULT_CLICK_PROFILE, **(data if isinstance(data, dict) else {})}
+    for path in (CLICK_PROFILE_FILE, DEFAULT_CLICK_PROFILE_FILE):
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(data, dict):
+            return {**DEFAULT_CLICK_PROFILE, **data}
+    return DEFAULT_CLICK_PROFILE
 
 
 def _calibrated_point(name: str) -> tuple[int, int] | None:
     data = _load_calibration()
-    point = data.get("points", {}).get(name, {})
+    point = _point_from_payload(data, name)
+    if point is not None:
+        return point
+    applications = data.get("applications", {})
+    if isinstance(applications, dict):
+        codex_app = applications.get("codex_desktop", {})
+        if isinstance(codex_app, dict):
+            point = _point_from_payload(codex_app, name)
+            if point is not None:
+                return point
+    return None
+
+
+def _point_from_payload(payload: dict[str, Any], name: str) -> tuple[int, int] | None:
+    point = payload.get("points", {}).get(name, {})
     try:
         x = int(point["x"])
         y = int(point["y"])

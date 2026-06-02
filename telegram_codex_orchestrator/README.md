@@ -1,13 +1,12 @@
 # Telegram Codex Orchestrator
 
-MVP minimo para recibir ordenes por Telegram y ejecutarlas con Codex CLI.
+MVP minimo para recibir ordenes por Telegram y ejecutarlas con Codex CLI o Codex Desktop.
 Las ordenes pasan por una capa de interpretacion de intenciones: reglas locales primero y, si hace falta, un modelo sencillo de Google/Gemini.
 
 ## Comandos Telegram
 
-- `C <instruccion>` ejecuta `codex exec`.
-- `-c <instruccion>` alias compatible.
-- `/c <instruccion>` alias compatible.
+- `Cd <instruccion>` fuerza Codex Desktop con confirmacion previa.
+- `/codex <instruccion>` ejecuta `codex exec` por CLI con confirmacion previa.
 - `/status` muestra configuracion operativa.
 - `/alarmas` lista alarmas activas.
 - `/cancelar_alarma <id>` cancela una alarma.
@@ -62,6 +61,22 @@ Carga variables desde:
 2. `D:\inspector\.env`
 3. `D:\variables\.env`
 4. `D:\inspector\telegram_codex_orchestrator\.env`
+
+## Calibracion de Codex Desktop por equipo
+
+Arrancar el calibrador guiado:
+
+```powershell
+calibrar_codex_desktop_por_equipo.bat
+```
+
+O directamente:
+
+```powershell
+python -m orchestrator_v2.codex_desktop_calibrator
+```
+
+En Telegram, usa `Cd <instruccion>` cuando quieras que la tarea vaya obligatoriamente por Codex Desktop.
 
 Para Google/Gemini, ademas inspecciona `D:\credenciales`: si existe una linea marcada como `use this .erlquimica GOOGLE_API_KEY=...`, esa clave tiene prioridad sobre las variables genericas.
 Para Groq, lee `GROQ_API_KEY` desde `D:\credenciales` antes que `.env`.

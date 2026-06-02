@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "machine_name": "DESKTOP-6H3JIL5",
+  "applications": {
+    "codex_desktop": {
+      "display_name": "Codex Desktop",
+      "window_title_hint": "Codex",
+      "steps": [
+        "new_chat",
+        "initial_input",
+        "initial_send",
+        "browser_toggle",
+        "browser_input",
+        "browser_send_stop"
+      ],
+      "points": {
+        "new_chat": {
+          "x": 85,
+          "y": 58,
+          "label": "Haz clic en Nuevo chat",
+          "captured_at": "2026-06-02T10:25:03",
+          "machine_name": "DESKTOP-6H3JIL5"
+        },
+        "initial_input": {
+          "x": 1081,
+          "y": 491,
+          "label": "Haz clic en la caja de texto inicial",
+          "captured_at": "2026-06-02T10:25:14",
+          "machine_name": "DESKTOP-6H3JIL5"
+        },
+        "initial_send": {
+          "x": 1422,
+          "y": 531,
+          "label": "Haz clic en Enviar inicial",
+          "captured_at": "2026-06-02T10:25:23",
+          "machine_name": "DESKTOP-6H3JIL5"
+        },
+        "browser_toggle": {
+          "x": 1901,
+          "y": 59,
+          "label": "Haz clic en Abrir pantalla lateral del navegador",
+          "captured_at": "2026-06-02T10:25:32",
+          "machine_name": "DESKTOP-6H3JIL5"
+        },
+        "browser_input": {
+          "x": 813,
+          "y": 965,
+          "label": "Haz clic en la caja de texto con el navegador abierto",
+          "captured_at": "2026-06-02T10:26:35",
+          "machine_name": "DESKTOP-6H3JIL5"
+        },
+        "browser_send_stop": {
+          "x": 1122,
+          "y": 995,
+          "label": "Haz clic en Enviar con el navegador abierto",
+          "captured_at": "2026-06-02T10:26:43",
+          "machine_name": "DESKTOP-6H3JIL5"
+        }
+      },
+      "updated_at": "2026-06-02T10:26:43"
+    }
+  },
+  "selected_application": "codex_desktop",
+  "updated_at": "2026-06-02T10:26:56",
+  "points": {
+    "new_chat": {
+      "x": 85,
+      "y": 58,
+      "label": "Haz clic en Nuevo chat",
+      "captured_at": "2026-06-02T10:25:03",
+      "machine_name": "DESKTOP-6H3JIL5"
+    },
+    "initial_input": {
+      "x": 1081,
+      "y": 491,
+      "label": "Haz clic en la caja de texto inicial",
+      "captured_at": "2026-06-02T10:25:14",
+      "machine_name": "DESKTOP-6H3JIL5"
+    },
+    "initial_send": {
+      "x": 1422,
+      "y": 531,
+      "label": "Haz clic en Enviar inicial",
+      "captured_at": "2026-06-02T10:25:23",
+      "machine_name": "DESKTOP-6H3JIL5"
+    },
+    "browser_toggle": {
+      "x": 1901,
+      "y": 59,
+      "label": "Haz clic en Abrir pantalla lateral del navegador",
+      "captured_at": "2026-06-02T10:25:32",
+      "machine_name": "DESKTOP-6H3JIL5"
+    },
+    "browser_input": {
+      "x": 813,
+      "y": 965,
+      "label": "Haz clic en la caja de texto con el navegador abierto",
+      "captured_at": "2026-06-02T10:26:35",
+      "machine_name": "DESKTOP-6H3JIL5"
+    },
+    "browser_send_stop": {
+      "x": 1122,
+      "y": 995,
+      "label": "Haz clic en Enviar con el navegador abierto",
+      "captured_at": "2026-06-02T10:26:43",
+      "machine_name": "DESKTOP-6H3JIL5"
+    }
+  }
+}

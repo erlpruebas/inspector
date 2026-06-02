@@ -1053,7 +1053,11 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
 
   function wantsCodexDesktop(text) {
     const normalized = foldText(text);
-    return /(codex\s+de\s+escritorio|codex\s+escritorio|codex\s+desktop|interfaz\s+de\s+codex|codex\s+visual)/.test(normalized);
+    return /^(cd|\/cd|\/codex_desktop)\s+/.test(normalized) || /(codex\s+de\s+escritorio|codex\s+escritorio|codex\s+desktop|interfaz\s+de\s+codex|codex\s+visual)/.test(normalized);
+  }
+
+  function stripCodexDesktopDirective(text) {
+    return String(text || "").replace(/^\s*(cd|\/cd|\/codex_desktop)\s+/i, "").trim();
   }
 
   function publicCodexResult(result) {
@@ -1073,6 +1077,7 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
 
   async function executeCodexOneShot({ thread, incomingText, source, files = [] }) {
     const mode = wantsCodexDesktop(incomingText) ? "desktop" : "cli";
+    const codexText = mode === "desktop" ? stripCodexDesktopDirective(incomingText) || incomingText : incomingText;
     const args = [
       "-X",
       "utf8",
@@ -1080,7 +1085,7 @@ function createAssistantCore({ rootDir, promptNano, logger = console }) {
       "--mode",
       mode,
       "--text",
-      incomingText,
+      codexText,
       "--source",
       source,
       "--thread-id",

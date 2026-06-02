@@ -3,12 +3,15 @@ from __future__ import annotations
 import argparse
 import json
 from dataclasses import dataclass
-from pathlib import Path
 from tkinter import Button, Frame, Label, Tk
 
+from orchestrator_v2.desktop_calibration_store import (
+    DEFAULT_CLICK_PROFILE_FILE,
+    machine_click_profile_file,
+    machine_name,
+)
 
-RUNTIME_ROOT = Path("orchestrator_v2/runtime/desktop_codex_operator")
-CLICK_PROFILE_FILE = RUNTIME_ROOT / "codex_click_profile.json"
+CLICK_PROFILE_FILE = machine_click_profile_file()
 
 
 DEFAULT_PROFILE = {
@@ -93,19 +96,25 @@ def targets_from_profile(profile: dict) -> list[ClickTarget]:
 
 
 def load_profile() -> dict:
-    if not CLICK_PROFILE_FILE.exists():
-        return DEFAULT_PROFILE
-    try:
-        data = json.loads(CLICK_PROFILE_FILE.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return DEFAULT_PROFILE
-    return {**DEFAULT_PROFILE, **(data if isinstance(data, dict) else {})}
+    for path in (CLICK_PROFILE_FILE, DEFAULT_CLICK_PROFILE_FILE):
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(data, dict):
+            return {**DEFAULT_PROFILE, **data}
+    return DEFAULT_PROFILE
 
 
 def write_default_profile() -> None:
-    RUNTIME_ROOT.mkdir(parents=True, exist_ok=True)
+    CLICK_PROFILE_FILE.parent.mkdir(parents=True, exist_ok=True)
     if not CLICK_PROFILE_FILE.exists():
         CLICK_PROFILE_FILE.write_text(json.dumps(DEFAULT_PROFILE, indent=2, ensure_ascii=False), encoding="utf-8")
+    DEFAULT_CLICK_PROFILE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    if not DEFAULT_CLICK_PROFILE_FILE.exists():
+        DEFAULT_CLICK_PROFILE_FILE.write_text(json.dumps(DEFAULT_PROFILE, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def main() -> int:
@@ -116,6 +125,7 @@ def main() -> int:
     if args.write_default:
         print(CLICK_PROFILE_FILE)
         return 0
+    print(f"Usando perfil de clicks para: {machine_name()}")
     CodexClickConsole(load_profile()).run()
     return 0
 

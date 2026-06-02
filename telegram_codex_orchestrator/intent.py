@@ -24,6 +24,7 @@ ACTION_STATUS = "status"
 ACTION_LIST_ALARMS = "list_alarms"
 ACTION_CANCEL_ALARM = "cancel_alarm"
 ACTION_CODEX = "codex"
+ACTION_CODEX_DESKTOP = "codex_desktop"
 ACTION_CREATE_ALARM = "create_alarm"
 ACTION_REMEMBER = "remember"
 ACTION_LIST_MEMORIES = "list_memories"
@@ -47,6 +48,7 @@ KNOWN_ACTIONS = {
     ACTION_LIST_ALARMS,
     ACTION_CANCEL_ALARM,
     ACTION_CODEX,
+    ACTION_CODEX_DESKTOP,
     ACTION_CREATE_ALARM,
     ACTION_REMEMBER,
     ACTION_LIST_MEMORIES,
@@ -143,6 +145,10 @@ class IntentInterpreter:
         if lower.startswith("/cancelar_alarma ") or lower.startswith("/cancel_alarm "):
             return Intent(ACTION_CANCEL_ALARM, {"alarm_id": stripped.split(maxsplit=1)[1].strip()})
 
+        codex_desktop_instruction = extract_codex_desktop_instruction(stripped)
+        if codex_desktop_instruction is not None:
+            return Intent(ACTION_CODEX_DESKTOP, {"instruction": codex_desktop_instruction})
+
         codex_instruction = extract_codex_instruction(stripped)
         if codex_instruction is not None:
             return Intent(ACTION_CODEX, {"instruction": codex_instruction})
@@ -226,13 +232,15 @@ class IntentInterpreter:
             args.setdefault("text", text)
         if action == ACTION_CODEX:
             args.setdefault("instruction", text)
+        if action == ACTION_CODEX_DESKTOP:
+            args.setdefault("instruction", text)
         if action == ACTION_REMEMBER:
             args.setdefault("text", text)
         if action in {ACTION_ADD_CODEX_DIR, ACTION_REMOVE_CODEX_DIR}:
             args.setdefault("path", "")
         if action in {ACTION_NEW_THREAD, ACTION_SWITCH_THREAD}:
             args.setdefault("name", "")
-        if action == ACTION_CODEX:
+        if action in {ACTION_CODEX, ACTION_CODEX_DESKTOP}:
             args.setdefault("thread_name", "")
 
         return Intent(action, args, source="google", confidence=confidence_float)
@@ -240,7 +248,16 @@ class IntentInterpreter:
 
 def extract_codex_instruction(text: str) -> str | None:
     stripped = text.strip()
-    for prefix in ("-c ", "/c ", "/codex ", "c "):
+    for prefix in ("/codex ",):
+        if stripped.lower().startswith(prefix):
+            instruction = stripped[len(prefix) :].strip()
+            return instruction or None
+    return None
+
+
+def extract_codex_desktop_instruction(text: str) -> str | None:
+    stripped = text.strip()
+    for prefix in ("cd ", "/cd ", "/codex_desktop "):
         if stripped.lower().startswith(prefix):
             instruction = stripped[len(prefix) :].strip()
             return instruction or None
@@ -313,6 +330,7 @@ Acciones disponibles:
 - list_alarms: listar alarmas.
 - cancel_alarm: cancelar una alarma. args: {{"alarm_id":"..."}}
 - codex: ejecutar Codex CLI. args: {{"instruction":"..."}}
+- codex_desktop: ejecutar obligatoriamente Codex Desktop. args: {{"instruction":"..."}}
 - create_alarm: crear una alarma o recordatorio temporal. args: {{"text":"frase original o normalizada en espanol"}}
 - remember: guardar una memoria persistente. args: {{"text":"contenido a recordar"}}
 - list_memories: listar recuerdos.

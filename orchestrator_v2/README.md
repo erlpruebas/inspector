@@ -109,6 +109,7 @@ Esta carpeta es el nucleo local. La siguiente capa debe conectar:
 - `web_ui.py`: dashboard web portable para laboratorio, profesiones, resultados y gestor.
 - `desktop_codex_operator.py`: operador experimental de Codex Desktop para navegador, logins, BotFather y apps visuales. Tiene modo de borrador para pegar, capturar pantalla y esperar validacion antes de enviar.
 - `calibrate_codex_desktop.py`: calibracion de coordenadas fijas para `Nuevo chat`, caja de texto y boton de enviar.
+- `codex_desktop_calibrator.py`: calibrador guiado por equipo con selector de aplicacion y captura del siguiente clic.
 - `mouse_coordinate_probe.py`: visor siempre visible para apuntar coordenadas XY del raton en distintos estados de Codex Desktop.
 - `codex_click_console.py`: consola de prueba con botones para hacer clic en los puntos fijos de Codex Desktop.
 - `response_voice.py`: regla de resumen de audio para respuestas largas.
@@ -197,6 +198,12 @@ Calibrar los tres clics fijos de Codex Desktop:
 
 ```powershell
 python -m orchestrator_v2.calibrate_codex_desktop
+```
+
+Calibrador guiado por equipo para Codex Desktop:
+
+```powershell
+python -m orchestrator_v2.codex_desktop_calibrator
 ```
 
 Abrir visor vivo de coordenadas del raton:

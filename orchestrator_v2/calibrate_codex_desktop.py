@@ -4,13 +4,19 @@ import argparse
 import json
 import time
 from datetime import datetime
-from pathlib import Path
 from tkinter import Button, Label, Tk, messagebox
 from typing import Any
 
+from orchestrator_v2.desktop_calibration_store import (
+    DEFAULT_CALIBRATION_FILE,
+    machine_calibration_file,
+    machine_name,
+    tracked_machine_calibration_file,
+)
 
-RUNTIME_ROOT = Path("orchestrator_v2/runtime/desktop_codex_operator")
-CALIBRATION_FILE = RUNTIME_ROOT / "calibration.json"
+RUNTIME_ROOT = machine_calibration_file().parent
+CALIBRATION_FILE = machine_calibration_file()
+TRACKED_CALIBRATION_FILE = tracked_machine_calibration_file()
 SNAPSHOT_DIR = RUNTIME_ROOT / "calibration_snapshots"
 
 
@@ -76,10 +82,15 @@ class Calibrator:
             "version": 1,
             "created_at": datetime.now().isoformat(timespec="seconds"),
             "window_title_hint": self.window_title_hint,
+            "machine_name": machine_name(),
             "points": self.points,
             "notes": "Coordenadas absolutas de pantalla para Codex Desktop.",
         }
         CALIBRATION_FILE.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+        TRACKED_CALIBRATION_FILE.parent.mkdir(parents=True, exist_ok=True)
+        TRACKED_CALIBRATION_FILE.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+        DEFAULT_CALIBRATION_FILE.parent.mkdir(parents=True, exist_ok=True)
+        DEFAULT_CALIBRATION_FILE.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
         messagebox.showinfo("Calibracion lista", f"Guardado en:\n{CALIBRATION_FILE}")
 
     def run(self) -> None:

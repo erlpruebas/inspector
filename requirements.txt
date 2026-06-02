@@ -7,10 +7,11 @@ python-dotenv>=1.0.0
 # Captura de pantalla
 Pillow>=10.0.0
 
-# Automatización de teclado/ratón para enviar órdenes a Cowork
+# Automatizacion de teclado/raton
 pyautogui>=0.9.54
+pynput>=1.7.7
 
-# Mejora de verificación SSL en Windows (opcional pero recomendado)
+# Mejora de verificacion SSL en Windows (opcional pero recomendado)
 truststore>=0.10.4
 
 # Google Gemini (agente de escritorio con funciones propias)

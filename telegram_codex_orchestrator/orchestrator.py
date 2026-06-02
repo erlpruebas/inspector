@@ -39,6 +39,7 @@ from intent import (
     ACTION_RUN_NEXT_PENDING,
     ACTION_CLEAR_PENDING,
     ACTION_CANCEL_CURRENT_TASK,
+    ACTION_CODEX_DESKTOP,
     Intent,
     IntentInterpreter,
 )
@@ -50,6 +51,7 @@ from thread_store import ThreadRecord, ThreadStore
 from telegram_api import TelegramApi
 from voice_state import VoiceStateStore
 from benchmarks.token_accounting import record_usage
+from orchestrator_v2.desktop_codex_operator import run_desktop_codex_operator
 
 
 RESTART_EXIT_CODE = 75
@@ -281,8 +283,14 @@ class Orchestrator:
             return
 
         instruction = str(intent.args.get("instruction", "")).strip()
+        if intent.action == ACTION_CODEX_DESKTOP and instruction:
+            thread_record = self.threads.choose_for_codex(instruction, str(intent.args.get("thread_name", "")).strip() or None)
+            self.threads.set_active(thread_record.name)
+            self._request_codex_desktop_confirmation(chat_id, instruction, source, thread_record)
+            return
+
         if intent.action != ACTION_CODEX or not instruction:
-            self._reply(chat_id, "Comando no reconocido. Usa C <instruccion>, pideme una alarma o dime 'recuerda que ...'.")
+            self._reply(chat_id, "Comando no reconocido. Usa Cd <instruccion> para Codex Desktop, /codex <instruccion> para Codex CLI, pideme una alarma o dime 'recuerda que ...'.")
             return
 
         thread_record = self.threads.choose_for_codex(instruction, str(intent.args.get("thread_name", "")).strip() or None)
@@ -308,6 +316,23 @@ class Orchestrator:
         )
         worker.start()
 
+    def _start_confirmed_codex_desktop(self, chat_id: int, instruction: str, source: str, thread_record: ThreadRecord) -> None:
+        if not self._busy.acquire(blocking=False):
+            self.memory.write("codex_desktop_busy", instruction, source, thread=thread_record.name)
+            self._reply(
+                chat_id,
+                "Codex esta ocupado ahora mismo. Si quieres, vuelve a mandar `Cd ...` cuando quede libre o lo dejamos para la cola de pendientes en el siguiente ajuste.",
+                thread=thread_record.name,
+            )
+            return
+
+        worker = threading.Thread(
+            target=self._run_codex_desktop_and_reply,
+            args=(chat_id, instruction, source, thread_record),
+            daemon=True,
+        )
+        worker.start()
+
     def _request_codex_confirmation(
         self,
         chat_id: int,
@@ -328,6 +353,23 @@ class Orchestrator:
         }
         self.memory.write("codex_confirmation_requested", command_line, source, thread=thread_record.name)
         self._reply(chat_id, self._codex_confirmation_text(instruction, thread_record, command_line), thread=thread_record.name)
+
+    def _request_codex_desktop_confirmation(
+        self,
+        chat_id: int,
+        instruction: str,
+        source: str,
+        thread_record: ThreadRecord,
+    ) -> None:
+        self._pending_codex_confirmation = {
+            "mode": "codex_desktop",
+            "chat_id": chat_id,
+            "instruction": instruction,
+            "source": source,
+            "thread_name": thread_record.name,
+        }
+        self.memory.write("codex_desktop_confirmation_requested", instruction, source, thread=thread_record.name)
+        self._reply(chat_id, self._codex_desktop_confirmation_text(instruction, thread_record), thread=thread_record.name)
 
     def _request_next_pending_confirmation(self, chat_id: int, source: str) -> None:
         if self._busy.locked():
@@ -368,6 +410,16 @@ class Orchestrator:
             self._reply(chat_id, "Cancelado. No he enviado nada a Codex CLI.", thread=str(pending.get("thread_name", "")))
             return True
 
+        if pending.get("mode") == "codex_desktop":
+            thread_record = self.threads.get(str(pending.get("thread_name", "")))
+            self._start_confirmed_codex_desktop(
+                int(pending["chat_id"]),
+                str(pending["instruction"]),
+                str(pending["source"]),
+                thread_record,
+            )
+            return True
+
         if pending.get("mode") == "next_pending":
             task = self.pending.pop_next()
             if task is None or task.id != pending.get("task_id"):
@@ -404,6 +456,15 @@ class Orchestrator:
             "Responde `si` para ejecutar o `no` para cancelar."
         )
 
+    def _codex_desktop_confirmation_text(self, instruction: str, thread_record: ThreadRecord) -> str:
+        return (
+            "Antes de usar Codex Desktop necesito confirmacion.\n\n"
+            f"Que voy a hacer: {instruction}\n"
+            f"Hilo del orquestador: {thread_record.name}\n"
+            "Herramienta obligatoria: Codex Desktop\n\n"
+            "Responde `si` para ejecutar o `no` para cancelar."
+        )
+
     @staticmethod
     def _confirmation_decision(text: str) -> str:
         normalized = text.strip().lower()
@@ -431,7 +492,7 @@ class Orchestrator:
     @staticmethod
     def _extract_instruction(text: str) -> str | None:
         stripped = text.strip()
-        for prefix in ("c ", "-c ", "/c ", "/codex "):
+        for prefix in ("cd ", "/cd ", "/codex_desktop ", "/codex "):
             if stripped.lower().startswith(prefix):
                 instruction = stripped[len(prefix) :].strip()
                 return instruction or None
@@ -641,6 +702,75 @@ class Orchestrator:
             detail = f"{exc}\n{traceback.format_exc()}"
             self.memory.write("codex_error", detail, "system", thread=thread_record.name)
             self._reply(chat_id, f"Fallo ejecutando Codex:\n\n{str(exc)}")
+        finally:
+            self._current_task = None
+            self._busy.release()
+            self._notify_pending_after_finish(chat_id)
+
+    def _run_codex_desktop_and_reply(self, chat_id: int, instruction: str, source: str, thread_record: ThreadRecord) -> None:
+        try:
+            self._current_task = {
+                "thread": thread_record.name,
+                "instruction": instruction,
+                "started_at": MemoryLog.stamp(),
+                "tool": "codex_desktop",
+            }
+            self.memory.write("codex_desktop_start", instruction, source, thread=thread_record.name)
+            self._reply(chat_id, f"Recibido. Voy a usar Codex Desktop en el hilo `{thread_record.name}`.", thread=thread_record.name)
+            result = run_desktop_codex_operator(
+                instruction,
+                send=True,
+                new_chat=not bool(thread_record.codex_thread_id),
+                wait_seconds=self.settings.codex_timeout_seconds,
+                debug_draft=False,
+                pause_after_paste=False,
+            )
+            response = (
+                f"Codex Desktop termino con estado: {result.status}\n"
+                f"Directorio de ejecucion: {result.run_dir}\n"
+                f"Captura final: {result.screenshot_path or 'sin captura'}"
+            )
+            self.memory.write(
+                "codex_desktop_finish",
+                f"ok={result.ok} status={result.status} error={result.error}\n\n{response}",
+                "codex_desktop",
+                thread=thread_record.name,
+            )
+            record_usage(
+                self.settings.memory_file.with_name("token_usage.jsonl"),
+                source="telegram_orchestrator",
+                component="codex_desktop",
+                provider="codex",
+                model="codex_desktop",
+                operation="codex_desktop_run",
+                prompt_text=instruction,
+                completion_text=response,
+                task_id="",
+                user_id=str(chat_id),
+                thread_id=thread_record.name,
+                metadata={"ok": result.ok, "status": result.status, "run_dir": str(result.run_dir)},
+            )
+            if result.ok:
+                self._reply(chat_id, response, thread=thread_record.name)
+                return
+            self._reply(
+                chat_id,
+                "Codex Desktop no ha podido ejecutar la tarea ahora mismo.\n\n"
+                f"Detalle: {result.error or result.status}\n\n"
+                "Podemos dejarla preparada para cuando Codex Desktop vuelva a estar disponible o resolverla con Gemini como fallback. "
+                "De momento no he lanzado el fallback automaticamente para no cambiar de herramienta sin tu confirmacion.",
+                thread=thread_record.name,
+            )
+        except Exception as exc:
+            detail = f"{exc}\n{traceback.format_exc()}"
+            self.memory.write("codex_desktop_error", detail, "system", thread=thread_record.name)
+            self._reply(
+                chat_id,
+                "Codex Desktop no esta disponible ahora mismo.\n\n"
+                f"Detalle: {str(exc)}\n\n"
+                "Podemos reintentarlo cuando vuelva la ventana de Codex o pasar esta tarea a Gemini como fallback; lo dejamos como decision explicita.",
+                thread=thread_record.name,
+            )
         finally:
             self._current_task = None
             self._busy.release()
@@ -904,9 +1034,8 @@ class Orchestrator:
         return "\n".join(
             [
                 "Comandos:",
-                "C <instruccion>   Pide confirmacion y ejecuta Codex CLI",
-                "-c <instruccion>  Alias compatible",
-                "/c <instruccion>  Alias compatible",
+                "Cd <instruccion>  Pide confirmacion y ejecuta Codex Desktop",
+                "/codex <instruccion>  Pide confirmacion y ejecuta Codex CLI",
                 "/status          Estado",
                 "/alarmas         Lista alarmas activas",
                 "/cancelar_alarma <id>",

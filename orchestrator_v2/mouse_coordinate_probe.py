@@ -3,12 +3,11 @@ from __future__ import annotations
 import argparse
 import json
 from datetime import datetime
-from pathlib import Path
 from tkinter import Button, Entry, Frame, Label, Listbox, StringVar, Tk
 
+from orchestrator_v2.desktop_calibration_store import machine_mouse_capture_file, machine_name
 
-RUNTIME_ROOT = Path("orchestrator_v2/runtime/desktop_codex_operator")
-CAPTURE_FILE = RUNTIME_ROOT / "mouse_coordinate_captures.jsonl"
+CAPTURE_FILE = machine_mouse_capture_file()
 
 
 class MouseCoordinateProbe:
@@ -72,6 +71,7 @@ class MouseCoordinateProbe:
             label = ""
         record = {
             "timestamp": datetime.now().isoformat(timespec="milliseconds"),
+            "machine_name": machine_name(),
             "x": self.last_point[0],
             "y": self.last_point[1],
             "label": label,

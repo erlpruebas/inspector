@@ -93,6 +93,20 @@ Orquestador Telegram:
 arrancar_orquestador.bat
 ```
 
+Calibracion de Codex Desktop por equipo:
+
+```powershell
+calibrar_codex_desktop_por_equipo.bat
+```
+
+Uso desde Telegram:
+
+```text
+Cd <instruccion>
+```
+
+`Cd` fuerza Codex Desktop. Para Codex CLI se usa `/codex <instruccion>`; la letra `C` sola ya no es un comando reservado.
+
 Interfaz grafica del orquestador:
 
 ```powershell
@@ -111,6 +125,7 @@ Preparar o lanzar la creacion de bots del laboratorio con Codex Desktop:
 medir_xy_raton.bat
 consola_clicks_codex.bat
 calibrar_codex_desktop.bat
+calibrar_codex_desktop_por_equipo.bat
 preparar_bots_lab_codex_desktop.bat
 crear_bots_lab_codex_desktop.bat
 ```

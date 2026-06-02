@@ -212,7 +212,10 @@ class Orchestrator:
             self._reply(chat_id, f"He borrado {count} tarea(s) pendiente(s).")
             return
         if intent.action == ACTION_RUN_NEXT_PENDING:
-            self._request_next_pending_confirmation(chat_id, source)
+            if self.settings.bypass_confirmation:
+                self._start_next_pending(chat_id)
+            else:
+                self._request_next_pending_confirmation(chat_id, source)
             return
         if intent.action == ACTION_CANCEL_CURRENT_TASK:
             self._cancel_current_task(chat_id, source)
@@ -298,7 +301,10 @@ class Orchestrator:
         if intent.action == ACTION_CODEX_DESKTOP and instruction:
             thread_record = self.threads.choose_for_codex(instruction, str(intent.args.get("thread_name", "")).strip() or None)
             self.threads.set_active(thread_record.name)
-            self._request_codex_desktop_confirmation(chat_id, instruction, source, thread_record)
+            if self.settings.bypass_confirmation:
+                self._start_confirmed_codex_desktop(chat_id, instruction, source, thread_record)
+            else:
+                self._request_codex_desktop_confirmation(chat_id, instruction, source, thread_record)
             return
 
         if intent.action != ACTION_CODEX or not instruction:
@@ -307,7 +313,10 @@ class Orchestrator:
 
         thread_record = self.threads.choose_for_codex(instruction, str(intent.args.get("thread_name", "")).strip() or None)
         self.threads.set_active(thread_record.name)
-        self._request_codex_confirmation(chat_id, instruction, source, thread_record, None)
+        if self.settings.bypass_confirmation:
+            self._start_confirmed_codex(chat_id, instruction, source, thread_record, None)
+        else:
+            self._request_codex_confirmation(chat_id, instruction, source, thread_record, None)
         return
 
     def _start_confirmed_codex(self, chat_id: int, instruction: str, source: str, thread_record: ThreadRecord, pending_task: PendingTask | None) -> None:

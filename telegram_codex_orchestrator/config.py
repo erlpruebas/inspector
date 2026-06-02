@@ -143,6 +143,8 @@ class Settings:
     hot_reload: bool
     code_watch_seconds: int
     drain_pending_on_start: bool
+    lab_mode: bool
+    bypass_confirmation: bool
 
     @property
     def ready(self) -> bool:
@@ -162,6 +164,16 @@ def load_settings() -> Settings:
     voice_settings_file = _env_path("ORCH_VOICE_SETTINGS_FILE", ROOT / "memory" / "voice_settings.json")
     voice_runtime_dir = _env_path("ORCH_VOICE_RUNTIME_DIR", ROOT / "runtime" / "voice")
     google_api_key, google_api_key_source = _google_api_key()
+
+    lab_mode = os.getenv("ORCH_LAB_MODE", "0").strip().lower() in {"1", "true", "yes"}
+    
+    # If lab_mode is enabled, force bypass_confirmation=True and hot_reload=False
+    if lab_mode:
+        bypass_confirmation = True
+        hot_reload = False
+    else:
+        bypass_confirmation = os.getenv("ORCH_BYPASS_CONFIRMATION", "0").strip().lower() in {"1", "true", "yes"}
+        hot_reload = os.getenv("ORCH_HOT_RELOAD", "1").strip().lower() not in {"0", "false", "no"}
 
     return Settings(
         telegram_bot_token=os.getenv("TELEGRAM_BOT_TOKEN", ""),
@@ -195,9 +207,11 @@ def load_settings() -> Settings:
         google_model=os.getenv("ORCH_GOOGLE_INTENT_MODEL", os.getenv("GOOGLE_MODEL_ALT", "gemini-2.5-flash-lite")).strip(),
         google_intent_enabled=os.getenv("ORCH_GOOGLE_INTENT_ENABLED", "1").strip().lower() not in {"0", "false", "no"},
         google_intent_timeout_seconds=_env_int("ORCH_GOOGLE_INTENT_TIMEOUT_SECONDS", default=20),
-        hot_reload=os.getenv("ORCH_HOT_RELOAD", "1").strip().lower() not in {"0", "false", "no"},
+        hot_reload=hot_reload,
         code_watch_seconds=_env_int("ORCH_CODE_WATCH_SECONDS", default=5),
         drain_pending_on_start=os.getenv("ORCH_DRAIN_PENDING_ON_START", "1").strip().lower() not in {"0", "false", "no"},
+        lab_mode=lab_mode,
+        bypass_confirmation=bypass_confirmation,
     )
 
 

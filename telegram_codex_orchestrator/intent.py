@@ -442,7 +442,9 @@ Acciones disponibles:
 
 Reglas:
 - Si el usuario quiere que el sistema haga trabajo de programacion, edicion o investigacion, usa codex.
-- Para codex, incluye args.thread_name si el usuario menciona un hilo, tema o proyecto claro.
+- Si el usuario quiere buscar informacion en internet, realizar consultas o navegar de forma no interactiva, usa codex (CLI).
+- Usa codex_desktop UNICAMENTE si la tarea requiere interactuar visualmente de forma activa con el navegador web u otras aplicaciones (ej. rellenar formularios, loguearse manualmente, hacer clics en elementos especificos, interactuar con GUIs).
+- Para codex o codex_desktop, incluye args.thread_name si el usuario menciona un hilo, tema o proyecto claro.
 - Si pide "avisame", "ponme una alarma", "recuerdame manana/dentro de...", usa create_alarm.
 - Si dice "recuerda que", "guarda en memoria", "ten en cuenta", usa remember.
 - Si pregunta que recuerdas, que sabes, o pide revisar memoria, usa query_memory.

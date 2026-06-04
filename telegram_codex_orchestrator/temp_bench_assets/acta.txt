@@ -1,0 +1,8 @@
+Reunión de Equipo del 15 de Mayo de 2026
+Asistentes: Ana, Marta, Juan
+Temas tratados:
+- Presupuesto: Aprobado el coste de licencias anuales de software.
+- Plazos: El proyecto de migración se retrasa al 1 de Julio.
+- Tareas urgentes:
+  1. Marta debe validar las tarifas de los servidores.
+  2. Juan creará la base de datos de staging.

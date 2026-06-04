@@ -16,14 +16,14 @@ Version limpia y autocontenida del agente de `inspector`.
 - Memorias/runtime generados.
 - Workdirs temporales.
 - `__pycache__`, logs y reportes antiguos.
-- Operador completo de Codex Desktop. La version limpia conserva un shim y prioriza Codex CLI.
+- Workflows de prueba automatizada del escritorio que disparen Codex Desktop en vivo.
 
 ## Estructura
 
 ```text
 agente/
   benchmarks/                     # token accounting local
-  orchestrator_v2/                 # shim desktop opcional
+  orchestrator_v2/                 # operador de escritorio + calibracion por maquina
   scripts/
     run_unit_tests.ps1
     run_bench.ps1

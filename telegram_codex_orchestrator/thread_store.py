@@ -131,7 +131,7 @@ class ThreadStore:
             name=name,
             title=title,
             kind=kind,
-            workdir=str(self.default_workdir),
+            workdir=str(self.default_workdir if name in ("desarrollo", "busquedas", "alarmas", "recuerdos", "general", "default") else self.default_workdir / f"thread_{name}"),
             extra_dirs=[str(path) for path in self.default_extra_dirs],
             created_at=stamp,
             updated_at=stamp,

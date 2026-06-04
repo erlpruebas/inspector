@@ -89,6 +89,11 @@ class IntentInterpreter:
         if local.action != ACTION_UNKNOWN:
             return local
 
+        if self.settings.groq_api_key:
+            groq_intent = self._groq_intent(text)
+            if groq_intent.action != ACTION_UNKNOWN:
+                return groq_intent
+
         if self.settings.google_intent_enabled and self.settings.google_api_key:
             google = self._google_intent(text)
             if google.action != ACTION_UNKNOWN:
@@ -98,7 +103,7 @@ class IntentInterpreter:
 
     def _local_intent(self, text: str) -> Intent:
         stripped = text.strip()
-        lower = stripped.lower()
+        lower = stripped.strip(" ¿?¡!.,:;\"'").lower()
 
         strict = extract_strict_command(stripped)
         if strict is not None:
@@ -176,7 +181,108 @@ class IntentInterpreter:
         if parse_alarm_request(stripped) is not None:
             return Intent(ACTION_CREATE_ALARM, {"text": stripped})
 
+        # Fallback: natural-language action-verb heuristic → codex
+        nl_instruction = extract_natural_codex_instruction(stripped)
+        if nl_instruction is not None:
+            return Intent(ACTION_CODEX, {"instruction": nl_instruction}, source="local_nl", confidence=0.7)
+
         return Intent(ACTION_UNKNOWN, {"text": stripped}, confidence=0.0)
+
+    def _groq_intent(self, text: str) -> Intent:
+        import os
+        import urllib.request
+        import urllib.parse
+        
+        prompt = _intent_prompt(text)
+        groq_model = os.getenv("GROQ_ROUTER_MODEL", "llama-3.1-8b-instant").strip() or "llama-3.1-8b-instant"
+        
+        url = "https://api.groq.com/openai/v1/chat/completions"
+        body = json.dumps(
+            {
+                "model": groq_model,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt,
+                    }
+                ],
+                "temperature": 0,
+                "response_format": {
+                    "type": "json_object"
+                }
+            },
+            ensure_ascii=False,
+        ).encode("utf-8")
+        
+        request = urllib.request.Request(
+            url,
+            data=body,
+            method="POST",
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {self.settings.groq_api_key}",
+                "User-Agent": "inspector-orchestrator/1.0",
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=self.settings.google_intent_timeout_seconds) as response:
+                payload = json.loads(response.read().decode("utf-8", errors="replace"))
+        except Exception:
+            return Intent(ACTION_UNKNOWN, {"text": text}, source="groq_error", confidence=0.0)
+
+        try:
+            response_text = json.dumps(payload, ensure_ascii=False)
+            record_usage(
+                Path(self.settings.memory_file).with_name("token_usage.jsonl"),
+                source="telegram_orchestrator",
+                component="intent",
+                provider="groq",
+                model=groq_model,
+                operation="intent",
+                prompt_text=prompt,
+                completion_text=response_text,
+                metadata={"input_text": text},
+            )
+        except Exception:
+            pass
+
+        try:
+            content = payload["choices"][0]["message"]["content"]
+            parsed = json.loads(content)
+        except Exception:
+            parsed = {}
+
+        action = str(parsed.get("action", ACTION_UNKNOWN)).strip()
+        if action not in KNOWN_ACTIONS:
+            action = ACTION_UNKNOWN
+
+        args = parsed.get("args")
+        if not isinstance(args, dict):
+            args = {}
+
+        confidence = parsed.get("confidence", 0.5)
+        try:
+            confidence_float = float(confidence)
+        except (TypeError, ValueError):
+            confidence_float = 0.5
+
+        if action == ACTION_CREATE_ALARM:
+            args.setdefault("text", text)
+        if action == ACTION_CODEX:
+            args.setdefault("instruction", text)
+        if action == ACTION_CODEX_DESKTOP:
+            args.setdefault("instruction", text)
+        if action == ACTION_REMEMBER:
+            args.setdefault("text", text)
+        if action == ACTION_QUERY_MEMORY:
+            args.setdefault("query", text)
+        if action == ACTION_DIRECT_LOCAL:
+            args.setdefault("kind", "answer")
+            args.setdefault("text", text)
+        if action in {ACTION_ADD_CODEX_DIR, ACTION_REMOVE_CODEX_DIR}:
+            args.setdefault("path", text)
+
+        return Intent(action, args, source="groq", confidence=confidence_float)
 
     def _google_intent(self, text: str) -> Intent:
         prompt = _intent_prompt(text)
@@ -276,6 +382,58 @@ def extract_codex_instruction(text: str) -> str | None:
     return None
 
 
+# Verbs that clearly indicate a task/action to execute via Codex
+_ACTION_VERBS_ES = re.compile(
+    r"^(?:"
+    r"traduce|translate"
+    r"|calcula|calcul[aá]"
+    r"|escribe|escrib[eé]"
+    r"|analiza|analiz[aá]"
+    r"|genera|gener[aá]"
+    r"|crea|cr[eé]a"
+    r"|busca|busc[aá]"
+    r"|extrae|extra[eé]"
+    r"|corrige|correg[ií]"
+    r"|resume|resum[eé]"
+    r"|ordena|orden[aá]"
+    r"|filtra|filtr[aá]"
+    r"|combina|combin[aá]"
+    r"|cruza|cruz[aá]"
+    r"|compara|compar[aá]"
+    r"|convierte|convert[ií]"
+    r"|descarga|descargu[aá]"
+    r"|descifra|descifr[aá]"
+    r"|clasifica|clasific[aá]"
+    r"|procesa|proces[aá]"
+    r"|ejecuta|ejecut[aá]"
+    r"|lista|list[aá]"
+    r"|muestra|muestr[aá]"
+    r"|dime|dame"
+    r"|haz|haga"
+    r"|ayuda(?:me)?"
+    r"|explica|explic[aá]"
+    r"|define|defin[eé]"
+    r"|redacta|redact[aá]"
+    r"|mejora|mejor[aá]"
+    r"|optimiza|optimiz[aá]"
+    r"|simplifica|simplific[aá]"
+    r"|convierte|conviért[eé]"
+    r")\b",
+    re.IGNORECASE,
+)
+
+
+def extract_natural_codex_instruction(text: str) -> str | None:
+    """Return the text as a Codex instruction if it starts with an action verb."""
+    stripped = text.strip()
+    # Must be long enough to be a real task (> 10 chars)
+    if len(stripped) < 10:
+        return None
+    if _ACTION_VERBS_ES.match(stripped):
+        return stripped
+    return None
+
+
 def extract_strict_command(text: str) -> Intent | None:
     stripped = text.strip()
     if not stripped:
@@ -336,9 +494,7 @@ def extract_codex_desktop_instruction(text: str) -> str | None:
 
 def extract_memory_query(text: str) -> str | None:
     patterns = (
-        r"^(?:que|qué)\s+(?:recuerdas|sabes|tienes apuntado)\s+(?:sobre|de|del|acerca de)?\s*(.+)$",
-        r"^(?:busca|revisa|mira|consulta)\s+(?:en\s+)?(?:la\s+)?memoria\s+(?:sobre|de|del|acerca de)?\s*(.+)$",
-        r"^(?:hablamos|habíamos hablado|habiamos hablado|que dijimos|qué dijimos)\s+(?:sobre|de|del|acerca de)?\s*(.+)$",
+        r"^(?:/recuerdo|/query_memory)\s+(.+)$",
     )
     return _first_match(text, patterns)
 
@@ -356,22 +512,14 @@ def extract_direct_local(text: str) -> dict[str, str] | None:
 
 def extract_remember_text(text: str) -> str | None:
     patterns = (
-        r"^(?:recuerda|recordar|guarda en memoria|guarda|memoriza)\s+(?:que\s+)?(.+)$",
-        r"^(?:quiero recordar|ten en cuenta)\s+(?:que\s+)?(.+)$",
+        r"^(?:/memoria|/remember)\s+(.+)$",
     )
-    for pattern in patterns:
-        match = re.search(pattern, text.strip(), flags=re.IGNORECASE)
-        if match:
-            value = match.group(1).strip(" .,:;-")
-            return value or None
-    return None
+    return _first_match(text, patterns)
 
 
 def extract_codex_dir(text: str) -> str | None:
     patterns = (
         r"^(?:/add_dir|/adddir|/anadir_dir|/añadir_dir)\s+(.+)$",
-        r"^(?:anade|añade|agrega|incluye)\s+(?:la\s+)?(?:carpeta|ruta|direccion|dirección|directorio)\s+(.+)$",
-        r"^(?:quiero\s+)?(?:trabajar|explorar)\s+(?:en|con)\s+(?:la\s+)?(?:carpeta|ruta|direccion|dirección|directorio)?\s*(.+)$",
     )
     return _first_match(text, patterns)
 
@@ -379,7 +527,6 @@ def extract_codex_dir(text: str) -> str | None:
 def extract_remove_codex_dir(text: str) -> str | None:
     patterns = (
         r"^(?:/remove_dir|/removedir|/quitar_dir)\s+(.+)$",
-        r"^(?:quita|elimina|borra)\s+(?:la\s+)?(?:carpeta|ruta|direccion|dirección|directorio)\s+(.+)$",
     )
     return _first_match(text, patterns)
 
@@ -387,15 +534,13 @@ def extract_remove_codex_dir(text: str) -> str | None:
 def extract_new_thread(text: str) -> str | None:
     patterns = (
         r"^(?:/nuevo_hilo|/new_thread)\s+(.+)$",
-        r"^(?:abre|crea|empieza)\s+(?:un\s+)?(?:hilo|tema|conversacion|conversación)\s+(?:nuevo\s+)?(?:sobre|para|llamado|de)?\s*(.+)$",
     )
     return _first_match(text, patterns)
 
 
 def extract_switch_thread(text: str) -> str | None:
     patterns = (
-        r"^(?:/usar_hilo|/switch_thread|/hilo)\s+(.+)$",
-        r"^(?:usa|cambia a|ponme en|sigue en|vamos al|ve al)\s+(?:el\s+)?(?:hilo|tema|conversacion|conversación)\s+(.+)$",
+        r"^(?:/usar_hilo|/switch_thread)\s+(.+)$",
     )
     return _first_match(text, patterns)
 
@@ -419,10 +564,10 @@ Acciones disponibles:
 - status: pedir estado.
 - list_alarms: listar alarmas.
 - cancel_alarm: cancelar una alarma. args: {{"alarm_id":"..."}}
-- codex: ejecutar Codex CLI. args: {{"instruction":"..."}}
-- codex_desktop: ejecutar obligatoriamente Codex Desktop. args: {{"instruction":"..."}}
+- codex: ejecutar Codex CLI. args: {{"instruction":"...", "thread_name":"..."}}
+- codex_desktop: ejecutar obligatoriamente Codex Desktop. args: {{"instruction":"...", "thread_name":"..."}}
 - create_alarm: crear una alarma o recordatorio temporal. args: {{"text":"frase original o normalizada en espanol"}}
-- remember: guardar una memoria persistente. args: {{"text":"contenido a recordar"}}
+- remember: guardar una memoria persistente de un hecho o dato. args: {{"text":"contenido a recordar"}}
 - query_memory: responder buscando en memoria. args: {{"query":"tema a buscar"}}
 - direct_local: responder con una accion local sencilla y segura. args: {{"kind":"time|date|list_files","text":"frase original"}}
 - list_memories: listar recuerdos.
@@ -440,22 +585,18 @@ Acciones disponibles:
 - cancel_current_task: detener/cancelar la tarea Codex actual.
 - unknown: no se entiende.
 
-Reglas:
-- Si el usuario quiere que el sistema haga trabajo de programacion, edicion o investigacion, usa codex.
-- Si el usuario quiere buscar informacion en internet, realizar consultas o navegar de forma no interactiva, usa codex (CLI).
-- Usa codex_desktop UNICAMENTE si la tarea requiere interactuar visualmente de forma activa con el navegador web u otras aplicaciones (ej. rellenar formularios, loguearse manualmente, hacer clics en elementos especificos, interactuar con GUIs).
-- Para codex o codex_desktop, incluye args.thread_name si el usuario menciona un hilo, tema o proyecto claro.
-- Si pide "avisame", "ponme una alarma", "recuerdame manana/dentro de...", usa create_alarm.
-- Si dice "recuerda que", "guarda en memoria", "ten en cuenta", usa remember.
-- Si pregunta que recuerdas, que sabes, o pide revisar memoria, usa query_memory.
-- Si pide hora, fecha o listar archivos de la carpeta actual, usa direct_local.
-- Si pide explicitamente Codex Desktop, Codex de escritorio o interfaz visual de Codex, usa codex_desktop.
-- Si pregunta por hilos o quiere cambiar/crear una conversacion, usa list_threads, current_thread, new_thread o switch_thread.
-- Si pregunta "que estas haciendo", "estas ocupado" o estado de trabajo, usa status_detail.
-- Si pregunta por pendientes o quiere continuar algo pendiente, usa list_pending o run_next_pending.
-- Si pide detener, parar o cancelar la tarea actual de Codex, usa cancel_current_task.
-- Si pide anadir, agregar, explorar o trabajar con una ruta tipo G:\\..., usa add_codex_dir.
-- No inventes fechas completas; conserva la frase temporal en args.text para que el planificador la procese.
+Reglas de Oro para la Clasificación:
+1. ACCIONES MIXTAS (Hilo + Tarea): Si el usuario pide crear, abrir o usar un hilo y ADEMÁS pide una tarea (como buscar, resumir, analizar, calcular, programar, etc.), usa la acción 'codex' (o 'codex_desktop').
+   - Guarda el nombre del hilo solicitado en args.thread_name (normalizado, corto y sin espacios, ej: "facturas").
+   - Guarda la instrucción limpia en args.instruction (ej: "haz un resumen de facturas.txt"), quitando la parte de "abre un hilo y...".
+   - NO clasifiques como 'new_thread' o 'switch_thread' si hay una orden de ejecución asociada.
+2. GESTIÓN EXCLUSIVA DE HILOS: Usa 'new_thread' o 'switch_thread' ÚNICAMENTE si la petición es para crear o cambiar de hilo sin ejecutar ninguna tarea de inmediato (ej: "cambia al hilo de desarrollo", "crea un hilo para facturas").
+3. HECHOS VS TAREAS: 
+   - Usa 'remember' únicamente para guardar datos estáticos, hechos o preferencias personales (ej: "recuerda que la clave es 1234", "guarda en memoria que el servidor corre en el puerto 8080").
+   - Si la frase contiene una orden de acción futura o una tarea a realizar (ej: "recuerda analizar el archivo", "recuerda borrar los temporales", "ten en cuenta descargar el excel"), clasifícala como 'codex' con args.instruction.
+4. ALARMAS Y RECORDATORIOS TEMPORALES: Si se solicita avisar o recordar hacer algo en un momento determinado (ej: "avisame dentro de dos minutos de X", "ponme una alarma a las 9"), usa 'create_alarm'.
+5. DIRECT LOCAL: Solo úsalo si pide explícitamente la hora actual o la fecha actual ("qué hora es", "dame la fecha de hoy"). Si pide cálculos sobre fechas ("fecha de ayer", "día de la semana del 15 de marzo de 2025"), usa 'codex'.
+6. AISLAMIENTO AUTOMÁTICO DE HILOS: Si la tarea se refiere a un archivo o tema específico de negocio (ej: facturas, presupuesto, logs, notas, alumnos, clientes, emails), y el usuario no indica un hilo, sugiere un nombre de hilo corto y descriptivo en args.thread_name (ej: "facturas", "presupuesto", "logs", "notas", "alumnos", "clientes", "emails"). Si es un cálculo simple, traducción o código genérico, déjalo vacío.
 
 Texto del usuario:
 {text}

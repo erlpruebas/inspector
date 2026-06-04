@@ -146,6 +146,7 @@ class Settings:
     drain_pending_on_start: bool
     lab_mode: bool
     bypass_confirmation: bool
+    telegram_transport: str
 
     @property
     def ready(self) -> bool:
@@ -172,9 +173,11 @@ def load_settings() -> Settings:
     if lab_mode:
         bypass_confirmation = True
         hot_reload = False
+        codex_timeout_seconds = 600
     else:
         bypass_confirmation = os.getenv("ORCH_BYPASS_CONFIRMATION", "0").strip().lower() in {"1", "true", "yes"}
         hot_reload = os.getenv("ORCH_HOT_RELOAD", "1").strip().lower() not in {"0", "false", "no"}
+        codex_timeout_seconds = _env_int("ORCH_CODEX_TIMEOUT_SECONDS", default=1800)
 
     return Settings(
         telegram_bot_token=os.getenv("TELEGRAM_BOT_TOKEN", ""),
@@ -192,7 +195,7 @@ def load_settings() -> Settings:
         codex_model=DEFAULT_CODEX_MODEL,
         codex_sandbox=os.getenv("ORCH_CODEX_SANDBOX", "workspace-write").strip(),
         codex_approval=os.getenv("ORCH_CODEX_APPROVAL", "never").strip(),
-        codex_timeout_seconds=_env_int("ORCH_CODEX_TIMEOUT_SECONDS", default=1800),
+        codex_timeout_seconds=codex_timeout_seconds,
         message_chunk_size=_env_int("ORCH_TELEGRAM_CHUNK_SIZE", default=3500),
         memory_file=memory_file,
         memories_file=memories_file,
@@ -213,6 +216,7 @@ def load_settings() -> Settings:
         drain_pending_on_start=os.getenv("ORCH_DRAIN_PENDING_ON_START", "1").strip().lower() not in {"0", "false", "no"},
         lab_mode=lab_mode,
         bypass_confirmation=bypass_confirmation,
+        telegram_transport=os.getenv("TELEGRAM_TRANSPORT", "telegram").strip().lower(),
     )
 
 

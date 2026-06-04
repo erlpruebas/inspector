@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import sys
 import threading
@@ -9,6 +10,7 @@ import time
 import traceback
 import urllib.parse
 import urllib.request
+from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -69,6 +71,16 @@ AFFIRMATIVE_CONFIRMATIONS = {"si", "sí", "ok", "vale", "adelante", "confirma", 
 NEGATIVE_CONFIRMATIONS = {"no", "cancela", "cancelar", "para", "espera", "deten", "detén"}
 
 
+@dataclass(frozen=True)
+class TelegramAudioAttachment:
+    file_id: str
+    mime_type: str
+    suffix: str
+    kind: str
+    forwarded: bool
+    forward_source: str = ""
+
+
 class Orchestrator:
     def __init__(self) -> None:
         self.settings = load_settings()
@@ -99,13 +111,15 @@ class Orchestrator:
 
         self.memory.write("orchestrator_start", self._status_text(), "system", thread=self.threads.active_name())
         self._drain_pending_updates()
-        self.telegram.send_message(self.settings.telegram_allowed_user_id, "Orquestador Codex listo. Ya puedes hablarme en lenguaje natural.")
+        if not self.settings.lab_mode:
+            self.telegram.send_message(self.settings.telegram_allowed_user_id, "Orquestador Codex listo. Ya puedes hablarme en lenguaje natural.")
         threading.Thread(target=self._alarm_loop, daemon=True).start()
 
         while not self._stop.is_set():
             if not self._busy.locked() and self._code_changed():
                 self.memory.write("hot_reload_requested", "Cambio detectado en codigo Python. Reiniciando.", "system", thread=self.threads.active_name())
-                self.telegram.send_message(self.settings.telegram_allowed_user_id, "Detecte cambios en el orquestador. Reinicio en caliente.")
+                if not self.settings.lab_mode:
+                    self.telegram.send_message(self.settings.telegram_allowed_user_id, "Detecte cambios en el orquestador. Reinicio en caliente.")
                 return RESTART_EXIT_CODE
 
             try:
@@ -215,7 +229,30 @@ class Orchestrator:
         if lower == "/reload":
             self._reload(chat_id)
             return
+        if lower.startswith("/lab_mode ") or lower.startswith("/lab "):
+            mode = text.split(None, 1)[1].strip().lower()
+            if mode in {"on", "1", "true", "yes"}:
+                os.environ["ORCH_LAB_MODE"] = "1"
+                self._refresh_runtime_config()
+                self._save_lab_mode_to_env("1")
+                self._reply(chat_id, "Modo laboratorio ACTIVADO. Hot reload desactivado, timeout de Codex fijado a 10 min, bypass confirmation activado.")
+            elif mode in {"off", "0", "false", "no"}:
+                os.environ["ORCH_LAB_MODE"] = "0"
+                self._refresh_runtime_config()
+                self._save_lab_mode_to_env("0")
+                self._reply(chat_id, "Modo laboratorio DESACTIVADO.")
+            else:
+                self._reply(chat_id, "Uso: /lab_mode [on|off]")
+            return
+        elif lower == "/lab_mode" or lower == "/lab":
+            status = "ACTIVADO" if self.settings.lab_mode else "DESACTIVADO"
+            self._reply(chat_id, f"El modo laboratorio esta {status}.")
+            return
+
         if lower == "/restart":
+            if self.settings.lab_mode:
+                self._reply(chat_id, "El reinicio en caliente no esta permitido en modo laboratorio.")
+                return
             self._reply(chat_id, "Reinicio solicitado. El supervisor lo levantara de nuevo.")
             self.memory.write("restart_requested", text, source, thread=active_thread)
             raise SystemExit(RESTART_EXIT_CODE)
@@ -228,7 +265,10 @@ class Orchestrator:
             self._reply(chat_id, voice_response, thread="voz")
             return
 
-        intent = self.interpreter.interpret(text)
+        if self.settings.lab_mode:
+            intent = Intent(ACTION_CODEX, {"instruction": text}, source="lab_mode_bypass", confidence=1.0)
+        else:
+            intent = self.interpreter.interpret(text)
         self.memory.write(
             "intent",
             f"action={intent.action} source={intent.source} confidence={intent.confidence}\nargs={intent.args}",
@@ -364,7 +404,9 @@ class Orchestrator:
         return
 
     def _start_confirmed_codex(self, chat_id: int, instruction: str, source: str, thread_record: ThreadRecord, pending_task: PendingTask | None) -> None:
-        if not self._busy.acquire(blocking=False):
+        if self.settings.lab_mode:
+            self._busy.acquire(blocking=True)
+        elif not self._busy.acquire(blocking=False):
             task = self.pending.add(chat_id, instruction, thread_record.name, source)
             self.memory.write("codex_queued_busy", f"id={task.id}\n{instruction}", source, thread=thread_record.name)
             self._reply(
@@ -564,7 +606,48 @@ class Orchestrator:
         return None
 
     @staticmethod
-    def _telegram_audio_file_id(message: dict[str, Any]) -> tuple[str, str, str]:
+    def _telegram_forward_source(message: dict[str, Any]) -> str:
+        parts: list[str] = []
+        for key in ("forward_from", "forward_from_chat", "forward_sender_name", "forward_origin"):
+            item = message.get(key)
+            if not item:
+                continue
+            if key == "forward_from" and isinstance(item, dict):
+                name = " ".join(
+                    str(item.get(piece, "")).strip()
+                    for piece in ("first_name", "last_name")
+                    if str(item.get(piece, "")).strip()
+                ).strip()
+                username = str(item.get("username", "")).strip()
+                if username:
+                    parts.append(f"user @{username}")
+                elif name:
+                    parts.append(f"user {name}")
+                else:
+                    parts.append("user")
+            elif key == "forward_from_chat" and isinstance(item, dict):
+                title = str(item.get("title", "")).strip()
+                username = str(item.get("username", "")).strip()
+                if username:
+                    parts.append(f"chat @{username}")
+                elif title:
+                    parts.append(f"chat {title}")
+                else:
+                    parts.append("chat")
+            elif key == "forward_sender_name":
+                parts.append(f"sender {str(item).strip()}")
+            elif key == "forward_origin" and isinstance(item, dict):
+                origin_type = str(item.get("type", "")).strip()
+                if origin_type:
+                    parts.append(f"origin {origin_type}")
+                else:
+                    parts.append("origin")
+        if message.get("is_automatic_forward"):
+            parts.append("automatic_forward")
+        return "; ".join(dict.fromkeys(part for part in parts if part))
+
+    @classmethod
+    def _telegram_audio_attachment(cls, message: dict[str, Any]) -> TelegramAudioAttachment | None:
         for key, default_mime, default_suffix in (
             ("voice", "audio/ogg", ".ogg"),
             ("audio", "audio/mpeg", ".mp3"),
@@ -580,25 +663,39 @@ class Orchestrator:
             if not file_id:
                 continue
             suffix = Path(str(item.get("file_name", "") or "")).suffix or default_suffix
-            return file_id, mime_type, suffix
-        return "", "", ""
+            forwarded = any(message.get(field) for field in ("forward_date", "forward_from", "forward_from_chat", "forward_sender_name", "forward_origin", "is_automatic_forward"))
+            forward_source = cls._telegram_forward_source(message) if forwarded else ""
+            kind = "voice_note" if key == "voice" else "audio_file" if key == "audio" else "document_audio"
+            return TelegramAudioAttachment(file_id=file_id, mime_type=mime_type, suffix=suffix, kind=kind, forwarded=forwarded, forward_source=forward_source)
+        return None
 
     def _transcribe_telegram_audio(self, message: dict[str, Any], source: str) -> str:
-        file_id, mime_type, suffix = self._telegram_audio_file_id(message)
-        if not file_id:
+        attachment = self._telegram_audio_attachment(message)
+        if attachment is None:
             return ""
         try:
-            audio_path = self.speech.temp_download_path(suffix)
-            self.telegram.download_file(file_id, audio_path)
+            audio_path = self.speech.temp_download_path(attachment.suffix)
+            self.telegram.download_file(attachment.file_id, audio_path)
+            self.memory.write(
+                "telegram_audio_received",
+                f"kind={attachment.kind} forwarded={attachment.forwarded} forward_source={attachment.forward_source or '-'} mime={attachment.mime_type} file_id={attachment.file_id}",
+                source,
+                thread=self.threads.active_name(),
+            )
             text = self.speech.transcribe(
                 audio_path,
-                mime_type,
+                attachment.mime_type,
                 self.voice_state.groq_api_key or self.settings.groq_api_key,
                 self.voice_state.gemini_api_key or self.settings.google_api_key,
                 preferred_backend=self.voice_state.stt_backend,
                 fallback_order=self.voice_state.normalized_stt_order(),
             )
-            self.memory.write("telegram_audio_transcribed", text, source, thread=self.threads.active_name())
+            self.memory.write(
+                "telegram_audio_transcribed",
+                f"kind={attachment.kind} forwarded={attachment.forwarded} forward_source={attachment.forward_source or '-'}\n{text}",
+                source,
+                thread=self.threads.active_name(),
+            )
             return text.strip()
         except Exception as exc:
             self.memory.write("telegram_audio_error", f"{exc}\n{traceback.format_exc()}", source, thread=self.threads.active_name())
@@ -821,7 +918,14 @@ class Orchestrator:
             result = self.codex.run(enhanced_instruction, thread_id=thread_record.codex_thread_id)
             if result.thread_id and result.thread_id != thread_record.codex_thread_id:
                 thread_record = self.threads.update_codex_thread_id(thread_record.name, result.thread_id)
-            response = result.text
+            
+            if self.settings.lab_mode and result.timed_out:
+                response = "La tarea no se ha podido realizar por timeout de 10 minutos."
+            else:
+                response = result.text
+                if self.settings.lab_mode:
+                    response = self._clean_lab_response(response)
+            
             self.memory.write(
                 "codex_finish",
                 f"returncode={result.returncode} timed_out={result.timed_out} codex_thread_id={thread_record.codex_thread_id}\n\n{response}",
@@ -868,6 +972,50 @@ class Orchestrator:
             except OSError as exc:
                 self.memory.write("python_repair_sync_error", f"{path} -> {destination}\n{exc}", "system")
 
+
+    def _evaluate_desktop_context(self, instruction: str) -> bool:
+        """
+        Captures the screen and uses Gemini Vision to determine if the 
+        currently open chat matches the instruction. Returns True if we should
+        continue the current chat, False to start a new chat.
+        """
+        try:
+            from orchestrator_v2.desktop_codex_operator import capture_desktop_screenshot
+            import google.generativeai as genai
+            import json
+            
+            # Capture
+            run_dir = self.settings.codex_workdir / ".system_generated" / "vision_prechecks"
+            run_dir.mkdir(parents=True, exist_ok=True)
+            import time
+            screenshot_path = run_dir / f"precheck_{int(time.time())}.png"
+            capture_desktop_screenshot(screenshot_path)
+            
+            api_key = self.settings.google_api_key
+            if not api_key:
+                return False
+                
+            genai.configure(api_key=api_key)
+            import PIL.Image
+            img = PIL.Image.open(screenshot_path)
+            model = genai.GenerativeModel('gemini-2.5-flash')
+            
+            prompt = f"El usuario quiere: '{instruction}'. \nMira la conversacion de Codex Desktop en la captura. ¿Trata sobre esto o es algo util continuarla? Responde SOLO con un JSON: {{\"should_continue\": true/false, \"topic\": \"...\"}}"
+            response = model.generate_content([prompt, img])
+            
+            match = re.search(r"```json\s*(\{.*?\})\s*```", response.text, re.DOTALL)
+            if match:
+                data = json.loads(match.group(1))
+                self.memory.write("vision_precheck", f"Context: {data.get('topic')}\nDecision: {data.get('should_continue')}", "system")
+                return bool(data.get("should_continue", False))
+                
+            # Fallback
+            if "true" in response.text.lower():
+                return True
+        except Exception as exc:
+            self.memory.write("vision_precheck_error", str(exc), "system")
+        return False
+
     def _run_codex_desktop_and_reply(self, chat_id: int, instruction: str, source: str, thread_record: ThreadRecord) -> None:
         try:
             self._current_task = {
@@ -878,17 +1026,31 @@ class Orchestrator:
             }
             self.memory.write("codex_desktop_start", instruction, source, thread=thread_record.name)
             self._reply(chat_id, f"Recibido. Voy a usar Codex Desktop en el hilo `{thread_record.name}`.", thread=thread_record.name)
+            # Vision Pre-Check
+            should_continue = self._evaluate_desktop_context(instruction)
+            is_new_chat = not should_continue
+
             result = run_desktop_codex_operator(
                 instruction,
                 send=True,
-                new_chat=not bool(thread_record.codex_thread_id),
+                new_chat=is_new_chat,
                 wait_seconds=self.settings.codex_timeout_seconds,
                 debug_draft=False,
                 pause_after_paste=False,
             )
+            # Procesar el JSON de vision_result si existe
+            vision_narrative = ""
+            if result.extracted_tokens_path and result.extracted_tokens_path.exists():
+                import json
+                try:
+                    vision_data = json.loads(result.extracted_tokens_path.read_text(encoding="utf-8"))
+                    vision_narrative = vision_data.get("narrative", "")
+                except:
+                    pass
+
             response = (
                 f"Codex Desktop termino con estado: {result.status}\n"
-                f"Directorio de ejecucion: {result.run_dir}\n"
+                f"Resumen Visual: {vision_narrative}\n"
                 f"Captura final: {result.screenshot_path or 'sin captura'}"
             )
             self.memory.write(
@@ -912,8 +1074,17 @@ class Orchestrator:
                 metadata={"ok": result.ok, "status": result.status, "run_dir": str(result.run_dir)},
             )
             if result.ok:
+                # 1. Enviar el texto como respuesta al chat
                 self._reply(chat_id, response, thread=thread_record.name)
+                # 2. Enviar la captura de pantalla
                 self._send_codex_desktop_screenshot(chat_id, result, thread_record)
+                # 3. Generar y enviar el audio si hay un resumen narrativo de Gemini
+                if vision_narrative:
+                    try:
+                        audio_res = self.speech_io.synthesize(vision_narrative, self.voice_state)
+                        self.telegram.send_audio(chat_id, audio_res.path)
+                    except Exception as e:
+                        self.memory.write("codex_desktop_tts_error", str(e), "system", thread=thread_record.name)
                 return
             self._send_codex_desktop_screenshot(chat_id, result, thread_record)
             self._reply(
@@ -1001,15 +1172,13 @@ class Orchestrator:
 
     def _gemini_summarize_for_voice(self, text: str) -> str:
         if not self.settings.google_api_key:
-            return self._summarize_for_voice(text)
+            return self._normalize_voice_summary(self._summarize_for_voice(text))
 
         prompt = (
-            "Eres el sintetizador de voz de un asistente de IA. Tu tarea es generar un resumen "
-            "muy narrativo, explicativo, conversacional y fluido en español del siguiente texto "
-            "para ser leído en voz alta. Evita marcas de formato markdown, viñetas, caracteres "
-            "especiales, código o términos técnicos excesivamente densos. Hazlo sonar natural, "
-            "amigable y claro. Mantén una longitud apropiada para ser leída en unos 30-40 segundos "
-            "(unas 80 a 120 palabras).\n\n"
+            "Eres el sintetizador de voz de un asistente de IA. Genera un resumen narrativo, "
+            "explicativo, cercano y fluido en español del siguiente texto para ser leído en voz alta. "
+            "No uses markdown, viñetas, listas, código ni encabezados. Mantén el resultado corto, "
+            "natural y fácil de leer, de unas 80 a 120 palabras. Debe tener como máximo dos párrafos.\n\n"
             f"Texto original:\n{text}"
         )
         payload = {
@@ -1034,6 +1203,7 @@ class Orchestrator:
             parts = (((result.get("candidates") or [{}])[0].get("content") or {}).get("parts") or [])
             answer = "".join(str(part.get("text", "")) for part in parts if isinstance(part, dict)).strip()
             if answer:
+                answer = self._normalize_voice_summary(answer)
                 try:
                     record_usage(
                         Path(self.settings.memory_file).with_name("token_usage.jsonl"),
@@ -1050,8 +1220,8 @@ class Orchestrator:
                 return answer
         except Exception as exc:
             self.memory.write("voice_summary_gemini_error", str(exc), "orchestrator", thread=self.threads.active_name())
-        
-        return self._summarize_for_voice(text)
+
+        return self._normalize_voice_summary(self._summarize_for_voice(text))
 
     @staticmethod
     def _is_long_voice_text(text: str) -> bool:
@@ -1088,6 +1258,24 @@ class Orchestrator:
             summary = summary[:VOICE_SUMMARY_MAX_CHARS].rsplit(" ", 1)[0].strip()
         return summary + ("..." if summary and not summary.endswith((".", "!", "?")) else "")
 
+    @staticmethod
+    def _normalize_voice_summary(text: str) -> str:
+        clean = re.sub(r"\n{3,}", "\n\n", (text or "").strip())
+        parts = [part.strip() for part in re.split(r"\n\s*\n+", clean) if part.strip()]
+        if not parts:
+            return ""
+        if len(parts) <= 2:
+            return "\n\n".join(parts)
+        merged = re.sub(r"\s+", " ", " ".join(parts)).strip()
+        if len(merged) <= VOICE_SUMMARY_MAX_CHARS:
+            return merged
+        sentences = [sentence.strip() for sentence in re.split(r"(?<=[.!?])\s+", merged) if sentence.strip()]
+        first = " ".join(sentences[:2]).strip()
+        second = " ".join(sentences[2:4]).strip()
+        if second:
+            return f"{first}\n\n{second}"
+        return first
+
     def _reload(self, chat_id: int) -> None:
         self._refresh_runtime_config()
         self.memory.write("config_reload", self._status_text(), "system")
@@ -1107,6 +1295,25 @@ class Orchestrator:
         self.voice_store = VoiceStateStore(self.settings.voice_settings_file, self.settings.google_api_key, self.settings.groq_api_key)
         self.voice_state = self.voice_store.load()
         self.speech = SpeechIO(self.settings.voice_runtime_dir)
+
+    def _save_lab_mode_to_env(self, value: str) -> None:
+        env_path = self.settings.codex_workdir / ".env"
+        lines = []
+        if env_path.exists():
+            lines = env_path.read_text(encoding="utf-8", errors="replace").splitlines()
+        
+        found = False
+        new_lines = []
+        for line in lines:
+            if line.strip().startswith("ORCH_LAB_MODE="):
+                new_lines.append(f"ORCH_LAB_MODE={value}")
+                found = True
+            else:
+                new_lines.append(line)
+        if not found:
+            new_lines.append(f"ORCH_LAB_MODE={value}")
+        
+        env_path.write_text("\n".join(new_lines) + "\n", encoding="utf-8")
 
     def _alarm_loop(self) -> None:
         while not self._stop.is_set():
@@ -1328,6 +1535,8 @@ class Orchestrator:
             self._reply(chat_id, "He intentado detener Codex, pero el proceso ya no estaba activo.")
 
     def _notify_pending_after_finish(self, chat_id: int) -> None:
+        if self.settings.lab_mode:
+            return
         tasks = self.pending.list()
         if not tasks:
             return
@@ -1336,6 +1545,32 @@ class Orchestrator:
             chat_id,
             f"Quedan {len(tasks)} tarea(s) pendiente(s). La siguiente es {first.id} en `{first.thread_name}`.\nDime: sigue con lo pendiente.",
         )
+
+    @staticmethod
+    def _clean_lab_response(text: str) -> str:
+        clean = text.strip()
+        if not clean:
+            return clean
+
+        blocks = [block.strip() for block in re.split(r"\n\s*\n", clean) if block.strip()]
+        if len(blocks) > 1:
+            clean = blocks[-1]
+        else:
+            lines = [line.strip() for line in clean.splitlines() if line.strip()]
+            if len(lines) > 1:
+                clean = lines[-1]
+
+        clean = re.sub(r"^(?:final answer|answer|respuesta)\s*[:\-]\s*", "", clean, flags=re.IGNORECASE).strip()
+        clean = clean.strip("`\"' ")
+
+        scene = re.fullmatch(r"(?:INT|EXT)\.\s+(.+?)\s+-\s+(?:DAY|NIGHT|MORNING|EVENING|CONTINUOUS)", clean, flags=re.IGNORECASE)
+        if scene:
+            clean = scene.group(1).strip()
+
+        clean = re.sub(r"^\$(-?\d[\d,]*(?:\.\d+)?)$", r"\1", clean)
+        if re.fullmatch(r"-?\d{1,3}(?:,\d{3})+(?:\.\d+)?", clean):
+            clean = clean.replace(",", "")
+        return clean
 
     def _current_task_summary(self) -> str:
         if not self._current_task:

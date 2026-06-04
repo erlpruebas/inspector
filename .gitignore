@@ -11,6 +11,10 @@ __pycache__/
 .env
 .env.*
 !/.env.example
+groq.txt
+*token*.txt
+*secret*.txt
+*key*.txt
 
 # Logs and runtime noise
 *.log
@@ -35,3 +39,15 @@ tts_samples/*.mp3
 *.sqlite3
 models/
 models/.locks/
+
+# Extra noise
+node_modules/
+agente/.system_generated/
+temp_bench_memory/
+temp_bench_workdir/
+agente/*.mp3
+agente/*.xlsx
+agente/*.png
+agente/*.docx
+agente/*.pptx
+configs/desktop_calibrations/

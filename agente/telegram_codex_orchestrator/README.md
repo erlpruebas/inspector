@@ -1,6 +1,6 @@
 # Telegram Codex Orchestrator
 
-MVP minimo para recibir ordenes por Telegram y ejecutarlas con Codex CLI o Codex Desktop.
+Orquestador Telegram para recibir ordenes y ejecutarlas con Codex CLI o Codex Desktop.
 Las ordenes pasan por una capa de interpretacion de intenciones: reglas locales primero y, si hace falta, un modelo sencillo de Google/Gemini.
 
 ## Comandos Telegram
@@ -87,6 +87,8 @@ python -m orchestrator_v2.codex_desktop_calibrator
 
 En Telegram, usa `Cd <instruccion>` cuando quieras que la tarea vaya obligatoriamente por Codex Desktop.
 Cuando una tarea usa Codex Desktop desde Telegram, el orquestador envia al movil una captura final. Si el operador no genero captura durante la ejecucion, se hace una captura inmediata de pantalla y se manda como respaldo.
+
+La capa de voz sintetiza resúmenes breves con Gemini cuando la respuesta es larga, y la entrada de audio distingue nota de voz, audio reenviado y audio adjunto como documento. Esa diferencia queda registrada en la memoria del orquestador para facilitar el seguimiento.
 
 Para Google/Gemini, ademas inspecciona `D:\credenciales`: si existe una linea marcada como `use this .erlquimica GOOGLE_API_KEY=...`, esa clave tiene prioridad sobre las variables genericas.
 Para Groq, lee `GROQ_API_KEY` desde `D:\credenciales` antes que `.env`.

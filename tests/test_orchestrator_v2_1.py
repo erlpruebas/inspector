@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+from datetime import datetime
 from pathlib import Path
 
 from orchestrator_v2_1 import OrchestratorResult
+from orchestrator_v2_1.codex_rate_limits import parse_rate_limits_response
 from orchestrator_v2_1.llm_router import decision_from_payload
 from orchestrator_v2_1.memory_store import MemoryStore
 from orchestrator_v2_1.models import RouteDecision, TaskRequest
@@ -14,6 +16,22 @@ from orchestrator_v2_1.voice_settings import VoiceSettings
 def test_task_request_accepts_request_id() -> None:
     request = TaskRequest(text="hola", request_id="abc")
     assert request.request_id == "abc"
+
+
+def test_codex_rate_limit_footer_reports_remaining_percent() -> None:
+    five_hour_reset = int(datetime(2026, 3, 25, 17, 15).timestamp())
+    weekly_reset = int(datetime(2026, 3, 25, 23, 0).timestamp())
+    snapshot = parse_rate_limits_response(
+        {
+            "result": {
+                "rateLimits": {
+                    "primary": {"usedPercent": 30, "resetsAt": five_hour_reset},
+                    "secondary": {"usedPercent": 40, "resetsAt": weekly_reset},
+                }
+            }
+        }
+    )
+    assert snapshot.footer() == "70% 17.15 60% 25/3"
 
 
 def test_desktop_route_is_tier_5(monkeypatch) -> None:
@@ -314,6 +332,7 @@ def test_telegram_gateway_uses_v2_1(monkeypatch) -> None:
     monkeypatch.setattr(tg, "send_photo", fake_send_photo)
     monkeypatch.setattr(tg.ORCHESTRATOR, "handle", fake_handle)
     monkeypatch.setattr(tg, "VOICE_SETTINGS", VoiceSettings(generate_audio=False, play_audio=False))
+    monkeypatch.setattr(tg.CODEX_RATE_LIMITS, "footer", lambda: "70% 17.15 60% 25/3")
 
     tg.process_message("hola", 123)
 
@@ -321,7 +340,7 @@ def test_telegram_gateway_uses_v2_1(monkeypatch) -> None:
     assert any("Enrutado a Tier 1" in item for item in captured)
     assert any("Modelo: local:direct" in item for item in captured)
     assert any(item.endswith("ok\n\n0.1s") for item in captured)
-    assert captured[-1] == "123:----------"
+    assert captured[-1] == "123:70% 17.15 60% 25/3"
 
 
 def test_telegram_memory_flow_uses_saved_home_address(tmp_path: Path, monkeypatch) -> None:
@@ -444,6 +463,7 @@ def test_telegram_voice_message_is_transcribed_and_replied(tmp_path: Path, monke
     monkeypatch.setattr(tg, "play_audio_file", lambda path: None)
     monkeypatch.setattr(tg.ORCHESTRATOR, "handle", fake_handle)
     monkeypatch.setattr(tg, "VOICE_SETTINGS", VoiceSettings(generate_audio=True, play_audio=True))
+    monkeypatch.setattr(tg.CODEX_RATE_LIMITS, "footer", lambda: "70% 17.15 60% 25/3")
     monkeypatch.setattr(orch_module, "execute_request", lambda request, decision: fake_handle(request))
 
     tg.process_update(
@@ -522,6 +542,7 @@ def test_text_reply_generates_and_plays_audio(tmp_path: Path, monkeypatch) -> No
     monkeypatch.setattr(tg, "play_audio_file", lambda path: played.append(path))
     monkeypatch.setattr(tg, "send_audio", lambda chat_id, path, caption="": sent_audio.append((path, caption)))
     monkeypatch.setattr(tg, "send_message", lambda chat_id, text: sent_messages.append(text))
+    monkeypatch.setattr(tg.CODEX_RATE_LIMITS, "footer", lambda: "70% 17.15 60% 25/3")
 
     tg.deliver_result(
         123,
@@ -542,7 +563,7 @@ def test_text_reply_generates_and_plays_audio(tmp_path: Path, monkeypatch) -> No
     assert "Edge · es-ES-ElviraNeural" in sent_audio[0][1]
     assert played == [audio_path]
     assert any("Reproduciendo Edge · es-ES-ElviraNeural" in message for message in sent_messages)
-    assert sent_messages[-1] == "----------"
+    assert sent_messages[-1] == "70% 17.15 60% 25/3"
 
 
 def test_telegram_hides_technical_traceback(monkeypatch) -> None:

@@ -291,7 +291,7 @@ La siguiente fase consiste en enviar peticiones reales de dificultad creciente, 
 - Las duraciones se reducen al formato `2s`.
 - El aviso de ruta muestra tambien el motor/modelo efectivo.
 - La reproduccion del altavoz se notifica al lanzar el reproductor, sin esperar a que termine el audio.
-- Una barra `----------` marca de forma discreta el final de cada respuesta completa.
+- En esa etapa, una barra `----------` marcaba de forma discreta el final de cada respuesta completa; despues fue sustituida por el estado de las ventanas Codex.
 
 ### Comparativa de sintesis de voz
 
@@ -326,3 +326,17 @@ Se activa temporalmente un modo comparativo por respuesta: Edge Elvira y ElevenL
 Tras escuchar las muestras, se elige Edge `es-ES-ElviraNeural` como unica voz activa. ElevenLabs mejora algo la calidad general, pero las voces disponibles no ofrecen el acento femenino de espanol de Espana buscado y no compensan la espera adicional. El codigo de ElevenLabs se conserva como alternativa, con el modo comparativo desactivado.
 
 La siguiente direccion de producto que se esta evaluando es un modo `clave desarrollo`: Telegram capturaria correcciones de desarrollo y las entregaria a Codex CLI en una ejecucion nueva, usando el cuaderno vivo como memoria persistente en lugar de alargar indefinidamente una conversacion.
+
+### Ventanas de uso de Codex
+
+Se sustituye la barra final de Telegram por dos porcentajes compactos:
+
+```text
+70% 17.15 60% 25/3
+```
+
+El primer valor indica el porcentaje restante de la ventana de cinco horas y va seguido de la hora local de reinicio. El segundo indica el porcentaje restante semanal y va seguido de la fecha local de reinicio. La API experimental de Codex entrega `usedPercent` y `resetsAt`; el orquestador calcula `100 - usedPercent` y convierte el timestamp a la zona horaria local.
+
+La integracion usa una unica instancia persistente de `codex app-server` con el metodo JSON-RPC `account/rateLimits/read`. Un hilo en segundo plano refresca una cache cada 30 segundos. La respuesta principal nunca inicia un subproceso ni espera una consulta. Si el monitor no dispone de datos validos, el pie se omite.
+
+La implementacion se verifico contra Codex CLI `0.137.0`. Durante la prueba real, el snapshot mostro `89%` y `38%` usados, equivalentes a `11% y 62%` restantes; una lectura posterior mostro `8% y 61%` restantes. La comprobacion final del formato completo produjo `4% 23.07 61% 11/6`.

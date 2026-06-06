@@ -64,7 +64,11 @@ Notas:
 - Si no hay claves de voz, Telegram sigue respondiendo por texto y el flujo no se cae; solo se omite el audio-resumen.
 - Telegram muestra tiempos compactos para transcripcion, enrutado, ejecucion, sintesis y lanzamiento de reproduccion, por ejemplo `3s`.
 - El aviso de enrutado incluye el tier y el motor/modelo elegido.
-- Cada respuesta completa termina con la barra `----------`.
+- Cada respuesta completa termina con uso restante y reinicios, por ejemplo `70% 17.15 60% 25/3`.
+- El primer porcentaje es lo que queda de la ventana Codex de cinco horas y va seguido de su hora local de reinicio.
+- El segundo porcentaje es lo que queda de la ventana semanal y va seguido de su fecha local de reinicio.
+- Los datos se leen mediante una unica instancia persistente de `codex app-server` y se actualizan en segundo plano, sin lanzar Codex en cada turno.
+- Codex devuelve `usedPercent`; el gateway muestra el restante mediante `100 - usedPercent`. Si no existe un snapshot valido, no inventa valores ni muestra el pie.
 - Las respuestas empiezan directamente por la informacion util, sin saludos de relleno ni reformulaciones de la pregunta.
 
 ## Pruebas iniciales por Telegram

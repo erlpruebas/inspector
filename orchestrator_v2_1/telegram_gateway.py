@@ -17,6 +17,7 @@ from .conversation_state import (
     is_confirmation_yes,
     set_pending_confirmation,
 )
+from .codex_rate_limits import CodexRateLimitMonitor
 from .models import OrchestratorResult, RouteDecision, TaskRequest
 from .orchestrator import OrchestratorV21
 from .tool_registry import get_tool
@@ -42,6 +43,7 @@ ALLOWED_CHAT_IDS = {
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 ORCHESTRATOR = OrchestratorV21()
+CODEX_RATE_LIMITS = CodexRateLimitMonitor()
 VOICE_SETTINGS = load_voice_settings()
 VOICE_RUNTIME_DIR = Path("orchestrator_v2_1/runtime/voice").resolve()
 VOICE_INBOX_DIR = VOICE_RUNTIME_DIR / "inbox"
@@ -313,11 +315,13 @@ def deliver_result(chat_id: int | str, request: TaskRequest, result: Orchestrato
             pending_decision,
             result.human_confirmation,
         )
+        send_rate_limit_footer(chat_id)
         return
 
     if not result.ok:
         logging.error("Task failed via %s: %s", result.tool_id, result.error or result.output)
         send_message(chat_id, friendly_error_message(result))
+        send_rate_limit_footer(chat_id)
         return
 
     if result.output:
@@ -328,7 +332,13 @@ def deliver_result(chat_id: int | str, request: TaskRequest, result: Orchestrato
     for index, attachment in enumerate(result.attachments):
         send_attachment(chat_id, result, index, attachment.path, attachment.label or result.tool_id)
     summarize_and_send_audio(chat_id, request, result)
-    send_message(chat_id, "----------")
+    send_rate_limit_footer(chat_id)
+
+
+def send_rate_limit_footer(chat_id: int | str) -> None:
+    footer = CODEX_RATE_LIMITS.footer()
+    if footer:
+        send_message(chat_id, footer)
 
 
 def process_message(text: str, chat_id: int | str) -> None:
@@ -408,6 +418,7 @@ def main() -> int:
     if not TOKEN or not ALLOWED_CHAT_IDS:
         logging.error("Missing Telegram token or allowed chat id.")
         return 1
+    CODEX_RATE_LIMITS.start()
     warm_voice_provider()
     send_message(next(iter(ALLOWED_CHAT_IDS)), "Orchestrator v2.1 Telegram Gateway activo.")
     offset = None

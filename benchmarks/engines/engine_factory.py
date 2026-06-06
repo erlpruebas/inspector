@@ -56,7 +56,18 @@ def create_engine(name: str) -> Engine:
     if normalized in {"gemini_api", "gemini-api"}:
         script = ROOT / "engines" / "gemini_api_wrapper.py"
         model = spec.model or os.getenv("BENCH_GEMINI_API_MODEL", "gemini-2.5-flash-lite")
-        command = f'"{sys.executable}" "{script}" --model {_quote(model)} --prompt-file {{prompt_path}} --output {{output}}'
+        max_output_tokens = os.getenv("BENCH_GEMINI_API_MAX_OUTPUT_TOKENS", "2048")
+        command = f'"{sys.executable}" "{script}" --model {_quote(model)} --prompt-file {{prompt_path}} --output {{output}} --max-output-tokens {max_output_tokens}'
+        return CommandEngine(spec.label, command, model=model, inject_workspace=False)
+    if normalized in {"gemini_grounded", "gemini-grounded"}:
+        script = ROOT / "engines" / "gemini_api_wrapper.py"
+        model = spec.model or os.getenv("BENCH_GEMINI_GROUNDED_MODEL", "gemini-2.5-flash")
+        max_output_tokens = os.getenv("BENCH_GEMINI_API_MAX_OUTPUT_TOKENS", "2048")
+        command = (
+            f'"{sys.executable}" "{script}" --model {_quote(model)} '
+            f"--prompt-file {{prompt_path}} --output {{output}} "
+            f"--max-output-tokens {max_output_tokens} --grounding google_search"
+        )
         return CommandEngine(spec.label, command, model=model, inject_workspace=False)
     if normalized in {"chrome-nano", "chrome_nano"}:
         script = ROOT / "engines" / "chrome_nano_cli.py"

@@ -22,6 +22,16 @@ def main() -> int:
     parser.add_argument("--prompt-file", default="")
     parser.add_argument("--output", default="resultado.md")
     parser.add_argument("--model", default=os.getenv("BENCH_GEMINI_API_MODEL", "gemini-2.5-flash-lite"))
+    parser.add_argument(
+        "--grounding",
+        choices=("none", "google_search", "google_search_retrieval"),
+        default=os.getenv("BENCH_GEMINI_API_GROUNDING", "none"),
+    )
+    parser.add_argument(
+        "--grounding-threshold",
+        type=float,
+        default=float(os.getenv("BENCH_GEMINI_API_GROUNDING_THRESHOLD", "0.7")),
+    )
     parser.add_argument("--temperature", type=float, default=0.2)
     parser.add_argument("--max-output-tokens", type=int, default=2048)
     parser.add_argument("--timeout", type=int, default=120)
@@ -41,15 +51,24 @@ def main() -> int:
             "maxOutputTokens": args.max_output_tokens,
         },
     }
+    tools = build_tools(args.grounding, args.grounding_threshold)
+    if tools:
+        payload["tools"] = tools
     data = call_gemini(args.model, api_key, payload, args.timeout)
     content = clean_model_output(extract_text(data), args.output)
     Path(args.output).write_text(content, encoding="utf-8")
     usage = {
         "provider": "gemini_api",
         "model": args.model,
+        "grounding": args.grounding,
+        "max_output_tokens": args.max_output_tokens,
         "elapsed_seconds": round(time.monotonic() - started, 3),
         "usage": data.get("usageMetadata", {}),
     }
+    grounding_metadata = extract_grounding_metadata(data)
+    if grounding_metadata:
+        Path("grounding.json").write_text(json.dumps(grounding_metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+        usage["grounding_metadata"] = grounding_metadata
     Path("usage.json").write_text(json.dumps(usage, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(usage, ensure_ascii=False))
     return 0
@@ -86,6 +105,31 @@ def extract_text(data: dict[str, Any]) -> str:
         return json.dumps(data, ensure_ascii=False, indent=2)
     parts = (((candidates[0] or {}).get("content") or {}).get("parts") or [])
     return "".join(str(part.get("text", "")) for part in parts if isinstance(part, dict)).strip()
+
+
+def build_tools(grounding: str, grounding_threshold: float) -> list[dict[str, Any]]:
+    if grounding == "google_search":
+        return [{"google_search": {}}]
+    if grounding == "google_search_retrieval":
+        return [
+            {
+                "google_search_retrieval": {
+                    "dynamic_retrieval_config": {
+                        "mode": "MODE_DYNAMIC",
+                        "dynamic_threshold": grounding_threshold,
+                    }
+                }
+            }
+        ]
+    return []
+
+
+def extract_grounding_metadata(data: dict[str, Any]) -> dict[str, Any]:
+    candidates = data.get("candidates") or []
+    if not candidates:
+        return {}
+    grounding = candidates[0].get("groundingMetadata") or candidates[0].get("grounding_metadata")
+    return grounding if isinstance(grounding, dict) else {}
 
 
 def prompt_with_workspace_files(prompt: str, output: str) -> str:

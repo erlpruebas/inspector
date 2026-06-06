@@ -24,6 +24,7 @@ logs/
 telegram_codex_orchestrator/runtime/
 telegram_codex_orchestrator/memory/*.json
 orchestrator_v2/runtime/
+orchestrator_v2_1/runtime/
 assistant/state.json
 assistant/alarms.md
 assistant/media/

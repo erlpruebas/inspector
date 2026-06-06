@@ -3,6 +3,7 @@
 
 # Carga de variables de entorno
 python-dotenv>=1.0.0
+requests>=2.32.0
 
 # Captura de pantalla
 Pillow>=10.0.0
@@ -29,5 +30,6 @@ sounddevice>=0.5.0
 soundfile>=0.13.1
 faster-whisper>=1.2.0
 pyttsx3>=2.99
+edge-tts>=7.2.0
 kokoro-onnx>=0.5.0
 piper-tts>=1.4.1

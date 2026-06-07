@@ -18,6 +18,7 @@ from .conversation_state import (
     set_pending_confirmation,
 )
 from .codex_rate_limits import CodexRateLimitMonitor
+from .development_mode import DevelopmentModeController, normalize_command
 from .models import OrchestratorResult, RouteDecision, TaskRequest
 from .orchestrator import OrchestratorV21
 from .tool_registry import get_tool
@@ -44,6 +45,7 @@ ALLOWED_CHAT_IDS = {
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 ORCHESTRATOR = OrchestratorV21()
 CODEX_RATE_LIMITS = CodexRateLimitMonitor()
+DEVELOPMENT_MODE = DevelopmentModeController()
 VOICE_SETTINGS = load_voice_settings()
 VOICE_RUNTIME_DIR = Path("orchestrator_v2_1/runtime/voice").resolve()
 VOICE_INBOX_DIR = VOICE_RUNTIME_DIR / "inbox"
@@ -298,6 +300,48 @@ def process_confirmation_reply(text: str, chat_id: int | str) -> bool:
     return True
 
 
+def complete_development_implementation(
+    chat_id: int | str,
+    request_text: str,
+    output: str,
+    ok: bool,
+) -> None:
+    request = build_request(
+        request_text,
+        chat_id,
+        source="development",
+        metadata={"development_mode": True},
+    )
+    result = OrchestratorResult(
+        ok=ok,
+        tool_id="codex_cli_development",
+        tier=5,
+        engine="codex:exec",
+        output=output,
+        workdir=Path(".").resolve(),
+        elapsed_seconds=0,
+        privacy_mode="clear",
+        error="" if ok else "development_implementation_failed",
+    )
+    if output:
+        send_message(chat_id, output)
+    if ok:
+        summarize_and_send_audio(chat_id, request, result)
+    send_rate_limit_footer(chat_id)
+
+
+def process_development_message(text: str, chat_id: int | str) -> bool:
+    command = normalize_command(text)
+    if command not in {"activar modo desarrollo", "desactivar modo desarrollo"} and not DEVELOPMENT_MODE.is_active(chat_id):
+        return False
+    return DEVELOPMENT_MODE.process(
+        chat_id,
+        text,
+        send_message=send_message,
+        complete_implementation=complete_development_implementation,
+    )
+
+
 def deliver_result(chat_id: int | str, request: TaskRequest, result: OrchestratorResult) -> None:
     if result.requires_human_confirmation and result.human_confirmation:
         send_message(chat_id, result.output)
@@ -342,6 +386,8 @@ def send_rate_limit_footer(chat_id: int | str) -> None:
 
 
 def process_message(text: str, chat_id: int | str) -> None:
+    if process_development_message(text, chat_id):
+        return
     if process_confirmation_reply(text, chat_id):
         return
     send_message(chat_id, "Recibido\n0.1s")
@@ -360,7 +406,10 @@ def process_update(update: dict) -> None:
         return
 
     try:
-        if process_confirmation_reply((message.get("text") or "").strip(), chat_id):
+        raw_text = (message.get("text") or message.get("caption") or "").strip()
+        if raw_text and process_development_message(raw_text, chat_id):
+            return
+        if process_confirmation_reply(raw_text, chat_id):
             return
 
         request = extract_message_text_and_request(message, chat_id)
@@ -371,6 +420,8 @@ def process_update(update: dict) -> None:
             send_message(chat_id, f"Transcrito\n{format_seconds(seconds)}")
         else:
             send_message(chat_id, "Recibido\n0.1s")
+        if process_development_message(request.text, chat_id):
+            return
         result = ORCHESTRATOR.handle(request, progress_callback=progress_sender(chat_id))
         deliver_result(chat_id, request, result)
     except Exception as exc:

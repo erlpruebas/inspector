@@ -71,6 +71,21 @@ Notas:
 - Codex devuelve `usedPercent`; el gateway muestra el restante mediante `100 - usedPercent`. Si no existe un snapshot valido, no inventa valores ni muestra el pie.
 - Las respuestas empiezan directamente por la informacion util, sin saludos de relleno ni reformulaciones de la pregunta.
 
+## Modo desarrollo por Telegram
+
+`activar modo desarrollo` cambia el chat a un circuito persistente de desarrollo controlado:
+
+1. El usuario describe un cambio.
+2. Codex CLI inspecciona una copia Git temporal y devuelve una propuesta.
+3. `si` aprueba la propuesta; `no` la descarta; cualquier otro mensaje la modifica y genera una version nueva.
+4. Una propuesta aprobada se implementa en un `git worktree` temporal con permisos limitados al workspace.
+5. Al terminar, el controlador crea un commit, lo aplica a la rama activa y trata de publicarlo en `origin`.
+6. Telegram devuelve el informe completo, genera el resumen de voz y mantiene activo el modo para la siguiente tarea.
+
+`desactivar modo desarrollo` tiene prioridad en cualquier fase. Cancela el proceso Codex activo, elimina el entorno temporal y devuelve inmediatamente el chat al comportamiento normal.
+
+El estado vive por chat en `orchestrator_v2_1/runtime/state/`. La propuesta usa un worktree desechable: incluso si Codex escribiera durante el analisis, esos cambios se eliminan y nunca llegan al proyecto principal. La implementacion usa `codex exec --sandbox workspace-write`, el sandbox nativo de Windows en modo `unelevated` y aprobaciones cerradas: cualquier operacion que necesite salir del workspace falla en lugar de escalar permisos.
+
 ## Pruebas iniciales por Telegram
 
 Empieza por estas cuatro, de lo más simple a lo más complejo:

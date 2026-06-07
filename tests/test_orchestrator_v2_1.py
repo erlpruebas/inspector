@@ -600,3 +600,148 @@ def test_legacy_desktop_import_is_isolated() -> None:
         if "orchestrator_v2.desktop_codex_operator" in text or "capture_desktop_screenshot" in text:
             offenders.append(path.name)
     assert offenders == []
+
+
+def test_development_mode_activation_and_deactivation(tmp_path: Path, monkeypatch) -> None:
+    from orchestrator_v2_1 import development_mode as development_module
+
+    monkeypatch.setattr("orchestrator_v2_1.conversation_state.DEFAULT_STATE_ROOT", tmp_path / "state")
+    controller = development_module.DevelopmentModeController(tmp_path)
+    sent: list[str] = []
+
+    assert controller.process(
+        123,
+        "activar modo desarrollo",
+        send_message=lambda chat_id, text: sent.append(text),
+        complete_implementation=lambda *args: None,
+    )
+    assert controller.is_active(123)
+    assert "activado" in sent[-1].casefold()
+
+    assert controller.process(
+        123,
+        "desactivar modo desarrollo",
+        send_message=lambda chat_id, text: sent.append(text),
+        complete_implementation=lambda *args: None,
+    )
+    assert not controller.is_active(123)
+    assert "desactivado" in sent[-1].casefold()
+
+
+def test_development_mode_proposal_can_be_revised_and_approved(tmp_path: Path, monkeypatch) -> None:
+    from orchestrator_v2_1 import development_mode as development_module
+
+    monkeypatch.setattr("orchestrator_v2_1.conversation_state.DEFAULT_STATE_ROOT", tmp_path / "state")
+    controller = development_module.DevelopmentModeController(tmp_path)
+    sent: list[str] = []
+    proposal = {
+        "title": "Añadir una prueba",
+        "understanding": "Se añadirá una prueba.",
+        "changes": ["Crear la prueba."],
+        "files": ["tests/test_example.py"],
+        "tests": ["pytest"],
+        "risks": [],
+        "open_questions": [],
+    }
+    monkeypatch.setattr(controller, "_run_proposal_codex", lambda *args: proposal)
+
+    controller.activate(456)
+    controller._proposal_worker(456, "añade una prueba", "", None, 1, development_module.RunningTask(), lambda _, text: sent.append(text))
+    state = controller._development_state(456)
+    assert state["phase"] == "awaiting_approval"
+    assert "Propuesta de desarrollo v1" in sent[-1]
+
+    started: list[bool] = []
+    monkeypatch.setattr(controller, "_start_implementation", lambda *args, **kwargs: started.append(True))
+    assert controller.process(
+        456,
+        "sí",
+        send_message=lambda chat_id, text: sent.append(text),
+        complete_implementation=lambda *args: None,
+    )
+    assert started == [True]
+
+
+def test_development_mode_feedback_requests_a_revised_proposal(tmp_path: Path, monkeypatch) -> None:
+    from orchestrator_v2_1 import development_mode as development_module
+
+    monkeypatch.setattr("orchestrator_v2_1.conversation_state.DEFAULT_STATE_ROOT", tmp_path / "state")
+    controller = development_module.DevelopmentModeController(tmp_path)
+    controller.activate(457)
+    controller._set_development_state(
+        457,
+        {
+            "active": True,
+            "phase": "awaiting_approval",
+            "pending_request": "cambia el saludo",
+            "proposal": {"title": "Primera propuesta"},
+            "proposal_version": 1,
+        },
+    )
+    revisions: list[tuple[str, bool]] = []
+    monkeypatch.setattr(
+        controller,
+        "_start_proposal",
+        lambda chat_id, text, **kwargs: revisions.append((text, kwargs["revision"])),
+    )
+
+    controller.process(
+        457,
+        "Hazlo sin tocar la voz",
+        send_message=lambda *args: None,
+        complete_implementation=lambda *args: None,
+    )
+
+    assert revisions == [("Hazlo sin tocar la voz", True)]
+
+
+def test_development_mode_recovers_interrupted_execution(tmp_path: Path, monkeypatch) -> None:
+    from orchestrator_v2_1 import development_mode as development_module
+
+    monkeypatch.setattr("orchestrator_v2_1.conversation_state.DEFAULT_STATE_ROOT", tmp_path / "state")
+    controller = development_module.DevelopmentModeController(tmp_path)
+    controller.activate(458)
+    controller._set_development_state(
+        458,
+        {
+            "active": True,
+            "phase": "implementing",
+            "pending_request": "cambia el saludo",
+            "proposal": {"title": "Cambio aprobado"},
+            "proposal_version": 1,
+        },
+    )
+    discarded: list[str] = []
+
+    controller.process(
+        458,
+        "no",
+        send_message=lambda chat_id, text: discarded.append(text),
+        complete_implementation=lambda *args: None,
+    )
+
+    assert controller._development_state(458)["phase"] == "idle"
+    assert "descartada" in discarded[-1].casefold()
+
+
+def test_telegram_development_command_bypasses_normal_orchestrator(monkeypatch) -> None:
+    from orchestrator_v2_1 import telegram_gateway as tg
+
+    sent: list[str] = []
+    handled: list[str] = []
+    monkeypatch.setattr(tg, "send_message", lambda chat_id, text: sent.append(text))
+    monkeypatch.setattr(tg.DEVELOPMENT_MODE, "is_active", lambda chat_id: False)
+    monkeypatch.setattr(
+        tg.DEVELOPMENT_MODE,
+        "process",
+        lambda chat_id, text, **kwargs: handled.append(text) or True,
+    )
+    monkeypatch.setattr(
+        tg.ORCHESTRATOR,
+        "handle",
+        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("normal orchestrator should not run")),
+    )
+
+    tg.process_message("activar modo desarrollo", 789)
+
+    assert handled == ["activar modo desarrollo"]

@@ -340,3 +340,9 @@ El primer valor indica el porcentaje restante de la ventana de cinco horas y va 
 La integracion usa una unica instancia persistente de `codex app-server` con el metodo JSON-RPC `account/rateLimits/read`. Un hilo en segundo plano refresca una cache cada 30 segundos. La respuesta principal nunca inicia un subproceso ni espera una consulta. Si el monitor no dispone de datos validos, el pie se omite.
 
 La implementacion se verifico contra Codex CLI `0.137.0`. Durante la prueba real, el snapshot mostro `89%` y `38%` usados, equivalentes a `11% y 62%` restantes; una lectura posterior mostro `8% y 61%` restantes. La comprobacion final del formato completo produjo `4% 23.07 61% 11/6`.
+
+### Modo desarrollo desde Telegram
+
+Se incorpora un circuito persistente por chat que se activa con `activar modo desarrollo` y se abandona con `desactivar modo desarrollo`. Dentro de este modo, una peticion no modifica inmediatamente el agente: Codex CLI inspecciona primero un worktree desechable y devuelve una propuesta estructurada. Aunque el proceso de analisis escribiera accidentalmente en esa copia, se elimina sin alterar el proyecto principal. El usuario puede aprobarla con `si`, descartarla con `no` o escribir correcciones sucesivas hasta obtener la version deseada.
+
+La implementacion aprobada se ejecuta en segundo plano dentro de un `git worktree` temporal. Esto mantiene Telegram receptivo, permite cancelar el proceso y evita mezclar una ejecucion incompleta con el arbol principal. Codex trabaja con sandbox `workspace-write`, la variante nativa de Windows `unelevated` y sin escaladas interactivas; el controlador crea el commit, lo incorpora a la rama activa y trata de publicarlo. El informe final vuelve como texto y resumen de voz, mientras el modo desarrollo permanece activo para la siguiente mejora.

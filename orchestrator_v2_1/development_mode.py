@@ -259,6 +259,8 @@ class DevelopmentModeController:
     ) -> None:
         worktree: Path | None = None
         branch = ""
+        commit_sha = ""
+        published = False
         try:
             worktree, branch = self._create_worktree(chat_id)
             final_message = self._run_implementation_codex(worktree, request_text, proposal, task)
@@ -270,8 +272,10 @@ class DevelopmentModeController:
             with self._publication_lock:
                 if task.cancelled or not self.is_active(chat_id):
                     return
+                commit_sha = self._rebase_onto_current_head(worktree)
                 self._apply_commit(commit_sha)
                 pushed, push_detail = self._push_current_branch()
+                published = True
             report = build_implementation_report(final_message, commit_sha, pushed, push_detail)
             development = self._development_state(chat_id)
             self._set_development_state(
@@ -288,6 +292,14 @@ class DevelopmentModeController:
             complete_implementation(chat_id, request_text, report, True)
         except Exception as exc:
             logging.exception("Development implementation failed")
+            error_detail = readable_error(exc)
+            self._record_failure(
+                chat_id,
+                request_text=request_text,
+                branch=branch,
+                commit_sha=commit_sha,
+                error=error_detail,
+            )
             if not task.cancelled and self.is_active(chat_id):
                 development = self._development_state(chat_id)
                 self._set_development_state(
@@ -295,20 +307,31 @@ class DevelopmentModeController:
                     {
                         **development,
                         "phase": "awaiting_approval",
-                        "last_error": short_error(exc),
+                        "last_error": error_detail,
+                        "recovery_branch": branch if commit_sha else "",
+                        "recovery_commit": commit_sha,
                     },
+                )
+                recovery_note = (
+                    f"El trabajo se conserva en `{branch}` (`{commit_sha[:8]}`).\n\n"
+                    if commit_sha
+                    else ""
+                )
+                failure_message = (
+                    "La implementacion no se ha incorporado al proyecto.\n\n"
+                    f"Motivo: {error_detail}\n\n"
+                    f"{recovery_note}"
+                    "La propuesta sigue pendiente: puedes corregirla, responder 'si' para reintentar "
+                    "o 'no' para descartarla."
                 )
                 complete_implementation(
                     chat_id,
                     request_text,
-                    "La implementacion no se ha incorporado al proyecto.\n\n"
-                    f"Motivo: {short_error(exc)}\n\n"
-                    "La propuesta sigue pendiente: puedes corregirla, responder 'si' para reintentar "
-                    "o 'no' para descartarla.",
+                    failure_message,
                     False,
                 )
         finally:
-            self._cleanup_worktree(worktree, branch)
+            self._cleanup_worktree(worktree, branch, delete_branch=published or not commit_sha)
             self._unregister_task(chat_id, task)
 
     def _run_proposal_codex(
@@ -442,6 +465,21 @@ class DevelopmentModeController:
         run_git(worktree, "commit", "-m", message)
         return run_git(worktree, "rev-parse", "HEAD").strip()
 
+    def _rebase_onto_current_head(self, worktree: Path) -> str:
+        current_head = run_git(self.project_root, "rev-parse", "HEAD").strip()
+        worktree_parent = run_git(worktree, "rev-parse", "HEAD^").strip()
+        if worktree_parent == current_head:
+            return run_git(worktree, "rev-parse", "HEAD").strip()
+        try:
+            run_git(worktree, "rebase", current_head)
+        except Exception:
+            try:
+                run_git(worktree, "rebase", "--abort")
+            except Exception:
+                logging.exception("Could not abort failed development rebase")
+            raise
+        return run_git(worktree, "rev-parse", "HEAD").strip()
+
     def _apply_commit(self, commit_sha: str) -> None:
         try:
             run_git(self.project_root, "cherry-pick", commit_sha)
@@ -462,18 +500,45 @@ class DevelopmentModeController:
         except Exception as exc:
             return False, short_error(exc)
 
-    def _cleanup_worktree(self, worktree: Path | None, branch: str) -> None:
+    def _cleanup_worktree(
+        self,
+        worktree: Path | None,
+        branch: str,
+        *,
+        delete_branch: bool = True,
+    ) -> None:
         if worktree is not None:
             try:
                 run_git(self.project_root, "worktree", "remove", "--force", str(worktree))
             except Exception:
                 logging.exception("Could not remove development worktree %s", worktree)
                 shutil.rmtree(worktree, ignore_errors=True)
-        if branch:
+        if branch and delete_branch:
             try:
                 run_git(self.project_root, "branch", "-D", branch)
             except Exception:
                 logging.exception("Could not remove development branch %s", branch)
+
+    def _record_failure(
+        self,
+        chat_id: int | str,
+        *,
+        request_text: str,
+        branch: str,
+        commit_sha: str,
+        error: str,
+    ) -> None:
+        path = self.runtime_root / "failures.md"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        entry = (
+            f"\n## {now_timestamp()} - chat {chat_id}\n\n"
+            f"- Request: {request_text}\n"
+            f"- Branch: {branch or '(none)'}\n"
+            f"- Commit: {commit_sha or '(none)'}\n"
+            f"- Error: {error}\n"
+        )
+        with path.open("a", encoding="utf-8") as handle:
+            handle.write(entry)
 
     def _new_run_dir(self, kind: str) -> Path:
         path = self.runtime_root / "runs" / f"{int(time.time() * 1000)}-{kind}"
@@ -664,6 +729,22 @@ def last_nonempty_line(text: str) -> str:
 
 def short_error(exc: Exception) -> str:
     return str(exc).strip().splitlines()[-1][:500] or exc.__class__.__name__
+
+
+def readable_error(exc: Exception) -> str:
+    lines = [line.strip() for line in str(exc).splitlines() if line.strip()]
+    if not lines:
+        return exc.__class__.__name__
+    relevant = [
+        line
+        for line in lines
+        if any(
+            marker in line.casefold()
+            for marker in ("error", "fatal", "conflict", "would be overwritten", "could not apply")
+        )
+    ]
+    selected = relevant[-4:] if relevant else lines[-4:]
+    return " | ".join(selected)[:1200]
 
 
 def now_timestamp() -> str:

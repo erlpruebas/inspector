@@ -796,3 +796,46 @@ def test_development_controller_messages_use_multimedia_delivery(monkeypatch) ->
 
     assert tg.process_development_message("activar modo desarrollo", 456)
     assert delivered == [(456, "Modo desarrollo activado.", "activar modo desarrollo")]
+
+
+def test_development_rebases_commit_when_main_head_advanced(tmp_path: Path, monkeypatch) -> None:
+    from orchestrator_v2_1 import development_mode as development_module
+
+    project_root = tmp_path / "project"
+    worktree = tmp_path / "worktree"
+    project_root.mkdir()
+    worktree.mkdir()
+    controller = development_module.DevelopmentModeController(project_root)
+    calls: list[tuple[Path, tuple[str, ...]]] = []
+
+    def fake_run_git(cwd, *args):
+        calls.append((cwd, args))
+        if cwd == controller.project_root and args == ("rev-parse", "HEAD"):
+            return "new-head\n"
+        if cwd == worktree and args == ("rev-parse", "HEAD^"):
+            return "old-head\n"
+        if cwd == worktree and args == ("rebase", "new-head"):
+            return ""
+        if cwd == worktree and args == ("rev-parse", "HEAD"):
+            return "rebased-commit\n"
+        raise AssertionError((cwd, args))
+
+    monkeypatch.setattr(development_module, "run_git", fake_run_git)
+
+    assert controller._rebase_onto_current_head(worktree) == "rebased-commit"
+    assert (worktree, ("rebase", "new-head")) in calls
+
+
+def test_readable_development_error_keeps_conflict_context() -> None:
+    from orchestrator_v2_1.development_mode import readable_error
+
+    error = RuntimeError(
+        "error: Your local changes would be overwritten by cherry-pick:\n"
+        "README.md\n"
+        "fatal: cherry-pick failed"
+    )
+
+    detail = readable_error(error)
+
+    assert "would be overwritten" in detail
+    assert "cherry-pick failed" in detail

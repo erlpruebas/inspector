@@ -348,3 +348,11 @@ Se incorpora un circuito persistente por chat que se activa con `activar modo de
 La implementacion aprobada se ejecuta en segundo plano dentro de un `git worktree` temporal. Esto mantiene Telegram receptivo, permite cancelar el proceso y evita mezclar una ejecucion incompleta con el arbol principal. Codex trabaja con sandbox `workspace-write`, la variante nativa de Windows `unelevated` y sin escaladas interactivas; el controlador crea el commit, lo incorpora a la rama activa y trata de publicarlo. El informe final vuelve como texto y resumen de voz, mientras el modo desarrollo permanece activo para la siguiente mejora.
 
 Todas las respuestas de esta conversacion de desarrollo pasan por la misma entrega multimedia que el agente normal: texto completo en Telegram, resumen con Edge enviado al movil y reproduccion local. Despues del audio, el ultimo mensaje muestra siempre el porcentaje restante y el reinicio de las ventanas Codex. Esto se aplica tambien a activacion, propuestas, revisiones, descartes y errores, no solo al informe final de implementacion.
+
+### Ejemplos de uso documentados
+
+Fecha: 2026-06-07.
+
+El README principal incorpora tres ejemplos breves del modo desarrollo por Telegram: aprobar una propuesta con `si`, pedir una revision antes de aprobar y descartar o cancelar una tarea con `no` o `desactivar modo desarrollo`. Los ejemplos remarcan que describir el cambio solo genera una propuesta y que la implementacion no empieza hasta recibir la aprobacion.
+
+La primera implementacion real termino correctamente dentro del worktree, pero el `cherry-pick` fallo porque el cuaderno habia avanzado en la rama principal mientras Codex trabajaba desde un commit anterior. Se recupero el commit temporal `063647d`, se incorporaron sus cambios y se corrigio el publicador: ahora rebasa sobre el `HEAD` vigente antes de aplicar, conserva una rama de rescate si persiste el conflicto y registra el diagnostico completo en Markdown.

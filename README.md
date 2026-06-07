@@ -107,6 +107,49 @@ Cd <instruccion>
 
 `Cd` fuerza Codex Desktop. Para Codex CLI se usa `/codex <instruccion>`; la letra `C` sola ya no es un comando reservado.
 
+### Ejemplos del modo desarrollo
+
+1. Aprobar una propuesta:
+
+   ```text
+   Usuario: activar modo desarrollo
+   Bot: Modo desarrollo activado.
+   Usuario: Anade una comprobacion del formato de los mensajes.
+   Bot: [dev] Propuesta lista para revisar.
+   Usuario: si
+   Bot: [dev] Propuesta aprobada. Implementando...
+   ```
+
+2. Solicitar una revision antes de aprobar:
+
+   ```text
+   Usuario: activar modo desarrollo
+   Bot: Modo desarrollo activado.
+   Usuario: Documenta el arranque del orquestador.
+   Bot: [dev] Propuesta lista para revisar.
+   Usuario: Limita el cambio al README y anade un ejemplo.
+   Bot: [dev] Propuesta actualizada para revisar.
+   Usuario: si
+   Bot: [dev] Propuesta aprobada. Implementando...
+   ```
+
+3. Descartar o cancelar una tarea:
+
+   ```text
+   Usuario: activar modo desarrollo
+   Bot: Modo desarrollo activado.
+   Usuario: Cambia el formato de todas las respuestas.
+   Bot: [dev] Propuesta lista para revisar.
+   Usuario: no
+   Bot: [dev] Propuesta descartada sin ejecutar cambios.
+
+   Para cancelar el proceso en cualquier fase y salir del modo:
+   Usuario: desactivar modo desarrollo
+   Bot: Modo desarrollo desactivado.
+   ```
+
+La descripcion de una tarea genera primero una propuesta. Solo `si` autoriza su implementacion; `no` la descarta y `desactivar modo desarrollo` cancela el proceso activo y vuelve al modo normal.
+
 Interfaz grafica del orquestador:
 
 ```powershell

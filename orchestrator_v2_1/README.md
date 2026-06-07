@@ -88,6 +88,8 @@ Notas:
 
 El estado vive por chat en `orchestrator_v2_1/runtime/state/`. La propuesta usa un worktree desechable: incluso si Codex escribiera durante el analisis, esos cambios se eliminan y nunca llegan al proyecto principal. La implementacion usa `codex exec --sandbox workspace-write`, el sandbox nativo de Windows en modo `unelevated` y aprobaciones cerradas: cualquier operacion que necesite salir del workspace falla en lugar de escalar permisos.
 
+Antes de publicar, el commit temporal se rebasa sobre el `HEAD` actual para incorporar cambios que hayan llegado mientras Codex trabajaba. Si Git aun detecta un conflicto, la rama y el commit de rescate se conservan y el detalle completo queda en `orchestrator_v2_1/runtime/development/failures.md`.
+
 ## Pruebas iniciales por Telegram
 
 Empieza por estas cuatro, de lo más simple a lo más complejo:

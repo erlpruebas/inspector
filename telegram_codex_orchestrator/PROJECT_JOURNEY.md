@@ -355,4 +355,6 @@ Fecha: 2026-06-07.
 
 El README principal incorpora tres ejemplos breves del modo desarrollo por Telegram: aprobar una propuesta con `si`, pedir una revision antes de aprobar y descartar o cancelar una tarea con `no` o `desactivar modo desarrollo`. Los ejemplos remarcan que describir el cambio solo genera una propuesta y que la implementacion no empieza hasta recibir la aprobacion.
 
+La seccion se consolido sin duplicarla y deja claro que los dialogos son ilustrativos, porque el texto exacto de las respuestas del bot puede variar.
+
 La primera implementacion real termino correctamente dentro del worktree, pero el `cherry-pick` fallo porque el cuaderno habia avanzado en la rama principal mientras Codex trabajaba desde un commit anterior. Se recupero el commit temporal `063647d`, se incorporaron sus cambios y se corrigio el publicador: ahora rebasa sobre el `HEAD` vigente antes de aplicar, conserva una rama de rescate si persiste el conflicto y registra el diagnostico completo en Markdown.

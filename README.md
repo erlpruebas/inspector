@@ -109,6 +109,8 @@ Cd <instruccion>
 
 ### Ejemplos del modo desarrollo
 
+Los dialogos siguientes son ilustrativos; el texto exacto de las respuestas del bot puede variar.
+
 1. Aprobar una propuesta:
 
    ```text

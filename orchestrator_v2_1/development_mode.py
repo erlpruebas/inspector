@@ -195,10 +195,12 @@ class DevelopmentModeController:
         task: RunningTask,
         send_message: SendMessage,
     ) -> None:
+        started = time.monotonic()
         try:
             proposal = self._run_proposal_codex(request_text, feedback, previous_proposal, task)
             if task.cancelled or not self.is_active(chat_id):
                 return
+            elapsed_seconds = time.monotonic() - started
             development = self._development_state(chat_id)
             self._set_development_state(
                 chat_id,
@@ -207,15 +209,28 @@ class DevelopmentModeController:
                     "phase": "awaiting_approval",
                     "proposal": proposal,
                     "proposal_version": version,
+                    "last_proposal_seconds": round(elapsed_seconds, 3),
                 },
             )
-            send_message(chat_id, format_proposal(proposal, version))
+            send_message(chat_id, format_proposal(proposal, version, elapsed_seconds))
         except Exception as exc:
             logging.exception("Development proposal failed")
             if not task.cancelled and self.is_active(chat_id):
+                elapsed_seconds = time.monotonic() - started
                 development = self._development_state(chat_id)
-                self._set_development_state(chat_id, {**development, "phase": "idle"})
-                send_message(chat_id, f"No he podido preparar la propuesta: {short_error(exc)}")
+                self._set_development_state(
+                    chat_id,
+                    {
+                        **development,
+                        "phase": "idle",
+                        "last_proposal_seconds": round(elapsed_seconds, 3),
+                    },
+                )
+                send_message(
+                    chat_id,
+                    f"No he podido preparar la propuesta: {short_error(exc)}\n\n"
+                    f"Propuesta hasta el fallo: {format_duration(elapsed_seconds)}",
+                )
         finally:
             self._unregister_task(chat_id, task)
 
@@ -261,6 +276,7 @@ class DevelopmentModeController:
         branch = ""
         commit_sha = ""
         published = False
+        started = time.monotonic()
         try:
             worktree, branch = self._create_worktree(chat_id)
             final_message = self._run_implementation_codex(worktree, request_text, proposal, task)
@@ -277,6 +293,8 @@ class DevelopmentModeController:
                 pushed, push_detail = self._push_current_branch()
                 published = True
             report = build_implementation_report(final_message, commit_sha, pushed, push_detail)
+            elapsed_seconds = time.monotonic() - started
+            report = f"{report}\n\nImplementacion completa: {format_duration(elapsed_seconds)}"
             development = self._development_state(chat_id)
             self._set_development_state(
                 chat_id,
@@ -287,11 +305,13 @@ class DevelopmentModeController:
                     "proposal": None,
                     "last_commit": commit_sha,
                     "last_completed_at": now_timestamp(),
+                    "last_implementation_seconds": round(elapsed_seconds, 3),
                 },
             )
             complete_implementation(chat_id, request_text, report, True)
         except Exception as exc:
             logging.exception("Development implementation failed")
+            elapsed_seconds = time.monotonic() - started
             error_detail = readable_error(exc)
             self._record_failure(
                 chat_id,
@@ -310,6 +330,7 @@ class DevelopmentModeController:
                         "last_error": error_detail,
                         "recovery_branch": branch if commit_sha else "",
                         "recovery_commit": commit_sha,
+                        "last_implementation_seconds": round(elapsed_seconds, 3),
                     },
                 )
                 recovery_note = (
@@ -321,6 +342,7 @@ class DevelopmentModeController:
                     "La implementacion no se ha incorporado al proyecto.\n\n"
                     f"Motivo: {error_detail}\n\n"
                     f"{recovery_note}"
+                    f"Implementacion hasta el fallo: {format_duration(elapsed_seconds)}\n\n"
                     "La propuesta sigue pendiente: puedes corregirla, responder 'si' para reintentar "
                     "o 'no' para descartarla."
                 )
@@ -618,7 +640,7 @@ Requirements:
 """.strip()
 
 
-def format_proposal(proposal: dict[str, Any], version: int) -> str:
+def format_proposal(proposal: dict[str, Any], version: int, elapsed_seconds: float = 0) -> str:
     lines = [
         f"Propuesta de desarrollo v{version}: {proposal.get('title', 'Cambio solicitado')}",
         "",
@@ -632,6 +654,8 @@ def format_proposal(proposal: dict[str, Any], version: int) -> str:
     lines.extend(
         [
             "",
+            f"Propuesta: {format_duration(elapsed_seconds)}",
+            "",
             "Responde:",
             "- `si` para implementar.",
             "- `no` para descartar.",
@@ -640,6 +664,14 @@ def format_proposal(proposal: dict[str, Any], version: int) -> str:
         ]
     )
     return "\n".join(lines).strip()
+
+
+def format_duration(seconds: float) -> str:
+    rounded = max(0, round(seconds))
+    minutes, remaining_seconds = divmod(rounded, 60)
+    if minutes:
+        return f"{minutes}m {remaining_seconds}s"
+    return f"{remaining_seconds}s"
 
 
 def append_section(lines: list[str], title: str, values: Any) -> None:

@@ -650,6 +650,7 @@ def test_development_mode_proposal_can_be_revised_and_approved(tmp_path: Path, m
     state = controller._development_state(456)
     assert state["phase"] == "awaiting_approval"
     assert "Propuesta de desarrollo v1" in sent[-1]
+    assert "Propuesta:" in sent[-1]
 
     started: list[bool] = []
     monkeypatch.setattr(controller, "_start_implementation", lambda *args, **kwargs: started.append(True))
@@ -839,3 +840,10 @@ def test_readable_development_error_keeps_conflict_context() -> None:
 
     assert "would be overwritten" in detail
     assert "cherry-pick failed" in detail
+
+
+def test_development_duration_format_is_compact() -> None:
+    from orchestrator_v2_1.development_mode import format_duration
+
+    assert format_duration(2.4) == "2s"
+    assert format_duration(125.2) == "2m 5s"

@@ -82,7 +82,8 @@ Notas:
 5. Al terminar, el controlador crea un commit, lo aplica a la rama activa y trata de publicarlo en `origin`.
 6. Cada respuesta del modo desarrollo se entrega por texto, audio Edge en el movil y reproduccion en el altavoz.
 7. La ultima linea de cada interaccion muestra el uso restante y los reinicios de Codex.
-8. El modo permanece activo para encadenar la siguiente mejora.
+8. La propuesta muestra su tiempo total y la implementacion mide desde la aprobacion hasta terminar pruebas, Git y push.
+9. El modo permanece activo para encadenar la siguiente mejora.
 
 `desactivar modo desarrollo` tiene prioridad en cualquier fase. Cancela el proceso Codex activo, elimina el entorno temporal y devuelve inmediatamente el chat al comportamiento normal.
 

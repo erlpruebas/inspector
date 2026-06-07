@@ -358,3 +358,5 @@ El README principal incorpora tres ejemplos breves del modo desarrollo por Teleg
 La seccion se consolido sin duplicarla y deja claro que los dialogos son ilustrativos, porque el texto exacto de las respuestas del bot puede variar.
 
 La primera implementacion real termino correctamente dentro del worktree, pero el `cherry-pick` fallo porque el cuaderno habia avanzado en la rama principal mientras Codex trabajaba desde un commit anterior. Se recupero el commit temporal `063647d`, se incorporaron sus cambios y se corrigio el publicador: ahora rebasa sobre el `HEAD` vigente antes de aplicar, conserva una rama de rescate si persiste el conflicto y registra el diagnostico completo en Markdown.
+
+El modo desarrollo mide ahora sus dos esperas principales. `Propuesta` abarca la inspeccion del repositorio y la generacion del plan hasta entregarlo en Telegram. `Implementacion completa` empieza al aprobar y termina despues de editar, probar, documentar, crear el commit, actualizarlo contra la rama vigente, incorporarlo y hacer push. Si falla, se muestra el tiempo consumido hasta el error. Ambas duraciones se guardan tambien en el estado del chat.

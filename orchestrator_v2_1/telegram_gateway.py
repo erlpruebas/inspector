@@ -306,8 +306,23 @@ def complete_development_implementation(
     output: str,
     ok: bool,
 ) -> None:
+    deliver_development_response(
+        chat_id,
+        output,
+        user_request=request_text,
+        ok=ok,
+    )
+
+
+def deliver_development_response(
+    chat_id: int | str,
+    output: str,
+    *,
+    user_request: str = "Interaccion del modo desarrollo.",
+    ok: bool = True,
+) -> None:
     request = build_request(
-        request_text,
+        user_request,
         chat_id,
         source="development",
         metadata={"development_mode": True},
@@ -325,7 +340,6 @@ def complete_development_implementation(
     )
     if output:
         send_message(chat_id, output)
-    if ok:
         summarize_and_send_audio(chat_id, request, result)
     send_rate_limit_footer(chat_id)
 
@@ -337,7 +351,11 @@ def process_development_message(text: str, chat_id: int | str) -> bool:
     return DEVELOPMENT_MODE.process(
         chat_id,
         text,
-        send_message=send_message,
+        send_message=lambda target_chat_id, output: deliver_development_response(
+            target_chat_id,
+            output,
+            user_request=text,
+        ),
         complete_implementation=complete_development_implementation,
     )
 

@@ -745,3 +745,54 @@ def test_telegram_development_command_bypasses_normal_orchestrator(monkeypatch) 
     tg.process_message("activar modo desarrollo", 789)
 
     assert handled == ["activar modo desarrollo"]
+
+
+def test_development_response_sends_audio_and_rate_limit_footer(tmp_path: Path, monkeypatch) -> None:
+    from orchestrator_v2_1 import telegram_gateway as tg
+
+    audio_path = tmp_path / "development-summary.wav"
+    events: list[str] = []
+    monkeypatch.setattr(tg, "VOICE_SETTINGS", VoiceSettings(generate_audio=True, play_audio=True))
+    monkeypatch.setattr(tg, "send_message", lambda chat_id, text: events.append(f"text:{text}"))
+    monkeypatch.setattr(tg, "send_audio", lambda chat_id, path, caption="": events.append(f"audio:{path.name}"))
+    monkeypatch.setattr(
+        tg,
+        "synthesize_voice_summary",
+        lambda summary, output_path, **kwargs: audio_path,
+    )
+    monkeypatch.setattr(tg, "play_audio_file", lambda path: events.append(f"play:{path.name}"))
+    monkeypatch.setattr(tg.CODEX_RATE_LIMITS, "footer", lambda: "70% 17.15 60% 25/3")
+
+    tg.deliver_development_response(
+        123,
+        "Propuesta preparada.",
+        user_request="Añade una prueba.",
+    )
+
+    assert events[0] == "text:Propuesta preparada."
+    assert "audio:development-summary.wav" in events
+    assert "play:development-summary.wav" in events
+    assert events[-1] == "text:70% 17.15 60% 25/3"
+
+
+def test_development_controller_messages_use_multimedia_delivery(monkeypatch) -> None:
+    from orchestrator_v2_1 import telegram_gateway as tg
+
+    delivered: list[tuple[int, str, str]] = []
+    monkeypatch.setattr(tg.DEVELOPMENT_MODE, "is_active", lambda chat_id: False)
+
+    def fake_process(chat_id, text, *, send_message, complete_implementation):
+        send_message(chat_id, "Modo desarrollo activado.")
+        return True
+
+    monkeypatch.setattr(tg.DEVELOPMENT_MODE, "process", fake_process)
+    monkeypatch.setattr(
+        tg,
+        "deliver_development_response",
+        lambda chat_id, output, user_request="", **kwargs: delivered.append(
+            (chat_id, output, user_request)
+        ),
+    )
+
+    assert tg.process_development_message("activar modo desarrollo", 456)
+    assert delivered == [(456, "Modo desarrollo activado.", "activar modo desarrollo")]

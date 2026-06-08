@@ -917,5 +917,106 @@
       "format": 2,
       "traceability": 1
     }
+  },
+  {
+    "id": "test-31",
+    "level": "L6",
+    "category": "codigo",
+    "prompt": "# Auditoria de mini calculadora\n\nRevisa `benchmarks/assets/mini_project/calculator.py` junto con `benchmarks/assets/mini_project/test_calculator.py`. Identifica los fallos funcionales que hacen que las pruebas no reflejen el comportamiento esperado y redacta una auditoria breve con: fallo detectado, efecto observable y cambio minimo para corregirlo. No modifiques archivos, solo explica la correccion.",
+    "required_files": [
+      "mini_project/calculator.py",
+      "mini_project/test_calculator.py"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "code_execution",
+      "minimal_fix",
+      "diagnose"
+    ],
+    "expected_keys": [
+      "subtract",
+      "divide",
+      "average",
+      "zero",
+      "correccion"
+    ],
+    "rubric": {
+      "correctness": 5,
+      "expected_keys": 3,
+      "format": 1,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-32",
+    "level": "L6",
+    "category": "debugging",
+    "prompt": "# Depurar parser CSV\n\nInspecciona `benchmarks/assets/parser_project/parser.py`, `benchmarks/assets/parser_project/test_parser.py` y `benchmarks/assets/parser_project/sample.csv`. Explica por que el parser falla con campos entrecomillados que contienen comas y propone el cambio minimo para que lea correctamente esos casos sin romper los demas.",
+    "required_files": [
+      "parser_project/parser.py",
+      "parser_project/test_parser.py",
+      "parser_project/sample.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "log_diagnosis",
+      "minimal_fix",
+      "data_quality"
+    ],
+    "expected_keys": [
+      "quoted",
+      "comma",
+      "csv",
+      "split",
+      "csv module"
+    ],
+    "rubric": {
+      "correctness": 5,
+      "expected_keys": 3,
+      "format": 1,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "test-33",
+    "level": "L8",
+    "category": "analisis",
+    "prompt": "# Reconciliacion ejecutiva de junio\n\nCruza `benchmarks/assets/hitl_business_synthetic/ventas_junio.csv`, `benchmarks/assets/hitl_business_synthetic/gastos_junio.csv`, `benchmarks/assets/hitl_business_synthetic/banco_ingresos.csv`, `benchmarks/assets/hitl_business_synthetic/memory.md` y `benchmarks/assets/hitl_business_synthetic/emails_reenviados.md`. Calcula el resultado mensual, detecta las discrepancias relevantes entre ingresos, gastos y avisos por correo, y redacta un informe ejecutivo con: resumen financiero, anomalías, riesgos y tres siguientes acciones prioritarias. Escribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/ventas_junio.csv",
+      "hitl_business_synthetic/gastos_junio.csv",
+      "hitl_business_synthetic/banco_ingresos.csv",
+      "hitl_business_synthetic/memory.md",
+      "hitl_business_synthetic/emails_reenviados.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "multi_file_financial_calculation",
+      "cross_source_reconciliation",
+      "executive_report",
+      "financial_analysis"
+    ],
+    "expected_keys": [
+      "resultado mensual",
+      "discrepancia",
+      "riesgo",
+      "acciones prioritarias",
+      "ingresos"
+    ],
+    "rubric": {
+      "correctness": 5,
+      "expected_keys": 3,
+      "format": 1,
+      "traceability": 1
+    }
   }
 ]

@@ -2,6 +2,15 @@
 
 This document summarizes the current status, architecture, and next steps for the development of the **Telegram Codex Orchestrator** in this environment. It is designed to allow another AI agent or developer to quickly resume the project without missing critical context.
 
+If you are resuming from a fresh conversation, start with [LEEME_PRIMERO.md](LEEME_PRIMERO.md), then read [docs/ROUTER_CAPABILITY_MASTER_20260608.md](docs/ROUTER_CAPABILITY_MASTER_20260608.md), the project README, and the remaining router capability docs.
+
+The next clean implementation is specified in
+[docs/ANTIGRAVITY_REFACTOR_HANDOFF_20260608.md](docs/ANTIGRAVITY_REFACTOR_HANDOFF_20260608.md).
+The ready-to-paste Gemini prompt is
+[docs/ANTIGRAVITY_MASTER_PROMPT_20260608.md](docs/ANTIGRAVITY_MASTER_PROMPT_20260608.md).
+The target is a self-contained `agent_v2_2/` with functional parity across the
+current and historical orchestrators before it replaces either one.
+
 ---
 
 ## 1. Project Overview & Architecture

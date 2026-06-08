@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent_v2_2"
+version = "0.1.0"
+description = "Inspector Agent 2.2 - Portable, self-contained AI Orchestrator"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    # Dependencias base (a ajustar según migraciones concretas)
+    "pydantic>=2.0.0",
+    "python-dotenv",
+]
+
+[project.scripts]
+agent-v2-2 = "agent_v2_2.cli:main"

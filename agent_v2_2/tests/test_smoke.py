@@ -8,10 +8,14 @@ from agent_v2_2.capabilities.preferences import PreferenceStore
 from agent_v2_2.capabilities.voice import VoiceCapabilities
 from agent_v2_2.cli import check_status, set_speaker, set_voice, set_voice_name, set_voice_provider
 from agent_v2_2.config import Config, QuotaConfig, TelegramConfig, load_config, parse_int_list, parse_path_list
+from agent_v2_2.evolution.controller import EvolutionController
 from agent_v2_2.engines.codex_desktop import CodexDesktopOperator
 from agent_v2_2.models import CapabilityRequest, OrchestratorResult, TaskRequest
 from agent_v2_2.routing.registry import ToolRegistry, ToolDefinition
 from agent_v2_2.scheduling.codex_quota import CodexQuotaMonitor
+from agent_v2_2.transport.lifecycle import LifecycleManager
+from agent_v2_2.transport.metrics import MetricsRecorder
+from agent_v2_2.transport.queue import ExecutionMailbox
 
 
 def test_catalog_exposes_17_capabilities() -> None:
@@ -105,3 +109,40 @@ def test_voice_warmup_returns_a_status_map() -> None:
     warmup = VoiceCapabilities().warmup()
     assert "edge" in warmup
     assert "groq_stt" in warmup
+
+
+def test_transport_metrics_mailbox_and_lifecycle(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+
+    recorder = MetricsRecorder()
+    metrics = recorder.start("req-1")
+    recorder.record_stage("req-1", "routing", 0.2)
+    recorder.record_stage("req-1", "execution", 1.4)
+    recorder.finish("req-1")
+    assert round(metrics.timings.total_seconds, 1) == 1.6
+
+    mailbox = ExecutionMailbox()
+    execution_id = mailbox.append_inbox(None, "hola", chat_id=123)
+    mailbox.append_outbox(execution_id, "respuesta", chat_id=123)
+    assert len(mailbox.list_inbox(execution_id)) == 1
+    assert len(mailbox.list_outbox(execution_id)) == 1
+
+    lifecycle = LifecycleManager()
+    lifecycle.request_reload("test")
+    state = lifecycle.load()
+    assert state.reload_requested is True
+    lifecycle.request_restart("again")
+    state = lifecycle.load()
+    assert state.restart_requested is True
+
+
+def test_evolution_controller_can_audit_and_activate(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    controller = EvolutionController(workspace_root=tmp_path)
+    report = controller.audit_tasks()
+    assert report.total_tasks >= 3
+    maturity = controller.evaluate_maturity()
+    assert maturity.total_items >= 1
+    status = controller.activate()
+    assert status.active is True
+    assert status.audit.total_tasks >= 3

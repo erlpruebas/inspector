@@ -7,6 +7,7 @@ import sys
 from .capabilities.preferences import PreferenceStore
 from .capabilities.status import StatusManager
 from .capabilities.voice import VoiceCapabilities
+from .evolution.controller import EvolutionController
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("agent_v2_2.cli")
@@ -60,6 +61,31 @@ def warmup_voice() -> None:
         print(f"{key}={'ok' if value else 'no'}")
 
 
+def audit_tasks() -> None:
+    controller = EvolutionController()
+    report = controller.audit_tasks()
+    print(report.to_markdown())
+
+
+def evolution_status() -> None:
+    controller = EvolutionController()
+    status = controller.status()
+    print(f"active={'yes' if status.active else 'no'}")
+    print(f"reason={status.reason}")
+    print(
+        f"maturity={status.maturity.completed_items}/{status.maturity.total_items}"
+        f" ({status.maturity.completion_ratio:.2%})"
+    )
+    print(f"tasks={status.audit.total_tasks}")
+
+
+def evolution_activate() -> None:
+    controller = EvolutionController()
+    status = controller.activate()
+    print(f"active={'yes' if status.active else 'no'}")
+    print(f"reason={status.reason}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Inspector Agent 2.2 CLI")
     subparsers = parser.add_subparsers(dest="command", help="Comandos disponibles")
@@ -89,6 +115,18 @@ def main() -> None:
     speaker_on.set_defaults(func=lambda args: set_speaker(True))
     speaker_off = speaker_sub.add_parser("off", help="Desactiva el altavoz")
     speaker_off.set_defaults(func=lambda args: set_speaker(False))
+
+    audit_parser = subparsers.add_parser("audit", help="Audita las baterías de tareas")
+    audit_sub = audit_parser.add_subparsers(dest="audit_command", required=True)
+    audit_tasks_parser = audit_sub.add_parser("tasks", help="Resume las tareas sintéticas disponibles")
+    audit_tasks_parser.set_defaults(func=lambda args: audit_tasks())
+
+    evolution_parser = subparsers.add_parser("evolution", help="Control del sistema evolutivo")
+    evolution_sub = evolution_parser.add_subparsers(dest="evolution_command", required=True)
+    evolution_status_parser = evolution_sub.add_parser("status", help="Estado del sistema evolutivo")
+    evolution_status_parser.set_defaults(func=lambda args: evolution_status())
+    evolution_activate_parser = evolution_sub.add_parser("activate", help="Activa el sistema evolutivo si está maduro")
+    evolution_activate_parser.set_defaults(func=lambda args: evolution_activate())
 
     args = parser.parse_args()
 

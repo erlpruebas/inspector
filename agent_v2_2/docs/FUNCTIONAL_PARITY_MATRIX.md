@@ -8,11 +8,11 @@
 | `orchestrator_v2_1/telegram_gateway.py` | recepción y descarga de notas de voz y archivos | `transport/telegram.py` | [x] | Completado |
 | `orchestrator_v2_1/telegram_gateway.py` | envío de texto dividido según el límite de Telegram | `transport/telegram.py` | [x] | Completado |
 | `orchestrator_v2_1/telegram_gateway.py` | envío de audio, imágenes y archivos de resultado | `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | inbox y outbox aislados por ejecución | `transport/queue.py` | [ ] | Pendiente |
-| `orchestrator_v2_1/telegram_gateway.py` | progreso visible: recibido, enrutado, ejecutando y completado | `transport/telegram.py` | [ ] | Pendiente |
-| `orchestrator_v2_1/telegram_gateway.py` | tiempos de transcripción, memoria, routing, ejecución y voz | `transport/metrics.py` | [ ] | Pendiente |
-| `orchestrator_v2_1/orchestrator.py` | recarga y reinicio controlados | `transport/lifecycle.py` | [ ] | Pendiente |
-| `orchestrator_v2_1/telegram_gateway.py` | degradación limpia cuando Telegram o un proveedor falla | `transport/telegram.py` | [ ] | Pendiente |
+| `orchestrator_v2_1/orchestrator.py` | inbox y outbox aislados por ejecución | `transport/queue.py` | [x] | Completado |
+| `orchestrator_v2_1/telegram_gateway.py` | progreso visible: recibido, enrutado, ejecutando y completado | `transport/telegram.py` | [x] | Completado |
+| `orchestrator_v2_1/telegram_gateway.py` | tiempos de transcripción, memoria, routing, ejecución y voz | `transport/metrics.py` | [x] | Completado |
+| `orchestrator_v2_1/orchestrator.py` | recarga y reinicio controlados | `transport/lifecycle.py` | [x] | Completado |
+| `orchestrator_v2_1/telegram_gateway.py` | degradación limpia cuando Telegram o un proveedor falla | `transport/telegram.py` | [x] | Completado |
 | **Voz** |
 | `orchestrator_v2_1/orchestrator.py` | transcripción de notas de voz | `capabilities/voice.py` | [x] | Completado |
 | `orchestrator_v2_1/orchestrator.py` | Groq/Whisper como vía rápida y Gemini como respaldo | `capabilities/voice.py` | [x] | Completado |

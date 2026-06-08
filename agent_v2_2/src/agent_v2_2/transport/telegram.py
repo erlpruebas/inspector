@@ -17,9 +17,13 @@ class TelegramTransport:
         self.allowed_ids = self.allowed_users.union(self.allowed_chats)
         
         self.message_handler: Optional[Callable[[str, int], None]] = None
+        self.progress_handler: Optional[Callable[[int, str], None]] = None
 
     def set_message_handler(self, handler: Callable[[str, int], None]):
         self.message_handler = handler
+
+    def set_progress_handler(self, handler: Callable[[int, str], None]) -> None:
+        self.progress_handler = handler
 
     def _get_updates(self, offset: Optional[int] = None) -> List[Dict]:
         if not self.token:
@@ -39,9 +43,9 @@ class TelegramTransport:
             logger.error(f"Telegram getUpdates failed: {exc}")
             return []
 
-    def send_message(self, chat_id: int, text: str) -> None:
+    def send_message(self, chat_id: int, text: str) -> bool:
         if not self.token:
-            return
+            return False
         for chunk in self._chunk_message(text):
             try:
                 response = requests.post(
@@ -52,10 +56,12 @@ class TelegramTransport:
                 response.raise_for_status()
             except Exception as exc:
                 logger.error(f"Telegram sendMessage failed: {exc}")
+                return False
+        return True
 
-    def send_photo(self, chat_id: int, photo_path: Path, caption: str = "") -> None:
+    def send_photo(self, chat_id: int, photo_path: Path, caption: str = "") -> bool:
         if not self.token:
-            return
+            return False
         try:
             with photo_path.open("rb") as handle:
                 requests.post(
@@ -64,12 +70,14 @@ class TelegramTransport:
                     files={"photo": handle},
                     timeout=60,
                 )
+            return True
         except Exception as exc:
             logger.error(f"Telegram sendPhoto failed: {exc}")
+            return False
 
-    def send_audio(self, chat_id: int, audio_path: Path, caption: str = "") -> None:
+    def send_audio(self, chat_id: int, audio_path: Path, caption: str = "") -> bool:
         if not self.token:
-            return
+            return False
         try:
             with audio_path.open("rb") as handle:
                 requests.post(
@@ -78,8 +86,28 @@ class TelegramTransport:
                     files={"audio": handle},
                     timeout=60,
                 )
+            return True
         except Exception as exc:
             logger.error(f"Telegram sendAudio failed: {exc}")
+            return False
+
+    def send_progress(self, chat_id: int, stage: str, detail: str = "") -> bool:
+        label = {
+            "received": "Recibido",
+            "routed": "Enrutado",
+            "executing": "Ejecutando",
+            "completed": "Completado",
+            "failed": "Falló",
+        }.get(stage, stage)
+        message = f"Estado: {label}"
+        if detail:
+            message = f"{message}\n{detail}"
+        if self.progress_handler:
+            try:
+                self.progress_handler(chat_id, stage)
+            except Exception as exc:
+                logger.warning(f"Progress handler failed: {exc}")
+        return self.send_message(chat_id, message)
 
     def _chunk_message(self, text: str, limit: int = 3500) -> List[str]:
         cleaned = text.strip()

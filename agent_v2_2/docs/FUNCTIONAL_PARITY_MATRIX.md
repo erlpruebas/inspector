@@ -22,9 +22,9 @@
 | `orchestrator_v2_1/orchestrator.py` | proveedores alternativos ya integrados cuando estén configurados | `capabilities/voice.py` | [x] | Completado |
 | `orchestrator_v2_1/telegram_gateway.py` | envío del audio a Telegram | `transport/telegram.py` | [x] | Completado |
 | `orchestrator_v2_1/orchestrator.py` | reproducción opcional por el altavoz del ordenador | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | comandos `voz on/off` y `altavoz on/off` | `cli.py` / `transport/telegram.py` | [ ] | Pendiente |
-| `orchestrator_v2_1/orchestrator.py` | selección persistente de proveedor y voz | `config.py` | [ ] | Pendiente |
-| `orchestrator_v2_1/orchestrator.py` | precalentamiento | `capabilities/voice.py` | [ ] | Pendiente |
+| `orchestrator_v2_1/orchestrator.py` | comandos `voz on/off` y `altavoz on/off` | `cli.py` / `transport/telegram.py` | [x] | Completado |
+| `orchestrator_v2_1/orchestrator.py` | selección persistente de proveedor y voz | `capabilities/preferences.py` | [x] | Completado |
+| `orchestrator_v2_1/orchestrator.py` | precalentamiento | `capabilities/voice.py` | [x] | Completado |
 | `orchestrator_v2_1/orchestrator.py` | funcionamiento solo por texto cuando no exista proveedor de voz | `capabilities/voice.py` | [x] | Completado |
 | **Memoria y conversación** |
 | `orchestrator_v2_1/memory_retrieval.py` | memoria persistente por usuario e hilo | `capabilities/memory.py` | [x] | Completado |

@@ -15,6 +15,26 @@ class VoiceCapabilities:
         self.groq_api_key = os.getenv("GROQ_API_KEY", "").strip()
         self.gemini_api_key = os.getenv("GEMINI_API_KEY", "").strip() or os.getenv("GOOGLE_API_KEY", "").strip()
         self.elevenlabs_api_key = os.getenv("ELEVENLABS_API_KEY", "").strip()
+
+    def warmup(self) -> dict:
+        """Comprueba disponibilidad básica de proveedores de voz sin ejecutar síntesis real."""
+        availability = {
+            "edge": True,
+            "gemini": bool(self.gemini_api_key),
+            "elevenlabs": bool(self.elevenlabs_api_key),
+            "groq_stt": bool(self.groq_api_key),
+        }
+        try:
+            import edge_tts  # noqa: F401
+            availability["edge_import"] = True
+        except Exception:
+            availability["edge_import"] = False
+        try:
+            from google import genai  # noqa: F401
+            availability["gemini_sdk"] = True
+        except Exception:
+            availability["gemini_sdk"] = False
+        return availability
         
     def transcribe_audio_file(self, audio_path: Path, language: str = "es", prompt: str = "") -> str:
         """

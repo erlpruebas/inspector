@@ -4,6 +4,8 @@ import os
 import time
 from typing import Dict
 
+from .preferences import PreferenceStore
+
 
 class StatusManager:
     def __init__(self) -> None:
@@ -21,11 +23,12 @@ class StatusManager:
         }
 
     def get_feature_flags(self) -> Dict[str, bool]:
+        preferences = PreferenceStore().load()
         return {
-            "voz": os.getenv("VOICE_ENABLED", "0").strip().lower() in {"1", "true", "yes", "on"},
-            "altavoz": os.getenv("SPEAKER_ENABLED", "0").strip().lower() in {"1", "true", "yes", "on"},
-            "anonimización": os.getenv("ANONYMIZATION_ENABLED", "0").strip().lower() in {"1", "true", "yes", "on"},
-            "modo desarrollo": os.getenv("DEV_MODE_ENABLED", "0").strip().lower() in {"1", "true", "yes", "on"},
+            "voz": preferences.voice_enabled,
+            "altavoz": preferences.speaker_enabled,
+            "anonimización": preferences.anonymization_enabled,
+            "modo desarrollo": preferences.development_mode_enabled,
         }
 
     def generate_status_report(self) -> str:

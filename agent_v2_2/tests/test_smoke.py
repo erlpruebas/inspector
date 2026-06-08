@@ -4,6 +4,9 @@ from pathlib import Path
 
 from agent_v2_2.capabilities.catalog import create_default_catalog
 from agent_v2_2.capabilities.introspection import IntrospectionManager
+from agent_v2_2.capabilities.preferences import PreferenceStore
+from agent_v2_2.capabilities.voice import VoiceCapabilities
+from agent_v2_2.cli import check_status, set_speaker, set_voice, set_voice_name, set_voice_provider
 from agent_v2_2.config import Config, QuotaConfig, TelegramConfig, load_config, parse_int_list, parse_path_list
 from agent_v2_2.engines.codex_desktop import CodexDesktopOperator
 from agent_v2_2.models import CapabilityRequest, OrchestratorResult, TaskRequest
@@ -77,3 +80,28 @@ def test_introspection_manager_reports_capabilities() -> None:
     manager = IntrospectionManager()
     answer = manager.answer_question("¿Qué capacidades tienes?")
     assert "capacidades disponibles" in answer.body.lower()
+
+
+def test_preference_store_persists_flags(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    store = PreferenceStore()
+    state = store.toggle_voice(True)
+    assert state.voice_enabled is True
+    state = store.toggle_speaker(True)
+    assert state.speaker_enabled is True
+    state = store.set_voice_provider("edge")
+    assert state.voice_provider == "edge"
+    state = store.set_voice_name("Elvira")
+    assert state.voice_name == "Elvira"
+
+    reloaded = PreferenceStore().load()
+    assert reloaded.voice_enabled is True
+    assert reloaded.speaker_enabled is True
+    assert reloaded.voice_provider == "edge"
+    assert reloaded.voice_name == "Elvira"
+
+
+def test_voice_warmup_returns_a_status_map() -> None:
+    warmup = VoiceCapabilities().warmup()
+    assert "edge" in warmup
+    assert "groq_stt" in warmup

@@ -30,6 +30,7 @@ assistant/alarms.md
 assistant/media/
 assistant/inbox/
 assistant/runtime/
+runtime/
 assistant/__pycache__/
 .chrome-profile/
 .chrome-worker-*/
@@ -52,3 +53,8 @@ agente/*.png
 agente/*.docx
 agente/*.pptx
 configs/desktop_calibrations/
+!configs/desktop_calibrations/
+!configs/desktop_calibrations/*/
+!configs/desktop_calibrations/*/calibration.json
+agent_v2_2/runtime/
+agent_v2_2/src/agent_v2_2.egg-info/

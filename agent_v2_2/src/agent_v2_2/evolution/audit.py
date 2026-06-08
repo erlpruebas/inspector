@@ -14,11 +14,13 @@ class TaskRecord:
     source_path: Path
     category: str = ""
     block: str = ""
+    level: str = ""
     skills: List[str] = field(default_factory=list)
     required_files: List[str] = field(default_factory=list)
     requires_network: bool = False
     expected_operation: str = ""
     route_hypothesis: str = ""
+    dimensions: Dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -73,16 +75,18 @@ class TaskAuditor:
                     TaskRecord(
                         task_id=task_id,
                         title=title,
-                        source_path=path,
-                        category=str(item.get("category") or ""),
-                        block=str(item.get("block") or ""),
-                        skills=[str(skill) for skill in item.get("skills", []) if skill],
-                        required_files=[str(file) for file in item.get("required_files", []) if file],
-                        requires_network=bool(item.get("requires_network", False)),
-                        expected_operation=str(item.get("expected_operation") or ""),
-                        route_hypothesis=str(item.get("route_hypothesis") or ""),
-                    )
+                    source_path=path,
+                    category=str(item.get("category") or ""),
+                    block=str(item.get("block") or ""),
+                    level=str(item.get("level") or ""),
+                    skills=[str(skill) for skill in item.get("skills", []) if skill],
+                    required_files=[str(file) for file in item.get("required_files", []) if file],
+                    requires_network=bool(item.get("requires_network", False)),
+                    expected_operation=str(item.get("expected_operation") or ""),
+                    route_hypothesis=str(item.get("route_hypothesis") or ""),
+                    dimensions=dict(item.get("dimensions") or {}),
                 )
+            )
         return records
 
     def audit(self, root: Path) -> TaskAuditReport:

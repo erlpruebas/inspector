@@ -86,6 +86,25 @@ def evolution_activate() -> None:
     print(f"reason={status.reason}")
 
 
+def evolution_import() -> None:
+    controller = EvolutionController()
+    count = controller.import_benchmark_experiences()
+    print(f"imported={count}")
+
+
+def evolution_readiness() -> None:
+    controller = EvolutionController()
+    report = controller.readiness()
+    print(f"ready={'yes' if report.ready else 'no'}")
+    print(report.to_markdown())
+
+
+def audit_coverage() -> None:
+    controller = EvolutionController()
+    report = controller.coverage()
+    print(report.to_markdown())
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Inspector Agent 2.2 CLI")
     subparsers = parser.add_subparsers(dest="command", help="Comandos disponibles")
@@ -120,6 +139,8 @@ def main() -> None:
     audit_sub = audit_parser.add_subparsers(dest="audit_command", required=True)
     audit_tasks_parser = audit_sub.add_parser("tasks", help="Resume las tareas sintéticas disponibles")
     audit_tasks_parser.set_defaults(func=lambda args: audit_tasks())
+    audit_coverage_parser = audit_sub.add_parser("coverage", help="Analiza cobertura y huecos de las tareas")
+    audit_coverage_parser.set_defaults(func=lambda args: audit_coverage())
 
     evolution_parser = subparsers.add_parser("evolution", help="Control del sistema evolutivo")
     evolution_sub = evolution_parser.add_subparsers(dest="evolution_command", required=True)
@@ -127,6 +148,10 @@ def main() -> None:
     evolution_status_parser.set_defaults(func=lambda args: evolution_status())
     evolution_activate_parser = evolution_sub.add_parser("activate", help="Activa el sistema evolutivo si está maduro")
     evolution_activate_parser.set_defaults(func=lambda args: evolution_activate())
+    evolution_import_parser = evolution_sub.add_parser("import", help="Importa experiencias de benchmark")
+    evolution_import_parser.set_defaults(func=lambda args: evolution_import())
+    evolution_readiness_parser = evolution_sub.add_parser("readiness", help="Evalúa la preparación HITL")
+    evolution_readiness_parser.set_defaults(func=lambda args: evolution_readiness())
 
     args = parser.parse_args()
 

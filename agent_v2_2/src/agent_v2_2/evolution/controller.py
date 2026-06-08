@@ -8,7 +8,10 @@ from typing import Iterable, Optional
 
 from ..config import load_config
 from .audit import TaskAuditReport, TaskAuditor
+from .coverage import CoverageReport, TaskCoverageAnalyzer
+from .experience import BenchmarkExperienceImporter, ExperienceStore
 from .maturity import MaturityGate, MaturityReport
+from .readiness import HITLReadinessGate, HITLReadinessReport
 
 
 @dataclass
@@ -28,6 +31,8 @@ class EvolutionController:
         self.workspace_root.mkdir(parents=True, exist_ok=True)
         self.parity_matrix_path = parity_matrix_path or (Path(__file__).resolve().parents[3] / "docs" / "FUNCTIONAL_PARITY_MATRIX.md")
         self.state_path = self.workspace_root / "evolution_state.json"
+        self.experience_store = ExperienceStore(self.workspace_root / "evolution" / "experiences.jsonl")
+        self.benchmark_importer = BenchmarkExperienceImporter()
 
     def audit_tasks(self, task_paths: Optional[Iterable[Path]] = None) -> TaskAuditReport:
         auditor = TaskAuditor(task_paths)
@@ -35,6 +40,10 @@ class EvolutionController:
             return auditor.audit_paths(task_paths)
         root = Path(__file__).resolve().parents[4] / "benchmarks" / "tasks"
         return auditor.audit(root)
+
+    def coverage(self) -> CoverageReport:
+        root = Path(__file__).resolve().parents[4] / "benchmarks" / "tasks"
+        return TaskCoverageAnalyzer().analyze(root)
 
     def evaluate_maturity(self) -> MaturityReport:
         return MaturityGate(self.parity_matrix_path).evaluate()
@@ -75,3 +84,17 @@ class EvolutionController:
         audit = self.audit_tasks()
         maturity = self.evaluate_maturity()
         return EvolutionStatus(active=active, reason=reason, maturity=maturity, audit=audit)
+
+    def import_benchmark_experiences(self) -> int:
+        return self.benchmark_importer.import_all(self.experience_store)
+
+    def readiness(self) -> HITLReadinessReport:
+        audit = self.audit_tasks()
+        maturity = self.evaluate_maturity()
+        coverage = self.coverage()
+        return HITLReadinessGate(
+            audit=audit,
+            maturity=maturity,
+            experience_store=self.experience_store,
+            coverage=coverage,
+        ).evaluate()

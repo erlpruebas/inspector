@@ -9,6 +9,8 @@ from agent_v2_2.capabilities.voice import VoiceCapabilities
 from agent_v2_2.cli import check_status, set_speaker, set_voice, set_voice_name, set_voice_provider
 from agent_v2_2.config import Config, QuotaConfig, TelegramConfig, load_config, parse_int_list, parse_path_list
 from agent_v2_2.evolution.controller import EvolutionController
+from agent_v2_2.evolution.coverage import TaskCoverageAnalyzer
+from agent_v2_2.evolution.experience import BenchmarkExperienceImporter, ExperienceStore
 from agent_v2_2.engines.codex_desktop import CodexDesktopOperator
 from agent_v2_2.models import CapabilityRequest, OrchestratorResult, TaskRequest
 from agent_v2_2.routing.registry import ToolRegistry, ToolDefinition
@@ -146,3 +148,86 @@ def test_evolution_controller_can_audit_and_activate(tmp_path: Path, monkeypatch
     status = controller.activate()
     assert status.active is True
     assert status.audit.total_tasks >= 3
+
+
+def test_benchmark_importer_and_readiness(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+
+    tasks_root = tmp_path / "benchmarks" / "tasks"
+    results_root = tmp_path / "benchmarks" / "results" / "run-1"
+    results_root.mkdir(parents=True, exist_ok=True)
+    tasks_root.mkdir(parents=True, exist_ok=True)
+
+    tasks_file = tasks_root / "synthetic.json"
+    tasks_file.write_text(
+        """
+        [
+          {
+            "id": "task-1",
+            "title": "Synthetic task",
+            "block": "memory",
+            "skills": ["cap_extract_short"],
+            "required_files": ["memory.md"],
+            "requires_network": false
+          }
+        ]
+        """.strip(),
+        encoding="utf-8",
+    )
+
+    output_file = results_root / "out.md"
+    output_file.write_text("answer", encoding="utf-8")
+    (results_root / "summary.json").write_text(
+        """
+        [
+          {
+            "engine": "tool-a",
+            "task_id": "task-1",
+            "returncode": 0,
+            "timed_out": false,
+            "elapsed_seconds": 1.23,
+            "output_files": ["D:/tmp/out.md"],
+            "model": "mock"
+          }
+        ]
+        """.strip().replace("D:/tmp/out.md", str(output_file).replace("\\", "/")),
+        encoding="utf-8",
+    )
+    (results_root / "tool_a_competitive.json").write_text(
+        """
+        [
+          {
+            "task_id": "task-1",
+            "judge_model": "gemini-2.5-pro",
+            "quality_winner": "tool-a",
+            "fastest_sufficient": "tool-a",
+            "candidates": [
+              {"engine": "tool-a", "score": 9.0, "passed": true, "comment": "ok"}
+            ]
+          }
+        ]
+        """.strip(),
+        encoding="utf-8",
+    )
+
+    store = ExperienceStore(tmp_path / "evolution" / "experiences.jsonl")
+    importer = BenchmarkExperienceImporter(results_root=tmp_path / "benchmarks" / "results", tasks_root=tasks_root)
+    imported = importer.import_all(store)
+    assert imported == 1
+    experiences = store.load()
+    assert len(experiences) == 1
+    assert experiences[0].task_id == "task-1"
+    assert experiences[0].judge_scores
+
+    controller = EvolutionController(workspace_root=tmp_path)
+    controller.benchmark_importer = importer
+    controller.experience_store = store
+    readiness = controller.readiness()
+    assert "experiencias" in readiness.to_markdown().lower()
+
+
+def test_task_coverage_analyzer_reports_dimensions() -> None:
+    coverage = TaskCoverageAnalyzer().analyze(Path("benchmarks/tasks"))
+    assert coverage.total_tasks >= 25
+    assert "text" in coverage.file_buckets or "csv" in coverage.file_buckets
+    assert coverage.to_markdown().startswith("# Task coverage report")

@@ -4,7 +4,8 @@ import json
 from pathlib import Path
 
 from agent_v2_2.config import Config, QuotaConfig, TelegramConfig
-from agent_v2_2.models import Attachment
+from agent_v2_2.evolution import BenchmarkArena, ExperienceStore
+from agent_v2_2.models import Attachment, OrchestratorResult
 from agent_v2_2.evolution.controller import EvolutionController
 from agent_v2_2.routing.builder import ContractBuilder
 from agent_v2_2.routing.contract import (
@@ -191,3 +192,107 @@ def test_task_normalizer_builds_primary_capability_and_rubric(tmp_path: Path, mo
     assert task.judge_rubric["correctness"] == 4
     assert "contains:diferencias" in task.objective_checks
     assert task.compatible_tools[0] == "gemini_pro_long_context"
+
+
+def test_task_normalizer_covers_web_research_and_multi_document_tasks(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    sample = tmp_path / "sample_tasks_extra.json"
+    sample.write_text(
+        json.dumps(
+            [
+                {
+                    "id": "task-web",
+                    "title": "Investigate competitors",
+                    "prompt": "Investiga con varias fuentes web las alternativas a una herramienta de encuestas.",
+                    "skills": ["web_search", "comparison", "reporting"],
+                    "required_files": ["notes.md"],
+                    "requires_network": True,
+                },
+                {
+                    "id": "task-web-single",
+                    "title": "Single web lookup",
+                    "prompt": "Busca en la web la dirección exacta de la floristería del barrio.",
+                    "skills": ["web"],
+                    "required_files": [],
+                    "requires_network": True,
+                },
+                {
+                    "id": "task-multi",
+                    "title": "Multi document summary",
+                    "prompt": "Resume y combina los dos documentos para preparar un informe ejecutivo.",
+                    "skills": ["read_files", "summarization"],
+                    "required_files": ["source-a.md", "source-b.csv"],
+                    "requires_network": False,
+                },
+            ],
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+    report = EvolutionController(workspace_root=tmp_path).normalize_tasks([sample])
+    assert report.total_tasks == 3
+    primary = {task.task_id: task.primary_capability for task in report.records}
+    assert primary["task-web"] == "cap_investigate"
+    assert primary["task-web-single"] == "cap_web_punctual"
+    assert primary["task-multi"] == "cap_synth_multi"
+    assert "cap_investigate" not in report.missing_capabilities
+    assert "cap_web_punctual" not in report.missing_capabilities
+
+
+def test_real_benchmark_normalization_has_full_capability_coverage(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    report = EvolutionController(workspace_root=tmp_path).normalize_tasks()
+    assert report.total_tasks >= 300
+    assert report.missing_rubrics == 0
+    assert report.network_tasks > 0
+    assert report.missing_capabilities == []
+
+
+def test_benchmark_arena_persists_runs_with_judge(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    sample = tmp_path / "sample_arena.json"
+    sample.write_text(
+        json.dumps(
+            [
+                {
+                    "id": "arena-1",
+                    "title": "Compare spreadsheet",
+                    "prompt": "Compara el Excel adjunto con el anterior y dime las diferencias.",
+                    "skills": ["compare", "data_filtering"],
+                    "required_files": ["report.xlsx"],
+                    "expected_keys": ["diferencias", "ventas"],
+                    "rubric": {"correctness": 4, "traceability": 2},
+                }
+            ],
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+    normalized = EvolutionController(workspace_root=tmp_path).normalize_tasks([sample])
+    arena = BenchmarkArena(experience_store=ExperienceStore(tmp_path / "arena_experiences.jsonl"))
+
+    def executor(task, tool_id, contract):
+        del task, tool_id, contract
+        return OrchestratorResult(
+            ok=True,
+            tool_id="gemini_pro_long_context",
+            tier="reasoning",
+            output="diferencias detectadas en ventas",
+        )
+
+    def judge(task, result):
+        del task, result
+        return {"judge": "gemini-2.5-pro", "score": 8.5, "passed": True, "comment": "ok"}
+
+    report = arena.run(normalized.records, executor=executor, judge=judge)
+    assert report.total_runs == 1
+    assert report.passed_runs == 1
+    assert report.judge_count == 1
+    saved = arena.experience_store.load()
+    assert len(saved) == 1
+    assert saved[0].judge_scores

@@ -77,10 +77,12 @@ The command prints a markdown summary with:
 - network-task counts
 - a sample of normalized tasks
 
+On the current benchmark battery, the report shows full coverage of the 17
+operational capabilities and zero missing rubrics.
+
 ## Design Notes
 
 - This model is intentionally deterministic.
 - It keeps the old benchmark content intact.
 - It is compatible with later judge scoring and learned capability matrices.
 - It is meant to be expanded, not replaced, by later HITL telemetry.
-

@@ -225,6 +225,38 @@ made representative instead of merely large.
   missing rubrics, `28` network tasks, and a stable primary-capability
   distribution across the existing benchmark set.
 
+## 2026-06-09: Step 4 Complete
+
+### Implemented
+
+- Reworked task normalization so the benchmark battery now classifies tasks
+  by primary and secondary operational capability, not just by file type.
+- Added explicit coverage for all 17 operational capabilities in the real
+  benchmark battery.
+- Added normalized coverage reporting for missing capabilities, compatible
+  tools and network-heavy tasks.
+- Added regression tests that verify the real benchmark battery has complete
+  capability coverage and no missing rubrics.
+
+### Verification
+
+- Full Agent 2.2 suite: `27 passed`.
+- Real benchmark normalization reports `356` tasks, `0` missing rubrics and
+  `0` missing capabilities.
+- The normalized battery now covers all 17 operational capabilities.
+
+### Current roadmap position
+
+- Step 4: `COMPLETE`.
+- Step 5: `IN_PROGRESS`.
+
+### Next action
+
+Build the valid benchmark arena: run compatible tools over representative
+tasks, persist latency and objective checks, and add blind judgment results so
+the learned capability matrix can be computed from evidence rather than from
+labels alone.
+
 ### Current roadmap position
 
 - Step 3: `COMPLETE`.
@@ -235,3 +267,32 @@ made representative instead of merely large.
 Expand the normalized model so it covers the full benchmark battery and then
 use it to drive per-capability judge scoring and a more rigorous evaluation
 arena.
+
+## 2026-06-09: Step 5 Benchmark Arena Started
+
+### Implemented
+
+- Added a reusable `BenchmarkArena` layer that executes normalized tasks
+  against a selected tool, evaluates objective checks and stores router
+  experiences.
+- Added `ArenaRunResult` and `ArenaReport` for per-run and aggregate evidence.
+- Added a pluggable `ArenaExecutor` and `ArenaJudge` interface so real tool
+  runners and blind judges can be wired in later without changing the arena
+  contract.
+- Documented the benchmark arena and exposed it through the evolution package.
+
+### Verification
+
+- Full Agent 2.2 suite: `28 passed`.
+- Arena smoke test persists runs, objective checks and judge scores.
+
+### Current roadmap position
+
+- Step 4: `COMPLETE`.
+- Step 5: `IN_PROGRESS`.
+
+### Next action
+
+Wire the arena to representative real executions and blind judgments so the
+experience store begins to reflect latency and quality evidence from actual
+compatible tools instead of only simulated runs.

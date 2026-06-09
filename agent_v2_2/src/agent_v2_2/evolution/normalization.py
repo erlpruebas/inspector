@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence
 
-from ..capabilities.catalog import ToolEntry
+from ..capabilities.catalog import ToolEntry, create_default_catalog
 from ..models import Attachment
 from ..routing.builder import ContractBuilder
 from ..routing.contract import RequestContract
@@ -21,12 +21,15 @@ SKILL_TO_CAPABILITY: Dict[str, str] = {
     "task_extraction": "cap_extract_long",
     "summarization": "cap_synth_long",
     "summary": "cap_synth_long",
+    "reporting": "cap_synth_multi",
     "compare": "cap_compare",
     "data_filtering": "cap_calc_filter",
     "calculation": "cap_calc_filter",
     "draft": "cap_transform_redact",
     "email": "cap_transform_redact",
     "web_research": "cap_web_multi",
+    "web_search": "cap_investigate",
+    "single_web_lookup": "cap_web_punctual",
     "web": "cap_web_punctual",
     "audio": "cap_extract_long",
     "ocr": "cap_read_visual",
@@ -79,6 +82,7 @@ class NormalizedTaskReport:
     compatible_tools: Dict[str, int]
     missing_rubrics: int
     network_tasks: int
+    missing_capabilities: List[str] = field(default_factory=list)
     records: List[NormalizedTask] = field(default_factory=list)
 
     def to_markdown(self) -> str:
@@ -93,6 +97,12 @@ class NormalizedTaskReport:
         lines.append("")
         lines.append(f"- missing rubrics: {self.missing_rubrics}")
         lines.append(f"- network tasks: {self.network_tasks}")
+        lines.append("- missing capabilities:")
+        if self.missing_capabilities:
+            for capability in self.missing_capabilities:
+                lines.append(f"  - {capability}")
+        else:
+            lines.append("  - none")
         lines.append("")
         lines.append("## Sample tasks")
         for task in self.records[:10]:
@@ -165,12 +175,15 @@ class TaskNormalizer:
         compatible_tools = Counter(tool for task in records for tool in task.compatible_tools)
         missing_rubrics = sum(1 for task in records if not task.judge_rubric)
         network_tasks = sum(1 for task in records if task.requires_network)
+        declared_capabilities = {capability.id for capability in create_default_catalog().capabilities}
+        missing_capabilities = sorted(declared_capabilities - set(primary_capabilities))
         return NormalizedTaskReport(
             total_tasks=len(records),
             primary_capabilities=dict(primary_capabilities),
             compatible_tools=dict(compatible_tools),
             missing_rubrics=missing_rubrics,
             network_tasks=network_tasks,
+            missing_capabilities=missing_capabilities,
             records=records,
         )
 
@@ -214,6 +227,21 @@ class TaskNormalizer:
             mapped = self._capability_from_operation(record.expected_operation)
             if mapped:
                 return mapped
+        if record.requires_network:
+            prompt = f"{record.prompt} {record.user_request} {record.title}".casefold()
+            if any(marker in prompt for marker in ("research", "investiga", "fuentes", "compila", "estado del arte")):
+                return "cap_investigate"
+            return "cap_web_punctual"
+        if len(record.required_files) >= 2:
+            prompt = f"{record.prompt} {record.user_request} {record.title}".casefold()
+            if any(marker in prompt for marker in ("resume", "sintetiza", "sumariza", "report", "informe", "correo", "email", "draft")):
+                return "cap_synth_multi"
+            if any(marker in prompt for marker in ("compara", "diferencia", "cruza", "relaciona", "consolida", "combina")):
+                return "cap_extract_cross"
+            return "cap_extract_cross"
+        attachment_capability = self._attachment_primary_capability(record)
+        if attachment_capability:
+            return attachment_capability
         if record.skills:
             for skill in record.skills:
                 mapped = SKILL_TO_CAPABILITY.get(skill.casefold())
@@ -283,6 +311,8 @@ class TaskNormalizer:
             "compare_spreadsheet": "cap_compare",
             "web_research": "cap_investigate",
             "web_lookup": "cap_web_punctual",
+            "single_web_lookup": "cap_web_punctual",
+            "url_lookup": "cap_web_punctual",
             "calculate_report": "cap_calc_filter",
             "structured_calculation": "cap_calc_filter",
             "ocr_extraction": "cap_read_visual",
@@ -295,6 +325,8 @@ class TaskNormalizer:
             return mapping[normalized]
         if "memory" in normalized:
             return "cap_extract_short"
+        if "research" in normalized or "investigate" in normalized:
+            return "cap_investigate"
         if "draft" in normalized or "redact" in normalized:
             return "cap_transform_redact"
         if "compare" in normalized:
@@ -308,3 +340,26 @@ class TaskNormalizer:
         if "verify" in normalized:
             return "cap_verify"
         return None
+
+    def _attachment_primary_capability(self, record: TaskRecord) -> Optional[str]:
+        bucket_counts = Counter(self._attachment_kind(Path(file)) for file in record.required_files)
+        if not bucket_counts:
+            return None
+        bucket = bucket_counts.most_common(1)[0][0]
+        mapping = {
+            "spreadsheet": "cap_calc_filter",
+            "document": "cap_read_pdf_bin",
+            "image": "cap_read_visual",
+            "audio": "cap_extract_long",
+            "archive": "cap_inspect_zip",
+            "email": "cap_transform_redact",
+            "code": "cap_exec_tech",
+            "text": "cap_extract_long",
+        }
+        if bucket == "document":
+            prompt = f"{record.prompt} {record.user_request} {record.title}".casefold()
+            if any(marker in prompt for marker in ("web", "internet", "buscar", "busca", "buscar", "fuente", "investiga")):
+                return "cap_web_multi"
+            if any(marker in prompt for marker in ("resumen", "resume", "sintetiza", "consolida", "combina")):
+                return "cap_synth_multi"
+        return mapping.get(bucket)

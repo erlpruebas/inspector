@@ -30,8 +30,9 @@ abajo.
 9. [docs/ROUTER_CAPABILITIES_GAIA_GAPS_20260607.md](./docs/ROUTER_CAPABILITIES_GAIA_GAPS_20260607.md)
 10. [docs/HITL_EXCELLENCE_RESULTS_20260607.md](./docs/HITL_EXCELLENCE_RESULTS_20260607.md)
 11. [agent_v2_2/docs/TASK_NORMALIZATION.md](./agent_v2_2/docs/TASK_NORMALIZATION.md)
-12. [orchestrator_v2_1/README.md](./orchestrator_v2_1/README.md)
-13. [orchestrator_v2_1/capability_catalog.json](./orchestrator_v2_1/capability_catalog.json)
+12. [agent_v2_2/docs/BENCHMARK_ARENA.md](./agent_v2_2/docs/BENCHMARK_ARENA.md)
+13. [orchestrator_v2_1/README.md](./orchestrator_v2_1/README.md)
+14. [orchestrator_v2_1/capability_catalog.json](./orchestrator_v2_1/capability_catalog.json)
 
 ## Resumen corto
 
@@ -53,6 +54,8 @@ abajo.
   3.1 Pro vs Codex 5.5.
 - `agent_v2_2/docs/TASK_NORMALIZATION.md` explica el modelo normalizado de
   tareas y el comando `audit normalize`.
+- `agent_v2_2/docs/BENCHMARK_ARENA.md` explica la arena de benchmark y cómo
+  ejecuta tareas normalizadas con jueces y persistencia de experiencias.
 - `orchestrator_v2_1/README.md` describe el orquestador v2.1 y el modo
   desarrollo.
 - `orchestrator_v2_1/capability_catalog.json` es el contrato legible por

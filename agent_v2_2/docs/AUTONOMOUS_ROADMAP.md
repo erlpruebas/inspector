@@ -23,8 +23,8 @@ verified. Creating a module or marking a checklist is not sufficient evidence.
 | 1 | COMPLETE | Canonical capability contract | One versioned schema for preparation, required access, formats, operation, cognitive requirement and guarantees; validation tests |
 | 2 | COMPLETE | Normalized tool catalog | Every real tool has a stable ID, invocation path, binary access flags, supported file operations, eligibility and measured evidence |
 | 3 | COMPLETE | End-to-end vertical flow | Telegram text/file/voice request reaches preparation, routing, execution, verification, response and experience storage |
-| 4 | IN_PROGRESS | Normalized task and evaluation model | Tasks identify primary/secondary capabilities, compatible tools, objective checks and per-capability judge rubrics |
-| 5 | PENDING | Valid benchmark arena | Compatible tools run against representative tasks; latency, objective checks and blind Gemini judgments are persisted; Codex arbitrates selected cases |
+| 4 | COMPLETE | Normalized task and evaluation model | Tasks identify primary/secondary capabilities, compatible tools, objective checks and per-capability judge rubrics |
+| 5 | IN_PROGRESS | Valid benchmark arena | Compatible tools run against representative tasks; latency, objective checks and blind Gemini judgments are persisted; Codex arbitrates selected cases |
 | 6 | PENDING | Learned capability matrix | Tool x capability x task-shape statistics include samples, mean, dispersion, pass rate, confidence and latency |
 | 7 | PENDING | Real evolutionary router | Hard compatibility filtering, confidence-aware fastest-sufficient selection, safe exploration and rollback are tested |
 | 8 | PENDING | HITL readiness | Real Telegram tests can start with documented prompts, feedback capture, friction metrics and recovery procedures |
@@ -75,7 +75,7 @@ Evidence is added here when each step closes:
 | 1 | 2026-06-09 | `18 passed`; memory-to-web and XLSX preservation contract tests | pending commit |
 | 2 | 2026-06-09 | 13 stable routes; 10 eligible; access-method validation; `18 passed` | pending commit |
 | 3 | 2026-06-09 | `24 passed`; Telegram transport kwargs test; canonical contract builder test; runtime voice/status flow tests | pending commit |
-| 4 | - | - | - |
+| 4 | 2026-06-09 | `27 passed`; normalized battery over `356` tasks; `0` missing rubrics; `0` missing capabilities | pending commit |
 | 5 | - | - | - |
 | 6 | - | - | - |
 | 7 | - | - | - |

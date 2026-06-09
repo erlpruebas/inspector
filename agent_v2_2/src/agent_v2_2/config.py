@@ -14,6 +14,8 @@ class TelegramConfig(BaseModel):
 
 class QuotaConfig(BaseModel):
     minimum_quota_percent: int = 25
+    minimum_weekly_percent: int = 0
+    max_snapshot_age_seconds: int = 120
     retry_margin_seconds: int = 300
 
 class Config(BaseModel):
@@ -44,6 +46,8 @@ def load_config() -> Config:
         ),
         quota=QuotaConfig(
             minimum_quota_percent=int(os.getenv("CODEX_MINIMUM_QUOTA_PERCENT", "25")),
+            minimum_weekly_percent=int(os.getenv("CODEX_MINIMUM_WEEKLY_PERCENT", "0")),
+            max_snapshot_age_seconds=int(os.getenv("CODEX_QUOTA_MAX_AGE_SECONDS", "120")),
             retry_margin_seconds=int(os.getenv("CODEX_RETRY_MARGIN_SECONDS", "300")),
         ),
         workspace_root=workspace_root,

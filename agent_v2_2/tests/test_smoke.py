@@ -14,7 +14,13 @@ from agent_v2_2.evolution.experience import BenchmarkExperienceImporter, Experie
 from agent_v2_2.engines.codex_desktop import CodexDesktopOperator
 from agent_v2_2.models import CapabilityRequest, OrchestratorResult, TaskRequest
 from agent_v2_2.routing.registry import ToolRegistry, ToolDefinition
-from agent_v2_2.scheduling.codex_quota import CodexQuotaMonitor
+from agent_v2_2.scheduling.codex_quota import (
+    CodexQuotaMonitor,
+    CodexQuotaSnapshot,
+    parse_rate_limits_response,
+)
+from agent_v2_2.scheduling.autonomy import QuotaAwareScheduler
+from agent_v2_2.scheduling.queue import TaskQueue
 from agent_v2_2.transport.lifecycle import LifecycleManager
 from agent_v2_2.transport.metrics import MetricsRecorder
 from agent_v2_2.transport.queue import ExecutionMailbox
@@ -67,13 +73,117 @@ def test_registry_and_models_are_instantiable() -> None:
     assert isinstance(TaskRequest.model_validate(request.model_dump()), TaskRequest)
 
 
-def test_codex_quota_monitor_default_footer_is_safe(tmp_path: Path, monkeypatch) -> None:
+def test_codex_quota_monitor_uses_real_window_snapshots(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.chdir(tmp_path)
-    monitor = CodexQuotaMonitor()
-    assert monitor.get_remaining_quota().startswith("Cuota Codex:")
-    assert "Codex" in monitor.get_footer()
-    monitor.record_usage("codex", 250_000)
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    snapshot = CodexQuotaSnapshot(
+        five_hour_remaining=80,
+        weekly_remaining=50,
+        five_hour_resets_at=2_000_000_000,
+        weekly_resets_at=2_000_100_000,
+        captured_at=2_000_000_000,
+    )
+    monkeypatch.setattr("agent_v2_2.scheduling.codex_quota.time.time", lambda: 2_000_000_010)
+    monitor = CodexQuotaMonitor(reader=lambda: snapshot)
+    assert monitor.refresh() == snapshot
+    assert monitor.can_schedule_codex()
     assert not monitor.should_reject(1000)
+    assert "80% five-hour" in monitor.get_remaining_quota()
+    assert monitor.get_footer() is not None
+
+    reloaded = CodexQuotaMonitor(reader=lambda: snapshot)
+    assert reloaded.snapshot() == snapshot
+
+
+def test_codex_quota_monitor_pauses_at_five_hour_reserve(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    monkeypatch.setattr("agent_v2_2.scheduling.codex_quota.time.time", lambda: 2_000_000_010)
+    snapshot = CodexQuotaSnapshot(
+        five_hour_remaining=25,
+        weekly_remaining=40,
+        five_hour_resets_at=2_000_000_500,
+        weekly_resets_at=2_000_100_000,
+        captured_at=2_000_000_000,
+    )
+    monitor = CodexQuotaMonitor(reader=lambda: snapshot)
+    monitor.refresh()
+    assert not monitor.can_schedule_codex()
+    assert "Five-hour" in (monitor.pause_reason() or "")
+
+
+def test_parse_real_codex_rate_limit_response() -> None:
+    snapshot = parse_rate_limits_response(
+        {
+            "result": {
+                "rateLimits": {
+                    "primary": {"usedPercent": 8, "resetsAt": 2_000_000_000},
+                    "secondary": {"usedPercent": 93, "resetsAt": 2_000_100_000},
+                }
+            }
+        }
+    )
+    assert snapshot.five_hour_remaining == 92
+    assert snapshot.weekly_remaining == 7
+
+
+def test_quota_scheduler_pauses_codex_and_runs_other_work(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    monkeypatch.setattr("agent_v2_2.scheduling.codex_quota.time.time", lambda: 2_000_000_010)
+    blocked = CodexQuotaSnapshot(
+        five_hour_remaining=25,
+        weekly_remaining=20,
+        five_hour_resets_at=2_000_000_500,
+        weekly_resets_at=2_000_100_000,
+        captured_at=2_000_000_000,
+    )
+    monitor = CodexQuotaMonitor(
+        snapshot_path=tmp_path / "quota.json",
+        reader=lambda: blocked,
+    )
+    queue = TaskQueue(store_path=tmp_path / "queue.json")
+    codex_id = queue.enqueue(TaskRequest(text="code", tool_name="codex_gpt_5_5"))
+    local_id = queue.enqueue(TaskRequest(text="docs", tool_name="local_direct"))
+    scheduler = QuotaAwareScheduler(
+        task_queue=queue,
+        quota_monitor=monitor,
+        checkpoint_path=tmp_path / "checkpoint.json",
+    )
+
+    selected = scheduler.next_runnable()
+    assert selected is not None
+    assert selected.task_id == local_id
+    codex_task = next(task for task in queue.list_tasks() if task.task_id == codex_id)
+    assert codex_task.status == "paused_quota"
+    assert codex_task.pause_reason
+
+
+def test_quota_scheduler_resumes_codex_after_reset(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    monkeypatch.setattr("agent_v2_2.scheduling.codex_quota.time.time", lambda: 2_000_000_010)
+    allowed = CodexQuotaSnapshot(
+        five_hour_remaining=90,
+        weekly_remaining=20,
+        five_hour_resets_at=2_000_000_500,
+        weekly_resets_at=2_000_100_000,
+        captured_at=2_000_000_000,
+    )
+    monitor = CodexQuotaMonitor(
+        snapshot_path=tmp_path / "quota.json",
+        reader=lambda: allowed,
+    )
+    queue = TaskQueue(store_path=tmp_path / "queue.json")
+    task_id = queue.enqueue(TaskRequest(text="code", tool_name="codex_gpt_5_5"))
+    queue.mark_paused(task_id, reason="quota", status="paused_quota")
+    scheduler = QuotaAwareScheduler(
+        task_queue=queue,
+        quota_monitor=monitor,
+        checkpoint_path=tmp_path / "checkpoint.json",
+    )
+
+    selected = scheduler.next_runnable()
+    assert selected is not None
+    assert selected.task_id == task_id
+    assert selected.status == "pending"
 
 
 def test_desktop_codex_operator_falls_back_when_cli_missing(tmp_path: Path) -> None:

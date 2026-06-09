@@ -4,15 +4,25 @@ import json
 from pathlib import Path
 
 from agent_v2_2.config import Config, QuotaConfig, TelegramConfig
-from agent_v2_2.evolution import BenchmarkArena, ExperienceStore
+from agent_v2_2.evolution import (
+    BenchmarkArena,
+    BenchmarkRunner,
+    CapabilityMatrixBuilder,
+    ExperienceStore,
+    NormalizedTask,
+    RouterExperience,
+)
 from agent_v2_2.models import Attachment, OrchestratorResult
 from agent_v2_2.evolution.controller import EvolutionController
 from agent_v2_2.routing.builder import ContractBuilder
 from agent_v2_2.routing.contract import (
     CognitiveLevel,
-    Guarantee,
     InstrumentalCapability,
     Operation,
+    RequestContract,
+)
+from agent_v2_2.routing.contract import (
+    Guarantee,
     PrepareActionType,
 )
 from agent_v2_2.runtime import TelegramAgentRuntime
@@ -296,3 +306,90 @@ def test_benchmark_arena_persists_runs_with_judge(tmp_path: Path, monkeypatch) -
     saved = arena.experience_store.load()
     assert len(saved) == 1
     assert saved[0].judge_scores
+
+
+def test_capability_matrix_aggregates_experiences(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    store = ExperienceStore(tmp_path / "matrix_experiences.jsonl")
+    store.append_many(
+        [
+            RouterExperience(
+                experience_id="exp-1",
+                timestamp="2026-06-09T10:00:00+00:00",
+                catalog_version=4,
+                task_id="arena-1",
+                task_shape="compare",
+                tool_id="gemini_pro_long_context",
+                required_capabilities=["cap_compare"],
+                cognitive_requirements=["comparison"],
+                elapsed_seconds=3.0,
+                objective_checks={"passed": True, "checks": []},
+                judge_scores=[{"judge": "gemini-2.5-pro", "score": 8.5, "passed": True}],
+                outcome="sufficient",
+                metadata={"primary_capability": "cap_compare"},
+            ),
+            RouterExperience(
+                experience_id="exp-2",
+                timestamp="2026-06-09T10:00:01+00:00",
+                catalog_version=4,
+                task_id="arena-2",
+                task_shape="compare",
+                tool_id="gemini_pro_long_context",
+                required_capabilities=["cap_compare"],
+                cognitive_requirements=["comparison"],
+                elapsed_seconds=5.0,
+                objective_checks={"passed": True, "checks": []},
+                judge_scores=[{"judge": "gemini-2.5-pro", "score": 9.0, "passed": True}],
+                outcome="sufficient",
+                metadata={"primary_capability": "cap_compare"},
+            ),
+        ]
+    )
+
+    report = CapabilityMatrixBuilder(store).build()
+    assert report.total_experiences == 2
+    assert report.total_cells == 1
+    cell = report.cells[0]
+    assert cell.tool_id == "gemini_pro_long_context"
+    assert cell.capability == "cap_compare"
+    assert cell.samples == 2
+    assert cell.pass_rate == 1.0
+    assert cell.mean_score >= 8.5
+    assert cell.mean_seconds == 4.0
+    assert cell.confidence == 0.2
+
+
+def test_benchmark_runner_produces_report_with_fallback(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    runner = BenchmarkRunner(workspace_root=tmp_path / "arena")
+    contract = ContractBuilder().build(
+        "Redacta un breve resumen de este informe.",
+        attachments=[],
+        metadata={"task_id": "arena-task"},
+    )
+    normalized = NormalizedTask(
+        task_id="arena-task",
+        title="Fallback task",
+        source_path=Path("sample.json"),
+        prompt="Redacta un breve resumen de este informe.",
+        primary_capability="cap_synth_long",
+        secondary_capabilities=[],
+        compatible_tools=["local_direct"],
+        objective_checks=["contains:resumen"],
+        judge_rubric={"correctness": 4},
+        task_shape="summarize",
+        route_hypothesis="",
+        required_files=[],
+        expected_outputs=["resultado.md"],
+        requires_network=False,
+        dimensions={},
+        contract=contract.model_dump(mode="json"),
+    )
+    report = BenchmarkArena(experience_store=ExperienceStore(tmp_path / "arena_store.jsonl")).run(
+        [normalized],
+        executor=runner.build_executor(),
+        judge=runner.build_judge(),
+    )
+    assert report.total_runs == 1
+    assert report.judge_count == 1
+    assert report.runs[0].tool_id == "local_direct"

@@ -10,6 +10,8 @@ from ..config import load_config
 from .audit import TaskAuditReport, TaskAuditor
 from .coverage import CoverageReport, TaskCoverageAnalyzer
 from .experience import BenchmarkExperienceImporter, ExperienceStore
+from .benchmark_runner import BenchmarkRunner
+from .matrix import CapabilityMatrixBuilder, CapabilityMatrixReport
 from .maturity import MaturityGate, MaturityReport
 from .normalization import NormalizedTaskReport, TaskNormalizer
 from .readiness import HITLReadinessGate, HITLReadinessReport
@@ -34,6 +36,8 @@ class EvolutionController:
         self.state_path = self.workspace_root / "evolution_state.json"
         self.experience_store = ExperienceStore(self.workspace_root / "evolution" / "experiences.jsonl")
         self.benchmark_importer = BenchmarkExperienceImporter()
+        self.matrix_builder = CapabilityMatrixBuilder(self.experience_store)
+        self.benchmark_runner = BenchmarkRunner(workspace_root=self.workspace_root / "arena")
 
     def audit_tasks(self, task_paths: Optional[Iterable[Path]] = None) -> TaskAuditReport:
         paths = [Path(path) for path in (task_paths or [])]
@@ -98,6 +102,20 @@ class EvolutionController:
 
     def import_benchmark_experiences(self) -> int:
         return self.benchmark_importer.import_all(self.experience_store)
+
+    def capability_matrix(self) -> CapabilityMatrixReport:
+        return self.matrix_builder.build()
+
+    def run_benchmark_arena(self, task_paths: Optional[Iterable[Path]] = None, limit: Optional[int] = None):
+        if task_paths:
+            root_paths = [Path(path) for path in task_paths]
+            if len(root_paths) == 1 and root_paths[0].is_dir():
+                path = root_paths[0]
+            else:
+                path = root_paths[0]
+        else:
+            path = Path(__file__).resolve().parents[4] / "benchmarks" / "tasks"
+        return self.benchmark_runner.run_arena(path, limit=limit)
 
     def readiness(self) -> HITLReadinessReport:
         audit = self.audit_tasks()

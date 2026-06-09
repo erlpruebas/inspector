@@ -25,7 +25,7 @@ verified. Creating a module or marking a checklist is not sufficient evidence.
 | 3 | COMPLETE | End-to-end vertical flow | Telegram text/file/voice request reaches preparation, routing, execution, verification, response and experience storage |
 | 4 | COMPLETE | Normalized task and evaluation model | Tasks identify primary/secondary capabilities, compatible tools, objective checks and per-capability judge rubrics |
 | 5 | IN_PROGRESS | Valid benchmark arena | Compatible tools run against representative tasks; latency, objective checks and blind Gemini judgments are persisted; Codex arbitrates selected cases |
-| 6 | PENDING | Learned capability matrix | Tool x capability x task-shape statistics include samples, mean, dispersion, pass rate, confidence and latency |
+| 6 | IN_PROGRESS | Learned capability matrix | Tool x capability x task-shape statistics include samples, mean, dispersion, pass rate, confidence and latency |
 | 7 | PENDING | Real evolutionary router | Hard compatibility filtering, confidence-aware fastest-sufficient selection, safe exploration and rollback are tested |
 | 8 | PENDING | HITL readiness | Real Telegram tests can start with documented prompts, feedback capture, friction metrics and recovery procedures |
 

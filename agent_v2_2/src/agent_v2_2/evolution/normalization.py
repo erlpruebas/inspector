@@ -70,6 +70,7 @@ class NormalizedTask:
     task_shape: str = ""
     route_hypothesis: str = ""
     required_files: List[str] = field(default_factory=list)
+    expected_outputs: List[str] = field(default_factory=list)
     requires_network: bool = False
     dimensions: Dict[str, Any] = field(default_factory=dict)
     contract: Dict[str, Any] = field(default_factory=dict)
@@ -146,6 +147,7 @@ class TaskNormalizer:
             title=record.title,
             source_path=record.source_path,
             prompt=prompt,
+            expected_outputs=list(record.expected_outputs),
             primary_capability=primary,
             secondary_capabilities=secondary,
             compatible_tools=compatible_tools,

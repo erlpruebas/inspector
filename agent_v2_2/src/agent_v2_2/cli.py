@@ -113,6 +113,18 @@ def audit_normalize() -> None:
     print(report.to_markdown())
 
 
+def matrix_report() -> None:
+    controller = EvolutionController()
+    report = controller.capability_matrix()
+    print(report.to_markdown())
+
+
+def arena_run(limit: int | None = None) -> None:
+    controller = EvolutionController()
+    report = controller.run_benchmark_arena(limit=limit)
+    print(report.to_markdown())
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Inspector Agent 2.2 CLI")
     subparsers = parser.add_subparsers(dest="command", help="Comandos disponibles")
@@ -151,6 +163,11 @@ def main() -> None:
     audit_coverage_parser.set_defaults(func=lambda args: audit_coverage())
     audit_normalize_parser = audit_sub.add_parser("normalize", help="Normaliza tareas y evaluaciones")
     audit_normalize_parser.set_defaults(func=lambda args: audit_normalize())
+    audit_matrix_parser = audit_sub.add_parser("matrix", help="Resume la matriz aprendida de capacidades")
+    audit_matrix_parser.set_defaults(func=lambda args: matrix_report())
+    audit_arena_parser = audit_sub.add_parser("arena", help="Ejecuta la arena de benchmark sobre la batería normalizada")
+    audit_arena_parser.add_argument("--limit", type=int, default=None, help="Limita el numero de tareas ejecutadas")
+    audit_arena_parser.set_defaults(func=lambda args: arena_run(args.limit))
 
     evolution_parser = subparsers.add_parser("evolution", help="Control del sistema evolutivo")
     evolution_sub = evolution_parser.add_subparsers(dest="evolution_command", required=True)

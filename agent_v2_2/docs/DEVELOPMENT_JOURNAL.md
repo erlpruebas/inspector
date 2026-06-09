@@ -279,12 +279,19 @@ arena.
 - Added a pluggable `ArenaExecutor` and `ArenaJudge` interface so real tool
   runners and blind judges can be wired in later without changing the arena
   contract.
+- Added a `BenchmarkRunner` that maps normalized tools to benchmark engine
+  specs, copies benchmark assets into isolated workdirs, and exposes the arena
+  through `audit arena --limit N`.
+- Added an optional blind Gemini judge path via `BENCH_GEMINI_JUDGE_MODEL`,
+  with a local objective-check fallback when no judge model is configured.
 - Documented the benchmark arena and exposed it through the evolution package.
 
 ### Verification
 
 - Full Agent 2.2 suite: `28 passed`.
 - Arena smoke test persists runs, objective checks and judge scores.
+- The benchmark runner now emits usable arena reports from the CLI, including
+  limited sample runs.
 
 ### Current roadmap position
 
@@ -296,3 +303,61 @@ arena.
 Wire the arena to representative real executions and blind judgments so the
 experience store begins to reflect latency and quality evidence from actual
 compatible tools instead of only simulated runs.
+
+## 2026-06-09: Step 6 Matrix Started
+
+### Implemented
+
+- Added a learned capability matrix builder that aggregates experiences into
+  tool/capability/task-shape cells.
+- Each cell now carries samples, pass rate, mean judge score, mean latency,
+  latency dispersion, confidence and judge sample count.
+- Added CLI support for `audit matrix` and documented the matrix contract.
+
+### Verification
+
+- Full Agent 2.2 suite: `30 passed`.
+- `audit matrix` reports `1,769` experiences and `1,024` learned cells.
+- The matrix report is persisted as markdown-friendly CLI output.
+- The matrix continues to absorb arena experiences through the shared store.
+
+### Current roadmap position
+
+- Step 5: `IN_PROGRESS`.
+- Step 6: `IN_PROGRESS`.
+
+### Next action
+
+Begin using the arena runner against representative task slices so the matrix
+starts to incorporate fresh benchmark evidence from actual runs, not only from
+imported history.
+
+## 2026-06-09: Arena Sample Run Verified
+
+### Implemented
+
+- Executed `python -m agent_v2_2.cli audit arena --limit 1` against the
+  normalized battery.
+- Verified that the benchmark runner reaches the full path from normalized task
+  selection through execution, objective checks, blind judgment and experience
+  persistence.
+- Confirmed the CLI prints a usable arena summary with pass count, timing,
+  judge scores and tool distribution.
+
+### Verification
+
+- Arena sample report: `1` run, `1` passed, `1.172s` average, `1` judge score
+  recorded.
+- Sample tool path: `router_groq_qwen32`.
+- The command completed without manual intervention and produced a persisted
+  run record in the shared experience store.
+
+### Current roadmap position
+
+- Step 5: `IN_PROGRESS`.
+- Step 6: `IN_PROGRESS`.
+
+### Next action
+
+Use additional representative slices to expand the arena evidence before
+promoting the router to the next evolutionary stage.

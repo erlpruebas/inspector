@@ -36,6 +36,21 @@ The arena is the bridge between:
 6. Persist the run as a router experience.
 7. Summarize tool counts, shape counts, latency and judge coverage.
 
+## Runner
+
+`agent_v2_2.evolution.BenchmarkRunner` provides the default bridge from a
+normalized task to a runnable engine. It can:
+
+- copy benchmark assets into a temp workdir;
+- map normalized tools to benchmark engine specs when available;
+- fall back to a local simulated result when a real engine is not available;
+- emit a blind local judge result for the first pass;
+- execute a whole arena through `audit arena --limit N`.
+
+If `BENCH_GEMINI_JUDGE_MODEL` is set, the runner can also request a blind
+Gemini-based judge through the benchmark engine wrapper and persist that
+judgment alongside the run.
+
 ## Intended Judges
 
 The arena is designed to accept judges such as:
@@ -50,4 +65,3 @@ The arena is implemented as a reusable Python layer and covered by tests with a
 simulated executor and judge. The next step is to plug in representative
 real-tool runners and recorded blind judgments so the stored experience matrix
 comes from live evidence instead of synthetic placeholders.
-

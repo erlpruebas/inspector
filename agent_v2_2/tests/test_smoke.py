@@ -13,6 +13,19 @@ from agent_v2_2.evolution.coverage import TaskCoverageAnalyzer
 from agent_v2_2.evolution.experience import BenchmarkExperienceImporter, ExperienceStore
 from agent_v2_2.engines.codex_desktop import CodexDesktopOperator
 from agent_v2_2.models import CapabilityRequest, OrchestratorResult, TaskRequest
+from agent_v2_2.routing.contract import (
+    CognitiveLevel,
+    ExecutionRequirements,
+    FileFormat,
+    FileOperation,
+    FileRequirement,
+    Guarantee,
+    InstrumentalCapability,
+    Operation,
+    PrepareAction,
+    PrepareActionType,
+    RequestContract,
+)
 from agent_v2_2.routing.registry import ToolRegistry, ToolDefinition
 from agent_v2_2.scheduling.codex_quota import (
     CodexQuotaMonitor,
@@ -71,6 +84,71 @@ def test_registry_and_models_are_instantiable() -> None:
     )
     assert request.operation == "verify"
     assert isinstance(TaskRequest.model_validate(request.model_dump()), TaskRequest)
+
+
+def test_canonical_request_contract_covers_prepare_execute_and_access() -> None:
+    contract = RequestContract(
+        normalized_request="Find a florist near my dentist.",
+        prepare=[
+            PrepareAction(
+                action=PrepareActionType.MEMORY_LOOKUP,
+                query="dentist address",
+                output_key="dentist_address",
+            ),
+            PrepareAction(
+                action=PrepareActionType.WEB_LOOKUP,
+                query="florists near {dentist_address}",
+                output_key="nearby_florists",
+            ),
+        ],
+        execute=ExecutionRequirements(
+            operation=Operation.ANSWER,
+            cognitive_level=CognitiveLevel.LIGHT,
+            instrumental_capabilities=[
+                InstrumentalCapability.PREPARED_TEXT,
+                InstrumentalCapability.CURRENT_WEB_LOOKUP,
+            ],
+            guarantees=[
+                Guarantee.FRESH_INFORMATION,
+                Guarantee.SOURCE_CITATIONS,
+            ],
+        ),
+    )
+    assert contract.schema_version == "1.0"
+    assert "current_web_lookup" in contract.required_accesses()
+
+
+def test_canonical_contract_tracks_file_operations() -> None:
+    contract = RequestContract(
+        normalized_request="Update the spreadsheet and preserve its format.",
+        execute=ExecutionRequirements(
+            operation=Operation.MODIFY_ARTIFACT,
+            cognitive_level=CognitiveLevel.GENERAL,
+            instrumental_capabilities=[
+                InstrumentalCapability.READ_SPREADSHEET,
+                InstrumentalCapability.WRITE_FILE,
+                InstrumentalCapability.PRESERVE_DOCUMENT_FORMAT,
+            ],
+            file_requirements=[
+                FileRequirement(
+                    format=FileFormat.XLSX,
+                    operations=[
+                        FileOperation.READ,
+                        FileOperation.MODIFY,
+                        FileOperation.PRESERVE,
+                        FileOperation.VERIFY,
+                    ],
+                    preserve_format=True,
+                )
+            ],
+            guarantees=[
+                Guarantee.ARTIFACT_EXISTS,
+                Guarantee.ARTIFACT_VERIFIED,
+            ],
+        ),
+    )
+    assert "modify:xlsx" in contract.required_accesses()
+    assert "verify:xlsx" in contract.required_accesses()
 
 
 def test_codex_quota_monitor_uses_real_window_snapshots(tmp_path: Path, monkeypatch) -> None:

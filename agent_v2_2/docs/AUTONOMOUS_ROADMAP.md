@@ -20,8 +20,8 @@ verified. Creating a module or marking a checklist is not sufficient evidence.
 | Step | Status | Deliverable | Exit criteria |
 | ---: | --- | --- | --- |
 | 0 | COMPLETE | Reliable autonomous-work controls | Real Codex five-hour and weekly quota reader in Agent 2.2; persistent checkpoint; 25% five-hour reserve; graceful weekly stop |
-| 1 | IN_PROGRESS | Canonical capability contract | One versioned schema for preparation, required access, formats, operation, cognitive requirement and guarantees; validation tests |
-| 2 | PENDING | Normalized tool catalog | Every real tool has a stable ID, invocation path, binary access flags, supported file operations, eligibility and measured evidence |
+| 1 | COMPLETE | Canonical capability contract | One versioned schema for preparation, required access, formats, operation, cognitive requirement and guarantees; validation tests |
+| 2 | IN_PROGRESS | Normalized tool catalog | Every real tool has a stable ID, invocation path, binary access flags, supported file operations, eligibility and measured evidence |
 | 3 | PENDING | End-to-end vertical flow | Telegram text/file/voice request reaches preparation, routing, execution, verification, response and experience storage |
 | 4 | PENDING | Normalized task and evaluation model | Tasks identify primary/secondary capabilities, compatible tools, objective checks and per-capability judge rubrics |
 | 5 | PENDING | Valid benchmark arena | Compatible tools run against representative tasks; latency, objective checks and blind Gemini judgments are persisted; Codex arbitrates selected cases |
@@ -72,7 +72,7 @@ Evidence is added here when each step closes:
 | Step | Completion date | Tests/evidence | Commit |
 | ---: | --- | --- | --- |
 | 0 | 2026-06-09 | `16 passed`; live snapshot read; pause/continue/resume tests | pending commit |
-| 1 | - | - | - |
+| 1 | 2026-06-09 | `18 passed`; memory-to-web and XLSX preservation contract tests | pending commit |
 | 2 | - | - | - |
 | 3 | - | - | - |
 | 4 | - | - | - |

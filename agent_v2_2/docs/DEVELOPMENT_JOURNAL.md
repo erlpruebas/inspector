@@ -80,3 +80,35 @@ Define the canonical, versioned request/capability contract. Use
 `orchestrator_v2_1/capability_catalog.json` and the proven v2.1 preparation and
 routing behavior as the functional source of truth, while keeping Agent 2.2
 self-contained.
+
+## 2026-06-09: Step 1 Complete
+
+### Implemented
+
+- Added versioned `RequestContract` models.
+- Separated preparation actions from execution requirements.
+- Defined operational file formats and independent read, extract, create,
+  modify, preserve and verify operations.
+- Defined cognitive level, cognitive requirements, instrumental capabilities
+  and result guarantees.
+- Added cross-field validation for web freshness, research, ambiguity and
+  format preservation.
+- Documented the selection boundary: the router describes requirements and
+  deterministic code selects the tool.
+
+### Verification
+
+- Full Agent 2.2 suite: `18 passed`.
+- Covered a chained memory-to-web request.
+- Covered XLSX modification with format preservation and artifact verification.
+
+### Current roadmap position
+
+- Step 1: `COMPLETE`.
+- Step 2: `IN_PROGRESS`.
+
+### Next action
+
+Normalize every real tool from the v2.1 catalog into stable Agent 2.2 tool
+records with invocation type, eligibility, access flags, file operations,
+observed latency and evidence provenance.

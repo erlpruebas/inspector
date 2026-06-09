@@ -6,6 +6,7 @@ from agent_v2_2.capabilities.catalog import create_default_catalog
 from agent_v2_2.capabilities.introspection import IntrospectionManager
 from agent_v2_2.capabilities.preferences import PreferenceStore
 from agent_v2_2.capabilities.voice import VoiceCapabilities
+from agent_v2_2.application import AgentApplication
 from agent_v2_2.cli import check_status, set_speaker, set_voice, set_voice_name, set_voice_provider
 from agent_v2_2.config import Config, QuotaConfig, TelegramConfig, load_config, parse_int_list, parse_path_list
 from agent_v2_2.evolution.controller import EvolutionController
@@ -26,6 +27,7 @@ from agent_v2_2.routing.contract import (
     PrepareActionType,
     RequestContract,
 )
+from agent_v2_2.routing.selector import CapabilitySelector
 from agent_v2_2.routing.registry import ToolRegistry, ToolDefinition
 from agent_v2_2.scheduling.codex_quota import (
     CodexQuotaMonitor,
@@ -158,6 +160,67 @@ def test_canonical_contract_tracks_file_operations() -> None:
     )
     assert "modify:xlsx" in contract.required_accesses()
     assert "verify:xlsx" in contract.required_accesses()
+
+
+def test_contract_selector_filters_hard_access_before_latency() -> None:
+    contract = RequestContract(
+        normalized_request="Read and compare the spreadsheet.",
+        execute=ExecutionRequirements(
+            operation=Operation.COMPARE,
+            cognitive_level=CognitiveLevel.GENERAL,
+            instrumental_capabilities=[
+                InstrumentalCapability.READ_SPREADSHEET,
+            ],
+            file_requirements=[
+                FileRequirement(
+                    format=FileFormat.XLSX,
+                    operations=[FileOperation.READ, FileOperation.EXTRACT],
+                )
+            ],
+        ),
+    )
+    decision = CapabilitySelector().select_contract(contract)
+    assert decision.tool_id == "gemini_pro_long_context"
+    assert "premium_codex_55" in decision.alternatives
+
+
+def test_vertical_flow_records_memory_result_and_experience(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    contract = RequestContract(
+        normalized_request="Return a prepared response.",
+        execute=ExecutionRequirements(
+            operation=Operation.ANSWER,
+            cognitive_level=CognitiveLevel.NONE,
+        ),
+    )
+
+    def execute(request, decision):
+        return OrchestratorResult(
+            ok=True,
+            tool_id=decision.tool_id,
+            tier=decision.tier,
+            output=f"resolved: {request.text}",
+        )
+
+    app = AgentApplication(executor=execute)
+    request = TaskRequest(
+        user_id="user-1",
+        thread_id="thread-1",
+        text="hello",
+    )
+    result = app.handle(request, contract)
+    assert result.ok
+    assert result.tool_id == "local_direct"
+    assert result.timings is not None
+
+    experiences = app.experience_store.load()
+    assert len(experiences) == 1
+    assert experiences[0].objective_checks["passed"] is True
+    events = app.memory_store.load_events("user-1", "thread-1")
+    assert [event.get("role") for event in events] == ["user", "assistant"]
 
 
 def test_codex_quota_monitor_uses_real_window_snapshots(tmp_path: Path, monkeypatch) -> None:

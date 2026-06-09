@@ -144,3 +144,34 @@ Build one real vertical application flow around the proven old behavior:
 Telegram input, attachment/voice preparation, relevant memory retrieval,
 contract generation, deterministic selection, execution, verification,
 response delivery and experience persistence.
+
+## 2026-06-09: Step 3 Vertical Core
+
+### Implemented
+
+- Replaced keyword routing with hard compatibility filtering over the canonical
+  contract and normalized tool catalog.
+- Selection now filters mandatory access, file operations and cognitive level
+  before considering latency.
+- Added `AgentApplication` as the shared vertical request flow.
+- The flow records the user message, retrieves only relevant memory, selects a
+  compatible tool, executes, records timings, performs a basic objective check,
+  stores a router experience and records the assistant result.
+- Added a voice entry point that transcribes before entering the same flow.
+
+### Verification
+
+- XLSX requirements select Gemini Pro before Codex because both are compatible
+  and Gemini has lower demonstrated median latency.
+- A complete local request records memory, result, timings and one experience.
+- Full Agent 2.2 suite: `20 passed`.
+
+### Current roadmap position
+
+- Step 3 remains `IN_PROGRESS`.
+
+### Next action
+
+Connect `AgentApplication` to Telegram polling and downloads, add the real
+contract-builder boundary, register executable tool handlers and make
+`agent-v2-2 start` launch the operational loop instead of a smoke message.

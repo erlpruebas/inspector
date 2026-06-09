@@ -44,6 +44,15 @@ def test_catalog_exposes_17_capabilities() -> None:
     assert len(catalog.capabilities) == 17
     assert catalog.capabilities[0].id == "cap_extract_short"
     assert catalog.capabilities[-1].id == "cap_verify"
+    assert len(catalog.tools) == 13
+    assert len({tool.tool_id for tool in catalog.tools}) == 13
+    assert catalog.get_tool("premium_codex_55") is not None
+    gemini = catalog.get_tool("gemini_pro_long_context")
+    assert gemini is not None
+    assert any(
+        method.operation == "read" and method.format == "xlsx"
+        for method in gemini.access_methods
+    )
 
 
 def test_config_parsers_handle_empty_and_lists(monkeypatch) -> None:

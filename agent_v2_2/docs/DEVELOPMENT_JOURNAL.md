@@ -112,3 +112,35 @@ self-contained.
 Normalize every real tool from the v2.1 catalog into stable Agent 2.2 tool
 records with invocation type, eligibility, access flags, file operations,
 observed latency and evidence provenance.
+
+## 2026-06-09: Step 2 Complete
+
+### Implemented
+
+- Registered all 13 routes from the v2.1 source catalog.
+- Assigned stable IDs, display names, provider, model and invocation type.
+- Preserved active, sampled, demonstrated, experimental and deferred states.
+- Preserved selection eligibility separately from registration.
+- Normalized instrumental capabilities and derived direct file operations by
+  format.
+- Preserved historical latency and global benchmark observations as evidence.
+- Added an empty per-capability score map for the later normalized arena.
+
+### Verification
+
+- 13 unique tools registered.
+- 10 currently selection-eligible.
+- Gemini Pro and Codex CLI expose their demonstrated file operations.
+- Full Agent 2.2 suite: `18 passed`.
+
+### Current roadmap position
+
+- Step 2: `COMPLETE`.
+- Step 3: `IN_PROGRESS`.
+
+### Next action
+
+Build one real vertical application flow around the proven old behavior:
+Telegram input, attachment/voice preparation, relevant memory retrieval,
+contract generation, deterministic selection, execution, verification,
+response delivery and experience persistence.

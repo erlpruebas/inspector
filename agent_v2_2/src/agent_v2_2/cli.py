@@ -8,6 +8,7 @@ from .capabilities.preferences import PreferenceStore
 from .capabilities.status import StatusManager
 from .capabilities.voice import VoiceCapabilities
 from .evolution.controller import EvolutionController
+from .runtime import TelegramAgentRuntime
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("agent_v2_2.cli")
@@ -25,7 +26,8 @@ def _print_preferences() -> None:
 
 def start_agent() -> None:
     logger.info("Iniciando Inspector Agent 2.2...")
-    print("El agente se ha iniciado (smoke test).")
+    runtime = TelegramAgentRuntime()
+    runtime.run()
 
 
 def check_status() -> None:

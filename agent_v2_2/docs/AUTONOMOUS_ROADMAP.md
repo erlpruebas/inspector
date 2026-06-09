@@ -22,7 +22,7 @@ verified. Creating a module or marking a checklist is not sufficient evidence.
 | 0 | COMPLETE | Reliable autonomous-work controls | Real Codex five-hour and weekly quota reader in Agent 2.2; persistent checkpoint; 25% five-hour reserve; graceful weekly stop |
 | 1 | COMPLETE | Canonical capability contract | One versioned schema for preparation, required access, formats, operation, cognitive requirement and guarantees; validation tests |
 | 2 | COMPLETE | Normalized tool catalog | Every real tool has a stable ID, invocation path, binary access flags, supported file operations, eligibility and measured evidence |
-| 3 | IN_PROGRESS | End-to-end vertical flow | Telegram text/file/voice request reaches preparation, routing, execution, verification, response and experience storage |
+| 3 | COMPLETE | End-to-end vertical flow | Telegram text/file/voice request reaches preparation, routing, execution, verification, response and experience storage |
 | 4 | PENDING | Normalized task and evaluation model | Tasks identify primary/secondary capabilities, compatible tools, objective checks and per-capability judge rubrics |
 | 5 | PENDING | Valid benchmark arena | Compatible tools run against representative tasks; latency, objective checks and blind Gemini judgments are persisted; Codex arbitrates selected cases |
 | 6 | PENDING | Learned capability matrix | Tool x capability x task-shape statistics include samples, mean, dispersion, pass rate, confidence and latency |
@@ -74,7 +74,7 @@ Evidence is added here when each step closes:
 | 0 | 2026-06-09 | `16 passed`; live snapshot read; pause/continue/resume tests | pending commit |
 | 1 | 2026-06-09 | `18 passed`; memory-to-web and XLSX preservation contract tests | pending commit |
 | 2 | 2026-06-09 | 13 stable routes; 10 eligible; access-method validation; `18 passed` | pending commit |
-| 3 | - | - | - |
+| 3 | 2026-06-09 | `24 passed`; Telegram transport kwargs test; canonical contract builder test; runtime voice/status flow tests | pending commit |
 | 4 | - | - | - |
 | 5 | - | - | - |
 | 6 | - | - | - |

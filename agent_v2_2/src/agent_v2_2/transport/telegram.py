@@ -16,10 +16,10 @@ class TelegramTransport:
         # La unión de usuarios y chats nos da la lista efectiva de IDs permitidos
         self.allowed_ids = self.allowed_users.union(self.allowed_chats)
         
-        self.message_handler: Optional[Callable[[str, int], None]] = None
+        self.message_handler: Optional[Callable[..., None]] = None
         self.progress_handler: Optional[Callable[[int, str], None]] = None
 
-    def set_message_handler(self, handler: Callable[[str, int], None]):
+    def set_message_handler(self, handler: Callable[..., None]):
         self.message_handler = handler
 
     def set_progress_handler(self, handler: Callable[[int, str], None]) -> None:
@@ -155,7 +155,13 @@ class TelegramTransport:
                 
         # Delegar al handler
         if (text or media_file_id) and self.message_handler:
-            self.message_handler(text, chat_id, media_file_id=media_file_id, media_type=media_type)
+            self.message_handler(
+                text,
+                chat_id,
+                media_file_id=media_file_id,
+                media_type=media_type,
+                message=message,
+            )
 
     def download_file(self, file_id: str, target_path: Path) -> Path:
         """Descarga un fichero de Telegram por file_id a la ruta objetivo."""

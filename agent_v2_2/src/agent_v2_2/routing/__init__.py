@@ -13,6 +13,7 @@ from .contract import (
     PrepareActionType,
     RequestContract,
 )
+from .builder import ContractBuilder
 
 __all__ = [
     "CONTRACT_SCHEMA_VERSION",
@@ -28,4 +29,5 @@ __all__ = [
     "PrepareAction",
     "PrepareActionType",
     "RequestContract",
+    "ContractBuilder",
 ]

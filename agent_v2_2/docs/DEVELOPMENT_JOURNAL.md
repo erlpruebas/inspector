@@ -168,10 +168,45 @@ response delivery and experience persistence.
 
 ### Current roadmap position
 
-- Step 3 remains `IN_PROGRESS`.
+- Step 3: `COMPLETE`.
+- Step 4: `IN_PROGRESS`.
 
 ### Next action
 
-Connect `AgentApplication` to Telegram polling and downloads, add the real
-contract-builder boundary, register executable tool handlers and make
-`agent-v2-2 start` launch the operational loop instead of a smoke message.
+Normalize the task and evaluation model so each task declares primary and
+secondary capabilities, compatible tools, objective checks and per-capability
+judge rubrics.
+
+## 2026-06-09: Step 3 Complete
+
+### Implemented
+
+- Added a `TelegramAgentRuntime` that binds Telegram updates to the canonical
+  contract builder and `AgentApplication`.
+- Restored Telegram text/file/voice handling, including attachment download
+  and voice transcription before routing.
+- Added a canonical `ContractBuilder` that infers preparation actions,
+  required access, file requirements, cognitive level and guarantees from the
+  user request.
+- Wired `agent_v2_2/cli.py start` to launch the operational runtime instead of
+  a smoke message.
+- Extended `AgentApplication` with progress callbacks so the Telegram flow can
+  surface routing and execution progress.
+
+### Verification
+
+- Telegram transport kwargs test passes.
+- Canonical contract builder test passes.
+- Runtime voice routing and local status tests pass.
+- Full Agent 2.2 suite: `24 passed`.
+
+### Current roadmap position
+
+- Step 3: `COMPLETE`.
+- Step 4: `IN_PROGRESS`.
+
+### Next action
+
+Begin Step 4 by normalizing the task/evaluation schema and auditing the task
+battery against the 17 operational capabilities so the benchmark arena can be
+made representative instead of merely large.

@@ -38,10 +38,20 @@ class AgentApplication:
         self,
         request: TaskRequest,
         contract: RequestContract,
+        progress_callback: Optional[Callable[[str, dict], None]] = None,
     ) -> OrchestratorResult:
         total_started = time.monotonic()
         user_id = request.user_id or "anonymous"
         thread_id = request.thread_id or "default"
+        if progress_callback:
+            progress_callback(
+                "received",
+                {
+                    "request_id": request.request_id,
+                    "thread_id": thread_id,
+                    "user_id": user_id,
+                },
+            )
         self.memory_store.record_message(
             user_id,
             thread_id,
@@ -72,8 +82,25 @@ class AgentApplication:
         routing_started = time.monotonic()
         decision = self.selector.select_contract(contract)
         routing_seconds = time.monotonic() - routing_started
+        if progress_callback:
+            progress_callback(
+                "routed",
+                {
+                    "request_id": request.request_id,
+                    "decision": decision.model_dump(mode="json"),
+                    "seconds": routing_seconds,
+                },
+            )
 
         execution_started = time.monotonic()
+        if progress_callback:
+            progress_callback(
+                "executing",
+                {
+                    "request_id": request.request_id,
+                    "tool_id": decision.tool_id,
+                },
+            )
         result = self.executor(prepared, decision)
         execution_seconds = time.monotonic() - execution_started
         result.timings = OperationTimings(
@@ -84,6 +111,16 @@ class AgentApplication:
         )
 
         verified = bool(result.ok and result.output.strip())
+        if progress_callback:
+            progress_callback(
+                "completed",
+                {
+                    "request_id": request.request_id,
+                    "tool_id": decision.tool_id,
+                    "ok": result.ok,
+                    "seconds": result.timings.total_seconds,
+                },
+            )
         self.experience_store.append(
             RouterExperience(
                 experience_id=request.request_id,
@@ -138,10 +175,15 @@ class AgentApplication:
         audio_path: Path,
         request: TaskRequest,
         contract: RequestContract,
+        progress_callback: Optional[Callable[[str, dict], None]] = None,
     ) -> OrchestratorResult:
         transcription_started = time.monotonic()
         text = self.voice.transcribe_audio_file(audio_path)
-        result = self.handle(request.model_copy(update={"text": text}), contract)
+        result = self.handle(
+            request.model_copy(update={"text": text}),
+            contract,
+            progress_callback=progress_callback,
+        )
         if result.timings:
             result.timings.transcription_seconds = (
                 time.monotonic() - transcription_started

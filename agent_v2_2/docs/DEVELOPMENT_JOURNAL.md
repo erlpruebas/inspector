@@ -166,17 +166,6 @@ response delivery and experience persistence.
 - A complete local request records memory, result, timings and one experience.
 - Full Agent 2.2 suite: `20 passed`.
 
-### Current roadmap position
-
-- Step 3: `COMPLETE`.
-- Step 4: `IN_PROGRESS`.
-
-### Next action
-
-Normalize the task and evaluation model so each task declares primary and
-secondary capabilities, compatible tools, objective checks and per-capability
-judge rubrics.
-
 ## 2026-06-09: Step 3 Complete
 
 ### Implemented
@@ -210,3 +199,39 @@ judge rubrics.
 Begin Step 4 by normalizing the task/evaluation schema and auditing the task
 battery against the 17 operational capabilities so the benchmark arena can be
 made representative instead of merely large.
+
+## 2026-06-09: Step 4 Normalization Started
+
+### Implemented
+
+- Extended `TaskRecord` to preserve prompts, user requests, expected outputs,
+  expected keys and existing rubrics from benchmark batteries.
+- Added a deterministic `TaskNormalizer` that turns raw benchmark tasks into a
+  canonical record with primary capability, secondary capabilities, compatible
+  tools, objective checks, judge rubric and generated request contract.
+- Added a normalized task report that summarizes primary capability coverage,
+  compatible-tool coverage, missing rubrics and network-heavy tasks.
+- Added `audit normalize` to the CLI for quick inspection of the normalized
+  task model.
+- Documented the normalized task model and the new CLI command.
+
+### Verification
+
+- Full Agent 2.2 suite: `25 passed`.
+- `TaskNormalizer` preserves per-task rubrics and produces compatible tools
+  for a simple spreadsheet comparison task.
+- `audit normalize` is available as a new CLI entry point.
+- CLI normalization report over the benchmark battery: `356` tasks, `0`
+  missing rubrics, `28` network tasks, and a stable primary-capability
+  distribution across the existing benchmark set.
+
+### Current roadmap position
+
+- Step 3: `COMPLETE`.
+- Step 4: `IN_PROGRESS`.
+
+### Next action
+
+Expand the normalized model so it covers the full benchmark battery and then
+use it to drive per-capability judge scoring and a more rigorous evaluation
+arena.

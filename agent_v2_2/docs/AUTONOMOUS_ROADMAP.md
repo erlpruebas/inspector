@@ -23,7 +23,7 @@ verified. Creating a module or marking a checklist is not sufficient evidence.
 | 1 | COMPLETE | Canonical capability contract | One versioned schema for preparation, required access, formats, operation, cognitive requirement and guarantees; validation tests |
 | 2 | COMPLETE | Normalized tool catalog | Every real tool has a stable ID, invocation path, binary access flags, supported file operations, eligibility and measured evidence |
 | 3 | COMPLETE | End-to-end vertical flow | Telegram text/file/voice request reaches preparation, routing, execution, verification, response and experience storage |
-| 4 | PENDING | Normalized task and evaluation model | Tasks identify primary/secondary capabilities, compatible tools, objective checks and per-capability judge rubrics |
+| 4 | IN_PROGRESS | Normalized task and evaluation model | Tasks identify primary/secondary capabilities, compatible tools, objective checks and per-capability judge rubrics |
 | 5 | PENDING | Valid benchmark arena | Compatible tools run against representative tasks; latency, objective checks and blind Gemini judgments are persisted; Codex arbitrates selected cases |
 | 6 | PENDING | Learned capability matrix | Tool x capability x task-shape statistics include samples, mean, dispersion, pass rate, confidence and latency |
 | 7 | PENDING | Real evolutionary router | Hard compatibility filtering, confidence-aware fastest-sufficient selection, safe exploration and rollback are tested |

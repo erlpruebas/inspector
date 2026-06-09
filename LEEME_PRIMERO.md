@@ -29,8 +29,9 @@ abajo.
 8. [docs/ANTIGRAVITY_MASTER_PROMPT_20260608.md](./docs/ANTIGRAVITY_MASTER_PROMPT_20260608.md)
 9. [docs/ROUTER_CAPABILITIES_GAIA_GAPS_20260607.md](./docs/ROUTER_CAPABILITIES_GAIA_GAPS_20260607.md)
 10. [docs/HITL_EXCELLENCE_RESULTS_20260607.md](./docs/HITL_EXCELLENCE_RESULTS_20260607.md)
-11. [orchestrator_v2_1/README.md](./orchestrator_v2_1/README.md)
-12. [orchestrator_v2_1/capability_catalog.json](./orchestrator_v2_1/capability_catalog.json)
+11. [agent_v2_2/docs/TASK_NORMALIZATION.md](./agent_v2_2/docs/TASK_NORMALIZATION.md)
+12. [orchestrator_v2_1/README.md](./orchestrator_v2_1/README.md)
+13. [orchestrator_v2_1/capability_catalog.json](./orchestrator_v2_1/capability_catalog.json)
 
 ## Resumen corto
 
@@ -50,6 +51,8 @@ abajo.
   por capacidades concretas y los huecos detectados con GAIA local.
 - `docs/HITL_EXCELLENCE_RESULTS_20260607.md` contiene la comparativa Gemini CLI
   3.1 Pro vs Codex 5.5.
+- `agent_v2_2/docs/TASK_NORMALIZATION.md` explica el modelo normalizado de
+  tareas y el comando `audit normalize`.
 - `orchestrator_v2_1/README.md` describe el orquestador v2.1 y el modo
   desarrollo.
 - `orchestrator_v2_1/capability_catalog.json` es el contrato legible por

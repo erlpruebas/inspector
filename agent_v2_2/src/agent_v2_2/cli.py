@@ -107,6 +107,12 @@ def audit_coverage() -> None:
     print(report.to_markdown())
 
 
+def audit_normalize() -> None:
+    controller = EvolutionController()
+    report = controller.normalize_tasks()
+    print(report.to_markdown())
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Inspector Agent 2.2 CLI")
     subparsers = parser.add_subparsers(dest="command", help="Comandos disponibles")
@@ -143,6 +149,8 @@ def main() -> None:
     audit_tasks_parser.set_defaults(func=lambda args: audit_tasks())
     audit_coverage_parser = audit_sub.add_parser("coverage", help="Analiza cobertura y huecos de las tareas")
     audit_coverage_parser.set_defaults(func=lambda args: audit_coverage())
+    audit_normalize_parser = audit_sub.add_parser("normalize", help="Normaliza tareas y evaluaciones")
+    audit_normalize_parser.set_defaults(func=lambda args: audit_normalize())
 
     evolution_parser = subparsers.add_parser("evolution", help="Control del sistema evolutivo")
     evolution_sub = evolution_parser.add_subparsers(dest="evolution_command", required=True)

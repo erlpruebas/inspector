@@ -11,6 +11,7 @@ from .audit import TaskAuditReport, TaskAuditor
 from .coverage import CoverageReport, TaskCoverageAnalyzer
 from .experience import BenchmarkExperienceImporter, ExperienceStore
 from .maturity import MaturityGate, MaturityReport
+from .normalization import NormalizedTaskReport, TaskNormalizer
 from .readiness import HITLReadinessGate, HITLReadinessReport
 
 
@@ -35,11 +36,21 @@ class EvolutionController:
         self.benchmark_importer = BenchmarkExperienceImporter()
 
     def audit_tasks(self, task_paths: Optional[Iterable[Path]] = None) -> TaskAuditReport:
-        auditor = TaskAuditor(task_paths)
-        if task_paths:
-            return auditor.audit_paths(task_paths)
+        paths = [Path(path) for path in (task_paths or [])]
+        auditor = TaskAuditor(paths)
+        if paths:
+            return auditor.audit_paths(paths)
         root = Path(__file__).resolve().parents[4] / "benchmarks" / "tasks"
         return auditor.audit(root)
+
+    def normalize_tasks(self, task_paths: Optional[Iterable[Path]] = None) -> NormalizedTaskReport:
+        paths = [Path(path) for path in (task_paths or [])]
+        normalizer = TaskNormalizer()
+        if paths:
+            auditor = TaskAuditor(paths)
+            return normalizer.normalize_records(auditor.load_records(paths))
+        root = Path(__file__).resolve().parents[4] / "benchmarks" / "tasks"
+        return normalizer.normalize_path(root)
 
     def coverage(self) -> CoverageReport:
         root = Path(__file__).resolve().parents[4] / "benchmarks" / "tasks"

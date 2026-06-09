@@ -12,6 +12,8 @@ class TaskRecord:
     task_id: str
     title: str
     source_path: Path
+    prompt: str = ""
+    user_request: str = ""
     category: str = ""
     block: str = ""
     level: str = ""
@@ -20,6 +22,9 @@ class TaskRecord:
     requires_network: bool = False
     expected_operation: str = ""
     route_hypothesis: str = ""
+    expected_outputs: List[str] = field(default_factory=list)
+    expected_keys: List[str] = field(default_factory=list)
+    rubric: Dict[str, Any] = field(default_factory=dict)
     dimensions: Dict[str, Any] = field(default_factory=dict)
 
 
@@ -76,6 +81,8 @@ class TaskAuditor:
                         task_id=task_id,
                         title=title,
                     source_path=path,
+                    prompt=str(item.get("prompt") or ""),
+                    user_request=str(item.get("user_request") or ""),
                     category=str(item.get("category") or ""),
                     block=str(item.get("block") or ""),
                     level=str(item.get("level") or ""),
@@ -84,6 +91,9 @@ class TaskAuditor:
                     requires_network=bool(item.get("requires_network", False)),
                     expected_operation=str(item.get("expected_operation") or ""),
                     route_hypothesis=str(item.get("route_hypothesis") or ""),
+                    expected_outputs=[str(output) for output in item.get("expected_outputs", []) if output],
+                    expected_keys=[str(key) for key in item.get("expected_keys", []) if key],
+                    rubric=dict(item.get("rubric") or {}),
                     dimensions=dict(item.get("dimensions") or {}),
                 )
             )

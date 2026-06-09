@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from agent_v2_2.config import Config, QuotaConfig, TelegramConfig
 from agent_v2_2.models import Attachment
+from agent_v2_2.evolution.controller import EvolutionController
 from agent_v2_2.routing.builder import ContractBuilder
 from agent_v2_2.routing.contract import (
     CognitiveLevel,
@@ -157,3 +159,35 @@ def test_runtime_answers_status_locally(tmp_path: Path, monkeypatch) -> None:
     assert any("Estado" in text for text in message_texts)
     assert any("telegram" in text.casefold() for text in message_texts)
 
+
+def test_task_normalizer_builds_primary_capability_and_rubric(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    sample = tmp_path / "sample_tasks.json"
+    sample.write_text(
+        json.dumps(
+            [
+                {
+                    "id": "task-1",
+                    "title": "Compare spreadsheet",
+                    "prompt": "Compara el Excel adjunto con el anterior y dime las diferencias.",
+                    "skills": ["compare", "data_filtering"],
+                    "required_files": ["report.xlsx"],
+                    "expected_operation": "compare_spreadsheet",
+                    "expected_keys": ["diferencias", "ventas"],
+                    "rubric": {"correctness": 4, "traceability": 2},
+                    "route_hypothesis": "gemini_pro_long_context",
+                }
+            ],
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+    report = EvolutionController(workspace_root=tmp_path).normalize_tasks([sample])
+    assert report.total_tasks == 1
+    assert report.primary_capabilities["cap_compare"] == 1
+    assert report.compatible_tools
+    task = report.records[0]
+    assert task.judge_rubric["correctness"] == 4
+    assert "contains:diferencias" in task.objective_checks
+    assert task.compatible_tools[0] == "gemini_pro_long_context"

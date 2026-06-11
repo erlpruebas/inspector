@@ -78,7 +78,7 @@ Evidence is added here when each step closes:
 | 4 | 2026-06-09 | `27 passed`; normalized battery over `356` tasks; `0` missing rubrics; `0` missing capabilities | Agent 2.2 HITL release |
 | 5 | 2026-06-11 | 56/56 compatible tool-capability pairs demonstrated with passing live blind judgments | Agent 2.2 HITL release |
 | 6 | 2026-06-11 | 1,891 valid experiences; 161 judged; 17/17 capabilities; 31 shapes | Agent 2.2 HITL release |
-| 7 | 2026-06-11 | Readiness-gated activation, fastest-sufficient selection, rollback and reproducible-only exploration; `63 passed` | Agent 2.2 HITL release |
+| 7 | 2026-06-11 | Readiness-gated activation, fastest-sufficient selection, rollback and reproducible-only exploration; `64 passed` | Agent 2.2 HITL release |
 | 8 | 2026-06-11 | Local and clean-workspace readiness pass; portable 111-experience seed; evolutionary router active at 35/35; Telegram feedback and friction commands tested | Agent 2.2 HITL release |
 
 ## Autonomous Stop Conditions

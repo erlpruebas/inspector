@@ -77,6 +77,26 @@ def test_config_parsers_handle_empty_and_lists(monkeypatch) -> None:
     assert isinstance(cfg.quota, QuotaConfig)
 
 
+def test_config_accepts_legacy_telegram_allowlist_names(monkeypatch) -> None:
+    for name in (
+        "TELEGRAM_ALLOWED_USERS",
+        "TELEGRAM_ALLOWED_USER_IDS",
+        "TELEGRAM_ALLOWED_USER_ID",
+        "ORCH_TELEGRAM_ALLOWED_USER_ID",
+        "TELEGRAM_ALLOWED_CHATS",
+        "LAB_TELEGRAM_CHAT_ID",
+        "TELEGRAM_CHAT_ID",
+    ):
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv("TELEGRAM_ALLOWED_USER_IDS", "123, 456")
+    monkeypatch.setenv("LAB_TELEGRAM_CHAT_ID", "789")
+
+    cfg = load_config()
+
+    assert cfg.telegram.allowed_users == [123, 456]
+    assert cfg.telegram.allowed_chats == [789]
+
+
 def test_registry_and_models_are_instantiable() -> None:
     registry = ToolRegistry()
     registry.register(

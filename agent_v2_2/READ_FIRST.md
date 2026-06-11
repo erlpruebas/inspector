@@ -13,7 +13,7 @@ herramienta compatible mas rapida respaldada por evidencia.
 ## Estado a 2026-06-11
 
 - Paridad funcional: 35 de 35 filas completadas.
-- Pruebas Agent 2.2: 63 aprobadas.
+- Pruebas Agent 2.2: 64 aprobadas.
 - Tareas auditadas: 362; fixtures invalidos: 0.
 - Capacidades operativas juzgadas: 17 de 17.
 - Pares herramienta-capacidad demostrados: 56 de 56.

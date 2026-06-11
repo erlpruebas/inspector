@@ -34,6 +34,15 @@ def parse_path_list(value: str) -> List[Path]:
         return []
     return [Path(x.strip()) for x in value.split(",") if x.strip()]
 
+
+def first_env(*names: str) -> str:
+    for name in names:
+        value = os.getenv(name, "").strip()
+        if value:
+            return value
+    return ""
+
+
 def load_config() -> Config:
     workspace_root_env = os.getenv("AGENT_WORKSPACE_ROOT")
     workspace_root = Path(workspace_root_env) if workspace_root_env else Path.cwd() / "runtime" / "workspace"
@@ -41,8 +50,21 @@ def load_config() -> Config:
     return Config(
         telegram=TelegramConfig(
             bot_token=os.getenv("TELEGRAM_BOT_TOKEN", ""),
-            allowed_users=parse_int_list(os.getenv("TELEGRAM_ALLOWED_USERS", "")),
-            allowed_chats=parse_int_list(os.getenv("TELEGRAM_ALLOWED_CHATS", "")),
+            allowed_users=parse_int_list(
+                first_env(
+                    "TELEGRAM_ALLOWED_USERS",
+                    "TELEGRAM_ALLOWED_USER_IDS",
+                    "TELEGRAM_ALLOWED_USER_ID",
+                    "ORCH_TELEGRAM_ALLOWED_USER_ID",
+                )
+            ),
+            allowed_chats=parse_int_list(
+                first_env(
+                    "TELEGRAM_ALLOWED_CHATS",
+                    "LAB_TELEGRAM_CHAT_ID",
+                    "TELEGRAM_CHAT_ID",
+                )
+            ),
         ),
         quota=QuotaConfig(
             minimum_quota_percent=int(os.getenv("CODEX_MINIMUM_QUOTA_PERCENT", "25")),

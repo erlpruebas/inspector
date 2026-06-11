@@ -456,7 +456,7 @@ evolutionary system and stop for real Telegram HITL.
 
 ### Final verification
 
-- Agent 2.2 tests: `63 passed`.
+- Agent 2.2 tests: `64 passed`.
 - Task audit: `362` tasks, `0` invalid fixtures and all format buckets covered.
 - Readiness: `1,891` valid experiences, `161` judged, `17/17` capabilities,
   `9/9` selectable tools, `31` task shapes and `56/56` demonstrated pairs.

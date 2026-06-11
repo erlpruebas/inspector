@@ -1,0 +1,82 @@
+[
+  {
+    "id": "audio-01",
+    "level": "L2",
+    "category": "audio_transcription",
+    "title": "Transcribir nota de voz operativa",
+    "prompt": "# Transcribir nota de voz operativa\n\nEscucha `benchmarks/assets/audio_synthetic/nota-voz-01.wav` y escribe en `resultado.md` una transcripción breve y una lista de las dos acciones que se desprenden del audio. No inventes detalles.\n",
+    "required_files": [
+      "audio_synthetic/nota-voz-01.wav"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "transcription",
+      "task_extraction",
+      "audio"
+    ],
+    "expected_keys": [
+      "reunión",
+      "factura",
+      "presentación"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "audio",
+      "tool_need": "audio",
+      "risk": "low",
+      "output_form": "text",
+      "reasoning_shape": "extract",
+      "freshness": "local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "audio-02",
+    "level": "L2",
+    "category": "audio_transcription",
+    "title": "Extraer tareas de nota de voz",
+    "prompt": "# Extraer tareas de nota de voz\n\nEscucha `benchmarks/assets/audio_synthetic/nota-voz-02.wav` y devuelve una tabla con accion, objeto y fecha limite aproximada. Si no aparece fecha, marca 'sin fecha'.\n",
+    "required_files": [
+      "audio_synthetic/nota-voz-02.wav"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "audio",
+      "task_extraction",
+      "summarization"
+    ],
+    "expected_keys": [
+      "ferretería",
+      "tornillos",
+      "doce"
+    ],
+    "dimensions": {
+      "context_scope": "small",
+      "data_mode": "audio",
+      "tool_need": "audio",
+      "risk": "low",
+      "output_form": "table",
+      "reasoning_shape": "extract",
+      "freshness": "local",
+      "error_tolerance": "medium"
+    },
+    "rubric": {
+      "correctness": 4,
+      "expected_keys": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  }
+]

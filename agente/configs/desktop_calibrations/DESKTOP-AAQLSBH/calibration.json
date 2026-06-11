@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "created_at": "2026-06-03T20:55:40",
+  "window_title_hint": "Codex Desktop",
+  "machine_name": "DESKTOP-AAQLSBH",
+  "points": {
+    "sidebar_toggle": {
+      "x": 15,
+      "y": 23,
+      "color": [
+        49,
+        49,
+        50
+      ],
+      "label": "Haz clic en el boton del panel lateral izquierdo (arriba a la izquierda)",
+      "captured_at": "2026-06-03T20:53:51"
+    },
+    "new_chat": {
+      "x": 102,
+      "y": 73,
+      "color": [
+        38,
+        38,
+        38
+      ],
+      "label": "Haz clic en Nuevo chat (panel lateral abierto)",
+      "captured_at": "2026-06-03T20:54:15"
+    },
+    "initial_input": {
+      "x": 779,
+      "y": 514,
+      "color": [
+        73,
+        73,
+        73
+      ],
+      "label": "Haz clic en la caja de texto (en el medio)",
+      "captured_at": "2026-06-03T20:54:31"
+    },
+    "initial_send": {
+      "x": 1541,
+      "y": 576,
+      "color": [
+        150,
+        150,
+        150
+      ],
+      "label": "Haz clic en el boton de enviar (en el medio)",
+      "captured_at": "2026-06-03T20:54:40"
+    },
+    "browser_toggle": {
+      "x": 1895,
+      "y": 75,
+      "color": [
+        42,
+        42,
+        42
+      ],
+      "label": "Haz clic en el boton del panel lateral (navegador)",
+      "captured_at": "2026-06-03T20:55:12"
+    },
+    "browser_input": {
+      "x": 505,
+      "y": 918,
+      "color": [
+        45,
+        45,
+        45
+      ],
+      "label": "Haz clic en la caja de texto (panel activado)",
+      "captured_at": "2026-06-03T20:55:23"
+    },
+    "browser_send_stop": {
+      "x": 1258,
+      "y": 981,
+      "color": [
+        150,
+        150,
+        150
+      ],
+      "label": "Haz clic en el boton de enviar (panel activado)",
+      "captured_at": "2026-06-03T20:55:30"
+    }
+  },
+  "notes": "Coordenadas absolutas de pantalla para Codex Desktop."
+}

@@ -1,0 +1,4 @@
+[2026-06-02 10:15:30] INFO System started
+[2026-06-02 10:20:00] ERROR Database Connection Failed - Host Unreachable
+[2026-06-02 10:20:05] ERROR Database Connection Failed - Attempt 2
+[2026-06-02 10:22:00] INFO Recovery successful

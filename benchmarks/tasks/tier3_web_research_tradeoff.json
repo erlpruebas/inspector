@@ -1,0 +1,70 @@
+[
+  {
+    "id": "tier3_single_source_concert",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "# Concierto publico de Bad Bunny en una sola fuente\n\nBusca en paginas publicas un unico resultado vigente sobre el proximo concierto de Bad Bunny usando una sola fuente principal si es posible. Devuelve un informe breve con artista, fecha, recinto, ciudad, precio minimo si aparece, URL fuente y fecha de consulta. Si el dato no aparece claramente en esa fuente, dilo sin inventar nada.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "skills": ["web_search", "reporting", "synthesis"],
+    "expected_keys": ["Bad Bunny", "fecha", "recinto", "fuente"],
+    "rubric": {
+      "correctness": 4,
+      "sources": 2,
+      "freshness": 2,
+      "structure": 1
+    }
+  },
+  {
+    "id": "tier3_compare_two_sources",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "# Comparacion de dos fuentes para el mismo evento\n\nCompara dos paginas publicas sobre un concierto de Bad Bunny y explica si coinciden en fecha, recinto y precio minimo. Si hay discrepancia, indica cual de las dos parece mas util y por que, sin inventar datos adicionales. Cita ambas URLs y la fecha de consulta.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "skills": ["web_search", "comparison", "reporting", "synthesis"],
+    "expected_keys": ["Bad Bunny", "fecha", "precio", "fuente"],
+    "rubric": {
+      "correctness": 4,
+      "sources": 3,
+      "freshness": 2,
+      "structure": 1
+    }
+  },
+  {
+    "id": "tier3_citations_required",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "# Documentacion oficial con citas obligatorias\n\nConsulta la documentacion oficial de Google AI sobre Grounding with Google Search y resume en una lista con citas: modelos compatibles actuales, herramienta exacta que se usa, que metadatos de respuesta devuelve y que diferencia hay con google_search_retrieval legado. Exige que cada afirmacion importante lleve URL fuente y fecha de consulta.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "skills": ["web_search", "technical_report", "comparison"],
+    "expected_keys": ["google_search", "groundingMetadata", "modelos", "google_search_retrieval"],
+    "rubric": {
+      "correctness": 4,
+      "sources": 3,
+      "freshness": 2,
+      "structure": 1
+    }
+  },
+  {
+    "id": "tier3_two_step_search",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "# Informe de Zara con busqueda en dos pasos\n\nHaz primero una busqueda en la web oficial de Zara para identificar que vende, a que tipo de usuario se dirige y tres lineas de producto o capacidades clave. Luego completa el informe con una segunda busqueda para encontrar una nota reciente en su blog, newsroom o pagina de producto que aporte contexto actual. Incluye fuentes y fecha de consulta. Si algun dato no aparece, dilo claramente.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "skills": ["web_search", "company_research", "reporting", "synthesis"],
+    "expected_keys": ["Zara", "producto", "fuentes", "fecha"],
+    "rubric": {
+      "correctness": 4,
+      "sources": 3,
+      "freshness": 2,
+      "structure": 1
+    }
+  }
+]

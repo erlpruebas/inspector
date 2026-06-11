@@ -11,10 +11,17 @@ La idea central es sencilla:
 3. Documentar el flujo completo para que cualquiera pueda entender que se esta evaluando.
 4. Publicar los resultados de cada ronda cuando esten listos.
 
+Regla de transcripcion: cuando el usuario diga Groq y la transcripcion produzca
+`Grok`, debe interpretarse siempre como **Groq, con Q**. No se refiere a los
+modelos Grok de xAI.
+
+Antes de seguir con cualquier otra cosa, lee [LEEME_PRIMERO.md](LEEME_PRIMERO.md).
+
 Este repositorio esta dividido en dos bloques principales:
 
 - `benchmarks/`: la arena de evaluacion, los motores, las tareas, el juez y los reportes.
-- `telegram_codex_orchestrator/`: el orquestador operativo que recibe instrucciones y las ejecuta con Codex CLI y sus variantes.
+- `orchestrator_v2_1/`: el orquestador operativo actual para Telegram, tiers, memoria, voz y modo desarrollo.
+- `telegram_codex_orchestrator/`: la implementacion historica conservada para referencia y compatibilidad.
 - `assistant/`, `server.js` y `desktop_assistant.py`: el gestor ligero con Tkinter, Telegram, Groq STT, Codex CLI, alarmas y voz.
 
 ## Que vas a encontrar aqui
@@ -53,6 +60,12 @@ Los detalles de la estructura de salida estan descritos en [docs/RESULTS.md](doc
 
 ## Documentacion principal
 
+- [LEEME_PRIMERO.md](LEEME_PRIMERO.md)
+- [docs/ROUTER_CAPABILITY_MAP_20260608.html](docs/ROUTER_CAPABILITY_MAP_20260608.html)
+- [docs/ROUTER_CAPABILITY_MASTER_20260608.md](docs/ROUTER_CAPABILITY_MASTER_20260608.md)
+- [docs/EVOLUTIONARY_ROUTER_DESIGN_20260608.md](docs/EVOLUTIONARY_ROUTER_DESIGN_20260608.md)
+- [docs/ANTIGRAVITY_REFACTOR_HANDOFF_20260608.md](docs/ANTIGRAVITY_REFACTOR_HANDOFF_20260608.md)
+- [docs/ANTIGRAVITY_MASTER_PROMPT_20260608.md](docs/ANTIGRAVITY_MASTER_PROMPT_20260608.md)
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [docs/RESULTS.md](docs/RESULTS.md)
 - [docs/MODEL_LAB_SUMMARY.md](docs/MODEL_LAB_SUMMARY.md)
@@ -93,6 +106,8 @@ Orquestador Telegram:
 arrancar_orquestador.bat
 ```
 
+Este lanzador inicia `orchestrator_v2_1.telegram_gateway`.
+
 Calibracion de Codex Desktop por equipo:
 
 ```powershell
@@ -106,6 +121,51 @@ Cd <instruccion>
 ```
 
 `Cd` fuerza Codex Desktop. Para Codex CLI se usa `/codex <instruccion>`; la letra `C` sola ya no es un comando reservado.
+
+### Ejemplos del modo desarrollo
+
+Los dialogos siguientes son ilustrativos; el texto exacto de las respuestas del bot puede variar.
+
+1. Aprobar una propuesta:
+
+   ```text
+   Usuario: activar modo desarrollo
+   Bot: Modo desarrollo activado.
+   Usuario: Anade una comprobacion del formato de los mensajes.
+   Bot: [dev] Propuesta lista para revisar.
+   Usuario: si
+   Bot: [dev] Propuesta aprobada. Implementando...
+   ```
+
+2. Solicitar una revision antes de aprobar:
+
+   ```text
+   Usuario: activar modo desarrollo
+   Bot: Modo desarrollo activado.
+   Usuario: Documenta el arranque del orquestador.
+   Bot: [dev] Propuesta lista para revisar.
+   Usuario: Limita el cambio al README y anade un ejemplo.
+   Bot: [dev] Propuesta actualizada para revisar.
+   Usuario: si
+   Bot: [dev] Propuesta aprobada. Implementando...
+   ```
+
+3. Descartar o cancelar una tarea:
+
+   ```text
+   Usuario: activar modo desarrollo
+   Bot: Modo desarrollo activado.
+   Usuario: Cambia el formato de todas las respuestas.
+   Bot: [dev] Propuesta lista para revisar.
+   Usuario: no
+   Bot: [dev] Propuesta descartada sin ejecutar cambios.
+
+   Para cancelar el proceso en cualquier fase y salir del modo:
+   Usuario: desactivar modo desarrollo
+   Bot: Modo desarrollo desactivado.
+   ```
+
+La descripcion de una tarea genera primero una propuesta. Solo `si` autoriza su implementacion; `no` la descarta y `desactivar modo desarrollo` cancela el proceso activo y vuelve al modo normal.
 
 Interfaz grafica del orquestador:
 

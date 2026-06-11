@@ -1,0 +1,4 @@
+Notas del taller de producto:
+- Debemos migrar las cuentas antiguas de usuarios.
+- Responsable: Juan Gomez. Plazo: 10 de Junio.
+- Riesgo detectado: Caída temporal del servicio durante migración.

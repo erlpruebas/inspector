@@ -1,0 +1,11 @@
+.env
+*.pyc
+__pycache__/
+.pytest_cache/
+runtime/
+telegram_codex_orchestrator/memory/
+temp_bench_memory/
+temp_bench_workdir/
+temp_test_memory/
+temp_test_workdir/
+test_bench_report.md

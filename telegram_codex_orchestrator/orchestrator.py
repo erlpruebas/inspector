@@ -51,6 +51,7 @@ from intent import (
 from memories import RememberStore
 from memory import MemoryLog
 from pending_tasks import PendingTask, PendingTaskStore
+from python_repair import repair_python_syntax_if_requested
 from speech_io import SpeechIO
 from thread_store import ThreadRecord, ThreadStore
 from telegram_api import TelegramApi
@@ -151,8 +152,51 @@ class Orchestrator:
         user = message.get("from") or {}
         chat_id = int(chat.get("id") or 0)
         user_id = int(user.get("id") or 0)
-        text = (message.get("text") or "").strip()
+        text = (message.get("text") or message.get("caption") or "").strip()
         source = f"telegram user_id={user_id} chat_id={chat_id}"
+
+        # Download document if any
+        document = message.get("document")
+        if isinstance(document, dict):
+            file_id = document.get("file_id")
+            file_name = document.get("file_name") or f"file_{file_id}"
+            if file_id:
+                active_thread_record = self.threads.active()
+                inbox_dir = Path(self.settings.codex_workdir) / "inbox"
+                inbox_dir.mkdir(parents=True, exist_ok=True)
+                inbox_path = inbox_dir / file_name
+                
+                dest_dir = Path(active_thread_record.workdir)
+                dest_dir.mkdir(parents=True, exist_ok=True)
+                dest_path = dest_dir / file_name
+                try:
+                    self.telegram.download_file(file_id, inbox_path)
+                    import shutil
+                    shutil.copy(inbox_path, dest_path)
+                    self.memory.write(
+                        "telegram_document_received",
+                        f"name={file_name} size={document.get('file_size')} inbox_path={inbox_path} dest_path={dest_path}",
+                        source,
+                        thread=active_thread_record.name
+                    )
+                    if not self.settings.lab_mode:
+                        self._reply(
+                            chat_id,
+                            f"Archivo `{file_name}` aceptado y guardado en bandeja de entrada e hilo `{active_thread_record.name}`.",
+                            thread=active_thread_record.name
+                        )
+                except Exception as exc:
+                    self.memory.write(
+                        "telegram_document_error",
+                        f"file={file_name} err={exc}",
+                        source,
+                        thread=active_thread_record.name
+                    )
+                    self._reply(
+                        chat_id,
+                        f"Error al descargar el archivo {file_name}: {exc}",
+                        thread=active_thread_record.name
+                    )
 
         if not text and self._telegram_audio_file_id(message):
             text = self._transcribe_telegram_audio(message, source)
@@ -715,8 +759,62 @@ class Orchestrator:
                 "pending_id": pending_task.id if pending_task else "",
             }
             self.memory.write("codex_start", instruction, source, thread=thread_record.name)
-            self._reply(chat_id, f"Recibido. Trabajo en el hilo `{thread_record.name}`.", thread=thread_record.name)
-            result = self.codex.run(instruction, thread_id=thread_record.codex_thread_id)
+            if not self.settings.lab_mode:
+                self._reply(chat_id, f"Recibido. Trabajo en el hilo `{thread_record.name}`.", thread=thread_record.name)
+            
+            # List workspace files to make Codex aware of them
+            from pathlib import Path
+            workdir = Path(thread_record.workdir)
+            
+            # Copy all files from the shared inbox to the thread's workdir before run
+            inbox_dir = Path(self.settings.codex_workdir) / "inbox"
+            if inbox_dir.exists():
+                workdir.mkdir(parents=True, exist_ok=True)
+                import shutil
+                for item in inbox_dir.iterdir():
+                    if item.is_file():
+                        shutil.copy(item, workdir / item.name)
+            
+            files = []
+            if workdir.exists():
+                files = [f.name for f in workdir.iterdir() if f.is_file()]
+            
+            enhanced_instruction = instruction
+            if files:
+                enhanced_instruction += f"\n\n[System Note: The following files are available in your working directory (workspace): {', '.join(files)}]"
+
+            repaired_python = repair_python_syntax_if_requested(instruction, workdir)
+            if repaired_python is not None:
+                response = repaired_python.message
+                self.memory.write(
+                    "codex_fast_path_python_repair",
+                    f"path={repaired_python.path}\n{response}",
+                    "system",
+                    thread=thread_record.name,
+                )
+                record_usage(
+                    self.settings.memory_file.with_name("token_usage.jsonl"),
+                    source="telegram_orchestrator",
+                    component="local_python_repair",
+                    provider="local",
+                    model="python_compile",
+                    operation="python_syntax_repair",
+                    prompt_text=instruction,
+                    completion_text=response,
+                    task_id=str(pending_task.id if pending_task else ""),
+                    user_id=str(chat_id),
+                    thread_id=thread_record.name,
+                    metadata={"path": str(repaired_python.path)},
+                )
+                self._reply(chat_id, response)
+                return
+            
+            if self.settings.lab_mode:
+                enhanced_instruction += (
+                    "\n\nIMPORTANT FOR EVALUATION: Respond with ONLY the final clean, direct answer (e.g. just the number, the date in AAAA-MM-DD format, the name, or the list requested) without any pleasantries, conversational filler, markdown formatting, or extra explanations. If the question asks for a specific value, output ONLY that value."
+                )
+            
+            result = self.codex.run(enhanced_instruction, thread_id=thread_record.codex_thread_id)
             if result.thread_id and result.thread_id != thread_record.codex_thread_id:
                 thread_record = self.threads.update_codex_thread_id(thread_record.name, result.thread_id)
             response = result.text
@@ -879,7 +977,61 @@ class Orchestrator:
             return clean_text
         if not self._is_long_voice_text(clean_text):
             return clean_text
-        return self._summarize_for_voice(clean_text)
+        return self._gemini_summarize_for_voice(clean_text)
+
+    def _gemini_summarize_for_voice(self, text: str) -> str:
+        if not self.settings.google_api_key:
+            return self._summarize_for_voice(text)
+
+        prompt = (
+            "Eres el sintetizador de voz de un asistente de IA. Tu tarea es generar un resumen "
+            "muy narrativo, explicativo, conversacional y fluido en español del siguiente texto "
+            "para ser leído en voz alta. Evita marcas de formato markdown, viñetas, caracteres "
+            "especiales, código o términos técnicos excesivamente densos. Hazlo sonar natural, "
+            "amigable y claro. Mantén una longitud apropiada para ser leída en unos 30-40 segundos "
+            "(unas 80 a 120 palabras).\n\n"
+            f"Texto original:\n{text}"
+        )
+        payload = {
+            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+            "generationConfig": {"temperature": 0.3},
+        }
+        url = (
+            "https://generativelanguage.googleapis.com/v1beta/models/"
+            + urllib.parse.quote(self.settings.google_model, safe="")
+            + ":generateContent?key="
+            + urllib.parse.quote(self.settings.google_api_key, safe="")
+        )
+        request = urllib.request.Request(
+            url,
+            data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+            method="POST",
+            headers={"Content-Type": "application/json"},
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=20) as response:
+                result = json.loads(response.read().decode("utf-8", errors="replace"))
+            parts = (((result.get("candidates") or [{}])[0].get("content") or {}).get("parts") or [])
+            answer = "".join(str(part.get("text", "")) for part in parts if isinstance(part, dict)).strip()
+            if answer:
+                try:
+                    record_usage(
+                        Path(self.settings.memory_file).with_name("token_usage.jsonl"),
+                        source="telegram_orchestrator",
+                        component="voice_summarizer",
+                        provider="gemini",
+                        model=self.settings.google_model,
+                        operation="voice_summarize",
+                        prompt_text=prompt,
+                        completion_text=answer,
+                    )
+                except Exception:
+                    pass
+                return answer
+        except Exception as exc:
+            self.memory.write("voice_summary_gemini_error", str(exc), "orchestrator", thread=self.threads.active_name())
+        
+        return self._summarize_for_voice(text)
 
     @staticmethod
     def _is_long_voice_text(text: str) -> bool:

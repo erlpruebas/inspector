@@ -11,20 +11,30 @@ __pycache__/
 .env
 .env.*
 !/.env.example
+groq.txt
+*token*.txt
+*secret*.txt
+*key*.txt
 
 # Logs and runtime noise
 *.log
+!benchmarks/assets/access.log
+!benchmarks/assets/app_errors.log
+!benchmarks/assets/ventas_mayo.log
+!benchmarks/assets/hitl_business_synthetic/app_error.log
 *.err
 server.*.log
 logs/
 telegram_codex_orchestrator/runtime/
 telegram_codex_orchestrator/memory/*.json
 orchestrator_v2/runtime/
+orchestrator_v2_1/runtime/
 assistant/state.json
 assistant/alarms.md
 assistant/media/
 assistant/inbox/
 assistant/runtime/
+runtime/
 assistant/__pycache__/
 .chrome-profile/
 .chrome-worker-*/
@@ -35,3 +45,20 @@ tts_samples/*.mp3
 *.sqlite3
 models/
 models/.locks/
+
+# Extra noise
+node_modules/
+agente/.system_generated/
+temp_bench_memory/
+temp_bench_workdir/
+agente/*.mp3
+agente/*.xlsx
+agente/*.png
+agente/*.docx
+agente/*.pptx
+configs/desktop_calibrations/
+!configs/desktop_calibrations/
+!configs/desktop_calibrations/*/
+!configs/desktop_calibrations/*/calibration.json
+agent_v2_2/runtime/
+agent_v2_2/src/agent_v2_2.egg-info/

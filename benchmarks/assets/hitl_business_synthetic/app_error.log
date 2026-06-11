@@ -1,0 +1,6 @@
+2026-06-07T08:14:01Z INFO request_id=a91 route=/facturas status=200 duration_ms=84
+2026-06-07T08:15:42Z WARN request_id=a92 route=/informes retry=1 reason=database_timeout
+2026-06-07T08:15:47Z ERROR request_id=a92 route=/informes status=500 error=ConnectionPoolExhausted active=20 limit=20
+2026-06-07T08:15:48Z INFO request_id=a93 route=/salud status=200 duration_ms=7
+2026-06-07T08:16:05Z ERROR request_id=a94 route=/informes status=500 error=ConnectionPoolExhausted active=20 limit=20
+2026-06-07T08:16:12Z WARN worker=report_export queue_depth=146 normal_max=40

@@ -1,0 +1,3 @@
+Presupuesto de Distribuidora A:
+Partida Hardware: Servidores Dell PowerEdge - Coste total: 4500 USD
+Partida Software: Licencias Windows Server - Coste: 1200 USD

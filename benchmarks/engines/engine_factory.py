@@ -3,20 +3,32 @@ from __future__ import annotations
 import os
 import shutil
 import sys
+import tempfile
 from pathlib import Path
 
-from .base_engine import Engine
+from .base_engine import Engine, EngineResult
 from .codex_engine import CodexEngine
 from .command_engine import CommandEngine
 from .opencode_engine import OpenCodeEngine
 
 
 ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = ROOT.parent
 
 
 def create_engine(name: str) -> Engine:
     spec = parse_engine_spec(name)
     normalized = spec.provider
+    if normalized == "tool":
+        project_root = str(PROJECT_ROOT)
+        if project_root not in sys.path:
+            sys.path.insert(0, project_root)
+        from orchestrator_v2_1.tool_registry import get_tool
+
+        tool = get_tool(spec.model)
+        if tool.channel in {"local", "desktop"}:
+            raise ValueError(f"Benchmark tool route is not supported: {tool.id} ({tool.channel})")
+        return RelabeledEngine(create_engine(tool.engine), tool.id)
     if normalized == "codex":
         return CodexEngine(model=spec.model, name=spec.label)
     if normalized in {"groq", "openrouter", "lmstudio", "vikingnano"}:
@@ -56,7 +68,18 @@ def create_engine(name: str) -> Engine:
     if normalized in {"gemini_api", "gemini-api"}:
         script = ROOT / "engines" / "gemini_api_wrapper.py"
         model = spec.model or os.getenv("BENCH_GEMINI_API_MODEL", "gemini-2.5-flash-lite")
-        command = f'"{sys.executable}" "{script}" --model {_quote(model)} --prompt-file {{prompt_path}} --output {{output}}'
+        max_output_tokens = os.getenv("BENCH_GEMINI_API_MAX_OUTPUT_TOKENS", "8192")
+        command = f'"{sys.executable}" "{script}" --model {_quote(model)} --prompt-file {{prompt_path}} --output {{output}} --max-output-tokens {max_output_tokens}'
+        return CommandEngine(spec.label, command, model=model, inject_workspace=False)
+    if normalized in {"gemini_grounded", "gemini-grounded"}:
+        script = ROOT / "engines" / "gemini_api_wrapper.py"
+        model = spec.model or os.getenv("BENCH_GEMINI_GROUNDED_MODEL", "gemini-2.5-flash")
+        max_output_tokens = os.getenv("BENCH_GEMINI_GROUNDED_MAX_OUTPUT_TOKENS", "16384")
+        command = (
+            f'"{sys.executable}" "{script}" --model {_quote(model)} '
+            f"--prompt-file {{prompt_path}} --output {{output}} "
+            f"--max-output-tokens {max_output_tokens} --grounding google_search"
+        )
         return CommandEngine(spec.label, command, model=model, inject_workspace=False)
     if normalized in {"chrome-nano", "chrome_nano"}:
         script = ROOT / "engines" / "chrome_nano_cli.py"
@@ -66,12 +89,20 @@ def create_engine(name: str) -> Engine:
         return CommandEngine(spec.label, command, model=model, inject_workspace=True)
     if normalized == "gemini":
         model = spec.model or os.getenv("BENCH_GEMINI_CLI_MODEL", "gemini-2.5-flash-lite")
+        cli_home = _prepare_gemini_cli_home()
         template = os.getenv(
             "BENCH_GEMINI_COMMAND_TEMPLATE",
-            f"{_node_cli('gemini')} --skip-trust --approval-mode yolo --model {_quote(model)} -p \"\"",
+            f"{_node_cli('gemini')} --skip-trust --approval-mode yolo --model {_quote(model)} -p {{prompt}}",
         )
         timeout = int(os.getenv("BENCH_GEMINI_CLI_TIMEOUT_SECONDS", "420"))
-        return CommandEngine(spec.label, template, model=model, timeout_seconds=timeout, stdin_prompt=True)
+        return CommandEngine(
+            spec.label,
+            template,
+            model=model,
+            timeout_seconds=timeout,
+            inject_workspace=False,
+            env_overrides={"GEMINI_CLI_HOME": str(cli_home)},
+        )
     if normalized == "opencode":
         model = spec.model or os.getenv("BENCH_OPENCODE_MODEL", "openrouter/deepseek/deepseek-v3.2")
         agent = os.getenv("BENCH_OPENCODE_AGENT", "build")
@@ -82,6 +113,34 @@ def create_engine(name: str) -> Engine:
             raise ValueError("BENCH_COMMAND_TEMPLATE is required for the command engine")
         return CommandEngine(spec.label, template, model=spec.model)
     raise ValueError(f"Unknown benchmark engine: {name}")
+
+
+class RelabeledEngine:
+    def __init__(self, delegate: Engine, name: str) -> None:
+        self.delegate = delegate
+        self.name = safe_label(name)
+        self.model = getattr(delegate, "model", "")
+
+    def run(self, task_id: str, prompt: str, workdir: Path, expected_outputs: list[str]) -> EngineResult:
+        result = self.delegate.run(task_id, prompt, workdir, expected_outputs)
+        return EngineResult(
+            engine=self.name,
+            task_id=result.task_id,
+            returncode=result.returncode,
+            stdout=result.stdout,
+            stderr=result.stderr,
+            output_files=result.output_files,
+            elapsed_seconds=result.elapsed_seconds,
+            timed_out=result.timed_out,
+            usage=result.usage,
+            model=result.model,
+            error_type=result.error_type,
+            retry_after_seconds=result.retry_after_seconds,
+        )
+
+    def cancel(self, task_id: str) -> bool:
+        cancel = getattr(self.delegate, "cancel", None)
+        return bool(cancel(task_id)) if callable(cancel) else False
 
 
 class EngineSpec:
@@ -100,6 +159,24 @@ def parse_engine_spec(value: str) -> EngineSpec:
         provider, model = raw.split(":", 1)
         return EngineSpec(provider, model)
     return EngineSpec(raw)
+
+
+def _prepare_gemini_cli_home() -> Path:
+    configured = os.getenv("BENCH_GEMINI_CLI_HOME", "").strip()
+    target = Path(configured) if configured else Path(tempfile.gettempdir()) / "inspector-gemini-cli"
+    target.mkdir(parents=True, exist_ok=True)
+    inner_target = target / ".gemini"
+    inner_target.mkdir(parents=True, exist_ok=True)
+
+    source = Path(os.getenv("GEMINI_CLI_HOME", "").strip() or Path.home() / ".gemini")
+    for name in ("oauth_creds.json", "google_accounts.json", "settings.json", "installation_id"):
+        source_file = source / name
+        if not source_file.exists():
+            continue
+        for destination in (target / name, inner_target / name):
+            if not destination.exists():
+                shutil.copy2(source_file, destination)
+    return target
 
 
 def safe_label(value: str) -> str:

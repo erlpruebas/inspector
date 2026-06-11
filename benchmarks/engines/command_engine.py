@@ -4,6 +4,7 @@ import os
 import json
 import shlex
 import subprocess
+import threading
 import time
 import re
 from pathlib import Path
@@ -21,13 +22,17 @@ class CommandEngine:
         model: str = "",
         inject_workspace: bool = True,
         stdin_prompt: bool = False,
+        env_overrides: dict[str, str] | None = None,
     ) -> None:
         self.name = name
         self.model = model
         self.command_template = command_template
         self.inject_workspace = inject_workspace
         self.stdin_prompt = stdin_prompt
+        self.env_overrides = env_overrides or {}
         self.timeout_seconds = int(os.getenv(f"BENCH_{name.upper()}_TIMEOUT_SECONDS", str(timeout_seconds)))
+        self._processes: dict[str, subprocess.Popen[str]] = {}
+        self._process_lock = threading.RLock()
 
     def run(self, task_id: str, prompt: str, workdir: Path, expected_outputs: list[str]) -> EngineResult:
         if self.inject_workspace:
@@ -45,19 +50,29 @@ class CommandEngine:
         command = [_unquote_arg(part) for part in shlex.split(rendered, posix=False)]
         started = time.monotonic()
         try:
-            process = subprocess.run(
+            process = subprocess.Popen(
                 command,
                 cwd=str(workdir),
-                input=prompt if self.stdin_prompt else None,
+                env={**os.environ, **self.env_overrides},
                 text=True,
                 encoding="utf-8",
                 errors="replace",
+                stdin=subprocess.PIPE if self.stdin_prompt else None,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                timeout=self.timeout_seconds,
             )
-            stdout = strip_ansi(process.stdout or "")
-            stderr = strip_ansi(process.stderr or "")
+            with self._process_lock:
+                self._processes[task_id] = process
+            try:
+                stdout_raw, stderr_raw = process.communicate(
+                    input=prompt if self.stdin_prompt else None,
+                    timeout=self.timeout_seconds,
+                )
+            finally:
+                with self._process_lock:
+                    self._processes.pop(task_id, None)
+            stdout = strip_ansi(stdout_raw or "")
+            stderr = strip_ansi(stderr_raw or "")
             _ensure_expected_output(workdir, expected_outputs, stdout)
             return EngineResult(
                 engine=self.name,
@@ -71,18 +86,37 @@ class CommandEngine:
                 model=self.model or _read_usage(workdir).get("model", ""),
             )
         except subprocess.TimeoutExpired as exc:
+            if process.poll() is None:
+                process.terminate()
+                try:
+                    process.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+            stdout, stderr = process.communicate()
             return EngineResult(
                 engine=self.name,
                 task_id=task_id,
                 returncode=124,
-                stdout=_clean(exc.stdout),
-                stderr=_clean(exc.stderr),
+                stdout=_clean(exc.stdout) or _clean(stdout),
+                stderr=_clean(exc.stderr) or _clean(stderr),
                 output_files=_collect_outputs(workdir, expected_outputs),
                 elapsed_seconds=time.monotonic() - started,
                 timed_out=True,
                 usage=_read_usage(workdir),
                 model=self.model or _read_usage(workdir).get("model", ""),
             )
+
+    def cancel(self, task_id: str) -> bool:
+        with self._process_lock:
+            process = self._processes.get(task_id)
+        if process is None or process.poll() is not None:
+            return False
+        process.terminate()
+        try:
+            process.wait(timeout=3)
+        except subprocess.TimeoutExpired:
+            process.kill()
+        return True
 
 
 def _clean(value: str | bytes | None) -> str:

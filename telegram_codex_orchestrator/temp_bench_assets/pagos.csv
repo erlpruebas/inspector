@@ -1,0 +1,3 @@
+PagoID,FacturaID,Monto,Estado
+P01,F01,200,Completado
+P02,F03,120,Completado

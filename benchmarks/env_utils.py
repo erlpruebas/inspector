@@ -5,9 +5,9 @@ from pathlib import Path
 
 
 ENV_PATHS = (
+    Path("D:/inspector/.env"),
     Path("D:/credenciales"),
     Path("D:/variables/.env"),
-    Path("D:/inspector/.env"),
     Path("D:/inspector/telegram_codex_orchestrator/.env"),
 )
 

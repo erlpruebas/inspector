@@ -1,0 +1,3 @@
+Archivo del Proyecto Delta.
+La version valida del presupuesto es presupuesto_final.txt.
+El borrador antiguo no debe usarse.

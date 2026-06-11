@@ -1,0 +1,8 @@
+2026-05-20T07:30:58Z WARN oauth-client latency=29876ms provider=identity.example
+2026-05-20T07:31:03Z ERROR oauth-client timeout request_id=req-002 timeout_ms=30000
+2026-05-20T07:31:25Z ERROR login upstream_timeout request_id=req-003 dependency=oauth
+2026-05-20T07:34:12Z ERROR oauth-client timeout request_id=req-004 timeout_ms=30000
+2026-05-20T07:43:17Z ERROR login upstream_timeout request_id=req-006 dependency=oauth
+2026-05-20T07:48:52Z ERROR oauth-client timeout request_id=req-007 timeout_ms=30000
+2026-05-20T07:49:02Z INFO oauth-client circuit_breaker=enabled fallback=session-cache
+2026-05-20T07:49:18Z INFO login recovered request_id=req-008 latency=421ms

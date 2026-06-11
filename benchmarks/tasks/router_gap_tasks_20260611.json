@@ -1,0 +1,90 @@
+[
+  {
+    "id": "gap-synth-long-01",
+    "title": "Sintetizar un hilo largo de correos",
+    "prompt": "Lee `benchmarks/assets/assistant_synthetic/emails_hilos.md` completo y crea un resumen ejecutivo de no mas de 250 palabras. Incluye decisiones, fechas, responsables y riesgos. No mezcles conversaciones ni inventes datos.",
+    "required_files": [
+      "assistant_synthetic/emails_hilos.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "summarization"
+    ],
+    "expected_operation": "long_text_synthesis",
+    "expected_keys": [
+      "decisiones",
+      "fechas",
+      "responsables",
+      "riesgos"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "coverage": 3,
+      "format": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "gap-verify-01",
+    "title": "Verificar un modulo y sus pruebas",
+    "prompt": "Inspecciona `benchmarks/assets/assistant_synthetic/mini_project/calculator.py` y `benchmarks/assets/assistant_synthetic/mini_project/test_calculator.py`. Ejecuta las pruebas, indica si pasan y verifica que suma, resta, multiplicacion y division estan cubiertas. Devuelve evidencia concreta del comando y del resultado. No modifiques los archivos.",
+    "required_files": [
+      "mini_project/calculator.py",
+      "mini_project/test_calculator.py"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "skills": [
+      "verify",
+      "code"
+    ],
+    "expected_operation": "artifact_verification",
+    "expected_keys": [
+      "pytest",
+      "suma",
+      "resta",
+      "multiplicacion",
+      "division"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "execution_evidence": 3,
+      "coverage": 2,
+      "traceability": 1
+    }
+  },
+  {
+    "id": "gap-create-modify-01",
+    "title": "Actualizar una ficha de cliente",
+    "prompt": "Lee `customer_profile.json`, conserva todos sus campos y crea `customer_profile_updated.json`. Cambia `status` a `active`, anade `preferred_contact` con valor `email` y agrega la etiqueta `priority-2026` sin eliminar las etiquetas existentes. El resultado debe ser JSON valido y no debe modificar el archivo original.",
+    "required_files": [
+      "customer_profile.json"
+    ],
+    "expected_outputs": [
+      "customer_profile_updated.json"
+    ],
+    "requires_network": false,
+    "skills": [
+      "write_file"
+    ],
+    "expected_operation": "artifact_modification",
+    "expected_keys": [
+      "active",
+      "preferred_contact",
+      "email",
+      "priority-2026",
+      "industrial"
+    ],
+    "rubric": {
+      "correctness": 4,
+      "format": 3,
+      "preservation": 2,
+      "minimality": 1
+    }
+  }
+]

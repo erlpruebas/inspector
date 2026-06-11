@@ -1,0 +1,329 @@
+[
+  {
+    "id": "hitl-01",
+    "order": 1,
+    "block": "recuperacion_puntual",
+    "title": "Datos fiscales",
+    "user_request": "Pasame el numero de cuenta de la empresa y el CIF, que me lo estan pidiendo.",
+    "memory_queries": ["empresa IBAN CIF"],
+    "required_files": ["hitl_business_synthetic/memory.md"],
+    "expected_facts": ["ES91 2100 5524 8102 0012 3456", "B-87451236"],
+    "expected_operation": "memory_field_lookup",
+    "route_hypothesis": "local_or_groq_fast"
+  },
+  {
+    "id": "hitl-02",
+    "order": 2,
+    "block": "recuperacion_puntual",
+    "title": "Wifi sala reuniones",
+    "user_request": "Que contrasena pusimos para el wifi de la sala de reuniones?",
+    "memory_queries": ["wifi sala de reuniones clave vigente"],
+    "required_files": ["hitl_business_synthetic/memory.md"],
+    "expected_facts": ["TallerNorte-Reuniones", "NorteSala-2026!"],
+    "expected_operation": "memory_field_lookup",
+    "route_hypothesis": "local_or_groq_fast"
+  },
+  {
+    "id": "hitl-03",
+    "order": 3,
+    "block": "recuperacion_puntual",
+    "title": "Codigo pintura habitual",
+    "user_request": "Cual es el codigo de producto de la pintura gris que compramos siempre?",
+    "memory_queries": ["pintura gris habitual codigo"],
+    "required_files": ["hitl_business_synthetic/memory.md"],
+    "expected_facts": ["CP-GR-7016-M", "gris grafito", "mate"],
+    "expected_operation": "memory_field_lookup",
+    "route_hypothesis": "local_or_groq_fast"
+  },
+  {
+    "id": "hitl-04",
+    "order": 4,
+    "block": "recuperacion_puntual",
+    "title": "Revision furgoneta",
+    "user_request": "Cuando le toca pasar la revision a la furgoneta?",
+    "memory_queries": ["furgoneta proxima revision"],
+    "required_files": ["hitl_business_synthetic/memory.md"],
+    "expected_facts": ["2026-07-18", "5842-LKM"],
+    "expected_operation": "memory_record_lookup",
+    "route_hypothesis": "local_or_groq_fast"
+  },
+  {
+    "id": "hitl-05",
+    "order": 5,
+    "block": "recuperacion_puntual",
+    "title": "Direccion de muestras",
+    "user_request": "A que direccion tengo que mandar el paquete de las muestras del Proyecto Alfa?",
+    "memory_queries": ["Proyecto Alfa direccion muestras"],
+    "required_files": ["hitl_business_synthetic/memory.md"],
+    "expected_facts": ["Avenida del Parque 44", "Clinica Armonia"],
+    "expected_operation": "memory_field_lookup",
+    "route_hypothesis": "local_or_groq_fast"
+  },
+  {
+    "id": "hitl-06",
+    "order": 6,
+    "block": "redaccion_con_datos",
+    "title": "Factura proforma",
+    "user_request": "Redactame la factura proforma para el cliente del Proyecto Alfa con los tres conceptos que acordamos en la ultima reunion.",
+    "memory_queries": ["Proyecto Alfa cliente direccion fiscal"],
+    "required_files": [
+      "hitl_business_synthetic/memory.md",
+      "hitl_business_synthetic/emails_reenviados.md"
+    ],
+    "expected_facts": ["Clinica Armonia", "8400", "1950", "480", "10830"],
+    "expected_operation": "retrieve_and_draft",
+    "route_hypothesis": "groq_qwen_or_deepseek"
+  },
+  {
+    "id": "hitl-07",
+    "order": 7,
+    "block": "redaccion_con_datos",
+    "title": "Resumen de reunion al equipo",
+    "user_request": "Pasale un resumen de la reunion del 5 de junio al equipo por correo.",
+    "memory_queries": [],
+    "required_files": [
+      "hitl_business_synthetic/emails_reenviados.md",
+      "hitl_business_synthetic/equipo.md"
+    ],
+    "expected_facts": ["muestras", "proforma", "herrajes", "Marta", "Carlos", "Elena", "David"],
+    "expected_operation": "multi_source_email_draft",
+    "route_hypothesis": "deepseek_v3_2"
+  },
+  {
+    "id": "hitl-08",
+    "order": 8,
+    "block": "redaccion_con_datos",
+    "title": "Respuesta por retraso",
+    "user_request": "Contesta a Laura que el presupuesto se retrasa al viernes, con el tono educado de siempre.",
+    "memory_queries": ["preferencias comunicacion clientes VIP"],
+    "required_files": [
+      "hitl_business_synthetic/memory.md",
+      "hitl_business_synthetic/emails_reenviados.md"
+    ],
+    "expected_facts": ["Laura", "viernes 12 de junio"],
+    "expected_operation": "retrieve_style_and_draft",
+    "route_hypothesis": "groq_fast_or_deepseek"
+  },
+  {
+    "id": "hitl-09",
+    "order": 9,
+    "block": "comparacion_y_cruce",
+    "title": "Comparar presupuestos",
+    "user_request": "El presupuesto que ha mandado Pinturas Rivera este ano es mas caro que el del ano pasado?",
+    "memory_queries": [],
+    "required_files": [
+      "hitl_business_synthetic/presupuesto_rivera_2025.md",
+      "hitl_business_synthetic/presupuesto_rivera_2026.md"
+    ],
+    "expected_facts": ["1150", "1295", "145", "12,6%"],
+    "expected_operation": "compare_full_files_and_calculate",
+    "route_hypothesis": "gemini_files_or_codex_cli"
+  },
+  {
+    "id": "hitl-10",
+    "order": 10,
+    "block": "comparacion_y_cruce",
+    "title": "Comprobar pago",
+    "user_request": "Revisa si el cliente del Proyecto Alfa ya ha pagado la factura del mes pasado.",
+    "memory_queries": ["Proyecto Alfa cliente factura"],
+    "required_files": [
+      "hitl_business_synthetic/memory.md",
+      "hitl_business_synthetic/banco_ingresos.csv",
+      "hitl_business_synthetic/emails_reenviados.md"
+    ],
+    "expected_facts": ["FA-26038", "7850", "pagada", "2026-06-06"],
+    "expected_operation": "cross_source_reconciliation",
+    "route_hypothesis": "groq_qwen_or_codex_cli"
+  },
+  {
+    "id": "hitl-11",
+    "order": 11,
+    "block": "web_y_vigilancia",
+    "title": "Cambio de precios competencia",
+    "user_request": "Dime si Reformas Delta ha subido los precios de sus servicios en su web.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/competencia_snapshot.md"],
+    "web_inputs": ["https://reformas-delta.example/servicios"],
+    "expected_facts": ["2026-05-01"],
+    "expected_operation": "web_lookup_and_compare_snapshot",
+    "route_hypothesis": "gemini_grounded",
+    "test_note": "Necesita un backend web simulado mientras se usen dominios .example."
+  },
+  {
+    "id": "hitl-12",
+    "order": 12,
+    "block": "web_y_vigilancia",
+    "title": "Stock en distribuidores",
+    "user_request": "Mira si hay stock del componente HX-44 en los tres distribuidores habituales.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/enlaces_distribuidores.md"],
+    "web_inputs": [
+      "https://suministros-uno.example/productos/HX-44",
+      "https://componentes-centro.example/catalogo/HX-44",
+      "https://industrial-directo.example/HX-44"
+    ],
+    "expected_facts": ["Suministros Uno", "Componentes Centro", "Industrial Directo"],
+    "expected_operation": "multi_site_web_lookup",
+    "route_hypothesis": "gemini_grounded",
+    "test_note": "Necesita respuestas web simuladas o URLs reales de laboratorio."
+  },
+  {
+    "id": "hitl-13",
+    "order": 13,
+    "block": "plazos_y_orden",
+    "title": "Tareas colgadas",
+    "user_request": "Dime que tareas se nos han quedado colgadas esta semana.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/tareas_pendientes.md"],
+    "expected_facts": ["muestras", "herrajes", "FV-26051", "seguro"],
+    "expected_operation": "filter_open_tasks_by_period",
+    "route_hypothesis": "groq_fast_or_qwen"
+  },
+  {
+    "id": "hitl-14",
+    "order": 14,
+    "block": "plazos_y_orden",
+    "title": "Aviso de mudanza",
+    "user_request": "Avisame dos dias antes de que venza el plazo para presentar los papeles de la mudanza.",
+    "memory_queries": ["Mudanza nave fecha limite documentacion"],
+    "required_files": ["hitl_business_synthetic/memory.md"],
+    "expected_facts": ["2026-06-24", "2026-06-26"],
+    "expected_operation": "memory_lookup_and_create_alarm",
+    "route_hypothesis": "local_deterministic"
+  },
+  {
+    "id": "hitl-15",
+    "order": 15,
+    "block": "plazos_y_orden",
+    "title": "Facturas sin aprobar",
+    "user_request": "Tenemos alguna factura de proveedor que venza esta semana y no este aprobada?",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/vencimientos_proveedores.csv"],
+    "expected_facts": ["FV-26051", "Pinturas Rivera", "2026-06-11", "1840"],
+    "expected_operation": "filter_structured_rows",
+    "route_hypothesis": "groq_qwen_or_codex_cli"
+  },
+  {
+    "id": "hitl-16",
+    "order": 16,
+    "block": "plazos_y_orden",
+    "title": "Organizar notas",
+    "user_request": "Organizame las notas sueltas que te he ido mandando estos dias en limpio.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/notas_rapidas.md"],
+    "expected_facts": ["compras", "logistica", "seguro", "Proyecto Alfa"],
+    "expected_operation": "classify_and_rewrite_notes",
+    "route_hypothesis": "deepseek_v3_2"
+  },
+  {
+    "id": "hitl-17",
+    "order": 17,
+    "block": "correo_reenviado",
+    "title": "Resumen semanal de correo",
+    "user_request": "Me han escrito algo importante esta semana? Hazme un resumen corto y dime que requiere accion.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/emails_reenviados.md"],
+    "expected_facts": ["presupuesto", "seguro", "20 de junio", "factura gas", "Proyecto Alfa"],
+    "expected_operation": "email_digest_and_action_extraction",
+    "route_hypothesis": "deepseek_v3_2"
+  },
+  {
+    "id": "hitl-18",
+    "order": 18,
+    "block": "recuperacion_encadenada",
+    "title": "Floristeria cerca del dentista",
+    "user_request": "Mira donde tengo el dentista y recomiendame una floristeria cercana que este abierta hasta tarde.",
+    "memory_queries": ["direccion proxima cita dentista"],
+    "required_files": ["hitl_business_synthetic/memory.md"],
+    "expected_facts": ["Calle Narvaez 68", "Petalo Retiro", "650 m", "21:00"],
+    "expected_operation": "memory_then_web_lookup",
+    "route_hypothesis": "memory_lookup_then_compound_mini"
+  },
+  {
+    "id": "hitl-19",
+    "order": 19,
+    "block": "archivos_completos",
+    "title": "Resultado mensual",
+    "user_request": "Cruza las ventas y los gastos de junio y dime el resultado total y que proyecto deja el mayor margen.",
+    "memory_queries": [],
+    "required_files": [
+      "hitl_business_synthetic/ventas_junio.csv",
+      "hitl_business_synthetic/gastos_junio.csv"
+    ],
+    "expected_facts": ["15400", "8230", "7170", "Alfa", "5420"],
+    "expected_operation": "multi_file_financial_calculation",
+    "route_hypothesis": "codex_or_gemini_cli"
+  },
+  {
+    "id": "hitl-20",
+    "order": 20,
+    "block": "multimodal",
+    "title": "Foto de ticket",
+    "user_request": "He hecho una foto al ticket. Dime proveedor, fecha, total y concepto para guardarlo como gasto.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/ticket_ferreteria.png"],
+    "expected_facts": ["Ferreteria Sol", "2026-06-06", "47,80", "tornilleria"],
+    "expected_operation": "image_document_extraction",
+    "route_hypothesis": "gemini_cli_multimodal"
+  },
+  {
+    "id": "hitl-21",
+    "order": 21,
+    "block": "documentos_binarios",
+    "title": "Clausula de contrato",
+    "user_request": "Lee el contrato y dime con cuanto preaviso podemos cancelarlo y si hay penalizacion.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/contrato_mantenimiento.pdf"],
+    "expected_facts": ["30 dias", "15%", "cuotas pendientes"],
+    "expected_operation": "pdf_clause_extraction",
+    "route_hypothesis": "gemini_cli_or_codex_cli"
+  },
+  {
+    "id": "hitl-22",
+    "order": 22,
+    "block": "hoja_calculo",
+    "title": "Pedidos con retraso",
+    "user_request": "Abre la hoja de pedidos y dime cuales estan retrasados y el importe total afectado.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/pedidos_operativos.xlsx"],
+    "expected_facts": ["PED-104", "PED-107", "4850"],
+    "expected_operation": "spreadsheet_filter_and_calculate",
+    "route_hypothesis": "gemini_cli_or_codex_cli"
+  },
+  {
+    "id": "hitl-23",
+    "order": 23,
+    "block": "archivo_comprimido",
+    "title": "Encontrar presupuesto final",
+    "user_request": "Dentro del ZIP del Proyecto Delta, encuentra el presupuesto valido y dime el total final.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/proyecto_delta.zip"],
+    "expected_facts": ["15246"],
+    "expected_operation": "archive_discovery_and_extraction",
+    "route_hypothesis": "gemini_cli_or_codex_cli"
+  },
+  {
+    "id": "hitl-24",
+    "order": 24,
+    "block": "diagnostico",
+    "title": "Diagnosticar error de informes",
+    "user_request": "Mira este log y dime por que estan fallando los informes y cual seria la primera correccion que probarias.",
+    "memory_queries": [],
+    "required_files": ["hitl_business_synthetic/app_error.log"],
+    "expected_facts": ["ConnectionPoolExhausted", "active=20", "limit=20", "queue_depth=146"],
+    "expected_operation": "log_diagnosis",
+    "route_hypothesis": "qwen_reasoning_or_codex_cli"
+  },
+  {
+    "id": "hitl-25",
+    "order": 25,
+    "block": "informacion_incompleta",
+    "title": "Peticion ambigua",
+    "user_request": "Prepara el presupuesto nuevo para el cliente.",
+    "memory_queries": [],
+    "required_files": [],
+    "expected_facts": ["cliente", "conceptos", "importes"],
+    "expected_operation": "ask_for_missing_information",
+    "route_hypothesis": "groq_fast"
+  }
+]

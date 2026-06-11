@@ -9,6 +9,7 @@ from .capabilities.preferences import PreferenceStore
 from .capabilities.status import StatusManager
 from .capabilities.voice import VoiceCapabilities
 from .evolution.controller import EvolutionController
+from .evolution.experience import ExperienceStore
 from .runtime import TelegramAgentRuntime
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
@@ -27,8 +28,15 @@ def _print_preferences() -> None:
 
 def start_agent() -> None:
     logger.info("Iniciando Inspector Agent 2.2...")
-    runtime = TelegramAgentRuntime()
-    runtime.run()
+    while True:
+        runtime = TelegramAgentRuntime()
+        runtime.run()
+        state = runtime.lifecycle.load()
+        if not (state.reload_requested or state.restart_requested):
+            return
+        action = "reinicio" if state.restart_requested else "recarga"
+        logger.info("Aplicando %s solicitada...", action)
+        runtime.lifecycle.clear()
 
 
 def check_status() -> None:
@@ -126,15 +134,61 @@ def matrix_report() -> None:
     print(report.to_markdown())
 
 
-def arena_run(limit: int | None = None) -> None:
+def training_coverage_report() -> None:
     controller = EvolutionController()
-    report = controller.run_benchmark_arena(limit=limit)
+    print(controller.training_coverage().to_markdown())
+
+
+def training_plan_report(samples_per_pair: int = 3) -> None:
+    controller = EvolutionController()
+    print(
+        controller.training_plan(
+            samples_per_pair=samples_per_pair,
+        ).to_markdown()
+    )
+
+
+def invalidate_evidence(experience_ids: list[str], reason: str) -> None:
+    updated = ExperienceStore().invalidate(experience_ids, reason)
+    print(f"invalidated={updated}")
+
+
+def restore_evidence(experience_ids: list[str]) -> None:
+    updated = ExperienceStore().restore(experience_ids)
+    print(f"restored={updated}")
+
+
+def arena_run(
+    limit: int | None = None,
+    tool_ids: list[str] | None = None,
+    all_tools: bool = False,
+    task_ids: list[str] | None = None,
+) -> None:
+    controller = EvolutionController()
+    report = controller.run_benchmark_arena(
+        limit=limit,
+        tool_ids=tool_ids,
+        all_compatible_tools=all_tools,
+        task_ids=task_ids,
+    )
     print(report.to_markdown())
 
 
-def arena_run_paths(paths: list[str], limit: int | None = None) -> None:
+def arena_run_paths(
+    paths: list[str],
+    limit: int | None = None,
+    tool_ids: list[str] | None = None,
+    all_tools: bool = False,
+    task_ids: list[str] | None = None,
+) -> None:
     controller = EvolutionController()
-    report = controller.run_benchmark_arena(task_paths=[Path(path) for path in paths], limit=limit)
+    report = controller.run_benchmark_arena(
+        task_paths=[Path(path) for path in paths],
+        limit=limit,
+        tool_ids=tool_ids,
+        all_compatible_tools=all_tools,
+        task_ids=task_ids,
+    )
     print(report.to_markdown())
 
 
@@ -186,6 +240,54 @@ def main() -> None:
     )
     audit_matrix_parser = audit_sub.add_parser("matrix", help="Resume la matriz aprendida de capacidades")
     audit_matrix_parser.set_defaults(func=lambda args: matrix_report())
+    audit_training_parser = audit_sub.add_parser(
+        "training",
+        help="Muestra cobertura herramienta-capacidad demostrada y entrenada",
+    )
+    audit_training_parser.set_defaults(func=lambda args: training_coverage_report())
+    audit_plan_parser = audit_sub.add_parser(
+        "training-plan",
+        help="Genera el siguiente lote reproducible de pruebas",
+    )
+    audit_plan_parser.add_argument(
+        "--samples-per-pair",
+        type=int,
+        default=3,
+    )
+    audit_plan_parser.set_defaults(
+        func=lambda args: training_plan_report(args.samples_per_pair)
+    )
+    audit_invalidate_parser = audit_sub.add_parser(
+        "invalidate-evidence",
+        help="Marca experiencias concretas como no validas para aprendizaje",
+    )
+    audit_invalidate_parser.add_argument(
+        "--id",
+        action="append",
+        required=True,
+        help="Identificador de experiencia; puede repetirse",
+    )
+    audit_invalidate_parser.add_argument(
+        "--reason",
+        required=True,
+        help="Motivo auditable de la invalidacion",
+    )
+    audit_invalidate_parser.set_defaults(
+        func=lambda args: invalidate_evidence(args.id, args.reason)
+    )
+    audit_restore_parser = audit_sub.add_parser(
+        "restore-evidence",
+        help="Restaura experiencias invalidadas por error",
+    )
+    audit_restore_parser.add_argument(
+        "--id",
+        action="append",
+        required=True,
+        help="Identificador de experiencia; puede repetirse",
+    )
+    audit_restore_parser.set_defaults(
+        func=lambda args: restore_evidence(args.id)
+    )
     audit_arena_parser = audit_sub.add_parser("arena", help="Ejecuta la arena de benchmark sobre la batería normalizada")
     audit_arena_parser.add_argument("--limit", type=int, default=None, help="Limita el numero de tareas ejecutadas")
     audit_arena_parser.add_argument(
@@ -194,7 +296,36 @@ def main() -> None:
         default=[],
         help="Ruta concreta de una batería o archivo de tareas a ejecutar",
     )
-    audit_arena_parser.set_defaults(func=lambda args: arena_run_paths(args.path, args.limit) if args.path else arena_run(args.limit))
+    audit_arena_parser.add_argument(
+        "--tool",
+        action="append",
+        default=[],
+        help="Limita la ejecución a una herramienta compatible concreta",
+    )
+    audit_arena_parser.add_argument(
+        "--all-tools",
+        action="store_true",
+        help="Ejecuta todas las herramientas compatibles por tarea",
+    )
+    audit_arena_parser.add_argument(
+        "--task-id",
+        action="append",
+        default=[],
+        help="Ejecuta solo una tarea concreta; puede repetirse",
+    )
+    audit_arena_parser.set_defaults(
+        func=lambda args: (
+            arena_run_paths(
+                args.path,
+                args.limit,
+                args.tool,
+                args.all_tools,
+                args.task_id,
+            )
+            if args.path
+            else arena_run(args.limit, args.tool, args.all_tools, args.task_id)
+        )
+    )
 
     evolution_parser = subparsers.add_parser("evolution", help="Control del sistema evolutivo")
     evolution_sub = evolution_parser.add_subparsers(dest="evolution_command", required=True)

@@ -4,10 +4,17 @@ from .benchmark_runner import BenchmarkRunner
 from .controller import EvolutionController, EvolutionStatus
 from .coverage import CoverageReport, TaskCoverageAnalyzer
 from .experience import BenchmarkExperienceImporter, ExperienceStore, RouterExperience
+from .hitl import HITLController, HITLTrial
 from .matrix import CapabilityCell, CapabilityMatrixBuilder, CapabilityMatrixReport
 from .normalization import NormalizedTask, NormalizedTaskReport, TaskNormalizer
 from .maturity import MaturityReport, MaturityGate
 from .readiness import HITLReadinessGate, HITLReadinessReport
+from .training_coverage import (
+    TrainingCoverageAnalyzer,
+    TrainingCoverageReport,
+    TrainingPair,
+)
+from .training_plan import PlannedRun, TrainingPlan, TrainingPlanner
 
 __all__ = [
     "TaskAuditReport",
@@ -25,6 +32,8 @@ __all__ = [
     "BenchmarkExperienceImporter",
     "ExperienceStore",
     "RouterExperience",
+    "HITLController",
+    "HITLTrial",
     "CapabilityCell",
     "CapabilityMatrixBuilder",
     "CapabilityMatrixReport",
@@ -35,4 +44,10 @@ __all__ = [
     "MaturityGate",
     "HITLReadinessGate",
     "HITLReadinessReport",
+    "TrainingCoverageAnalyzer",
+    "TrainingCoverageReport",
+    "TrainingPair",
+    "PlannedRun",
+    "TrainingPlan",
+    "TrainingPlanner",
 ]

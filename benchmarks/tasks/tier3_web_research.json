@@ -1,0 +1,70 @@
+[
+  {
+    "id": "tier3_concierto_publico",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "# Proximo concierto de Bad Bunny\n\nBusca en paginas publicas la proxima fecha de concierto publicada en una agenda oficial o ticketera publica para Bad Bunny. Devuelve un informe breve con artista, fecha, recinto, ciudad, precio minimo si aparece, URL fuente y fecha de consulta. Si hay varios resultados, elige uno claramente vigente y cita las fuentes.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "skills": ["web_search", "reporting", "synthesis"],
+    "expected_keys": ["Bad Bunny", "fecha", "recinto", "fuente"],
+    "rubric": {
+      "correctness": 4,
+      "sources": 3,
+      "freshness": 2,
+      "structure": 1
+    }
+  },
+  {
+    "id": "tier3_empresa_publica",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "# Informe corto sobre Zara\n\nCompila un informe breve sobre Zara usando paginas publicas oficiales: que vende, a que tipo de usuario se dirige, tres capacidades o lineas de producto clave y una nota reciente de su blog, newsroom o pagina de producto. Incluye fuentes y fecha de consulta. Si el dato no esta en la pagina oficial, di que no lo has encontrado y no lo inventes.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "skills": ["web_search", "company_research", "reporting"],
+    "expected_keys": ["Zara", "producto", "fuentes", "fecha"],
+    "rubric": {
+      "correctness": 4,
+      "sources": 3,
+      "freshness": 2,
+      "structure": 1
+    }
+  },
+  {
+    "id": "tier3_gemini_grounding",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "# Grounding oficial de Gemini\n\nConsulta la documentacion oficial de Google AI sobre Grounding with Google Search. Resume en una tabla: modelos compatibles actuales, herramienta exacta que se usa, que metadatos de respuesta devuelve y que diferencia hay con google_search_retrieval legado. Incluye URLs fuente y fecha de consulta.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "skills": ["web_search", "technical_report", "comparison"],
+    "expected_keys": ["google_search", "groundingMetadata", "modelos", "google_search_retrieval"],
+    "rubric": {
+      "correctness": 4,
+      "sources": 3,
+      "freshness": 2,
+      "structure": 1
+    }
+  },
+  {
+    "id": "tier3_groq_web_search",
+    "level": "L5",
+    "category": "investigacion_web",
+    "prompt": "# Web search oficial de Groq\n\nConsulta la documentacion oficial de Groq sobre web_search. Resume que sistemas lo soportan, que diferencia hay entre groq/compound y groq/compound-mini, y que herramientas se ejecutan del lado del servidor. Incluye URLs fuente y fecha de consulta.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "skills": ["web_search", "technical_report", "comparison"],
+    "expected_keys": ["groq/compound", "groq/compound-mini", "web_search", "citations"],
+    "rubric": {
+      "correctness": 4,
+      "sources": 3,
+      "freshness": 2,
+      "structure": 1
+    }
+  }
+]

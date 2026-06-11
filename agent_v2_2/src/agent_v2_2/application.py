@@ -5,7 +5,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Callable, Optional
 
-from .capabilities.memory import MemoryStore
+from .capabilities.memory import MemoryStore, extract_memory_facts
 from .capabilities.voice import VoiceCapabilities
 from .evolution.experience import ExperienceStore, RouterExperience
 from .models import OperationTimings, OrchestratorResult, TaskRequest
@@ -59,6 +59,8 @@ class AgentApplication:
             request.text,
             metadata={"request_id": request.request_id},
         )
+        for fact in extract_memory_facts(request.text, user_id, thread_id):
+            self.memory_store.record_fact(fact)
 
         memory_started = time.monotonic()
         memory_context = self.memory_store.retrieve_memory_context(
@@ -81,6 +83,9 @@ class AgentApplication:
 
         routing_started = time.monotonic()
         decision = self.selector.select_contract(contract)
+        privacy_mode = str(request.metadata.get("privacy_mode") or "")
+        if privacy_mode:
+            decision = decision.model_copy(update={"privacy_mode": privacy_mode})
         routing_seconds = time.monotonic() - routing_started
         if progress_callback:
             progress_callback(
@@ -101,7 +106,11 @@ class AgentApplication:
                     "tool_id": decision.tool_id,
                 },
             )
-        result = self.executor(prepared, decision)
+        result, executed_decision, attempted_tools = self._execute_with_fallback(
+            prepared,
+            decision,
+            progress_callback=progress_callback,
+        )
         execution_seconds = time.monotonic() - execution_started
         result.timings = OperationTimings(
             memory_seconds=memory_seconds,
@@ -116,7 +125,7 @@ class AgentApplication:
                 "completed",
                 {
                     "request_id": request.request_id,
-                    "tool_id": decision.tool_id,
+                    "tool_id": executed_decision.tool_id,
                     "ok": result.ok,
                     "seconds": result.timings.total_seconds,
                 },
@@ -128,7 +137,7 @@ class AgentApplication:
                 catalog_version=3,
                 task_id=request.request_id,
                 task_shape=contract.execute.operation.value,
-                tool_id=decision.tool_id,
+                tool_id=executed_decision.tool_id,
                 required_capabilities=[
                     item.value
                     for item in contract.execute.instrumental_capabilities
@@ -154,6 +163,10 @@ class AgentApplication:
                 metadata={
                     "contract_schema": contract.schema_version,
                     "alternatives": decision.alternatives,
+                    "attempted_tools": attempted_tools,
+                    "evidence_kind": str(
+                        result.metadata.get("evidence_kind", "live")
+                    ),
                 },
             )
         )
@@ -164,11 +177,80 @@ class AgentApplication:
             result.output or result.error or "",
             metadata={
                 "request_id": request.request_id,
-                "tool_id": decision.tool_id,
+                "tool_id": executed_decision.tool_id,
                 "ok": result.ok,
             },
         )
         return result
+
+    def _execute_with_fallback(
+        self,
+        request: TaskRequest,
+        decision,
+        *,
+        progress_callback: Optional[Callable[[str, dict], None]] = None,
+    ):
+        attempted = [decision.tool_id]
+        result = self.executor(request, decision)
+        executed_decision = decision
+        if result.ok or not self._is_provider_failure(result.error or ""):
+            return result, executed_decision, attempted
+
+        for tool_id in decision.alternatives:
+            if tool_id in attempted:
+                continue
+            attempted.append(tool_id)
+            fallback_tool = self.selector.catalog.get_tool(tool_id)
+            if fallback_tool is None:
+                continue
+            fallback_decision = decision.model_copy(
+                update={
+                    "tool_id": tool_id,
+                    "tier": fallback_tool.cognitive_max,
+                    "model_id": fallback_tool.model or None,
+                    "reason": (
+                        f"Automatic rollback after provider failure in "
+                        f"{executed_decision.tool_id}."
+                    ),
+                }
+            )
+            if progress_callback:
+                progress_callback(
+                    "fallback",
+                    {
+                        "from_tool": executed_decision.tool_id,
+                        "tool_id": tool_id,
+                        "error": result.error or "",
+                    },
+                )
+            result = self.executor(request, fallback_decision)
+            executed_decision = fallback_decision
+            if result.ok or not self._is_provider_failure(result.error or ""):
+                break
+        return result, executed_decision, attempted
+
+    @staticmethod
+    def _is_provider_failure(error: str) -> bool:
+        lower = error.casefold()
+        return any(
+            marker in lower
+            for marker in (
+                "401",
+                "403",
+                "408",
+                "429",
+                "500",
+                "502",
+                "503",
+                "504",
+                "invalid api key",
+                "unauthorized",
+                "rate limit",
+                "timed out",
+                "timeout",
+                "connection",
+            )
+        )
 
     def handle_voice(
         self,

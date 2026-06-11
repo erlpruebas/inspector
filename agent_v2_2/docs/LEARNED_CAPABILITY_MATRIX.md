@@ -1,6 +1,6 @@
 # Learned Capability Matrix
 
-Last updated: 2026-06-09
+Last updated: 2026-06-11
 
 ## Purpose
 
@@ -51,9 +51,19 @@ The command prints a markdown summary with:
 
 ## Current State
 
-The matrix builder is implemented and tested. On the current stored experience
-set it reports 1,769 experiences and 1,024 tool/capability/shape cells.
+The matrix builder is implemented and tested. The HITL gate currently sees
+1,891 valid experiences, 161 valid blind judgments, all 17 operational
+capabilities and 31 task shapes. Invalidated, simulated, unavailable and queued
+records are excluded from learned evidence.
 
-When the benchmark arena is executed with fresh judge scores, the matrix
-continues to absorb those results automatically through the shared experience
-store.
+Training coverage is tracked independently from historical volume:
+
+- expected compatible pairs: 56;
+- demonstrated with a passing live blind judgment: 56;
+- trained with at least three samples: 21;
+- pending first demonstration: 0.
+
+For portable deployments, Agent 2.2 includes a sanitized seed with 111 judged
+experiences. A clean workspace bootstraps from that seed and passes readiness
+with all 56 expected tool-capability pairs, all 17 capabilities and all 9
+selectable tools represented.

@@ -1,0 +1,5 @@
+factura,proveedor,fecha_vencimiento,importe_eur,aprobada
+FV-26051,Pinturas Rivera,2026-06-11,1840.00,no
+FV-26052,Maderas Centro,2026-06-09,1260.00,si
+FV-26054,Logistica Sur,2026-06-13,620.00,si
+FV-26057,Herrajes Madrid,2026-06-19,945.50,no

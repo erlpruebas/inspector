@@ -1,4 +1,5 @@
 import logging
+import threading
 import time
 from typing import Callable, Optional, Dict, Any, List
 import requests
@@ -18,6 +19,7 @@ class TelegramTransport:
         
         self.message_handler: Optional[Callable[..., None]] = None
         self.progress_handler: Optional[Callable[[int, str], None]] = None
+        self._stop_event = threading.Event()
 
     def set_message_handler(self, handler: Callable[..., None]):
         self.message_handler = handler
@@ -127,7 +129,7 @@ class TelegramTransport:
             chunks.append(remaining)
         return chunks
 
-    def process_update(self, update: Dict) -> None:
+    def process_update(self, update: Dict, *, asynchronous: bool = False) -> None:
         message = update.get("message") or update.get("edited_message") or {}
         chat_id = message.get("chat", {}).get("id")
         if not chat_id:
@@ -155,13 +157,21 @@ class TelegramTransport:
                 
         # Delegar al handler
         if (text or media_file_id) and self.message_handler:
-            self.message_handler(
-                text,
-                chat_id,
-                media_file_id=media_file_id,
-                media_type=media_type,
-                message=message,
-            )
+            kwargs = {
+                "media_file_id": media_file_id,
+                "media_type": media_type,
+                "message": message,
+            }
+            if asynchronous:
+                threading.Thread(
+                    target=self.message_handler,
+                    args=(text, chat_id),
+                    kwargs=kwargs,
+                    daemon=True,
+                    name=f"telegram-update-{update.get('update_id', 'unknown')}",
+                ).start()
+            else:
+                self.message_handler(text, chat_id, **kwargs)
 
     def download_file(self, file_id: str, target_path: Path) -> Path:
         """Descarga un fichero de Telegram por file_id a la ruta objetivo."""
@@ -204,11 +214,15 @@ class TelegramTransport:
             
         logger.info("Telegram transport started.")
         offset = None
-        while True:
+        self._stop_event.clear()
+        while not self._stop_event.is_set():
             for update in self._get_updates(offset):
                 offset = update["update_id"] + 1
                 try:
-                    self.process_update(update)
+                    self.process_update(update, asynchronous=True)
                 except Exception as exc:
                     logger.exception(f"Error processing update {update.get('update_id')}: {exc}")
-            time.sleep(1)
+            self._stop_event.wait(1)
+
+    def stop_polling(self) -> None:
+        self._stop_event.set()

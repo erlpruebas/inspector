@@ -1,0 +1,6 @@
+Proyecto Delta
+Version: final aprobada
+Fecha: 2026-06-06
+Base imponible: 12600 EUR
+IVA: 2646 EUR
+Total: 15246 EUR

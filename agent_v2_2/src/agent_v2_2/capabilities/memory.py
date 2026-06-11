@@ -492,3 +492,79 @@ class MemoryStore:
         scored.sort(key=lambda item: (item[1], len(item[0].value)), reverse=True)
         return scored
 
+
+class ThreadRegistry:
+    """Persists the active conversational thread and known thread names."""
+
+    def __init__(self, path: Optional[Path] = None) -> None:
+        config = load_config()
+        self.path = path or (config.workspace_root / "memory" / "threads.json")
+
+    def current(self, user_id: str) -> str:
+        state = self._load()
+        user = state.get(str(user_id), {})
+        return str(user.get("active") or user_id)
+
+    def create(self, user_id: str, name: str) -> str:
+        thread_id = safe_slug(name)
+        state = self._load()
+        user = state.setdefault(
+            str(user_id),
+            {"active": str(user_id), "threads": {}},
+        )
+        threads = user.setdefault("threads", {})
+        threads[thread_id] = normalize_text(name)
+        user["active"] = thread_id
+        self._save(state)
+        return thread_id
+
+    def switch(self, user_id: str, name_or_id: str) -> Optional[str]:
+        requested = safe_slug(name_or_id)
+        state = self._load()
+        user = state.get(str(user_id), {})
+        threads = user.get("threads", {})
+        if requested not in threads:
+            match = next(
+                (
+                    thread_id
+                    for thread_id, display in threads.items()
+                    if safe_slug(str(display)) == requested
+                ),
+                None,
+            )
+            if match is None and requested != str(user_id):
+                return None
+            requested = match or requested
+        user["active"] = requested
+        state[str(user_id)] = user
+        self._save(state)
+        return requested
+
+    def list(self, user_id: str) -> List[Tuple[str, str, bool]]:
+        state = self._load()
+        user = state.get(str(user_id), {})
+        active = str(user.get("active") or user_id)
+        threads = dict(user.get("threads", {}))
+        threads.setdefault(str(user_id), "principal")
+        return [
+            (thread_id, str(display), thread_id == active)
+            for thread_id, display in sorted(threads.items())
+        ]
+
+    def _load(self) -> Dict[str, Any]:
+        if not self.path.exists():
+            return {}
+        try:
+            payload = json.loads(self.path.read_text(encoding="utf-8"))
+            return payload if isinstance(payload, dict) else {}
+        except Exception:
+            return {}
+
+    def _save(self, state: Dict[str, Any]) -> None:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = self.path.with_suffix(".tmp")
+        temporary.write_text(
+            json.dumps(state, ensure_ascii=True, indent=2),
+            encoding="utf-8",
+        )
+        temporary.replace(self.path)

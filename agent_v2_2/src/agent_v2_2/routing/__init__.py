@@ -31,3 +31,6 @@ __all__ = [
     "RequestContract",
     "ContractBuilder",
 ]
+from .evolutionary import EvolutionPolicy, EvolutionarySelector
+
+__all__ = ["EvolutionPolicy", "EvolutionarySelector"]

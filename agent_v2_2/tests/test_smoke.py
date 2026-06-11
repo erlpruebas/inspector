@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 from pathlib import Path
+import sys
+import threading
+import time
 
 from agent_v2_2.capabilities.catalog import create_default_catalog
 from agent_v2_2.capabilities.introspection import IntrospectionManager
@@ -11,6 +14,7 @@ from agent_v2_2.cli import check_status, set_speaker, set_voice, set_voice_name,
 from agent_v2_2.config import Config, QuotaConfig, TelegramConfig, load_config, parse_int_list, parse_path_list
 from agent_v2_2.evolution.controller import EvolutionController
 from agent_v2_2.evolution.coverage import TaskCoverageAnalyzer
+from agent_v2_2.evolution.audit import fixture_validation_error
 from agent_v2_2.evolution.experience import BenchmarkExperienceImporter, ExperienceStore
 from agent_v2_2.engines.codex_desktop import CodexDesktopOperator
 from agent_v2_2.models import CapabilityRequest, OrchestratorResult, TaskRequest
@@ -39,6 +43,8 @@ from agent_v2_2.scheduling.queue import TaskQueue
 from agent_v2_2.transport.lifecycle import LifecycleManager
 from agent_v2_2.transport.metrics import MetricsRecorder
 from agent_v2_2.transport.queue import ExecutionMailbox
+from benchmarks.engines.command_engine import CommandEngine
+from benchmarks.engines.codex_engine import CodexEngine
 
 
 def test_catalog_exposes_17_capabilities() -> None:
@@ -205,7 +211,10 @@ def test_vertical_flow_records_memory_result_and_experience(
             output=f"resolved: {request.text}",
         )
 
-    app = AgentApplication(executor=execute)
+    app = AgentApplication(
+        executor=execute,
+        experience_store=ExperienceStore(tmp_path / "experiences.jsonl"),
+    )
     request = TaskRequest(
         user_id="user-1",
         thread_id="thread-1",
@@ -398,15 +407,82 @@ def test_transport_metrics_mailbox_and_lifecycle(tmp_path: Path, monkeypatch) ->
     assert state.restart_requested is True
 
 
-def test_evolution_controller_can_audit_and_activate(tmp_path: Path, monkeypatch) -> None:
+def test_command_engine_can_cancel_running_process(tmp_path: Path) -> None:
+    engine = CommandEngine(
+        "cancel-test",
+        f'"{sys.executable}" -c "import time; time.sleep(30)"',
+        inject_workspace=False,
+        timeout_seconds=60,
+    )
+    result_holder = []
+    worker = threading.Thread(
+        target=lambda: result_holder.append(
+            engine.run("cancel-me", "noop", tmp_path, [])
+        )
+    )
+    started = time.monotonic()
+    worker.start()
+    deadline = time.monotonic() + 5
+    while time.monotonic() < deadline:
+        if engine.cancel("cancel-me"):
+            break
+        time.sleep(0.05)
+    worker.join(timeout=5)
+
+    assert worker.is_alive() is False
+    assert time.monotonic() - started < 10
+    assert result_holder[0].returncode != 0
+
+
+def test_codex_engine_marks_usage_limit_as_unavailable(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    class FakeProcess:
+        returncode = 1
+
+        def communicate(self, timeout=None):
+            del timeout
+            return (
+                '{"item":{"type":"agent_message","text":"Usage limit reached."}}\n',
+                "",
+            )
+
+        def poll(self):
+            return self.returncode
+
+    monkeypatch.setattr(
+        "benchmarks.engines.codex_engine.subprocess.Popen",
+        lambda *_args, **_kwargs: FakeProcess(),
+    )
+    engine = CodexEngine(command=["codex"], model="gpt-5.5")
+    result = engine.run("quota", "test", tmp_path, [])
+    assert result.error_type == "usage_limit"
+
+
+def test_evolution_controller_refuses_activation_before_parity(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
     monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
-    controller = EvolutionController(workspace_root=tmp_path)
+    pending_parity = tmp_path / "parity.md"
+    pending_parity.write_text(
+        "| Area | Behavior | Implementation | Evidence | Status |\n"
+        "| --- | --- | --- | --- | --- |\n"
+        "| Runtime | Telegram | runtime.py | missing | Pending |\n",
+        encoding="utf-8",
+    )
+    controller = EvolutionController(
+        workspace_root=tmp_path,
+        parity_matrix_path=pending_parity,
+    )
     report = controller.audit_tasks()
     assert report.total_tasks >= 3
     maturity = controller.evaluate_maturity()
     assert maturity.total_items >= 1
     status = controller.activate()
-    assert status.active is True
+    assert status.active is False
+    assert status.maturity.pending_items > 0
     assert status.audit.total_tasks >= 3
 
 
@@ -483,7 +559,7 @@ def test_benchmark_importer_and_readiness(tmp_path: Path, monkeypatch) -> None:
     controller.benchmark_importer = importer
     controller.experience_store = store
     readiness = controller.readiness()
-    assert "experiencias" in readiness.to_markdown().lower()
+    assert "experiences" in readiness.to_markdown().lower()
 
 
 def test_task_coverage_analyzer_reports_dimensions() -> None:
@@ -491,3 +567,13 @@ def test_task_coverage_analyzer_reports_dimensions() -> None:
     assert coverage.total_tasks >= 25
     assert "text" in coverage.file_buckets or "csv" in coverage.file_buckets
     assert coverage.to_markdown().startswith("# Task coverage report")
+
+
+def test_fixture_validation_detects_fake_pdf(tmp_path: Path) -> None:
+    fake_pdf = tmp_path / "fake.pdf"
+    fake_pdf.write_text("plain text", encoding="utf-8")
+    real_header = tmp_path / "real.pdf"
+    real_header.write_bytes(b"%PDF-1.4\n")
+
+    assert "no PDF signature" in fixture_validation_error(fake_pdf)
+    assert fixture_validation_error(real_header) == ""

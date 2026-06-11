@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -66,10 +67,24 @@ class RouterExperience:
 class ExperienceStore:
     """Almacena experiencias del router con el esquema versionado."""
 
-    def __init__(self, path: Optional[Path] = None) -> None:
+    def __init__(
+        self,
+        path: Optional[Path] = None,
+        *,
+        bootstrap_seed: bool = False,
+    ) -> None:
         config = load_config()
+        using_default_path = path is None
         self.path = path or (config.workspace_root / "evolution" / "experiences.jsonl")
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        if (using_default_path or bootstrap_seed) and not self.path.exists():
+            seed = (
+                Path(__file__).resolve().parents[3]
+                / "data"
+                / "router_seed_experiences.jsonl"
+            )
+            if seed.exists():
+                shutil.copy2(seed, self.path)
 
     def append(self, experience: RouterExperience) -> RouterExperience:
         with self.path.open("a", encoding="utf-8") as handle:
@@ -137,6 +152,164 @@ class ExperienceStore:
                 )
             )
         return keys
+
+    def record_feedback(
+        self,
+        experience_id: str,
+        feedback: str,
+        *,
+        metadata: Optional[Dict[str, Any]] = None,
+    ) -> bool:
+        records = self.load()
+        updated = False
+        for record in records:
+            if record.experience_id != experience_id:
+                continue
+            record.user_feedback = feedback
+            if metadata:
+                record.metadata.update(metadata)
+            updated = True
+            break
+        if not updated:
+            return False
+        temporary = self.path.with_suffix(self.path.suffix + ".tmp")
+        with temporary.open("w", encoding="utf-8") as handle:
+            for record in records:
+                handle.write(json.dumps(record.to_dict(), ensure_ascii=False) + "\n")
+        temporary.replace(self.path)
+        return True
+
+    def invalidate(
+        self,
+        experience_ids: Iterable[str],
+        reason: str,
+    ) -> int:
+        targets = {str(item) for item in experience_ids if str(item)}
+        if not targets:
+            return 0
+        records = self.load()
+        updated = 0
+        timestamp = datetime.now(timezone.utc).isoformat()
+        for record in records:
+            if record.experience_id not in targets:
+                continue
+            record.metadata["evidence_invalidated"] = True
+            record.metadata["invalidation_reason"] = reason
+            record.metadata["invalidated_at"] = timestamp
+            updated += 1
+        if not updated:
+            return 0
+        temporary = self.path.with_suffix(self.path.suffix + ".tmp")
+        with temporary.open("w", encoding="utf-8") as handle:
+            for record in records:
+                handle.write(json.dumps(record.to_dict(), ensure_ascii=False) + "\n")
+        temporary.replace(self.path)
+        return updated
+
+    def restore(self, experience_ids: Iterable[str]) -> int:
+        targets = {str(item) for item in experience_ids if str(item)}
+        if not targets:
+            return 0
+        records = self.load()
+        updated = 0
+        for record in records:
+            if record.experience_id not in targets:
+                continue
+            if not bool(record.metadata.get("evidence_invalidated")):
+                continue
+            record.metadata.pop("evidence_invalidated", None)
+            record.metadata.pop("invalidation_reason", None)
+            record.metadata.pop("invalidated_at", None)
+            updated += 1
+        if not updated:
+            return 0
+        temporary = self.path.with_suffix(self.path.suffix + ".tmp")
+        with temporary.open("w", encoding="utf-8") as handle:
+            for record in records:
+                handle.write(json.dumps(record.to_dict(), ensure_ascii=False) + "\n")
+        temporary.replace(self.path)
+        return updated
+
+    def export_portable_seed(self, destination: Path) -> int:
+        records = []
+        for record in self.load():
+            if str(record.metadata.get("evidence_kind", "")).casefold() != "live":
+                continue
+            if bool(record.metadata.get("evidence_invalidated")):
+                continue
+            judgements = [
+                {
+                    "judge": "gemini-blind",
+                    "score": float(judgement["score"]),
+                    "passed": bool(judgement["passed"]),
+                    "comment": "",
+                    "capability_scores": dict(
+                        judgement["capability_scores"]
+                    ),
+                }
+                for judgement in record.judge_scores
+                if isinstance(judgement, dict)
+                and isinstance(judgement.get("score"), (int, float))
+                and isinstance(judgement.get("passed"), bool)
+                and isinstance(judgement.get("capability_scores"), dict)
+                and bool(judgement.get("capability_scores"))
+            ]
+            if not judgements:
+                continue
+            portable = RouterExperience(
+                experience_id=record.experience_id,
+                timestamp=record.timestamp,
+                catalog_version=record.catalog_version,
+                task_id=record.task_id,
+                task_shape=record.task_shape,
+                tool_id=record.tool_id,
+                required_capabilities=list(record.required_capabilities),
+                cognitive_requirements=list(record.cognitive_requirements),
+                elapsed_seconds=record.elapsed_seconds,
+                objective_checks={
+                    "passed": bool(record.objective_checks.get("passed")),
+                    "hard_passed": bool(
+                        record.objective_checks.get(
+                            "hard_passed",
+                            record.objective_checks.get("passed"),
+                        )
+                    ),
+                    "checks": [
+                        {
+                            "name": str(check.get("name") or ""),
+                            "passed": bool(check.get("passed")),
+                            "detail": "",
+                        }
+                        for check in record.objective_checks.get("checks", [])
+                        if isinstance(check, dict)
+                    ],
+                },
+                judge_scores=judgements,
+                user_feedback=None,
+                outcome=record.outcome,
+                failure_reason=None,
+                metadata={
+                    "evidence_kind": "live",
+                    "primary_capability": record.metadata.get(
+                        "primary_capability",
+                        "",
+                    ),
+                    "secondary_capabilities": list(
+                        record.metadata.get("secondary_capabilities") or []
+                    ),
+                    "portable_seed": True,
+                },
+            )
+            records.append(portable)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        temporary = destination.with_suffix(destination.suffix + ".tmp")
+        with temporary.open("w", encoding="utf-8") as handle:
+            for record in records:
+                handle.write(
+                    json.dumps(record.to_dict(), ensure_ascii=False) + "\n"
+                )
+        temporary.replace(destination)
+        return len(records)
 
 
 class BenchmarkExperienceImporter:

@@ -35,6 +35,7 @@ class TaskAuditReport:
     skills: Dict[str, int]
     files: Dict[str, int]
     network_tasks: int
+    invalid_files: Dict[str, str] = field(default_factory=dict)
     records: List[TaskRecord] = field(default_factory=list)
 
     def to_markdown(self) -> str:
@@ -48,6 +49,9 @@ class TaskAuditReport:
             lines.append(f"- {key}: {count}")
         lines.append("")
         lines.append(f"- network tasks: {self.network_tasks}")
+        lines.append(f"- invalid or missing fixtures: {len(self.invalid_files)}")
+        for name, reason in sorted(self.invalid_files.items()):
+            lines.append(f"  - {name}: {reason}")
         return "\n".join(lines)
 
 
@@ -75,6 +79,7 @@ class TaskAuditor:
                 if not isinstance(item, dict):
                     continue
                 task_id = str(item.get("id") or item.get("task_id") or f"{path.stem}-{index+1}")
+                item = self._enrich_suite_item(path, task_id, item)
                 title = str(item.get("title") or item.get("name") or item.get("prompt") or task_id)
                 records.append(
                     TaskRecord(
@@ -99,6 +104,35 @@ class TaskAuditor:
             )
         return records
 
+    def _enrich_suite_item(
+        self,
+        index_path: Path,
+        task_id: str,
+        item: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        task_dir = index_path.parent / task_id
+        task_markdown = task_dir / "task.md"
+        metadata_path = task_dir / "metadata.json"
+        if not task_markdown.exists() and not metadata_path.exists():
+            return item
+
+        enriched = dict(item)
+        if metadata_path.exists():
+            try:
+                metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+            except Exception:
+                metadata = {}
+            if isinstance(metadata, dict):
+                enriched.update(metadata)
+        if task_markdown.exists():
+            prompt = task_markdown.read_text(
+                encoding="utf-8",
+                errors="replace",
+            ).strip()
+            if prompt:
+                enriched["prompt"] = prompt
+        return enriched
+
     def audit(self, root: Path) -> TaskAuditReport:
         records = self.load_records(self.collect_paths(root))
         return self._build_report(records)
@@ -112,11 +146,51 @@ class TaskAuditor:
         skills = Counter(skill for record in records for skill in record.skills)
         files = Counter(file for record in records for file in record.required_files)
         network_tasks = sum(1 for record in records if record.requires_network)
+        invalid_files: Dict[str, str] = {}
+        for file_name in files:
+            path = resolve_fixture_file(file_name)
+            if path is None:
+                invalid_files[file_name] = "missing"
+                continue
+            reason = fixture_validation_error(path)
+            if reason:
+                invalid_files[file_name] = reason
         return TaskAuditReport(
             total_tasks=len(records),
             categories=dict(categories),
             skills=dict(skills),
             files=dict(files),
             network_tasks=network_tasks,
+            invalid_files=invalid_files,
             records=records,
         )
+
+
+def resolve_fixture_file(relative: str) -> Path | None:
+    candidates = (
+        Path.cwd() / relative,
+        Path.cwd() / "benchmarks" / "assets" / relative,
+        Path.cwd() / "benchmarks" / "tasks" / relative,
+    )
+    return next((path for path in candidates if path.is_file()), None)
+
+
+def fixture_validation_error(path: Path) -> str:
+    suffix = path.suffix.casefold()
+    try:
+        header = path.read_bytes()[:16]
+    except OSError:
+        return "unreadable"
+    if suffix == ".pdf" and not header.startswith(b"%PDF-"):
+        return "extension is PDF but content has no PDF signature"
+    if suffix in {".docx", ".xlsx", ".pptx", ".zip"} and not header.startswith(b"PK"):
+        return f"extension is {suffix[1:]} but content has no ZIP signature"
+    if suffix in {".png"} and not header.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "extension is PNG but content has no PNG signature"
+    if suffix in {".jpg", ".jpeg"} and not header.startswith(b"\xff\xd8\xff"):
+        return "extension is JPEG but content has no JPEG signature"
+    if suffix == ".wav" and not (
+        header.startswith(b"RIFF") and header[8:12] == b"WAVE"
+    ):
+        return "extension is WAV but content has no WAV signature"
+    return ""

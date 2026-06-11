@@ -116,6 +116,24 @@ class TaskQueue:
                 self.save()
                 break
 
+    def remove(self, task_id: str) -> bool:
+        before = len(self.tasks)
+        self.tasks = [task for task in self.tasks if task.task_id != task_id]
+        changed = len(self.tasks) != before
+        if changed:
+            self.save()
+        return changed
+
+    def clear_for_user(self, user_id: str) -> int:
+        before = len(self.tasks)
+        self.tasks = [
+            task for task in self.tasks if str(task.request.user_id or "") != str(user_id)
+        ]
+        removed = before - len(self.tasks)
+        if removed:
+            self.save()
+        return removed
+
     def clear(self):
         self.tasks = []
         self.save()

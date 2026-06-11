@@ -1,0 +1,10 @@
+{
+  "customer_id": "CLI-2048",
+  "name": "Talleres Norte",
+  "status": "pending",
+  "email": "compras@talleres-norte.example",
+  "tags": [
+    "industrial",
+    "recurring"
+  ]
+}

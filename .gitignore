@@ -18,6 +18,10 @@ groq.txt
 
 # Logs and runtime noise
 *.log
+!benchmarks/assets/access.log
+!benchmarks/assets/app_errors.log
+!benchmarks/assets/ventas_mayo.log
+!benchmarks/assets/hitl_business_synthetic/app_error.log
 *.err
 server.*.log
 logs/

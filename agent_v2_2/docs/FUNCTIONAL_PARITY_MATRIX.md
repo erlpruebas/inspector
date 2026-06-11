@@ -1,83 +1,43 @@
 # Functional Parity Matrix: Agent 2.2
 
-| fuente anterior | comportamiento esperado | módulo 2.2 | pruebas | estado |
-| :--- | :--- | :--- | :--- | :--- |
-| **Telegram y transporte** |
-| `orchestrator_v2_1/telegram_gateway.py` | long polling y restricción por usuarios o chats autorizados | `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/telegram_gateway.py` | mensajes de texto y mensajes editados | `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/telegram_gateway.py` | recepción y descarga de notas de voz y archivos | `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/telegram_gateway.py` | envío de texto dividido según el límite de Telegram | `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/telegram_gateway.py` | envío de audio, imágenes y archivos de resultado | `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | inbox y outbox aislados por ejecución | `transport/queue.py` | [x] | Completado |
-| `orchestrator_v2_1/telegram_gateway.py` | progreso visible: recibido, enrutado, ejecutando y completado | `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/telegram_gateway.py` | tiempos de transcripción, memoria, routing, ejecución y voz | `transport/metrics.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | recarga y reinicio controlados | `transport/lifecycle.py` | [x] | Completado |
-| `orchestrator_v2_1/telegram_gateway.py` | degradación limpia cuando Telegram o un proveedor falla | `transport/telegram.py` | [x] | Completado |
-| **Voz** |
-| `orchestrator_v2_1/orchestrator.py` | transcripción de notas de voz | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | Groq/Whisper como vía rápida y Gemini como respaldo | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | respuesta textual completa | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | resumen oral para respuestas largas | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | Edge TTS como proveedor predeterminado | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | proveedores alternativos ya integrados cuando estén configurados | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/telegram_gateway.py` | envío del audio a Telegram | `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | reproducción opcional por el altavoz del ordenador | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | comandos `voz on/off` y `altavoz on/off` | `cli.py` / `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | selección persistente de proveedor y voz | `capabilities/preferences.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | precalentamiento | `capabilities/voice.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | funcionamiento solo por texto cuando no exista proveedor de voz | `capabilities/voice.py` | [x] | Completado |
-| **Memoria y conversación** |
-| `orchestrator_v2_1/memory_retrieval.py` | memoria persistente por usuario e hilo | `capabilities/memory.py` | [x] | Completado |
-| `orchestrator_v2_1/memory_retrieval.py` | diario Markdown legible | `capabilities/memory.py` | [x] | Completado |
-| `orchestrator_v2_1/memory_retrieval.py` | índice o compactación | `capabilities/memory.py` | [x] | Completado |
-| `orchestrator_v2_1/memory_retrieval.py` | guardar hechos solicitados | `capabilities/memory.py` | [x] | Completado |
-| `orchestrator_v2_1/memory_retrieval.py` | recuperar únicamente hechos relevantes | `capabilities/memory.py` | [x] | Completado |
-| `orchestrator_v2_1/memory_retrieval.py` | no anunciar contadores ni inventarios de memoria salvo petición | `capabilities/memory.py` | [x] | Completado |
-| `orchestrator_v2_1/memory_retrieval.py` | hilos: listar, crear, cambiar y consultar el hilo activo | `capabilities/memory.py` | [x] | Completado |
-| `orchestrator_v2_1/memory_retrieval.py` | conservación de contexto y adjuntos relevantes | `capabilities/memory.py` | [x] | Completado |
-| `orchestrator_v2_1/memory_retrieval.py` | migrador opcional de datos antiguos, sin convertirlos en dependencia | `capabilities/memory.py` | [x] | Completado |
-| **Alarmas y trabajo pendiente** |
-| `orchestrator_v2_1/orchestrator.py` | alarmas relativas y con fecha/hora | `scheduling/alarms.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | recurrencia diaria, semanal y mensual | `scheduling/alarms.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | listar y cancelar alarmas | `scheduling/alarms.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | entrega por Telegram cuando vence una alarma | `scheduling/alarms.py` / `transport/telegram.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | persistencia y recuperación tras reiniciar | `scheduling/alarms.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | cola de tareas pendientes | `scheduling/queue.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | listar, continuar, limpiar y detener trabajos | `scheduling/queue.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | reanudación controlada al arrancar | `scheduling/queue.py` | [x] | Completado |
-| **Router y ejecución** |
-| `orchestrator_v2_1/executor.py` | comandos locales rápidos | `routing/executor.py` | [x] | Completado |
-| `orchestrator_v2_1/capability_selector.py` | routing estructurado por capacidades | `routing/selector.py` | [x] | Completado |
-| `orchestrator_v2_1/tool_registry.py` | todas las herramientas activas o experimentales registradas | `routing/registry.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | fallbacks de proveedor | `routing/fallbacks.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | archivos y adjuntos estructurados | `routing/attachments.py` | [x] | Completado |
-| `orchestrator_v2_1/executor.py` | aislamiento de workdirs | `engines/workspace.py` | [x] | Completado |
-| `orchestrator_v2_1/executor.py` | API, Gemini CLI, Codex CLI y OpenCode | `engines/` | [x] | Completado |
-| `orchestrator_v2_1/desktop_codex_operator.py` | Codex Desktop aislado y aplazable, sin contaminar el núcleo | `engines/codex_desktop.py` | [x] | Completado |
-| `orchestrator_v2_1/executor.py` | ejecución de código y creación o modificación de artefactos | `engines/execution.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | trazas de ruta, modelo, versión, tiempos y errores | `routing/tracing.py` | [x] | Completado |
-| **Seguridad y control humano** |
-| `orchestrator_v2_1/orchestrator.py` | privacidad `clear`, `mixed` y `redacted`, además de confirmación | `privacy/levels.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | confirmación `sí/no` para acciones sensibles, externas o irreversibles | `privacy/confirmation.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | cancelación de una operación en curso | `routing/cancellation.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | secretos solo por entorno o almacén local ignorado | `config.py` | [x] | Completado |
-| `orchestrator_v2_1/executor.py` | sandbox y límites de workspace | `engines/sandbox.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | no mostrar credenciales ni datos internos en logs o estado | `privacy/redaction.py` | [x] | Completado |
-| **Estado, autoconocimiento y desarrollo** |
-| `orchestrator_v2_1/orchestrator.py` | `estado` y `/status` con integraciones, APIs, CLIs, runtime y config | `cli.py` / `capabilities/status.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | estado de voz, altavoz, privacidad, confirmación y modo desarrollo | `capabilities/status.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | no incluir inventario de memoria | `capabilities/status.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | preguntas sobre capacidades y herramientas disponibles | `capabilities/introspection.py` | [x] | Completado |
-| `orchestrator_v2_1/development_mode.py` | activación equivalente mediante comandos específicos | `capabilities/dev_mode.py` | [x] | Completado |
-| `orchestrator_v2_1/development_mode.py` | propuesta, aprobación, implementación aislada, pruebas, commit, push... | `capabilities/dev_mode.py` | [x] | Completado |
-| `orchestrator_v2_1/development_mode.py` | desactivación y cancelación inmediata | `capabilities/dev_mode.py` | [x] | Completado |
-| `orchestrator_v2_1/codex_rate_limits.py` | monitor de cuota Codex y pie compacto cuando exista snapshot válido | `scheduling/codex_quota.py` | [x] | Completado |
-| **Gestión operativa** |
-| `orchestrator_v2_1/orchestrator.py` | directorio de trabajo configurable | `config.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | lista de directorios adicionales permitidos | `config.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | añadir y retirar directorios | `cli.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | configuración portable | `config.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | diagnóstico de proveedores y CLIs | `cli.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | logs y trazas estructurados | `config.py` / `routing/tracing.py` | [x] | Completado |
-| `orchestrator_v2_1/orchestrator.py` | interfaz CLI para estado, routing, ejecución y pruebas | `cli.py` | [x] | Completado |
-| N/A | GUI antigua solo se migra si sigue siendo útil | N/A | [x] | Completado (Omitida por diseño) |
+This file is an executable maturity contract. A row is complete only when the
+behavior is connected to the Agent 2.2 runtime and covered by a focused test.
+The existence of an isolated class is not completion evidence.
+
+| Area | Expected behavior | Agent 2.2 implementation | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| Telegram | Authorized long polling, text, edits, voice and files | `transport/telegram.py`, `runtime.py` | transport and runtime tests | Completed |
+| Telegram | Chunked text plus image, audio and file delivery | `transport/telegram.py` | transport tests | Completed |
+| Telegram | Visible received, routed, executing, fallback and completion progress | `runtime.py`, `application.py` | runtime flow test | Completed |
+| Runtime | Isolated inbox/outbox and workdirs | `transport/queue.py`, `engines/workspace.py` | smoke tests | Completed |
+| Runtime | Controlled reload/restart connected to Telegram | `transport/lifecycle.py`, `runtime.py`, `cli.py` | runtime lifecycle test | Completed |
+| Voice | Groq transcription with configured fallback behavior | `capabilities/voice.py`, `runtime.py` | transcription path test | Completed |
+| Voice | Full text reply plus optional oral summary sent to Telegram | `capabilities/voice.py`, `runtime.py` | runtime audio delivery test | Completed |
+| Voice | Optional local speaker playback | `capabilities/voice.py`, `runtime.py` | runtime speaker test | Completed |
+| Voice | Persistent `voz on/off`, `altavoz on/off`, provider and voice commands from Telegram | `capabilities/preferences.py`, `runtime.py` | runtime preference command test | Completed |
+| Memory | Persistent per-user/thread journal, facts, index and relevant retrieval | `capabilities/memory.py`, `application.py` | memory tests | Completed |
+| Memory | Memory remains silent unless relevant or explicitly requested | `capabilities/memory.py`, `capabilities/status.py` | status and retrieval tests | Completed |
+| Memory | Thread list/create/switch/current commands from Telegram | `capabilities/memory.py`, `runtime.py` | runtime thread test | Completed |
+| Scheduling | Relative/absolute and recurring alarms | `scheduling/alarms.py` | parser, persistence and delivery tests | Completed |
+| Scheduling | Alarm list/cancel and Telegram delivery after restart | `scheduling/alarms.py`, `runtime.py` | runtime alarm command test | Completed |
+| Scheduling | Persistent pending queue with list/resume/clear/stop commands | `scheduling/queue.py`, `runtime.py` | runtime queue command test | Completed |
+| Router | Canonical capability contract and hard compatibility | `routing/contract.py`, `routing/selector.py` | contract tests | Completed |
+| Router | Evidence-aware fastest-sufficient selection, exploration and rollback | `routing/evolutionary.py`, `application.py` | evolutionary tests | Completed |
+| Router | Real API, Gemini CLI and Codex CLI execution with isolated assets | `engines/execution.py` | arena tests and live runs | Completed |
+| Router | Desktop automation remains isolated and deferred | `engines/codex_desktop.py` | explicit product decision | Completed |
+| Safety | Clear/mixed/redacted privacy state applied to requests | `privacy/core.py`, `runtime.py` | request redaction test | Completed |
+| Safety | Persistent yes/no confirmation for sensitive external or irreversible actions | `privacy/core.py`, `runtime.py` | runtime confirmation test | Completed |
+| Safety | Cancellation of a running operation | `routing/cancellation.py`, `runtime.py`, benchmark engines | concurrent runtime and process cancellation tests | Completed |
+| Safety | Secrets remain in environment/local ignored storage and are redacted from status | `config.py`, `capabilities/status.py` | status test | Completed |
+| Status | `estado` reports APIs, CLIs, runtime and configuration without memory inventory | `capabilities/status.py`, `runtime.py` | status test | Completed |
+| Introspection | Normal-mode questions explain capabilities, tools and tiers | `capabilities/introspection.py`, `runtime.py` | introspection tests | Completed |
+| Development | Activation accepts `modo desarrollo`, `modo de desarrollo` and `modo desarrollador` | `capabilities/dev_mode.py`, `runtime.py` | alias and persistence test | Completed |
+| Development | Persistent proposal, approval, isolated implementation, tests, commit and publication | `capabilities/dev_mode.py` | proposal-to-publication workflow test | Completed |
+| Development | Immediate deactivation and cancellation | `capabilities/dev_mode.py` | controller cancellation path and alias test | Completed |
+| Operations | Real Codex five-hour/weekly quota and autonomous checkpointing | `scheduling/codex_quota.py`, `scheduling/autonomy.py` | quota tests and live snapshot | Completed |
+| Operations | Configurable workspace and additional allowed directories | `config.py` | parser tests | Completed |
+| Operations | Add/remove directory and provider diagnostics commands | `capabilities/directories.py`, `capabilities/status.py`, `runtime.py` | persistence and runtime command test | Completed |
+| Evolution | Audited normalized tasks with per-capability rubrics | `evolution/audit.py`, `normalization.py` | 362-task audit, zero invalid fixtures | Completed |
+| Evolution | Valid live arena with blind judging for every compatible tool-capability pair | `evolution/arena.py`, `training_coverage.py` | 56/56 demonstrated with valid live blind judgments | Completed |
+| Evolution | Learned matrix with samples, dispersion, quality, confidence and latency | `evolution/matrix.py` | matrix tests | Completed |
+| Evolution | HITL battery, feedback and friction telemetry | `evolution/hitl.py`, `runtime.py` | controller, feedback and runtime command tests | Completed |

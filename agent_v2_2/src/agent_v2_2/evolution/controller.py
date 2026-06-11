@@ -15,6 +15,8 @@ from .matrix import CapabilityMatrixBuilder, CapabilityMatrixReport
 from .maturity import MaturityGate, MaturityReport
 from .normalization import NormalizedTaskReport, TaskNormalizer
 from .readiness import HITLReadinessGate, HITLReadinessReport
+from .training_coverage import TrainingCoverageAnalyzer, TrainingCoverageReport
+from .training_plan import TrainingPlan, TrainingPlanner
 
 
 @dataclass
@@ -34,7 +36,10 @@ class EvolutionController:
         self.workspace_root.mkdir(parents=True, exist_ok=True)
         self.parity_matrix_path = parity_matrix_path or (Path(__file__).resolve().parents[3] / "docs" / "FUNCTIONAL_PARITY_MATRIX.md")
         self.state_path = self.workspace_root / "evolution_state.json"
-        self.experience_store = ExperienceStore(self.workspace_root / "evolution" / "experiences.jsonl")
+        self.experience_store = ExperienceStore(
+            self.workspace_root / "evolution" / "experiences.jsonl",
+            bootstrap_seed=True,
+        )
         self.benchmark_importer = BenchmarkExperienceImporter()
         self.matrix_builder = CapabilityMatrixBuilder(self.experience_store)
         self.benchmark_runner = BenchmarkRunner(workspace_root=self.workspace_root / "arena")
@@ -69,8 +74,14 @@ class EvolutionController:
     def activate(self, task_paths: Optional[Iterable[Path]] = None) -> EvolutionStatus:
         audit = self.audit_tasks(task_paths)
         maturity = self.evaluate_maturity()
-        active = maturity.mature and audit.total_tasks >= 10
-        reason = "Sistema evolutivo activado" if active else "Aún no hay madurez suficiente para activar el sistema evolutivo"
+        readiness = self.readiness()
+        active = readiness.ready
+        reason = (
+            "Sistema evolutivo activado"
+            if active
+            else "Sistema evolutivo bloqueado por el gate HITL: "
+            + "; ".join(readiness.reasons)
+        )
         self._save_state(
             {
                 "active": active,
@@ -84,6 +95,11 @@ class EvolutionController:
                     "critical_pending": maturity.critical_pending,
                 },
                 "audit_tasks": audit.total_tasks,
+                "readiness": {
+                    "ready": readiness.ready,
+                    "reasons": readiness.reasons,
+                    "metrics": readiness.metrics,
+                },
             }
         )
         return EvolutionStatus(active=active, reason=reason, maturity=maturity, audit=audit)
@@ -106,7 +122,30 @@ class EvolutionController:
     def capability_matrix(self) -> CapabilityMatrixReport:
         return self.matrix_builder.build()
 
-    def run_benchmark_arena(self, task_paths: Optional[Iterable[Path]] = None, limit: Optional[int] = None):
+    def training_coverage(self) -> TrainingCoverageReport:
+        normalized = self.normalize_tasks()
+        matrix = self.capability_matrix()
+        return TrainingCoverageAnalyzer().analyze(normalized.records, matrix)
+
+    def training_plan(self, *, samples_per_pair: int = 3) -> TrainingPlan:
+        normalized = self.normalize_tasks()
+        coverage = TrainingCoverageAnalyzer().analyze(
+            normalized.records,
+            self.capability_matrix(),
+        )
+        return TrainingPlanner(samples_per_pair=samples_per_pair).build(
+            normalized.records,
+            coverage,
+        )
+
+    def run_benchmark_arena(
+        self,
+        task_paths: Optional[Iterable[Path]] = None,
+        limit: Optional[int] = None,
+        tool_ids: Optional[list[str]] = None,
+        all_compatible_tools: bool = False,
+        task_ids: Optional[list[str]] = None,
+    ):
         if task_paths:
             root_paths = [Path(path) for path in task_paths]
             if len(root_paths) == 1 and root_paths[0].is_dir():
@@ -115,7 +154,13 @@ class EvolutionController:
                 path = root_paths[0]
         else:
             path = Path(__file__).resolve().parents[4] / "benchmarks" / "tasks"
-        return self.benchmark_runner.run_arena(path, limit=limit)
+        return self.benchmark_runner.run_arena(
+            path,
+            limit=limit,
+            tool_ids=tool_ids,
+            all_compatible_tools=all_compatible_tools,
+            task_ids=task_ids,
+        )
 
     def readiness(self) -> HITLReadinessReport:
         audit = self.audit_tasks()

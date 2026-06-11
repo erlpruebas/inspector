@@ -23,10 +23,12 @@ SKILL_TO_CAPABILITY: Dict[str, str] = {
     "summary": "cap_synth_long",
     "reporting": "cap_synth_multi",
     "compare": "cap_compare",
+    "compare_full_files_and_calculate": "cap_compare",
     "data_filtering": "cap_calc_filter",
     "calculation": "cap_calc_filter",
     "draft": "cap_transform_redact",
     "email": "cap_transform_redact",
+    "ask_for_missing_information": "cap_transform_redact",
     "web_research": "cap_web_multi",
     "web_search": "cap_investigate",
     "single_web_lookup": "cap_web_punctual",
@@ -136,8 +138,13 @@ class TaskNormalizer:
                 "route_hypothesis": record.route_hypothesis,
             },
         )
-        compatible_tools = [tool.tool_id for tool in self.selector.compatible_tools(contract)]
         primary = self._primary_capability(record, contract)
+        contract = self._enrich_contract_for_capability(
+            contract,
+            primary,
+            expected_operation=record.expected_operation,
+        )
+        compatible_tools = [tool.tool_id for tool in self.selector.compatible_tools(contract)]
         secondary = self._secondary_capabilities(record, contract, primary)
         objective_checks = self._objective_checks(record)
         rubric = record.rubric or self._default_rubric(record, contract)
@@ -160,6 +167,140 @@ class TaskNormalizer:
             dimensions=dict(record.dimensions),
             contract=contract.model_dump(mode="json"),
         )
+
+    def _enrich_contract_for_capability(
+        self,
+        contract: RequestContract,
+        primary: str,
+        *,
+        expected_operation: str = "",
+    ) -> RequestContract:
+        from ..routing.contract import (
+            CognitiveRequirement,
+            Guarantee,
+            InstrumentalCapability,
+            PrepareAction,
+            PrepareActionType,
+        )
+
+        execute = contract.execute
+        capabilities = list(execute.instrumental_capabilities)
+        requirements = list(execute.cognitive_requirements)
+        guarantees = list(execute.guarantees)
+        prepare = list(contract.prepare)
+        prepared_input = expected_operation.casefold() in {
+            "memory_field_lookup",
+            "memory_record_lookup",
+            "retrieve_and_draft",
+            "retrieve_style_and_draft",
+            "multi_source_email_draft",
+        }
+
+        if prepared_input:
+            capabilities = self._prepared_web_capabilities(capabilities)
+            if InstrumentalCapability.PREPARED_TEXT not in capabilities:
+                capabilities.append(InstrumentalCapability.PREPARED_TEXT)
+
+        if primary in {"cap_web_multi", "cap_investigate"}:
+            capabilities = self._prepared_web_capabilities(capabilities)
+            capabilities = [
+                capability
+                for capability in capabilities
+                if capability
+                not in {
+                    InstrumentalCapability.STRUCTURED_CALCULATION,
+                    InstrumentalCapability.CODE_EXECUTION,
+                    InstrumentalCapability.WRITE_FILE,
+                }
+            ]
+            requirements = [
+                requirement
+                for requirement in requirements
+                if requirement
+                not in {
+                    CognitiveRequirement.CAUSAL_DIAGNOSIS,
+                    CognitiveRequirement.ARTIFACT_PLANNING,
+                    CognitiveRequirement.MULTI_STEP_CALCULATION,
+                }
+            ]
+            if InstrumentalCapability.MULTI_SOURCE_WEB_RESEARCH not in capabilities:
+                capabilities.append(InstrumentalCapability.MULTI_SOURCE_WEB_RESEARCH)
+            if InstrumentalCapability.LONG_CONTEXT not in capabilities:
+                capabilities.append(InstrumentalCapability.LONG_CONTEXT)
+            if CognitiveRequirement.SOURCE_EVALUATION not in requirements:
+                requirements.append(CognitiveRequirement.SOURCE_EVALUATION)
+            if not any(item.action == PrepareActionType.WEB_RESEARCH for item in prepare):
+                prepare.append(
+                    PrepareAction(
+                        action=PrepareActionType.WEB_RESEARCH,
+                        query=contract.normalized_request,
+                        source_hint="web",
+                        output_key="web_research_context",
+                    )
+                )
+            for guarantee in (Guarantee.FRESH_INFORMATION, Guarantee.SOURCE_CITATIONS):
+                if guarantee not in guarantees:
+                    guarantees.append(guarantee)
+        elif primary == "cap_web_punctual":
+            capabilities = self._prepared_web_capabilities(capabilities)
+            if InstrumentalCapability.CURRENT_WEB_LOOKUP not in capabilities:
+                capabilities.append(InstrumentalCapability.CURRENT_WEB_LOOKUP)
+            if not any(item.action == PrepareActionType.WEB_LOOKUP for item in prepare):
+                prepare.append(
+                    PrepareAction(
+                        action=PrepareActionType.WEB_LOOKUP,
+                        query=contract.normalized_request,
+                        source_hint="web",
+                        output_key="web_lookup_context",
+                    )
+                )
+            if Guarantee.FRESH_INFORMATION not in guarantees:
+                guarantees.append(Guarantee.FRESH_INFORMATION)
+
+        updated_execute = execute.model_copy(
+            update={
+                "instrumental_capabilities": capabilities,
+                "cognitive_requirements": requirements,
+                "guarantees": guarantees,
+                "file_requirements": (
+                    []
+                    if primary
+                    in {"cap_web_multi", "cap_investigate", "cap_web_punctual"}
+                    or prepared_input
+                    else execute.file_requirements
+                ),
+            }
+        )
+        metadata = dict(contract.metadata)
+        metadata["primary_capability"] = primary
+        metadata["prepared_input"] = prepared_input
+        return contract.model_copy(
+            update={
+                "prepare": prepare,
+                "execute": updated_execute,
+                "metadata": metadata,
+            }
+        )
+
+    def _prepared_web_capabilities(self, capabilities):
+        from ..routing.contract import InstrumentalCapability
+
+        file_capabilities = {
+            InstrumentalCapability.DISCOVER_FILES,
+            InstrumentalCapability.READ_MULTIPLE_FILES,
+            InstrumentalCapability.READ_TEXT_FILE,
+            InstrumentalCapability.READ_BINARY_DOCUMENT,
+            InstrumentalCapability.READ_SPREADSHEET,
+            InstrumentalCapability.READ_IMAGE,
+            InstrumentalCapability.READ_AUDIO,
+            InstrumentalCapability.READ_ARCHIVE,
+            InstrumentalCapability.PRESERVE_DOCUMENT_FORMAT,
+        }
+        return [
+            capability
+            for capability in capabilities
+            if capability not in file_capabilities
+        ]
 
     def normalize_records(self, records: Iterable[TaskRecord]) -> NormalizedTaskReport:
         normalized = [self.normalize_record(record) for record in records]
@@ -238,7 +379,9 @@ class TaskNormalizer:
             prompt = f"{record.prompt} {record.user_request} {record.title}".casefold()
             if any(marker in prompt for marker in ("resume", "sintetiza", "sumariza", "report", "informe", "correo", "email", "draft")):
                 return "cap_synth_multi"
-            if any(marker in prompt for marker in ("compara", "diferencia", "cruza", "relaciona", "consolida", "combina")):
+            if any(marker in prompt for marker in ("compara", "diferencia", "mas caro", "mas barato")):
+                return "cap_compare"
+            if any(marker in prompt for marker in ("cruza", "relaciona", "consolida", "combina")):
                 return "cap_extract_cross"
             return "cap_extract_cross"
         attachment_capability = self._attachment_primary_capability(record)
@@ -322,6 +465,9 @@ class TaskNormalizer:
             "code_execution": "cap_exec_tech",
             "artifact_modification": "cap_create_modify",
             "artifact_verification": "cap_verify",
+            "ask_for_missing_information": "cap_transform_redact",
+            "long_text_synthesis": "cap_synth_long",
+            "multi_document_synthesis": "cap_synth_multi",
         }
         if normalized in mapping:
             return mapping[normalized]

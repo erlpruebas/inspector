@@ -1,6 +1,6 @@
 # Autonomous Roadmap: Agent 2.2 to HITL
 
-Last updated: 2026-06-09
+Last updated: 2026-06-11
 
 ## Objective
 
@@ -22,12 +22,12 @@ verified. Creating a module or marking a checklist is not sufficient evidence.
 | 0 | COMPLETE | Reliable autonomous-work controls | Real Codex five-hour and weekly quota reader in Agent 2.2; persistent checkpoint; 25% five-hour reserve; graceful weekly stop |
 | 1 | COMPLETE | Canonical capability contract | One versioned schema for preparation, required access, formats, operation, cognitive requirement and guarantees; validation tests |
 | 2 | COMPLETE | Normalized tool catalog | Every real tool has a stable ID, invocation path, binary access flags, supported file operations, eligibility and measured evidence |
-| 3 | COMPLETE | End-to-end vertical flow | Telegram text/file/voice request reaches preparation, routing, execution, verification, response and experience storage |
+| 3 | COMPLETE | End-to-end vertical flow | Telegram text/file/voice request reaches preparation, routing, execution, verification, response and experience storage; inherited human controls are integrated |
 | 4 | COMPLETE | Normalized task and evaluation model | Tasks identify primary/secondary capabilities, compatible tools, objective checks and per-capability judge rubrics |
-| 5 | IN_PROGRESS | Valid benchmark arena | Compatible tools run against representative tasks; latency, objective checks and blind Gemini judgments are persisted; Codex arbitrates selected cases |
-| 6 | IN_PROGRESS | Learned capability matrix | Tool x capability x task-shape statistics include samples, mean, dispersion, pass rate, confidence and latency |
-| 7 | PENDING | Real evolutionary router | Hard compatibility filtering, confidence-aware fastest-sufficient selection, safe exploration and rollback are tested |
-| 8 | PENDING | HITL readiness | Real Telegram tests can start with documented prompts, feedback capture, friction metrics and recovery procedures |
+| 5 | COMPLETE | Valid benchmark arena | Compatible tools run against representative tasks; latency, objective checks and blind Gemini judgments are persisted; Codex arbitrates selected cases |
+| 6 | COMPLETE | Learned capability matrix | Tool x capability x task-shape statistics include samples, mean, dispersion, pass rate, confidence and latency |
+| 7 | COMPLETE | Real evolutionary router | Hard compatibility filtering, confidence-aware fastest-sufficient selection, reproducible-only exploration and rollback are tested |
+| 8 | COMPLETE | HITL readiness | Real Telegram tests can start with documented prompts, feedback capture, friction metrics and recovery procedures |
 
 ## Execution Order
 
@@ -71,15 +71,15 @@ Evidence is added here when each step closes:
 
 | Step | Completion date | Tests/evidence | Commit |
 | ---: | --- | --- | --- |
-| 0 | 2026-06-09 | `16 passed`; live snapshot read; pause/continue/resume tests | pending commit |
-| 1 | 2026-06-09 | `18 passed`; memory-to-web and XLSX preservation contract tests | pending commit |
-| 2 | 2026-06-09 | 13 stable routes; 10 eligible; access-method validation; `18 passed` | pending commit |
-| 3 | 2026-06-09 | `24 passed`; Telegram transport kwargs test; canonical contract builder test; runtime voice/status flow tests | pending commit |
-| 4 | 2026-06-09 | `27 passed`; normalized battery over `356` tasks; `0` missing rubrics; `0` missing capabilities | pending commit |
-| 5 | - | - | - |
-| 6 | - | - | - |
-| 7 | - | - | - |
-| 8 | - | - | - |
+| 0 | 2026-06-09 | `16 passed`; live snapshot read; pause/continue/resume tests | Agent 2.2 HITL release |
+| 1 | 2026-06-09 | `18 passed`; memory-to-web and XLSX preservation contract tests | Agent 2.2 HITL release |
+| 2 | 2026-06-09 | 13 stable routes; 10 eligible; access-method validation; `18 passed` | Agent 2.2 HITL release |
+| 3 | 2026-06-09 | `24 passed`; Telegram transport kwargs test; canonical contract builder test; runtime voice/status flow tests | Agent 2.2 HITL release |
+| 4 | 2026-06-09 | `27 passed`; normalized battery over `356` tasks; `0` missing rubrics; `0` missing capabilities | Agent 2.2 HITL release |
+| 5 | 2026-06-11 | 56/56 compatible tool-capability pairs demonstrated with passing live blind judgments | Agent 2.2 HITL release |
+| 6 | 2026-06-11 | 1,891 valid experiences; 161 judged; 17/17 capabilities; 31 shapes | Agent 2.2 HITL release |
+| 7 | 2026-06-11 | Readiness-gated activation, fastest-sufficient selection, rollback and reproducible-only exploration; `63 passed` | Agent 2.2 HITL release |
+| 8 | 2026-06-11 | Local and clean-workspace readiness pass; portable 111-experience seed; evolutionary router active at 35/35; Telegram feedback and friction commands tested | Agent 2.2 HITL release |
 
 ## Autonomous Stop Conditions
 

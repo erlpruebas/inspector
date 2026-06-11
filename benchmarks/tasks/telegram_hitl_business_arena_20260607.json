@@ -1,0 +1,693 @@
+[
+  {
+    "id": "hitl-01",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nPasame el numero de cuenta de la empresa y el CIF, que me lo estan pidiendo.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "recuperacion_puntual",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "memory_field_lookup"
+    ],
+    "expected_keys": [
+      "ES91 2100 5524 8102 0012 3456",
+      "B-87451236"
+    ]
+  },
+  {
+    "id": "hitl-02",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nQue contrasena pusimos para el wifi de la sala de reuniones?\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "recuperacion_puntual",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "memory_field_lookup"
+    ],
+    "expected_keys": [
+      "TallerNorte-Reuniones",
+      "NorteSala-2026!"
+    ]
+  },
+  {
+    "id": "hitl-03",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nCual es el codigo de producto de la pintura gris que compramos siempre?\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "recuperacion_puntual",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "memory_field_lookup"
+    ],
+    "expected_keys": [
+      "CP-GR-7016-M",
+      "gris grafito",
+      "mate"
+    ]
+  },
+  {
+    "id": "hitl-04",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nCuando le toca pasar la revision a la furgoneta?\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "recuperacion_puntual",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "memory_record_lookup"
+    ],
+    "expected_keys": [
+      "2026-07-18",
+      "5842-LKM"
+    ]
+  },
+  {
+    "id": "hitl-05",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nA que direccion tengo que mandar el paquete de las muestras del Proyecto Alfa?\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "recuperacion_puntual",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "memory_field_lookup"
+    ],
+    "expected_keys": [
+      "Avenida del Parque 44",
+      "Clinica Armonia"
+    ]
+  },
+  {
+    "id": "hitl-06",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nRedactame la factura proforma para el cliente del Proyecto Alfa con los tres conceptos que acordamos en la ultima reunion.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md",
+      "hitl_business_synthetic/emails_reenviados.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "redaccion_con_datos",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "retrieve_and_draft"
+    ],
+    "expected_keys": [
+      "Clinica Armonia",
+      "8400",
+      "1950",
+      "480",
+      "10830"
+    ]
+  },
+  {
+    "id": "hitl-07",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nPasale un resumen de la reunion del 5 de junio al equipo por correo.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/emails_reenviados.md",
+      "hitl_business_synthetic/equipo.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L3",
+    "category": "redaccion_con_datos",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "multi_source_email_draft"
+    ],
+    "expected_keys": [
+      "muestras",
+      "proforma",
+      "herrajes",
+      "Marta",
+      "Carlos",
+      "Elena",
+      "David"
+    ]
+  },
+  {
+    "id": "hitl-08",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nContesta a Laura que el presupuesto se retrasa al viernes, con el tono educado de siempre.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md",
+      "hitl_business_synthetic/emails_reenviados.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "redaccion_con_datos",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "retrieve_style_and_draft"
+    ],
+    "expected_keys": [
+      "Laura",
+      "viernes 12 de junio"
+    ]
+  },
+  {
+    "id": "hitl-09",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nEl presupuesto que ha mandado Pinturas Rivera este ano es mas caro que el del ano pasado?\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/presupuesto_rivera_2025.md",
+      "hitl_business_synthetic/presupuesto_rivera_2026.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L3",
+    "category": "comparacion_y_cruce",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "compare_full_files_and_calculate"
+    ],
+    "expected_keys": [
+      "1150",
+      "1295",
+      "145",
+      "12,6%"
+    ]
+  },
+  {
+    "id": "hitl-10",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nRevisa si el cliente del Proyecto Alfa ya ha pagado la factura del mes pasado.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md",
+      "hitl_business_synthetic/banco_ingresos.csv",
+      "hitl_business_synthetic/emails_reenviados.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L3",
+    "category": "comparacion_y_cruce",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "cross_source_reconciliation"
+    ],
+    "expected_keys": [
+      "FA-26038",
+      "7850",
+      "pagada",
+      "2026-06-06"
+    ]
+  },
+  {
+    "id": "hitl-11",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEsta prueba usa una captura web actual simulada incluida entre los archivos. Trata esa captura como el resultado vigente de la consulta y no navegues fuera.\n\nPeticion del usuario:\nDime si Reformas Delta ha subido los precios de sus servicios en su web.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/competencia_snapshot.md",
+      "hitl_business_synthetic/competencia_current.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "web_y_vigilancia",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "web_lookup_and_compare_snapshot"
+    ],
+    "expected_keys": [
+      "2026-05-01"
+    ]
+  },
+  {
+    "id": "hitl-12",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEsta prueba usa una captura web actual simulada incluida entre los archivos. Trata esa captura como el resultado vigente de la consulta y no navegues fuera.\n\nPeticion del usuario:\nMira si hay stock del componente HX-44 en los tres distribuidores habituales.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/enlaces_distribuidores.md",
+      "hitl_business_synthetic/stock_distribuidores_current.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "web_y_vigilancia",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "multi_site_web_lookup"
+    ],
+    "expected_keys": [
+      "Suministros Uno",
+      "Componentes Centro",
+      "Industrial Directo"
+    ]
+  },
+  {
+    "id": "hitl-13",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nDime que tareas se nos han quedado colgadas esta semana.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/tareas_pendientes.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "plazos_y_orden",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "filter_open_tasks_by_period"
+    ],
+    "expected_keys": [
+      "muestras",
+      "herrajes",
+      "FV-26051",
+      "seguro"
+    ]
+  },
+  {
+    "id": "hitl-14",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\n\nPeticion del usuario:\nAvisame dos dias antes de que venza el plazo para presentar los papeles de la mudanza.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "plazos_y_orden",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "memory_lookup_and_create_alarm"
+    ],
+    "expected_keys": [
+      "2026-06-24",
+      "2026-06-26"
+    ]
+  },
+  {
+    "id": "hitl-15",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nTenemos alguna factura de proveedor que venza esta semana y no este aprobada?\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/vencimientos_proveedores.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "plazos_y_orden",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "filter_structured_rows"
+    ],
+    "expected_keys": [
+      "FV-26051",
+      "Pinturas Rivera",
+      "2026-06-11",
+      "1840"
+    ]
+  },
+  {
+    "id": "hitl-16",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nOrganizame las notas sueltas que te he ido mandando estos dias en limpio.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/notas_rapidas.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "plazos_y_orden",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "classify_and_rewrite_notes"
+    ],
+    "expected_keys": [
+      "compras",
+      "logistica",
+      "seguro",
+      "Proyecto Alfa"
+    ]
+  },
+  {
+    "id": "hitl-17",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nMe han escrito algo importante esta semana? Hazme un resumen corto y dime que requiere accion.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/emails_reenviados.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "correo_reenviado",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "email_digest_and_action_extraction"
+    ],
+    "expected_keys": [
+      "presupuesto",
+      "seguro",
+      "20 de junio",
+      "factura gas",
+      "Proyecto Alfa"
+    ]
+  },
+  {
+    "id": "hitl-18",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\nEl sistema ya ha preparado los archivos de memoria relevantes. Recupera solo los datos necesarios para contestar; no describas ni contabilices la memoria.\nEsta prueba usa una captura web actual simulada incluida entre los archivos. Trata esa captura como el resultado vigente de la consulta y no navegues fuera.\n\nPeticion del usuario:\nMira donde tengo el dentista y recomiendame una floristeria cercana que este abierta hasta tarde.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/memory.md",
+      "hitl_business_synthetic/floristerias_cerca_dentista_current.md"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "recuperacion_encadenada",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "memory_then_web_lookup"
+    ],
+    "expected_keys": [
+      "Calle Narvaez 68",
+      "Petalo Retiro",
+      "650 m",
+      "21:00"
+    ]
+  },
+  {
+    "id": "hitl-19",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nCruza las ventas y los gastos de junio y dime el resultado total y que proyecto deja el mayor margen.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/ventas_junio.csv",
+      "hitl_business_synthetic/gastos_junio.csv"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L3",
+    "category": "archivos_completos",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "multi_file_financial_calculation"
+    ],
+    "expected_keys": [
+      "15400",
+      "8230",
+      "7170",
+      "Alfa",
+      "5420"
+    ]
+  },
+  {
+    "id": "hitl-20",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nHe hecho una foto al ticket. Dime proveedor, fecha, total y concepto para guardarlo como gasto.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/ticket_ferreteria.png"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "multimodal",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "image_document_extraction"
+    ],
+    "expected_keys": [
+      "Ferreteria Sol",
+      "2026-06-06",
+      "47,80",
+      "tornilleria"
+    ]
+  },
+  {
+    "id": "hitl-21",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nLee el contrato y dime con cuanto preaviso podemos cancelarlo y si hay penalizacion.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/contrato_mantenimiento.pdf"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "documentos_binarios",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "pdf_clause_extraction"
+    ],
+    "expected_keys": [
+      "30 dias",
+      "15%",
+      "cuotas pendientes"
+    ]
+  },
+  {
+    "id": "hitl-22",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nAbre la hoja de pedidos y dime cuales estan retrasados y el importe total afectado.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/pedidos_operativos.xlsx"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L3",
+    "category": "hoja_calculo",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "spreadsheet_filter_and_calculate"
+    ],
+    "expected_keys": [
+      "PED-104",
+      "PED-107",
+      "4850"
+    ]
+  },
+  {
+    "id": "hitl-23",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nDentro del ZIP del Proyecto Delta, encuentra el presupuesto valido y dime el total final.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/proyecto_delta.zip"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "archivo_comprimido",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "archive_discovery_and_extraction"
+    ],
+    "expected_keys": [
+      "15246"
+    ]
+  },
+  {
+    "id": "hitl-24",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nMira este log y dime por que estan fallando los informes y cual seria la primera correccion que probarias.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [
+      "hitl_business_synthetic/app_error.log"
+    ],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L2",
+    "category": "diagnostico",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "log_diagnosis"
+    ],
+    "expected_keys": [
+      "ConnectionPoolExhausted",
+      "active=20",
+      "limit=20",
+      "queue_depth=146"
+    ]
+  },
+  {
+    "id": "hitl-25",
+    "prompt": "Simula que esta peticion acaba de llegar por Telegram. Responde al usuario de forma natural, breve y resolutiva. Usa los archivos preparados cuando hagan falta, no inventes datos y no menciones que es una prueba sintetica.\n\nPeticion del usuario:\nPrepara el presupuesto nuevo para el cliente.\n\nEscribe la respuesta final en `resultado.md`.",
+    "required_files": [],
+    "expected_outputs": [
+      "resultado.md"
+    ],
+    "requires_network": false,
+    "level": "L1",
+    "category": "informacion_incompleta",
+    "rubric": {
+      "exactitud": 4,
+      "completitud": 3,
+      "naturalidad_telegram": 2,
+      "no_inventa": 1
+    },
+    "skills": [
+      "ask_for_missing_information"
+    ],
+    "expected_keys": [
+      "cliente",
+      "conceptos",
+      "importes"
+    ]
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "id": "reason-01",
+    "level": "L3",
+    "category": "self_contained_reasoning",
+    "prompt": "Resuelve el problema usando solamente la informacion de este mensaje. Devuelve primero la respuesta final y despues una justificacion breve.\n\nHay cuatro reuniones, A, B, C y D, que deben colocarse una por franja a las 09:00, 10:00, 11:00 y 12:00.\n- A debe celebrarse antes que C.\n- B no puede ser ni la primera ni la ultima.\n- D debe celebrarse inmediatamente despues de B.\n- C no puede ser a las 12:00.\n\nIndica el horario completo de las cuatro reuniones.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": false,
+    "skills": ["constraint_reasoning"],
+    "expected_keys": ["09:00 A", "10:00 C", "11:00 B", "12:00 D"],
+    "rubric": {
+      "correctness": 8,
+      "clarity": 2
+    }
+  },
+  {
+    "id": "reason-02",
+    "level": "L3",
+    "category": "self_contained_reasoning",
+    "prompt": "Toma una decision usando solamente los datos incluidos aqui. Devuelve la opcion elegida, los calculos esenciales y una explicacion breve.\n\nUna empresa debe elegir un unico proveedor para 1.000 envios mensuales.\n- Proveedor A: 4,20 EUR por envio; 2% de envios fallan; cada fallo cuesta 35 EUR.\n- Proveedor B: 4,75 EUR por envio; 0,5% fallan; cada fallo cuesta 35 EUR.\n- Proveedor C: 3,90 EUR por envio; 4% fallan; cada fallo cuesta 35 EUR; ademas cobra una cuota fija mensual de 300 EUR.\n\nCondiciones obligatorias:\n- El coste total esperado mensual no puede superar 5.000 EUR.\n- La tasa de fallos debe ser como maximo del 1%.\n\nQue proveedor debe elegir? Si solo uno cumple ambas condiciones, indicalo claramente.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": false,
+    "skills": ["calculation", "constraint_reasoning", "decision"],
+    "expected_keys": ["Proveedor B", "4925", "0,5%"],
+    "rubric": {
+      "correctness": 7,
+      "calculation": 2,
+      "clarity": 1
+    }
+  },
+  {
+    "id": "reason-03",
+    "level": "L4",
+    "category": "self_contained_reasoning",
+    "prompt": "Identifica la causa mas probable usando solamente la informacion de este mensaje. No inventes causas externas. Devuelve la conclusion y el razonamiento minimo necesario.\n\nUna aplicacion procesa pedidos correctamente de lunes a viernes. El sabado se activa por primera vez una tarea programada de limpieza. A partir de las 02:05 del sabado, todos los pedidos nuevos fallan con el error 'plantilla no encontrada'. Datos observados:\n- La base de datos sigue disponible.\n- Los pedidos existentes se pueden consultar.\n- Reiniciar la aplicacion no corrige el fallo.\n- Restaurar la carpeta /templates desde la copia de seguridad corrige inmediatamente el problema.\n- El registro de la tarea de limpieza muestra a las 02:00: 'eliminados 184 archivos temporales'.\n- La configuracion de limpieza borra todos los archivos no modificados en 30 dias dentro de /app, salvo los que estan bajo carpetas llamadas exactamente 'static'.\n- Las plantillas no se modifican desde hace 60 dias y estan en /app/templates.\n\nCual es la causa mas probable y cual es el cambio minimo que evita que vuelva a ocurrir sin desactivar por completo la limpieza?",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": false,
+    "skills": ["causal_reasoning", "diagnosis", "minimal_fix"],
+    "expected_keys": ["limpieza", "/app/templates", "excluir"],
+    "rubric": {
+      "correctness": 7,
+      "causal_reasoning": 2,
+      "actionability": 1
+    }
+  }
+]

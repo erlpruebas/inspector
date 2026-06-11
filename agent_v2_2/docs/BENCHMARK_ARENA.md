@@ -43,8 +43,8 @@ normalized task to a runnable engine. It can:
 
 - copy benchmark assets into a temp workdir;
 - map normalized tools to benchmark engine specs when available;
-- fall back to a local simulated result when a real engine is not available;
-- emit a blind local judge result for the first pass;
+- reject unavailable routes instead of treating simulation as evidence;
+- persist only objective checks and valid blind judgments as learning evidence;
 - execute a whole arena through `audit arena --limit N`.
 
 For focused evidence collection, the CLI can also target a specific battery or
@@ -54,9 +54,8 @@ task file:
 python -m agent_v2_2.cli audit arena --path benchmarks/tasks/reasoning_latency_tasks_20260607.json --limit 1
 ```
 
-If `BENCH_GEMINI_JUDGE_MODEL` is set, the runner can also request a blind
-Gemini-based judge through the benchmark engine wrapper and persist that
-judgment alongside the run.
+The normal judge path uses the Gemini API with structured JSON output. Codex
+5.5 remains the arbitration option for selected difficult disagreements.
 
 ## Intended Judges
 
@@ -68,7 +67,6 @@ The arena is designed to accept judges such as:
 
 ## Current State
 
-The arena is implemented as a reusable Python layer and covered by tests with a
-simulated executor and judge. The next step is to keep expanding representative
-real-tool slices and recorded blind judgments so the stored experience matrix
-comes from live evidence instead of synthetic placeholders.
+The arena is implemented, connected to every selectable real tool and covered
+by focused tests. It currently has passing live blind-judge demonstrations for
+all 56 compatible tool-capability pairs, including the 12 Codex 5.5 pairs.

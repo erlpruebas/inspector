@@ -1,0 +1,9 @@
+2026-05-20T07:29:41Z 200 GET /login/clientes 84ms request_id=req-001
+2026-05-20T07:31:03Z 502 POST /login/clientes 30012ms request_id=req-002
+2026-05-20T07:31:25Z 504 POST /login/clientes 30001ms request_id=req-003
+2026-05-20T07:34:12Z 502 POST /login/clientes 30008ms request_id=req-004
+2026-05-20T07:39:55Z 200 GET /health 12ms request_id=req-005
+2026-05-20T07:43:17Z 504 POST /login/clientes 30005ms request_id=req-006
+2026-05-20T07:48:52Z 502 POST /login/clientes 30010ms request_id=req-007
+2026-05-20T07:49:18Z 200 POST /login/clientes 421ms request_id=req-008
+2026-05-20T07:52:06Z 200 POST /login/clientes 398ms request_id=req-009

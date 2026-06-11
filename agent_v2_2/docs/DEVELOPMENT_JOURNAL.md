@@ -396,3 +396,80 @@ promoting the router to the next evolutionary stage.
 Keep slicing the benchmark batteries by task family so we can add more real
 executions, identify remaining compatibility gaps, and feed the learned matrix
 with fresh evidence instead of only broad corpus scans.
+
+## 2026-06-11: Parity Closed Except Codex Arena
+
+### Implemented
+
+- Connected Telegram reload and restart to a lifecycle supervisor that rebuilds
+  the runtime.
+- Added persistent allowed-directory commands and provider diagnostics without
+  exposing secrets.
+- Added concurrent Telegram dispatch and concrete cancellation for running
+  command and Codex processes.
+- Verified voice preferences, Telegram audio delivery and local speaker
+  playback.
+- Verified threads, alarms, persistent queue controls, privacy confirmation and
+  the complete development proposal-to-publication state machine.
+- Restricted evolutionary exploration to reproducible benchmark tasks.
+- Made evolutionary activation depend on the strict HITL readiness gate.
+- Added `READ_FIRST.md` and a dated task audit.
+
+### Verification
+
+- Full Agent 2.2 suite: `59 passed`.
+- Task audit: `362` tasks and `0` invalid fixtures.
+- Readiness: `1,879` valid experiences, `149` judged, `17/17` capabilities,
+  `44/56` tool-capability pairs demonstrated.
+- Functional parity: `34/35`; only the live Codex arena row remains pending.
+
+### Quota checkpoint
+
+- Five-hour Codex remaining: `0%`.
+- Five-hour reset: `2026-06-11 16:21` Europe/Madrid.
+- Weekly remaining at checkpoint: `64%`.
+- No Codex run may start until the five-hour window is refreshed above the
+  configured 25% reserve.
+
+### Exact next action
+
+Run the 12 planned `premium_codex_55` first-demonstration tasks with the Gemini
+API blind judge, in small groups while refreshing quota. Then regenerate
+training coverage and readiness, complete the final parity row, activate the
+evolutionary system and stop for real Telegram HITL.
+
+## 2026-06-11: Roadmap Complete, Ready For Human HITL
+
+### Completed
+
+- Ran the 12 missing `premium_codex_55` capability demonstrations with live
+  execution and Gemini 3.1 Pro blind judging.
+- Reached 56 of 56 demonstrated compatible tool-capability pairs.
+- Added a sanitized portable seed containing 111 judged experiences; it
+  contains no prompts, outputs, local paths, credentials or user data.
+- Verified a fresh empty workspace bootstraps from the seed and passes the
+  strict readiness gate.
+- Activated the evolutionary router. Runtime construction now selects
+  `EvolutionarySelector` only when the persisted activation state is valid.
+- Added HITL correction and friction capture through `correccion: ...` and
+  `friccion: baja|media|alta`.
+
+### Final verification
+
+- Agent 2.2 tests: `63 passed`.
+- Task audit: `362` tasks, `0` invalid fixtures and all format buckets covered.
+- Readiness: `1,891` valid experiences, `161` judged, `17/17` capabilities,
+  `9/9` selectable tools, `31` task shapes and `56/56` demonstrated pairs.
+- Evolution status: active, maturity `35/35`.
+- Current Codex quota at verification: five-hour `77%`, weekly `57%`.
+
+### Stop condition reached
+
+All autonomous roadmap steps are complete. The next meaningful evidence
+requires a real person interacting through Telegram. Start with:
+
+1. `estado`
+2. `iniciar bateria`
+3. `prueba siguiente` or `repetir prueba`
+4. `correccion: <what should change>` when the result is wrong or incomplete
+5. `friccion: baja|media|alta` after each representative task

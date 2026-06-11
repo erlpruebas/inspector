@@ -1,0 +1,61 @@
+[
+  {
+    "id": "live-web-punctual-01",
+    "title": "Proxima reunion de politica monetaria del BCE",
+    "prompt": "Consulta fuentes oficiales del Banco Central Europeo y dime la fecha exacta de la proxima reunion de politica monetaria del Consejo de Gobierno posterior al 11 de junio de 2026. Incluye la fecha de consulta y el enlace oficial.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "level": "L2",
+    "category": "web_viva",
+    "expected_operation": "single_web_lookup",
+    "skills": ["single_web_lookup"],
+    "expected_keys": ["Banco Central Europeo", "fecha de consulta", "fuente"],
+    "rubric": {
+      "correctness": 5,
+      "freshness": 2,
+      "source_quality": 2,
+      "format": 1
+    }
+  },
+  {
+    "id": "live-web-multi-01",
+    "title": "Comparativa oficial Google Workspace y Microsoft 365",
+    "prompt": "Compara los planes de entrada para empresas de Google Workspace y Microsoft 365 disponibles en Espana a fecha 11 de junio de 2026. Usa las paginas oficiales, compara precio, almacenamiento, videollamadas y aplicaciones incluidas, indica cualquier diferencia de modalidad de pago y cita los enlaces consultados.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "level": "L3",
+    "category": "web_viva",
+    "expected_operation": "multi_web_search",
+    "skills": ["web_research", "comparison"],
+    "expected_keys": ["Google Workspace", "Microsoft 365", "almacenamiento", "fuentes"],
+    "rubric": {
+      "correctness": 4,
+      "coverage": 2,
+      "freshness": 1,
+      "source_quality": 2,
+      "format": 1
+    }
+  },
+  {
+    "id": "live-web-investigate-01",
+    "title": "Calendario de aplicacion del AI Act para pymes",
+    "prompt": "Investiga el calendario de aplicacion del Reglamento europeo de IA que afecta a pymes entre 2025 y 2027. Consolida varias fuentes oficiales de la Union Europea, distingue fechas ya aplicables de obligaciones futuras, explica las implicaciones practicas para una pyme que usa IA generativa y senala cualquier incertidumbre. Incluye enlaces y fecha de consulta.",
+    "required_files": [],
+    "expected_outputs": ["resultado.md"],
+    "requires_network": true,
+    "level": "L4",
+    "category": "web_viva",
+    "expected_operation": "web_research",
+    "skills": ["web_research", "reporting"],
+    "expected_keys": ["2025", "2026", "2027", "pymes", "fuentes"],
+    "rubric": {
+      "correctness": 4,
+      "source_synthesis": 3,
+      "uncertainty": 1,
+      "actionability": 1,
+      "format": 1
+    }
+  }
+]

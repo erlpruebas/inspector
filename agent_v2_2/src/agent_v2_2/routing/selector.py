@@ -81,6 +81,13 @@ class CapabilitySelector:
     def _is_compatible(self, tool: ToolEntry, contract: RequestContract) -> bool:
         if not tool.selection_eligible:
             return False
+        primary = str(contract.metadata.get("primary_capability") or "")
+        if (
+            primary
+            and tool.operational_capabilities
+            and primary not in tool.operational_capabilities
+        ):
+            return False
         required_level = COGNITIVE_RANK[contract.execute.cognitive_level.value]
         if COGNITIVE_RANK.get(tool.cognitive_max, -1) < required_level:
             return False
@@ -89,6 +96,11 @@ class CapabilitySelector:
         if not {
             item.value for item in contract.execute.instrumental_capabilities
         }.issubset(capabilities):
+            return False
+        cognitive_strengths = set(tool.cognitive_strengths)
+        if not {
+            item.value for item in contract.execute.cognitive_requirements
+        }.issubset(cognitive_strengths):
             return False
 
         access = {

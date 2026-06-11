@@ -85,8 +85,30 @@ def main() -> int:
     }
     if args.provider == "groq":
         payload["max_completion_tokens"] = args.max_tokens
+        reasoning_format = os.getenv("BENCH_GROQ_REASONING_FORMAT", "").strip()
+        if reasoning_format:
+            payload["reasoning_format"] = reasoning_format
+        reasoning_effort = os.getenv("BENCH_GROQ_REASONING_EFFORT", "").strip()
+        if reasoning_effort:
+            payload["reasoning_effort"] = reasoning_effort
     else:
         payload["max_tokens"] = args.max_tokens
+    if args.provider == "openrouter":
+        reasoning_enabled = os.getenv("BENCH_OPENROUTER_REASONING_ENABLED", "").strip().lower()
+        reasoning_exclude = os.getenv("BENCH_OPENROUTER_REASONING_EXCLUDE", "").strip().lower()
+        reasoning_effort = os.getenv("BENCH_OPENROUTER_REASONING_EFFORT", "").strip()
+        reasoning: dict[str, Any] = {}
+        if reasoning_enabled in {"1", "true", "yes"}:
+            reasoning["enabled"] = True
+        if reasoning_exclude in {"1", "true", "yes"}:
+            reasoning["exclude"] = True
+        if reasoning_effort:
+            reasoning["effort"] = reasoning_effort
+        if reasoning:
+            payload["reasoning"] = reasoning
+        provider_sort = os.getenv("BENCH_OPENROUTER_PROVIDER_SORT", "").strip()
+        if provider_sort:
+            payload["provider"] = {"sort": provider_sort}
     data = post_json(url, payload, api_key, timeout=args.timeout)
     content = clean_model_output(extract_content(data), args.output)
 
@@ -96,6 +118,7 @@ def main() -> int:
     usage = {
         "provider": args.provider,
         "model": model,
+        "upstream_provider": data.get("provider", ""),
         "elapsed_seconds": round(time.monotonic() - started, 3),
         "usage": data.get("usage", {}),
     }

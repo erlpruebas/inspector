@@ -36,6 +36,7 @@ class ToolEntry(BaseModel):
     selection_eligible: bool = True
     cognitive_max: str = "general"
     instrumental_capabilities: List[str] = Field(default_factory=list)
+    operational_capabilities: List[str] = Field(default_factory=list)
     cognitive_strengths: List[str] = Field(default_factory=list)
     best_for: List[str] = Field(default_factory=list)
     limits: List[str] = Field(default_factory=list)
@@ -65,6 +66,92 @@ class CapabilityCatalog(BaseModel):
             (tool for tool in self.tools if tool.tool_id.casefold() == normalized),
             None,
         )
+
+
+OPERATIONAL_CAPABILITIES_BY_TOOL = {
+    "router_groq_qwen32": [
+        "cap_extract_short",
+        "cap_extract_long",
+        "cap_synth_long",
+        "cap_compare",
+        "cap_calc_filter",
+        "cap_transform_redact",
+    ],
+    "worker_openrouter_deepseek32": [
+        "cap_extract_short",
+        "cap_extract_long",
+        "cap_synth_long",
+        "cap_synth_multi",
+        "cap_compare",
+        "cap_calc_filter",
+        "cap_transform_redact",
+    ],
+    "worker_groq_compound_mini": [
+        "cap_extract_short",
+        "cap_web_punctual",
+    ],
+    "worker_groq_compound": [
+        "cap_web_punctual",
+        "cap_web_multi",
+        "cap_investigate",
+    ],
+    "gemini_grounded_search": [
+        "cap_web_punctual",
+        "cap_web_multi",
+        "cap_investigate",
+    ],
+    "gemini_flash_files": [
+        "cap_extract_short",
+        "cap_extract_long",
+        "cap_extract_cross",
+        "cap_synth_long",
+        "cap_synth_multi",
+        "cap_compare",
+        "cap_transform_redact",
+    ],
+    "gemini_flash_35": [
+        "cap_extract_short",
+        "cap_extract_long",
+        "cap_extract_cross",
+        "cap_synth_long",
+        "cap_synth_multi",
+        "cap_compare",
+        "cap_transform_redact",
+        "cap_read_pdf_bin",
+        "cap_read_visual",
+        "cap_create_modify",
+    ],
+    "gemini_pro_long_context": [
+        "cap_extract_short",
+        "cap_extract_long",
+        "cap_extract_cross",
+        "cap_synth_long",
+        "cap_synth_multi",
+        "cap_compare",
+        "cap_calc_filter",
+        "cap_transform_redact",
+        "cap_read_pdf_bin",
+        "cap_read_visual",
+        "cap_inspect_zip",
+        "cap_create_modify",
+        "cap_exec_tech",
+        "cap_verify",
+    ],
+    "premium_codex_55": [
+        "cap_extract_short",
+        "cap_extract_long",
+        "cap_extract_cross",
+        "cap_synth_long",
+        "cap_synth_multi",
+        "cap_compare",
+        "cap_calc_filter",
+        "cap_transform_redact",
+        "cap_read_pdf_bin",
+        "cap_create_modify",
+        "cap_exec_tech",
+        "cap_verify",
+    ],
+}
 
 
 def create_default_catalog() -> CapabilityCatalog:
@@ -107,6 +194,7 @@ def create_default_catalog() -> CapabilityCatalog:
             model="qwen/qwen3-32b",
             capabilities=["prepared_text", "structured_calculation"],
             strengths=[
+                "exact_retrieval",
                 "field_extraction",
                 "classification",
                 "comparison",
@@ -125,6 +213,8 @@ def create_default_catalog() -> CapabilityCatalog:
             model="deepseek/deepseek-v3.2",
             capabilities=["prepared_text", "structured_calculation", "long_context"],
             strengths=[
+                "exact_retrieval",
+                "field_extraction",
                 "instruction_following",
                 "multi_item_synthesis",
                 "comparison",
@@ -145,6 +235,7 @@ def create_default_catalog() -> CapabilityCatalog:
             cognitive_max="reasoning",
             capabilities=["prepared_text", "structured_calculation", "long_context"],
             strengths=[
+                "exact_retrieval",
                 "multi_item_synthesis",
                 "comparison",
                 "constraint_satisfaction",
@@ -179,8 +270,12 @@ def create_default_catalog() -> CapabilityCatalog:
                 "current_web_lookup",
                 "multi_source_web_research",
                 "code_execution",
+                "long_context",
             ],
             strengths=[
+                "exact_retrieval",
+                "field_extraction",
+                "instruction_following",
                 "multi_item_synthesis",
                 "comparison",
                 "source_evaluation",
@@ -194,6 +289,7 @@ def create_default_catalog() -> CapabilityCatalog:
             "Gemini grounded search",
             "api",
             "google",
+            cognitive_max="reasoning",
             capabilities=[
                 "prepared_text",
                 "current_web_lookup",
@@ -202,6 +298,7 @@ def create_default_catalog() -> CapabilityCatalog:
             ],
             strengths=[
                 "exact_retrieval",
+                "field_extraction",
                 "multi_item_synthesis",
                 "comparison",
                 "source_evaluation",
@@ -252,6 +349,7 @@ def create_default_catalog() -> CapabilityCatalog:
                 "comparison",
                 "controlled_rewriting",
                 "instruction_following",
+                "artifact_planning",
             ],
             best_for=["answer", "extract", "summarize", "compare", "draft"],
             latency={"median": 24.33, "mean": 23.51},
@@ -281,6 +379,7 @@ def create_default_catalog() -> CapabilityCatalog:
                 "long_context",
             ],
             strengths=[
+                "exact_retrieval",
                 "field_extraction",
                 "multi_item_synthesis",
                 "comparison",
@@ -359,6 +458,8 @@ def create_default_catalog() -> CapabilityCatalog:
                 "long_context",
             ],
             strengths=[
+                "exact_retrieval",
+                "field_extraction",
                 "multi_item_synthesis",
                 "comparison",
                 "constraint_satisfaction",
@@ -420,6 +521,9 @@ def _tool(
     evidence: Dict[str, Any] | None = None,
 ) -> ToolEntry:
     capability_list = capabilities or []
+    strength_list = list(strengths or [])
+    if "instruction_following" not in strength_list:
+        strength_list.append("instruction_following")
     return ToolEntry(
         tool_id=tool_id,
         display_name=display_name,
@@ -430,7 +534,8 @@ def _tool(
         selection_eligible=eligible,
         cognitive_max=cognitive_max,
         instrumental_capabilities=capability_list,
-        cognitive_strengths=strengths or [],
+        operational_capabilities=OPERATIONAL_CAPABILITIES_BY_TOOL.get(tool_id, []),
+        cognitive_strengths=strength_list,
         best_for=best_for or [],
         limits=limits or [],
         access_methods=_derive_access_methods(capability_list),
@@ -468,7 +573,19 @@ def _derive_access_methods(capabilities: List[str]) -> List[AccessMethod]:
         add("extract", ["archive"])
     if "discover_files" in capabilities:
         add("read", ["directory"])
+        add("extract", ["directory"])
     if "write_file" in capabilities:
+        writable_formats = [
+            "text",
+            "markdown",
+            "csv",
+            "json",
+            "html",
+            "docx",
+            "xlsx",
+            "pptx",
+            "code",
+        ]
         add(
             "create",
             [
@@ -484,10 +601,8 @@ def _derive_access_methods(capabilities: List[str]) -> List[AccessMethod]:
                 "code",
             ],
         )
-        add(
-            "modify",
-            ["text", "markdown", "csv", "json", "html", "docx", "xlsx", "pptx", "code"],
-        )
+        add("modify", writable_formats)
+        add("verify", writable_formats)
     if "preserve_document_format" in capabilities:
         add("preserve", ["docx", "xlsx", "pptx", "pdf"])
     if "code_execution" in capabilities:

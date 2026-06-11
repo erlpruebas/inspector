@@ -5,6 +5,7 @@ import os
 import shlex
 import shutil
 import subprocess
+import threading
 import time
 from pathlib import Path
 
@@ -30,6 +31,8 @@ class CodexEngine:
         self.approval = os.getenv("BENCH_CODEX_APPROVAL", os.getenv("ORCH_CODEX_APPROVAL", approval)).strip()
         self.model = model.strip() or DEFAULT_CODEX_MODEL
         self.timeout_seconds = int(os.getenv("BENCH_CODEX_TIMEOUT_SECONDS", str(timeout_seconds)))
+        self._processes: dict[str, subprocess.Popen[str]] = {}
+        self._process_lock = threading.RLock()
 
     def run(self, task_id: str, prompt: str, workdir: Path, expected_outputs: list[str]) -> EngineResult:
         command = [*self.command]
@@ -44,7 +47,7 @@ class CodexEngine:
 
         started = time.monotonic()
         try:
-            process = subprocess.run(
+            process = subprocess.Popen(
                 command,
                 cwd=str(workdir),
                 text=True,
@@ -52,13 +55,23 @@ class CodexEngine:
                 errors="replace",
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                timeout=self.timeout_seconds,
             )
-            stdout = process.stdout or ""
-            stderr = process.stderr or ""
+            with self._process_lock:
+                self._processes[task_id] = process
+            try:
+                stdout, stderr = process.communicate(timeout=self.timeout_seconds)
+            finally:
+                with self._process_lock:
+                    self._processes.pop(task_id, None)
             returncode = process.returncode
             timed_out = False
         except subprocess.TimeoutExpired as exc:
+            if process.poll() is None:
+                process.terminate()
+                try:
+                    process.wait(timeout=3)
+                except subprocess.TimeoutExpired:
+                    process.kill()
             stdout = _clean(exc.stdout)
             stderr = _clean(exc.stderr)
             returncode = 124
@@ -78,6 +91,14 @@ class CodexEngine:
             )
 
         clean_stdout = _codex_text_from_stdout(stdout) or stdout
+        combined_output = f"{clean_stdout}\n{stderr}".casefold()
+        error_type = (
+            "usage_limit"
+            if "usage limit" in combined_output
+            or "rate limit" in combined_output
+            or "quota" in combined_output
+            else ""
+        )
         _ensure_expected_output(workdir, expected_outputs, clean_stdout)
         output_files = _collect_outputs(workdir, expected_outputs)
         if expected_outputs and returncode == 0 and not output_files:
@@ -93,7 +114,20 @@ class CodexEngine:
             elapsed_seconds=time.monotonic() - started,
             timed_out=timed_out,
             model=self.model,
+            error_type=error_type,
         )
+
+    def cancel(self, task_id: str) -> bool:
+        with self._process_lock:
+            process = self._processes.get(task_id)
+        if process is None or process.poll() is not None:
+            return False
+        process.terminate()
+        try:
+            process.wait(timeout=3)
+        except subprocess.TimeoutExpired:
+            process.kill()
+        return True
 
 
 def _resolve_command(command: list[str]) -> list[str]:

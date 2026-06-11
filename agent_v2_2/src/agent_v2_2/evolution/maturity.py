@@ -16,7 +16,7 @@ class MaturityReport:
 
     @property
     def mature(self) -> bool:
-        return self.pending_items == 0 or (self.completion_ratio >= 0.9 and not self.critical_pending)
+        return self.total_items > 0 and self.pending_items == 0
 
 
 class MaturityGate:
@@ -43,10 +43,28 @@ class MaturityGate:
             if len(parts) < 5:
                 continue
             status_cell = parts[-1].casefold()
-            if any(token in status_cell for token in ("[x]", "completado", "[ ]", "pendiente")):
+            if any(
+                token in status_cell
+                for token in (
+                    "[x]",
+                    "completado",
+                    "completed",
+                    "[ ]",
+                    "pendiente",
+                    "pending",
+                )
+            ):
                 items.append((line, status_cell))
-        completed = [line for line, status in items if "[x]" in status or "completado" in status]
-        pending = [line for line, status in items if "[ ]" in status or "pendiente" in status]
+        completed = [
+            line
+            for line, status in items
+            if "[x]" in status or "completado" in status or "completed" in status
+        ]
+        pending = [
+            line
+            for line, status in items
+            if "[ ]" in status or "pendiente" in status or "pending" in status
+        ]
         critical_pending = [
             line for line in pending if any(hint in line.casefold() for hint in self.CRITICAL_HINTS)
         ]

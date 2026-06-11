@@ -60,7 +60,11 @@ class ContractBuilder:
         )
         ambiguity = self._infer_ambiguity(normalized, prepare, attachment_descriptors)
         confidence = self._infer_confidence(normalized, prepare, attachment_descriptors)
-        primary_capability = self._primary_capability(operation, attachment_descriptors)
+        primary_capability = self._primary_capability(
+            normalized,
+            operation,
+            attachment_descriptors,
+        )
 
         contract_metadata = dict(metadata or {})
         contract_metadata.update(
@@ -225,8 +229,26 @@ class ContractBuilder:
         lower = text.casefold()
         if self._contains_any(lower, ("investiga", "compara fuentes", "varias fuentes", "estado del arte")):
             return CognitiveLevel.REASONING
-        if operation in {Operation.RECONCILE, Operation.DIAGNOSE, Operation.PLAN, Operation.MODIFY_ARTIFACT}:
+        if operation in {Operation.RECONCILE, Operation.DIAGNOSE, Operation.PLAN}:
             return CognitiveLevel.REASONING
+        if operation == Operation.MODIFY_ARTIFACT:
+            complex_suffixes = {
+                ".pdf",
+                ".docx",
+                ".xlsx",
+                ".pptx",
+                ".py",
+                ".js",
+                ".ts",
+                ".ps1",
+                ".sh",
+            }
+            if len(attachments) > 1 or any(
+                attachment.path.suffix.casefold() in complex_suffixes
+                for attachment in attachments
+            ):
+                return CognitiveLevel.REASONING
+            return CognitiveLevel.GENERAL
         if operation in {Operation.COMPARE, Operation.CALCULATE, Operation.DRAFT, Operation.CREATE_ARTIFACT, Operation.SUMMARIZE}:
             return CognitiveLevel.GENERAL
         if attachments and any(att.path.suffix.casefold() in {".pdf", ".docx", ".xlsx", ".pptx"} for att in attachments):
@@ -248,13 +270,10 @@ class ContractBuilder:
             capabilities.append(InstrumentalCapability.CURRENT_WEB_LOOKUP)
         if self._mentions_multi_source_web(lower):
             capabilities.append(InstrumentalCapability.MULTI_SOURCE_WEB_RESEARCH)
-        if self._mentions_files(lower) or attachments:
-            capabilities.extend(
-                [
-                    InstrumentalCapability.DISCOVER_FILES,
-                    InstrumentalCapability.READ_MULTIPLE_FILES,
-                ]
-            )
+        if self._mentions_files(lower) and not attachments:
+            capabilities.append(InstrumentalCapability.DISCOVER_FILES)
+        if len(attachments) > 1:
+            capabilities.append(InstrumentalCapability.READ_MULTIPLE_FILES)
         if any(self._attachment_is_text(attachment) for attachment in attachments):
             capabilities.append(InstrumentalCapability.READ_TEXT_FILE)
         if any(self._attachment_is_binary_document(attachment) for attachment in attachments):
@@ -269,14 +288,13 @@ class ContractBuilder:
         if any(self._attachment_is_archive(attachment) for attachment in attachments):
             capabilities.append(InstrumentalCapability.READ_ARCHIVE)
 
-        if operation in {Operation.CREATE_ARTIFACT, Operation.MODIFY_ARTIFACT, Operation.VERIFY_ARTIFACT}:
-            capabilities.extend(
-                [
-                    InstrumentalCapability.WRITE_FILE,
-                    InstrumentalCapability.CODE_EXECUTION,
-                ]
-            )
-        if operation in {Operation.COMPARE, Operation.CALCULATE, Operation.RECONCILE, Operation.DIAGNOSE}:
+        if operation in {Operation.CREATE_ARTIFACT, Operation.MODIFY_ARTIFACT}:
+            capabilities.append(InstrumentalCapability.WRITE_FILE)
+        if operation == Operation.VERIFY_ARTIFACT or any(
+            self._attachment_is_code(attachment) for attachment in attachments
+        ):
+            capabilities.append(InstrumentalCapability.CODE_EXECUTION)
+        if operation in {Operation.CALCULATE, Operation.RECONCILE, Operation.DIAGNOSE}:
             capabilities.append(InstrumentalCapability.STRUCTURED_CALCULATION)
         if operation in {Operation.CREATE_ARTIFACT, Operation.MODIFY_ARTIFACT} and any(
             attachment.path.suffix.casefold() in {".docx", ".xlsx", ".pptx", ".pdf"}
@@ -300,9 +318,9 @@ class ContractBuilder:
             operations = [FileOperation.READ]
             if operation in {Operation.EXTRACT, Operation.SUMMARIZE, Operation.COMPARE, Operation.CALCULATE, Operation.RECONCILE, Operation.DIAGNOSE}:
                 operations.append(FileOperation.EXTRACT)
-            if operation in {Operation.CREATE_ARTIFACT, Operation.MODIFY_ARTIFACT, Operation.DRAFT}:
+            if operation in {Operation.MODIFY_ARTIFACT, Operation.DRAFT}:
                 operations.append(FileOperation.MODIFY)
-            if operation in {Operation.CREATE_ARTIFACT, Operation.MODIFY_ARTIFACT, Operation.VERIFY_ARTIFACT}:
+            if operation in {Operation.MODIFY_ARTIFACT, Operation.VERIFY_ARTIFACT}:
                 operations.append(FileOperation.VERIFY)
             preserve_format = file_format in {
                 FileFormat.DOCX,
@@ -424,9 +442,15 @@ class ContractBuilder:
 
     def _primary_capability(
         self,
+        text: str,
         operation: Operation,
         attachments: Sequence[AttachmentDescriptor],
     ) -> str:
+        lower = text.casefold()
+        if self._mentions_multi_source_web(lower):
+            return "cap_investigate"
+        if self._mentions_web(lower):
+            return "cap_web_punctual"
         if any(self._attachment_is_spreadsheet(attachment) for attachment in attachments):
             return "cap_calc_filter"
         if any(self._attachment_is_image(attachment) for attachment in attachments):
@@ -477,7 +501,9 @@ class ContractBuilder:
             return FileFormat.XML
         if suffix in {".html", ".htm"}:
             return FileFormat.HTML
-        if suffix in {".md", ".txt", ".log", ".py", ".js", ".ts", ".ps1", ".sh", ".yaml", ".yml"}:
+        if suffix in {".py", ".js", ".ts", ".ps1", ".sh"}:
+            return FileFormat.CODE
+        if suffix in {".md", ".txt", ".log", ".jsonl", ".yaml", ".yml"}:
             return FileFormat.TEXT
         if suffix in {".zip", ".7z", ".rar", ".tar", ".gz"}:
             return FileFormat.ARCHIVE
@@ -521,7 +547,25 @@ class ContractBuilder:
         )
 
     def _mentions_web(self, text: str) -> bool:
-        return self._contains_any(text, ("web", "internet", "busca", "buscar", "actual", "hoy", "online"))
+        explicit_markers = (
+            "web",
+            "internet",
+            "online",
+            "google",
+            "pagina web",
+            "página web",
+            "sitio web",
+            "fuentes web",
+        )
+        if self._contains_any(text, explicit_markers):
+            return True
+        if "busca" in text and self._contains_any(
+            text,
+            ("cerca", "florister", "tienda", "proveedor", "precio", "restaurante", "hotel"),
+        ):
+            return True
+        current_markers = ("actualmente", "a dia de hoy", "a día de hoy", "ultima informacion", "última información")
+        return self._contains_any(text, current_markers) and not self._mentions_files(text)
 
     def _mentions_multi_source_web(self, text: str) -> bool:
         return self._contains_any(
@@ -532,7 +576,6 @@ class ContractBuilder:
                 "fuentes",
                 "compila",
                 "compilar",
-                "benchmark",
                 "estado del arte",
             ),
         )
@@ -550,7 +593,7 @@ class ContractBuilder:
         return False
 
     def _attachment_is_text(self, attachment: AttachmentDescriptor) -> bool:
-        return attachment.path.suffix.casefold() in {".txt", ".md", ".csv", ".json", ".xml", ".html", ".htm", ".log", ".py", ".js", ".ts", ".ps1", ".sh", ".yaml", ".yml"}
+        return attachment.path.suffix.casefold() in {".txt", ".md", ".csv", ".json", ".jsonl", ".xml", ".html", ".htm", ".log", ".py", ".js", ".ts", ".ps1", ".sh", ".yaml", ".yml"}
 
     def _attachment_is_binary_document(self, attachment: AttachmentDescriptor) -> bool:
         return attachment.path.suffix.casefold() in {".pdf", ".docx", ".pptx", ".doc", ".xls", ".ppt", ".odt", ".ods", ".odp"}
@@ -567,9 +610,28 @@ class ContractBuilder:
     def _attachment_is_archive(self, attachment: AttachmentDescriptor) -> bool:
         return attachment.path.suffix.casefold() in {".zip", ".7z", ".rar", ".tar", ".gz"}
 
+    def _attachment_is_code(self, attachment: AttachmentDescriptor) -> bool:
+        return attachment.path.suffix.casefold() in {
+            ".py",
+            ".js",
+            ".ts",
+            ".ps1",
+            ".sh",
+            ".bat",
+        }
+
     def _contains_any(self, text: str, markers: Iterable[str]) -> bool:
+        import re
+
         lower = text.casefold()
-        return any(marker.casefold() in lower for marker in markers)
+        return any(
+            re.search(
+                rf"(?<!\w){re.escape(marker.casefold())}(?!\w)",
+                lower,
+            )
+            is not None
+            for marker in markers
+        )
 
     def _unique_actions(self, actions: Sequence[PrepareAction]) -> List[PrepareAction]:
         seen: set[str] = set()

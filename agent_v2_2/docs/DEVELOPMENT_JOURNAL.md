@@ -361,3 +361,38 @@ imported history.
 
 Use additional representative slices to expand the arena evidence before
 promoting the router to the next evolutionary stage.
+
+## 2026-06-11: Slice-Oriented Audit Support
+
+### Implemented
+
+- Added explicit `--path` support to `audit arena` and `audit normalize` so
+  individual batteries can be audited without running the entire benchmark
+  corpus.
+- Verified the new slice flow with `reasoning_latency_tasks_20260607.json`,
+  which produced one successful arena run and a live judge score.
+- Confirmed that some batteries normalize cleanly but still have no compatible
+  tools for execution, which is a coverage gap in the task/tool matrix rather
+  than a failure in the normalizer or arena.
+
+### Verification
+
+- Full Agent 2.2 suite: `32 passed`.
+- `audit normalize --path benchmarks/tasks/assistant_tasks.json` shows
+  33 normalized tasks with `gemini_pro_long_context` and `premium_codex_55`
+  as the compatible tools on that slice.
+- `audit normalize --path benchmarks/tasks/reasoning_latency_tasks_20260607.json`
+  shows `3` normalized tasks with a narrower compatibility set.
+- `audit arena --path benchmarks/tasks/reasoning_latency_tasks_20260607.json --limit 1`
+  yields `1` run, `1` passed, `3.312s` average and one judge score.
+
+### Current roadmap position
+
+- Step 5: `IN_PROGRESS`.
+- Step 6: `IN_PROGRESS`.
+
+### Next action
+
+Keep slicing the benchmark batteries by task family so we can add more real
+executions, identify remaining compatibility gaps, and feed the learned matrix
+with fresh evidence instead of only broad corpus scans.

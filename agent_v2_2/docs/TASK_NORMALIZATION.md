@@ -69,6 +69,12 @@ Use:
 python -m agent_v2_2.cli audit normalize
 ```
 
+To inspect a specific battery or task file:
+
+```bash
+python -m agent_v2_2.cli audit normalize --path benchmarks/tasks/reasoning_latency_tasks_20260607.json
+```
+
 The command prints a markdown summary with:
 
 - primary-capability counts
@@ -79,6 +85,10 @@ The command prints a markdown summary with:
 
 On the current benchmark battery, the report shows full coverage of the 17
 operational capabilities and zero missing rubrics.
+
+On targeted slices, the report also helps spot batteries that normalize cleanly
+but still have no compatible tool coverage for some tasks. Those are useful
+coverage gaps, not normalization failures.
 
 ## Design Notes
 

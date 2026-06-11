@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+from pathlib import Path
 
 from .capabilities.preferences import PreferenceStore
 from .capabilities.status import StatusManager
@@ -113,6 +114,12 @@ def audit_normalize() -> None:
     print(report.to_markdown())
 
 
+def audit_normalize_paths(paths: list[str]) -> None:
+    controller = EvolutionController()
+    report = controller.normalize_tasks([Path(path) for path in paths])
+    print(report.to_markdown())
+
+
 def matrix_report() -> None:
     controller = EvolutionController()
     report = controller.capability_matrix()
@@ -122,6 +129,12 @@ def matrix_report() -> None:
 def arena_run(limit: int | None = None) -> None:
     controller = EvolutionController()
     report = controller.run_benchmark_arena(limit=limit)
+    print(report.to_markdown())
+
+
+def arena_run_paths(paths: list[str], limit: int | None = None) -> None:
+    controller = EvolutionController()
+    report = controller.run_benchmark_arena(task_paths=[Path(path) for path in paths], limit=limit)
     print(report.to_markdown())
 
 
@@ -162,12 +175,26 @@ def main() -> None:
     audit_coverage_parser = audit_sub.add_parser("coverage", help="Analiza cobertura y huecos de las tareas")
     audit_coverage_parser.set_defaults(func=lambda args: audit_coverage())
     audit_normalize_parser = audit_sub.add_parser("normalize", help="Normaliza tareas y evaluaciones")
-    audit_normalize_parser.set_defaults(func=lambda args: audit_normalize())
+    audit_normalize_parser.add_argument(
+        "--path",
+        action="append",
+        default=[],
+        help="Ruta concreta de una batería o archivo de tareas a normalizar",
+    )
+    audit_normalize_parser.set_defaults(
+        func=lambda args: audit_normalize_paths(args.path) if args.path else audit_normalize()
+    )
     audit_matrix_parser = audit_sub.add_parser("matrix", help="Resume la matriz aprendida de capacidades")
     audit_matrix_parser.set_defaults(func=lambda args: matrix_report())
     audit_arena_parser = audit_sub.add_parser("arena", help="Ejecuta la arena de benchmark sobre la batería normalizada")
     audit_arena_parser.add_argument("--limit", type=int, default=None, help="Limita el numero de tareas ejecutadas")
-    audit_arena_parser.set_defaults(func=lambda args: arena_run(args.limit))
+    audit_arena_parser.add_argument(
+        "--path",
+        action="append",
+        default=[],
+        help="Ruta concreta de una batería o archivo de tareas a ejecutar",
+    )
+    audit_arena_parser.set_defaults(func=lambda args: arena_run_paths(args.path, args.limit) if args.path else arena_run(args.limit))
 
     evolution_parser = subparsers.add_parser("evolution", help="Control del sistema evolutivo")
     evolution_sub = evolution_parser.add_subparsers(dest="evolution_command", required=True)

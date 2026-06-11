@@ -393,3 +393,51 @@ def test_benchmark_runner_produces_report_with_fallback(tmp_path: Path, monkeypa
     assert report.total_runs == 1
     assert report.judge_count == 1
     assert report.runs[0].tool_id == "local_direct"
+
+
+def test_evolution_controller_uses_explicit_benchmark_paths(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    controller = EvolutionController(workspace_root=tmp_path)
+    captured: dict[str, object] = {}
+
+    class DummyReport:
+        def to_markdown(self) -> str:
+            return "ok"
+
+    def fake_run_arena(path, *, limit=None):
+        captured["path"] = path
+        captured["limit"] = limit
+        return DummyReport()
+
+    controller.benchmark_runner.run_arena = fake_run_arena  # type: ignore[assignment]
+    task_path = tmp_path / "custom_tasks.json"
+    task_path.write_text("[]", encoding="utf-8")
+
+    report = controller.run_benchmark_arena(task_paths=[task_path], limit=2)
+    assert report.to_markdown() == "ok"
+    assert captured["path"] == task_path
+    assert captured["limit"] == 2
+
+
+def test_evolution_controller_normalizes_explicit_paths(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setenv("AGENT_WORKSPACE_ROOT", str(tmp_path))
+    controller = EvolutionController(workspace_root=tmp_path)
+    captured: dict[str, object] = {}
+
+    class DummyReport:
+        total_tasks = 1
+
+        def to_markdown(self) -> str:
+            return "normalized"
+
+    def fake_normalize_path(path):
+        captured["path"] = path
+        return DummyReport()
+
+    controller.normalize_tasks = lambda task_paths=None: fake_normalize_path(task_paths[0])  # type: ignore[assignment]
+    task_path = tmp_path / "custom_tasks.json"
+    task_path.write_text("[]", encoding="utf-8")
+
+    report = controller.normalize_tasks([task_path])
+    assert report.to_markdown() == "normalized"
+    assert captured["path"] == task_path
